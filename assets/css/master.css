@@ -1,0 +1,42 @@
+/*
+	RESET (http://html5doctor.com/html-5-reset-stylesheet/)
+-----------------------------------------------------------------------*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+body {line-height:1.35em;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+nav ul {list-style:none;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:''; content:none;}
+a {margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;}
+ins {background-color:#ff9; color:#000; text-decoration:none;}
+mark {background-color:#ff9; color:#000; font-style:italic; font-weight:bold;}
+del {text-decoration:line-through;}
+abbr[title],dfn[title] {border-bottom:1px dotted; cursor:help;}
+table {border-collapse:collapse; border-spacing:0;}
+hr {display:block; border: none; border-bottom: 1px solid rgba(106,79,55,0.7); -webkit-box-shadow: 0 1px 0 rgba(254,222,206,0.4); -moz-box-shadow: 0 1px 0 rgba(254,222,206,0.4); box-shadow: 0 1px 0 rgba(254,222,206,0.4); background: none; margin: 3% 0; padding:0;}
+input,select {vertical-align:middle;}
+:focus {outline: auto 1px -webkit-focus-ring-color; outline-offset: -2px; -moz-outline: -moz-mac-focusring solid 2px; -moz-outline-radius: 5px; -moz-outline-offset: 0;}
+
+
+/*
+	FONTS
+-----------------------------------------------------------------------*/
+
+@font-face {
+	
+}
+
+/*
+	KEYFRAMES
+-----------------------------------------------------------------------*/
+
+@-webkit-keyframes fade {
+
+}
+
+/* 
+	STRUCTURE
+---------------------------------------------------------------------- */
+
+.container {max-width: 88%; margin: auto;}
