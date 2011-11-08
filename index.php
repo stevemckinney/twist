@@ -4,12 +4,4 @@
 
 </section>
 
-<footer role="contentinfo">
-
-</footer>
-	
-</div><!--/container-->
-
-</body>
-
-</html>
+<?php include('assets/inc/footer.php'); ?>

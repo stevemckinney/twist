@@ -1,0 +1,67 @@
+@import "compass/css3";
+
+/*
+	Reset (http://html5doctor.com/html-5-reset-stylesheet/)
+-----------------------------------------------------------------------*/
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, q, samp, small, strong, sub, sup, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+body {line-height: 1;}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
+ul {list-style: none;}
+blockquote,q {quotes: none;}
+blockquote:before,blockquote:after,q:before,q:after {content: ''; content: none;}
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+abbr[title], dfn[title] {border-bottom: 1px dotted; cursor: help;}
+hr {display: block; border: none; background: red; height: 1px;}
+input, select {vertical-align: middle; padding: 0; margin: 0; line-height: 1;}
+:focus {outline: auto 1px -webkit-focus-ring-color; outline-offset: -2px; -moz-outline: -moz-mac-focusring solid 2px; -moz-outline-radius: 5px; -moz-outline-offset: 0;}
+::-moz-selection{background: #a9a465; color: #fff; text-shadow: none;}
+::selection {background: #a9a465; color: #fff; text-shadow: none;}
+
+//	variable values number divided by 960
+$ten: 1.041666666667%;
+$twenty: 2.083333333333%;
+$forty: 4.166666666667%;
+$sixty: 6.25%;
+$eighty: 8.333333333333%;
+
+$six_sixty: 68.75%;
+$six_eighty: 70.833333333333%;
+$seven_hundred: 72.916666666667%;
+$eight_hundred: 83.333333333333%;
+
+//	variable colours
+$main_colour: desaturate(#597380, 0%);
+$orange_hex: #cb4b16;
+$pink_hex: #d33682;
+
+$main_blue: desaturate(hsla(199,30%,50%,1), 15%);
+$orange: hsla(18,89%,90%,1);
+$red: hsla(1,79%,86%,1);
+
+$hsla_black: hsla(0,0%,0%,1);
+$hsla_white: hsla(0,100%,100%,1);
+
+$sans: ff-meta-web-pro, helvetica, sans-serif;
+$serif: ff-meta-serif-web-pro, helvetica, sans-serif;
+
+// font sizes
+$small_size: 12px;
+$medium_size: 14px;
+$normal_size: 16px;
+
+// mixins
+@mixin transition($transition) {
+	-webkit-transition: $transition; -moz-transition: $transition; -o-transition: $transition; -ms-transition: $transition; transition: $transition;
+}
+@mixin box-size($sizing) {
+	-webkit-box-sizing: $sizing; -moz-box-sizing: $sizing; box-sizing: $sizing;
+}
+@mixin hyphens($value: "manual") {
+  @each $prefix in -webkit-, -moz-, -o-, "" {
+    #{$prefix}hyphens: $value;
+  }
+}
+
+// extends
+.transition {@include transition((all .4s linear));}
+.rounded {@include border-radius(5px);}
