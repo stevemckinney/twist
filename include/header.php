@@ -19,11 +19,12 @@
 <script src="{site_url}/assets/js/modernizr.js"></script>
 
 <!-- Mobile -->
-<meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 <!-- Verification -->
-
+<meta name="google-site-verification" content="kvxM4eH_QHyUGdJK0LEQj3aZi7Vew5AooNVxk79zruU">
+<meta name="y_key" content="e831cde43ec8e068">
 <!-- Other -->
 <link rel="alternate" type="application/rss+xml" title="insert" href="{site_url}/blog/feed">
 <link rel="shortcut icon" href="{site_url}/favicon.png">
@@ -32,7 +33,6 @@
 <!-- IE crap -->
 <meta http-equiv="cleartype" content="on">
 <!--[if (gt IE 6)&(lte IE 8)]>
-<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 <script src="{site_url}/assets/js/selectivizr.js"></script>
 <script src="{site_url}/assets/js/nwmatcher.js"></script>
 <![endif]-->
