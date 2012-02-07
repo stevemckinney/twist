@@ -1,0 +1,44 @@
+// 	----------------------------------------- 
+//	Your traditional helper classes
+// 	-----------------------------------------
+
+// Use any of these on any element, 
+// helps for a more object oriented CSS approach
+// without classitis and faster less bloated CSS
+// 
+// eg: @extend .transition;
+
+
+.transition {
+	@include transition(all .4s linear); }
+.rounded {
+	@include border-radius(5px); }
+
+.left {
+	float: left; }
+.right {
+	float: right; }
+.hidden {
+	display: none; visibility: hidden; }
+.screenreaders { 
+	border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.centre {
+	margin: auto; }
+	
+.no_outline {
+	outline: none; }
+
+// make form elements have no appearance
+.input_reset {
+	-webkit-appearance: none;
+	-moz-appearance: none; }	
+
+// margins and paddings
+.padding {
+	padding: $base_px/2 $base_px; }
+.margin {
+	margin: $base_px 0; }
+.em_margin {
+	margin: 1em 0 0.5em; }
+.no_mp {
+	margin: 0; padding: 0; }

@@ -1,0 +1,15 @@
+// 	----------------------------------------- 
+//	Base form styles
+// 	-----------------------------------------
+
+.form-text, input, textarea {
+	@extend .input_reset;
+	@extend .rounded;
+	display: block;
+	padding: 10px;
+	border: none;
+	border: 1px solid $border; }
+	
+[type="text"] {}
+
+fieldset {}

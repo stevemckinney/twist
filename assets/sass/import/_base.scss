@@ -1,0 +1,74 @@
+//	variable values number divided by 1000
+$ten						:	1%;
+$twenty					:	2%;
+$forty					:	4%;
+$sixty					:	6%;
+$eighty					:	8%;
+
+$tenth					:	10%;
+$twentieth			:	20%;
+$quarter				:	25%;
+$third					:	33%;
+$half						:	50%;
+$twothirds			:	66%;
+$sixtyeight			:	68%;
+$threequarters	: 75%;
+$eighty					: 80%;
+$ninety					:	90%;
+$whole					:	100%;
+
+//	general variable colours
+$primary: #222;
+$secondary: darken(#c0ffee, 60%);
+
+$primary_l1: lighten($primary, 5%);
+$primary_l2: lighten($primary, 10%);
+$primary_l3: lighten($primary, 15%);
+
+$primary_d1: darken($primary, 5%);
+$primary_d2: darken($primary, 10%);
+$primary_d3: darken($primary, 15%);
+
+$secondary_l1: lighten($secondary, 5%);
+$secondary_l2: lighten($secondary, 10%);
+$secondary_l3: lighten($secondary, 15%);
+
+$secondary_d1: darken($secondary, 5%);
+$secondary_d2: darken($secondary, 10%);
+$secondary_d3: darken($secondary, 15%);
+
+$black: hsla(0,0%,0%,1);
+$white: hsla(0,100%,100%,1);
+
+
+// main element styling colours
+$default: #eee;
+$default_text: #222;
+$default_text_shadow: #fff;
+
+$border: darken($default, 10%);
+
+$alt: desaturate(#127A97, 20%);
+$danger: #CF4647;
+$warning: darken(#FFB350, 10%);
+$success: saturate(darken(#A3A948, 5%), 10%);
+$info: #B83564;
+
+// font stacks
+$sans: ff-meta-web-pro, helvetica, sans-serif;
+$serif: ff-meta-serif-web-pro, georgia, serif;
+
+// font sizes
+$base_font_size: 12px;
+$normal_size: 16px;
+
+// px
+$base_px: 12px;
+$line: $base_px*2;
+
+// mixins
+@mixin hyphens($value: "manual") {
+  @each $prefix in -webkit-, -moz-, -o-, "" {
+    #{$prefix}hyphens: $value;
+  }
+}

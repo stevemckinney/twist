@@ -1,0 +1,38 @@
+//
+//	Helpful RWD mixins
+//
+
+
+// target / context = result
+// long length version
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+// shortcut
+@function cp($target, $container) {
+  @return calc-percent($target, $container);
+}
+
+//	Simple media queries
+//	@include respond-to(iphone) { prop:style; }
+
+@mixin respond-to($media) {
+  @if $media == iphone {
+    @media screen and (min-width: 480px), screen and (min-device-width: 480px) { @content; }
+  }
+  @else if $media == tablet  {
+    @media screen and (min-width: 600px), screen and (min-device-width: 600px) { @content; }
+  }
+  @else if $media == ipad {
+    @media screen and (min-width: 768px), screen and (min-device-width: 768px) { @content; }
+  }
+  @else if $media == desktop {
+    @media screen and (min-width: 960px), screen and (min-device-width: 960px) { @content; }
+  }
+  @else if $media == max {
+    @media screen and (min-width: 1200px), screen and (min-device-width: 1200px) { @content; }
+  }
+  @else if $media == retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) { @content; }
+  }
+}
