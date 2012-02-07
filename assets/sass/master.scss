@@ -1,34 +1,23 @@
-@import "import/base.scss";
-
-/*
-	Keyframes
------------------------------------------------------------------------ */
-
-/*
-@-webkit-keyframes fade {
- from {opacity: 0;}
- 50% {opacity: 0;}
- 75% {opacity: 0.15}
- to {opacity: 1;}
-}
-*/
-
+@import "import/_imports.scss";
 
 /* 
-	Stucture
+	Base stucture
 ---------------------------------------------------------------------- */
+html {overflow-y : scroll; }
 html, body {
 	font: $normal_size $serif; 
 	color: $primary;
-	background: ; }
+	background: #eee !important; }
 body, img {
 	@extend .transition; }
 
 .container {
-	max-width: 960px; margin: auto; }
+	max-width: 1200px;
+	margin: auto;
+	padding: $forty; }
 
 img {
-	max-width: 100%; margin-bottom: -3px; line-height: 0; }
+	max-width: 100%; }
 
 [role="banner"] img {
 	&:hover, &:focus {
@@ -38,7 +27,7 @@ img {
 
 /* header ---------------------- */
 [role="banner"] {
-	padding: 0 $twenty; line-height: 1; }
+	padding: 0; line-height: 1; }
 
 /* section ---------------------- */
 [role="main"] {}
@@ -52,12 +41,16 @@ section[role="main"] {margin: 0;}
 
 /* nav ---------------------- */
 [role="navigation"] {
+	ul {
+		@extend .no_mp;
+	}
 	li {
-		display: inline; display: inline-block; font: $medium_size/1 $sans; text-shadow: 0 1px 1px transparentize($black, 0.6);
+		@include inline-block;
+		font: 14px/1 $sans;
 	}
 	a {
 		display: inline-block;
-		-webkit-tap-highlight-color: rgba(255,0,0,0.5);
+		-webkit-tap-highlight-color: $primary;
 	}
 }
 /* article ---------------------- */
@@ -72,12 +65,12 @@ div {}
 [role="complementary"] {
 }
 /* footer ---------------------- */
-[role="main"] + [role="contentinfo"] {font-size: $small_size; margin: 5% auto auto;}
+[role="main"] + [role="contentinfo"] {font-size: $base_font_size; margin: 5% auto auto;}
 [role="contentinfo"] {}
 
 
 /* 
-	TYPOGRAPHY
+	Typography & links
 ---------------------------------------------------------------------- */
 a {
 	text-decoration: none; 
@@ -85,35 +78,9 @@ a {
 	@extend .transition;
 	&:hover, &:focus, .hover {
 		color: $primary;
-	}
-	
-}
-h1, h1 a, h2, h2 a, h3, h3 a {
-	font: 26px/1 $sans; color: $primary; margin: 0 0 20px; line-height: 1;
-}
-h2, h2 a {
-	font-size: 22px; margin: 0 0 10px;
-}
-h1, h2 {display: block;}
-
-[role="banner"] h1 {
-	margin: 0; display: inline-block;
-	a {
-		display: block;
-		width: 102px; height: 80px;
-		text-indent: -9999px;
-		background: no-repeat;
-	}
-}
-
-.webkit [role="main"] header:first-child h1 {-webkit-text-fill-color: transparent; background: $primary; -webkit-background-clip: text;}
-
-[role="navigation"] a {
-	color: #fff; color: $white; font: 700 $medium_size/1 $sans;
-	&:hover, &:focus {
-		color: #ccc; color: transparentize($white, 0.25);
 	}	
 }
+@import "_styles/_typography.scss";
 
 p {@include hyphens(auto); margin: 0 0 20px;}
 p:last-child {margin: 0;}
@@ -142,20 +109,35 @@ blockquote {
 /* 
 	Lists
 ---------------------------------------------------------------------- */
-ul, li {list-style: none;}
+ul, li {}
 [role="main"] + [role="contentinfo"] ul {
 	li {
 		display: inline-block;
 		padding: 0 5px;
 	}
 }
-dt {font: 700 $medium_size/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
+dt {font: 700 14px/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
 dd {
 	&:last-child {
 		margin: 0;	
 	}
 }
+.items {
+	list-style: none;
+	margin: 20px 0;
+	li {
+		display: inline-block; } }
+/*
+	Buttons
+-----------------------------------------------------------------------*/
+@import "import/_buttons.scss";
+.button, button {
+	@extend .button; }
 
+/*
+	Forms
+-----------------------------------------------------------------------*/
+form {}
 
 /* 
 	Misc.
@@ -175,7 +157,7 @@ figcaption {}
 	@include border-radius(5px 0 0 5px);
 	@extend .transition;
 	padding: 5px 10px;
-	font: $small_size/1 $sans; color: $primary; 
+	font: $base_font_size/1 $sans; color: $primary; 
 	border: 1px solid #A7ADAF; border: 1px solid hsla(198,5%,67%,0.8);
 	position: relative;
 	left: 4px;
@@ -185,277 +167,18 @@ figcaption {}
 	}
 }
 
-input[type="submit"] {
-	@extend .transition;
-	-webkit-appearance: none; -moz-appearance: none; 
-	border: none;
-	background: saturate(darken($secondary, 10%), 40%);
-	background: saturate(darken($secondary, 10%), 40%);
-	padding: 5px 10px; position: relative;
-	font: 500 $small_size/1 $sans; color: #fff; border: 1px solid desaturate(darken($secondary, 5%), 20%);
-	text-shadow: 0 1px 1px transparentize($black, 0.75);
-	@include box-shadow(inset 0 1px 0 transparentize($white, 0.8));
-	@include border-radius(0 5px 5px 0);
-	&:hover, &:focus {
-		background: saturate(darken($secondary, 20%), 20%);
-		border: 1px solid desaturate(darken($secondary, 15%), 20%);
-	}
-	&:active {
-		top: 1px;
-	}
+[type="submit"] {
+	@extend .info;
 }
 input[type="submit"], x:-moz-any-link, x:default {} 
-input::-webkit-input-placeholder {color: #A7ADAF; font: italic $small_size/1 $sans;}
+input::-webkit-input-placeholder {color: #A7ADAF; font: italic $base_font_size/1 $sans;}
 [for="keywords"] {position: absolute; top: -9999px; left: -9999px;}
 
 /* contact form ---------------------- */
 .contact section input, .contact textarea, .contact select {display: block;}
 
-/*
-	Clearfixed
------------------------------------------------------------------------*/
-.cf:before, .cf:after, [role="contentinfo"] form:before, [role="contentinfo"] form:after, [role="contentinfo"]:before, [role="contentinfo"]:after, [role="banner"]:before, [role="banner"]:after, [role="navigation"]:before, [role="navigation"]:after, [role="region"]:before, [role="region"]:after, [role="main"]:after, [role="main"]:before, [role="navigation"] ul:before, [role="navigation"] ul:after {content:""; display:table;}
-.cf:after, [role="contentinfo"] form:after, [role="contentinfo"]:after, [role="banner"]:after, [role="navigation"]:after, [role="main"]:after, [role="region"]:after, [role="navigation"] ul:after {clear:both;}
 
 /*
 	Media queries
 -----------------------------------------------------------------------*/
-@media screen and (min-width: 320px),
-screen and (min-device-width: 320px) {
-	/* header ---------------------- */
-	[role="banner"] {}
-	
-	/* section ---------------------- */
-	[role="main"] {}
-	section {
-	
-	&:last-child {
-		
-	}
-	}
-	section[role="main"] {
-	
-	}
-	
-	/* nav ---------------------- */
-	[role="navigation"] {
-	li {
-		
-	}
-	a {
-		
-	}
-	}
-	/* article ---------------------- */
-	[role="article"] {
-	&:last-child {
-	}
-	}
-	/* div ---------------------- */
-	div {}
-	
-	/* aside ---------------------- */
-	[role="complementary"] {
-	}
-	/* footer ---------------------- */
-	[role="main"] + [role="contentinfo"] {}
-	[role="contentinfo"] {}
-
-}
-
-@media screen and (min-width: 480px),
-screen and (min-device-width: 480px) {
-	/* header ---------------------- */
-	[role="banner"] {}
-	
-	/* section ---------------------- */
-	[role="main"] {}
-	section {
-	
-	&:last-child {
-		
-	}
-	}
-	section[role="main"] {
-	
-	}
-	
-	/* nav ---------------------- */
-	[role="navigation"] {
-	li {
-		
-	}
-	a {
-		
-	}
-	}
-	/* article ---------------------- */
-	[role="article"] {
-	&:last-child {
-	}
-	}
-	/* div ---------------------- */
-	div {}
-	
-	/* aside ---------------------- */
-	[role="complementary"] {
-	}
-	/* footer ---------------------- */
-	[role="main"] + [role="contentinfo"] {}
-	[role="contentinfo"] {}
-
-}
-
-@media screen and (min-width: 640px),
-screen and (min-device-width: 640px) {
-	/* header ---------------------- */
-	[role="banner"] {}
-	
-	/* section ---------------------- */
-	[role="main"] {}
-	section {
-	
-	&:last-child {
-		
-	}
-	}
-	section[role="main"] {
-	
-	}
-	
-	/* nav ---------------------- */
-	[role="navigation"] {
-	li {
-		
-	}
-	a {
-		
-	}
-	}
-	/* article ---------------------- */
-	[role="article"] {
-	&:last-child {
-	}
-	}
-	/* div ---------------------- */
-	div {}
-	
-	/* aside ---------------------- */
-	[role="complementary"] {
-	}
-	/* footer ---------------------- */
-	[role="main"] + [role="contentinfo"] {}
-	[role="contentinfo"] {}
-
-}
-
-@media screen and (min-width: 768px),
-screen and (min-device-width: 768px) {
-	/* header ---------------------- */
-	[role="banner"] {}
-	
-	/* section ---------------------- */
-	[role="main"] {}
-	section {
-	
-	&:last-child {
-		
-	}
-	}
-	section[role="main"] {
-	
-	}
-	
-	/* nav ---------------------- */
-	[role="navigation"] {
-	li {
-		
-	}
-	a {
-		
-	}
-	}
-	/* article ---------------------- */
-	[role="article"] {
-	&:last-child {
-	}
-	}
-	/* div ---------------------- */
-	div {}
-	
-	/* aside ---------------------- */
-	[role="complementary"] {
-	}
-	/* footer ---------------------- */
-	[role="main"] + [role="contentinfo"] {}
-	[role="contentinfo"] {}
-
-}
-
-@media screen and (min-width: 960px),
-screen and (min-device-width: 960px) {
-
-	/* header ---------------------- */
-	[role="banner"] {}
-	
-	/* section ---------------------- */
-	[role="main"] {}
-	section {
-	
-	&:last-child {
-		
-	}
-	}
-	section[role="main"] {
-	
-	}
-	
-	/* nav ---------------------- */
-	[role="navigation"] {
-	li {
-		
-	}
-	a {
-		
-	}
-	}
-	/* article ---------------------- */
-	[role="article"] {
-	&:last-child {
-	}
-	}
-	/* div ---------------------- */
-	div {}
-	
-	/* aside ---------------------- */
-	[role="complementary"] {
-	}
-	/* footer ---------------------- */
-	[role="main"] + [role="contentinfo"] {}
-	[role="contentinfo"] {}
-
-}
-
-/*
-	Error
------------------------------------------------------------------------*/
-.error {overflow: hidden;}
-.error header[role="banner"] img {position: relative; -webkit-transform: rotate(7deg);}
-.error header[role="banner"] {position: relative; -webkit-transform: rotate(10deg); -webkit-transform-origin: 26% 200%; left: -30px; padding: 0 30px 0 0; z-index: 200;}
-/*.error footer[role="contentinfo"].shadow {top: 40px; position: relative; -webkit-transform: rotate(7deg); padding-right: 20px; left: -10px;}*/
-.error section p {}
-
-/*
-	Prettify
------------------------------------------------------------------------*/
-.str {color: #080;}
-.kwd {color: #008;}
-.com {color: #900;}
-.typ {color: #606;}
-.lit {color: #066;}
-.pun {color: #660;}
-.pln {color: #000;}
-.tag {color: #008;}
-.atn {color: #606;}
-.atv {color: #080;}
-.dec {color: #606;}
+@import "import/_mixins/_responsive.scss", "_screens/iphone.scss", "_screens/tablet.scss", "_screens/ipad.scss", "_screens/desktop.scss", "_screens/max.scss";
