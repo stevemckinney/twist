@@ -2,14 +2,34 @@
 //	Base form styles
 // 	-----------------------------------------
 
-.form-text, input, textarea {
+.form-text, textarea {
 	@extend .input_reset;
 	@extend .rounded;
+	width: $whole;
 	display: block;
 	padding: 10px;
 	border: none;
-	border: 1px solid $border; }
+	border: 1px solid $border;
+	background: lighten($default, 5%);
+	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3)); }
 	
+label, [type="text"], [type="email"], select {
+	display: block; }
 [type="text"] {}
 
 fieldset {}
+[id="name"] {
+	@include border-radius(5px 5px 0 0); }
+label {
+	font: 900 14px/1 $sans;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	@extend .em_margin; }
+.form-help {
+	font: 400 12px/1.5 $sans;
+	@include notice($subtle: true, $radius: 0 0 5px 5px);
+	border: 1px solid $border;
+	border-top: none;
+	padding: 0 $base_px/2;
+	margin: 0 0 $base_px 0;
+}

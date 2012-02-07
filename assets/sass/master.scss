@@ -29,8 +29,9 @@ img {
 	line-height: 1; }
 
 /* section ---------------------- */
-section {
+[role="region"] {
 	margin: 0 0 $line;
+	width: $whole;
 	&:last-child {
 		margin: 0;
 	}
@@ -81,16 +82,12 @@ a {
 @import "_styles/_typography.scss";
 
 p {
-	@include hyphens(auto);
-	&:last-child {
-		margin: 0; }
-}
+	@include hyphens(auto); }
 
 /* pre/code ---------------------- */
 pre {
 	padding: 5px; margin: 0 0 10px 0; width: 100%; background: rgba(255,250,250,0.8); max-height: 200px; overflow-y: scroll; overflow-x: hidden; 
 	@include transition(border .4s linear);
-	@include box-sizing(border-box); 
 	@include background-clip($default-background-clip);
 	@extend .rounded;
 	@include box-shadow((0 1px 0 rgba(10,0,0,0.1), inset 0 1px 0 rgba(255,250,250,0.65), inset 0 4px 7px rgba(0,0,0,0.1)));

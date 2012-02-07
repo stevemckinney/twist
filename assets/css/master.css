@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 4, /Users/Steve/.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/images/_image-replace.scss */
+/* line 4, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/images/_image-replace.scss */
 .__image-replace {
   display: block;
   text-indent: -9999em;
@@ -9,22 +9,22 @@
   direction: ltr;
 }
 
-/* line 7, /Users/Steve/.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
+/* line 7, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
 .__clearfix {
   zoom: 1;
 }
-/* line 9, /Users/Steve/.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
+/* line 9, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
 .__clearfix:before, .__clearfix:after {
   content: "";
   display: table;
 }
-/* line 13, /Users/Steve/.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
+/* line 13, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/layout/_clear-floats.scss */
 .__clearfix:after {
   clear: both;
 }
 
-/* line 5, /Users/Steve/.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/legacy/_inline-block.scss */
-.__inline-block, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle, [role="navigation"] li {
+/* line 5, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/legacy/_inline-block.scss */
+.__inline-block, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle, .notice_base, .notice, .n_subtle, .n_info, [role="navigation"] li, [role="navigation"] a {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -33,7 +33,7 @@
 /*
 	Reset (http://html5doctor.com/html-5-reset-stylesheet/) & Base styles
 -----------------------------------------------------------------------*/
-/* line 12, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 12, ../sass/import/_reset.scss */
 html, body, div, span, iframe,
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, abbr, address,
@@ -52,7 +52,7 @@ summary, time, mark, audio, video {
   background: transparent;
 }
 
-/* line 20, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 20, ../sass/import/_reset.scss */
 html, body {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
@@ -63,50 +63,50 @@ html, body {
   transition: all 2s linear;
 }
 
-/* line 25, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 25, ../sass/import/_reset.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
 
-/* line 27, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 27, ../sass/import/_reset.scss */
 audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 
-/* line 29, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 29, ../sass/import/_reset.scss */
 audio:not([controls]) {
   display: none;
 }
 
-/* line 31, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 31, ../sass/import/_reset.scss */
 [hidden] {
   display: none;
 }
 
-/* line 33, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 33, ../sass/import/_reset.scss */
 nav ul, nav li, footer ul, footer li {
   list-style: none;
 }
 
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 35, ../sass/import/_reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 37, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 37, ../sass/import/_reset.scss */
 ul, ol {
   margin: 1em 0 1em 20px;
 }
 
-/* line 39, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 39, ../sass/import/_reset.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 42, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 42, ../sass/import/_reset.scss */
 a {
   margin: 0;
   padding: 0;
@@ -116,13 +116,13 @@ a {
   text-decoration: none;
 }
 
-/* line 49, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 49, ../sass/import/_reset.scss */
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
 
-/* line 52, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 52, ../sass/import/_reset.scss */
 hr {
   display: block;
   border: none;
@@ -130,7 +130,7 @@ hr {
   height: 1px;
 }
 
-/* line 57, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 57, ../sass/import/_reset.scss */
 input, select {
   vertical-align: middle;
   padding: 0;
@@ -138,7 +138,7 @@ input, select {
   line-height: 1;
 }
 
-/* line 62, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 62, ../sass/import/_reset.scss */
 :focus {
   outline: auto 1px -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -147,26 +147,29 @@ input, select {
   -moz-outline-offset: 0;
 }
 
-/* line 68, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 68, ../sass/import/_reset.scss */
 ::-moz-selection {
   background: #a9a465;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 70, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
+/* line 70, ../sass/import/_reset.scss */
 ::selection {
   background: #a9a465;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 73, /Users/Steve/Documents/Sites/framework/assets/sass/import/_reset.scss */
-label, [type="text"], [type="email"], select {
-  display: block;
+/* line 73, ../sass/import/_reset.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 12, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 12, ../sass/import/_helpers.scss */
 .transition, body, img, a, [type="search"] {
   -moz-transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
@@ -174,8 +177,8 @@ label, [type="text"], [type="email"], select {
   transition: all 0.4s linear;
 }
 
-/* line 14, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
-.rounded, .form-text, input, textarea, pre {
+/* line 14, ../sass/import/_helpers.scss */
+.rounded, .form-text, textarea, pre {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -184,23 +187,23 @@ label, [type="text"], [type="email"], select {
   border-radius: 5px;
 }
 
-/* line 17, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 17, ../sass/import/_helpers.scss */
 .left {
   float: left;
 }
 
-/* line 19, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 19, ../sass/import/_helpers.scss */
 .right {
   float: right;
 }
 
-/* line 21, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 21, ../sass/import/_helpers.scss */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 23, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 23, ../sass/import/_helpers.scss */
 .screenreaders {
   border: 0;
   clip: rect(0 0 0 0);
@@ -212,44 +215,44 @@ label, [type="text"], [type="email"], select {
   width: 1px;
 }
 
-/* line 25, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 25, ../sass/import/_helpers.scss */
 .centre {
   margin: auto;
 }
 
-/* line 28, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 28, ../sass/import/_helpers.scss */
 .no_outline, .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus, .disabled.alt:hover, .disabled.danger:hover, .disabled.warning:hover, .disabled.success:hover, .disabled.info:hover, .disabled[type="submit"]:hover, .disabled.button:hover, button.disabled:hover, .disabled.alt:focus, .disabled.danger:focus, .disabled.warning:focus, .disabled.success:focus, .disabled.info:focus, .disabled[type="submit"]:focus, .disabled.button:focus, button.disabled:focus, .disabled.alt:active, .disabled.danger:active, .disabled.warning:active, .disabled.success:active, .disabled.info:active, .disabled[type="submit"]:active, .disabled.button:active, button.disabled:active, .subtle:hover, .subtle:focus, .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
   outline: none;
 }
 
-/* line 32, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
-.input_reset, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle, .form-text, input, textarea {
+/* line 32, ../sass/import/_helpers.scss */
+.input_reset, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle, .notice, .n_subtle, .n_info, .form-text, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-/* line 37, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
-.padding, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle {
+/* line 37, ../sass/import/_helpers.scss */
+.padding, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle, .notice_base, .notice, .n_subtle, .n_info {
   padding: 6px 12px;
 }
 
-/* line 39, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
+/* line 39, ../sass/import/_helpers.scss */
 .margin {
   margin: 12px 0;
 }
 
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
-.em_margin, h1, h2, h3, h4, h5, h6 {
+/* line 41, ../sass/import/_helpers.scss */
+.em_margin, label, h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 0.5em;
 }
 
-/* line 43, /Users/Steve/Documents/Sites/framework/assets/sass/import/_helpers.scss */
-.no_mp, [role="navigation"] ul {
+/* line 43, ../sass/import/_helpers.scss */
+.no_mp, [role="main"], [role="navigation"] ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 5, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 5, ../sass/import/_buttons.scss */
 .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle {
   font: 900 12px/1 ff-meta-web-pro, helvetica, sans-serif;
   border: 1px solid;
@@ -271,7 +274,7 @@ label, [type="text"], [type="email"], select {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* line 66, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 66, ../sass/import/_buttons.scss */
 .alt, .danger, .warning, .success, .info, [type="submit"], .button, button {
   margin: 0 0 10px;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
@@ -285,7 +288,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   border-color: #d4d4d4;
-  color: #222222;
+  color: #555555;
   text-shadow: 0 1px 1px white;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -294,7 +297,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 30px;
   border-radius: 30px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus {
   color: #222222;
   border-color: #c8c8c8;
@@ -309,7 +312,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .alt:active, .danger:active, .warning:active, .success:active, .info:active, [type="submit"]:active, .button:active, button:active {
   border-color: #aeaeae;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #d4d4d4), color-stop(100%, #ebebeb));
@@ -323,7 +326,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .disabled.alt, .disabled.danger, .disabled.warning, .disabled.success, .disabled.info, .disabled[type="submit"], .disabled.button, button.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(#eeeeee, #eeeeee);
@@ -341,7 +344,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .disabled.alt:hover, .disabled.danger:hover, .disabled.warning:hover, .disabled.success:hover, .disabled.info:hover, .disabled[type="submit"]:hover, .disabled.button:hover, button.disabled:hover, .disabled.alt:focus, .disabled.danger:focus, .disabled.warning:focus, .disabled.success:focus, .disabled.info:focus, .disabled[type="submit"]:focus, .disabled.button:focus, button.disabled:focus, .disabled.alt:active, .disabled.danger:active, .disabled.warning:active, .disabled.success:active, .disabled.info:active, .disabled[type="submit"]:active, .disabled.button:active, button.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(#eeeeee, #eeeeee);
@@ -360,7 +363,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 71, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 71, ../sass/import/_buttons.scss */
 .subtle {
   background: none;
   background: rgba(0, 0, 0, 0.01);
@@ -379,7 +382,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   color: white;
   border-color: #b30000;
@@ -394,7 +397,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .subtle:active {
   border-color: maroon;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #cc0000), color-stop(100%, #fa0000));
@@ -408,7 +411,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .subtle.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e61919), color-stop(100%, #e61919));
   background: -webkit-linear-gradient(#e61919, #e61919);
@@ -426,7 +429,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e61919), color-stop(100%, #e61919));
   background: -webkit-linear-gradient(#e61919, #e61919);
@@ -445,7 +448,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 75, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 75, ../sass/import/_buttons.scss */
 .alt {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #237086));
   background: -webkit-linear-gradient(top, #2d92af, #237086);
@@ -467,7 +470,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .alt:hover, .alt:focus {
   color: white;
   border-color: #133e49;
@@ -482,7 +485,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .alt:active {
   border-color: #091c21;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #184f5e), color-stop(100%, #226d82));
@@ -496,7 +499,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .alt.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
   background: -webkit-linear-gradient(#346775, #346775);
@@ -514,7 +517,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .alt.disabled:hover, .alt.disabled:focus, .alt.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
   background: -webkit-linear-gradient(#346775, #346775);
@@ -533,7 +536,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 78, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 78, ../sass/import/_buttons.scss */
 .danger {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #da6e6f), color-stop(100%, #cf4647));
   background: -webkit-linear-gradient(top, #da6e6f, #cf4647);
@@ -555,7 +558,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .danger:hover, .danger:focus {
   color: white;
   border-color: #9f292a;
@@ -570,7 +573,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .danger:active {
   border-color: #771f1f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b32f30), color-stop(100%, #ce4243));
@@ -584,7 +587,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .danger.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
   background: -webkit-linear-gradient(#b85d5e, #b85d5e);
@@ -602,7 +605,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .danger.disabled:hover, .danger.disabled:focus, .danger.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
   background: -webkit-linear-gradient(#b85d5e, #b85d5e);
@@ -621,7 +624,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 81, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 81, ../sass/import/_buttons.scss */
 .warning {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffb350), color-stop(100%, #ff9d1d));
   background: -webkit-linear-gradient(top, #ffb350, #ff9d1d);
@@ -643,7 +646,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .warning:hover, .warning:focus {
   color: white;
   border-color: #d07500;
@@ -658,7 +661,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .warning:active {
   border-color: #9d5900;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e98400), color-stop(100%, #ff9b18));
@@ -672,7 +675,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .warning.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e89a34), color-stop(100%, #e89a34));
   background: -webkit-linear-gradient(#e89a34, #e89a34);
@@ -690,7 +693,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .warning.disabled:hover, .warning.disabled:focus, .warning.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e89a34), color-stop(100%, #e89a34));
   background: -webkit-linear-gradient(#e89a34, #e89a34);
@@ -709,7 +712,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 84, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 84, ../sass/import/_buttons.scss */
 .success {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bbc248), color-stop(100%, #9ba236));
   background: -webkit-linear-gradient(top, #bbc248, #9ba236);
@@ -731,7 +734,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .success:hover, .success:focus {
   color: white;
   border-color: #646823;
@@ -746,7 +749,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .success:active {
   border-color: #3f4216;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
@@ -760,7 +763,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .success.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
   background: -webkit-linear-gradient(#888c4b, #888c4b);
@@ -778,7 +781,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .success.disabled:hover, .success.disabled:focus, .success.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
   background: -webkit-linear-gradient(#888c4b, #888c4b);
@@ -797,7 +800,7 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 87, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 87, ../sass/import/_buttons.scss */
 .info, [type="submit"] {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
   background: -webkit-linear-gradient(top, #cd537f, #b83564);
@@ -819,7 +822,7 @@ label, [type="text"], [type="email"], select {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .info:hover, [type="submit"]:hover, .info:focus, [type="submit"]:focus {
   color: white;
   border-color: #7d2444;
@@ -834,7 +837,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .info:active, [type="submit"]:active {
   border-color: #55182e;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #902a4e), color-stop(100%, #b43462));
@@ -848,7 +851,7 @@ label, [type="text"], [type="email"], select {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .info.disabled, .disabled[type="submit"] {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
   background: -webkit-linear-gradient(#a04d6b, #a04d6b);
@@ -866,7 +869,7 @@ label, [type="text"], [type="email"], select {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .info.disabled:hover, .disabled[type="submit"]:hover, .info.disabled:focus, .disabled[type="submit"]:focus, .info.disabled:active, .disabled[type="submit"]:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
   background: -webkit-linear-gradient(#a04d6b, #a04d6b);
@@ -885,65 +888,175 @@ label, [type="text"], [type="email"], select {
   cursor: arrow;
 }
 
-/* line 5, /Users/Steve/Documents/Sites/framework/assets/sass/import/_forms.scss */
-.form-text, input, textarea {
+/* line 5, ../sass/import/_notices.scss */
+.notice_base, .notice, .n_subtle, .n_info {
+  font: 900 12px/1 ff-meta-web-pro, helvetica, sans-serif;
+  border: 1px solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  display: block;
+  width: 100%;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* line 42, ../sass/import/_notices.scss */
+.n_subtle {
+  background: none;
+  background: rgba(0, 0, 0, 0.01);
+  color: #222222;
+  border: none;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 45, ../sass/import/_notices.scss */
+.n_info {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
+  background: -webkit-linear-gradient(top, #cd537f, #b83564);
+  background: -moz-linear-gradient(top, #cd537f, #b83564);
+  background: -o-linear-gradient(top, #cd537f, #b83564);
+  background: -ms-linear-gradient(top, #cd537f, #b83564);
+  background: linear-gradient(top, #cd537f, #b83564);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-color: #7e3c54;
+  color: white;
+  text-shadow: 0 1px 1px #902a4e;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 5, ../sass/import/_forms.scss */
+.form-text, textarea {
+  width: 100%;
   display: block;
   padding: 10px;
   border: none;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #c8c8c8;
+  background: #fbfbfb;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* line 16, ../sass/import/_forms.scss */
+label, [type="text"], [type="email"], select {
+  display: block;
+}
+
+/* line 21, ../sass/import/_forms.scss */
+[id="name"] {
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -khtml-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+/* line 23, ../sass/import/_forms.scss */
+label {
+  font: 900 14px/1 ff-meta-web-pro, helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* line 28, ../sass/import/_forms.scss */
+.form-help {
+  font: 400 12px/1.5 ff-meta-web-pro, helvetica, sans-serif;
+  background: none;
+  background: rgba(0, 0, 0, 0.01);
+  color: #222222;
+  border: none;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -khtml-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #c8c8c8;
+  border-top: none;
+  padding: 0 6px;
+  margin: 0 0 12px 0;
 }
 
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
 /* line 6, ../sass/master.scss */
-html {
-  overflow-y: scroll;
-}
-
-/* line 7, ../sass/master.scss */
 html, body {
   font: 16px ff-meta-serif-web-pro, georgia, serif;
   color: #222222;
   background: #eee !important;
 }
 
-/* line 14, ../sass/master.scss */
+/* line 13, ../sass/master.scss */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 4%;
 }
 
-/* line 19, ../sass/master.scss */
+/* line 18, ../sass/master.scss */
 img {
   max-width: 100%;
 }
 
-/* line 23, ../sass/master.scss */
+/* line 22, ../sass/master.scss */
 [role="banner"] img:hover, [role="banner"] img:focus {
   opacity: .75;
 }
 
 /* header ---------------------- */
-/* line 29, ../sass/master.scss */
+/* line 28, ../sass/master.scss */
 [role="banner"] {
-  padding: 0;
   line-height: 1;
 }
 
 /* section ---------------------- */
-/* line 34, ../sass/master.scss */
-section {
-  margin: 0 0 20px;
+/* line 32, ../sass/master.scss */
+[role="region"] {
+  margin: 0 0 24px;
+  width: 100%;
 }
-/* line 36, ../sass/master.scss */
-section:last-child {
-  margin: 0;
-}
-
-/* line 40, ../sass/master.scss */
-section[role="main"] {
+/* line 35, ../sass/master.scss */
+[role="region"]:last-child {
   margin: 0;
 }
 
@@ -954,7 +1067,6 @@ section[role="main"] {
 }
 /* line 51, ../sass/master.scss */
 [role="navigation"] a {
-  display: inline-block;
   -webkit-tap-highlight-color: #222222;
 }
 
@@ -963,7 +1075,7 @@ section[role="main"] {
 /* aside ---------------------- */
 /* footer ---------------------- */
 /* line 68, ../sass/master.scss */
-[role="main"] + [role="contentinfo"] {
+[role="contentinfo"] {
   font-size: 12px;
   margin: 5% auto auto;
 }
@@ -971,70 +1083,64 @@ section[role="main"] {
 /* 
 	Typography & links
 ---------------------------------------------------------------------- */
-/* line 75, ../sass/master.scss */
+/* line 74, ../sass/master.scss */
 a {
   text-decoration: none;
   color: #008d67;
 }
-/* line 79, ../sass/master.scss */
+/* line 78, ../sass/master.scss */
 a:hover, a:focus, a .hover {
   color: #222222;
 }
 
-/* line 1, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 1, ../sass/_styles/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font: 800 48px/1em ff-meta-web-pro, helvetica, sans-serif;
 }
 
-/* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 4, ../sass/_styles/_typography.scss */
 h2 {
   font-size: 36px;
 }
 
-/* line 6, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 6, ../sass/_styles/_typography.scss */
 h3 {
   font-size: 28px;
 }
 
-/* line 8, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 8, ../sass/_styles/_typography.scss */
 h4 {
   font-size: 22px;
 }
 
-/* line 10, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 10, ../sass/_styles/_typography.scss */
 h5 {
   font-size: 18px;
 }
 
-/* line 12, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 12, ../sass/_styles/_typography.scss */
 h6 {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 17, /Users/Steve/Documents/Sites/framework/assets/sass/_styles/_typography.scss */
+/* line 17, ../sass/_styles/_typography.scss */
 p {
   font: 16px/1.5em ff-meta-serif-web-pro, georgia, serif;
   margin: 1em 0;
 }
 
-/* line 85, ../sass/master.scss */
+/* line 84, ../sass/master.scss */
 p {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -o-hyphens: auto;
   hyphens: auto;
-  margin: 0 0 20px;
-}
-
-/* line 86, ../sass/master.scss */
-p:last-child {
-  margin: 0;
 }
 
 /* pre/code ---------------------- */
-/* line 89, ../sass/master.scss */
+/* line 88, ../sass/master.scss */
 pre {
   padding: 5px;
   margin: 0 0 10px 0;
@@ -1047,10 +1153,6 @@ pre {
   -webkit-transition: border 0.4s linear;
   -o-transition: border 0.4s linear;
   transition: border 0.4s linear;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -1067,14 +1169,14 @@ pre {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
-/* line 97, ../sass/master.scss */
+/* line 95, ../sass/master.scss */
 pre code {
   display: block;
   padding: 5px;
 }
 
 /* blockquote ---------------------- */
-/* line 104, ../sass/master.scss */
+/* line 102, ../sass/master.scss */
 blockquote:before {
   content: '“';
 }
@@ -1082,30 +1184,30 @@ blockquote:before {
 /* 
 	Lists
 ---------------------------------------------------------------------- */
-/* line 114, ../sass/master.scss */
+/* line 112, ../sass/master.scss */
 [role="main"] + [role="contentinfo"] ul li {
   display: inline-block;
   padding: 0 5px;
 }
 
-/* line 119, ../sass/master.scss */
+/* line 117, ../sass/master.scss */
 dt {
   font: 700 14px/1 ff-meta-web-pro, helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 121, ../sass/master.scss */
+/* line 119, ../sass/master.scss */
 dd:last-child {
   margin: 0;
 }
 
-/* line 125, ../sass/master.scss */
+/* line 123, ../sass/master.scss */
 .items {
   list-style: none;
   margin: 20px 0;
 }
-/* line 128, ../sass/master.scss */
+/* line 126, ../sass/master.scss */
 .items li {
   display: inline-block;
 }
@@ -1113,7 +1215,7 @@ dd:last-child {
 /*
 	Buttons
 -----------------------------------------------------------------------*/
-/* line 5, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 5, ../sass/import/_buttons.scss */
 .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, .subtle {
   font: 900 12px/1 ff-meta-web-pro, helvetica, sans-serif;
   border: 1px solid;
@@ -1135,7 +1237,7 @@ dd:last-child {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* line 66, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 66, ../sass/import/_buttons.scss */
 .alt, .danger, .warning, .success, .info, [type="submit"], .button, button {
   margin: 0 0 10px;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
@@ -1149,7 +1251,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   border-color: #d4d4d4;
-  color: #222222;
+  color: #555555;
   text-shadow: 0 1px 1px white;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -1158,7 +1260,7 @@ dd:last-child {
   -khtml-border-radius: 30px;
   border-radius: 30px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus {
   color: #222222;
   border-color: #c8c8c8;
@@ -1173,7 +1275,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .alt:active, .danger:active, .warning:active, .success:active, .info:active, [type="submit"]:active, .button:active, button:active {
   border-color: #aeaeae;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #d4d4d4), color-stop(100%, #ebebeb));
@@ -1187,7 +1289,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .disabled.alt, .disabled.danger, .disabled.warning, .disabled.success, .disabled.info, .disabled[type="submit"], .disabled.button, button.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(#eeeeee, #eeeeee);
@@ -1205,7 +1307,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .disabled.alt:hover, .disabled.danger:hover, .disabled.warning:hover, .disabled.success:hover, .disabled.info:hover, .disabled[type="submit"]:hover, .disabled.button:hover, button.disabled:hover, .disabled.alt:focus, .disabled.danger:focus, .disabled.warning:focus, .disabled.success:focus, .disabled.info:focus, .disabled[type="submit"]:focus, .disabled.button:focus, button.disabled:focus, .disabled.alt:active, .disabled.danger:active, .disabled.warning:active, .disabled.success:active, .disabled.info:active, .disabled[type="submit"]:active, .disabled.button:active, button.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(#eeeeee, #eeeeee);
@@ -1224,7 +1326,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 71, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 71, ../sass/import/_buttons.scss */
 .subtle {
   background: none;
   background: rgba(0, 0, 0, 0.01);
@@ -1243,7 +1345,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   color: white;
   border-color: #b30000;
@@ -1258,7 +1360,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .subtle:active {
   border-color: maroon;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #cc0000), color-stop(100%, #fa0000));
@@ -1272,7 +1374,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .subtle.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e61919), color-stop(100%, #e61919));
   background: -webkit-linear-gradient(#e61919, #e61919);
@@ -1290,7 +1392,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e61919), color-stop(100%, #e61919));
   background: -webkit-linear-gradient(#e61919, #e61919);
@@ -1309,7 +1411,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 75, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 75, ../sass/import/_buttons.scss */
 .alt {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #237086));
   background: -webkit-linear-gradient(top, #2d92af, #237086);
@@ -1331,7 +1433,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .alt:hover, .alt:focus {
   color: white;
   border-color: #133e49;
@@ -1346,7 +1448,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .alt:active {
   border-color: #091c21;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #184f5e), color-stop(100%, #226d82));
@@ -1360,7 +1462,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .alt.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
   background: -webkit-linear-gradient(#346775, #346775);
@@ -1378,7 +1480,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .alt.disabled:hover, .alt.disabled:focus, .alt.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
   background: -webkit-linear-gradient(#346775, #346775);
@@ -1397,7 +1499,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 78, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 78, ../sass/import/_buttons.scss */
 .danger {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #da6e6f), color-stop(100%, #cf4647));
   background: -webkit-linear-gradient(top, #da6e6f, #cf4647);
@@ -1419,7 +1521,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .danger:hover, .danger:focus {
   color: white;
   border-color: #9f292a;
@@ -1434,7 +1536,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .danger:active {
   border-color: #771f1f;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b32f30), color-stop(100%, #ce4243));
@@ -1448,7 +1550,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .danger.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
   background: -webkit-linear-gradient(#b85d5e, #b85d5e);
@@ -1466,7 +1568,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .danger.disabled:hover, .danger.disabled:focus, .danger.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
   background: -webkit-linear-gradient(#b85d5e, #b85d5e);
@@ -1485,7 +1587,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 81, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 81, ../sass/import/_buttons.scss */
 .warning {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffb350), color-stop(100%, #ff9d1d));
   background: -webkit-linear-gradient(top, #ffb350, #ff9d1d);
@@ -1507,7 +1609,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .warning:hover, .warning:focus {
   color: white;
   border-color: #d07500;
@@ -1522,7 +1624,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .warning:active {
   border-color: #9d5900;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e98400), color-stop(100%, #ff9b18));
@@ -1536,7 +1638,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .warning.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e89a34), color-stop(100%, #e89a34));
   background: -webkit-linear-gradient(#e89a34, #e89a34);
@@ -1554,7 +1656,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .warning.disabled:hover, .warning.disabled:focus, .warning.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e89a34), color-stop(100%, #e89a34));
   background: -webkit-linear-gradient(#e89a34, #e89a34);
@@ -1573,7 +1675,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 84, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 84, ../sass/import/_buttons.scss */
 .success {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bbc248), color-stop(100%, #9ba236));
   background: -webkit-linear-gradient(top, #bbc248, #9ba236);
@@ -1595,7 +1697,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .success:hover, .success:focus {
   color: white;
   border-color: #646823;
@@ -1610,7 +1712,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .success:active {
   border-color: #3f4216;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
@@ -1624,7 +1726,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .success.disabled {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
   background: -webkit-linear-gradient(#888c4b, #888c4b);
@@ -1642,7 +1744,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .success.disabled:hover, .success.disabled:focus, .success.disabled:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
   background: -webkit-linear-gradient(#888c4b, #888c4b);
@@ -1661,7 +1763,7 @@ dd:last-child {
   cursor: arrow;
 }
 
-/* line 87, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 87, ../sass/import/_buttons.scss */
 .info, [type="submit"] {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
   background: -webkit-linear-gradient(top, #cd537f, #b83564);
@@ -1683,7 +1785,7 @@ dd:last-child {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 35, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 35, ../sass/import/_buttons.scss */
 .info:hover, [type="submit"]:hover, .info:focus, [type="submit"]:focus {
   color: white;
   border-color: #7d2444;
@@ -1698,7 +1800,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 41, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 41, ../sass/import/_buttons.scss */
 .info:active, [type="submit"]:active {
   border-color: #55182e;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #902a4e), color-stop(100%, #b43462));
@@ -1712,7 +1814,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 46, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .info.disabled, .disabled[type="submit"] {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
   background: -webkit-linear-gradient(#a04d6b, #a04d6b);
@@ -1730,7 +1832,7 @@ dd:last-child {
   text-shadow: none;
   cursor: arrow;
 }
-/* line 54, /Users/Steve/Documents/Sites/framework/assets/sass/import/_buttons.scss */
+/* line 54, ../sass/import/_buttons.scss */
 .info.disabled:hover, .disabled[type="submit"]:hover, .info.disabled:focus, .disabled[type="submit"]:focus, .info.disabled:active, .disabled[type="submit"]:active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
   background: -webkit-linear-gradient(#a04d6b, #a04d6b);
@@ -1755,12 +1857,12 @@ dd:last-child {
 /* 
 	Misc.
 ---------------------------------------------------------------------- */
-/* line 145, ../sass/master.scss */
+/* line 143, ../sass/master.scss */
 .hiddenFields {
   display: none;
 }
 
-/* line 146, ../sass/master.scss */
+/* line 144, ../sass/master.scss */
 iframe {
   width: 100%;
 }
@@ -1769,7 +1871,7 @@ iframe {
 /*
 	Form
 -----------------------------------------------------------------------*/
-/* line 155, ../sass/master.scss */
+/* line 153, ../sass/master.scss */
 [type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1787,7 +1889,7 @@ iframe {
   position: relative;
   left: 4px;
 }
-/* line 164, ../sass/master.scss */
+/* line 162, ../sass/master.scss */
 [type="search"]:hover, [type="search"]:focus {
   -moz-box-shadow: inset 0 0 5px rgba(34, 34, 34, 0.5);
   -webkit-box-shadow: inset 0 0 5px rgba(34, 34, 34, 0.5);
@@ -1796,13 +1898,13 @@ iframe {
   outline: 0;
 }
 
-/* line 174, ../sass/master.scss */
+/* line 172, ../sass/master.scss */
 input::-webkit-input-placeholder {
   color: #A7ADAF;
   font: italic 12px ff-meta-web-pro, helvetica, sans-serif;
 }
 
-/* line 175, ../sass/master.scss */
+/* line 173, ../sass/master.scss */
 [for="keywords"] {
   position: absolute;
   top: -9999px;
@@ -1810,7 +1912,7 @@ input::-webkit-input-placeholder {
 }
 
 /* contact form ---------------------- */
-/* line 178, ../sass/master.scss */
+/* line 176, ../sass/master.scss */
 .contact section input, .contact textarea, .contact select {
   display: block;
 }
@@ -1819,31 +1921,31 @@ input::-webkit-input-placeholder {
 	Media queries
 -----------------------------------------------------------------------*/
 @media screen and (min-width: 480px), screen and (min-device-width: 480px) {
-  /* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_screens/iphone.scss */
+  /* line 4, ../sass/_screens/iphone.scss */
   html, body {
     background: #ccc;
   }
 }
 @media screen and (min-width: 600px), screen and (min-device-width: 600px) {
-  /* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_screens/tablet.scss */
+  /* line 4, ../sass/_screens/tablet.scss */
   html, body {
     background: #ddd;
   }
 }
 @media screen and (min-width: 768px), screen and (min-device-width: 768px) {
-  /* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_screens/ipad.scss */
+  /* line 4, ../sass/_screens/ipad.scss */
   html, body {
     background: #eee;
   }
 }
 @media screen and (min-width: 960px), screen and (min-device-width: 960px) {
-  /* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_screens/desktop.scss */
+  /* line 4, ../sass/_screens/desktop.scss */
   html, body {
     background: #fff;
   }
 }
 @media screen and (min-width: 1200px), screen and (min-device-width: 1200px) {
-  /* line 4, /Users/Steve/Documents/Sites/framework/assets/sass/_screens/max.scss */
+  /* line 4, ../sass/_screens/max.scss */
   html, body {
     background: #eee;
   }

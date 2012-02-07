@@ -70,6 +70,5 @@ input, select {
 ::selection {
 	background: #a9a465; color: #fff; text-shadow: none; }
 
-label, [type="text"], [type="email"], select {
-	display: block; }
-[type="text"] {}
+* {
+	@include box-sizing(border-box); }
