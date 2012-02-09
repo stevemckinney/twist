@@ -1,0 +1,62 @@
+// 	----------------------------------------- 
+//	Notices — A base, mixin and options
+// 	-----------------------------------------
+
+.notice_base {
+	font: 900 12px/1 $sans;
+	border: 1px solid;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	display: block;
+	width: 100%;
+	@extend .padding;
+	@include transition(none);
+	@include inline-block;
+	@include background-clip(padding-box);
+	@include box-shadow(inset 0 1px 0 fade-out($white, 0.75), 0 1px 3px fade-out($black, 0.8)); }
+
+@mixin notice($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $text_align: left, $size: "normal") {
+	
+	@if $subtle == false {
+		@include background(linear-gradient(top, lighten($main_colour, 10%), $main_colour));
+		@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
+		border-color: darken(desaturate($main_colour, 20%), 10%);
+		color: lighten($text_colour, 20%);
+		text-shadow: 0 1px 1px $text_shadow;
+	}
+	@else {
+		background: none;
+		background: fade-out($black, 0.99);
+		color: $default_text;
+		border: none;
+		text-shadow: none;
+		border: 1px solid fade-out($black, 0.95);
+		@include box-shadow(none);
+	}
+	@include border-radius($radius);
+	text-align: $text_align;
+	@if $size == "big" {
+		padding: $base_px $base_px*2;
+	}
+	@elseif $size == "small" {
+		padding: $base_px/3 $base_px/2;
+	}
+}
+
+.notice {
+	@extend .notice_base;
+	@extend .input_reset;
+	@include notice($success, #fff, darken($success, 20%), $text_align: center, $size: normal); }
+.n_subtle {
+	@extend .notice;
+	@include notice($subtle: true); }
+.n_info {
+	@extend .notice;
+	@include notice($info, #fff, darken($info, 20%), $text_align: center); }
+	
+.notice:nth-of-type(2) {
+	@include notice($info, #fff, darken($info, 20%), $text_align: center, $size: small) }
+.notice:nth-of-type(3) {
+	@include notice($danger, #fff, darken($danger, 20%), $text_align: center) }
+.notice:nth-of-type(4) {
+	@include notice($warning, #fff, darken($warning, 20%), $text_align: center, $size: big) }

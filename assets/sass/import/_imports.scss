@@ -4,11 +4,13 @@
 
 @import 
 	"compass/css3", 
-	"stitch/patterns", 
+	"stitch/patterns/images", "stitch/patterns/legacy", 
 	"susy", 
-	"_base.scss",
-	"_reset.scss",
-	"_helpers.scss",
-	"_buttons.scss",
-	"_notices.scss",
-	"_forms.scss";
+	"base",
+	"reset",
+	"helpers",
+	"buttons",
+	"notices",
+	"forms",
+	"modals"
+	;

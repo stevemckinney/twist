@@ -33,12 +33,27 @@
 	-webkit-appearance: none;
 	-moz-appearance: none; }	
 
+.no_list_style {
+	list-style: none; }
+
 // margins and paddings
-.padding {
-	padding: $base_px/2 $base_px; }
 .margin {
 	margin: $base_px 0; }
 .em_margin {
 	margin: 1em 0 0.5em; }
+.em_margin_reverse {
+	margin: 0.5em 0 1em; }
+
+.padding {
+	padding: $base_px/2 $base_px; }
+.em_padding {
+	padding: 1em 0 0.5em; }
+	
 .no_mp {
 	margin: 0; padding: 0; }
+	
+// colour use
+.primary {
+	color: $primary; }
+.secondary {
+	color: $secondary; }

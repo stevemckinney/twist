@@ -18,7 +18,7 @@ $ninety					:	90%;
 $whole					:	100%;
 
 //	general variable colours
-$primary: #222;
+$primary: #444;
 $secondary: darken(#c0ffee, 60%);
 
 $primary_l1: lighten($primary, 5%);
@@ -43,12 +43,13 @@ $white: hsla(0,100%,100%,1);
 
 // main element styling colours
 $default: #eee;
-$default_text: #222;
+$default_text: #444;
 $default_text_shadow: #fff;
 
 $border: darken($default, 15%);
 
 $alt: desaturate(#127A97, 20%);
+$focus: desaturate(#127A97, 20%);
 $danger: #CF4647;
 $warning: darken(#FFB350, 10%);
 $success: saturate(darken(#A3A948, 5%), 10%);
@@ -61,6 +62,7 @@ $serif: ff-meta-serif-web-pro, georgia, serif;
 // font sizes
 $base_font_size: 12px;
 $normal_size: 16px;
+$base_line_height: 1.5;
 
 // px
 $base_px: 12px;

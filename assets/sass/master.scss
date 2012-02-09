@@ -1,14 +1,15 @@
-@import "import/_imports.scss";
+@import "import/imports";
 
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
 html, body {
-	font: $normal_size $serif; 
+	font: #{$normal_size}/#{$base_line_height} $serif; 
 	color: $primary;
 	background: #eee !important; }
 body, img {
-	@extend .transition; }
+	@extend .transition;
+	padding: 0 20%; }
 
 .container {
 	max-width: 1200px;
@@ -65,7 +66,7 @@ div {}
 [role="complementary"] {
 }
 /* footer ---------------------- */
-[role="contentinfo"] {font-size: $base_font_size; margin: 5% auto auto;}
+[role="contentinfo"] {font-size: $base_font_size; margin: 5% auto auto; }
 
 
 /* 
@@ -81,16 +82,11 @@ a {
 }
 @import "_styles/_typography.scss";
 
-p {
+p, li {
 	@include hyphens(auto); }
 
 /* pre/code ---------------------- */
 pre {
-	padding: 5px; margin: 0 0 10px 0; width: 100%; background: rgba(255,250,250,0.8); max-height: 200px; overflow-y: scroll; overflow-x: hidden; 
-	@include transition(border .4s linear);
-	@include background-clip($default-background-clip);
-	@extend .rounded;
-	@include box-shadow((0 1px 0 rgba(10,0,0,0.1), inset 0 1px 0 rgba(255,250,250,0.65), inset 0 4px 7px rgba(0,0,0,0.1)));
 	white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;
 	code {
 		display: block; padding: 5px;
@@ -99,20 +95,43 @@ pre {
 
 /* blockquote ---------------------- */
 blockquote {
+	padding: 0 0 0 56px;
+	position: relative;
+	@extend .n_subtle;
+	@extend .rounded;
+	p {position: relative; z-index: 1;}
 	&:before {
 		content:'“';
+		color: fade-out($primary, 0.8);
+		font: 900 180px/1 $serif;
+		text-shadow: 0 1px 0 #fff;
+		position: absolute;
+		top: -32px;
+		left: -20px;
+		z-index: 0;
 	}
 }
-
+/*
+section > p:first-letter { 
+		font-size: 80px;
+		font-weight: 400;
+		text-transform: capitalize;
+		float: left;
+		padding: 18px 0 0 0;
+		margin-left: -56px; }
+section > p:first-child {
+	margin-left: 48px;
+	display: block; }
+*/
 /* 
 	Lists
 ---------------------------------------------------------------------- */
 ul, li {}
-[role="main"] + [role="contentinfo"] ul {
+[role="contentinfo"] {
+	ul {
+		@extend .no_mp; }
 	li {
-		display: inline-block;
-		padding: 0 5px;
-	}
+		display: inline-block; }
 }
 dt {font: 700 14px/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
 dd {

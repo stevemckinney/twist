@@ -2,34 +2,77 @@
 //	Base form styles
 // 	-----------------------------------------
 
-.form-text, textarea {
+@mixin form_status($colour: $alt) {
+	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
+	border-color: fade-out($colour, 0.1);
+	&:focus {
+		@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.8));
+		border-color: fade-out($colour, 0.5); }
+}
+
+.form-text, textarea, select {
 	@extend .input_reset;
 	@extend .rounded;
+	@extend .primary;
+	@include transition(all .4s linear);
 	width: $whole;
-	display: block;
 	padding: 10px;
 	border: none;
+	font: 400 12px/1.5 $sans;
 	border: 1px solid $border;
 	background: lighten($default, 5%);
-	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3)); }
-	
-label, [type="text"], [type="email"], select {
+	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
+	&:hover {
+		background: $white; }
+	&:focus {
+		@include form_status;
+		outline: none;
+	}
+}
+select:before {
+	content: "\/";
 	display: block; }
-[type="text"] {}
-
-fieldset {}
-[id="name"] {
-	@include border-radius(5px 5px 0 0); }
+	
+label, [type="text"], [type="email"], select, .form-text, textarea {
+	display: block; }
 label {
-	font: 900 14px/1 $sans;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	@extend .em_margin; }
+	@extend .em_padding; }
 .form-help {
 	font: 400 12px/1.5 $sans;
 	@include notice($subtle: true, $radius: 0 0 5px 5px);
 	border: 1px solid $border;
 	border-top: none;
 	padding: 0 $base_px/2;
-	margin: 0 0 $base_px 0;
+	margin: 0 0 $base_px 0; }
+
+[id="name"] {
+	@include border-radius(5px 5px 0 0); }
+
+form ul {
+	@extend .no_mp;
+	@extend .no_list_style; }
+	
+.radio, .check {
+	label {
+		position: relative; }
+	li label { 
+		margin: $base_px/2 0; }
 }
+input[type="image"], input[type="checkbox"], input[type="radio"] {
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 3px 0;
+	float: left;
+	margin-left: -20px;
+	cursor: pointer; }
+	
+.check {
+	@extend .notice;
+	@include notice($warning, #fff, darken($warning, 20%));
+	font: 800 12px/1.5 $sans;
+	margin: $line 0; }
+.check label, li label {
+	padding: 0 0 0 20px; }
+	
+.error { @include form_status($danger); }
