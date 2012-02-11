@@ -87,6 +87,10 @@ p, li {
 
 /* pre/code ---------------------- */
 pre {
+	@extend .n_subtle;
+	@extend .margin;
+	border: 1px solid #ccc;
+	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
 	white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;
 	code {
 		display: block; padding: 5px;
@@ -165,6 +169,17 @@ iframe {width: 100%;}
 /* figure ------------------------------ */
 figure {}
 figcaption {}
+/* table ---------------------- */
+table {
+	border: 1px solid #ddd;
+	border-collapse: separate; }
+td, th {
+	padding: 8px;
+	line-height: 18px;
+	text-align: left;
+	border-top: 1px solid #ddd; }
+tr:first-child th {
+	border-top: none; }
 
 /*
 	Form

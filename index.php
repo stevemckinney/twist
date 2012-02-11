@@ -148,17 +148,44 @@
 	<section>
 		<h1>General elements</h1>
 		
-		<div class="overlay">
-			<div class="modal" id="modal">
-				<h3>Modal window</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div class="button_group">
-					<a href="#modal" class="subtle">Remind me later</a>
-					<a href="#" class="subtle">Now</a>
-					<a href="#" class="subtle">Later</a>
+		
+		<article>
+		
+			<h2>Modal</h2>
+			
+			<div class="overlay">
+				<div class="modal">
+					<h3>Modal window</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div class="button_group">
+						<a href="#modal" class="subtle">Remind me later</a>
+						<a href="#" class="subtle">Now</a>
+						<a href="#" class="subtle">Later</a>
+					</div>
 				</div>
 			</div>
-		</div>	
+		
+		</article>
+		
+		<article>
+		
+			<h2>Dropdowns</h2>
+		
+		</article>
+		
+		<article>
+			
+			<h2>Breadcrumbs</h2>
+			
+			<nav class="breadcrumb">
+				<li><a href="#">This is a link</a></li>
+				<li><a href="#">Lorem link</a></li>
+				<li><a href="#">Dolor link two</a></li>
+				<li><a href="#">Here is a link</a></li>
+				<li><strong>Active Link</strong></li>
+			</nav>			
+					
+		</article>
 		
 	</section>
 	

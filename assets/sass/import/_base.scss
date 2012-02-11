@@ -67,10 +67,3 @@ $base_line_height: 1.5;
 // px
 $base_px: 12px;
 $line: $base_px*2;
-
-// mixins
-@mixin hyphens($value: "manual") {
-  @each $prefix in -webkit-, -moz-, -o-, "" {
-    #{$prefix}hyphens: $value;
-  }
-}

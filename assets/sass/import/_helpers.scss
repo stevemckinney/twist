@@ -57,3 +57,22 @@
 	color: $primary; }
 .secondary {
 	color: $secondary; }
+	
+// small mixins
+@mixin hyphens($value: "manual") {
+  @each $prefix in -webkit-, -moz-, -o-, "" {
+    #{$prefix}hyphens: $value;
+  }
+}
+
+@mixin wh($width, $height) {
+	
+	@if $width and $height {
+		width: #{$width};
+		height: #{$height};
+	}
+	@else {
+		width: #{$width};
+		height: #{$width};
+	}
+}

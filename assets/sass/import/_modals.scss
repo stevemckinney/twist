@@ -1,4 +1,18 @@
+// 	----------------------------------------- 
+//	Modals    
+// 	-----------------------------------------
+
+@mixin modal($background: "#fff", $padding: "12px", $width: "50%", $radius: "3px", $shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)") {
+	background: $background;
+	padding: $padding;
+	@include border-radius($radius);
+	@include box-shadow($shadow);
+	width: #{$width};
+	left: #{$width}/2;
+}
+
 .modal {
+	@include modal;
 	h1, h2, h3 {
 		font-size: 100%;
 		margin-top: 0;
@@ -7,16 +21,9 @@
 		@include border-radius(3px);
 		@extend .notice;
 		@include notice($warning, #fff, darken($warning, 20%), $text_align: center); }
-	background: #fff;
-	background: fade-out($white, 0.05);
-	padding: 12px;
-	@extend .rounded;
-	@include box-shadow(0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px #fff);
-	width: 50%;
-	left: 25%;
 }
 .overlay {
-	@include background(radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
+	@include background(radial-gradient(fade-out(hsl(30, 10%, 20%), 0.7) 20%, fade-out(hsl(30, 10%, 20%), 0.1)), radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
 	padding: 20px;
 	position: relative;
 	top:0; bottom: 0; left:0; right:0;

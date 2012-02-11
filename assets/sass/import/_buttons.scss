@@ -30,6 +30,8 @@
 		text-shadow: none;
 		border: 1px solid fade-out($black, 0.95);
 		@include box-shadow(none);
+		&:hover, &:focus {
+			text-shadow: 0 1px 1px $text_shadow; }
 	}
 	@if $size == "big" {
 		padding: $base_px $base_px*2;
@@ -82,7 +84,7 @@
 .subtle {
 	@extend .button_base;
 	@extend .input_reset;
-	@include button(red, white, black, 3px, true); }
+	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
 .alt {
 	@extend .button;
 	@include button($alt, #fff, darken($alt, 20%)); }
