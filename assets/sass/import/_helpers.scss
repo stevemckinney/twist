@@ -30,8 +30,7 @@
 
 // make form elements have no appearance
 .input_reset {
-	-webkit-appearance: none;
-	-moz-appearance: none; }	
+	@include appearance(none); }	
 
 .no_list_style {
 	list-style: none; }
@@ -40,14 +39,14 @@
 .margin {
 	margin: $base_px 0; }
 .em_margin {
-	margin: 1em 0 0.5em; }
+	margin: $line 0 $line/2; }
 .em_margin_reverse {
-	margin: 0.5em 0 1em; }
+	margin: $line/2 0 $line; }
 
 .padding {
 	padding: $base_px/2 $base_px; }
 .em_padding {
-	padding: 1em 0 0.5em; }
+	padding: $line 0 $line/2; }
 	
 .no_mp {
 	margin: 0; padding: 0; }
@@ -75,4 +74,12 @@
 		width: #{$width};
 		height: #{$width};
 	}
+}
+
+// user-select for some reason was not in my compass
+@mixin user-select($select) {
+  $select: unquote($select);
+  @include experimental(user-select, $select,
+    -moz, -webkit, not -o, not -ms, -khtml, official
+  );
 }

@@ -1,23 +1,40 @@
-@import "import/imports";
+@import "imports";
+
+$total-cols         : 24;
+$col-width          : 6em;
+$gutter-width       : 2em;
+$side-gutter-width  : $gutter-width;
+
+$experimental-support-for-khtml: false;
 
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
 html, body {
-	font: #{$normal_size}/#{$base_line_height} $serif; 
-	color: $primary;
-	background: #eee !important; }
-body, img {
+	font: #{$normal_size}/#{$base_line_height} $serif;
+	color: $primary; }
+body {
 	@extend .transition;
-	padding: 0 20%; }
+	@include container;
+	@include susy-grid-background; @include baseline-grid-background(12px, fade-out(#f00, 0.85));
+	
+	}
 
 .container {
-	max-width: 1200px;
+	@include full;
+	@include pad(2,2);
+	background: fade-out(#f00, 0.95);
+	/*
+max-width: 1200px;
 	margin: auto;
-	padding: $forty; }
+	padding: $forty;
+*/}
 
-img {
-	max-width: 100%; }
+[role="banner"] {
+	@include container;
+	@include pie-clearfix; }
+[role="navigation"] {
+	@include columns(3,3); }
 
 [role="banner"] img {
 	&:hover, &:focus {
@@ -26,8 +43,7 @@ img {
 }
 
 /* header ---------------------- */
-[role="banner"] { 
-	line-height: 1; }
+[role="banner"] {}
 
 /* section ---------------------- */
 [role="region"] {
@@ -47,7 +63,6 @@ img {
 	}
 	li {
 		@include inline-block;
-		font: 14px/1 $sans;
 	}
 	a {
 		@include inline-block;
@@ -66,7 +81,7 @@ div {}
 [role="complementary"] {
 }
 /* footer ---------------------- */
-[role="contentinfo"] {font-size: $base_font_size; margin: 5% auto auto; }
+[role="contentinfo"] {font-size: $base_font_size; padding: $line*3 auto auto; }
 
 
 /* 
@@ -80,7 +95,7 @@ a {
 		color: $primary;
 	}	
 }
-@import "_styles/_typography.scss";
+@import "styles/_typography.scss";
 
 p, li {
 	@include hyphens(auto); }
@@ -89,6 +104,7 @@ p, li {
 pre {
 	@extend .n_subtle;
 	@extend .margin;
+	font: 16px/#{$base_line_height} $monospace;
 	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
 	white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;
@@ -101,6 +117,7 @@ pre {
 blockquote {
 	padding: 0 0 0 56px;
 	position: relative;
+	font: #{$normal_size}/#{$base_line_height} $serif;
 	@extend .n_subtle;
 	@extend .rounded;
 	p {position: relative; z-index: 1;}
@@ -137,7 +154,7 @@ ul, li {}
 	li {
 		display: inline-block; }
 }
-dt {font: 700 14px/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
+dt {font: 700 12px/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
 dd {
 	&:last-child {
 		margin: 0;	
@@ -145,9 +162,10 @@ dd {
 }
 .items {
 	list-style: none;
-	margin: 20px 0;
+	margin: $line 0;
 	li {
-		display: inline-block; } }
+		@include inline-block; } }
+		
 /*
 	Buttons
 -----------------------------------------------------------------------*/
@@ -169,13 +187,14 @@ iframe {width: 100%;}
 /* figure ------------------------------ */
 figure {}
 figcaption {}
+
 /* table ---------------------- */
 table {
 	border: 1px solid #ddd;
 	border-collapse: separate; }
 td, th {
-	padding: 8px;
-	line-height: 18px;
+	padding: $line/4;
+	line-height: $base_line_height;
 	text-align: left;
 	border-top: 1px solid #ddd; }
 tr:first-child th {
@@ -185,18 +204,7 @@ tr:first-child th {
 	Form
 -----------------------------------------------------------------------*/
 [type="search"] {
-	-webkit-appearance: none; -moz-appearance: none; 
-	@include border-radius(5px 0 0 5px);
-	@extend .transition;
-	padding: 5px 10px;
-	font: $base_font_size/1 $sans; color: $primary; 
-	border: 1px solid #A7ADAF; border: 1px solid hsla(198,5%,67%,0.8);
-	position: relative;
-	left: 4px;
-	&:hover, &:focus {
-		@include box-shadow(inset 0 0 5px transparentize($primary, 0.5));
-		outline: 0;
-	}
+	@extend button;
 }
 
 [type="submit"] {
@@ -213,4 +221,4 @@ input::-webkit-input-placeholder {color: #A7ADAF; font: italic $base_font_size/1
 /*
 	Media queries
 -----------------------------------------------------------------------*/
-@import "import/_mixins/_responsive.scss", "_screens/iphone.scss", "_screens/tablet.scss", "_screens/ipad.scss", "_screens/desktop.scss", "_screens/max.scss";
+@import "import/_mixins/_responsive.scss", "screens/iphone.scss", "screens/tablet.scss", "screens/ipad.scss", "screens/desktop.scss", "screens/max.scss";

@@ -1,12 +1,10 @@
 // 	----------------------------------------- 
 //	Buttons — A base, mixin and options
 // 	-----------------------------------------
-
 .button_base {
 	font: 900 12px/1 $sans;
 	border: 1px solid;
-	-webkit-user-select: none;
-	-moz-user-select: none;
+	@include user-select(none);
 	@extend .padding;
 	@include transition(none);
 	@include inline-block;
@@ -77,7 +75,7 @@
 }
 
 .button {
-	margin: 0 0 10px;
+	margin: 0 0 $line;
 	@extend .button_base;
 	@extend .input_reset;
 	@include button($radius: 30px); }

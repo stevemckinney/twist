@@ -1,11 +1,12 @@
 <?php include('assets/inc/header.php'); ?>
 
 <section role="main">
-	<h1>HTML Ipsum Presents</h1>
-	       
-	<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+	<h1>Introduction</h1>
 	
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	<article role="article">
+		<p>This framework uses SASS, Compass and Susy. My intention has been to bring together the best parts of my most used parts of SASS. As well as create my own base for projects. Something I should have done ages ago. As the flexibility of SASS is endless, I won't have to remember class names or be overly repetitive anywhere.</p>
+		<p>I have created many mixins to cover most elements of a website that will be reused and that I feel aren't available elsewhere. Also as I've done it myself I know what parameters are needed and used. Easy to refer to files and import on a needed basis.</p>
+	</article>
 	
 	<h2>Header Level 2</h2>
 		       

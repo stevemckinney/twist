@@ -12,21 +12,23 @@
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<!-- In loving memory of Albert Phillips -->
-	<title>Title</title>
+	<title>Framework</title>
 	<meta name="description" content=".">
 	<meta name="keywords" content="">
 
 	<!-- Mobile -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="assets/css/master.css" media="screen">
+	<link href="assets/css/master.css" media="screen" rel="stylesheet">
 	
 	<!-- JavaScript -->
 	<script src="assets/js/modernizr.js"></script>
-	
+	<script src="http://use.typekit.com/yol4bnj.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
 	<!-- Other -->
 	<link rel="alternate" type="application/rss+xml" title="Blog | Portfolio of Steve McKinney" href="http://iamsteve.me/blog/feed">
 	<link rel="shortcut icon" href="http://iamsteve.me/favicon.ico">
@@ -48,7 +50,7 @@
 <div class="container">
 
 	<header role="banner">
-		<h1><a href="#">Site</a></h1>
+		<h1><a href="#">Framework</a></h1>
 		<nav role="navigation">
 			<ul>
 				<li><a href="#">Home</a></li>

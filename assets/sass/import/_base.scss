@@ -18,8 +18,8 @@ $ninety					:	90%;
 $whole					:	100%;
 
 //	general variable colours
-$primary: #444;
-$secondary: darken(#c0ffee, 60%);
+$primary: #6E5048;
+$secondary: #E799B1;
 
 $primary_l1: lighten($primary, 5%);
 $primary_l2: lighten($primary, 10%);
@@ -56,14 +56,15 @@ $success: saturate(darken(#A3A948, 5%), 10%);
 $info: #B83564;
 
 // font stacks
-$sans: ff-meta-web-pro, helvetica, sans-serif;
-$serif: ff-meta-serif-web-pro, georgia, serif;
+$sans: "ff-dagny-web-pro", helvetica, sans-serif;
+$serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
+$monospace: Menlo, Monaco, "Courier New", monospace;
 
 // font sizes
-$base_font_size: 12px;
-$normal_size: 16px;
-$base_line_height: 1.5;
+$base_font_size: 0.75em;
+$normal_size: 1em;
+$base_line_height: 1.5em;
 
 // px
-$base_px: 12px;
+$base_px: 0.75em;
 $line: $base_px*2;
