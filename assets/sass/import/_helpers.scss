@@ -1,5 +1,6 @@
 // 	----------------------------------------- 
-//	Your traditional helper classes
+//	Your traditional helper classes through
+//	mixins and extends
 // 	-----------------------------------------
 
 // Use any of these on any element, 
@@ -9,52 +10,72 @@
 // eg: @extend .transition;
 
 
+
+// Extends
+
 .transition {
 	@include transition(all .4s linear); }
 .rounded {
 	@include border-radius(5px); }
 
-.left {
+
+// Mixins
+
+@mixin left {
 	float: left; }
-.right {
+@mixin right {
 	float: right; }
-.hidden {
+@mixin hidden {
 	display: none; visibility: hidden; }
-.screenreaders { 
+@mixin screenreaders { 
 	border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-.centre {
+@mixin centre {
 	margin: auto; }
 	
-.no_outline {
+@mixin no_outline {
 	outline: none; }
 
 // make form elements have no appearance
-.input_reset {
+@mixin input_reset {
 	@include appearance(none); }	
 
-.no_list_style {
+@mixin no_list_style {
 	list-style: none; }
 
 // margins and paddings
-.margin {
+@mixin margin {
 	margin: $base_px 0; }
-.em_margin {
+@mixin em_margin {
 	margin: $line 0 $line/2; }
-.em_margin_reverse {
+@mixin em_margin_even {
+	margin: 0.75em 0; }
+@mixin em_margin_reverse {
 	margin: $line/2 0 $line; }
 
-.padding {
+@mixin padding {
 	padding: $base_px/2 $base_px; }
-.em_padding {
-	padding: $line 0 $line/2; }
+@mixin em_padding {
+	padding: $line 0 $line/4; }
+@mixin em_padding_even {
+	padding:  0.75em 0; }
 	
-.no_mp {
+@mixin plr {
+	padding: 0 $base_px; }
+@mixin ptb {
+	padding: $base_px 0; }
+	
+@mixin mlr {
+	margin: 0 $base_px; }
+@mixin mtb {
+	margin: $base_px 0; }
+
+@mixin no_mp {
 	margin: 0; padding: 0; }
 	
 // colour use
-.primary {
+@mixin primary {
 	color: $primary; }
-.secondary {
+@mixin secondary {
 	color: $secondary; }
 	
 // small mixins

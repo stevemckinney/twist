@@ -16,14 +16,13 @@ html, body {
 body {
 	@extend .transition;
 	@include container;
-	@include susy-grid-background; @include baseline-grid-background(12px, fade-out(#f00, 0.85));
-	
+	//@include susy-grid-background; @include baseline-grid-background(12px, fade-out(#f00, 0.85));
 	}
 
 .container {
 	@include full;
 	@include pad(2,2);
-	background: fade-out(#f00, 0.95);
+	background: fade-out(#ccc, 0.4);
 	/*
 max-width: 1200px;
 	margin: auto;
@@ -32,9 +31,17 @@ max-width: 1200px;
 
 [role="banner"] {
 	@include container;
-	@include pie-clearfix; }
+	@include pie-clearfix;
+	h1 {
+		@include columns (3,9); } 
+}
 [role="navigation"] {
-	@include columns(3,3); }
+	@include columns(6);
+	@include pad(6);
+	@include pie-clearfix;
+	ul {
+		@include pie-clearfix; }
+}
 
 [role="banner"] img {
 	&:hover, &:focus {
@@ -190,16 +197,16 @@ figcaption {}
 
 /* table ---------------------- */
 table {
-	border: 1px solid #ddd;
-	border-collapse: separate; }
+	border: 1px solid $primary;
+	border-collapse: separate;
+	background: #fff; }
 td, th {
 	padding: $line/4;
 	line-height: $base_line_height;
 	text-align: left;
-	border-top: 1px solid #ddd; }
-tr:first-child th {
-	border-top: none; }
-
+	border-top: 1px solid $primary;
+	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
+        
 /*
 	Form
 -----------------------------------------------------------------------*/
@@ -211,7 +218,6 @@ tr:first-child th {
 	@extend .info;
 }
 input[type="submit"], x:-moz-any-link, x:default {} 
-input::-webkit-input-placeholder {color: #A7ADAF; font: italic $base_font_size/1 $sans;}
 [for="keywords"] {position: absolute; top: -9999px; left: -9999px;}
 
 /* contact form ---------------------- */

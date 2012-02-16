@@ -11,9 +11,9 @@
 }
 
 .form-text, textarea, select {
-	@extend .input_reset;
+	@include input_reset;
 	@extend .rounded;
-	@extend .primary;
+	@include primary;
 	@include transition(all .4s linear);
 	width: $whole;
 	padding: 10px;
@@ -36,7 +36,7 @@ select:before {
 label, [type="text"], [type="email"], select, .form-text, textarea {
 	display: block; }
 label {
-	@extend .em_padding; }
+	@include em_padding; }
 .form-help {
 	font: 400 12px/1.5 $sans;
 	@include notice($subtle: true, $radius: 0 0 5px 5px);
@@ -49,8 +49,8 @@ label {
 	@include border-radius(5px 5px 0 0); }
 
 form ul {
-	@extend .no_mp;
-	@extend .no_list_style; }
+	@include no_mp;
+	@include no_list_style; }
 	
 .radio, .check {
 	label {
@@ -76,3 +76,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	padding: 0 0 0 20px; }
 	
 .error { @include form_status($danger); }
+
+::-webkit-input-placeholder {
+	color: lighten($primary, 30%);
+	font: 16px/1 $sans; }
+:-moz-placeholder {
+	color: lighten($primary, 30%);
+	font: 16px/1 $sans; }

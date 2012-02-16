@@ -2,14 +2,15 @@
 //	Modals    
 // 	-----------------------------------------
 
-@mixin modal($background: "#fff", $padding: "12px", $width: "50%", $radius: "3px", $shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)") {
-	background: $background;
+@mixin modal($bg: #fff, $padding: 12px, $width: "100%", $radius: 3px, $shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)") {
+	background: $bg;
 	padding: $padding;
 	@include border-radius($radius);
 	@include box-shadow($shadow);
 	width: #{$width};
 	left: #{$width}/2;
 }
+
 
 .modal {
 	@include modal;
@@ -24,15 +25,11 @@
 }
 .overlay {
 	@include background(radial-gradient(fade-out(hsl(30, 10%, 20%), 0.7) 20%, fade-out(hsl(30, 10%, 20%), 0.1)), radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
+	@extend .rounded;
 	padding: 20px;
 	position: relative;
 	top:0; bottom: 0; left:0; right:0;
 	.no-cssgradients {
 		background: #000;
 		background: fade-out($black, 0.6); }
-}
-
-:target {
-	top: -500px;
-	-webkit-transition: top .25s cubic-bezier(0.75,1,.1,0);
 }

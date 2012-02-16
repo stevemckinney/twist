@@ -2,14 +2,15 @@
 //	Notices — A base, mixin and options
 // 	-----------------------------------------
 
-.notice_base {
+@mixin notice_base {
 	font: 900 12px/1 $sans;
 	border: 1px solid;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	display: block;
 	width: 100%;
-	@extend .padding;
+	margin: 0 0 $base_px;
+	@include padding;
 	@include transition(none);
 	@include inline-block;
 	@include background-clip(padding-box);
@@ -44,8 +45,8 @@
 }
 
 .notice {
-	@extend .notice_base;
-	@extend .input_reset;
+	@include notice_base;
+	@include input_reset;
 	@include notice($success, #fff, darken($success, 20%), $text_align: center, $size: normal); }
 .n_subtle {
 	@extend .notice;

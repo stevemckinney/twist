@@ -10,7 +10,7 @@
 }
 
 /* line 5, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/legacy/_inline-block.scss */
-.__inline-block, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle, .notice_base, .notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3, [role="navigation"] li, [role="navigation"] a, .items li {
+.__inline-block, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle, .notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3, [role="navigation"] li, [role="navigation"] a, .items li {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -160,7 +160,7 @@ img {
   max-width: 100%;
 }
 
-/* line 12, ../sass/import/_helpers.scss */
+/* line 16, ../sass/import/_helpers.scss */
 .transition, body, a {
   -moz-transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
@@ -168,8 +168,8 @@ img {
   transition: all 0.4s linear;
 }
 
-/* line 14, ../sass/import/_helpers.scss */
-.rounded, .form-text, textarea, select, blockquote {
+/* line 18, ../sass/import/_helpers.scss */
+.rounded, .form-text, textarea, select, .overlay, blockquote {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -178,105 +178,16 @@ img {
   border-radius: 5px;
 }
 
-/* line 17, ../sass/import/_helpers.scss */
-.left {
-  float: left;
-}
-
-/* line 19, ../sass/import/_helpers.scss */
-.right {
-  float: right;
-}
-
-/* line 21, ../sass/import/_helpers.scss */
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-/* line 23, ../sass/import/_helpers.scss */
-.screenreaders {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-/* line 25, ../sass/import/_helpers.scss */
-.centre {
-  margin: auto;
-}
-
-/* line 28, ../sass/import/_helpers.scss */
-.no_outline, .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, [type="search"]:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus, [type="search"]:focus, .disabled.alt:hover, .disabled.danger:hover, .disabled.warning:hover, .disabled.success:hover, .disabled.info:hover, .disabled[type="submit"]:hover, .disabled.button:hover, button.disabled:hover, .disabled[type="search"]:hover, .disabled.alt:focus, .disabled.danger:focus, .disabled.warning:focus, .disabled.success:focus, .disabled.info:focus, .disabled[type="submit"]:focus, .disabled.button:focus, button.disabled:focus, .disabled[type="search"]:focus, .disabled.alt:active, .disabled.danger:active, .disabled.warning:active, .disabled.success:active, .disabled.info:active, .disabled[type="submit"]:active, .disabled.button:active, button.disabled:active, .disabled[type="search"]:active, .subtle:hover, .subtle:focus, .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
-  outline: none;
-}
-
-/* line 32, ../sass/import/_helpers.scss */
-.input_reset, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle, .notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3, .form-text, textarea, select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-/* line 35, ../sass/import/_helpers.scss */
-.no_list_style, form ul {
-  list-style: none;
-}
-
-/* line 39, ../sass/import/_helpers.scss */
-.margin, pre {
-  margin: 0.75em 0;
-}
-
-/* line 41, ../sass/import/_helpers.scss */
-.em_margin {
-  margin: 1.5em 0 0.75em;
-}
-
-/* line 43, ../sass/import/_helpers.scss */
-.em_margin_reverse {
-  margin: 0.75em 0 1.5em;
-}
-
-/* line 46, ../sass/import/_helpers.scss */
-.padding, .button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle, .notice_base, .notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3 {
-  padding: 0.375em 0.75em;
-}
-
-/* line 48, ../sass/import/_helpers.scss */
-.em_padding, label, h1, h2, h3, h4, h5, h6 {
-  padding: 1.5em 0 0.75em;
-}
-
-/* line 51, ../sass/import/_helpers.scss */
-.no_mp, form ul, [role="main"], [role="navigation"] ul, [role="contentinfo"] ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 55, ../sass/import/_helpers.scss */
-.primary, .form-text, textarea, select {
-  color: #6e5048;
-}
-
-/* line 57, ../sass/import/_helpers.scss */
-.secondary {
-  color: #e799b1;
-}
-
-/* line 4, ../sass/import/_buttons.scss */
-.button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle {
-  font: 900 12px/1 "ff-dagny-web-pro", helvetica, sans-serif;
+/* line 77, ../sass/import/_buttons.scss */
+.alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"] {
+  margin: 0 0 1.5em;
+  font: 700 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
   border: 1px solid;
   -moz-user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   user-select: none;
+  padding: 0.375em 0.75em;
   -moz-transition: none;
   -webkit-transition: none;
   -o-transition: none;
@@ -291,11 +202,9 @@ img {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* line 77, ../sass/import/_buttons.scss */
-.alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"] {
-  margin: 0 0 1.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(top, #ffffff, #eeeeee);
   background: -moz-linear-gradient(top, #ffffff, #eeeeee);
@@ -320,6 +229,7 @@ img {
 .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, [type="search"]:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus, [type="search"]:focus {
   color: #444444;
   border-color: #c8c8c8;
+  outline: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #fbfbfb));
   background: -webkit-linear-gradient(top, #ffffff, #fbfbfb);
   background: -moz-linear-gradient(top, #ffffff, #fbfbfb);
@@ -375,6 +285,7 @@ img {
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+  outline: none;
   border-color: #d4d4d4;
   color: #2b2b2b;
   color: rgba(68, 68, 68, 0.8);
@@ -384,6 +295,30 @@ img {
 
 /* line 82, ../sass/import/_buttons.scss */
 .subtle {
+  font: 700 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
+  border: 1px solid;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  padding: 0.375em 0.75em;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   background: rgba(0, 0, 0, 0.01);
   color: #444444;
@@ -403,18 +338,19 @@ img {
 }
 /* line 31, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
-  text-shadow: 0 1px 1px #52551c;
+  text-shadow: 0 1px 1px #6f7331;
 }
 /* line 41, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   color: white;
-  border-color: #646823;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c2c95b), color-stop(100%, #aeb53c));
-  background: -webkit-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -moz-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -o-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -ms-linear-gradient(top, #c2c95b, #aeb53c);
-  background: linear-gradient(top, #c2c95b, #aeb53c);
+  border-color: #818539;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9cd8a), color-stop(100%, #b8be66));
+  background: -webkit-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -moz-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -o-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -ms-linear-gradient(top, #c9cd8a, #b8be66);
+  background: linear-gradient(top, #c9cd8a, #b8be66);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -422,13 +358,13 @@ img {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .subtle:active {
-  border-color: #3f4216;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
-  background: -webkit-linear-gradient(#767c29 50%, #989e34);
-  background: -moz-linear-gradient(#767c29 50%, #989e34);
-  background: -o-linear-gradient(#767c29 50%, #989e34);
-  background: -ms-linear-gradient(#767c29 50%, #989e34);
-  background: linear-gradient(#767c29 50%, #989e34);
+  border-color: #5e612a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #929740), color-stop(100%, #afb551));
+  background: -webkit-linear-gradient(#929740 50%, #afb551);
+  background: -moz-linear-gradient(#929740 50%, #afb551);
+  background: -o-linear-gradient(#929740 50%, #afb551);
+  background: -ms-linear-gradient(#929740 50%, #afb551);
+  background: linear-gradient(#929740 50%, #afb551);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -436,17 +372,17 @@ img {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .subtle.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -454,17 +390,18 @@ img {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  outline: none;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -473,19 +410,19 @@ img {
 
 /* line 86, ../sass/import/_buttons.scss */
 .alt {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #237086));
-  background: -webkit-linear-gradient(top, #2d92af, #237086);
-  background: -moz-linear-gradient(top, #2d92af, #237086);
-  background: -o-linear-gradient(top, #2d92af, #237086);
-  background: -ms-linear-gradient(top, #2d92af, #237086);
-  background: linear-gradient(top, #2d92af, #237086);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #29bde6), color-stop(100%, #179fc5));
+  background: -webkit-linear-gradient(top, #29bde6, #179fc5);
+  background: -moz-linear-gradient(top, #29bde6, #179fc5);
+  background: -o-linear-gradient(top, #29bde6, #179fc5);
+  background: -ms-linear-gradient(top, #29bde6, #179fc5);
+  background: linear-gradient(top, #29bde6, #179fc5);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #244852;
+  border-color: #237086;
   color: white;
-  text-shadow: 0 1px 1px #0e2d35;
+  text-shadow: 0 1px 1px #0d5569;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -496,13 +433,14 @@ img {
 /* line 41, ../sass/import/_buttons.scss */
 .alt:hover, .alt:focus {
   color: white;
-  border-color: #133e49;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33a3c3), color-stop(100%, #28819a));
-  background: -webkit-linear-gradient(top, #33a3c3, #28819a);
-  background: -moz-linear-gradient(top, #33a3c3, #28819a);
-  background: -o-linear-gradient(top, #33a3c3, #28819a);
-  background: -ms-linear-gradient(top, #33a3c3, #28819a);
-  background: linear-gradient(top, #33a3c3, #28819a);
+  border-color: #0f6880;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #40c4e8), color-stop(100%, #1ab1db));
+  background: -webkit-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -moz-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -o-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -ms-linear-gradient(top, #40c4e8, #1ab1db);
+  background: linear-gradient(top, #40c4e8, #1ab1db);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -510,13 +448,13 @@ img {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .alt:active {
-  border-color: #091c21;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #184f5e), color-stop(100%, #226d82));
-  background: -webkit-linear-gradient(#184f5e 50%, #226d82);
-  background: -moz-linear-gradient(#184f5e 50%, #226d82);
-  background: -o-linear-gradient(#184f5e 50%, #226d82);
-  background: -ms-linear-gradient(#184f5e 50%, #226d82);
-  background: linear-gradient(#184f5e 50%, #226d82);
+  border-color: #0a4353;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #127a97), color-stop(100%, #179bc0));
+  background: -webkit-linear-gradient(#127a97 50%, #179bc0);
+  background: -moz-linear-gradient(#127a97 50%, #179bc0);
+  background: -o-linear-gradient(#127a97 50%, #179bc0);
+  background: -ms-linear-gradient(#127a97 50%, #179bc0);
+  background: linear-gradient(#127a97 50%, #179bc0);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -524,17 +462,17 @@ img {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .alt.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
-  background: -webkit-linear-gradient(#346775, #346775);
-  background: -moz-linear-gradient(#346775, #346775);
-  background: -o-linear-gradient(#346775, #346775);
-  background: -ms-linear-gradient(#346775, #346775);
-  background: linear-gradient(#346775, #346775);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #2d92af));
+  background: -webkit-linear-gradient(#2d92af, #2d92af);
+  background: -moz-linear-gradient(#2d92af, #2d92af);
+  background: -o-linear-gradient(#2d92af, #2d92af);
+  background: -ms-linear-gradient(#2d92af, #2d92af);
+  background: linear-gradient(#2d92af, #2d92af);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #304146;
+  border-color: #346775;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -542,17 +480,18 @@ img {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .alt.disabled:hover, .alt.disabled:focus, .alt.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
-  background: -webkit-linear-gradient(#346775, #346775);
-  background: -moz-linear-gradient(#346775, #346775);
-  background: -o-linear-gradient(#346775, #346775);
-  background: -ms-linear-gradient(#346775, #346775);
-  background: linear-gradient(#346775, #346775);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #2d92af));
+  background: -webkit-linear-gradient(#2d92af, #2d92af);
+  background: -moz-linear-gradient(#2d92af, #2d92af);
+  background: -o-linear-gradient(#2d92af, #2d92af);
+  background: -ms-linear-gradient(#2d92af, #2d92af);
+  background: linear-gradient(#2d92af, #2d92af);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #304146;
+  outline: none;
+  border-color: #346775;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -561,19 +500,19 @@ img {
 
 /* line 89, ../sass/import/_buttons.scss */
 .danger {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #da6e6f), color-stop(100%, #cf4647));
-  background: -webkit-linear-gradient(top, #da6e6f, #cf4647);
-  background: -moz-linear-gradient(top, #da6e6f, #cf4647);
-  background: -o-linear-gradient(top, #da6e6f, #cf4647);
-  background: -ms-linear-gradient(top, #da6e6f, #cf4647);
-  background: linear-gradient(top, #da6e6f, #cf4647);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e49798), color-stop(100%, #da6e6f));
+  background: -webkit-linear-gradient(top, #e49798, #da6e6f);
+  background: -moz-linear-gradient(top, #e49798, #da6e6f);
+  background: -o-linear-gradient(top, #e49798, #da6e6f);
+  background: -ms-linear-gradient(top, #e49798, #da6e6f);
+  background: linear-gradient(top, #e49798, #da6e6f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #9d4546;
+  border-color: #b85d5e;
   color: white;
-  text-shadow: 0 1px 1px #8b2425;
+  text-shadow: 0 1px 1px #b32f30;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -584,13 +523,14 @@ img {
 /* line 41, ../sass/import/_buttons.scss */
 .danger:hover, .danger:focus {
   color: white;
-  border-color: #9f292a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #df8383), color-stop(100%, #d45a5b));
-  background: -webkit-linear-gradient(top, #df8383, #d45a5b);
-  background: -moz-linear-gradient(top, #df8383, #d45a5b);
-  background: -o-linear-gradient(top, #df8383, #d45a5b);
-  background: -ms-linear-gradient(top, #df8383, #d45a5b);
-  background: linear-gradient(top, #df8383, #d45a5b);
+  border-color: #c83435;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9abac), color-stop(100%, #df8383));
+  background: -webkit-linear-gradient(top, #e9abac, #df8383);
+  background: -moz-linear-gradient(top, #e9abac, #df8383);
+  background: -o-linear-gradient(top, #e9abac, #df8383);
+  background: -ms-linear-gradient(top, #e9abac, #df8383);
+  background: linear-gradient(top, #e9abac, #df8383);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -598,13 +538,13 @@ img {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .danger:active {
-  border-color: #771f1f;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b32f30), color-stop(100%, #ce4243));
-  background: -webkit-linear-gradient(#b32f30 50%, #ce4243);
-  background: -moz-linear-gradient(#b32f30 50%, #ce4243);
-  background: -o-linear-gradient(#b32f30 50%, #ce4243);
-  background: -ms-linear-gradient(#b32f30 50%, #ce4243);
-  background: linear-gradient(#b32f30 50%, #ce4243);
+  border-color: #9f292a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #cf4647), color-stop(100%, #d86a6b));
+  background: -webkit-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -moz-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -o-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -ms-linear-gradient(#cf4647 50%, #d86a6b);
+  background: linear-gradient(#cf4647 50%, #d86a6b);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -617,17 +557,17 @@ img {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .danger.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
-  background: -webkit-linear-gradient(#b85d5e, #b85d5e);
-  background: -moz-linear-gradient(#b85d5e, #b85d5e);
-  background: -o-linear-gradient(#b85d5e, #b85d5e);
-  background: -ms-linear-gradient(#b85d5e, #b85d5e);
-  background: linear-gradient(#b85d5e, #b85d5e);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c78181), color-stop(100%, #c78181));
+  background: -webkit-linear-gradient(#c78181, #c78181);
+  background: -moz-linear-gradient(#c78181, #c78181);
+  background: -o-linear-gradient(#c78181, #c78181);
+  background: -ms-linear-gradient(#c78181, #c78181);
+  background: linear-gradient(#c78181, #c78181);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #865c5c;
+  border-color: #a07575;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -635,17 +575,18 @@ img {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .danger.disabled:hover, .danger.disabled:focus, .danger.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
-  background: -webkit-linear-gradient(#b85d5e, #b85d5e);
-  background: -moz-linear-gradient(#b85d5e, #b85d5e);
-  background: -o-linear-gradient(#b85d5e, #b85d5e);
-  background: -ms-linear-gradient(#b85d5e, #b85d5e);
-  background: linear-gradient(#b85d5e, #b85d5e);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c78181), color-stop(100%, #c78181));
+  background: -webkit-linear-gradient(#c78181, #c78181);
+  background: -moz-linear-gradient(#c78181, #c78181);
+  background: -o-linear-gradient(#c78181, #c78181);
+  background: -ms-linear-gradient(#c78181, #c78181);
+  background: linear-gradient(#c78181, #c78181);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #865c5c;
+  outline: none;
+  border-color: #a07575;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -678,6 +619,7 @@ img {
 .warning:hover, .warning:focus {
   color: white;
   border-color: #d07500;
+  outline: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbe6a), color-stop(100%, #ffa837));
   background: -webkit-linear-gradient(top, #ffbe6a, #ffa837);
   background: -moz-linear-gradient(top, #ffbe6a, #ffa837);
@@ -733,6 +675,7 @@ img {
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+  outline: none;
   border-color: #ba7e2f;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
@@ -742,19 +685,19 @@ img {
 
 /* line 95, ../sass/import/_buttons.scss */
 .success {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bbc248), color-stop(100%, #9ba236));
-  background: -webkit-linear-gradient(top, #bbc248, #9ba236);
-  background: -moz-linear-gradient(top, #bbc248, #9ba236);
-  background: -o-linear-gradient(top, #bbc248, #9ba236);
-  background: -ms-linear-gradient(top, #bbc248, #9ba236);
-  background: linear-gradient(top, #bbc248, #9ba236);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1c578), color-stop(100%, #b0b654));
+  background: -webkit-linear-gradient(top, #c1c578, #b0b654);
+  background: -moz-linear-gradient(top, #c1c578, #b0b654);
+  background: -o-linear-gradient(top, #c1c578, #b0b654);
+  background: -ms-linear-gradient(top, #c1c578, #b0b654);
+  background: linear-gradient(top, #c1c578, #b0b654);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #686b39;
+  border-color: #7f8256;
   color: white;
-  text-shadow: 0 1px 1px #52551c;
+  text-shadow: 0 1px 1px #6f7331;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -765,13 +708,14 @@ img {
 /* line 41, ../sass/import/_buttons.scss */
 .success:hover, .success:focus {
   color: white;
-  border-color: #646823;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c2c95b), color-stop(100%, #aeb53c));
-  background: -webkit-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -moz-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -o-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -ms-linear-gradient(top, #c2c95b, #aeb53c);
-  background: linear-gradient(top, #c2c95b, #aeb53c);
+  border-color: #818539;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9cd8a), color-stop(100%, #b8be66));
+  background: -webkit-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -moz-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -o-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -ms-linear-gradient(top, #c9cd8a, #b8be66);
+  background: linear-gradient(top, #c9cd8a, #b8be66);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -779,13 +723,13 @@ img {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .success:active {
-  border-color: #3f4216;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
-  background: -webkit-linear-gradient(#767c29 50%, #989e34);
-  background: -moz-linear-gradient(#767c29 50%, #989e34);
-  background: -o-linear-gradient(#767c29 50%, #989e34);
-  background: -ms-linear-gradient(#767c29 50%, #989e34);
-  background: linear-gradient(#767c29 50%, #989e34);
+  border-color: #5e612a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #929740), color-stop(100%, #afb551));
+  background: -webkit-linear-gradient(#929740 50%, #afb551);
+  background: -moz-linear-gradient(#929740 50%, #afb551);
+  background: -o-linear-gradient(#929740 50%, #afb551);
+  background: -ms-linear-gradient(#929740 50%, #afb551);
+  background: linear-gradient(#929740 50%, #afb551);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -793,17 +737,17 @@ img {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .success.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -811,17 +755,18 @@ img {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .success.disabled:hover, .success.disabled:focus, .success.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  outline: none;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -830,19 +775,19 @@ img {
 
 /* line 98, ../sass/import/_buttons.scss */
 .info, [type="submit"] {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
-  background: -webkit-linear-gradient(top, #cd537f, #b83564);
-  background: -moz-linear-gradient(top, #cd537f, #b83564);
-  background: -o-linear-gradient(top, #cd537f, #b83564);
-  background: -ms-linear-gradient(top, #cd537f, #b83564);
-  background: linear-gradient(top, #cd537f, #b83564);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d97a9c), color-stop(100%, #cd537f));
+  background: -webkit-linear-gradient(top, #d97a9c, #cd537f);
+  background: -moz-linear-gradient(top, #d97a9c, #cd537f);
+  background: -o-linear-gradient(top, #d97a9c, #cd537f);
+  background: -ms-linear-gradient(top, #d97a9c, #cd537f);
+  background: linear-gradient(top, #d97a9c, #cd537f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #7e3c54;
+  border-color: #a04d6b;
   color: white;
-  text-shadow: 0 1px 1px #902a4e;
+  text-shadow: 0 1px 1px #b83564;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -853,13 +798,14 @@ img {
 /* line 41, ../sass/import/_buttons.scss */
 .info:hover, [type="submit"]:hover, .info:focus, [type="submit"]:focus {
   color: white;
-  border-color: #7d2444;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d3668d), color-stop(100%, #c83f70));
-  background: -webkit-linear-gradient(top, #d3668d, #c83f70);
-  background: -moz-linear-gradient(top, #d3668d, #c83f70);
-  background: -o-linear-gradient(top, #d3668d, #c83f70);
-  background: -ms-linear-gradient(top, #d3668d, #c83f70);
-  background: linear-gradient(top, #d3668d, #c83f70);
+  border-color: #a42f59;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #de8eab), color-stop(100%, #d3668d));
+  background: -webkit-linear-gradient(top, #de8eab, #d3668d);
+  background: -moz-linear-gradient(top, #de8eab, #d3668d);
+  background: -o-linear-gradient(top, #de8eab, #d3668d);
+  background: -ms-linear-gradient(top, #de8eab, #d3668d);
+  background: linear-gradient(top, #de8eab, #d3668d);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -867,13 +813,13 @@ img {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .info:active, [type="submit"]:active {
-  border-color: #55182e;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #902a4e), color-stop(100%, #b43462));
-  background: -webkit-linear-gradient(#902a4e 50%, #b43462);
-  background: -moz-linear-gradient(#902a4e 50%, #b43462);
-  background: -o-linear-gradient(#902a4e 50%, #b43462);
-  background: -ms-linear-gradient(#902a4e 50%, #b43462);
-  background: linear-gradient(#902a4e 50%, #b43462);
+  border-color: #7d2444;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b83564), color-stop(100%, #cc4f7c));
+  background: -webkit-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -moz-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -o-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -ms-linear-gradient(#b83564 50%, #cc4f7c);
+  background: linear-gradient(#b83564 50%, #cc4f7c);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -881,17 +827,17 @@ img {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .info.disabled, .disabled[type="submit"] {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
-  background: -webkit-linear-gradient(#a04d6b, #a04d6b);
-  background: -moz-linear-gradient(#a04d6b, #a04d6b);
-  background: -o-linear-gradient(#a04d6b, #a04d6b);
-  background: -ms-linear-gradient(#a04d6b, #a04d6b);
-  background: linear-gradient(#a04d6b, #a04d6b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b76985), color-stop(100%, #b76985));
+  background: -webkit-linear-gradient(#b76985, #b76985);
+  background: -moz-linear-gradient(#b76985, #b76985);
+  background: -o-linear-gradient(#b76985, #b76985);
+  background: -ms-linear-gradient(#b76985, #b76985);
+  background: linear-gradient(#b76985, #b76985);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #6b4f59;
+  border-color: #896471;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -899,17 +845,18 @@ img {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .info.disabled:hover, .disabled[type="submit"]:hover, .info.disabled:focus, .disabled[type="submit"]:focus, .info.disabled:active, .disabled[type="submit"]:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
-  background: -webkit-linear-gradient(#a04d6b, #a04d6b);
-  background: -moz-linear-gradient(#a04d6b, #a04d6b);
-  background: -o-linear-gradient(#a04d6b, #a04d6b);
-  background: -ms-linear-gradient(#a04d6b, #a04d6b);
-  background: linear-gradient(#a04d6b, #a04d6b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b76985), color-stop(100%, #b76985));
+  background: -webkit-linear-gradient(#b76985, #b76985);
+  background: -moz-linear-gradient(#b76985, #b76985);
+  background: -o-linear-gradient(#b76985, #b76985);
+  background: -ms-linear-gradient(#b76985, #b76985);
+  background: linear-gradient(#b76985, #b76985);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #6b4f59;
+  outline: none;
+  border-color: #896471;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -957,14 +904,16 @@ img {
   border-radius: 0 5px 5px 0;
 }
 
-/* line 5, ../sass/import/_notices.scss */
-.notice_base, .notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3 {
-  font: 900 12px/1 "ff-dagny-web-pro", helvetica, sans-serif;
+/* line 47, ../sass/import/_notices.scss */
+.notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3 {
+  font: 900 12px/1 "ff-meta-web-pro", helvetica, sans-serif;
   border: 1px solid;
   -webkit-user-select: none;
   -moz-user-select: none;
   display: block;
   width: 100%;
+  margin: 0 0 0.75em;
+  padding: 0.375em 0.75em;
   -moz-transition: none;
   -webkit-transition: none;
   -o-transition: none;
@@ -979,23 +928,22 @@ img {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* line 46, ../sass/import/_notices.scss */
-.notice, .n_subtle, pre, blockquote, .n_info, .check, .modal h1, .modal h2, .modal h3 {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bbc248), color-stop(100%, #9ba236));
-  background: -webkit-linear-gradient(top, #bbc248, #9ba236);
-  background: -moz-linear-gradient(top, #bbc248, #9ba236);
-  background: -o-linear-gradient(top, #bbc248, #9ba236);
-  background: -ms-linear-gradient(top, #bbc248, #9ba236);
-  background: linear-gradient(top, #bbc248, #9ba236);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1c578), color-stop(100%, #b0b654));
+  background: -webkit-linear-gradient(top, #c1c578, #b0b654);
+  background: -moz-linear-gradient(top, #c1c578, #b0b654);
+  background: -o-linear-gradient(top, #c1c578, #b0b654);
+  background: -ms-linear-gradient(top, #c1c578, #b0b654);
+  background: linear-gradient(top, #c1c578, #b0b654);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #686b39;
+  border-color: #7f8256;
   color: white;
-  text-shadow: 0 1px 1px #52551c;
+  text-shadow: 0 1px 1px #6f7331;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1005,7 +953,7 @@ img {
   text-align: center;
 }
 
-/* line 50, ../sass/import/_notices.scss */
+/* line 51, ../sass/import/_notices.scss */
 .n_subtle, pre, blockquote {
   background: none;
   background: rgba(0, 0, 0, 0.01);
@@ -1026,21 +974,21 @@ img {
   text-align: left;
 }
 
-/* line 53, ../sass/import/_notices.scss */
+/* line 54, ../sass/import/_notices.scss */
 .n_info {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
-  background: -webkit-linear-gradient(top, #cd537f, #b83564);
-  background: -moz-linear-gradient(top, #cd537f, #b83564);
-  background: -o-linear-gradient(top, #cd537f, #b83564);
-  background: -ms-linear-gradient(top, #cd537f, #b83564);
-  background: linear-gradient(top, #cd537f, #b83564);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d97a9c), color-stop(100%, #cd537f));
+  background: -webkit-linear-gradient(top, #d97a9c, #cd537f);
+  background: -moz-linear-gradient(top, #d97a9c, #cd537f);
+  background: -o-linear-gradient(top, #d97a9c, #cd537f);
+  background: -ms-linear-gradient(top, #d97a9c, #cd537f);
+  background: linear-gradient(top, #d97a9c, #cd537f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #7e3c54;
+  border-color: #a04d6b;
   color: white;
-  text-shadow: 0 1px 1px #691e39;
+  text-shadow: 0 1px 1px #902a4e;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1050,21 +998,21 @@ img {
   text-align: center;
 }
 
-/* line 57, ../sass/import/_notices.scss */
+/* line 58, ../sass/import/_notices.scss */
 .notice:nth-of-type(2), .n_subtle:nth-of-type(2), pre:nth-of-type(2), blockquote:nth-of-type(2), .n_info:nth-of-type(2), .check:nth-of-type(2), .modal h1:nth-of-type(2), .modal h2:nth-of-type(2), .modal h3:nth-of-type(2) {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
-  background: -webkit-linear-gradient(top, #cd537f, #b83564);
-  background: -moz-linear-gradient(top, #cd537f, #b83564);
-  background: -o-linear-gradient(top, #cd537f, #b83564);
-  background: -ms-linear-gradient(top, #cd537f, #b83564);
-  background: linear-gradient(top, #cd537f, #b83564);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d97a9c), color-stop(100%, #cd537f));
+  background: -webkit-linear-gradient(top, #d97a9c, #cd537f);
+  background: -moz-linear-gradient(top, #d97a9c, #cd537f);
+  background: -o-linear-gradient(top, #d97a9c, #cd537f);
+  background: -ms-linear-gradient(top, #d97a9c, #cd537f);
+  background: linear-gradient(top, #d97a9c, #cd537f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #7e3c54;
+  border-color: #a04d6b;
   color: white;
-  text-shadow: 0 1px 1px #691e39;
+  text-shadow: 0 1px 1px #902a4e;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1075,21 +1023,21 @@ img {
   padding: 0.25em 0.375em;
 }
 
-/* line 59, ../sass/import/_notices.scss */
+/* line 60, ../sass/import/_notices.scss */
 .notice:nth-of-type(3), .n_subtle:nth-of-type(3), pre:nth-of-type(3), blockquote:nth-of-type(3), .n_info:nth-of-type(3), .check:nth-of-type(3), .modal h1:nth-of-type(3), .modal h2:nth-of-type(3), .modal h3:nth-of-type(3) {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #da6e6f), color-stop(100%, #cf4647));
-  background: -webkit-linear-gradient(top, #da6e6f, #cf4647);
-  background: -moz-linear-gradient(top, #da6e6f, #cf4647);
-  background: -o-linear-gradient(top, #da6e6f, #cf4647);
-  background: -ms-linear-gradient(top, #da6e6f, #cf4647);
-  background: linear-gradient(top, #da6e6f, #cf4647);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e49798), color-stop(100%, #da6e6f));
+  background: -webkit-linear-gradient(top, #e49798, #da6e6f);
+  background: -moz-linear-gradient(top, #e49798, #da6e6f);
+  background: -o-linear-gradient(top, #e49798, #da6e6f);
+  background: -ms-linear-gradient(top, #e49798, #da6e6f);
+  background: linear-gradient(top, #e49798, #da6e6f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #9d4546;
+  border-color: #b85d5e;
   color: white;
-  text-shadow: 0 1px 1px #8b2425;
+  text-shadow: 0 1px 1px #b32f30;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1099,7 +1047,7 @@ img {
   text-align: center;
 }
 
-/* line 61, ../sass/import/_notices.scss */
+/* line 62, ../sass/import/_notices.scss */
 .notice:nth-of-type(4), .n_subtle:nth-of-type(4), pre:nth-of-type(4), blockquote:nth-of-type(4), .n_info:nth-of-type(4), .check:nth-of-type(4), .modal h1:nth-of-type(4), .modal h2:nth-of-type(4), .modal h3:nth-of-type(4) {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffb350), color-stop(100%, #ff9d1d));
   background: -webkit-linear-gradient(top, #ffb350, #ff9d1d);
@@ -1126,6 +1074,10 @@ img {
 
 /* line 13, ../sass/import/_forms.scss */
 .form-text, textarea, select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #6e5048;
   -moz-transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
@@ -1133,7 +1085,7 @@ img {
   width: 100%;
   padding: 10px;
   border: none;
-  font: 400 12px/1.5 "ff-dagny-web-pro", helvetica, sans-serif;
+  font: 400 12px/1.5 "ff-meta-web-pro", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
   background: #fbfbfb;
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -1147,20 +1099,20 @@ img {
 }
 /* line 27, ../sass/import/_forms.scss */
 .form-text:focus, textarea:focus, select:focus {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.6);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.6);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.6);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.6);
-  border-color: rgba(35, 112, 134, 0.9);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.6);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.6);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.6);
+  border-color: rgba(23, 159, 197, 0.9);
   outline: none;
 }
 /* line 8, ../sass/import/_forms.scss */
 .form-text:focus:focus, textarea:focus:focus, select:focus:focus {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.2);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.2);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(35, 112, 134, 0.2);
-  border-color: rgba(35, 112, 134, 0.5);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.2);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(23, 159, 197, 0.2);
+  border-color: rgba(23, 159, 197, 0.5);
 }
 
 /* line 32, ../sass/import/_forms.scss */
@@ -1174,9 +1126,14 @@ label, [type="text"], [type="email"], select, .form-text, textarea {
   display: block;
 }
 
+/* line 38, ../sass/import/_forms.scss */
+label {
+  padding: 1.5em 0 0.375em;
+}
+
 /* line 40, ../sass/import/_forms.scss */
 .form-help {
-  font: 400 12px/1.5 "ff-dagny-web-pro", helvetica, sans-serif;
+  font: 400 12px/1.5 "ff-meta-web-pro", helvetica, sans-serif;
   background: none;
   background: rgba(0, 0, 0, 0.01);
   color: #444444;
@@ -1208,6 +1165,13 @@ label, [type="text"], [type="email"], select, .form-text, textarea {
   -ms-border-radius: 5px 5px 0 0;
   -khtml-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+}
+
+/* line 51, ../sass/import/_forms.scss */
+form ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* line 56, ../sass/import/_forms.scss */
@@ -1252,7 +1216,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   -khtml-border-radius: 3px;
   border-radius: 3px;
   text-align: left;
-  font: 800 12px/1.5 "ff-dagny-web-pro", helvetica, sans-serif;
+  font: 800 12px/1.5 "ff-meta-web-pro", helvetica, sans-serif;
   margin: 1.5em 0;
 }
 
@@ -1263,39 +1227,51 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 
 /* line 78, ../sass/import/_forms.scss */
 .error {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.6);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.6);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.6);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.6);
-  border-color: rgba(207, 70, 71, 0.9);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.6);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.6);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.6);
+  border-color: rgba(218, 110, 111, 0.9);
 }
 /* line 8, ../sass/import/_forms.scss */
 .error:focus {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.2);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.2);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(207, 70, 71, 0.2);
-  border-color: rgba(207, 70, 71, 0.5);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.2);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(218, 110, 111, 0.2);
+  border-color: rgba(218, 110, 111, 0.5);
 }
 
-/* line 14, ../sass/import/_modals.scss */
+/* line 80, ../sass/import/_forms.scss */
+::-webkit-input-placeholder {
+  color: #ba9d95;
+  font: 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
+}
+
+/* line 83, ../sass/import/_forms.scss */
+:-moz-placeholder {
+  color: #ba9d95;
+  font: 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
+}
+
+/* line 15, ../sass/import/_modals.scss */
 .modal {
-  background: "#fff";
-  padding: "12px";
-  -moz-border-radius: "3px";
-  -webkit-border-radius: "3px";
-  -o-border-radius: "3px";
-  -ms-border-radius: "3px";
-  -khtml-border-radius: "3px";
-  border-radius: "3px";
+  background: white;
+  padding: 12px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
   -moz-box-shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)";
   -webkit-box-shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)";
   -o-box-shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)";
   box-shadow: "0 1px 3px fade-out($black, 0.4), inset 0 0 0 2px darken(#fff, 2%)";
-  width: 50%;
-  left: 50%/2;
+  width: 100%;
+  left: 100%/2;
 }
-/* line 16, ../sass/import/_modals.scss */
+/* line 17, ../sass/import/_modals.scss */
 .modal h1, .modal h2, .modal h3 {
   font-size: 100%;
   margin-top: 0;
@@ -1329,7 +1305,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   text-align: center;
 }
 
-/* line 25, ../sass/import/_modals.scss */
+/* line 26, ../sass/import/_modals.scss */
 .overlay {
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(20%, rgba(56, 51, 46, 0.3)), color-stop(100%, rgba(56, 51, 46, 0.9))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(61, 51, 41, 0.2)), color-stop(100%, rgba(61, 51, 41, 0.6)));
   background: -webkit-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -webkit-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
@@ -1344,16 +1320,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   left: 0;
   right: 0;
 }
-/* line 30, ../sass/import/_modals.scss */
+/* line 32, ../sass/import/_modals.scss */
 .overlay .no-cssgradients {
   background: #000;
   background: rgba(0, 0, 0, 0.4);
-}
-
-/* line 35, ../sass/import/_modals.scss */
-:target {
-  top: -500px;
-  -webkit-transition: top 0.25s cubic-bezier(0.75, 1, 0.1, 0);
 }
 
 /* 
@@ -1371,24 +1341,6 @@ body {
   margin: auto;
   width: 194em;
   max-width: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(1.031%, rgba(0, 0, 0, 0)), color-stop(1.031%, rgba(100, 100, 225, 0.25)), color-stop(4.124%, rgba(100, 100, 225, 0.25)), color-stop(4.124%, rgba(0, 0, 0, 0)), color-stop(5.155%, rgba(0, 0, 0, 0)), color-stop(5.155%, rgba(100, 100, 225, 0.25)), color-stop(8.247%, rgba(100, 100, 225, 0.25)), color-stop(8.247%, rgba(0, 0, 0, 0)), color-stop(9.278%, rgba(0, 0, 0, 0)), color-stop(9.278%, rgba(100, 100, 225, 0.25)), color-stop(12.371%, rgba(100, 100, 225, 0.25)), color-stop(12.371%, rgba(0, 0, 0, 0)), color-stop(13.402%, rgba(0, 0, 0, 0)), color-stop(13.402%, rgba(100, 100, 225, 0.25)), color-stop(16.495%, rgba(100, 100, 225, 0.25)), color-stop(16.495%, rgba(0, 0, 0, 0)), color-stop(17.526%, rgba(0, 0, 0, 0)), color-stop(17.526%, rgba(100, 100, 225, 0.25)), color-stop(20.619%, rgba(100, 100, 225, 0.25)), color-stop(20.619%, rgba(0, 0, 0, 0)), color-stop(21.649%, rgba(0, 0, 0, 0)), color-stop(21.649%, rgba(100, 100, 225, 0.25)), color-stop(24.742%, rgba(100, 100, 225, 0.25)), color-stop(24.742%, rgba(0, 0, 0, 0)), color-stop(25.773%, rgba(0, 0, 0, 0)), color-stop(25.773%, rgba(100, 100, 225, 0.25)), color-stop(28.866%, rgba(100, 100, 225, 0.25)), color-stop(28.866%, rgba(0, 0, 0, 0)), color-stop(29.897%, rgba(0, 0, 0, 0)), color-stop(29.897%, rgba(100, 100, 225, 0.25)), color-stop(32.99%, rgba(100, 100, 225, 0.25)), color-stop(32.99%, rgba(0, 0, 0, 0)), color-stop(34.021%, rgba(0, 0, 0, 0)), color-stop(34.021%, rgba(100, 100, 225, 0.25)), color-stop(37.113%, rgba(100, 100, 225, 0.25)), color-stop(37.113%, rgba(0, 0, 0, 0)), color-stop(38.144%, rgba(0, 0, 0, 0)), color-stop(38.144%, rgba(100, 100, 225, 0.25)), color-stop(41.237%, rgba(100, 100, 225, 0.25)), color-stop(41.237%, rgba(0, 0, 0, 0)), color-stop(42.268%, rgba(0, 0, 0, 0)), color-stop(42.268%, rgba(100, 100, 225, 0.25)), color-stop(45.361%, rgba(100, 100, 225, 0.25)), color-stop(45.361%, rgba(0, 0, 0, 0)), color-stop(46.392%, rgba(0, 0, 0, 0)), color-stop(46.392%, rgba(100, 100, 225, 0.25)), color-stop(49.485%, rgba(100, 100, 225, 0.25)), color-stop(49.485%, rgba(0, 0, 0, 0)), color-stop(50.515%, rgba(0, 0, 0, 0)), color-stop(50.515%, rgba(100, 100, 225, 0.25)), color-stop(53.608%, rgba(100, 100, 225, 0.25)), color-stop(53.608%, rgba(0, 0, 0, 0)), color-stop(54.639%, rgba(0, 0, 0, 0)), color-stop(54.639%, rgba(100, 100, 225, 0.25)), color-stop(57.732%, rgba(100, 100, 225, 0.25)), color-stop(57.732%, rgba(0, 0, 0, 0)), color-stop(58.763%, rgba(0, 0, 0, 0)), color-stop(58.763%, rgba(100, 100, 225, 0.25)), color-stop(61.856%, rgba(100, 100, 225, 0.25)), color-stop(61.856%, rgba(0, 0, 0, 0)), color-stop(62.887%, rgba(0, 0, 0, 0)), color-stop(62.887%, rgba(100, 100, 225, 0.25)), color-stop(65.979%, rgba(100, 100, 225, 0.25)), color-stop(65.979%, rgba(0, 0, 0, 0)), color-stop(67.01%, rgba(0, 0, 0, 0)), color-stop(67.01%, rgba(100, 100, 225, 0.25)), color-stop(70.103%, rgba(100, 100, 225, 0.25)), color-stop(70.103%, rgba(0, 0, 0, 0)), color-stop(71.134%, rgba(0, 0, 0, 0)), color-stop(71.134%, rgba(100, 100, 225, 0.25)), color-stop(74.227%, rgba(100, 100, 225, 0.25)), color-stop(74.227%, rgba(0, 0, 0, 0)), color-stop(75.258%, rgba(0, 0, 0, 0)), color-stop(75.258%, rgba(100, 100, 225, 0.25)), color-stop(78.351%, rgba(100, 100, 225, 0.25)), color-stop(78.351%, rgba(0, 0, 0, 0)), color-stop(79.381%, rgba(0, 0, 0, 0)), color-stop(79.381%, rgba(100, 100, 225, 0.25)), color-stop(82.474%, rgba(100, 100, 225, 0.25)), color-stop(82.474%, rgba(0, 0, 0, 0)), color-stop(83.505%, rgba(0, 0, 0, 0)), color-stop(83.505%, rgba(100, 100, 225, 0.25)), color-stop(86.598%, rgba(100, 100, 225, 0.25)), color-stop(86.598%, rgba(0, 0, 0, 0)), color-stop(87.629%, rgba(0, 0, 0, 0)), color-stop(87.629%, rgba(100, 100, 225, 0.25)), color-stop(90.722%, rgba(100, 100, 225, 0.25)), color-stop(90.722%, rgba(0, 0, 0, 0)), color-stop(91.753%, rgba(0, 0, 0, 0)), color-stop(91.753%, rgba(100, 100, 225, 0.25)), color-stop(94.845%, rgba(100, 100, 225, 0.25)), color-stop(94.845%, rgba(0, 0, 0, 0)), color-stop(95.876%, rgba(0, 0, 0, 0)), color-stop(95.876%, rgba(100, 100, 225, 0.25)), color-stop(98.969%, rgba(100, 100, 225, 0.25)), color-stop(98.969%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 1.031%, rgba(100, 100, 225, 0.25) 1.031%, rgba(100, 100, 225, 0.25) 4.124%, rgba(0, 0, 0, 0) 4.124%, rgba(0, 0, 0, 0) 5.155%, rgba(100, 100, 225, 0.25) 5.155%, rgba(100, 100, 225, 0.25) 8.247%, rgba(0, 0, 0, 0) 8.247%, rgba(0, 0, 0, 0) 9.278%, rgba(100, 100, 225, 0.25) 9.278%, rgba(100, 100, 225, 0.25) 12.371%, rgba(0, 0, 0, 0) 12.371%, rgba(0, 0, 0, 0) 13.402%, rgba(100, 100, 225, 0.25) 13.402%, rgba(100, 100, 225, 0.25) 16.495%, rgba(0, 0, 0, 0) 16.495%, rgba(0, 0, 0, 0) 17.526%, rgba(100, 100, 225, 0.25) 17.526%, rgba(100, 100, 225, 0.25) 20.619%, rgba(0, 0, 0, 0) 20.619%, rgba(0, 0, 0, 0) 21.649%, rgba(100, 100, 225, 0.25) 21.649%, rgba(100, 100, 225, 0.25) 24.742%, rgba(0, 0, 0, 0) 24.742%, rgba(0, 0, 0, 0) 25.773%, rgba(100, 100, 225, 0.25) 25.773%, rgba(100, 100, 225, 0.25) 28.866%, rgba(0, 0, 0, 0) 28.866%, rgba(0, 0, 0, 0) 29.897%, rgba(100, 100, 225, 0.25) 29.897%, rgba(100, 100, 225, 0.25) 32.99%, rgba(0, 0, 0, 0) 32.99%, rgba(0, 0, 0, 0) 34.021%, rgba(100, 100, 225, 0.25) 34.021%, rgba(100, 100, 225, 0.25) 37.113%, rgba(0, 0, 0, 0) 37.113%, rgba(0, 0, 0, 0) 38.144%, rgba(100, 100, 225, 0.25) 38.144%, rgba(100, 100, 225, 0.25) 41.237%, rgba(0, 0, 0, 0) 41.237%, rgba(0, 0, 0, 0) 42.268%, rgba(100, 100, 225, 0.25) 42.268%, rgba(100, 100, 225, 0.25) 45.361%, rgba(0, 0, 0, 0) 45.361%, rgba(0, 0, 0, 0) 46.392%, rgba(100, 100, 225, 0.25) 46.392%, rgba(100, 100, 225, 0.25) 49.485%, rgba(0, 0, 0, 0) 49.485%, rgba(0, 0, 0, 0) 50.515%, rgba(100, 100, 225, 0.25) 50.515%, rgba(100, 100, 225, 0.25) 53.608%, rgba(0, 0, 0, 0) 53.608%, rgba(0, 0, 0, 0) 54.639%, rgba(100, 100, 225, 0.25) 54.639%, rgba(100, 100, 225, 0.25) 57.732%, rgba(0, 0, 0, 0) 57.732%, rgba(0, 0, 0, 0) 58.763%, rgba(100, 100, 225, 0.25) 58.763%, rgba(100, 100, 225, 0.25) 61.856%, rgba(0, 0, 0, 0) 61.856%, rgba(0, 0, 0, 0) 62.887%, rgba(100, 100, 225, 0.25) 62.887%, rgba(100, 100, 225, 0.25) 65.979%, rgba(0, 0, 0, 0) 65.979%, rgba(0, 0, 0, 0) 67.01%, rgba(100, 100, 225, 0.25) 67.01%, rgba(100, 100, 225, 0.25) 70.103%, rgba(0, 0, 0, 0) 70.103%, rgba(0, 0, 0, 0) 71.134%, rgba(100, 100, 225, 0.25) 71.134%, rgba(100, 100, 225, 0.25) 74.227%, rgba(0, 0, 0, 0) 74.227%, rgba(0, 0, 0, 0) 75.258%, rgba(100, 100, 225, 0.25) 75.258%, rgba(100, 100, 225, 0.25) 78.351%, rgba(0, 0, 0, 0) 78.351%, rgba(0, 0, 0, 0) 79.381%, rgba(100, 100, 225, 0.25) 79.381%, rgba(100, 100, 225, 0.25) 82.474%, rgba(0, 0, 0, 0) 82.474%, rgba(0, 0, 0, 0) 83.505%, rgba(100, 100, 225, 0.25) 83.505%, rgba(100, 100, 225, 0.25) 86.598%, rgba(0, 0, 0, 0) 86.598%, rgba(0, 0, 0, 0) 87.629%, rgba(100, 100, 225, 0.25) 87.629%, rgba(100, 100, 225, 0.25) 90.722%, rgba(0, 0, 0, 0) 90.722%, rgba(0, 0, 0, 0) 91.753%, rgba(100, 100, 225, 0.25) 91.753%, rgba(100, 100, 225, 0.25) 94.845%, rgba(0, 0, 0, 0) 94.845%, rgba(0, 0, 0, 0) 95.876%, rgba(100, 100, 225, 0.25) 95.876%, rgba(100, 100, 225, 0.25) 98.969%, rgba(0, 0, 0, 0) 98.969%, rgba(0, 0, 0, 0) 100%);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 1.031%, rgba(100, 100, 225, 0.25) 1.031%, rgba(100, 100, 225, 0.25) 4.124%, rgba(0, 0, 0, 0) 4.124%, rgba(0, 0, 0, 0) 5.155%, rgba(100, 100, 225, 0.25) 5.155%, rgba(100, 100, 225, 0.25) 8.247%, rgba(0, 0, 0, 0) 8.247%, rgba(0, 0, 0, 0) 9.278%, rgba(100, 100, 225, 0.25) 9.278%, rgba(100, 100, 225, 0.25) 12.371%, rgba(0, 0, 0, 0) 12.371%, rgba(0, 0, 0, 0) 13.402%, rgba(100, 100, 225, 0.25) 13.402%, rgba(100, 100, 225, 0.25) 16.495%, rgba(0, 0, 0, 0) 16.495%, rgba(0, 0, 0, 0) 17.526%, rgba(100, 100, 225, 0.25) 17.526%, rgba(100, 100, 225, 0.25) 20.619%, rgba(0, 0, 0, 0) 20.619%, rgba(0, 0, 0, 0) 21.649%, rgba(100, 100, 225, 0.25) 21.649%, rgba(100, 100, 225, 0.25) 24.742%, rgba(0, 0, 0, 0) 24.742%, rgba(0, 0, 0, 0) 25.773%, rgba(100, 100, 225, 0.25) 25.773%, rgba(100, 100, 225, 0.25) 28.866%, rgba(0, 0, 0, 0) 28.866%, rgba(0, 0, 0, 0) 29.897%, rgba(100, 100, 225, 0.25) 29.897%, rgba(100, 100, 225, 0.25) 32.99%, rgba(0, 0, 0, 0) 32.99%, rgba(0, 0, 0, 0) 34.021%, rgba(100, 100, 225, 0.25) 34.021%, rgba(100, 100, 225, 0.25) 37.113%, rgba(0, 0, 0, 0) 37.113%, rgba(0, 0, 0, 0) 38.144%, rgba(100, 100, 225, 0.25) 38.144%, rgba(100, 100, 225, 0.25) 41.237%, rgba(0, 0, 0, 0) 41.237%, rgba(0, 0, 0, 0) 42.268%, rgba(100, 100, 225, 0.25) 42.268%, rgba(100, 100, 225, 0.25) 45.361%, rgba(0, 0, 0, 0) 45.361%, rgba(0, 0, 0, 0) 46.392%, rgba(100, 100, 225, 0.25) 46.392%, rgba(100, 100, 225, 0.25) 49.485%, rgba(0, 0, 0, 0) 49.485%, rgba(0, 0, 0, 0) 50.515%, rgba(100, 100, 225, 0.25) 50.515%, rgba(100, 100, 225, 0.25) 53.608%, rgba(0, 0, 0, 0) 53.608%, rgba(0, 0, 0, 0) 54.639%, rgba(100, 100, 225, 0.25) 54.639%, rgba(100, 100, 225, 0.25) 57.732%, rgba(0, 0, 0, 0) 57.732%, rgba(0, 0, 0, 0) 58.763%, rgba(100, 100, 225, 0.25) 58.763%, rgba(100, 100, 225, 0.25) 61.856%, rgba(0, 0, 0, 0) 61.856%, rgba(0, 0, 0, 0) 62.887%, rgba(100, 100, 225, 0.25) 62.887%, rgba(100, 100, 225, 0.25) 65.979%, rgba(0, 0, 0, 0) 65.979%, rgba(0, 0, 0, 0) 67.01%, rgba(100, 100, 225, 0.25) 67.01%, rgba(100, 100, 225, 0.25) 70.103%, rgba(0, 0, 0, 0) 70.103%, rgba(0, 0, 0, 0) 71.134%, rgba(100, 100, 225, 0.25) 71.134%, rgba(100, 100, 225, 0.25) 74.227%, rgba(0, 0, 0, 0) 74.227%, rgba(0, 0, 0, 0) 75.258%, rgba(100, 100, 225, 0.25) 75.258%, rgba(100, 100, 225, 0.25) 78.351%, rgba(0, 0, 0, 0) 78.351%, rgba(0, 0, 0, 0) 79.381%, rgba(100, 100, 225, 0.25) 79.381%, rgba(100, 100, 225, 0.25) 82.474%, rgba(0, 0, 0, 0) 82.474%, rgba(0, 0, 0, 0) 83.505%, rgba(100, 100, 225, 0.25) 83.505%, rgba(100, 100, 225, 0.25) 86.598%, rgba(0, 0, 0, 0) 86.598%, rgba(0, 0, 0, 0) 87.629%, rgba(100, 100, 225, 0.25) 87.629%, rgba(100, 100, 225, 0.25) 90.722%, rgba(0, 0, 0, 0) 90.722%, rgba(0, 0, 0, 0) 91.753%, rgba(100, 100, 225, 0.25) 91.753%, rgba(100, 100, 225, 0.25) 94.845%, rgba(0, 0, 0, 0) 94.845%, rgba(0, 0, 0, 0) 95.876%, rgba(100, 100, 225, 0.25) 95.876%, rgba(100, 100, 225, 0.25) 98.969%, rgba(0, 0, 0, 0) 98.969%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 1.031%, rgba(100, 100, 225, 0.25) 1.031%, rgba(100, 100, 225, 0.25) 4.124%, rgba(0, 0, 0, 0) 4.124%, rgba(0, 0, 0, 0) 5.155%, rgba(100, 100, 225, 0.25) 5.155%, rgba(100, 100, 225, 0.25) 8.247%, rgba(0, 0, 0, 0) 8.247%, rgba(0, 0, 0, 0) 9.278%, rgba(100, 100, 225, 0.25) 9.278%, rgba(100, 100, 225, 0.25) 12.371%, rgba(0, 0, 0, 0) 12.371%, rgba(0, 0, 0, 0) 13.402%, rgba(100, 100, 225, 0.25) 13.402%, rgba(100, 100, 225, 0.25) 16.495%, rgba(0, 0, 0, 0) 16.495%, rgba(0, 0, 0, 0) 17.526%, rgba(100, 100, 225, 0.25) 17.526%, rgba(100, 100, 225, 0.25) 20.619%, rgba(0, 0, 0, 0) 20.619%, rgba(0, 0, 0, 0) 21.649%, rgba(100, 100, 225, 0.25) 21.649%, rgba(100, 100, 225, 0.25) 24.742%, rgba(0, 0, 0, 0) 24.742%, rgba(0, 0, 0, 0) 25.773%, rgba(100, 100, 225, 0.25) 25.773%, rgba(100, 100, 225, 0.25) 28.866%, rgba(0, 0, 0, 0) 28.866%, rgba(0, 0, 0, 0) 29.897%, rgba(100, 100, 225, 0.25) 29.897%, rgba(100, 100, 225, 0.25) 32.99%, rgba(0, 0, 0, 0) 32.99%, rgba(0, 0, 0, 0) 34.021%, rgba(100, 100, 225, 0.25) 34.021%, rgba(100, 100, 225, 0.25) 37.113%, rgba(0, 0, 0, 0) 37.113%, rgba(0, 0, 0, 0) 38.144%, rgba(100, 100, 225, 0.25) 38.144%, rgba(100, 100, 225, 0.25) 41.237%, rgba(0, 0, 0, 0) 41.237%, rgba(0, 0, 0, 0) 42.268%, rgba(100, 100, 225, 0.25) 42.268%, rgba(100, 100, 225, 0.25) 45.361%, rgba(0, 0, 0, 0) 45.361%, rgba(0, 0, 0, 0) 46.392%, rgba(100, 100, 225, 0.25) 46.392%, rgba(100, 100, 225, 0.25) 49.485%, rgba(0, 0, 0, 0) 49.485%, rgba(0, 0, 0, 0) 50.515%, rgba(100, 100, 225, 0.25) 50.515%, rgba(100, 100, 225, 0.25) 53.608%, rgba(0, 0, 0, 0) 53.608%, rgba(0, 0, 0, 0) 54.639%, rgba(100, 100, 225, 0.25) 54.639%, rgba(100, 100, 225, 0.25) 57.732%, rgba(0, 0, 0, 0) 57.732%, rgba(0, 0, 0, 0) 58.763%, rgba(100, 100, 225, 0.25) 58.763%, rgba(100, 100, 225, 0.25) 61.856%, rgba(0, 0, 0, 0) 61.856%, rgba(0, 0, 0, 0) 62.887%, rgba(100, 100, 225, 0.25) 62.887%, rgba(100, 100, 225, 0.25) 65.979%, rgba(0, 0, 0, 0) 65.979%, rgba(0, 0, 0, 0) 67.01%, rgba(100, 100, 225, 0.25) 67.01%, rgba(100, 100, 225, 0.25) 70.103%, rgba(0, 0, 0, 0) 70.103%, rgba(0, 0, 0, 0) 71.134%, rgba(100, 100, 225, 0.25) 71.134%, rgba(100, 100, 225, 0.25) 74.227%, rgba(0, 0, 0, 0) 74.227%, rgba(0, 0, 0, 0) 75.258%, rgba(100, 100, 225, 0.25) 75.258%, rgba(100, 100, 225, 0.25) 78.351%, rgba(0, 0, 0, 0) 78.351%, rgba(0, 0, 0, 0) 79.381%, rgba(100, 100, 225, 0.25) 79.381%, rgba(100, 100, 225, 0.25) 82.474%, rgba(0, 0, 0, 0) 82.474%, rgba(0, 0, 0, 0) 83.505%, rgba(100, 100, 225, 0.25) 83.505%, rgba(100, 100, 225, 0.25) 86.598%, rgba(0, 0, 0, 0) 86.598%, rgba(0, 0, 0, 0) 87.629%, rgba(100, 100, 225, 0.25) 87.629%, rgba(100, 100, 225, 0.25) 90.722%, rgba(0, 0, 0, 0) 90.722%, rgba(0, 0, 0, 0) 91.753%, rgba(100, 100, 225, 0.25) 91.753%, rgba(100, 100, 225, 0.25) 94.845%, rgba(0, 0, 0, 0) 94.845%, rgba(0, 0, 0, 0) 95.876%, rgba(100, 100, 225, 0.25) 95.876%, rgba(100, 100, 225, 0.25) 98.969%, rgba(0, 0, 0, 0) 98.969%, rgba(0, 0, 0, 0) 100%);
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 1.031%, rgba(100, 100, 225, 0.25) 1.031%, rgba(100, 100, 225, 0.25) 4.124%, rgba(0, 0, 0, 0) 4.124%, rgba(0, 0, 0, 0) 5.155%, rgba(100, 100, 225, 0.25) 5.155%, rgba(100, 100, 225, 0.25) 8.247%, rgba(0, 0, 0, 0) 8.247%, rgba(0, 0, 0, 0) 9.278%, rgba(100, 100, 225, 0.25) 9.278%, rgba(100, 100, 225, 0.25) 12.371%, rgba(0, 0, 0, 0) 12.371%, rgba(0, 0, 0, 0) 13.402%, rgba(100, 100, 225, 0.25) 13.402%, rgba(100, 100, 225, 0.25) 16.495%, rgba(0, 0, 0, 0) 16.495%, rgba(0, 0, 0, 0) 17.526%, rgba(100, 100, 225, 0.25) 17.526%, rgba(100, 100, 225, 0.25) 20.619%, rgba(0, 0, 0, 0) 20.619%, rgba(0, 0, 0, 0) 21.649%, rgba(100, 100, 225, 0.25) 21.649%, rgba(100, 100, 225, 0.25) 24.742%, rgba(0, 0, 0, 0) 24.742%, rgba(0, 0, 0, 0) 25.773%, rgba(100, 100, 225, 0.25) 25.773%, rgba(100, 100, 225, 0.25) 28.866%, rgba(0, 0, 0, 0) 28.866%, rgba(0, 0, 0, 0) 29.897%, rgba(100, 100, 225, 0.25) 29.897%, rgba(100, 100, 225, 0.25) 32.99%, rgba(0, 0, 0, 0) 32.99%, rgba(0, 0, 0, 0) 34.021%, rgba(100, 100, 225, 0.25) 34.021%, rgba(100, 100, 225, 0.25) 37.113%, rgba(0, 0, 0, 0) 37.113%, rgba(0, 0, 0, 0) 38.144%, rgba(100, 100, 225, 0.25) 38.144%, rgba(100, 100, 225, 0.25) 41.237%, rgba(0, 0, 0, 0) 41.237%, rgba(0, 0, 0, 0) 42.268%, rgba(100, 100, 225, 0.25) 42.268%, rgba(100, 100, 225, 0.25) 45.361%, rgba(0, 0, 0, 0) 45.361%, rgba(0, 0, 0, 0) 46.392%, rgba(100, 100, 225, 0.25) 46.392%, rgba(100, 100, 225, 0.25) 49.485%, rgba(0, 0, 0, 0) 49.485%, rgba(0, 0, 0, 0) 50.515%, rgba(100, 100, 225, 0.25) 50.515%, rgba(100, 100, 225, 0.25) 53.608%, rgba(0, 0, 0, 0) 53.608%, rgba(0, 0, 0, 0) 54.639%, rgba(100, 100, 225, 0.25) 54.639%, rgba(100, 100, 225, 0.25) 57.732%, rgba(0, 0, 0, 0) 57.732%, rgba(0, 0, 0, 0) 58.763%, rgba(100, 100, 225, 0.25) 58.763%, rgba(100, 100, 225, 0.25) 61.856%, rgba(0, 0, 0, 0) 61.856%, rgba(0, 0, 0, 0) 62.887%, rgba(100, 100, 225, 0.25) 62.887%, rgba(100, 100, 225, 0.25) 65.979%, rgba(0, 0, 0, 0) 65.979%, rgba(0, 0, 0, 0) 67.01%, rgba(100, 100, 225, 0.25) 67.01%, rgba(100, 100, 225, 0.25) 70.103%, rgba(0, 0, 0, 0) 70.103%, rgba(0, 0, 0, 0) 71.134%, rgba(100, 100, 225, 0.25) 71.134%, rgba(100, 100, 225, 0.25) 74.227%, rgba(0, 0, 0, 0) 74.227%, rgba(0, 0, 0, 0) 75.258%, rgba(100, 100, 225, 0.25) 75.258%, rgba(100, 100, 225, 0.25) 78.351%, rgba(0, 0, 0, 0) 78.351%, rgba(0, 0, 0, 0) 79.381%, rgba(100, 100, 225, 0.25) 79.381%, rgba(100, 100, 225, 0.25) 82.474%, rgba(0, 0, 0, 0) 82.474%, rgba(0, 0, 0, 0) 83.505%, rgba(100, 100, 225, 0.25) 83.505%, rgba(100, 100, 225, 0.25) 86.598%, rgba(0, 0, 0, 0) 86.598%, rgba(0, 0, 0, 0) 87.629%, rgba(100, 100, 225, 0.25) 87.629%, rgba(100, 100, 225, 0.25) 90.722%, rgba(0, 0, 0, 0) 90.722%, rgba(0, 0, 0, 0) 91.753%, rgba(100, 100, 225, 0.25) 91.753%, rgba(100, 100, 225, 0.25) 94.845%, rgba(0, 0, 0, 0) 94.845%, rgba(0, 0, 0, 0) 95.876%, rgba(100, 100, 225, 0.25) 95.876%, rgba(100, 100, 225, 0.25) 98.969%, rgba(0, 0, 0, 0) 98.969%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 1.031%, rgba(100, 100, 225, 0.25) 1.031%, rgba(100, 100, 225, 0.25) 4.124%, rgba(0, 0, 0, 0) 4.124%, rgba(0, 0, 0, 0) 5.155%, rgba(100, 100, 225, 0.25) 5.155%, rgba(100, 100, 225, 0.25) 8.247%, rgba(0, 0, 0, 0) 8.247%, rgba(0, 0, 0, 0) 9.278%, rgba(100, 100, 225, 0.25) 9.278%, rgba(100, 100, 225, 0.25) 12.371%, rgba(0, 0, 0, 0) 12.371%, rgba(0, 0, 0, 0) 13.402%, rgba(100, 100, 225, 0.25) 13.402%, rgba(100, 100, 225, 0.25) 16.495%, rgba(0, 0, 0, 0) 16.495%, rgba(0, 0, 0, 0) 17.526%, rgba(100, 100, 225, 0.25) 17.526%, rgba(100, 100, 225, 0.25) 20.619%, rgba(0, 0, 0, 0) 20.619%, rgba(0, 0, 0, 0) 21.649%, rgba(100, 100, 225, 0.25) 21.649%, rgba(100, 100, 225, 0.25) 24.742%, rgba(0, 0, 0, 0) 24.742%, rgba(0, 0, 0, 0) 25.773%, rgba(100, 100, 225, 0.25) 25.773%, rgba(100, 100, 225, 0.25) 28.866%, rgba(0, 0, 0, 0) 28.866%, rgba(0, 0, 0, 0) 29.897%, rgba(100, 100, 225, 0.25) 29.897%, rgba(100, 100, 225, 0.25) 32.99%, rgba(0, 0, 0, 0) 32.99%, rgba(0, 0, 0, 0) 34.021%, rgba(100, 100, 225, 0.25) 34.021%, rgba(100, 100, 225, 0.25) 37.113%, rgba(0, 0, 0, 0) 37.113%, rgba(0, 0, 0, 0) 38.144%, rgba(100, 100, 225, 0.25) 38.144%, rgba(100, 100, 225, 0.25) 41.237%, rgba(0, 0, 0, 0) 41.237%, rgba(0, 0, 0, 0) 42.268%, rgba(100, 100, 225, 0.25) 42.268%, rgba(100, 100, 225, 0.25) 45.361%, rgba(0, 0, 0, 0) 45.361%, rgba(0, 0, 0, 0) 46.392%, rgba(100, 100, 225, 0.25) 46.392%, rgba(100, 100, 225, 0.25) 49.485%, rgba(0, 0, 0, 0) 49.485%, rgba(0, 0, 0, 0) 50.515%, rgba(100, 100, 225, 0.25) 50.515%, rgba(100, 100, 225, 0.25) 53.608%, rgba(0, 0, 0, 0) 53.608%, rgba(0, 0, 0, 0) 54.639%, rgba(100, 100, 225, 0.25) 54.639%, rgba(100, 100, 225, 0.25) 57.732%, rgba(0, 0, 0, 0) 57.732%, rgba(0, 0, 0, 0) 58.763%, rgba(100, 100, 225, 0.25) 58.763%, rgba(100, 100, 225, 0.25) 61.856%, rgba(0, 0, 0, 0) 61.856%, rgba(0, 0, 0, 0) 62.887%, rgba(100, 100, 225, 0.25) 62.887%, rgba(100, 100, 225, 0.25) 65.979%, rgba(0, 0, 0, 0) 65.979%, rgba(0, 0, 0, 0) 67.01%, rgba(100, 100, 225, 0.25) 67.01%, rgba(100, 100, 225, 0.25) 70.103%, rgba(0, 0, 0, 0) 70.103%, rgba(0, 0, 0, 0) 71.134%, rgba(100, 100, 225, 0.25) 71.134%, rgba(100, 100, 225, 0.25) 74.227%, rgba(0, 0, 0, 0) 74.227%, rgba(0, 0, 0, 0) 75.258%, rgba(100, 100, 225, 0.25) 75.258%, rgba(100, 100, 225, 0.25) 78.351%, rgba(0, 0, 0, 0) 78.351%, rgba(0, 0, 0, 0) 79.381%, rgba(100, 100, 225, 0.25) 79.381%, rgba(100, 100, 225, 0.25) 82.474%, rgba(0, 0, 0, 0) 82.474%, rgba(0, 0, 0, 0) 83.505%, rgba(100, 100, 225, 0.25) 83.505%, rgba(100, 100, 225, 0.25) 86.598%, rgba(0, 0, 0, 0) 86.598%, rgba(0, 0, 0, 0) 87.629%, rgba(100, 100, 225, 0.25) 87.629%, rgba(100, 100, 225, 0.25) 90.722%, rgba(0, 0, 0, 0) 90.722%, rgba(0, 0, 0, 0) 91.753%, rgba(100, 100, 225, 0.25) 91.753%, rgba(100, 100, 225, 0.25) 94.845%, rgba(0, 0, 0, 0) 94.845%, rgba(0, 0, 0, 0) 95.876%, rgba(100, 100, 225, 0.25) 95.876%, rgba(100, 100, 225, 0.25) 98.969%, rgba(0, 0, 0, 0) 98.969%, rgba(0, 0, 0, 0) 100%);
-  background-position: left top;
-  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(255, 0, 0, 0.15)), color-stop(5%, rgba(255, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 0, 0, 0.15) 5%, rgba(255, 0, 0, 0) 5%);
-  background-image: -moz-linear-gradient(bottom, rgba(255, 0, 0, 0.15) 5%, rgba(255, 0, 0, 0) 5%);
-  background-image: -o-linear-gradient(bottom, rgba(255, 0, 0, 0.15) 5%, rgba(255, 0, 0, 0) 5%);
-  background-image: -ms-linear-gradient(bottom, rgba(255, 0, 0, 0.15) 5%, rgba(255, 0, 0, 0) 5%);
-  background-image: linear-gradient(bottom, rgba(255, 0, 0, 0.15) 5%, rgba(255, 0, 0, 0) 5%);
-  -moz-background-size: 100% 12px;
-  -webkit-background-size: 100% 12px;
-  -o-background-size: 100% 12px;
-  background-size: 100% 12px;
-  background-position: left top;
 }
 /* line 38, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 body:after {
@@ -1397,7 +1349,7 @@ body:after {
   clear: both;
 }
 
-/* line 23, ../sass/master.scss */
+/* line 22, ../sass/master.scss */
 .container {
   clear: both;
   margin-left: 1.031%;
@@ -1412,7 +1364,7 @@ body:after {
   */
 }
 
-/* line 33, ../sass/master.scss */
+/* line 32, ../sass/master.scss */
 [role="banner"] {
   *zoom: 1;
   margin: auto;
@@ -1432,34 +1384,59 @@ body:after {
   display: table;
   clear: both;
 }
+/* line 35, ../sass/master.scss */
+[role="banner"] h1 {
+  display: inline;
+  float: left;
+  width: 31.429%;
+  margin-right: 2.857%;
+}
 
-/* line 36, ../sass/master.scss */
+/* line 38, ../sass/master.scss */
 [role="navigation"] {
   display: inline;
   float: left;
-  width: 100%;
-  margin-right: 9.091%;
+  width: 23.711%;
+  margin-right: 1.031%;
+  padding-left: 24.742%;
+  *zoom: 1;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+[role="navigation"]:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 42, ../sass/master.scss */
+[role="navigation"] ul {
+  *zoom: 1;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+[role="navigation"] ul:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* line 40, ../sass/master.scss */
+/* line 45, ../sass/master.scss */
 [role="banner"] img:hover, [role="banner"] img:focus {
   opacity: .75;
 }
 
 /* header ---------------------- */
 /* section ---------------------- */
-/* line 49, ../sass/master.scss */
+/* line 54, ../sass/master.scss */
 [role="region"] {
   margin: 0 0 1.5em;
   width: 100%;
 }
-/* line 52, ../sass/master.scss */
+/* line 57, ../sass/master.scss */
 [role="region"]:last-child {
   margin: 0;
 }
 
 /* nav ---------------------- */
-/* line 67, ../sass/master.scss */
+/* line 72, ../sass/master.scss */
 [role="navigation"] a {
   -webkit-tap-highlight-color: #6e5048;
 }
@@ -1468,7 +1445,7 @@ body:after {
 /* div ---------------------- */
 /* aside ---------------------- */
 /* footer ---------------------- */
-/* line 84, ../sass/master.scss */
+/* line 89, ../sass/master.scss */
 [role="contentinfo"] {
   font-size: 0.75em;
   padding: 4.5em auto auto;
@@ -1477,55 +1454,76 @@ body:after {
 /* 
 	Typography & links
 ---------------------------------------------------------------------- */
-/* line 90, ../sass/master.scss */
+/* line 95, ../sass/master.scss */
 a {
   text-decoration: none;
   color: #e799b1;
 }
-/* line 94, ../sass/master.scss */
+/* line 99, ../sass/master.scss */
 a:hover, a:focus, a .hover {
   color: #6e5048;
 }
 
 /* line 1, ../sass/styles/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  font: 800 48px/1 "ff-dagny-web-pro", helvetica, sans-serif;
+  font: 700 36px/1.5 "ff-meta-web-pro", helvetica, sans-serif;
+}
+/* line 4, ../sass/styles/_typography.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  display: inline-block;
 }
 
-/* line 4, ../sass/styles/_typography.scss */
-h2 {
+/* line 7, ../sass/styles/_typography.scss */
+h1 {
   font-size: 36px;
 }
 
-/* line 6, ../sass/styles/_typography.scss */
+/* line 9, ../sass/styles/_typography.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 11, ../sass/styles/_typography.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 8, ../sass/styles/_typography.scss */
+/* line 13, ../sass/styles/_typography.scss */
 h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* line 17, ../sass/styles/_typography.scss */
+h5 {
   font-size: 16px;
 }
 
-/* line 10, ../sass/styles/_typography.scss */
-h5 {
-  font-size: 12px;
-}
-
-/* line 12, ../sass/styles/_typography.scss */
+/* line 19, ../sass/styles/_typography.scss */
 h6 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 17, ../sass/styles/_typography.scss */
+/* line 24, ../sass/styles/_typography.scss */
 p {
   font: 1em/1.5em "adelle", ff-meta-serif-web-pro, georgia, serif;
-  padding: 1.5em 0;
+  padding: 0.75em 0;
+  text-align: justify;
 }
 
-/* line 100, ../sass/master.scss */
+/*
+h1,h2,h3,h4,h5,h6{line-height:1;margin-bottom:0.25em;text-rendering: optimizeLegibility;}
+h1{font-size: 30px;}
+h2{font-size:24px;line-height:24px;padding:7px 0px 30px;margin:0px 0px 20px;}
+h3{font-size:18px;margin-bottom:.75em;}
+h4{font-size:16px;margin-bottom:1.25em;text-transform:uppercase;letter-spacing:0.75px;}
+h5{font-size:1em;margin-bottom:1.25em;}
+h6{font-size:.70em;margin-bottom:2em;}
+*/
+/* line 105, ../sass/master.scss */
 p, li {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -1534,7 +1532,7 @@ p, li {
 }
 
 /* pre/code ---------------------- */
-/* line 104, ../sass/master.scss */
+/* line 109, ../sass/master.scss */
 pre {
   font: 16px/1.5em Menlo, Monaco, "Courier New", monospace;
   border: 1px solid #ccc;
@@ -1548,25 +1546,25 @@ pre {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
-/* line 111, ../sass/master.scss */
+/* line 116, ../sass/master.scss */
 pre code {
   display: block;
   padding: 5px;
 }
 
 /* blockquote ---------------------- */
-/* line 117, ../sass/master.scss */
+/* line 122, ../sass/master.scss */
 blockquote {
   padding: 0 0 0 56px;
   position: relative;
   font: 1em/1.5em "adelle", ff-meta-serif-web-pro, georgia, serif;
 }
-/* line 123, ../sass/master.scss */
+/* line 128, ../sass/master.scss */
 blockquote p {
   position: relative;
   z-index: 1;
 }
-/* line 124, ../sass/master.scss */
+/* line 129, ../sass/master.scss */
 blockquote:before {
   content: '“';
   color: rgba(110, 80, 72, 0.2);
@@ -1593,24 +1591,24 @@ section > p:first-child {
 /* 
 	Lists
 ---------------------------------------------------------------------- */
-/* line 154, ../sass/master.scss */
+/* line 159, ../sass/master.scss */
 [role="contentinfo"] li {
   display: inline-block;
 }
 
-/* line 157, ../sass/master.scss */
+/* line 162, ../sass/master.scss */
 dt {
-  font: 700 12px/1 "ff-dagny-web-pro", helvetica, sans-serif;
+  font: 700 12px/1 "ff-meta-web-pro", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 159, ../sass/master.scss */
+/* line 164, ../sass/master.scss */
 dd:last-child {
   margin: 0;
 }
 
-/* line 163, ../sass/master.scss */
+/* line 168, ../sass/master.scss */
 .items {
   list-style: none;
   margin: 1.5em 0;
@@ -1619,13 +1617,15 @@ dd:last-child {
 /*
 	Buttons
 -----------------------------------------------------------------------*/
-/* line 4, ../sass/import/_buttons.scss */
-.button_base, .alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"], .subtle {
-  font: 900 12px/1 "ff-dagny-web-pro", helvetica, sans-serif;
+/* line 77, ../sass/import/_buttons.scss */
+.alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"] {
+  margin: 0 0 1.5em;
+  font: 700 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
   border: 1px solid;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  padding: 0.375em 0.75em;
   -moz-transition: none;
   -webkit-transition: none;
   -o-transition: none;
@@ -1639,11 +1639,9 @@ dd:last-child {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* line 77, ../sass/import/_buttons.scss */
-.alt, .danger, .warning, .success, .info, [type="submit"], .button, button, [type="search"] {
-  margin: 0 0 1.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
   background: -webkit-linear-gradient(top, #ffffff, #eeeeee);
   background: -moz-linear-gradient(top, #ffffff, #eeeeee);
@@ -1667,6 +1665,7 @@ dd:last-child {
 .alt:hover, .danger:hover, .warning:hover, .success:hover, .info:hover, [type="submit"]:hover, .button:hover, button:hover, [type="search"]:hover, .alt:focus, .danger:focus, .warning:focus, .success:focus, .info:focus, [type="submit"]:focus, .button:focus, button:focus, [type="search"]:focus {
   color: #444444;
   border-color: #c8c8c8;
+  outline: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #fbfbfb));
   background: -webkit-linear-gradient(top, #ffffff, #fbfbfb);
   background: -moz-linear-gradient(top, #ffffff, #fbfbfb);
@@ -1722,6 +1721,7 @@ dd:last-child {
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+  outline: none;
   border-color: #d4d4d4;
   color: #2b2b2b;
   color: rgba(68, 68, 68, 0.8);
@@ -1731,6 +1731,28 @@ dd:last-child {
 
 /* line 82, ../sass/import/_buttons.scss */
 .subtle {
+  font: 700 16px/1 "ff-meta-web-pro", helvetica, sans-serif;
+  border: 1px solid;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: 0.375em 0.75em;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   background: rgba(0, 0, 0, 0.01);
   color: #444444;
@@ -1749,18 +1771,19 @@ dd:last-child {
 }
 /* line 31, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
-  text-shadow: 0 1px 1px #52551c;
+  text-shadow: 0 1px 1px #6f7331;
 }
 /* line 41, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   color: white;
-  border-color: #646823;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c2c95b), color-stop(100%, #aeb53c));
-  background: -webkit-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -moz-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -o-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -ms-linear-gradient(top, #c2c95b, #aeb53c);
-  background: linear-gradient(top, #c2c95b, #aeb53c);
+  border-color: #818539;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9cd8a), color-stop(100%, #b8be66));
+  background: -webkit-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -moz-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -o-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -ms-linear-gradient(top, #c9cd8a, #b8be66);
+  background: linear-gradient(top, #c9cd8a, #b8be66);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -1768,13 +1791,13 @@ dd:last-child {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .subtle:active {
-  border-color: #3f4216;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
-  background: -webkit-linear-gradient(#767c29 50%, #989e34);
-  background: -moz-linear-gradient(#767c29 50%, #989e34);
-  background: -o-linear-gradient(#767c29 50%, #989e34);
-  background: -ms-linear-gradient(#767c29 50%, #989e34);
-  background: linear-gradient(#767c29 50%, #989e34);
+  border-color: #5e612a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #929740), color-stop(100%, #afb551));
+  background: -webkit-linear-gradient(#929740 50%, #afb551);
+  background: -moz-linear-gradient(#929740 50%, #afb551);
+  background: -o-linear-gradient(#929740 50%, #afb551);
+  background: -ms-linear-gradient(#929740 50%, #afb551);
+  background: linear-gradient(#929740 50%, #afb551);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -1782,17 +1805,17 @@ dd:last-child {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .subtle.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -1800,17 +1823,18 @@ dd:last-child {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  outline: none;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -1819,19 +1843,19 @@ dd:last-child {
 
 /* line 86, ../sass/import/_buttons.scss */
 .alt {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #237086));
-  background: -webkit-linear-gradient(top, #2d92af, #237086);
-  background: -moz-linear-gradient(top, #2d92af, #237086);
-  background: -o-linear-gradient(top, #2d92af, #237086);
-  background: -ms-linear-gradient(top, #2d92af, #237086);
-  background: linear-gradient(top, #2d92af, #237086);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #29bde6), color-stop(100%, #179fc5));
+  background: -webkit-linear-gradient(top, #29bde6, #179fc5);
+  background: -moz-linear-gradient(top, #29bde6, #179fc5);
+  background: -o-linear-gradient(top, #29bde6, #179fc5);
+  background: -ms-linear-gradient(top, #29bde6, #179fc5);
+  background: linear-gradient(top, #29bde6, #179fc5);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #244852;
+  border-color: #237086;
   color: white;
-  text-shadow: 0 1px 1px #0e2d35;
+  text-shadow: 0 1px 1px #0d5569;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1841,13 +1865,14 @@ dd:last-child {
 /* line 41, ../sass/import/_buttons.scss */
 .alt:hover, .alt:focus {
   color: white;
-  border-color: #133e49;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33a3c3), color-stop(100%, #28819a));
-  background: -webkit-linear-gradient(top, #33a3c3, #28819a);
-  background: -moz-linear-gradient(top, #33a3c3, #28819a);
-  background: -o-linear-gradient(top, #33a3c3, #28819a);
-  background: -ms-linear-gradient(top, #33a3c3, #28819a);
-  background: linear-gradient(top, #33a3c3, #28819a);
+  border-color: #0f6880;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #40c4e8), color-stop(100%, #1ab1db));
+  background: -webkit-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -moz-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -o-linear-gradient(top, #40c4e8, #1ab1db);
+  background: -ms-linear-gradient(top, #40c4e8, #1ab1db);
+  background: linear-gradient(top, #40c4e8, #1ab1db);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -1855,13 +1880,13 @@ dd:last-child {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .alt:active {
-  border-color: #091c21;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #184f5e), color-stop(100%, #226d82));
-  background: -webkit-linear-gradient(#184f5e 50%, #226d82);
-  background: -moz-linear-gradient(#184f5e 50%, #226d82);
-  background: -o-linear-gradient(#184f5e 50%, #226d82);
-  background: -ms-linear-gradient(#184f5e 50%, #226d82);
-  background: linear-gradient(#184f5e 50%, #226d82);
+  border-color: #0a4353;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #127a97), color-stop(100%, #179bc0));
+  background: -webkit-linear-gradient(#127a97 50%, #179bc0);
+  background: -moz-linear-gradient(#127a97 50%, #179bc0);
+  background: -o-linear-gradient(#127a97 50%, #179bc0);
+  background: -ms-linear-gradient(#127a97 50%, #179bc0);
+  background: linear-gradient(#127a97 50%, #179bc0);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -1869,17 +1894,17 @@ dd:last-child {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .alt.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
-  background: -webkit-linear-gradient(#346775, #346775);
-  background: -moz-linear-gradient(#346775, #346775);
-  background: -o-linear-gradient(#346775, #346775);
-  background: -ms-linear-gradient(#346775, #346775);
-  background: linear-gradient(#346775, #346775);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #2d92af));
+  background: -webkit-linear-gradient(#2d92af, #2d92af);
+  background: -moz-linear-gradient(#2d92af, #2d92af);
+  background: -o-linear-gradient(#2d92af, #2d92af);
+  background: -ms-linear-gradient(#2d92af, #2d92af);
+  background: linear-gradient(#2d92af, #2d92af);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #304146;
+  border-color: #346775;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -1887,17 +1912,18 @@ dd:last-child {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .alt.disabled:hover, .alt.disabled:focus, .alt.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #346775), color-stop(100%, #346775));
-  background: -webkit-linear-gradient(#346775, #346775);
-  background: -moz-linear-gradient(#346775, #346775);
-  background: -o-linear-gradient(#346775, #346775);
-  background: -ms-linear-gradient(#346775, #346775);
-  background: linear-gradient(#346775, #346775);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d92af), color-stop(100%, #2d92af));
+  background: -webkit-linear-gradient(#2d92af, #2d92af);
+  background: -moz-linear-gradient(#2d92af, #2d92af);
+  background: -o-linear-gradient(#2d92af, #2d92af);
+  background: -ms-linear-gradient(#2d92af, #2d92af);
+  background: linear-gradient(#2d92af, #2d92af);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #304146;
+  outline: none;
+  border-color: #346775;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -1906,19 +1932,19 @@ dd:last-child {
 
 /* line 89, ../sass/import/_buttons.scss */
 .danger {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #da6e6f), color-stop(100%, #cf4647));
-  background: -webkit-linear-gradient(top, #da6e6f, #cf4647);
-  background: -moz-linear-gradient(top, #da6e6f, #cf4647);
-  background: -o-linear-gradient(top, #da6e6f, #cf4647);
-  background: -ms-linear-gradient(top, #da6e6f, #cf4647);
-  background: linear-gradient(top, #da6e6f, #cf4647);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e49798), color-stop(100%, #da6e6f));
+  background: -webkit-linear-gradient(top, #e49798, #da6e6f);
+  background: -moz-linear-gradient(top, #e49798, #da6e6f);
+  background: -o-linear-gradient(top, #e49798, #da6e6f);
+  background: -ms-linear-gradient(top, #e49798, #da6e6f);
+  background: linear-gradient(top, #e49798, #da6e6f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #9d4546;
+  border-color: #b85d5e;
   color: white;
-  text-shadow: 0 1px 1px #8b2425;
+  text-shadow: 0 1px 1px #b32f30;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1928,13 +1954,14 @@ dd:last-child {
 /* line 41, ../sass/import/_buttons.scss */
 .danger:hover, .danger:focus {
   color: white;
-  border-color: #9f292a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #df8383), color-stop(100%, #d45a5b));
-  background: -webkit-linear-gradient(top, #df8383, #d45a5b);
-  background: -moz-linear-gradient(top, #df8383, #d45a5b);
-  background: -o-linear-gradient(top, #df8383, #d45a5b);
-  background: -ms-linear-gradient(top, #df8383, #d45a5b);
-  background: linear-gradient(top, #df8383, #d45a5b);
+  border-color: #c83435;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9abac), color-stop(100%, #df8383));
+  background: -webkit-linear-gradient(top, #e9abac, #df8383);
+  background: -moz-linear-gradient(top, #e9abac, #df8383);
+  background: -o-linear-gradient(top, #e9abac, #df8383);
+  background: -ms-linear-gradient(top, #e9abac, #df8383);
+  background: linear-gradient(top, #e9abac, #df8383);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -1942,13 +1969,13 @@ dd:last-child {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .danger:active {
-  border-color: #771f1f;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b32f30), color-stop(100%, #ce4243));
-  background: -webkit-linear-gradient(#b32f30 50%, #ce4243);
-  background: -moz-linear-gradient(#b32f30 50%, #ce4243);
-  background: -o-linear-gradient(#b32f30 50%, #ce4243);
-  background: -ms-linear-gradient(#b32f30 50%, #ce4243);
-  background: linear-gradient(#b32f30 50%, #ce4243);
+  border-color: #9f292a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #cf4647), color-stop(100%, #d86a6b));
+  background: -webkit-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -moz-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -o-linear-gradient(#cf4647 50%, #d86a6b);
+  background: -ms-linear-gradient(#cf4647 50%, #d86a6b);
+  background: linear-gradient(#cf4647 50%, #d86a6b);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -1961,17 +1988,17 @@ dd:last-child {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .danger.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
-  background: -webkit-linear-gradient(#b85d5e, #b85d5e);
-  background: -moz-linear-gradient(#b85d5e, #b85d5e);
-  background: -o-linear-gradient(#b85d5e, #b85d5e);
-  background: -ms-linear-gradient(#b85d5e, #b85d5e);
-  background: linear-gradient(#b85d5e, #b85d5e);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c78181), color-stop(100%, #c78181));
+  background: -webkit-linear-gradient(#c78181, #c78181);
+  background: -moz-linear-gradient(#c78181, #c78181);
+  background: -o-linear-gradient(#c78181, #c78181);
+  background: -ms-linear-gradient(#c78181, #c78181);
+  background: linear-gradient(#c78181, #c78181);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #865c5c;
+  border-color: #a07575;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -1979,17 +2006,18 @@ dd:last-child {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .danger.disabled:hover, .danger.disabled:focus, .danger.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b85d5e), color-stop(100%, #b85d5e));
-  background: -webkit-linear-gradient(#b85d5e, #b85d5e);
-  background: -moz-linear-gradient(#b85d5e, #b85d5e);
-  background: -o-linear-gradient(#b85d5e, #b85d5e);
-  background: -ms-linear-gradient(#b85d5e, #b85d5e);
-  background: linear-gradient(#b85d5e, #b85d5e);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c78181), color-stop(100%, #c78181));
+  background: -webkit-linear-gradient(#c78181, #c78181);
+  background: -moz-linear-gradient(#c78181, #c78181);
+  background: -o-linear-gradient(#c78181, #c78181);
+  background: -ms-linear-gradient(#c78181, #c78181);
+  background: linear-gradient(#c78181, #c78181);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #865c5c;
+  outline: none;
+  border-color: #a07575;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -2021,6 +2049,7 @@ dd:last-child {
 .warning:hover, .warning:focus {
   color: white;
   border-color: #d07500;
+  outline: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbe6a), color-stop(100%, #ffa837));
   background: -webkit-linear-gradient(top, #ffbe6a, #ffa837);
   background: -moz-linear-gradient(top, #ffbe6a, #ffa837);
@@ -2076,6 +2105,7 @@ dd:last-child {
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+  outline: none;
   border-color: #ba7e2f;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
@@ -2085,19 +2115,19 @@ dd:last-child {
 
 /* line 95, ../sass/import/_buttons.scss */
 .success {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bbc248), color-stop(100%, #9ba236));
-  background: -webkit-linear-gradient(top, #bbc248, #9ba236);
-  background: -moz-linear-gradient(top, #bbc248, #9ba236);
-  background: -o-linear-gradient(top, #bbc248, #9ba236);
-  background: -ms-linear-gradient(top, #bbc248, #9ba236);
-  background: linear-gradient(top, #bbc248, #9ba236);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1c578), color-stop(100%, #b0b654));
+  background: -webkit-linear-gradient(top, #c1c578, #b0b654);
+  background: -moz-linear-gradient(top, #c1c578, #b0b654);
+  background: -o-linear-gradient(top, #c1c578, #b0b654);
+  background: -ms-linear-gradient(top, #c1c578, #b0b654);
+  background: linear-gradient(top, #c1c578, #b0b654);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #686b39;
+  border-color: #7f8256;
   color: white;
-  text-shadow: 0 1px 1px #52551c;
+  text-shadow: 0 1px 1px #6f7331;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -2107,13 +2137,14 @@ dd:last-child {
 /* line 41, ../sass/import/_buttons.scss */
 .success:hover, .success:focus {
   color: white;
-  border-color: #646823;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c2c95b), color-stop(100%, #aeb53c));
-  background: -webkit-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -moz-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -o-linear-gradient(top, #c2c95b, #aeb53c);
-  background: -ms-linear-gradient(top, #c2c95b, #aeb53c);
-  background: linear-gradient(top, #c2c95b, #aeb53c);
+  border-color: #818539;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9cd8a), color-stop(100%, #b8be66));
+  background: -webkit-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -moz-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -o-linear-gradient(top, #c9cd8a, #b8be66);
+  background: -ms-linear-gradient(top, #c9cd8a, #b8be66);
+  background: linear-gradient(top, #c9cd8a, #b8be66);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -2121,13 +2152,13 @@ dd:last-child {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .success:active {
-  border-color: #3f4216;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #767c29), color-stop(100%, #989e34));
-  background: -webkit-linear-gradient(#767c29 50%, #989e34);
-  background: -moz-linear-gradient(#767c29 50%, #989e34);
-  background: -o-linear-gradient(#767c29 50%, #989e34);
-  background: -ms-linear-gradient(#767c29 50%, #989e34);
-  background: linear-gradient(#767c29 50%, #989e34);
+  border-color: #5e612a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #929740), color-stop(100%, #afb551));
+  background: -webkit-linear-gradient(#929740 50%, #afb551);
+  background: -moz-linear-gradient(#929740 50%, #afb551);
+  background: -o-linear-gradient(#929740 50%, #afb551);
+  background: -ms-linear-gradient(#929740 50%, #afb551);
+  background: linear-gradient(#929740 50%, #afb551);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -2135,17 +2166,17 @@ dd:last-child {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .success.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -2153,17 +2184,18 @@ dd:last-child {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .success.disabled:hover, .success.disabled:focus, .success.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #888c4b), color-stop(100%, #888c4b));
-  background: -webkit-linear-gradient(#888c4b, #888c4b);
-  background: -moz-linear-gradient(#888c4b, #888c4b);
-  background: -o-linear-gradient(#888c4b, #888c4b);
-  background: -ms-linear-gradient(#888c4b, #888c4b);
-  background: linear-gradient(#888c4b, #888c4b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9e6d), color-stop(100%, #9b9e6d));
+  background: -webkit-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -moz-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -o-linear-gradient(#9b9e6d, #9b9e6d);
+  background: -ms-linear-gradient(#9b9e6d, #9b9e6d);
+  background: linear-gradient(#9b9e6d, #9b9e6d);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #5a5b4a;
+  outline: none;
+  border-color: #6c6c6b;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -2172,19 +2204,19 @@ dd:last-child {
 
 /* line 98, ../sass/import/_buttons.scss */
 .info, [type="submit"] {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd537f), color-stop(100%, #b83564));
-  background: -webkit-linear-gradient(top, #cd537f, #b83564);
-  background: -moz-linear-gradient(top, #cd537f, #b83564);
-  background: -o-linear-gradient(top, #cd537f, #b83564);
-  background: -ms-linear-gradient(top, #cd537f, #b83564);
-  background: linear-gradient(top, #cd537f, #b83564);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d97a9c), color-stop(100%, #cd537f));
+  background: -webkit-linear-gradient(top, #d97a9c, #cd537f);
+  background: -moz-linear-gradient(top, #d97a9c, #cd537f);
+  background: -o-linear-gradient(top, #d97a9c, #cd537f);
+  background: -ms-linear-gradient(top, #d97a9c, #cd537f);
+  background: linear-gradient(top, #d97a9c, #cd537f);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-color: #7e3c54;
+  border-color: #a04d6b;
   color: white;
-  text-shadow: 0 1px 1px #902a4e;
+  text-shadow: 0 1px 1px #b83564;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -2194,13 +2226,14 @@ dd:last-child {
 /* line 41, ../sass/import/_buttons.scss */
 .info:hover, [type="submit"]:hover, .info:focus, [type="submit"]:focus {
   color: white;
-  border-color: #7d2444;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d3668d), color-stop(100%, #c83f70));
-  background: -webkit-linear-gradient(top, #d3668d, #c83f70);
-  background: -moz-linear-gradient(top, #d3668d, #c83f70);
-  background: -o-linear-gradient(top, #d3668d, #c83f70);
-  background: -ms-linear-gradient(top, #d3668d, #c83f70);
-  background: linear-gradient(top, #d3668d, #c83f70);
+  border-color: #a42f59;
+  outline: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #de8eab), color-stop(100%, #d3668d));
+  background: -webkit-linear-gradient(top, #de8eab, #d3668d);
+  background: -moz-linear-gradient(top, #de8eab, #d3668d);
+  background: -o-linear-gradient(top, #de8eab, #d3668d);
+  background: -ms-linear-gradient(top, #de8eab, #d3668d);
+  background: linear-gradient(top, #de8eab, #d3668d);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -2208,13 +2241,13 @@ dd:last-child {
 }
 /* line 47, ../sass/import/_buttons.scss */
 .info:active, [type="submit"]:active {
-  border-color: #55182e;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #902a4e), color-stop(100%, #b43462));
-  background: -webkit-linear-gradient(#902a4e 50%, #b43462);
-  background: -moz-linear-gradient(#902a4e 50%, #b43462);
-  background: -o-linear-gradient(#902a4e 50%, #b43462);
-  background: -ms-linear-gradient(#902a4e 50%, #b43462);
-  background: linear-gradient(#902a4e 50%, #b43462);
+  border-color: #7d2444;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #b83564), color-stop(100%, #cc4f7c));
+  background: -webkit-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -moz-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -o-linear-gradient(#b83564 50%, #cc4f7c);
+  background: -ms-linear-gradient(#b83564 50%, #cc4f7c);
+  background: linear-gradient(#b83564 50%, #cc4f7c);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -2222,17 +2255,17 @@ dd:last-child {
 }
 /* line 57, ../sass/import/_buttons.scss */
 .info.disabled, .disabled[type="submit"] {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
-  background: -webkit-linear-gradient(#a04d6b, #a04d6b);
-  background: -moz-linear-gradient(#a04d6b, #a04d6b);
-  background: -o-linear-gradient(#a04d6b, #a04d6b);
-  background: -ms-linear-gradient(#a04d6b, #a04d6b);
-  background: linear-gradient(#a04d6b, #a04d6b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b76985), color-stop(100%, #b76985));
+  background: -webkit-linear-gradient(#b76985, #b76985);
+  background: -moz-linear-gradient(#b76985, #b76985);
+  background: -o-linear-gradient(#b76985, #b76985);
+  background: -ms-linear-gradient(#b76985, #b76985);
+  background: linear-gradient(#b76985, #b76985);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #6b4f59;
+  border-color: #896471;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -2240,17 +2273,18 @@ dd:last-child {
 }
 /* line 65, ../sass/import/_buttons.scss */
 .info.disabled:hover, .disabled[type="submit"]:hover, .info.disabled:focus, .disabled[type="submit"]:focus, .info.disabled:active, .disabled[type="submit"]:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a04d6b), color-stop(100%, #a04d6b));
-  background: -webkit-linear-gradient(#a04d6b, #a04d6b);
-  background: -moz-linear-gradient(#a04d6b, #a04d6b);
-  background: -o-linear-gradient(#a04d6b, #a04d6b);
-  background: -ms-linear-gradient(#a04d6b, #a04d6b);
-  background: linear-gradient(#a04d6b, #a04d6b);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b76985), color-stop(100%, #b76985));
+  background: -webkit-linear-gradient(#b76985, #b76985);
+  background: -moz-linear-gradient(#b76985, #b76985);
+  background: -o-linear-gradient(#b76985, #b76985);
+  background: -ms-linear-gradient(#b76985, #b76985);
+  background: linear-gradient(#b76985, #b76985);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-color: #6b4f59;
+  outline: none;
+  border-color: #896471;
   color: #e6e6e6;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
@@ -2301,47 +2335,41 @@ dd:last-child {
 /* 
 	Misc.
 ---------------------------------------------------------------------- */
-/* line 184, ../sass/master.scss */
+/* line 189, ../sass/master.scss */
 .hiddenFields {
   display: none;
 }
 
-/* line 185, ../sass/master.scss */
+/* line 190, ../sass/master.scss */
 iframe {
   width: 100%;
 }
 
 /* figure ------------------------------ */
 /* table ---------------------- */
-/* line 192, ../sass/master.scss */
+/* line 197, ../sass/master.scss */
 table {
-  border: 1px solid #ddd;
+  border: 1px solid #6e5048;
   border-collapse: separate;
+  background: #fff;
 }
 
-/* line 195, ../sass/master.scss */
+/* line 201, ../sass/master.scss */
 td, th {
   padding: 0.375em;
   line-height: 1.5em;
   text-align: left;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6e5048;
 }
-
-/* line 200, ../sass/master.scss */
-tr:first-child th {
-  border-top: none;
+/* line 206, ../sass/master.scss */
+td:nth-of-type(even), th:nth-of-type(even) {
+  background: #fbf0f3;
 }
 
 /*
 	Form
 -----------------------------------------------------------------------*/
-/* line 214, ../sass/master.scss */
-input::-webkit-input-placeholder {
-  color: #A7ADAF;
-  font: italic 0.75em "ff-dagny-web-pro", helvetica, sans-serif;
-}
-
-/* line 215, ../sass/master.scss */
+/* line 219, ../sass/master.scss */
 [for="keywords"] {
   position: absolute;
   top: -9999px;
@@ -2349,7 +2377,7 @@ input::-webkit-input-placeholder {
 }
 
 /* contact form ---------------------- */
-/* line 218, ../sass/master.scss */
+/* line 222, ../sass/master.scss */
 .contact section input, .contact textarea, .contact select {
   display: block;
 }

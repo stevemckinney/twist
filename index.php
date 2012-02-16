@@ -4,65 +4,10 @@
 	<h1>Introduction</h1>
 	
 	<article role="article">
-		<p>This framework uses SASS, Compass and Susy. My intention has been to bring together the best parts of my most used parts of SASS. As well as create my own base for projects. Something I should have done ages ago. As the flexibility of SASS is endless, I won't have to remember class names or be overly repetitive anywhere.</p>
-		<p>I have created many mixins to cover most elements of a website that will be reused and that I feel aren't available elsewhere. Also as I've done it myself I know what parameters are needed and used. Easy to refer to files and import on a needed basis.</p>
+		<p>This framework uses SASS, Compass and Susy. My intention has been to bring together the best parts of my most used parts of SASS. As well as create my own base for projects. Something I should have done ages ago. As the flexibility of SASS is endless, I won't have to remember class names or be overly repetitive anywhere. Which was the push towards making this framework too.</p>
+		<p>I have created many mixins to cover most elements of a website that will be reused and that I feel aren't available elsewhere. Also as I've done it myself, I know what parameters are needed and used. Easy to refer to files and import on a needed basis.</p>
 	</article>
-	
-	<h2>Header Level 2</h2>
-		       
-	<ol>
-	   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-	   <li>Aliquam tincidunt mauris eu risus.</li>
-	</ol>
-	
-	<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-	
-	<h3>Header Level 3</h3>
-	
-	<ul>
-	   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-	   <li>Aliquam tincidunt mauris eu risus.</li>
-	</ul>
-	
-	<pre><code>
-	#header h1 a { 
-		display: block; 
-		width: 300px; 
-		height: 80px; 
-	}
-	</code></pre>
-	
-	<table>
-		<thead>
-			<tr>
-				<th>Item</th>
-				<th>Item 2</th>
-				<th>Item 3</th>
-				<th>Item 4</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Yes</td>
-				<td>No</td>
-				<td>Yes</td>
-				<td>No</td>
-			</tr>
-			<tr>
-				<td>Maybe</td>
-				<td>No</td>
-				<td>Maybe</td>
-				<td>Yes</td>
-			</tr>
-			<tr>
-				<td>All</td>
-				<td>2</td>
-				<td>3</td>
-				<td>10</td>
-			</tr>
-		</tbody>
-	</table>
-	
+		
 	<hr>
 	
 	<section role="region">

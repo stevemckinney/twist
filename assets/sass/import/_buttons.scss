@@ -1,11 +1,11 @@
 // 	----------------------------------------- 
 //	Buttons — A base, mixin and options
 // 	-----------------------------------------
-.button_base {
-	font: 900 12px/1 $sans;
+@mixin button_base {
+	font: 700 16px/1 $sans;
 	border: 1px solid;
 	@include user-select(none);
-	@extend .padding;
+	@include padding;
 	@include transition(none);
 	@include inline-block;
 	@include background-clip(padding-box);
@@ -41,7 +41,7 @@
 	&:hover, &:focus {
 		color: $text_colour;
 		border-color: darken($main_colour, 15%);
-		@extend .no_outline;
+		@include no_outline;
 		@include background(linear-gradient(top, lighten($main_colour, 15%), lighten($main_colour, 5%)));
 		@include box-shadow(inset 0 1px 0 fade-out($white, 0.55), 0 1px 3px fade-out($black, 0.8)); }
 	&:active {
@@ -65,7 +65,7 @@
 		&:hover, &:focus, &:active {
 			@include background(linear-gradient(desaturate($main_colour, 20%), desaturate($main_colour, 20%)));
 			@include box-shadow(none);
-			@extend .no_outline;
+			@include no_outline;
 			border-color: desaturate(darken($main_colour, 10%), 40%);
 			color: darken($text_colour, 10%);
 			color: fade-out($text_colour, 0.2);
@@ -76,12 +76,12 @@
 
 .button {
 	margin: 0 0 $line;
-	@extend .button_base;
-	@extend .input_reset;
+	@include button_base;
+	@include input_reset;
 	@include button($radius: 30px); }
 .subtle {
-	@extend .button_base;
-	@extend .input_reset;
+	@include button_base;
+	@include input_reset;
 	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
 .alt {
 	@extend .button;

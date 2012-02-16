@@ -50,10 +50,12 @@
 <div class="container">
 
 	<header role="banner">
-		<h1><a href="#">Framework</a></h1>
+		<h1><a href="/">Framework</a></h1>
 		<nav role="navigation">
 			<ul>
-				<li><a href="#">Home</a></li>
-			</ul>	
+				<li><a href="/" title="Back to the homepage">Home</a></li>
+				<li><a href="base.php" title="Base styles">Base CSS</a></li>
+				<li><a href="elements.php" title="Most commonly used elements">Elements</a></li>	
+			</ul>
 		</nav>
 	</header>

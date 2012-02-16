@@ -48,15 +48,15 @@ $default_text_shadow: #fff;
 
 $border: darken($default, 15%);
 
-$alt: desaturate(#127A97, 20%);
-$focus: desaturate(#127A97, 20%);
-$danger: #CF4647;
+$alt: lighten(#127A97, 10%);
+$focus: lighten(#127A97, 10%);
+$danger: lighten(#CF4647, 10%);
 $warning: darken(#FFB350, 10%);
-$success: saturate(darken(#A3A948, 5%), 10%);
-$info: #B83564;
+$success: lighten(darken(#A3A948, 5%), 10%);
+$info: lighten(#B83564, 10%);
 
 // font stacks
-$sans: "ff-dagny-web-pro", helvetica, sans-serif;
+$sans: "ff-meta-web-pro", helvetica, sans-serif;
 $serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
 $monospace: Menlo, Monaco, "Courier New", monospace;
 
