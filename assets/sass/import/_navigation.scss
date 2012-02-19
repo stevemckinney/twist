@@ -1,0 +1,24 @@
+// 	----------------------------------------- 
+//	Navigation types
+// 	-----------------------------------------
+
+@mixin
+
+@mixin breadcrumb($selector: ".breadcrumb", $list: true, $separator: "/") {
+	
+	#{$selector} {
+		
+		@if $list == true {
+			li {
+				
+			}
+		}
+		@else {
+			
+		}
+		&:after {
+			content: "#{$separator}";
+		}
+	}
+	
+}

@@ -33,7 +33,7 @@ max-width: 1200px;
 	@include container;
 	@include pie-clearfix;
 	h1 {
-		@include columns (3,9); } 
+		@include columns(3,9); } 
 }
 [role="navigation"] {
 	@include columns(6);
