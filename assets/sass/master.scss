@@ -5,8 +5,6 @@ $col-width          : 6em;
 $gutter-width       : 2em;
 $side-gutter-width  : $gutter-width;
 
-$experimental-support-for-khtml: false;
-
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
@@ -16,31 +14,44 @@ html, body {
 body {
 	@extend .transition;
 	@include container;
-	//@include susy-grid-background; @include baseline-grid-background(12px, fade-out(#f00, 0.85));
+	//@include susy-grid-background; 
+	//@include baseline-grid-background(12px, fade-out(#f00, 0.95));
+	background: saturate(lighten(#948C75, 45%), 50%);
 	}
 
 .container {
 	@include full;
-	@include pad(2,2);
-	background: fade-out(#ccc, 0.4);
-	/*
-max-width: 1200px;
-	margin: auto;
-	padding: $forty;
-*/}
+	@include pad(5,5); }
 
 [role="banner"] {
 	@include container;
 	@include pie-clearfix;
+	position: relative;
+	padding: 84px 0 24px;
+	margin: 0 0 24px;
+	border-bottom: 1px solid fade-out($primary, 0.9);
+	@include box-shadow(0 1px 0 $white);
 	h1 {
-		@include columns(3,9); } 
+		@include columns(3,9);
+		line-height: 1;
+		margin: 0; } 
 }
 [role="navigation"] {
-	@include columns(6);
-	@include pad(6);
 	@include pie-clearfix;
+	@include columns(6);
+	width: 70%;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	padding: 12px 0 0;
 	ul {
-		@include pie-clearfix; }
+		@include pie-clearfix;
+		@include no_mp; }
+	a {
+		float: left;
+		@include button_base;
+		@include button($secondary, #fff, darken($secondary, 20%));
+		@include inline-block; }
 }
 
 [role="banner"] img {
@@ -54,10 +65,15 @@ max-width: 1200px;
 
 /* section ---------------------- */
 [role="region"] {
-	margin: 0 0 $line;
+	padding: 0 0 2em;
+	margin: 0 0 2em;
+	border-bottom: 1px solid fade-out($primary, 0.9);
+	@include box-shadow(0 1px 0 $white);
 	width: $whole;
 	&:last-child {
 		margin: 0;
+		padding: 0;
+		border: none;
 	}
 }
 [role="main"] {
@@ -183,13 +199,25 @@ dd {
 /*
 	Forms
 -----------------------------------------------------------------------*/
-form {}
+[type="search"] {
+	@extend button;
+}
+
+[type="submit"] {
+	@extend .info;
+}
+input[type="submit"], x:-moz-any-link, x:default {} 
 
 /* 
 	Misc.
 ---------------------------------------------------------------------- */
 .hiddenFields {display: none;}
 iframe {width: 100%;}
+hr {
+	margin: 2em 0;
+	background: $primary;
+	background: fade-out($primary, 0.9);
+	@include box-shadow(0 1px 0 #fff); }
 
 /* figure ------------------------------ */
 figure {}
@@ -206,22 +234,6 @@ td, th {
 	text-align: left;
 	border-top: 1px solid $primary;
 	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
-        
-/*
-	Form
------------------------------------------------------------------------*/
-[type="search"] {
-	@extend button;
-}
-
-[type="submit"] {
-	@extend .info;
-}
-input[type="submit"], x:-moz-any-link, x:default {} 
-[for="keywords"] {position: absolute; top: -9999px; left: -9999px;}
-
-/* contact form ---------------------- */
-.contact section input, .contact textarea, .contact select {display: block;}
 
 
 /*

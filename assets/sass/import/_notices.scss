@@ -3,27 +3,35 @@
 // 	-----------------------------------------
 
 @mixin notice_base {
-	font: 900 12px/1 $sans;
-	border: 1px solid;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	display: block;
+	font: 700 14px/1 $sans;
 	width: 100%;
 	margin: 0 0 $base_px;
 	@include padding;
 	@include transition(none);
 	@include inline-block;
-	@include background-clip(padding-box);
-	@include box-shadow(inset 0 1px 0 fade-out($white, 0.75), 0 1px 3px fade-out($black, 0.8)); }
+	@include background-clip(padding-box); }
 
-@mixin notice($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $text_align: left, $size: "normal") {
+@mixin notice(
+	$main_colour: $default,
+	$text_colour: $default_text,
+	$text_shadow: $default_text_shadow,
+	$radius: 3px,
+	$subtle: false,
+	$text_align: left,
+	$size: "normal",
+	$icon: false,
+	$shadow: true) {
 	
 	@if $subtle == false {
-		@include background(linear-gradient(top, lighten($main_colour, 10%), $main_colour));
+		@include background(linear-gradient(top, lighten($main_colour, 5%), $main_colour));
 		@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
-		border-color: darken(desaturate($main_colour, 20%), 10%);
+		border: 1px solid darken(desaturate($main_colour, 20%), 10%);
 		color: lighten($text_colour, 20%);
 		text-shadow: 0 1px 1px $text_shadow;
+		// if we want a shadow default true
+		@if $shadow != false {
+			@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 2px fade-out($black, 0.8));
+		}
 	}
 	@else {
 		background: none;
@@ -32,15 +40,29 @@
 		border: none;
 		text-shadow: none;
 		border: 1px solid fade-out($black, 0.95);
-		@include box-shadow(none);
 	}
+
 	@include border-radius($radius);
 	text-align: $text_align;
 	@if $size == "big" {
-		padding: $base_px $base_px*2;
+		padding: 18px $line;
 	}
 	@elseif $size == "small" {
-		padding: $base_px/3 $base_px/2;
+		padding: 6px;
+	}
+	@else {
+		padding: 12px;
+	}
+	// is there an icon?
+	@if $icon != false {
+		padding-left: 24px;
+		&:before {
+			content: $icon;
+			display: inline-block;
+			opacity: 0.8;
+			left: $base_px;
+			top: 3px;
+			margin: 0 $base_px/2 0 0; }
 	}
 }
 
@@ -60,4 +82,4 @@
 .notice:nth-of-type(3) {
 	@include notice($danger, #fff, darken($danger, 20%), $text_align: center) }
 .notice:nth-of-type(4) {
-	@include notice($warning, #fff, darken($warning, 20%), $text_align: center, $size: big) }
+	@include notice($warning, #fff, darken($warning, 20%), $text_align: center, $size: big, $icon: "£") }

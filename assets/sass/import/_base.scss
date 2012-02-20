@@ -18,28 +18,11 @@ $ninety					:	90%;
 $whole					:	100%;
 
 //	general variable colours
-$primary: #6E5048;
-$secondary: #E799B1;
-
-$primary_l1: lighten($primary, 5%);
-$primary_l2: lighten($primary, 10%);
-$primary_l3: lighten($primary, 15%);
-
-$primary_d1: darken($primary, 5%);
-$primary_d2: darken($primary, 10%);
-$primary_d3: darken($primary, 15%);
-
-$secondary_l1: lighten($secondary, 5%);
-$secondary_l2: lighten($secondary, 10%);
-$secondary_l3: lighten($secondary, 15%);
-
-$secondary_d1: darken($secondary, 5%);
-$secondary_d2: darken($secondary, 10%);
-$secondary_d3: darken($secondary, 15%);
+$primary: darken(#948C75, 20%);
+$secondary: darken(adjust-hue(desaturate(#FF6666, 20%), 40), 5%);
 
 $black: hsla(0,0%,0%,1);
 $white: hsla(0,100%,100%,1);
-
 
 // main element styling colours
 $default: #eee;
@@ -47,16 +30,16 @@ $default_text: #444;
 $default_text_shadow: #fff;
 
 $border: darken($default, 15%);
+$focus: darken(#71bcc5, 25%);
 
-$alt: lighten(#127A97, 10%);
-$focus: lighten(#127A97, 10%);
-$danger: lighten(#CF4647, 10%);
-$warning: darken(#FFB350, 10%);
-$success: lighten(darken(#A3A948, 5%), 10%);
-$info: lighten(#B83564, 10%);
+$alt: 				#27a0dc;
+$danger: 			#d24f48;
+$warning: 		#f3ad30;
+$success: 		#6f8a22;
+$info: 				#71bcc5;
 
 // font stacks
-$sans: "ff-meta-web-pro", helvetica, sans-serif;
+$sans: "ratio-display", helvetica, sans-serif;
 $serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
 $monospace: Menlo, Monaco, "Courier New", monospace;
 
@@ -68,3 +51,5 @@ $base_line_height: 1.5em;
 // px
 $base_px: 0.75em;
 $line: $base_px*2;
+
+$experimental-support-for-khtml: false;

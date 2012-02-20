@@ -2,23 +2,34 @@
 //	Buttons — A base, mixin and options
 // 	-----------------------------------------
 @mixin button_base {
-	font: 700 16px/1 $sans;
-	border: 1px solid;
-	@include user-select(none);
-	@include padding;
+	font: 500 14px/1 $sans;
 	@include transition(none);
 	@include inline-block;
-	@include background-clip(padding-box);
-	@include box-shadow(inset 0 1px 0 fade-out($white, 0.75), 0 1px 3px fade-out($black, 0.8)); }
+	@include background-clip(padding-box); }
 
-@mixin button($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $size: "normal", $icon: false) {
+@mixin button(
+	$main_colour: $default, 
+	$text_colour: $default_text, 
+	$text_shadow: $default_text_shadow, 
+	$radius: 3px,
+	$subtle: false, 
+	$size: "normal",
+	$icon: false,
+	$shadow: true) {
 	
+	@include button_base;
+
+	// subtle button
 	@if $subtle == false {
-		@include background(linear-gradient(top, lighten($main_colour, 10%), $main_colour));
-		@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
-		border-color: darken(desaturate($main_colour, 20%), 10%);
+		@include background(linear-gradient(top, lighten($main_colour, 5%) 35%, $main_colour 80%, darken($main_colour, 3%) 100%));
+		border: 1px solid darken(desaturate($main_colour, 20%), 15%);
 		color: lighten($text_colour, 20%);
 		text-shadow: 0 1px 1px $text_shadow;
+		
+		// if we want a shadow default true
+		@if $shadow != false {
+			@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 2px fade-out($black, 0.8));
+		}
 	}
 	@else {
 		background: none;
@@ -26,78 +37,96 @@
 		color: $default_text;
 		border: none;
 		text-shadow: none;
-		border: 1px solid fade-out($black, 0.95);
-		@include box-shadow(none);
+		border: 1px solid fade-out($black, 0.85);
+		border-top-color: fade-out($black, 0.9);
 		&:hover, &:focus {
 			text-shadow: 0 1px 1px $text_shadow; }
 	}
+	// button sizes
 	@if $size == "big" {
-		padding: $base_px $base_px*2;
+		padding: 18px 24px;
 	}
 	@elseif $size == "small" {
-		padding: $base_px/3 $base_px/2;
+		padding: 3px 6px;
 	}
+	@else {
+		padding: 6px 18px;
+	}
+	
+	// consistent styles
 	@include border-radius($radius);
+	position: relative;
+	
 	&:hover, &:focus {
 		color: $text_colour;
-		border-color: darken($main_colour, 15%);
+		color: fade-out($text_colour, 0.1);
+		border-color: darken(desaturate($main_colour, 15%), 10%);
 		@include no_outline;
-		@include background(linear-gradient(top, lighten($main_colour, 15%), lighten($main_colour, 5%)));
-		@include box-shadow(inset 0 1px 0 fade-out($white, 0.55), 0 1px 3px fade-out($black, 0.8)); }
+		@include background(linear-gradient(top, lighten($main_colour, 8%) 35%, lighten($main_colour, 4%) 80%, darken($main_colour, 0%) 100%));
+		@if $shadow != false {
+			@include box-shadow(inset 0 1px 0 fade-out($white, 0.6), 0 1px 3px fade-out($black, 0.8));
+		}
+	}
 	&:active {
-		border-color: darken($main_colour, 25%);
-		@include background(linear-gradient(darken($main_colour, 10%) 50%, darken($main_colour, 1%)));
-		@include box-shadow(inset 0 1px 3px fade-out($black, 0.8), 0 1px 1px fade-out($white, 0.8));
+		border-color: darken($main_colour, 20%);
+		@include background(linear-gradient(desaturate(darken($main_colour, 15%), 5%) 1%, desaturate(darken($main_colour, 10%), 1%) 10%, desaturate(darken($main_colour, 10%), 5%) 50%, desaturate(darken($main_colour, 3%), 5%)));
+		@include box-shadow(0 1px 1px fade-out($white, 0.8));
 	}
-	@if $icon != false {
-		&:before {
-			content: $icon;
-			margin: 0 $base_px/2 0 0; }
-	}
+	
 	&.disabled {
 		@include background(linear-gradient(desaturate($main_colour, 20%), desaturate($main_colour, 20%)));
 		@include box-shadow(none);
 		border-color: desaturate(darken($main_colour, 10%), 40%);
-		color: darken($text_colour, 10%);
-		color: fade-out($text_colour, 0.2);
-		text-shadow: none;
+		color: fade-out($text_colour, 0.4);
+		text-shadow: 0 1px 1px fade-out($text_shadow, 0.8);
 		cursor: arrow;
 		&:hover, &:focus, &:active {
 			@include background(linear-gradient(desaturate($main_colour, 20%), desaturate($main_colour, 20%)));
 			@include box-shadow(none);
 			@include no_outline;
 			border-color: desaturate(darken($main_colour, 10%), 40%);
-			color: darken($text_colour, 10%);
-			color: fade-out($text_colour, 0.2);
-			text-shadow: none;
+			color: fade-out($text_colour, 0.4);
+			text-shadow: 0 1px 1px fade-out($text_shadow, 0.8);
 			cursor: arrow; }
+	}
+	
+	// is there an icon?
+	@if $icon != false {
+		padding-left: 24px;
+		&:before {
+			content: $icon;
+			display: inline-block;
+			@include wh(16px, 16px);
+			opacity: 0.8;
+			position: absolute;
+			left: $base_px;
+			top: 3px;
+			margin: 0 $base_px/2 0 0; }
 	}
 }
 
 .button {
 	margin: 0 0 $line;
-	@include button_base;
 	@include input_reset;
-	@include button($radius: 30px); }
+	@include button($radius: 5px, $shadow: false); }
 .subtle {
-	@include button_base;
 	@include input_reset;
 	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
 .alt {
-	@extend .button;
-	@include button($alt, #fff, darken($alt, 20%)); }
+	@extend input_reset;
+	@include button($alt, #fff, darken($alt, 25%)); }
 .danger {
 	@extend .button;
-	@include button($danger, #fff, darken($danger, 20%), $icon: "!!"); }
+	@include button($danger, #fff, darken($danger, 25%)); }
 .warning {
 	@extend .button;
-	@include button($warning, #fff, darken($warning, 20%)); }
+	@include button($warning, #fff, darken($warning, 25%)); }
 .success {
 	@extend .button;
-	@include button($success, #fff, darken($success, 20%)); }
+	@include button($success, #fff, darken($success, 25%)); }
 .info {
 	@extend .button;
-	@include button($info, #fff, darken($info, 10%)); }
+	@include button($info, #fff, darken($info, 25%)); }
 .button_group {
 	@include pie-clearfix;
 	button, a	{

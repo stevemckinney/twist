@@ -1,8 +1,127 @@
 // 	----------------------------------------- 
 //	Navigation types
 // 	-----------------------------------------
+@mixin dropdown_base {
+	list-style:none;
+	float:left;
+	width:100%;
+	position:relative;
+	z-index:5;
+	font: 700 14px/1 $sans; }
 
-@mixin
+@mixin dropdown($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $size: "normal", $icon: false) {
+		@include dropdown_base;
+		
+		a {
+				font-weight: 700;
+				display:block;
+				text-decoration:none;
+				position: relative;
+				// subtle navigation
+				@if $subtle == false {
+					@include background(linear-gradient(top, lighten($main_colour, 10%), $main_colour));
+					@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
+					border: 1px solid darken(desaturate($main_colour, 20%), 10%);
+					color: lighten($text_colour, 20%);
+					text-shadow: 0 1px 1px $text_shadow;
+				}
+				@else {
+					background: none;
+					background: fade-out($black, 0.99);
+					color: $default_text;
+					border: none;
+					text-shadow: none;
+					border: 1px solid fade-out($black, 0.95);
+					@include box-shadow(none);
+					&:hover, &:focus {
+						text-shadow: 0 1px 1px $text_shadow; }
+				}
+				
+				// dropdown sizes
+				@if $size == "big" {
+					padding: 12px 24px;
+				}
+				@elseif $size == "small" {
+					padding: 3px 6px;
+				}
+				@else {
+					padding: 6px 12px;
+				}
+				
+				// consistent styles
+				@include border-radius($radius);
+				position: relative;
+				
+				&:hover, &:focus {
+					color: $text_colour;
+					border-color: darken($main_colour, 15%);
+					@include no_outline;
+					@include background(linear-gradient(top, lighten($main_colour, 15%), lighten($main_colour, 5%)));
+					@include box-shadow(inset 0 1px 0 fade-out($white, 0.55), 0 1px 3px fade-out($black, 0.8)); }
+				&:active {
+					border-color: darken($main_colour, 25%);
+					@include background(linear-gradient(darken($main_colour, 10%) 50%, darken($main_colour, 5%)));
+					@include box-shadow(inset 0 1px 3px fade-out($black, 0.8), 0 1px 1px fade-out($white, 0.8));
+				}
+				
+				// for the dropdown icon
+
+	
+	} // end a
+		ul > li > a:after {
+			content: "\21E3";
+			font: 900 16px/0.1 Arial;
+			position: relative;
+			right: -5px;
+			top: 2px; }
+		a:only-child:after {
+			display: none;
+			&:hover, &:focus {
+				@include border-radius(3px !important); } }
+	
+	// other required styles
+	* { @include transition(opacity .5s .25s ease, top .2s linear); }
+	ul {
+		@include mtb; }
+	li {
+		float:left;
+		position:relative;
+		display: inline-block;
+		z-index: 0 }
+	ul ul {
+		list-style: none;
+		position: absolute;
+		opacity: 0; height: 0; top: -10px;
+		z-index: -1;
+		border: 1px solid #444;
+		border-top: none; }
+	ul li {
+		float: none;
+		background: none; }
+	ul a {
+		white-space: nowrap; }
+	li ul li {
+		background: white;
+		display: block;
+		min-width: 80px;
+	}
+	li ul li a {
+		background: none;
+		border: none;
+		color: #000;
+		text-shadow: none;
+	}
+	li:hover ul, li:hover ul ul, li:hover ul ul li a {
+		left: 0;
+		opacity: 1; height: auto; font-size: inherit; top: 18px;
+		z-index: 10; }
+	li:hover a {
+		@include border-radius(3px 3px 0 0); }
+	li:hover ul a {
+		}
+	li:hover ul li a:hover {
+		color: red; }
+}
 
 @mixin breadcrumb($selector: ".breadcrumb", $list: true, $separator: "/") {
 	
@@ -21,4 +140,12 @@
 		}
 	}
 	
+}
+
+@mixin dropdown_base {
+	font: 900 14px/1 $sans;
+}
+
+.dropdown {
+	@include dropdown($info, #fff, darken($info, 20%));
 }

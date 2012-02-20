@@ -38,11 +38,11 @@ label, [type="text"], [type="email"], select, .form-text, textarea {
 label {
 	@include em_padding; }
 .form-help {
-	font: 400 12px/1.5 $sans;
-	@include notice($subtle: true, $radius: 0 0 5px 5px);
+	@include notice($alt, #fff, darken($alt, 20%), $subtle: true, $radius: 0 0 5px 5px);
 	border: 1px solid $border;
 	border-top: none;
-	padding: 0 $base_px/2;
+	padding: 2px 5px;
+	font: 14px/1.5 $sans;
 	margin: 0 0 $base_px 0; }
 
 [id="name"] {
@@ -62,15 +62,14 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	width: auto;
 	height: auto;
 	padding: 0;
-	margin: 3px 0;
+	margin: 2px 0;
 	float: left;
 	margin-left: -20px;
 	cursor: pointer; }
 	
 .check {
-	@extend .notice;
 	@include notice($warning, #fff, darken($warning, 20%));
-	font: 800 12px/1.5 $sans;
+	font: 700 12px/1.5 $serif;
 	margin: $line 0; }
 .check label, li label {
 	padding: 0 0 0 20px; }
@@ -78,7 +77,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 .error { @include form_status($danger); }
 
 ::-webkit-input-placeholder {
-	color: lighten($primary, 30%);
+	color: lighten(#afafaf, 10%);
 	font: 16px/1 $sans; }
 :-moz-placeholder {
 	color: lighten($primary, 30%);
