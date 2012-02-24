@@ -3,7 +3,7 @@
 // 	-----------------------------------------
 
 @mixin notice_base {
-	font: 700 14px/1 $sans;
+	font: 700 16px/1 $sans;
 	width: 100%;
 	margin: 0 0 $base_px;
 	@include padding;
