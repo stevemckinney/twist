@@ -18,6 +18,7 @@
 		font-size: 100%;
 		margin-top: 0;
 		padding: 12px;
+		margin: 0;
 		color: fade-out(#fff, 0.1);
 		@include border-radius(3px);
 		@extend .notice;

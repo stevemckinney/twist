@@ -169,7 +169,7 @@ img {
 }
 
 /* line 18, ../sass/import/_helpers.scss */
-.rounded, .form-text, textarea, select, .overlay, blockquote {
+.rounded, .form-text, textarea, select, .error, [placeholder], .overlay, blockquote {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -914,7 +914,7 @@ img {
 
 /* line 69, ../sass/import/_notices.scss */
 .notice, .n_subtle, pre, blockquote, .n_info, .modal h1, .modal h2, .modal h3 {
-  font: 700 14px/1 "ratio-display", helvetica, sans-serif;
+  font: 700 16px/1 "ratio-display", helvetica, sans-serif;
   width: 100%;
   margin: 0 0 0.75em;
   padding: 0.375em 0.75em;
@@ -1095,66 +1095,57 @@ img {
   margin: 0 0.375em 0 0;
 }
 
-/* line 13, ../sass/import/_forms.scss */
+/* line 51, ../sass/import/_forms.scss */
 .form-text, textarea, select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  color: #5c5647;
   -moz-transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  font: 400 12px/1.5 "ratio-display", helvetica, sans-serif;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #5c5647;
+  font: 400 16px/1 "ratio-display", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  padding: 6px;
   background: #fbfbfb;
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  width: 100%;
 }
-/* line 25, ../sass/import/_forms.scss */
+/* line 28, ../sass/import/_forms.scss */
 .form-text:hover, textarea:hover, select:hover {
   background: white;
 }
-/* line 27, ../sass/import/_forms.scss */
+/* line 30, ../sass/import/_forms.scss */
 .form-text:focus, textarea:focus, select:focus {
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
-  border-color: rgba(39, 160, 220, 0.9);
+  border-color: rgba(39, 160, 220, 0.8);
   outline: none;
 }
-/* line 8, ../sass/import/_forms.scss */
-.form-text:focus:focus, textarea:focus:focus, select:focus:focus {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.2);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.2);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.2);
-  border-color: rgba(39, 160, 220, 0.5);
-}
 
-/* line 32, ../sass/import/_forms.scss */
+/* line 55, ../sass/import/_forms.scss */
 select:before {
   content: "\/";
   display: block;
 }
 
-/* line 36, ../sass/import/_forms.scss */
+/* line 59, ../sass/import/_forms.scss */
 label, [type="text"], [type="email"], select, .form-text, textarea {
   display: block;
 }
 
-/* line 38, ../sass/import/_forms.scss */
+/* line 61, ../sass/import/_forms.scss */
 label {
   padding: 1.5em 0 0.375em;
 }
 
-/* line 40, ../sass/import/_forms.scss */
+/* line 63, ../sass/import/_forms.scss */
 .form-help {
   background: none;
   background: rgba(0, 0, 0, 0.01);
@@ -1172,11 +1163,11 @@ label {
   border: 1px solid #c8c8c8;
   border-top: none;
   padding: 2px 5px;
-  font: 14px/1.5 "ratio-display", helvetica, sans-serif;
+  font: 14px/1 "ratio-display", helvetica, sans-serif;
   margin: 0 0 0.75em 0;
 }
 
-/* line 48, ../sass/import/_forms.scss */
+/* line 71, ../sass/import/_forms.scss */
 [id="name"] {
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
@@ -1185,34 +1176,34 @@ label {
   border-radius: 5px 5px 0 0;
 }
 
-/* line 51, ../sass/import/_forms.scss */
+/* line 74, ../sass/import/_forms.scss */
 form ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 56, ../sass/import/_forms.scss */
+/* line 79, ../sass/import/_forms.scss */
 .radio label, .check label {
   position: relative;
 }
-/* line 58, ../sass/import/_forms.scss */
+/* line 81, ../sass/import/_forms.scss */
 .radio li label, .check li label {
   margin: 0.375em 0;
 }
 
-/* line 61, ../sass/import/_forms.scss */
+/* line 84, ../sass/import/_forms.scss */
 input[type="image"], input[type="checkbox"], input[type="radio"] {
   width: auto;
   height: auto;
   padding: 0;
-  margin: 2px 0;
+  margin: 3px 0;
   float: left;
   margin-left: -20px;
   cursor: pointer;
 }
 
-/* line 70, ../sass/import/_forms.scss */
+/* line 93, ../sass/import/_forms.scss */
 .check {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4b748), color-stop(100%, #f3ad30));
   background: -webkit-linear-gradient(top, #f4b748, #f3ad30);
@@ -1238,40 +1229,81 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   border-radius: 3px;
   text-align: left;
   padding: 12px;
-  font: 700 12px/1.5 "adelle", ff-meta-serif-web-pro, georgia, serif;
+  font: 700 14px/1.5 "adelle", ff-meta-serif-web-pro, georgia, serif;
   margin: 1.5em 0;
 }
 
-/* line 74, ../sass/import/_forms.scss */
+/* line 97, ../sass/import/_forms.scss */
 .check label, li label {
   padding: 0 0 0 20px;
 }
 
-/* line 77, ../sass/import/_forms.scss */
+/* line 100, ../sass/import/_forms.scss */
 .error {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #5c5647;
+  font: 400 16px/1 "ratio-display", helvetica, sans-serif;
+  border: 1px solid #c8c8c8;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  padding: 6px;
+  background: #fbfbfb;
+  width: 100%;
+}
+/* line 28, ../sass/import/_forms.scss */
+.error:hover {
+  background: white;
+}
+/* line 30, ../sass/import/_forms.scss */
+.error:focus {
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.6);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.6);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.6);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.6);
-  border-color: rgba(210, 79, 72, 0.9);
-}
-/* line 8, ../sass/import/_forms.scss */
-.error:focus {
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.2);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.2);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(210, 79, 72, 0.2);
-  border-color: rgba(210, 79, 72, 0.5);
+  border-color: rgba(210, 79, 72, 0.8);
+  outline: none;
 }
 
-/* line 79, ../sass/import/_forms.scss */
-::-webkit-input-placeholder {
+/* line 101, ../sass/import/_forms.scss */
+[placeholder] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #5c5647;
+  font: 400 16px/1 "ratio-display", helvetica, sans-serif;
+  border: 1px solid #c8c8c8;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  padding: 6px;
+  background: #fbfbfb;
+  width: 100%;
+}
+/* line 28, ../sass/import/_forms.scss */
+[placeholder]:hover {
+  background: white;
+}
+/* line 30, ../sass/import/_forms.scss */
+[placeholder]:focus {
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6);
+  border-color: rgba(39, 160, 220, 0.8);
+  outline: none;
+}
+/* line 42, ../sass/import/_forms.scss */
+[placeholder] ::-webkit-input-placeholder {
   color: #c9c9c9;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
-
-/* line 82, ../sass/import/_forms.scss */
-:-moz-placeholder {
+/* line 45, ../sass/import/_forms.scss */
+[placeholder] :-moz-placeholder {
   color: #aaa492;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
@@ -1297,6 +1329,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   font-size: 100%;
   margin-top: 0;
   padding: 12px;
+  margin: 0;
   color: rgba(255, 255, 255, 0.9);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1329,7 +1362,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   padding: 12px;
 }
 
-/* line 26, ../sass/import/_modals.scss */
+/* line 27, ../sass/import/_modals.scss */
 .overlay {
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(20%, rgba(56, 51, 46, 0.3)), color-stop(100%, rgba(56, 51, 46, 0.9))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(61, 51, 41, 0.2)), color-stop(100%, rgba(61, 51, 41, 0.6)));
   background: -webkit-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -webkit-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
@@ -1344,18 +1377,18 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   left: 0;
   right: 0;
 }
-/* line 32, ../sass/import/_modals.scss */
+/* line 33, ../sass/import/_modals.scss */
 .overlay .no-cssgradients {
   background: #000;
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* line 149, ../sass/import/_navigation.scss */
+/* line 156, ../sass/import/_navigation.scss */
 .dropdown {
   font: 900 14px/1 "ratio-display", helvetica, sans-serif;
 }
 /* line 15, ../sass/import/_navigation.scss */
-.dropdown a {
+.dropdown ul > li > a {
   font-weight: 700;
   display: block;
   text-decoration: none;
@@ -1382,7 +1415,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   position: relative;
 }
 /* line 55, ../sass/import/_navigation.scss */
-.dropdown a:hover, .dropdown a:focus {
+.dropdown ul > li > a:hover, .dropdown ul > li > a:focus {
   color: white;
   border-color: #449ba6;
   outline: none;
@@ -1398,7 +1431,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 /* line 61, ../sass/import/_navigation.scss */
-.dropdown a:active {
+.dropdown ul > li > a:active {
   border-color: #357982;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4dabb6), color-stop(100%, #5fb3be));
   background: -webkit-linear-gradient(#4dabb6 50%, #5fb3be);
@@ -1433,10 +1466,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 }
 /* line 83, ../sass/import/_navigation.scss */
 .dropdown * {
-  -moz-transition: opacity 0.5s 0.25s ease, top 0.2s linear;
-  -webkit-transition: opacity 0.5s 0.25s ease, top 0.2s linear;
-  -o-transition: opacity 0.5s 0.25s ease, top 0.2s linear;
-  transition: opacity 0.5s 0.25s ease, top 0.2s linear;
+  -moz-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 /* line 84, ../sass/import/_navigation.scss */
 .dropdown ul {
@@ -1455,34 +1488,56 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   position: absolute;
   opacity: 0;
   height: 0;
-  top: -10px;
-  z-index: -1;
-  border: 1px solid #444;
+  top: 18px;
+  z-index: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-top: none;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
 }
-/* line 98, ../sass/import/_navigation.scss */
+/* line 100, ../sass/import/_navigation.scss */
 .dropdown ul li {
   float: none;
   background: none;
 }
-/* line 101, ../sass/import/_navigation.scss */
+/* line 103, ../sass/import/_navigation.scss */
 .dropdown ul a {
   white-space: nowrap;
 }
-/* line 103, ../sass/import/_navigation.scss */
+/* line 105, ../sass/import/_navigation.scss */
 .dropdown li ul li {
-  background: white;
   display: block;
   min-width: 80px;
 }
-/* line 108, ../sass/import/_navigation.scss */
+/* line 109, ../sass/import/_navigation.scss */
 .dropdown li ul li a {
   background: none;
   border: none;
-  color: #000;
   text-shadow: none;
+  background: #fff;
+  color: #71bcc5;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
 }
-/* line 114, ../sass/import/_navigation.scss */
+/* line 116, ../sass/import/_navigation.scss */
+.dropdown li ul li:last-child a {
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+/* line 117, ../sass/import/_navigation.scss */
 .dropdown li:hover ul, .dropdown li:hover ul ul, .dropdown li:hover ul ul li a {
   left: 0;
   opacity: 1;
@@ -1491,7 +1546,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   top: 18px;
   z-index: 10;
 }
-/* line 118, ../sass/import/_navigation.scss */
+/* line 121, ../sass/import/_navigation.scss */
 .dropdown li:hover a {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -1499,9 +1554,27 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   -ms-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
-/* line 122, ../sass/import/_navigation.scss */
+/* line 123, ../sass/import/_navigation.scss */
+.dropdown li:hover ul a {
+  color: #71bcc5;
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 128, ../sass/import/_navigation.scss */
 .dropdown li:hover ul li a:hover {
-  color: red;
+  color: #222;
+  background: #eee;
 }
 
 /* 

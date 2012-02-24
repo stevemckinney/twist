@@ -1,33 +1,56 @@
 // 	----------------------------------------- 
 //	Base form styles
 // 	-----------------------------------------
-
-@mixin form_status($colour: $alt) {
-	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
-	border-color: fade-out($colour, 0.1);
-	&:focus {
-		@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.8));
-		border-color: fade-out($colour, 0.5); }
-}
-
-.form-text, textarea, select {
+@mixin form_base {
 	@include input_reset;
 	@extend .rounded;
 	@include primary;
-	@include transition(all .4s linear);
-	width: $whole;
-	padding: 10px;
-	border: none;
-	font: 400 12px/1.5 $sans;
+	font: 400 16px/1 $sans;
 	border: 1px solid $border;
+}
+
+@mixin form($colour: $alt, $label: "top", $status: "normal", $padding: 6px, $placeholder: false) {
+	@include form_base;
+	@include box-shadow(inset 0 1px 2px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
+	padding: $padding;
 	background: lighten($default, 5%);
-	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
-	&:hover {
-		background: $white; }
-	&:focus {
-		@include form_status;
-		outline: none;
+	@if $status != "normal"	{
+		@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
+			border-color: fade-out($colour, 0.2);
+		&:hover {
+			background: $white; }
+		&:focus {
+			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
+			border-color: fade-out($colour, 0.2);
+			outline: none; }
 	}
+	@else {
+		&:hover {
+			background: $white; }
+		&:focus {
+			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
+			border-color: fade-out($colour, 0.2);
+			outline: none; }
+	}
+	@if $label == "top" {
+		width: $whole;
+	}
+	@else {
+	
+	}
+	@if $placeholder == true {
+		::-webkit-input-placeholder {
+			color: lighten(#afafaf, 10%);
+			font: 16px/1 $sans; }
+		:-moz-placeholder {
+			color: lighten($primary, 30%);
+			font: 16px/1 $sans; }
+	}
+}
+
+.form-text, textarea, select {
+	@include transition(all .4s linear);
+	@include form;
 }
 select:before {
 	content: "\/";
@@ -42,7 +65,7 @@ label {
 	border: 1px solid $border;
 	border-top: none;
 	padding: 2px 5px;
-	font: 14px/1.5 $sans;
+	font: 14px/1 $sans;
 	margin: 0 0 $base_px 0; }
 
 [id="name"] {
@@ -62,23 +85,19 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	width: auto;
 	height: auto;
 	padding: 0;
-	margin: 2px 0;
+	margin: 3px 0;
 	float: left;
 	margin-left: -20px;
 	cursor: pointer; }
 	
 .check {
 	@include notice($warning, #fff, darken($warning, 20%));
-	font: 700 12px/1.5 $serif;
+	font: 700 14px/1.5 $serif;
 	margin: $line 0; }
 .check label, li label {
 	padding: 0 0 0 20px; }
 	
-.error { @include form_status($danger); }
-
-::-webkit-input-placeholder {
-	color: lighten(#afafaf, 10%);
-	font: 16px/1 $sans; }
-:-moz-placeholder {
-	color: lighten($primary, 30%);
-	font: 16px/1 $sans; }
+.error { @include form($danger); }
+[placeholder] {
+	@include form($placeholder: true);
+}

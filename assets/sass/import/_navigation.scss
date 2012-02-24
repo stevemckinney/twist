@@ -12,7 +12,7 @@
 @mixin dropdown($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $size: "normal", $icon: false) {
 		@include dropdown_base;
 		
-		a {
+		ul > li > a {
 				font-weight: 700;
 				display:block;
 				text-decoration:none;
@@ -80,7 +80,7 @@
 				@include border-radius(3px !important); } }
 	
 	// other required styles
-	* { @include transition(opacity .5s .25s ease, top .2s linear); }
+	* { @include transition(opacity .2s ease); }
 	ul {
 		@include mtb; }
 	li {
@@ -91,26 +91,29 @@
 	ul ul {
 		list-style: none;
 		position: absolute;
-		opacity: 0; height: 0; top: -10px;
-		z-index: -1;
-		border: 1px solid #444;
-		border-top: none; }
+		opacity: 0; height: 0; top: 18px;
+		z-index: 0;
+		border: 1px solid fade-out($black, 0.8);
+		@include box-shadow(0 1px 3px fade-out($black, 0.8));
+		border-top: none;
+		@include border-radius(0 0 5px 5px); }
 	ul li {
 		float: none;
 		background: none; }
 	ul a {
 		white-space: nowrap; }
 	li ul li {
-		background: white;
 		display: block;
 		min-width: 80px;
 	}
 	li ul li a {
 		background: none;
 		border: none;
-		color: #000;
 		text-shadow: none;
+		background: #fff; color: $main_colour;
+		@include border-radius(0);
 	}
+	li ul li:last-child a { @include border-radius(0 0 5px 5px); }
 	li:hover ul, li:hover ul ul, li:hover ul ul li a {
 		left: 0;
 		opacity: 1; height: auto; font-size: inherit; top: 18px;
@@ -118,9 +121,13 @@
 	li:hover a {
 		@include border-radius(3px 3px 0 0); }
 	li:hover ul a {
-		}
+		color: $main_colour;
+		@include transition(all .2s linear);
+		@include border-radius(0);
+		@include box-shadow(none); }
 	li:hover ul li a:hover {
-		color: red; }
+		color: #222;
+		background: #eee; }
 }
 
 @mixin breadcrumb($selector: ".breadcrumb", $list: true, $separator: "/") {
