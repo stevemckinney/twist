@@ -176,7 +176,7 @@ img {
 }
 
 /* line 18, ../sass/import/_helpers.scss */
-.rounded, .overlay, blockquote, .form-text, textarea, select, .select, .chzn-single, .error, [placeholder] {
+.rounded, .overlay, blockquote {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -1113,11 +1113,10 @@ img {
   position: relative;
   width: 100%;
 }
-
-/* line 10, ../sass/styles/_chosen.scss */
+/* line 9, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-drop {
   background: #fff;
-  border: 1px solid #aaa;
+  border: 1px solid #c8c8c8;
   border-top: 0;
   position: absolute;
   top: 29px;
@@ -1147,8 +1146,7 @@ img {
   padding: 0.375em;
   text-decoration: none;
 }
-
-/* line 34, ../sass/styles/_chosen.scss */
+/* line 32, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single span {
   display: block;
   overflow: hidden;
@@ -1158,7 +1156,7 @@ img {
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-/* line 38, ../sass/styles/_chosen.scss */
+/* line 36, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single span:after {
   font-family: 'Pictos Custom';
   content: "d";
@@ -1167,62 +1165,75 @@ img {
   position: relative;
   top: 3px;
 }
-
-/* line 48, ../sass/styles/_chosen.scss */
+/* line 43, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single abbr {
   display: block;
   position: absolute;
   right: 26px;
   top: 6px;
   width: 12px;
-  height: 13px;
+  height: 12px;
   font-size: 1px;
 }
-
-/* line 60, ../sass/styles/_chosen.scss */
+/* line 51, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single div {
   position: absolute;
 }
-
-/* line 63, ../sass/styles/_chosen.scss */
+/* line 53, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single div b {
   display: block;
 }
-
-/* line 66, ../sass/styles/_chosen.scss */
+/* line 56, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-search {
-  padding: 3px 4px;
+  padding: 3px 6px;
   position: relative;
   margin: 0;
   white-space: nowrap;
   z-index: 1010;
 }
-
-/* line 73, ../sass/styles/_chosen.scss */
+/* line 62, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-search input {
   background: #fff;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
-  background: -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-  background: -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-  background: -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-  background: -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-  background: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #5c5647;
+  font: 400 16px/1 "ratio-display", helvetica, sans-serif;
+  border: 1px solid #c8c8c8;
+  padding: 6px;
+  border-radius: 1px;
+  width: 100%;
+  background: #fbfbfb;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   margin: 1px 0;
-  padding: 4px 20px 4px 5px;
+  padding: 6px 20px 6px 6px;
   outline: 0;
   border: 1px solid #c8c8c8;
-  font-family: sans-serif;
-  font-size: 1em;
   width: 100%;
 }
-
-/* line 84, ../sass/styles/_chosen.scss */
+/* line 60, ../sass/import/_forms.scss */
+.chzn-container-single .chzn-search input:hover {
+  background: white;
+}
+/* line 70, ../sass/import/_forms.scss */
+.chzn-container-single .chzn-search input:active, .chzn-container-single .chzn-search input:focus {
+  border-color: rgba(39, 160, 220, 0.6);
+  outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+/* line 72, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-drop {
-  -moz-border-radius: 0 0 4px 4px;
-  -webkit-border-radius: 0 0 4px 4px;
-  -o-border-radius: 0 0 4px 4px;
-  -ms-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -1230,14 +1241,66 @@ img {
   background-clip: padding-box;
 }
 
-/* line 88, ../sass/styles/_chosen.scss */
+/* line 77, ../sass/styles/_chosen.scss */
 .chzn-container-single-nosearch .chzn-search input {
   position: absolute;
   left: -9000px;
 }
 
-/* @group Multi Chosen */
+/* line 82, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-single {
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(39, 160, 220, 0.6);
+}
+/* line 85, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-single-with-drop {
+  border: 1px solid #c8c8c8;
+  -moz-box-shadow: 0 1px 0 white inset;
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -o-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -moz-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -o-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+/* line 91, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-single-with-drop div {
+  background: transparent;
+  border-left: none;
+}
 /* line 94, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-single-with-drop div b {
+  background-position: -18px 1px;
+}
+/* line 96, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-choices {
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #27a0dc;
+}
+
+/* line 101, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-choices .search-field input, .chzn-search input {
+  color: #5c5647;
+  font-family: "ratio-display", helvetica, sans-serif;
+}
+
+/* @group Multi Chosen */
+/* line 110, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices {
   background-color: #fff;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(15%, #f8f8f8));
@@ -1246,7 +1309,7 @@ img {
   background: -o-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
   background: -ms-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
   background: linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
-  border: 1px solid #aaa;
+  border: 1px solid #c8c8c8;
   margin: 0;
   padding: 0;
   cursor: text;
@@ -1256,95 +1319,111 @@ img {
   position: relative;
 }
 
-/* line 106, ../sass/styles/_chosen.scss */
+/* line 122, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices li {
   float: left;
   list-style: none;
 }
 
-/* line 110, ../sass/styles/_chosen.scss */
+/* line 126, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field {
   white-space: nowrap;
   margin: 0;
   padding: 0;
 }
 
-/* line 115, ../sass/styles/_chosen.scss */
+/* line 131, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field input {
-  color: #666;
-  background: transparent !important;
-  border: 0 !important;
-  font-family: sans-serif;
-  font-size: 100%;
-  height: 15px;
-  padding: 5px;
-  margin: 1px 0;
-  outline: 0;
-  -webkit-box-shadow: none;
+  color: #5c5647;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #5c5647;
+  font: 400 16px/1 "ratio-display", helvetica, sans-serif;
+  border: 1px solid #c8c8c8;
+  padding: 6px;
+  border-radius: 3px;
+  width: 100%;
+  background: #fbfbfb;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
 }
+/* line 60, ../sass/import/_forms.scss */
+.chzn-container-multi .chzn-choices .search-field input:hover {
+  background: white;
+}
+/* line 70, ../sass/import/_forms.scss */
+.chzn-container-multi .chzn-choices .search-field input:active, .chzn-container-multi .chzn-choices .search-field input:focus {
+  border-color: rgba(39, 160, 220, 0.6);
+  outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
 
-/* line 130, ../sass/styles/_chosen.scss */
+/* line 136, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field .default {
   color: #999;
 }
 
-/* line 133, ../sass/styles/_chosen.scss */
+/* line 139, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice {
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
   -ms-background-clip: padding-box;
   background-clip: padding-box;
-  background-color: #e4e4e4;
+  background-color: #eeeeee;
 @inlude background(linear-gradient(top, #fff, #000));
-  -moz-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  -o-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  color: #333;
-  border: 1px solid #aaaaaa;
-  line-height: 13px;
+  color: #5c5647;
+  border: 1px solid #c8c8c8;
+  line-height: 24px;
   padding: 3px 20px 3px 5px;
   margin: 3px 0 3px 5px;
   position: relative;
   cursor: default;
 }
 
-/* line 149, ../sass/styles/_chosen.scss */
+/* line 153, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice-focus {
-  background: #d4d4d4;
+  background: #eeeeee;
 }
 
-/* line 152, ../sass/styles/_chosen.scss */
+/* line 156, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close {
   display: block;
   position: absolute;
   right: 3px;
-  top: 4px;
+  top: 6px;
   width: 12px;
-  height: 13px;
+  height: 16px;
   font-size: 1px;
 }
 
-/* line 161, ../sass/styles/_chosen.scss */
+/* line 165, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
   background-position: right -11px;
 }
 
-/* line 164, ../sass/styles/_chosen.scss */
+/* line 168, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close {
   background-position: right -11px;
 }
 
-/* @end */
 /* @group Results */
-/* line 170, ../sass/styles/_chosen.scss */
+/* line 180, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results {
   margin: 0 4px 4px 0;
   max-height: 240px;
@@ -1354,13 +1433,13 @@ img {
   overflow-y: auto;
 }
 
-/* line 178, ../sass/styles/_chosen.scss */
+/* line 188, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-results {
   margin: -1px 0 0;
   padding: 0;
 }
 
-/* line 182, ../sass/styles/_chosen.scss */
+/* line 192, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results li {
   display: none;
   line-height: 15px;
@@ -1369,71 +1448,68 @@ img {
   list-style: none;
 }
 
-/* line 189, ../sass/styles/_chosen.scss */
+/* line 199, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .active-result {
   cursor: pointer;
   display: list-item;
 }
 
-/* line 193, ../sass/styles/_chosen.scss */
+/* line 203, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .highlighted {
   background-color: #3875d7;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3875d7', endColorstr='#2a62bc', GradientType=0 );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
-  background-image: -webkit-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -moz-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -o-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -ms-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #27a0dc), color-stop(90%, #2191c9));
+  background: -webkit-linear-gradient(top, #27a0dc 20%, #2191c9 90%);
+  background: -moz-linear-gradient(top, #27a0dc 20%, #2191c9 90%);
+  background: -o-linear-gradient(top, #27a0dc 20%, #2191c9 90%);
+  background: -ms-linear-gradient(top, #27a0dc 20%, #2191c9 90%);
+  background: linear-gradient(top, #27a0dc 20%, #2191c9 90%);
   color: #fff;
 }
 
-/* line 204, ../sass/styles/_chosen.scss */
+/* line 208, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results li em {
   background: #feffde;
   font-style: normal;
 }
 
-/* line 208, ../sass/styles/_chosen.scss */
+/* line 212, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .highlighted em {
   background: transparent;
 }
 
-/* line 211, ../sass/styles/_chosen.scss */
+/* line 215, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .no-results {
   background: #f4f4f4;
   display: list-item;
 }
 
-/* line 215, ../sass/styles/_chosen.scss */
+/* line 219, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .group-result {
   cursor: default;
   color: #999;
   font-weight: bold;
 }
 
-/* line 220, ../sass/styles/_chosen.scss */
+/* line 224, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .group-option {
   padding-left: 15px;
 }
 
-/* line 223, ../sass/styles/_chosen.scss */
+/* line 227, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-drop .result-selected {
   display: none;
 }
 
-/* line 226, ../sass/styles/_chosen.scss */
+/* line 230, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll {
   background: white;
   margin: 0 4px;
   position: absolute;
   text-align: center;
-  width: 321px;
-  /* This should by dynamic with js */
   z-index: 1;
 }
 
-/* line 234, ../sass/styles/_chosen.scss */
+/* line 237, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll span {
   display: inline-block;
   height: 17px;
@@ -1441,159 +1517,100 @@ img {
   width: 9px;
 }
 
-/* line 240, ../sass/styles/_chosen.scss */
+/* line 243, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll-down {
   bottom: 0;
 }
 
-/* @end */
-/* @group Active  */
-/* line 251, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-single {
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #5897fb;
-}
-
-/* line 255, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-single-with-drop {
-  border: 1px solid #aaa;
-  -moz-box-shadow: 0 1px 0 white inset;
-  -webkit-box-shadow: 0 1px 0 white inset;
-  -o-box-shadow: 0 1px 0 white inset;
-  box-shadow: 0 1px 0 white inset;
-  background-color: #eee;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
-  background: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  background: -moz-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  background: -o-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  background: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  background: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  -moz-border-radius: 5px 5px 0 0;
-  -webkit-border-radius: 5px 5px 0 0;
-  -o-border-radius: 5px 5px 0 0;
-  -ms-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
-}
-
-/* line 262, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-single-with-drop div {
-  background: transparent;
-  border-left: none;
-}
-
-/* line 266, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-single-with-drop div b {
-  background-position: -18px 1px;
-}
-
-/* line 269, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-choices {
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #5897fb;
-}
-
-/* line 273, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-choices .search-field input, .chzn-search input {
-  color: #5c5647;
-  font-family: "ratio-display", helvetica, sans-serif;
-}
-
-/* @end */
 /* @group Disabled Support */
-/* line 280, ../sass/styles/_chosen.scss */
+/* line 253, ../sass/styles/_chosen.scss */
 .chzn-disabled {
   cursor: default;
   opacity: 0.5 !important;
 }
 
-/* line 284, ../sass/styles/_chosen.scss */
+/* line 257, ../sass/styles/_chosen.scss */
 .chzn-disabled .chzn-single {
   cursor: default;
 }
 
-/* line 287, ../sass/styles/_chosen.scss */
+/* line 260, ../sass/styles/_chosen.scss */
 .chzn-disabled .chzn-choices .search-choice .search-choice-close {
   cursor: default;
 }
 
 /* @group Right to Left */
-/* line 292, ../sass/styles/_chosen.scss */
+/* line 265, ../sass/styles/_chosen.scss */
 .chzn-rtl {
   text-align: right;
 }
 
-/* line 293, ../sass/styles/_chosen.scss */
+/* line 266, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single {
   padding: 0 8px 0 0;
   overflow: visible;
 }
 
-/* line 294, ../sass/styles/_chosen.scss */
+/* line 267, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single span {
   margin-left: 26px;
   margin-right: 0;
   direction: rtl;
 }
 
-/* line 296, ../sass/styles/_chosen.scss */
+/* line 269, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single div {
   left: 3px;
   right: auto;
 }
 
-/* line 297, ../sass/styles/_chosen.scss */
+/* line 270, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single abbr {
   left: 26px;
   right: auto;
 }
 
-/* line 301, ../sass/styles/_chosen.scss */
+/* line 274, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-field input {
   direction: rtl;
 }
 
-/* line 302, ../sass/styles/_chosen.scss */
+/* line 275, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices li {
   float: right;
 }
 
-/* line 303, ../sass/styles/_chosen.scss */
+/* line 276, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-choice {
   padding: 3px 5px 3px 19px;
   margin: 3px 5px 3px 0;
 }
 
-/* line 304, ../sass/styles/_chosen.scss */
+/* line 277, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-choice .search-choice-close {
   left: 4px;
   right: auto;
   background-position: right top;
 }
 
-/* line 305, ../sass/styles/_chosen.scss */
+/* line 278, ../sass/styles/_chosen.scss */
 .chzn-rtl.chzn-container-single .chzn-results {
   margin: 0 0 4px 4px;
   padding: 0 4px 0 0;
 }
 
-/* line 306, ../sass/styles/_chosen.scss */
+/* line 279, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-results .group-option {
   padding-left: 0;
   padding-right: 15px;
 }
 
-/* line 307, ../sass/styles/_chosen.scss */
+/* line 280, ../sass/styles/_chosen.scss */
 .chzn-rtl.chzn-container-active .chzn-single-with-drop div {
   border-right: none;
 }
 
-/* line 308, ../sass/styles/_chosen.scss */
+/* line 281, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-search input {
   background: #fff;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
@@ -3034,25 +3051,26 @@ dd:last-child {
   font: 400 16px/1 "ratio-display", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
   padding: 6px;
-  background: #fbfbfb;
+  border-radius: 3px;
   width: 100%;
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: #fbfbfb;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 45, ../sass/import/_forms.scss */
+/* line 60, ../sass/import/_forms.scss */
 .form-text:hover, textarea:hover {
   background: white;
 }
-/* line 68, ../sass/import/_forms.scss */
+/* line 70, ../sass/import/_forms.scss */
 .form-text:active, .form-text:focus, textarea:active, textarea:focus {
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  border-color: rgba(39, 160, 220, 0.8);
+  border-color: rgba(39, 160, 220, 0.6);
   outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* line 215, ../sass/master.scss */
@@ -3068,25 +3086,26 @@ select, .select, .chzn-single {
   font: 400 16px/1 "ratio-display", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
   padding: 6px;
+  border-radius: 3px;
+  width: 100%;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
   background: -webkit-linear-gradient(#ffffff, #f3f3f3);
   background: -moz-linear-gradient(#ffffff, #f3f3f3);
   background: -o-linear-gradient(#ffffff, #f3f3f3);
   background: -ms-linear-gradient(#ffffff, #f3f3f3);
   background: linear-gradient(#ffffff, #f3f3f3);
-  width: 100%;
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 29, ../sass/import/_forms.scss */
+/* line 52, ../sass/import/_forms.scss */
 select:after, .select:after, .chzn-single:after {
   font-family: 'Pictos Custom';
   content: "d";
   color: #5c5647;
 }
-/* line 45, ../sass/import/_forms.scss */
+/* line 60, ../sass/import/_forms.scss */
 select:hover, .select:hover, .chzn-single:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f8f8f8));
   background: -webkit-linear-gradient(#ffffff, #f8f8f8);
@@ -3095,16 +3114,14 @@ select:hover, .select:hover, .chzn-single:hover {
   background: -ms-linear-gradient(#ffffff, #f8f8f8);
   background: linear-gradient(#ffffff, #f8f8f8);
 }
-/* line 68, ../sass/import/_forms.scss */
+/* line 70, ../sass/import/_forms.scss */
 select:active, select:focus, .select:active, .select:focus, .chzn-single:active, .chzn-single:focus {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f3f3), color-stop(100%, #fbfbfb));
-  background: -webkit-linear-gradient(#f3f3f3, #fbfbfb);
-  background: -moz-linear-gradient(#f3f3f3, #fbfbfb);
-  background: -o-linear-gradient(#f3f3f3, #fbfbfb);
-  background: -ms-linear-gradient(#f3f3f3, #fbfbfb);
-  background: linear-gradient(#f3f3f3, #fbfbfb);
-  border-color: rgba(39, 160, 220, 0.8);
+  border-color: rgba(39, 160, 220, 0.6);
   outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* line 220, ../sass/master.scss */
@@ -3215,16 +3232,17 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   font: 400 16px/1 "ratio-display", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
   padding: 6px;
+  border-radius: 3px;
   width: 100%;
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 68, ../sass/import/_forms.scss */
+/* line 70, ../sass/import/_forms.scss */
 .error:active, .error:focus {
-  border-color: rgba(39, 160, 220, 0.8);
+  border-color: rgba(39, 160, 220, 0.6);
   outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* line 258, ../sass/master.scss */
@@ -3236,35 +3254,36 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   font: 400 16px/1 "ratio-display", helvetica, sans-serif;
   border: 1px solid #c8c8c8;
   padding: 6px;
-  background: #fbfbfb;
+  border-radius: 3px;
   width: 100%;
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: #fbfbfb;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 19, ../sass/import/_forms.scss */
+/* line 34, ../sass/import/_forms.scss */
 [placeholder] ::-webkit-input-placeholder {
   color: #c9c9c9;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
-/* line 22, ../sass/import/_forms.scss */
+/* line 37, ../sass/import/_forms.scss */
 [placeholder] :-moz-placeholder {
   color: #aaa492;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
-/* line 45, ../sass/import/_forms.scss */
+/* line 60, ../sass/import/_forms.scss */
 [placeholder]:hover {
   background: white;
 }
-/* line 68, ../sass/import/_forms.scss */
+/* line 70, ../sass/import/_forms.scss */
 [placeholder]:active, [placeholder]:focus {
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
-  border-color: rgba(39, 160, 220, 0.8);
+  border-color: rgba(39, 160, 220, 0.6);
   outline: none;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(39, 160, 220, 0.6), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* 

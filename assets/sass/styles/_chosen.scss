@@ -6,95 +6,111 @@
   position: relative;
   @include inline-block;
   width: 100%;
-}
-.chzn-container .chzn-drop {
-  background: #fff;
-  border: 1px solid #aaa;
-  border-top: 0;
-  position: absolute;
-  top: 29px;
-  left: 0;
-    width: 100%;
-  z-index: 999;
-}
-
-.chzn-container-single .chzn-single {
-  @include border-radius(3px);
-  @include background-clip(padding-box);
-  border: 1px solid $border;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  line-height: 24px;
-  padding: $base_px/2;
-  text-decoration: none;
+	.chzn-drop {
+	  background: #fff;
+	  border: 1px solid $border;
+	  border-top: 0;
+	  position: absolute;
+	  top: 29px;
+	  left: 0;
+	  width: 100%;
+	  z-index: 999; }
 }
 
-.chzn-container-single .chzn-single span {
-  display: block;
-  overflow: hidden;
-  @include ellipsis(nowrap);
-  &:after {
-  	font-family: 'Pictos Custom';
-  	content: "d";
-  	color: $primary;
-  	float: right;
-  	position: relative;
-  	top: 3px;
-  }
+.chzn-container-single {
+	.chzn-single {
+	  @include border-radius(3px);
+	  @include background-clip(padding-box);
+	  border: 1px solid $border;
+	  display: block;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  position: relative;
+	  line-height: 24px;
+	  padding: $base_px/2;
+	  text-decoration: none;
+	  span {
+		  display: block;
+		  overflow: hidden;
+		  @include ellipsis(nowrap);
+		  &:after {
+		  	font-family: 'Pictos Custom';
+		  	content: "d";
+		  	color: $primary;
+		  	float: right;
+		  	position: relative;
+		  	top: 3px; } }
+		abbr {
+		  display: block;
+		  position: absolute;
+		  right: 26px;
+		  top: 6px;
+		  width: 12px;
+		  height: 12px;
+		  font-size: 1px; }
+		div {
+  		position: absolute;
+  		b {
+  			display: block; } }
+	}
+	.chzn-search {
+  	padding: 3px 6px;
+ 	 	position: relative;
+	  margin: 0;
+	  white-space: nowrap;
+  	z-index: 1010;
+  	input {
+		  background: #fff;
+		  @include form($radius: 1px);
+		  margin: 1px 0;
+		  padding: 6px 20px 6px 6px;
+		  outline: 0;
+		  border: 1px solid $border;
+		  width: 100%;
+		}
+	}
+	.chzn-drop {
+	  @include border-radius(0 0 3px 3px);
+		@include background-clip(padding-box); }
+}
+.chzn-container-single-nosearch {
+	.chzn-search input {
+ 		position: absolute;
+  	left: -9000px; } }
+
+.chzn-container-active {
+	.chzn-single {
+  	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($alt, 0.4), 0 1px 0 fade-out($white, 0.3));
+ 		border: 1px solid fade-out($alt, 0.4); }
+ 	.chzn-single-with-drop {
+	  border: 1px solid $border;
+	  @include box-shadow(0 1px 0 #fff inset);
+	  background-color: $default;
+	 	@include background(linear-gradient(top, $default 20%, $white 80%));
+		@include border-radius(3px 3px 0 0); 
+		div {
+	  	background: transparent;
+	  	border-left: none; 
+	  	b {
+				background-position: -18px 1px; } } }
+	.chzn-choices {
+		@include box-shadow(0 0 5px rgba(0,0,0,.3));
+	  border: 1px solid $alt; }
 }
 
-.chzn-container-single .chzn-single abbr {
-  display: block;
-  position: absolute;
-  right: 26px;
-  top: 6px;
-  width: 12px;
-  height: 13px;
-  font-size: 1px;
+.chzn-container-active .chzn-choices .search-field input, .chzn-search input {
+  color: $primary;
+  font-family: $sans;
 }
 
-.chzn-container-single .chzn-single abbr:hover {
-}
-.chzn-container-single .chzn-single div {
-  position: absolute;
-}
-.chzn-container-single .chzn-single div b {
-  display: block;
-}
-.chzn-container-single .chzn-search {
-  padding: 3px 4px;
-  position: relative;
-  margin: 0;
-  white-space: nowrap;
-  z-index: 1010;
-}
-.chzn-container-single .chzn-search input {
-  background: #fff;
-  @include background(linear-gradient(top, $default 1%, $white 15%));
-  margin: 1px 0;
-  padding: 4px 20px 4px 5px;
-  outline: 0;
-  border: 1px solid $border;
-  font-family: sans-serif;
-  font-size: 1em;
-  width: 100%;
-}
-.chzn-container-single .chzn-drop {
-  @include border-radius(0 0 4px 4px);
-	@include background-clip(padding-box);
-}
-.chzn-container-single-nosearch .chzn-search input {
-  position: absolute;
-  left: -9000px;
-}
+
+
 
 /* @group Multi Chosen */
 .chzn-container-multi .chzn-choices {
   background-color: #fff;
   @include background(linear-gradient(top, lighten($default, 9%) 1%, lighten($default, 4%) 15%));
-  border: 1px solid #aaa;
+  border: 1px solid $border;
   margin: 0;
   padding: 0;
   cursor: text;
@@ -113,49 +129,37 @@
   padding: 0;
 }
 .chzn-container-multi .chzn-choices .search-field input {
-  color: #666;
-  background: transparent !important;
-  border: 0 !important;
-  font-family: sans-serif;
-  font-size: 100%;
-  height: 15px;
-  padding: 5px;
-  margin: 1px 0;
-  outline: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow   : none;
-  -o-box-shadow     : none;
-  box-shadow        : none;
+  color: $primary;
+	@include form;
+	@include box-shadow(none);
 }
 .chzn-container-multi .chzn-choices .search-field .default {
   color: #999;
 }
 .chzn-container-multi .chzn-choices .search-choice {
-  -webkit-border-radius: 3px;
-  -moz-border-radius   : 3px;
-  border-radius        : 3px;
+  @include border-radius(3px);
   @include background-clip(padding-box);
-  background-color: #e4e4e4;
+  background-color: $default;
   @inlude background(linear-gradient(top, #fff, #000)); 
-  @include box-shadow(0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05));
-  color: #333;
-  border: 1px solid #aaaaaa;
-  line-height: 13px;
+
+  color: $primary;
+  border: 1px solid $border;
+  line-height: 24px;
   padding: 3px 20px 3px 5px;
   margin: 3px 0 3px 5px;
   position: relative;
   cursor: default;
 }
 .chzn-container-multi .chzn-choices .search-choice-focus {
-  background: #d4d4d4;
+  background: $default;
 }
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close {
   display: block;
   position: absolute;
   right: 3px;
-  top: 4px;
+  top: 6px;
   width: 12px;
-  height: 13px;
+  height: 16px;
   font-size: 1px;
 }
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
@@ -164,7 +168,13 @@
 .chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close {
   background-position: right -11px;
 }
-/* @end */
+
+
+
+
+
+
+
 
 /* @group Results */
 .chzn-container .chzn-results {
@@ -192,13 +202,7 @@
 }
 .chzn-container .chzn-results .highlighted {
   background-color: #3875d7;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3875d7', endColorstr='#2a62bc', GradientType=0 );  
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
-  background-image: -webkit-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -moz-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -o-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: -ms-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
-  background-image: linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  @include background(linear-gradient(top, $alt 20%, darken($alt, 5%) 90%));
   color: #fff;
 }
 .chzn-container .chzn-results li em {
@@ -228,7 +232,6 @@
   margin: 0 4px;
   position: absolute;
   text-align: center;
-  width: 321px; /* This should by dynamic with js */
   z-index: 1;
 }
 .chzn-container .chzn-results-scroll span {
@@ -245,36 +248,6 @@
 }
 .chzn-container .chzn-results-scroll-up span {
 }
-/* @end */
-
-/* @group Active  */
-.chzn-container-active .chzn-single {
-  @include box-shadow(0 0 5px rgba(0,0,0,.3));
-  border: 1px solid #5897fb;
-}
-.chzn-container-active .chzn-single-with-drop {
-  border: 1px solid #aaa;
-  @include box-shadow(0 1px 0 #fff inset);
-  background-color: #eee;
- 	@include background(linear-gradient(top, #eee 20%, #fff 80%));
-	@include border-radius(5px 5px 0 0);
-}
-.chzn-container-active .chzn-single-with-drop div {
-  background: transparent;
-  border-left: none;
-}
-.chzn-container-active .chzn-single-with-drop div b {
-  background-position: -18px 1px;
-}
-.chzn-container-active .chzn-choices {
-	@include box-shadow(0 0 5px rgba(0,0,0,.3));
-  border: 1px solid #5897fb;
-}
-.chzn-container-active .chzn-choices .search-field input, .chzn-search input {
-  color: $primary;
-  font-family: $sans;
-}
-/* @end */
 
 /* @group Disabled Support */
 .chzn-disabled {
