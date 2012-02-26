@@ -130,7 +130,6 @@ pre {
 	font: 16px/#{$base_line_height} $monospace;
 	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
-	white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;
 	code {
 		display: block; padding: 5px;
 	}

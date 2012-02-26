@@ -9,52 +9,85 @@
 	border: 1px solid $border;
 }
 
-@mixin form($colour: $alt, $label: "top", $status: "normal", $padding: 6px, $placeholder: false) {
+@mixin form($type: "input", $colour: $alt, $label: "top", $status: "normal", $padding: 6px, $placeholder: false) {
 	@include form_base;
-	@include box-shadow(inset 0 1px 2px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
 	padding: $padding;
-	background: lighten($default, 5%);
-	@if $status != "normal"	{
-		@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
-			border-color: fade-out($colour, 0.2);
-		&:hover {
-			background: $white; }
-		&:focus {
-			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
-			border-color: fade-out($colour, 0.2);
-			outline: none; }
+	
+	@if $type == input {
+		background: lighten($default, 5%);
+		@if $placeholder == true {
+			::-webkit-input-placeholder {
+				color: lighten(#afafaf, 10%);
+				font: 16px/1 $sans; }
+			:-moz-placeholder {
+				color: lighten($primary, 30%);
+				font: 16px/1 $sans; }
+		}
 	}
-	@else {
-		&:hover {
-			background: $white; }
-		&:focus {
-			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4));
-			border-color: fade-out($colour, 0.2);
-			outline: none; }
+	@elseif $type == select {
+		@include background(linear-gradient(lighten($default, 7%), lighten($default, 2%)));
+		&:after {
+	  	font-family: 'Pictos Custom';
+	  	content: "d";
+	  	color: $primary;
+	  }
 	}
+	
+	// for label positioning	
 	@if $label == "top" {
 		width: $whole;
 	}
 	@else {
-	
+		width: $threequarters;
 	}
-	@if $placeholder == true {
-		::-webkit-input-placeholder {
-			color: lighten(#afafaf, 10%);
-			font: 16px/1 $sans; }
-		:-moz-placeholder {
-			color: lighten($primary, 30%);
-			font: 16px/1 $sans; }
+	
+	
+	&:hover {
+		@if $type == input { background: $white; }
+		@elseif $type == select { @include background(linear-gradient(lighten($default, 9%), lighten($default, 4%))); }
+	}
+	
+	
+	// define for your success, warning, danger, etc statuses
+	@if $status != "normal"	{
+		@if type == input  {
+			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4), 0 1px 0 fade-out($white, 0.3)); }
+		@elseif type == input  {
+			@include box-shadow(0 0 8px fade-out($colour, 0.4), 0 1px 0 fade-out($white, 0.3)); }
+		border-color: fade-out($colour, 0.2);
+		&:active, &:focus {
+			@if $type == input { 
+				background: $white; }
+			@elseif $type == select { 
+				@include background(linear-gradient(lighten($default, 2%), lighten($default, 5%))); }
+			border-color: fade-out($colour, 0.2);
+			outline: none; }
+	}
+	@else {
+		@include box-shadow(inset 0 1px 2px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
+		&:active, &:focus {
+			@if $type == input {
+				@include box-shadow(inset 0 1px 2px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4), 0 1px 0 fade-out($white, 0.3)); }
+			@elseif $type == select {
+				@include background(linear-gradient(lighten($default, 2%), lighten($default, 5%))); }
+			border-color: fade-out($colour, 0.2);
+			outline: none; }
 	}
 }
 
-.form-text, textarea, select {
+
+// chosen takes a lot of styling that you might not want or want to use chosen
+@import "../styles/chosen";
+
+// pre styled stuff should probably be moved into master
+.form-text, textarea {
 	@include transition(all .4s linear);
 	@include form;
 }
-select:before {
-	content: "\/";
-	display: block; }
+select, .select, .chzn-single  {
+	@include transition(all .4s linear);
+	@include form(select);
+}
 	
 label, [type="text"], [type="email"], select, .form-text, textarea {
 	display: block; }

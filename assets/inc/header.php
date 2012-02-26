@@ -22,6 +22,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
 	<!-- CSS -->
+	<link href="//get.pictos.cc/fonts/929/1" rel="stylesheet">
 	<link href="assets/css/master.css" media="screen" rel="stylesheet">
 	
 	<!-- JavaScript -->
