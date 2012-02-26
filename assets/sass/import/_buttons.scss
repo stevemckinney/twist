@@ -21,14 +21,14 @@
 
 	// subtle button
 	@if $subtle == false {
-		@include background(linear-gradient(top, lighten($main_colour, 5%) 35%, $main_colour 80%, darken($main_colour, 3%) 100%));
-		border: 1px solid darken(desaturate($main_colour, 20%), 15%);
+		@include background(linear-gradient(top, lighten($main_colour, 3%) 35%, $main_colour 70%, darken($main_colour, 1%) 100%));
+		border: 1px solid darken(desaturate($main_colour, 10%), 10%);
 		color: lighten($text_colour, 20%);
 		text-shadow: 0 1px 1px $text_shadow;
 		
 		// if we want a shadow default true
 		@if $shadow != false {
-			@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 2px fade-out($black, 0.8));
+			@include box-shadow(inset 0 1px 2px -1px fade-out($white, 0.1), 0 1px 2px fade-out($black, 0.8));
 		}
 	}
 	@else {
@@ -95,14 +95,49 @@
 		padding-left: 24px;
 		&:before {
 			content: $icon;
+			font: 16px/1 $pictos;
 			display: inline-block;
 			@include wh(16px, 16px);
 			opacity: 0.8;
 			position: absolute;
-			left: $base_px;
-			top: 3px;
+			left: $base_px/2;
+			top: 6px;
 			margin: 0 $base_px/2 0 0; }
 	}
+	// is there an icon?
+/*	@if $icon != false {
+		@if $size == "big" {
+			padding-left: 44px;
+		}
+		@elseif $size == "small" {
+			padding-left: 16px;
+		}
+		@else {
+			padding-left: 32px;
+		}
+		&:before {
+			content: $icon;
+			display: inline-block;
+			position: absolute;
+			margin: 0 $base_px/2 0 0;
+			padding: 0 $base_px/2 0 0;
+			@if $size == "big" {
+				font: 32px/1 $pictos;
+				left: $base_px/2;
+				top: $base_px/2;
+			}
+			@elseif $size == "small" {
+				font: 16px/1 $pictos;
+				left: $base_px/2;
+				top: 8px;
+			}
+			@else {
+				font: 24px/1 $pictos;
+				left: $base_px/2;
+				top: 11px;
+			}
+		}
+	} */
 }
 
 .button {
@@ -113,19 +148,19 @@
 	@include input_reset;
 	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
 .alt {
-	@extend input_reset;
+	@include input_reset;
 	@include button($alt, #fff, darken($alt, 25%)); }
 .danger {
-	@extend .button;
+	@include input_reset;
 	@include button($danger, #fff, darken($danger, 25%)); }
 .warning {
-	@extend .button;
+	@include input_reset;
 	@include button($warning, #fff, darken($warning, 25%)); }
 .success {
-	@extend .button;
+	@include input_reset;
 	@include button($success, #fff, darken($success, 25%)); }
 .info {
-	@extend .button;
+	@include input_reset;
 	@include button($info, #fff, darken($info, 25%)); }
 .button_group {
 	@include pie-clearfix;

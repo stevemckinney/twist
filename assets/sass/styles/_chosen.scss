@@ -16,6 +16,7 @@
 	  width: 100%;
 	  z-index: 999; }
 }
+.chzn-container-active { @include box-shadow(0 1px 3px fade-out($black, 0.9));  }
 
 .chzn-container-single {
 	.chzn-single {
@@ -34,7 +35,7 @@
 		  overflow: hidden;
 		  @include ellipsis(nowrap);
 		  &:after {
-		  	font-family: 'Pictos Custom';
+		  	font-family: $pictos;
 		  	content: "d";
 		  	color: $primary;
 		  	float: right;

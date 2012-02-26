@@ -32,16 +32,17 @@ $default_text_shadow: #fff;
 $border: darken($default, 15%);
 $focus: darken(#71bcc5, 25%);
 
-$alt: 				#27a0dc;
-$danger: 			#d24f48;
-$warning: 		#f3ad30;
-$success: 		#6f8a22;
+$alt: 				desaturate(#27a0dc, 15%);
+$danger: 			saturate(#d24f48, 10%);
+$warning: 		adjust-hue(#f3ad30, 5);
+$success: 		lighten(desaturate(#6f8a22, 15%), 10%);
 $info: 				#71bcc5;
 
 // font stacks
 $sans: "ratio-display", helvetica, sans-serif;
 $serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
 $monospace: Menlo, Monaco, "Courier New", monospace;
+$pictos: "Pictos Custom";
 
 // font sizes
 $base_font_size: 0.75em;
