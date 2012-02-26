@@ -207,6 +207,58 @@ dd {
 }
 input[type="submit"], x:-moz-any-link, x:default {} 
 
+// pre styled stuff should probably be moved into master
+.form-text, textarea {
+	@include transition(all .4s linear);
+	@include form;
+}
+select, .select, .chzn-single  {
+	@include transition(all .4s linear);
+	@include form(select);
+}
+	
+label, [type="text"], [type="email"], select, .form-text, textarea {
+	display: block; }
+label {
+	@include em_padding; }
+.form-help {
+	@include notice($alt, #fff, darken($alt, 20%), $subtle: true, $radius: 0 0 5px 5px);
+	border: 1px solid $border;
+	border-top: none;
+	padding: 2px 5px;
+	font: 14px/1 $sans;
+	margin: 0 0 $base_px 0; }
+
+[id="name"] {
+	@include border-radius(5px 5px 0 0); }
+
+form ul {
+	@include no_mp;
+	@include no_list_style; }
+	
+.radio, .check {
+	label {
+		position: relative; }
+	li label { 
+		margin: $base_px/2 0; }
+}
+input[type="image"], input[type="checkbox"], input[type="radio"] {
+	float: left;
+	margin-left: -20px;
+	cursor: pointer; }
+	
+.check {
+	@include notice($warning, #fff, darken($warning, 20%));
+	font: 700 14px/1.5 $serif;
+	margin: $line 0; }
+.check label, li label {
+	padding: 0 0 0 20px; }
+	
+.error { @include form($danger); }
+[placeholder] {
+	@include form($placeholder: true);
+}
+
 /* 
 	Misc.
 ---------------------------------------------------------------------- */

@@ -1,63 +1,72 @@
 /*
-	Reset (http://html5doctor.com/html-5-reset-stylesheet/) & Base styles
+	Reset & Basic styles
 -----------------------------------------------------------------------*/ 
+html, body {
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility; 
+	@include transition(all 2s linear); }
+
+html, body, input, select {
+	margin: 0; padding: 0; }
+	
 h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, 
 abbr, acronym, address, cite,
 code, del, dfn, em, img, q, s, 
 samp, small, strike, strong, 
 sub, sup, tt, var, 
-dd, dl, dt, li, ol, ul, 
+dd, dl, dt, lis, 
 fieldset, form, label, legend, button, 
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0; padding: 0; border: 0; 
-	font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; }
-html, body {
-	margin: 0; padding: 0;
-	line-height: 1.5;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility; 
-	@include transition(all 2s linear); }
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1; }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 	display: block; }
+	
 audio, canvas, video {
 	display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) {
 	display: none; }
+
 [hidden] { 
 	display: none; }
 	
 nav ul, nav li, footer ul, footer li {
 	list-style: none; }
-pre {
-	@include force-wrap; }
-
 ul, ol {
-	margin: 1em 0 1em 20px; }
+	margin: 1em 0 1em 20px;
+	padding: 0; }
+	
 blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
 	content: none; }
+	
 a {
-	margin: 0;
-	padding: 0;
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
 	text-decoration: none; }
+
+pre {
+	@include force-wrap; }
+	
 abbr[title], dfn[title] {
 	border-bottom: 1px dotted; 
 	cursor: help; }
+
 hr {
 	display: block; 
 	border: none;
 	background: #ccc;
 	height: 1px; }
+
 input, select {
-	vertical-align: middle;
-	padding: 0;
-	margin: 0;
-	line-height: 1; }
+	vertical-align: middle; }
 :focus {
 	outline: auto 1px -webkit-focus-ring-color;
 	outline-offset: -2px; 
@@ -65,9 +74,9 @@ input, select {
 	-moz-outline-radius: 5px; 
 	-moz-outline-offset: 0; }
 ::-moz-selection{
-	background: #a9a465; color: #fff; text-shadow: none; }
+	background: $secondary; color: #fff; text-shadow: none; }
 ::selection {
-	background: #a9a465; color: #fff; text-shadow: none; }
+	background: $secondary; color: #fff; text-shadow: none; }
 
 * {
 	@include box-sizing(border-box); }
