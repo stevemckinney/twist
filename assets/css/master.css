@@ -1103,12 +1103,18 @@ img {
 }
 
 /* line 1, ../sass/styles/_chosen.scss */
+.select:after, .chzn-single:after {
+  display: none;
+}
+
+/* line 4, ../sass/styles/_chosen.scss */
 .chzn-container {
   font: 16px/1 "ratio-display", helvetica, sans-serif;
   position: relative;
+  width: 100%;
 }
 
-/* line 6, ../sass/styles/_chosen.scss */
+/* line 10, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-drop {
   background: #fff;
   border: 1px solid #aaa;
@@ -1116,10 +1122,11 @@ img {
   position: absolute;
   top: 29px;
   left: 0;
+  width: 100%;
   z-index: 999;
 }
 
-/* line 16, ../sass/styles/_chosen.scss */
+/* line 21, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1141,7 +1148,7 @@ img {
   text-decoration: none;
 }
 
-/* line 29, ../sass/styles/_chosen.scss */
+/* line 34, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single span {
   display: block;
   overflow: hidden;
@@ -1151,7 +1158,7 @@ img {
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-/* line 33, ../sass/styles/_chosen.scss */
+/* line 38, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single span:after {
   font-family: 'Pictos Custom';
   content: "d";
@@ -1161,7 +1168,7 @@ img {
   top: 3px;
 }
 
-/* line 43, ../sass/styles/_chosen.scss */
+/* line 48, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single abbr {
   display: block;
   position: absolute;
@@ -1172,24 +1179,17 @@ img {
   font-size: 1px;
 }
 
-/* line 55, ../sass/styles/_chosen.scss */
+/* line 60, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single div {
   position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  height: 100%;
-  width: 18px;
 }
 
 /* line 63, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-single div b {
   display: block;
-  width: 100%;
-  height: 100%;
 }
 
-/* line 68, ../sass/styles/_chosen.scss */
+/* line 66, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-search {
   padding: 3px 4px;
   position: relative;
@@ -1198,7 +1198,7 @@ img {
   z-index: 1010;
 }
 
-/* line 75, ../sass/styles/_chosen.scss */
+/* line 73, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-search input {
   background: #fff;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
@@ -1213,9 +1213,10 @@ img {
   border: 1px solid #c8c8c8;
   font-family: sans-serif;
   font-size: 1em;
+  width: 100%;
 }
 
-/* line 85, ../sass/styles/_chosen.scss */
+/* line 84, ../sass/styles/_chosen.scss */
 .chzn-container-single .chzn-drop {
   -moz-border-radius: 0 0 4px 4px;
   -webkit-border-radius: 0 0 4px 4px;
@@ -1229,22 +1230,22 @@ img {
   background-clip: padding-box;
 }
 
-/* line 89, ../sass/styles/_chosen.scss */
+/* line 88, ../sass/styles/_chosen.scss */
 .chzn-container-single-nosearch .chzn-search input {
   position: absolute;
   left: -9000px;
 }
 
 /* @group Multi Chosen */
-/* line 95, ../sass/styles/_chosen.scss */
+/* line 94, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices {
   background-color: #fff;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background-image: -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
-  background-image: -moz-linear-gradient(top, #eeeeee 1%, white 15%);
-  background-image: -o-linear-gradient(top, #eeeeee 1%, white 15%);
-  background-image: -ms-linear-gradient(top, #eeeeee 1%, white 15%);
-  background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(15%, #f8f8f8));
+  background: -webkit-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
+  background: -moz-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
+  background: -o-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
+  background: -ms-linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
+  background: linear-gradient(top, #ffffff 1%, #f8f8f8 15%);
   border: 1px solid #aaa;
   margin: 0;
   padding: 0;
@@ -1255,20 +1256,20 @@ img {
   position: relative;
 }
 
-/* line 112, ../sass/styles/_chosen.scss */
+/* line 106, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices li {
   float: left;
   list-style: none;
 }
 
-/* line 116, ../sass/styles/_chosen.scss */
+/* line 110, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field {
   white-space: nowrap;
   margin: 0;
   padding: 0;
 }
 
-/* line 121, ../sass/styles/_chosen.scss */
+/* line 115, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field input {
   color: #666;
   background: transparent !important;
@@ -1285,29 +1286,26 @@ img {
   box-shadow: none;
 }
 
-/* line 136, ../sass/styles/_chosen.scss */
+/* line 130, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-field .default {
   color: #999;
 }
 
-/* line 139, ../sass/styles/_chosen.scss */
+/* line 133, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
   background-clip: padding-box;
   background-color: #e4e4e4;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#eeeeee', GradientType=0 );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -ms-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+@inlude background(linear-gradient(top, #fff, #000));
   -moz-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
   color: #333;
   border: 1px solid #aaaaaa;
@@ -1318,12 +1316,12 @@ img {
   cursor: default;
 }
 
-/* line 165, ../sass/styles/_chosen.scss */
+/* line 149, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice-focus {
   background: #d4d4d4;
 }
 
-/* line 168, ../sass/styles/_chosen.scss */
+/* line 152, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close {
   display: block;
   position: absolute;
@@ -1334,19 +1332,19 @@ img {
   font-size: 1px;
 }
 
-/* line 177, ../sass/styles/_chosen.scss */
+/* line 161, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
   background-position: right -11px;
 }
 
-/* line 180, ../sass/styles/_chosen.scss */
+/* line 164, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close {
   background-position: right -11px;
 }
 
 /* @end */
 /* @group Results */
-/* line 186, ../sass/styles/_chosen.scss */
+/* line 170, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results {
   margin: 0 4px 4px 0;
   max-height: 240px;
@@ -1356,13 +1354,13 @@ img {
   overflow-y: auto;
 }
 
-/* line 194, ../sass/styles/_chosen.scss */
+/* line 178, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-results {
   margin: -1px 0 0;
   padding: 0;
 }
 
-/* line 198, ../sass/styles/_chosen.scss */
+/* line 182, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results li {
   display: none;
   line-height: 15px;
@@ -1371,13 +1369,13 @@ img {
   list-style: none;
 }
 
-/* line 205, ../sass/styles/_chosen.scss */
+/* line 189, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .active-result {
   cursor: pointer;
   display: list-item;
 }
 
-/* line 209, ../sass/styles/_chosen.scss */
+/* line 193, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .highlighted {
   background-color: #3875d7;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3875d7', endColorstr='#2a62bc', GradientType=0 );
@@ -1390,41 +1388,41 @@ img {
   color: #fff;
 }
 
-/* line 220, ../sass/styles/_chosen.scss */
+/* line 204, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results li em {
   background: #feffde;
   font-style: normal;
 }
 
-/* line 224, ../sass/styles/_chosen.scss */
+/* line 208, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .highlighted em {
   background: transparent;
 }
 
-/* line 227, ../sass/styles/_chosen.scss */
+/* line 211, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .no-results {
   background: #f4f4f4;
   display: list-item;
 }
 
-/* line 231, ../sass/styles/_chosen.scss */
+/* line 215, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .group-result {
   cursor: default;
   color: #999;
   font-weight: bold;
 }
 
-/* line 236, ../sass/styles/_chosen.scss */
+/* line 220, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results .group-option {
   padding-left: 15px;
 }
 
-/* line 239, ../sass/styles/_chosen.scss */
+/* line 223, ../sass/styles/_chosen.scss */
 .chzn-container-multi .chzn-drop .result-selected {
   display: none;
 }
 
-/* line 242, ../sass/styles/_chosen.scss */
+/* line 226, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll {
   background: white;
   margin: 0 4px;
@@ -1435,7 +1433,7 @@ img {
   z-index: 1;
 }
 
-/* line 250, ../sass/styles/_chosen.scss */
+/* line 234, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll span {
   display: inline-block;
   height: 17px;
@@ -1443,169 +1441,169 @@ img {
   width: 9px;
 }
 
-/* line 256, ../sass/styles/_chosen.scss */
+/* line 240, ../sass/styles/_chosen.scss */
 .chzn-container .chzn-results-scroll-down {
   bottom: 0;
 }
 
 /* @end */
 /* @group Active  */
-/* line 267, ../sass/styles/_chosen.scss */
+/* line 251, ../sass/styles/_chosen.scss */
 .chzn-container-active .chzn-single {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border: 1px solid #5897fb;
 }
 
-/* line 274, ../sass/styles/_chosen.scss */
+/* line 255, ../sass/styles/_chosen.scss */
 .chzn-container-active .chzn-single-with-drop {
   border: 1px solid #aaa;
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-  -moz-box-shadow: 0 1px 0 #fff inset;
-  -o-box-shadow: 0 1px 0 #fff inset;
-  box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -o-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
   background-color: #eee;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #eeeeee), color-stop(80%, white));
-  background-image: -webkit-linear-gradient(top, #eeeeee 20%, white 80%);
-  background-image: -moz-linear-gradient(top, #eeeeee 20%, white 80%);
-  background-image: -o-linear-gradient(top, #eeeeee 20%, white 80%);
-  background-image: -ms-linear-gradient(top, #eeeeee 20%, white 80%);
-  background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-bottomright: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -moz-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -o-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
-/* line 295, ../sass/styles/_chosen.scss */
+/* line 262, ../sass/styles/_chosen.scss */
 .chzn-container-active .chzn-single-with-drop div {
   background: transparent;
   border-left: none;
 }
 
-/* line 299, ../sass/styles/_chosen.scss */
+/* line 266, ../sass/styles/_chosen.scss */
 .chzn-container-active .chzn-single-with-drop div b {
   background-position: -18px 1px;
 }
 
-/* line 302, ../sass/styles/_chosen.scss */
+/* line 269, ../sass/styles/_chosen.scss */
 .chzn-container-active .chzn-choices {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border: 1px solid #5897fb;
 }
 
-/* line 309, ../sass/styles/_chosen.scss */
-.chzn-container-active .chzn-choices .search-field input {
-  color: #111 !important;
+/* line 273, ../sass/styles/_chosen.scss */
+.chzn-container-active .chzn-choices .search-field input, .chzn-search input {
+  color: #5c5647;
+  font-family: "ratio-display", helvetica, sans-serif;
 }
 
 /* @end */
 /* @group Disabled Support */
-/* line 315, ../sass/styles/_chosen.scss */
+/* line 280, ../sass/styles/_chosen.scss */
 .chzn-disabled {
   cursor: default;
   opacity: 0.5 !important;
 }
 
-/* line 319, ../sass/styles/_chosen.scss */
+/* line 284, ../sass/styles/_chosen.scss */
 .chzn-disabled .chzn-single {
   cursor: default;
 }
 
-/* line 322, ../sass/styles/_chosen.scss */
+/* line 287, ../sass/styles/_chosen.scss */
 .chzn-disabled .chzn-choices .search-choice .search-choice-close {
   cursor: default;
 }
 
 /* @group Right to Left */
-/* line 327, ../sass/styles/_chosen.scss */
+/* line 292, ../sass/styles/_chosen.scss */
 .chzn-rtl {
   text-align: right;
 }
 
-/* line 328, ../sass/styles/_chosen.scss */
+/* line 293, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single {
   padding: 0 8px 0 0;
   overflow: visible;
 }
 
-/* line 329, ../sass/styles/_chosen.scss */
+/* line 294, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single span {
   margin-left: 26px;
   margin-right: 0;
   direction: rtl;
 }
 
-/* line 331, ../sass/styles/_chosen.scss */
+/* line 296, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single div {
   left: 3px;
   right: auto;
 }
 
-/* line 332, ../sass/styles/_chosen.scss */
+/* line 297, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-single abbr {
   left: 26px;
   right: auto;
 }
 
-/* line 336, ../sass/styles/_chosen.scss */
+/* line 301, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-field input {
   direction: rtl;
 }
 
-/* line 337, ../sass/styles/_chosen.scss */
+/* line 302, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices li {
   float: right;
 }
 
-/* line 338, ../sass/styles/_chosen.scss */
+/* line 303, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-choice {
   padding: 3px 5px 3px 19px;
   margin: 3px 5px 3px 0;
 }
 
-/* line 339, ../sass/styles/_chosen.scss */
+/* line 304, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-choices .search-choice .search-choice-close {
   left: 4px;
   right: auto;
   background-position: right top;
 }
 
-/* line 340, ../sass/styles/_chosen.scss */
+/* line 305, ../sass/styles/_chosen.scss */
 .chzn-rtl.chzn-container-single .chzn-results {
   margin: 0 0 4px 4px;
   padding: 0 4px 0 0;
 }
 
-/* line 341, ../sass/styles/_chosen.scss */
+/* line 306, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-results .group-option {
   padding-left: 0;
   padding-right: 15px;
 }
 
-/* line 342, ../sass/styles/_chosen.scss */
+/* line 307, ../sass/styles/_chosen.scss */
 .chzn-rtl.chzn-container-active .chzn-single-with-drop div {
   border-right: none;
 }
 
-/* line 343, ../sass/styles/_chosen.scss */
+/* line 308, ../sass/styles/_chosen.scss */
 .chzn-rtl .chzn-search input {
   background: #fff;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background: -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: -moz-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: -o-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: -ms-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background: -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
   background: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
-  padding: 4px 5px 4px 20px;
+  padding: 6px 6px 6px 20px;
+  width: 100% !important;
   direction: rtl;
 }
 
