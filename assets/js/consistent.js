@@ -133,4 +133,5 @@ $(document).ready(function() {
 	//$(".thing").fittext();
 	//$(".video_containing_area").fitvids();
 	$(".select").chosen(); //$(".select").chosen({allow_single_deselect:true});
+	$('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
 });
