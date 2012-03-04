@@ -14,14 +14,15 @@ html, body {
 body {
 	@extend .transition;
 	@include container;
-	//@include susy-grid-background; 
-	//@include baseline-grid-background(12px, fade-out(#f00, 0.95));
+	@include susy-grid-background; 
+	//@include baseline-grid-background(12px, fade-out(#f00, 0.9));
 	background: saturate(lighten(#948C75, 45%), 50%);
-	}
+}
 
 .container {
-	@include full;
-	@include pad(5,5); }
+	@include respond-to(tablet) {
+		@include full;
+		@include pad(2,2); } }
 
 [role="banner"] {
 	@include container;
@@ -38,7 +39,6 @@ body {
 }
 [role="navigation"] {
 	@include pie-clearfix;
-	@include columns(6);
 	width: 70%;
 	text-align: right;
 	position: absolute;
@@ -50,8 +50,16 @@ body {
 	a {
 		float: left;
 		@include button_base;
-		@include button($secondary, #fff, darken($secondary, 20%));
-		@include inline-block; }
+		color: $white;
+			//@include button($secondary, #fff, darken($secondary, 20%));
+			}
+	@include respond-to(tablet) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+		@include notice($secondary, #fff, darken($secondary, 20%), $radius: 0, $size: small); }
 }
 
 [role="banner"] img {
@@ -192,8 +200,40 @@ dd {
 	Buttons
 -----------------------------------------------------------------------*/
 @import "import/_buttons.scss";
-.button, button {
-	@extend .button; }
+.button {
+	@include input_reset;
+	@include button($shadow: false); }
+.subtle {
+	@include input_reset;
+	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
+.alt {
+	@include input_reset;
+	@include button($alt, #fff, darken($alt, 25%)); }
+.danger {
+	@include input_reset;
+	@include button($danger, #fff, darken($danger, 25%)); }
+.warning {
+	@include input_reset;
+	@include button($warning, #fff, darken($warning, 25%)); }
+.success {
+	@include input_reset;
+	@include button($success, #fff, darken($success, 25%)); }
+.info {
+	@include input_reset;
+	@include button($info, #fff, darken($info, 25%)); }
+.button_group {
+	@include pie-clearfix;
+	button, a	{
+		@include border-radius(0);
+		margin-left: -1px;
+		float: left;
+		&:first-child, &:first-of-type { 
+			@include border-radius(5px 0 0 5px);
+			margin-left: 0; }
+		&:last-child, &:last-of-type {
+			@include border-radius(0 5px 5px 0); }
+	}
+}
 
 /*
 	Forms

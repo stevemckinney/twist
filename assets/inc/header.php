@@ -13,8 +13,8 @@
 	<meta charset="utf-8">
 	<!-- In loving memory of Albert Phillips -->
 	<title>Framework</title>
-	<meta name="description" content=".">
-	<meta name="keywords" content="">
+	<meta name="description" content="framework, sass">
+	<meta name="keywords" content="A SASS/Compass framework">
 
 	<!-- Mobile -->
 	<meta name="HandheldFriendly" content="True">

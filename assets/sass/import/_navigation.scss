@@ -9,7 +9,7 @@
 	z-index:5;
 	font: 700 14px/1 $sans; }
 
-@mixin dropdown($main_colour: $default, $text_colour: $default_text, $text_shadow: $default_text_shadow, $radius: 3px, $subtle: false, $size: "normal", $icon: false) {
+@mixin dropdown($main_colour: $default, $text_colour: $default-text, $text_shadow: $default-text-shadow, $radius: 3px, $subtle: false, $size: "normal", $icon: false) {
 		@include dropdown_base;
 		
 		ul > li > a {
@@ -28,7 +28,7 @@
 				@else {
 					background: none;
 					background: fade-out($black, 0.99);
-					color: $default_text;
+					color: $default-text;
 					border: none;
 					text-shadow: none;
 					border: 1px solid fade-out($black, 0.95);

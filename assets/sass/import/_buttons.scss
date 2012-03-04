@@ -3,8 +3,8 @@
 // 	-----------------------------------------
 @mixin button_base {
 	font: 500 14px/1 $sans;
+	display: block;
 	@include transition(none);
-	@include inline-block;
 	@include background-clip(padding-box); }
 
 @mixin button(
@@ -21,7 +21,7 @@
 
 	// subtle button
 	@if $subtle == false {
-		@include background(linear-gradient(top, lighten($main_colour, 3%) 35%, $main_colour 70%, darken($main_colour, 1%) 100%));
+		@include background(linear-gradient(top, lighten($main_colour, 5%) 35%, $main_colour 70%, darken($main_colour, 1%) 100%));
 		border: 1px solid darken(desaturate($main_colour, 10%), 10%);
 		color: lighten($text_colour, 20%);
 		text-shadow: 0 1px 1px $text_shadow;
@@ -40,18 +40,14 @@
 		border: 1px solid fade-out($black, 0.85);
 		border-top-color: fade-out($black, 0.9);
 		&:hover, &:focus {
-			text-shadow: 0 1px 1px $text_shadow; }
-	}
+			text-shadow: 0 1px 1px $text_shadow; } }
 	// button sizes
 	@if $size == "big" {
-		padding: 18px 24px;
-	}
+		padding: 18px 24px; }
 	@elseif $size == "small" {
-		padding: 3px 6px;
-	}
+		padding: 3px 6px; }
 	@else {
-		padding: 6px 18px;
-	}
+		padding: 6px 18px; }
 	
 	// consistent styles
 	@include border-radius($radius);
@@ -138,40 +134,4 @@
 			}
 		}
 	} */
-}
-
-.button {
-	margin: 0 0 $line;
-	@include input_reset;
-	@include button($radius: 5px, $shadow: false); }
-.subtle {
-	@include input_reset;
-	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
-.alt {
-	@include input_reset;
-	@include button($alt, #fff, darken($alt, 25%)); }
-.danger {
-	@include input_reset;
-	@include button($danger, #fff, darken($danger, 25%)); }
-.warning {
-	@include input_reset;
-	@include button($warning, #fff, darken($warning, 25%)); }
-.success {
-	@include input_reset;
-	@include button($success, #fff, darken($success, 25%)); }
-.info {
-	@include input_reset;
-	@include button($info, #fff, darken($info, 25%)); }
-.button_group {
-	@include pie-clearfix;
-	button, a	{
-		@include border-radius(0);
-		margin-left: -1px;
-		float: left;
-		&:first-child, &:first-of-type { 
-			@include border-radius(5px 0 0 5px);
-			margin-left: 0; }
-		&:last-child, &:last-of-type {
-			@include border-radius(0 5px 5px 0); }
-	}
 }

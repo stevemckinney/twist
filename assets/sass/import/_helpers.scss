@@ -44,7 +44,7 @@
 
 // margins and paddings
 @mixin margin {
-	margin: $base_px 0; }
+	margin: $base-px 0; }
 @mixin em_margin {
 	margin: $line 0 $line/2; }
 @mixin em_margin_even {
@@ -53,21 +53,21 @@
 	margin: $line/2 0 $line; }
 
 @mixin padding {
-	padding: $base_px/2 $base_px; }
+	padding: $base-px/2 $base-px; }
 @mixin em_padding {
 	padding: $line 0 $line/4; }
 @mixin em_padding_even {
 	padding:  0.75em 0; }
 	
 @mixin plr {
-	padding: 0 $base_px; }
+	padding: 0 $base-px; }
 @mixin ptb {
-	padding: $base_px 0; }
+	padding: $base-px 0; }
 	
 @mixin mlr {
-	margin: 0 $base_px; }
+	margin: 0 $base-px; }
 @mixin mtb {
-	margin: $base_px 0; }
+	margin: $base-px 0; }
 
 @mixin no_mp {
 	margin: 0; padding: 0; }
