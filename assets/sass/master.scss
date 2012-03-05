@@ -1,6 +1,6 @@
 @import "imports";
 
-$total-cols         : 24;
+$total-cols         : 12;
 $col-width          : 6em;
 $gutter-width       : 2em;
 $side-gutter-width  : $gutter-width;
@@ -9,15 +9,17 @@ $side-gutter-width  : $gutter-width;
 	Base stucture
 ---------------------------------------------------------------------- */
 html, body {
-	font: #{$normal_size}/#{$base_line_height} $serif;
+	font: #{$normal-size}/#{$base-line-height} $serif;
 	color: $primary; }
 body {
 	@extend .transition;
 	@include container;
 	@include susy-grid-background; 
-	//@include baseline-grid-background(12px, fade-out(#f00, 0.9));
+	@include baseline-grid-background(12px, fade-out(#f00, 0.9));
 	background: saturate(lighten(#948C75, 45%), 50%);
 }
+	
+//@include establish-baseline;
 
 .container {
 	@include respond-to(tablet) {
@@ -112,7 +114,7 @@ div {}
 [role="complementary"] {
 }
 /* footer ---------------------- */
-[role="contentinfo"] {font-size: $base_font_size; padding: $line*3 auto auto; }
+[role="contentinfo"] {font-size: $base-font-size; padding: $line*3 auto auto; }
 
 
 /* 
@@ -135,7 +137,7 @@ p, li {
 pre {
 	@extend .n_subtle;
 	@extend .margin;
-	font: 16px/#{$base_line_height} $monospace;
+	font: 16px/#{$base-line-height} $monospace;
 	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
 	code {
@@ -147,7 +149,7 @@ pre {
 blockquote {
 	padding: 0 0 0 56px;
 	position: relative;
-	font: #{$normal_size}/#{$base_line_height} $serif;
+	font: #{$normal-size}/#{$base-line-height} $serif;
 	@extend .n_subtle;
 	@extend .rounded;
 	p {position: relative; z-index: 1;}
@@ -267,7 +269,7 @@ label {
 	border-top: none;
 	padding: 2px 5px;
 	font: 14px/1 $sans;
-	margin: 0 0 $base_px 0; }
+	margin: 0 0 $base-px 0; }
 
 [id="name"] {
 	@include border-radius(5px 5px 0 0); }
@@ -280,7 +282,7 @@ form ul {
 	label {
 		position: relative; }
 	li label { 
-		margin: $base_px/2 0; }
+		margin: $base-px/2 0; }
 }
 input[type="image"], input[type="checkbox"], input[type="radio"] {
 	float: left;
@@ -321,7 +323,7 @@ table {
 	background: #fff; }
 td, th {
 	padding: $line/4;
-	line-height: $base_line_height;
+	line-height: $base-line-height;
 	text-align: left;
 	border-top: 1px solid $primary;
 	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
@@ -330,4 +332,4 @@ td, th {
 /*
 	Media queries
 -----------------------------------------------------------------------*/
-@import "import/_mixins/_responsive.scss", "screens/iphone.scss", "screens/tablet.scss", "screens/ipad.scss", "screens/desktop.scss", "screens/max.scss";
+@import "screens/iphone", "screens/tablet", "screens/ipad", "screens/desktop", "screens/max";

@@ -4,6 +4,7 @@
 
 @import 
 	"compass", 
+	"import/_mixins/responsive",
 	"stitch/patterns/images", "stitch/patterns/legacy", 
 	"susy", 
 	"import/base",
@@ -13,6 +14,5 @@
 	"import/notices",
 	"import/forms",
 	"import/modals",
-	"import/navigation",
-	"import/_mixins/responsive"
+	"import/navigation"
 	;

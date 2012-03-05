@@ -26,8 +26,8 @@ $white: hsla(0,100%,100%,1);
 
 // main element styling colours
 $default: #eee;
-$default_text: #444;
-$default_text_shadow: #fff;
+$default-text: #444;
+$default-text-shadow: #fff;
 
 $border: darken($default, 15%);
 $focus: darken(#71bcc5, 25%);
@@ -45,12 +45,12 @@ $monospace: Menlo, Monaco, "Courier New", monospace;
 $pictos: "Pictos Custom";
 
 // font sizes
-$base_font_size: 0.75em;
-$normal_size: 1em;
-$base_line_height: 1.5em;
+$base-font-size: 1em;
+$normal-size: 1em;
+$base-line-height: 1.5em;
 
 // px
-$base_px: 0.75em;
-$line: $base_px*2;
+$base-px: 0.75em;
+$line: $base-px*2;
 
 $experimental-support-for-khtml: false;

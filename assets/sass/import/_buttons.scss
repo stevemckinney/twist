@@ -9,8 +9,8 @@
 
 @mixin button(
 	$main_colour: $default, 
-	$text_colour: $default_text, 
-	$text_shadow: $default_text_shadow, 
+	$text_colour: $default-text, 
+	$text_shadow: $default-text-shadow, 
 	$radius: 3px,
 	$subtle: false, 
 	$size: "normal",
@@ -34,7 +34,7 @@
 	@else {
 		background: none;
 		background: fade-out($black, 0.99);
-		color: $default_text;
+		color: $default-text;
 		border: none;
 		text-shadow: none;
 		border: 1px solid fade-out($black, 0.85);
@@ -96,9 +96,9 @@
 			@include wh(16px, 16px);
 			opacity: 0.8;
 			position: absolute;
-			left: $base_px/2;
+			left: $base-px/2;
 			top: 6px;
-			margin: 0 $base_px/2 0 0; }
+			margin: 0 $base-px/2 0 0; }
 	}
 	// is there an icon?
 /*	@if $icon != false {
@@ -115,21 +115,21 @@
 			content: $icon;
 			display: inline-block;
 			position: absolute;
-			margin: 0 $base_px/2 0 0;
-			padding: 0 $base_px/2 0 0;
+			margin: 0 $base-px/2 0 0;
+			padding: 0 $base-px/2 0 0;
 			@if $size == "big" {
 				font: 32px/1 $pictos;
-				left: $base_px/2;
-				top: $base_px/2;
+				left: $base-px/2;
+				top: $base-px/2;
 			}
 			@elseif $size == "small" {
 				font: 16px/1 $pictos;
-				left: $base_px/2;
+				left: $base-px/2;
 				top: 8px;
 			}
 			@else {
 				font: 24px/1 $pictos;
-				left: $base_px/2;
+				left: $base-px/2;
 				top: 11px;
 			}
 		}
