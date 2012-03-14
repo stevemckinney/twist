@@ -1,24 +1,36 @@
 // 	----------------------------------------- 
 //	Base form styles
 // 	-----------------------------------------
-@mixin form_base {
-	@include input_reset;
+@mixin form-base {
+	@include input-reset;
 	@include primary;
 	font: 400 16px/1 $sans;
 	border: 1px solid $border;
 }
 
-@mixin form($type: "input", $colour: $alt, $label: "top", $status: "normal", $padding: 6px, $placeholder: false, $radius: 3px) {
-	@include form_base;
-	padding: $padding;
-	border-radius: $radius;
-	// for label positioning	
+@mixin form-label(
+	$position: "top" ) {
+
 	@if $label == "top" {
 		width: $whole;
 	}
 	@else {
 		width: $threequarters;
+		
 	}
+
+}
+
+@mixin form(
+	$type: "input",
+	$colour: $alt,
+	$status: "normal",
+	$padding: 6px,
+	$placeholder: false,
+	$radius: 3px ) {
+	@include form-base;
+	padding: $padding;
+	border-radius: $radius;
 	
 	// element type
 	@if $type == input {

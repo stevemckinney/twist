@@ -32,31 +32,31 @@
 @mixin centre {
 	margin: auto; }
 	
-@mixin no_outline {
+@mixin no-outline {
 	outline: none; }
 
 // make form elements have no appearance
-@mixin input_reset {
+@mixin input-reset {
 	@include appearance(none); }	
 
-@mixin no_list_style {
+@mixin no-list-style {
 	list-style: none; }
 
 // margins and paddings
 @mixin margin {
 	margin: $base-px 0; }
-@mixin em_margin {
+@mixin em-margin {
 	margin: $line 0 $line/2; }
-@mixin em_margin_even {
+@mixin em-margin-even {
 	margin: 0.75em 0; }
-@mixin em_margin_reverse {
+@mixin em-margin-reverse {
 	margin: $line/2 0 $line; }
 
 @mixin padding {
 	padding: $base-px/2 $base-px; }
-@mixin em_padding {
+@mixin em-padding {
 	padding: $line 0 $line/4; }
-@mixin em_padding_even {
+@mixin em-padding-even {
 	padding:  0.75em 0; }
 	
 @mixin plr {
@@ -69,7 +69,7 @@
 @mixin mtb {
 	margin: $base-px 0; }
 
-@mixin no_mp {
+@mixin no-mp {
 	margin: 0; padding: 0; }
 	
 // colour use
@@ -89,12 +89,10 @@
 	
 	@if $width and $height {
 		width: #{$width};
-		height: #{$height};
-	}
+		height: #{$height}; }
 	@else {
 		width: #{$width};
-		height: #{$width};
-	}
+		height: #{$width}; }
 }
 
 // user-select for some reason was not in my compass

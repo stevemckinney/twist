@@ -48,10 +48,10 @@ body {
 	padding: 12px 0 0;
 	ul {
 		@include pie-clearfix;
-		@include no_mp; }
+		@include no-mp; }
 	a {
 		float: left;
-		@include button_base;
+		@include button-base;
 		color: $white;
 			//@include button($secondary, #fff, darken($secondary, 20%));
 			}
@@ -87,12 +87,12 @@ body {
 	}
 }
 [role="main"] {
-	@extend .no_mp; }
+	@extend .no-mp; }
 	
 /* nav ---------------------- */
 [role="navigation"] {
 	ul {
-		@extend .no_mp;
+		@extend .no-mp;
 	}
 	li {
 		@include inline-block;
@@ -182,7 +182,7 @@ section > p:first-child {
 ul, li {}
 [role="contentinfo"] {
 	ul {
-		@extend .no_mp; }
+		@extend .no-mp; }
 	li {
 		display: inline-block; }
 }
@@ -203,25 +203,25 @@ dd {
 -----------------------------------------------------------------------*/
 @import "import/_buttons.scss";
 .button {
-	@include input_reset;
+	@include input-reset;
 	@include button($shadow: false); }
 .subtle {
-	@include input_reset;
-	@include button($main_colour: $success, $text_colour: #fff, $text_shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
+	@include input-reset;
+	@include button($main-colour: $success, $text-colour: #fff, $text-shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
 .alt {
-	@include input_reset;
+	@include input-reset;
 	@include button($alt, #fff, darken($alt, 25%)); }
 .danger {
-	@include input_reset;
+	@include input-reset;
 	@include button($danger, #fff, darken($danger, 25%)); }
 .warning {
-	@include input_reset;
+	@include input-reset;
 	@include button($warning, #fff, darken($warning, 25%)); }
 .success {
-	@include input_reset;
+	@include input-reset;
 	@include button($success, #fff, darken($success, 25%)); }
 .info {
-	@include input_reset;
+	@include input-reset;
 	@include button($info, #fff, darken($info, 25%)); }
 .button_group {
 	@include pie-clearfix;
@@ -262,7 +262,7 @@ select, .select, .chzn-single  {
 label, [type="text"], [type="email"], select, .form-text, textarea {
 	display: block; }
 label {
-	@include em_padding; }
+	@include em-padding; }
 .form-help {
 	@include notice($alt, #fff, darken($alt, 20%), $subtle: true, $radius: 0 0 5px 5px);
 	border: 1px solid $border;
@@ -275,8 +275,8 @@ label {
 	@include border-radius(5px 5px 0 0); }
 
 form ul {
-	@include no_mp;
-	@include no_list_style; }
+	@include no-mp;
+	@include no-list-style; }
 	
 .radio, .check {
 	label {
@@ -328,6 +328,46 @@ td, th {
 	border-top: 1px solid $primary;
 	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
 
+/* notices ---------------------- */
+.notice {
+	@include notice-base;
+	@include input-reset;
+	@include notice($success, #fff, darken($success, 20%), $text-align: center, $size: normal); }
+.n_subtle {
+	@extend .notice;
+	@include notice($subtle: true); }
+.n_info {
+	@extend .notice;
+	@include notice($info, #fff, darken($info, 20%), $text-align: center); }
+	
+.notice:nth-of-type(2) {
+	@include notice($info, #fff, darken($info, 20%), $text-align: center, $size: small) }
+.notice:nth-of-type(3) {
+	@include notice($danger, #fff, darken($danger, 20%), $text-align: center) }
+.notice:nth-of-type(4) {
+	@include notice($warning, #fff, darken($warning, 20%), $text-align: center, $size: big) }
+	
+/* modal ---------------------- */
+.modal {
+	@include modal;
+	h1, h2, h3 {
+		font-size: 100%;
+		margin-top: 0;
+		padding: 12px;
+		margin: 0;
+		color: fade-out(#fff, 0.1);
+		@include border-radius(3px);
+		@extend .notice;
+		@include notice($info, #fff, darken($info, 20%), $text-align: center); } }
+.overlay {
+	@include background(radial-gradient(fade-out(hsl(30, 10%, 20%), 0.7) 20%, fade-out(hsl(30, 10%, 20%), 0.1)), radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
+	@extend .rounded;
+	padding: 24px;
+	position: relative;
+	top:0; bottom: 0; left:0; right:0;
+	.no-cssgradients {
+		background: #000;
+		background: fade-out($black, 0.6); } }
 
 /*
 	Media queries

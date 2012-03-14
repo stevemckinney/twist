@@ -14,8 +14,6 @@
 }
 
 //	Simple media queries
-//	@include respond-to(iphone) { prop:style; }
-
 @mixin respond-to($media) {
   @if $media == iphone {
     @media screen and (min-width: 480px), screen and (min-device-width: 480px) { @content; }

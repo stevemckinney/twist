@@ -2,7 +2,7 @@
 //	Notices — A base, mixin and options
 // 	-----------------------------------------
 
-@mixin notice_base {
+@mixin notice-base {
 	font: 700 16px/1 $sans;
 	width: 100%;
 	margin: 0 0 $base-px;
@@ -13,58 +13,58 @@
 	@include background-clip(padding-box); }
 
 @mixin notice(
-	$main_colour: $default,
-	$text_colour: $default-text,
-	$text_shadow: $default-text-shadow,
+	$main-colour: $default,
+	$text-colour: $default-text,
+	$text-shadow: $default-text-shadow,
 	$radius: 3px,
 	$subtle: false,
-	$text_align: left,
+	$text-align: left,
 	$size: "normal",
 	$icon: false,
-	$shadow: true) {
+	$shadow: true ) {
 	
 	@if $subtle == false {
-		@include background(linear-gradient(top, lighten($main_colour, 3%) 35%, $main_colour 70%, darken($main_colour, 1%) 100%));
-		@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
-		border: 1px solid darken(desaturate($main_colour, 10%), 10%);
-		color: lighten($text_colour, 20%);
-		text-shadow: 0 1px 1px $text_shadow;
+		@include background(
+			linear-gradient(
+				top, lighten($main-colour, 3%) 35%,
+				$main-colour 70%, darken($main-colour, 1%) 100%) );
+		@include box-shadow(
+			inset 0 1px 0 fade-out($white, 0.7), 
+			0 1px 3px fade-out($black, 0.9));
+		border: 1px solid darken(desaturate($main-colour, 10%), 10%);
+		color: lighten($text-colour, 20%);
+		text-shadow: 0 1px 1px $text-shadow;
 		// if we want a shadow default true
 		@if $shadow != false {
-			@include box-shadow(inset 0 1px 2px -1px fade-out($white, 0.1), inset 0 -10px 10px -5px fade-out($black, 0.95), inset 0 -1px 0 fade-out($black, 0.95), 0 1px 2px fade-out($black, 0.8));
-		}
-	}
+			@include box-shadow(
+				inset 0 1px 2px -1px fade-out($white, 0.1),
+				inset 0 -10px 10px -5px fade-out($black, 0.95),
+				inset 0 -1px 0 fade-out($black, 0.95),
+				0 1px 2px fade-out($black, 0.8) ); } }
 	@else {
 		background: none;
 		background: fade-out($black, 0.99);
 		color: $default-text;
 		border: none;
 		text-shadow: none;
-		border: 1px solid fade-out($black, 0.95);
-	}
+		border: 1px solid fade-out($black, 0.95); }
 
 	@include border-radius($radius);
-	text-align: $text_align;
+	text-align: $text-align;
 	@if $size == "big" {
-		padding: 18px;
-	}
+		padding: 18px; }
 	@elseif $size == "small" {
-		padding: 6px;
-	}
+		padding: 6px; }
 	@else {
-		padding: 12px;
-	}
+		padding: 12px; }
 	// is there an icon?
 	@if $icon != false {
 		@if $size == "big" {
-			padding-left: 44px;
-		}
+			padding-left: 44px; }
 		@elseif $size == "small" {
-			padding-left: 16px;
-		}
+			padding-left: 16px; }
 		@else {
-			padding-left: 32px;
-		}
+			padding-left: 32px; }
 		&:before {
 			content: $icon;
 			display: inline-block;
@@ -74,36 +74,15 @@
 			@if $size == "big" {
 				font: 32px/1 $pictos;
 				left: $base-px/2;
-				top: $base-px/2;
-			}
+				top: $base-px/2; }
 			@elseif $size == "small" {
 				font: 16px/1 $pictos;
 				left: $base-px/2;
-				top: 8px;
-			}
+				top: 8px; }
 			@else {
 				font: 24px/1 $pictos;
 				left: $base-px/2;
-				top: 11px;
-			}
-		}
+				top: 11px; } }
 	}
-}
 
-.notice {
-	@include notice_base;
-	@include input_reset;
-	@include notice($success, #fff, darken($success, 20%), $text_align: center, $size: normal); }
-.n_subtle {
-	@extend .notice;
-	@include notice($subtle: true); }
-.n_info {
-	@extend .notice;
-	@include notice($info, #fff, darken($info, 20%), $text_align: center); }
-	
-.notice:nth-of-type(2) {
-	@include notice($info, #fff, darken($info, 20%), $text_align: center, $size: small) }
-.notice:nth-of-type(3) {
-	@include notice($danger, #fff, darken($danger, 20%), $text_align: center) }
-.notice:nth-of-type(4) {
-	@include notice($warning, #fff, darken($warning, 20%), $text_align: center, $size: big) }
+}
