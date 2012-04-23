@@ -21,7 +21,7 @@
 <!-- Mobile -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <!-- Verification -->
 <meta name="google-site-verification" content="kvxM4eH_QHyUGdJK0LEQj3aZi7Vew5AooNVxk79zruU">
 <meta name="y_key" content="e831cde43ec8e068">

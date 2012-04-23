@@ -87,7 +87,7 @@ figure, form {
 	margin: 0; }
 
 fieldset {
-	border: none
+	border: none;
 	margin: 0 0 $base-px;
 	padding: 0; }
 
@@ -143,7 +143,7 @@ table {
 	border-spacing: 0; }
 
 :focus {
-	outline: auto 1px 
+	outline: auto 1px;
 	-webkit-focus-ring-color;
 	outline-offset: -2px;
 	-moz-outline: -moz-mac-focusring solid 2px;

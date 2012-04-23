@@ -271,7 +271,7 @@ label {
 	font: 14px/1 $sans;
 	margin: 0 0 $base-px 0; }
 
-[id="name"] {
+.with-help {
 	@include border-radius(5px 5px 0 0); }
 
 form ul {

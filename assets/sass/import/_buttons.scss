@@ -53,7 +53,7 @@
 	@else {
 		padding: 6px 18px; }
 		
-	if $radius != 0 {
+	@if $radius != 0 {
 		@include border-radius($radius); }
 	position: relative;
 	

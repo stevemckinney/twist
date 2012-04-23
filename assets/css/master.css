@@ -10,7 +10,7 @@
 }
 
 /* line 5, ../../../../../.rvm/gems/ruby-1.9.2-p290/gems/stitch-0.1.3.2/stylesheets/stitch/patterns/legacy/_inline-block.scss */
-.__inline-block, .notice, .n_subtle, pre, blockquote, .n_info, .modal h1, .modal h2, .modal h3, .chzn-container, [role="navigation"] li, [role="navigation"] a, .items li {
+.__inline-block, .chzn-container, [role="navigation"] li, [role="navigation"] a, .items li, .notice, .n_subtle, pre, blockquote, .n_info, .modal h1, .modal h2, .modal h3 {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -171,186 +171,12 @@ img {
 }
 
 /* line 18, ../sass/import/_helpers.scss */
-.rounded, .overlay, blockquote {
+.rounded, blockquote, .overlay {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px;
-}
-
-/* line 93, ../sass/import/_notices.scss */
-.notice, .n_subtle, pre, blockquote, .n_info, .modal h1, .modal h2, .modal h3 {
-  font: 700 16px/1 "ratio-display", helvetica, sans-serif;
-  width: 100%;
-  margin: 0 0 0.75em;
-  position: relative;
-  padding: 0.375em 0.75em;
-  -moz-transition: none;
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  background-clip: padding-box;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #91ad41), color-stop(70%, #88a23d), color-stop(100%, #859e3b));
-  background: -webkit-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
-  background: -moz-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
-  background: -o-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
-  background: -ms-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
-  background: linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #657437;
-  color: white;
-  text-shadow: 0 1px 1px #4a5821;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 12px;
-}
-
-/* line 97, ../sass/import/_notices.scss */
-.n_subtle, pre, blockquote {
-  background: none;
-  background: rgba(0, 0, 0, 0.01);
-  color: #444444;
-  border: none;
-  text-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: left;
-  padding: 12px;
-}
-
-/* line 100, ../sass/import/_notices.scss */
-.n_info {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
-  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #59a1aa;
-  color: white;
-  text-shadow: 0 1px 1px #3c8a94;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 12px;
-}
-
-/* line 104, ../sass/import/_notices.scss */
-.notice:nth-of-type(2), .n_subtle:nth-of-type(2), pre:nth-of-type(2), blockquote:nth-of-type(2), .n_info:nth-of-type(2), .modal h1:nth-of-type(2), .modal h2:nth-of-type(2), .modal h3:nth-of-type(2) {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
-  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #59a1aa;
-  color: white;
-  text-shadow: 0 1px 1px #3c8a94;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 6px;
-}
-
-/* line 106, ../sass/import/_notices.scss */
-.notice:nth-of-type(3), .n_subtle:nth-of-type(3), pre:nth-of-type(3), blockquote:nth-of-type(3), .n_info:nth-of-type(3), .modal h1:nth-of-type(3), .modal h2:nth-of-type(3), .modal h3:nth-of-type(3) {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #e0514a), color-stop(70%, #dd453d), color-stop(100%, #dd4138));
-  background: -webkit-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
-  background: -moz-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
-  background: -o-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
-  background: -ms-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
-  background: linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #b9352e;
-  color: white;
-  text-shadow: 0 1px 1px #99211b;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 12px;
-}
-
-/* line 108, ../sass/import/_notices.scss */
-.notice:nth-of-type(4), .n_subtle:nth-of-type(4), pre:nth-of-type(4), blockquote:nth-of-type(4), .n_info:nth-of-type(4), .modal h1:nth-of-type(4), .modal h2:nth-of-type(4), .modal h3:nth-of-type(4) {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #f4c23e), color-stop(70%, #f3bd30), color-stop(100%, #f3bc2b));
-  background: -webkit-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
-  background: -moz-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
-  background: -o-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
-  background: -ms-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
-  background: linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #d7a319;
-  color: white;
-  text-shadow: 0 1px 1px #b3840a;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 18px;
 }
 
 /* line 1, ../sass/styles/_chosen.scss */
@@ -461,7 +287,6 @@ img {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 1px;
-  width: 100%;
   background: #fbfbfb;
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -473,11 +298,11 @@ img {
   border: 1px solid #c8c8c8;
   width: 100%;
 }
-/* line 60, ../sass/import/_forms.scss */
+/* line 72, ../sass/import/_forms.scss */
 .chzn-container-single .chzn-search input:hover {
   background: white;
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 .chzn-container-single .chzn-search input:active, .chzn-container-single .chzn-search input:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -603,7 +428,6 @@ img {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 3px;
-  width: 100%;
   background: #fbfbfb;
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -614,11 +438,11 @@ img {
   -o-box-shadow: none;
   box-shadow: none;
 }
-/* line 60, ../sass/import/_forms.scss */
+/* line 72, ../sass/import/_forms.scss */
 .chzn-container-multi .chzn-choices .search-field input:hover {
   background: white;
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 .chzn-container-multi .chzn-choices .search-field input:active, .chzn-container-multi .chzn-choices .search-field input:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -886,86 +710,11 @@ img {
 }
 
 /* @end */
-/* line 15, ../sass/import/_modals.scss */
-.modal {
-  background: white;
-  padding: 12px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
-  width: 100%;
-  left: 100%/2;
-}
-/* line 17, ../sass/import/_modals.scss */
-.modal h1, .modal h2, .modal h3 {
-  font-size: 100%;
-  margin-top: 0;
-  padding: 12px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
-  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #59a1aa;
-  color: white;
-  text-shadow: 0 1px 1px #3c8a94;
-  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 12px;
-}
-
-/* line 27, ../sass/import/_modals.scss */
-.overlay {
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(20%, rgba(56, 51, 46, 0.3)), color-stop(100%, rgba(56, 51, 46, 0.9))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(61, 51, 41, 0.2)), color-stop(100%, rgba(61, 51, 41, 0.6)));
-  background: -webkit-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -webkit-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
-  background: -moz-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -moz-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
-  background: -o-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -o-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
-  background: -ms-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -ms-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
-  background: radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
-  padding: 24px;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-/* line 33, ../sass/import/_modals.scss */
-.overlay .no-cssgradients {
-  background: #000;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* line 156, ../sass/import/_navigation.scss */
+/* line 162, ../sass/import/_navigation.scss */
 .dropdown {
   font: 900 14px/1 "ratio-display", helvetica, sans-serif;
 }
-/* line 15, ../sass/import/_navigation.scss */
+/* line 21, ../sass/import/_navigation.scss */
 .dropdown ul > li > a {
   font-weight: 700;
   display: block;
@@ -992,7 +741,7 @@ img {
   border-radius: 3px;
   position: relative;
 }
-/* line 55, ../sass/import/_navigation.scss */
+/* line 61, ../sass/import/_navigation.scss */
 .dropdown ul > li > a:hover, .dropdown ul > li > a:focus {
   color: white;
   border-color: #449ba6;
@@ -1008,7 +757,7 @@ img {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 61, ../sass/import/_navigation.scss */
+/* line 67, ../sass/import/_navigation.scss */
 .dropdown ul > li > a:active {
   border-color: #357982;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #4dabb6), color-stop(100%, #5fb3be));
@@ -1022,19 +771,19 @@ img {
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
-/* line 71, ../sass/import/_navigation.scss */
+/* line 77, ../sass/import/_navigation.scss */
 .dropdown ul > li > a:after {
   content: "\21E3";
-  font: 900 16px/0.1 Arial;
+  font: 900 16px/0.1 "ratio-display", helvetica, sans-serif;
   position: relative;
   right: -5px;
   top: 2px;
 }
-/* line 77, ../sass/import/_navigation.scss */
+/* line 83, ../sass/import/_navigation.scss */
 .dropdown a:only-child:after {
   display: none;
 }
-/* line 79, ../sass/import/_navigation.scss */
+/* line 85, ../sass/import/_navigation.scss */
 .dropdown a:only-child:after:hover, .dropdown a:only-child:after:focus {
   -moz-border-radius: 3px !important;
   -webkit-border-radius: 3px !important;
@@ -1042,25 +791,25 @@ img {
   -ms-border-radius: 3px !important;
   border-radius: 3px !important;
 }
-/* line 83, ../sass/import/_navigation.scss */
+/* line 89, ../sass/import/_navigation.scss */
 .dropdown * {
   -moz-transition: opacity 0.2s ease;
   -webkit-transition: opacity 0.2s ease;
   -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
-/* line 84, ../sass/import/_navigation.scss */
+/* line 90, ../sass/import/_navigation.scss */
 .dropdown ul {
   margin: 0.75em 0;
 }
-/* line 86, ../sass/import/_navigation.scss */
+/* line 92, ../sass/import/_navigation.scss */
 .dropdown li {
   float: left;
   position: relative;
   display: inline-block;
   z-index: 0;
 }
-/* line 91, ../sass/import/_navigation.scss */
+/* line 97, ../sass/import/_navigation.scss */
 .dropdown ul ul {
   list-style: none;
   position: absolute;
@@ -1080,21 +829,21 @@ img {
   -ms-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 100, ../sass/import/_navigation.scss */
+/* line 106, ../sass/import/_navigation.scss */
 .dropdown ul li {
   float: none;
   background: none;
 }
-/* line 103, ../sass/import/_navigation.scss */
+/* line 109, ../sass/import/_navigation.scss */
 .dropdown ul a {
   white-space: nowrap;
 }
-/* line 105, ../sass/import/_navigation.scss */
+/* line 111, ../sass/import/_navigation.scss */
 .dropdown li ul li {
   display: block;
   min-width: 80px;
 }
-/* line 109, ../sass/import/_navigation.scss */
+/* line 115, ../sass/import/_navigation.scss */
 .dropdown li ul li a {
   background: none;
   border: none;
@@ -1107,7 +856,7 @@ img {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 116, ../sass/import/_navigation.scss */
+/* line 122, ../sass/import/_navigation.scss */
 .dropdown li ul li:last-child a {
   -moz-border-radius: 0 0 5px 5px;
   -webkit-border-radius: 0 0 5px 5px;
@@ -1115,7 +864,7 @@ img {
   -ms-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 117, ../sass/import/_navigation.scss */
+/* line 123, ../sass/import/_navigation.scss */
 .dropdown li:hover ul, .dropdown li:hover ul ul, .dropdown li:hover ul ul li a {
   left: 0;
   opacity: 1;
@@ -1124,7 +873,7 @@ img {
   top: 18px;
   z-index: 10;
 }
-/* line 121, ../sass/import/_navigation.scss */
+/* line 127, ../sass/import/_navigation.scss */
 .dropdown li:hover a {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -1132,7 +881,7 @@ img {
   -ms-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
-/* line 123, ../sass/import/_navigation.scss */
+/* line 129, ../sass/import/_navigation.scss */
 .dropdown li:hover ul a {
   color: #71bcc5;
   -moz-transition: all 0.2s linear;
@@ -1149,7 +898,7 @@ img {
   -o-box-shadow: none;
   box-shadow: none;
 }
-/* line 128, ../sass/import/_navigation.scss */
+/* line 134, ../sass/import/_navigation.scss */
 .dropdown li:hover ul li a:hover {
   color: #222;
   background: #eee;
@@ -1583,7 +1332,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .button:hover, .button:focus {
   color: #444444;
   color: rgba(68, 68, 68, 0.9);
@@ -1596,7 +1345,7 @@ dd:last-child {
   background: -ms-linear-gradient(top, #ffffff 35%, #f8f8f8 80%, #eeeeee 100%);
   background: linear-gradient(top, #ffffff 35%, #f8f8f8 80%, #eeeeee 100%);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .button:active {
   border-color: #bbbbbb;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #c8c8c8), color-stop(10%, #d4d4d4), color-stop(50%, #d4d4d4), color-stop(100%, #e6e6e6));
@@ -1609,41 +1358,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.button.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
-  background: -webkit-linear-gradient(#eeeeee, #eeeeee);
-  background: -moz-linear-gradient(#eeeeee, #eeeeee);
-  background: -o-linear-gradient(#eeeeee, #eeeeee);
-  background: -ms-linear-gradient(#eeeeee, #eeeeee);
-  background: linear-gradient(#eeeeee, #eeeeee);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #d4d4d4;
-  color: rgba(68, 68, 68, 0.6);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.button.disabled:hover, .button.disabled:focus, .button.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #eeeeee));
-  background: -webkit-linear-gradient(#eeeeee, #eeeeee);
-  background: -moz-linear-gradient(#eeeeee, #eeeeee);
-  background: -o-linear-gradient(#eeeeee, #eeeeee);
-  background: -ms-linear-gradient(#eeeeee, #eeeeee);
-  background: linear-gradient(#eeeeee, #eeeeee);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #d4d4d4;
-  color: rgba(68, 68, 68, 0.6);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-  cursor: arrow;
 }
 
 /* line 208, ../sass/master.scss */
@@ -1710,11 +1424,11 @@ dd:last-child {
   		}
   	} */
 }
-/* line 42, ../sass/import/_buttons.scss */
+/* line 46, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   text-shadow: 0 1px 1px #4a5821;
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .subtle:hover, .subtle:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -1731,7 +1445,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .subtle:active {
   border-color: #4a5821;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #58672c), color-stop(10%, #687c30), color-stop(50%, #677933), color-stop(100%, #7c923e));
@@ -1744,41 +1458,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.subtle.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d8c53), color-stop(100%, #7d8c53));
-  background: -webkit-linear-gradient(#7d8c53, #7d8c53);
-  background: -moz-linear-gradient(#7d8c53, #7d8c53);
-  background: -o-linear-gradient(#7d8c53, #7d8c53);
-  background: -ms-linear-gradient(#7d8c53, #7d8c53);
-  background: linear-gradient(#7d8c53, #7d8c53);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #585b51;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(74, 88, 33, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.subtle.disabled:hover, .subtle.disabled:focus, .subtle.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d8c53), color-stop(100%, #7d8c53));
-  background: -webkit-linear-gradient(#7d8c53, #7d8c53);
-  background: -moz-linear-gradient(#7d8c53, #7d8c53);
-  background: -o-linear-gradient(#7d8c53, #7d8c53);
-  background: -ms-linear-gradient(#7d8c53, #7d8c53);
-  background: linear-gradient(#7d8c53, #7d8c53);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #585b51;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(74, 88, 33, 0.2);
-  cursor: arrow;
 }
 
 /* line 211, ../sass/master.scss */
@@ -1851,7 +1530,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .alt:hover, .alt:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -1868,7 +1547,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .alt:active {
   border-color: #225e7b;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #2c6b8b), color-stop(10%, #2e7ca2), color-stop(50%, #327a9e), color-stop(100%, #3a8fb9));
@@ -1881,41 +1560,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.alt.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5391b0), color-stop(100%, #5391b0));
-  background: -webkit-linear-gradient(#5391b0, #5391b0);
-  background: -moz-linear-gradient(#5391b0, #5391b0);
-  background: -o-linear-gradient(#5391b0, #5391b0);
-  background: -ms-linear-gradient(#5391b0, #5391b0);
-  background: linear-gradient(#5391b0, #5391b0);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #566e7a;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(28, 78, 103, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.alt.disabled:hover, .alt.disabled:focus, .alt.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5391b0), color-stop(100%, #5391b0));
-  background: -webkit-linear-gradient(#5391b0, #5391b0);
-  background: -moz-linear-gradient(#5391b0, #5391b0);
-  background: -o-linear-gradient(#5391b0, #5391b0);
-  background: -ms-linear-gradient(#5391b0, #5391b0);
-  background: linear-gradient(#5391b0, #5391b0);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #566e7a;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(28, 78, 103, 0.2);
-  cursor: arrow;
 }
 
 /* line 214, ../sass/master.scss */
@@ -1988,7 +1632,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .danger:hover, .danger:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -2005,7 +1649,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .danger:active {
   border-color: #99211b;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #aa2a23), color-stop(10%, #c42b23), color-stop(50%, #bf2f28), color-stop(100%, #d53e36));
@@ -2018,41 +1662,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.danger.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c75953), color-stop(100%, #c75953));
-  background: -webkit-linear-gradient(#c75953, #c75953);
-  background: -moz-linear-gradient(#c75953, #c75953);
-  background: -o-linear-gradient(#c75953, #c75953);
-  background: -ms-linear-gradient(#c75953, #c75953);
-  background: linear-gradient(#c75953, #c75953);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #975450;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(132, 28, 23, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.danger.disabled:hover, .danger.disabled:focus, .danger.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c75953), color-stop(100%, #c75953));
-  background: -webkit-linear-gradient(#c75953, #c75953);
-  background: -moz-linear-gradient(#c75953, #c75953);
-  background: -o-linear-gradient(#c75953, #c75953);
-  background: -ms-linear-gradient(#c75953, #c75953);
-  background: linear-gradient(#c75953, #c75953);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #975450;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(132, 28, 23, 0.2);
-  cursor: arrow;
 }
 
 /* line 217, ../sass/master.scss */
@@ -2125,7 +1734,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .warning:hover, .warning:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -2142,7 +1751,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .warning:active {
   border-color: #b3840a;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #c59411), color-stop(10%, #e2a70e), color-stop(50%, #dda513), color-stop(100%, #ecb627));
@@ -2155,41 +1764,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.warning.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ddb346), color-stop(100%, #ddb346));
-  background: -webkit-linear-gradient(#ddb346, #ddb346);
-  background: -moz-linear-gradient(#ddb346, #ddb346);
-  background: -o-linear-gradient(#ddb346, #ddb346);
-  background: -ms-linear-gradient(#ddb346, #ddb346);
-  background: linear-gradient(#ddb346, #ddb346);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #b3923d;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(155, 114, 9, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.warning.disabled:hover, .warning.disabled:focus, .warning.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ddb346), color-stop(100%, #ddb346));
-  background: -webkit-linear-gradient(#ddb346, #ddb346);
-  background: -moz-linear-gradient(#ddb346, #ddb346);
-  background: -o-linear-gradient(#ddb346, #ddb346);
-  background: -ms-linear-gradient(#ddb346, #ddb346);
-  background: linear-gradient(#ddb346, #ddb346);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #b3923d;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(155, 114, 9, 0.2);
-  cursor: arrow;
 }
 
 /* line 220, ../sass/master.scss */
@@ -2262,7 +1836,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .success:hover, .success:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -2279,7 +1853,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .success:active {
   border-color: #4a5821;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #58672c), color-stop(10%, #687c30), color-stop(50%, #677933), color-stop(100%, #7c923e));
@@ -2292,41 +1866,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.success.disabled {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d8c53), color-stop(100%, #7d8c53));
-  background: -webkit-linear-gradient(#7d8c53, #7d8c53);
-  background: -moz-linear-gradient(#7d8c53, #7d8c53);
-  background: -o-linear-gradient(#7d8c53, #7d8c53);
-  background: -ms-linear-gradient(#7d8c53, #7d8c53);
-  background: linear-gradient(#7d8c53, #7d8c53);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #585b51;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(58, 69, 26, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.success.disabled:hover, .success.disabled:focus, .success.disabled:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d8c53), color-stop(100%, #7d8c53));
-  background: -webkit-linear-gradient(#7d8c53, #7d8c53);
-  background: -moz-linear-gradient(#7d8c53, #7d8c53);
-  background: -o-linear-gradient(#7d8c53, #7d8c53);
-  background: -ms-linear-gradient(#7d8c53, #7d8c53);
-  background: linear-gradient(#7d8c53, #7d8c53);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #585b51;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(58, 69, 26, 0.2);
-  cursor: arrow;
 }
 
 /* line 223, ../sass/master.scss */
@@ -2399,7 +1938,7 @@ dd:last-child {
   		}
   	} */
 }
-/* line 56, ../sass/import/_buttons.scss */
+/* line 60, ../sass/import/_buttons.scss */
 .info:hover, [type="submit"]:hover, .info:focus, [type="submit"]:focus {
   color: white;
   color: rgba(255, 255, 255, 0.9);
@@ -2416,7 +1955,7 @@ dd:last-child {
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-/* line 66, ../sass/import/_buttons.scss */
+/* line 74, ../sass/import/_buttons.scss */
 .info:active, [type="submit"]:active {
   border-color: #3c8a94;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #4a97a0), color-stop(10%, #4eaab5), color-stop(50%, #53a6b0), color-stop(100%, #6cb3bb));
@@ -2429,41 +1968,6 @@ dd:last-child {
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -o-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-/* line 72, ../sass/import/_buttons.scss */
-.info.disabled, .disabled[type="submit"] {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #85acb1), color-stop(100%, #85acb1));
-  background: -webkit-linear-gradient(#85acb1, #85acb1);
-  background: -moz-linear-gradient(#85acb1, #85acb1);
-  background: -o-linear-gradient(#85acb1, #85acb1);
-  background: -ms-linear-gradient(#85acb1, #85acb1);
-  background: linear-gradient(#85acb1, #85acb1);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-color: #7f8384;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(53, 121, 130, 0.2);
-  cursor: arrow;
-}
-/* line 79, ../sass/import/_buttons.scss */
-.info.disabled:hover, .disabled[type="submit"]:hover, .info.disabled:focus, .disabled[type="submit"]:focus, .info.disabled:active, .disabled[type="submit"]:active {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #85acb1), color-stop(100%, #85acb1));
-  background: -webkit-linear-gradient(#85acb1, #85acb1);
-  background: -moz-linear-gradient(#85acb1, #85acb1);
-  background: -o-linear-gradient(#85acb1, #85acb1);
-  background: -ms-linear-gradient(#85acb1, #85acb1);
-  background: linear-gradient(#85acb1, #85acb1);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-color: #7f8384;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 1px rgba(53, 121, 130, 0.2);
-  cursor: arrow;
 }
 
 /* line 226, ../sass/master.scss */
@@ -2521,18 +2025,17 @@ dd:last-child {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 3px;
-  width: 100%;
   background: #fbfbfb;
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 60, ../sass/import/_forms.scss */
+/* line 72, ../sass/import/_forms.scss */
 .form-text:hover, textarea:hover {
   background: white;
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 .form-text:active, .form-text:focus, textarea:active, textarea:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -2557,7 +2060,6 @@ select, .select, .chzn-single {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 3px;
-  width: 100%;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
   background: -webkit-linear-gradient(#ffffff, #f3f3f3);
   background: -moz-linear-gradient(#ffffff, #f3f3f3);
@@ -2569,13 +2071,13 @@ select, .select, .chzn-single {
   -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 -1px 0 rgba(0, 0, 0, 0.05), inset 0 -5px 10px -5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 -1px 0 rgba(0, 0, 0, 0.05), inset 0 -5px 10px -5px rgba(0, 0, 0, 0.1);
 }
-/* line 52, ../sass/import/_forms.scss */
+/* line 64, ../sass/import/_forms.scss */
 select:after, .select:after, .chzn-single:after {
   font-family: 'Pictos Custom';
   content: "d";
   color: #5c5647;
 }
-/* line 60, ../sass/import/_forms.scss */
+/* line 72, ../sass/import/_forms.scss */
 select:hover, .select:hover, .chzn-single:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f8f8f8));
   background: -webkit-linear-gradient(#ffffff, #f8f8f8);
@@ -2584,7 +2086,7 @@ select:hover, .select:hover, .chzn-single:hover {
   background: -ms-linear-gradient(#ffffff, #f8f8f8);
   background: linear-gradient(#ffffff, #f8f8f8);
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 select:active, select:focus, .select:active, .select:focus, .chzn-single:active, .chzn-single:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -2628,7 +2130,7 @@ label {
 }
 
 /* line 274, ../sass/master.scss */
-[id="name"] {
+.with-help {
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   -o-border-radius: 5px 5px 0 0;
@@ -2704,9 +2206,8 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 3px;
-  width: 100%;
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 .error:active, .error:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -2727,28 +2228,27 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   border: 1px solid #c8c8c8;
   padding: 6px;
   border-radius: 3px;
-  width: 100%;
   background: #fbfbfb;
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 34, ../sass/import/_forms.scss */
+/* line 46, ../sass/import/_forms.scss */
 [placeholder] ::-webkit-input-placeholder {
   color: #c9c9c9;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
-/* line 37, ../sass/import/_forms.scss */
+/* line 49, ../sass/import/_forms.scss */
 [placeholder] :-moz-placeholder {
   color: #aaa492;
   font: 16px/1 "ratio-display", helvetica, sans-serif;
 }
-/* line 60, ../sass/import/_forms.scss */
+/* line 72, ../sass/import/_forms.scss */
 [placeholder]:hover {
   background: white;
 }
-/* line 70, ../sass/import/_forms.scss */
+/* line 82, ../sass/import/_forms.scss */
 [placeholder]:active, [placeholder]:focus {
   border-color: rgba(58, 154, 201, 0.6);
   outline: none;
@@ -2802,6 +2302,257 @@ td, th {
 /* line 329, ../sass/master.scss */
 td:nth-of-type(even), th:nth-of-type(even) {
   background: #f8e5bf;
+}
+
+/* notices ---------------------- */
+/* line 332, ../sass/master.scss */
+.notice, .n_subtle, pre, blockquote, .n_info, .modal h1, .modal h2, .modal h3 {
+  font: 700 16px/1 "ratio-display", helvetica, sans-serif;
+  width: 100%;
+  margin: 0 0 0.75em;
+  position: relative;
+  padding: 0.375em 0.75em;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #91ad41), color-stop(70%, #88a23d), color-stop(100%, #859e3b));
+  background: -webkit-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
+  background: -moz-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
+  background: -o-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
+  background: -ms-linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
+  background: linear-gradient(top, #91ad41 35%, #88a23d 70%, #859e3b 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #657437;
+  color: white;
+  text-shadow: 0 1px 1px #4a5821;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* line 336, ../sass/master.scss */
+.n_subtle, pre, blockquote {
+  background: none;
+  background: rgba(0, 0, 0, 0.01);
+  color: #444444;
+  border: none;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: left;
+  padding: 12px;
+}
+
+/* line 339, ../sass/master.scss */
+.n_info {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
+  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #59a1aa;
+  color: white;
+  text-shadow: 0 1px 1px #3c8a94;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* line 343, ../sass/master.scss */
+.notice:nth-of-type(2), .n_subtle:nth-of-type(2), pre:nth-of-type(2), blockquote:nth-of-type(2), .n_info:nth-of-type(2), .modal h1:nth-of-type(2), .modal h2:nth-of-type(2), .modal h3:nth-of-type(2) {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
+  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #59a1aa;
+  color: white;
+  text-shadow: 0 1px 1px #3c8a94;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 6px;
+}
+
+/* line 345, ../sass/master.scss */
+.notice:nth-of-type(3), .n_subtle:nth-of-type(3), pre:nth-of-type(3), blockquote:nth-of-type(3), .n_info:nth-of-type(3), .modal h1:nth-of-type(3), .modal h2:nth-of-type(3), .modal h3:nth-of-type(3) {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #e0514a), color-stop(70%, #dd453d), color-stop(100%, #dd4138));
+  background: -webkit-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
+  background: -moz-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
+  background: -o-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
+  background: -ms-linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
+  background: linear-gradient(top, #e0514a 35%, #dd453d 70%, #dd4138 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #b9352e;
+  color: white;
+  text-shadow: 0 1px 1px #99211b;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* line 347, ../sass/master.scss */
+.notice:nth-of-type(4), .n_subtle:nth-of-type(4), pre:nth-of-type(4), blockquote:nth-of-type(4), .n_info:nth-of-type(4), .modal h1:nth-of-type(4), .modal h2:nth-of-type(4), .modal h3:nth-of-type(4) {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #f4c23e), color-stop(70%, #f3bd30), color-stop(100%, #f3bc2b));
+  background: -webkit-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
+  background: -moz-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
+  background: -o-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
+  background: -ms-linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
+  background: linear-gradient(top, #f4c23e 35%, #f3bd30 70%, #f3bc2b 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7a319;
+  color: white;
+  text-shadow: 0 1px 1px #b3840a;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 18px;
+}
+
+/* modal ---------------------- */
+/* line 351, ../sass/master.scss */
+.modal {
+  background: white;
+  padding: 0.75em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fafafa;
+  width: 100%;
+  left: 100%/2;
+}
+/* line 353, ../sass/master.scss */
+.modal h1, .modal h2, .modal h3 {
+  font-size: 100%;
+  margin-top: 0;
+  padding: 12px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(35%, #7cc1c9), color-stop(70%, #71bcc5), color-stop(100%, #6dbac4));
+  background: -webkit-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -moz-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -o-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: -ms-linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  background: linear-gradient(top, #7cc1c9 35%, #71bcc5 70%, #6dbac4 100%);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #59a1aa;
+  color: white;
+  text-shadow: 0 1px 1px #3c8a94;
+  -moz-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px -1px rgba(255, 255, 255, 0.9), inset 0 -10px 10px -5px rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* line 362, ../sass/master.scss */
+.overlay {
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(20%, rgba(56, 51, 46, 0.3)), color-stop(100%, rgba(56, 51, 46, 0.9))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(61, 51, 41, 0.2)), color-stop(100%, rgba(61, 51, 41, 0.6)));
+  background: -webkit-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -webkit-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
+  background: -moz-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -moz-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
+  background: -o-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -o-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
+  background: -ms-radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), -ms-radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
+  background: radial-gradient(rgba(56, 51, 46, 0.3) 20%, rgba(56, 51, 46, 0.9)), radial-gradient(rgba(61, 51, 41, 0.2), rgba(61, 51, 41, 0.6));
+  padding: 24px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 368, ../sass/master.scss */
+.overlay .no-cssgradients {
+  background: #000;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /*
