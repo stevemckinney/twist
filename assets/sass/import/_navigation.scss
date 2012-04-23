@@ -7,8 +7,8 @@
 	width:100%;
 	position:relative;
 	z-index:5;
-	font: 700 14px/1 $sans; }
-
+	font: 900 $base-font-size/1 $sans; }
+	
 @mixin dropdown(
 	$main-colour: $default,
 	$text-colour: $default-text,
@@ -17,62 +17,51 @@
 	$subtle: false,
 	$size: "normal",
 	$icon: false ) {
+	
 		@include dropdown-base;
 		ul > li > a {
-				font-weight: 700;
-				display:block;
-				text-decoration:none;
-				position: relative;
-				// subtle navigation
-				@if $subtle == false {
-					@include background(linear-gradient(top, lighten($main-colour, 10%), $main-colour));
-					@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
-					border: 1px solid darken(desaturate($main-colour, 20%), 10%);
-					color: lighten($text-colour, 20%);
-					text-shadow: 0 1px 1px $text-shadow;
-				}
-				@else {
-					background: none;
-					background: fade-out($black, 0.99);
-					color: $default-text;
-					border: none;
-					text-shadow: none;
-					border: 1px solid fade-out($black, 0.95);
-					@include box-shadow(none);
-					&:hover, &:focus {
-						text-shadow: 0 1px 1px $text-shadow; }
-				}
-				
-				// dropdown sizes
-				@if $size == "big" {
-					padding: 12px 24px;
-				}
-				@elseif $size == "small" {
-					padding: 3px 6px;
-				}
-				@else {
-					padding: 6px 12px;
-				}
-				
-				// consistent styles
-				@include border-radius($radius);
-				position: relative;
-				
+			font-weight: 700;
+			display:block;
+			text-decoration:none;
+			position: relative;
+			// subtle navigation
+			@if $subtle == false {
+				@include background(linear-gradient(top, lighten($main-colour, 10%), $main-colour));
+				@include box-shadow(inset 0 1px 0 fade-out($white, 0.7), 0 1px 3px fade-out($black, 0.9));
+				border: 1px solid darken(desaturate($main-colour, 20%), 10%);
+				color: lighten($text-colour, 20%);
+				text-shadow: 0 1px 1px $text-shadow; }
+			@else {
+				background: none;
+				background: fade-out($black, 0.99);
+				color: $default-text;
+				border: none;
+				text-shadow: none;
+				border: 1px solid fade-out($black, 0.95);
+				@include box-shadow(none);
 				&:hover, &:focus {
-					color: $text-colour;
-					border-color: darken($main-colour, 15%);
-					@include no-outline;
-					@include background(linear-gradient(top, lighten($main-colour, 15%), lighten($main-colour, 5%)));
-					@include box-shadow(inset 0 1px 0 fade-out($white, 0.55), 0 1px 3px fade-out($black, 0.8)); }
-				&:active {
-					border-color: darken($main-colour, 25%);
-					@include background(linear-gradient(darken($main-colour, 10%) 50%, darken($main-colour, 5%)));
-					@include box-shadow(inset 0 1px 3px fade-out($black, 0.8), 0 1px 1px fade-out($white, 0.8));
-				}
+					text-shadow: 0 1px 1px $text-shadow; } }	
+			// dropdown sizes
+			@if $size == "big" {
+				padding: 12px 24px; }
+			@elseif $size == "small" {
+				padding: 3px 6px; }
+			@else {
+				padding: 6px 12px; }
+			@if $radius != 0 {
+				@include border-radius($radius); }  
+			position: relative;
+			&:hover, &:focus {
+				color: $text-colour;
+				border-color: darken($main-colour, 15%);
+				@include no-outline;
+				@include background(linear-gradient(top, lighten($main-colour, 15%), lighten($main-colour, 5%)));
+				@include box-shadow(inset 0 1px 0 fade-out($white, 0.55), 0 1px 3px fade-out($black, 0.8)); }
+			&:active {
+				border-color: darken($main-colour, 25%);
+				@include background(linear-gradient(darken($main-colour, 10%) 50%, darken($main-colour, 5%)));
+				@include box-shadow(inset 0 1px 3px fade-out($black, 0.8), 0 1px 1px fade-out($white, 0.8)); }
 				
-				// for the dropdown icon
-
-	
 	} // end a
 		ul > li > a:after {
 			content: "\21E3";
@@ -153,10 +142,6 @@
 		}
 	}
 	
-}
-
-@mixin dropdown-base {
-	font: 900 14px/1 $sans;
 }
 
 .dropdown {

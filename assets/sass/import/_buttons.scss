@@ -102,28 +102,12 @@
 	
 	// is there an icon?
 	@if $icon != false {
-		padding-left: 24px;
-		&:before {
-			content: $icon;
-			font: 16px/1 $pictos;
-			display: inline-block;
-			@include wh(16px, 16px);
-			opacity: 0.8;
-			position: absolute;
-			left: $base-px/2;
-			top: 6px;
-			margin: 0 $base-px/2 0 0; } }
-	// is there an icon?
-/*	@if $icon != false {
 		@if $size == "big" {
-			padding-left: 44px;
-		}
+			padding: 18px 18px 18px 44px; }
 		@elseif $size == "small" {
-			padding-left: 16px;
-		}
+			padding: 6px 6px 6px 16px; }
 		@else {
-			padding-left: 32px;
-		}
+			padding: 12px 12px 12px 32px; }
 		&:before {
 			content: $icon;
 			display: inline-block;
@@ -133,18 +117,21 @@
 			@if $size == "big" {
 				font: 32px/1 $pictos;
 				left: $base-px/2;
-				top: $base-px/2;
-			}
+				top: $base-px/2; }
 			@elseif $size == "small" {
 				font: 16px/1 $pictos;
 				left: $base-px/2;
-				top: 8px;
-			}
+				top: 8px; }
 			@else {
 				font: 24px/1 $pictos;
 				left: $base-px/2;
-				top: 11px;
-			}
-		}
-	} */
+				top: 11px; } }
+	}
+	@elseif $icon == false {
+		@if $size == "big" {
+			padding: 18px; }
+		@elseif $size == "small" {
+			padding: 6px; }
+		@else {
+			padding: 12px; } }
 }

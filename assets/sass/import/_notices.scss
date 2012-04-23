@@ -48,23 +48,18 @@
 		border: none;
 		text-shadow: none;
 		border: 1px solid fade-out($black, 0.95); }
-
-	@include border-radius($radius);
+	@if $radius != 0 {
+		@include border-radius($radius); } 
 	text-align: $text-align;
-	@if $size == "big" {
-		padding: 18px; }
-	@elseif $size == "small" {
-		padding: 6px; }
-	@else {
-		padding: 12px; }
+	
 	// is there an icon?
 	@if $icon != false {
 		@if $size == "big" {
-			padding-left: 44px; }
+			padding: 18px 18px 18px 44px; }
 		@elseif $size == "small" {
-			padding-left: 16px; }
+			padding: 6px 6px 6px 16px; }
 		@else {
-			padding-left: 32px; }
+			padding: 12px 12px 12px 32px; }
 		&:before {
 			content: $icon;
 			display: inline-block;
@@ -84,5 +79,12 @@
 				left: $base-px/2;
 				top: 11px; } }
 	}
+	@elseif $icon == false {
+		@if $size == "big" {
+			padding: 18px; }
+		@elseif $size == "small" {
+			padding: 6px; }
+		@else {
+			padding: 12px; } }
 
 }
