@@ -9,12 +9,8 @@ $side-gutter-width  : $gutter-width;
 	Base stucture
 ---------------------------------------------------------------------- */
 html, body {
-	font: #{$normal-size}/#{$base-line-height} $serif;
 	color: $primary; }
 body {
-	@extend .transition;
-	@include susy-grid-background; 
-	@include baseline-grid-background(12px, fade-out(#f00, 0.9));
 	@extend %centre;
 	background: saturate(lighten(#948C75, 45%), 50%);
 	max-width: 80%; }
@@ -60,12 +56,6 @@ body {
 		width: 100%;
 		z-index: 10;
 		@include notice($secondary, #fff, darken($secondary, 20%), $radius: 0, $size: small); }
-}
-
-[role="banner"] img {
-	&:hover, &:focus {
-		opacity: .75;
-	}
 }
 
 /* header ---------------------- */
@@ -238,6 +228,7 @@ dd {
 /*
 	Forms
 -----------------------------------------------------------------------*/
+@import "import/styles/chosen";
 [type="search"] {
 	@extend button;
 }
@@ -245,7 +236,6 @@ dd {
 [type="submit"] {
 	@extend .info;
 }
-input[type="submit"], x:-moz-any-link, x:default {} 
 
 // pre styled stuff should probably be moved into master
 .form-text, textarea {
