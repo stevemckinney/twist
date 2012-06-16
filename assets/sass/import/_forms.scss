@@ -2,8 +2,8 @@
 //	Base form styles
 // 	-----------------------------------------
 @mixin form-base {
-	@include input-reset;
-	@include primary;
+	@extend %input-reset;
+	@extend %primary;
 	font: 400 16px/1 $sans;
 	border: 1px solid $border;
 }
@@ -90,4 +90,4 @@
 
 
 // chosen takes a lot of styling that you might not want or want to use chosen
-@import "../styles/chosen";
+@import "styles/chosen";

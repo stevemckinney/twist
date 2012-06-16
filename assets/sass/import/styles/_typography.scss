@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+	font: 700 36px/1.5 $sans;
+	@extend .em-padding;
+	a {
+		display: inline-block; } }
+
+h1 {
+	font-size: 36px; }
+h2 {
+	font-size: 30px; }
+h3 {
+	font-size: 24px; }
+h4 {
+	font-size: 18px; 
+	text-transform: uppercase;
+	letter-spacing: 2px; }
+h5 {
+	font-size: 16px; }
+h6 {
+	font-size: 12px; 
+	text-transform: uppercase;
+	letter-spacing: 2px; }
+	
+p {
+	font: 1em/1.5em $serif;
+	padding: $line/2 0;
+	text-align: justify; }

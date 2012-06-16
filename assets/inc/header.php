@@ -22,8 +22,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
 	<!-- CSS -->
-	<link href="//get.pictos.cc/fonts/929/1" rel="stylesheet"
-	<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
+	<link href="//get.pictos.cc/fonts/929/1" rel="stylesheet">
+	<link href="http://yandex.st/highlightjs/6.1/styles/default.min.css" rel="stylesheet">
 	<link href="assets/css/master.css" media="screen" rel="stylesheet">
 	
 	<!-- JavaScript -->

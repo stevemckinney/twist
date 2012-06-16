@@ -7,7 +7,7 @@
 	width: 100%;
 	margin: 0 0 $base-px;
 	position: relative;
-	@include padding;
+	@extend %padding;
 	@include transition(none);
 	@include inline-block;
 	@include background-clip(padding-box); }
