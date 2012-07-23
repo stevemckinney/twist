@@ -13,26 +13,50 @@
   @return calc-percent($target, $container);
 }
 
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: unquote("");
+    @each $value in $px-values {
+      // If the value is zero, return 0
+      @if $value == 0 {
+        $rem-values: append($rem-values, $value); }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); } }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values; } }
+
 //	Simple media queries
 @mixin respond-to($media) {
   @if $media == iphone {
-    @media screen and (min-width: 480px), screen and (min-device-width: 480px) { 
+    @media screen and (min-width: $a), screen and (min-device-width: $a) { 
     	@content; }
   }
   @else if $media == tablet  {
-    @media screen and (min-width: 600px), screen and (min-device-width: 600px) { 
+    @media screen and (min-width: $b), screen and (min-device-width: $b) { 
     	@content; }
   }
   @else if $media == ipad {
-    @media screen and (min-width: 768px), screen and (min-device-width: 768px) { 
+    @media screen and (min-width: $c), screen and (min-device-width: $c) { 
     	@content; }
   }
   @else if $media == desktop {
-    @media screen and (min-width: 960px), screen and (min-device-width: 960px) { 
+    @media screen and (min-width: $d), screen and (min-device-width: $d) { 
     	@content; }
   }
   @else if $media == max {
-    @media screen and (min-width: 1200px), screen and (min-device-width: 1200px) { 
+    @media screen and (min-width: $e), screen and (min-device-width: $e) { 
     	@content; }
   }
   @else if $media == retina {
@@ -42,8 +66,6 @@
 }
 
 // Better/flexible media queries, with old IE fallback see: https://github.com/jakearchibald/sass-ie
-$fix-mqs: false !default;
-
 @mixin respond-min($width) {
 	@if $fix-mqs {
 		@if $fix-mqs >= $width {
@@ -68,8 +90,6 @@ $fix-mqs: false !default;
 		}
 	}
 }
-
-$old-ie: false !default;
 
 @mixin old-ie {
 	@if $old-ie {

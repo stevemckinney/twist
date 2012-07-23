@@ -18,31 +18,31 @@ $ninety					:	90%;
 $whole					:	100%;
 
 //	general variable colours
-$primary: darken(#948C75, 20%);
-$secondary: darken(adjust-hue(desaturate(#FF6666, 20%), 40), 5%);
+$primary: darken(#948C75, 20%) !default;
+$secondary: darken(adjust-hue(desaturate(#FF6666, 20%), 40), 5%) !default;
 
 $black: hsla(0,0%,0%,1);
 $white: hsla(0,100%,100%,1);
 
 // main element styling colours
-$default: #eee;
-$default-text: #444;
-$default-text-shadow: #fff;
+$default: #eee !default;
+$default-text: #444 !default;
+$default-text-shadow: #fff !default;
 
-$border: darken($default, 15%);
-$focus: darken(#71bcc5, 25%);
+$border: darken($default, 15%) !default;
+$focus: darken(#71bcc5, 25%) !default;
 
-$alt: 				desaturate(#27a0dc, 15%);
-$danger: 			saturate(#d24f48, 10%);
-$warning: 		adjust-hue(#f3ad30, 5);
-$success: 		lighten(desaturate(#6f8a22, 15%), 10%);
-$info: 				#71bcc5;
+$alt: 				desaturate(#27a0dc, 15%) !default;
+$danger: 			saturate(#d24f48, 10%) !default;
+$warning: 		adjust-hue(#f3ad30, 5) !default;
+$success: 		lighten(desaturate(#6f8a22, 15%), 10%) !default;
+$info: 				#71bcc5 !default;
 
 // font stacks
-$sans: "ratio-display", helvetica, sans-serif;
-$serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
-$monospace: Menlo, Monaco, "Courier New", monospace;
-$pictos: "Pictos Custom";
+$sans: "ratio-display", helvetica, sans-serif !default;
+$serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
+$monospace: Menlo, Monaco, "Courier New", monospace !default;
+$pictos: "Pictos Custom" !default;
 
 // font sizes
 $base-font-size: 1em;
@@ -50,7 +50,22 @@ $normal-size: 1em;
 $base-line-height: 1.5em;
 
 // px
-$base-px: 0.75em;
-$line: $base-px*2;
+$base-px: 0.75em !default;
+$line: $base-px*2 !default;
 
 $experimental-support-for-khtml: false;
+
+// define responsive stuff
+// see responsive.scss for different media query styles
+$old-ie: false !default;
+$fix-mqs: false !default;
+
+// rem conversion see responsive.scss
+$baseline-px: 16px;
+
+// change your responsive widths here, corresponds with screens scss files a lowest e highest
+$a: 480px !default;
+$b: 600px !default;
+$c: 768px !default;
+$d: 960px !default;
+$e: 1200px !default;

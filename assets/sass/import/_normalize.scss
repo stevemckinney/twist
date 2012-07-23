@@ -15,11 +15,9 @@ audio:not([controls]) {
 
 
 html {
-	line-height: 1.5;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility; 
-	@include transition(all 2s linear); }
+	text-rendering: optimizeLegibility;  }
 
 body {
 	margin: 0; }
