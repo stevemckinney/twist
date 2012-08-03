@@ -1,130 +1,49 @@
 @import "imports";
 
-$total-cols         : 12;
-$col-width          : 6em;
-$gutter-width       : 2em;
-$side-gutter-width  : $gutter-width;
-
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
 html, body {
 	color: $primary; }
-body {
-	@extend %centre;
-	background: saturate(lighten(#948C75, 45%), 50%);
-	max-width: 80%; }
-	
-//@include establish-baseline;
-
-.container {
-	@include respond-to(tablet) {
-		clear: both; } }
-
-[role="banner"] {
-	@include container;
-	@include pie-clearfix;
-	position: relative;
-	padding: 84px 0 24px;
-	margin: 0 0 24px;
-	border-bottom: 1px solid fade-out($primary, 0.9);
-	@include box-shadow(0 1px 0 $white);
-	h1 {
-		line-height: 1;
-		margin: 0; } 
-}
-[role="navigation"] {
-	@include pie-clearfix;
-	width: 70%;
-	text-align: right;
-	position: absolute;
-	right: 0;
-	padding: 12px 0 0;
-	ul {
-		@include pie-clearfix;
-		@extend %no-mp; }
-	a {
-		float: left;
-		@include button-base;
-		color: $white;
-		//@include button($secondary, #fff, darken($secondary, 20%)); 
-	}
-	@include respond-to(tablet) {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 10;
-		@include notice($secondary, #fff, darken($secondary, 20%), $radius: 0, $size: small); }
-}
+body {}
+.container {}
+		
+/* !Ensure all have consistent margin bottoms ---------------------- */
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr,
+header, section, footer {
+	@include rem(margin-bottom, $line); }
 
 /* header ---------------------- */
-[role="banner"] {}
-
+[role="banner"] {
+	h1 {
+		line-height: 1;
+		margin: 0; }  }
 /* section ---------------------- */
-[role="region"] {
-	padding: 0 0 2em;
-	margin: 0 0 2em;
-	border-bottom: 1px solid fade-out($primary, 0.9);
-	@include box-shadow(0 1px 0 $white);
-	width: $whole;
-	&:last-child {
-		margin: 0;
-		padding: 0;
-		border: none;
-	}
-}
-[role="main"] {
-	@extend .no-mp; }
-	
+[role="region"] {}
+[role="main"] {}
 /* nav ---------------------- */
-[role="navigation"] {
-	ul {
-		@extend .no-mp;
-	}
-	li {
-		@include inline-block;
-	}
-	a {
-		@include inline-block;
-		-webkit-tap-highlight-color: $primary;
-	}
-}
+[role="navigation"] {}
 /* article ---------------------- */
-[role="article"] {
-	&:last-child {
-	}
-}
+[role="article"] {}
 /* div ---------------------- */
 div {}
-
 /* aside ---------------------- */
-[role="complementary"] {
-}
+[role="complementary"] {}
 /* footer ---------------------- */
-[role="contentinfo"] {font-size: $base-font-size; padding: $line*3 auto auto; }
+[role="contentinfo"] {}
 
 
 /* 
 	Typography & links
 ---------------------------------------------------------------------- */
-a {
-	text-decoration: none; 
-	color: $secondary;
-	@extend .transition;
-	&:hover, &:focus, .hover {
-		color: $primary;
-	}	
-}
 @import "import/styles/typography";
-
-p, li {
-	@include hyphens(auto); }
 
 /* pre/code ---------------------- */
 pre {
-	@extend .n_subtle;
-	@extend .margin;
+	@extend %margin;
 	font: 16px/#{$base-line-height} $monospace;
 	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
@@ -138,8 +57,7 @@ blockquote {
 	padding: 0 0 0 56px;
 	position: relative;
 	font: #{$normal-size}/#{$base-line-height} $serif;
-	@extend .n_subtle;
-	@extend .rounded;
+	@extend %rounded;
 	p {position: relative; z-index: 1;}
 	&:before {
 		content:'“';
@@ -152,153 +70,48 @@ blockquote {
 		z-index: 0;
 	}
 }
-/*
-section > p:first-letter { 
-		font-size: 80px;
-		font-weight: 400;
-		text-transform: capitalize;
-		float: left;
-		padding: 18px 0 0 0;
-		margin-left: -56px; }
-section > p:first-child {
-	margin-left: 48px;
-	display: block; }
-*/
+
 /* 
 	Lists
 ---------------------------------------------------------------------- */
-ul, li {}
-[role="contentinfo"] {
-	ul {
-		@extend .no-mp; }
-	li {
-		display: inline-block; }
-}
-dt {font: 700 12px/1 $sans; text-transform: uppercase; letter-spacing: 2px;}
-dd {
-	&:last-child {
-		margin: 0;	
-	}
-}
-.items {
-	list-style: none;
-	margin: $line 0;
-	li {
-		@include inline-block; } }
+ul {}
+ol {} 
+li {}
+dl {}
+dt {}
+dd {}
 		
 /*
 	Buttons
 -----------------------------------------------------------------------*/
 @import "import/_buttons.scss";
-.button {
-	@extend %input-reset;
-	@include button($shadow: false); }
-.subtle {
-	@extend %input-reset;
-	@include button($main-colour: $success, $text-colour: #fff, $text-shadow: darken($success, 20%), $radius: 3px, $subtle: true); }
-.alt {
-	@extend %input-reset;
-	@include button($alt, #fff, darken($alt, 25%)); }
-.danger {
-	@extend %input-reset;
-	@include button($danger, #fff, darken($danger, 25%)); }
-.warning {
-	@extend %input-reset;
-	@include button($warning, #fff, darken($warning, 25%)); }
-.success {
-	@extend %input-reset;
-	@include button($success, #fff, darken($success, 25%)); }
-.info {
-	@extend %input-reset;
-	@include button($info, #fff, darken($info, 25%)); }
-.button_group {
-	@include pie-clearfix;
-	button, a	{
-		@include border-radius(0);
-		margin-left: -1px;
-		float: left;
-		&:first-child, &:first-of-type { 
-			@include border-radius(5px 0 0 5px);
-			margin-left: 0; }
-		&:last-child, &:last-of-type {
-			@include border-radius(0 5px 5px 0); }
-	}
-}
 
 /*
 	Forms
 -----------------------------------------------------------------------*/
-@import "import/styles/chosen";
-[type="search"] {
-	@extend button;
-}
+@import "import/_forms.scss";
 
-[type="submit"] {
-	@extend .info;
-}
-
-// pre styled stuff should probably be moved into master
-.form-text, textarea {
-	@include transition(all .4s linear);
-	@include form;
-}
-select, .select, .chzn-single  {
-	@include transition(all .4s linear);
-	@include form(select);
-}
-	
-label, [type="text"], [type="email"], select, .form-text, textarea {
-	display: block; }
-label {
-	@extend %em-padding; }
-.form-help {
-	@include notice($alt, #fff, darken($alt, 20%), $subtle: true, $radius: 0 0 5px 5px);
-	border: 1px solid $border;
-	border-top: none;
-	padding: 2px 5px;
-	font: 14px/1 $sans;
-	margin: 0 0 $base-px 0; }
-
-.with-help {
-	@include border-radius(5px 5px 0 0); }
-
-form ul {
-	@extend %no-mp;
-	@extend %no-list-style; }
-	
-.radio, .check {
-	label {
-		position: relative; }
-	li label { 
-		margin: $base-px/2 0; }
-}
-input[type="image"], input[type="checkbox"], input[type="radio"] {
-	float: left;
-	margin-left: -20px;
-	cursor: pointer; }
-	
-.check {
-	@include notice($warning, #fff, darken($warning, 20%));
-	font: 700 14px/1.5 $serif;
-	margin: $line 0; }
-.check label, li label {
-	padding: 0 0 0 20px; }
-	
-.error { @include form($danger); }
-[placeholder] {
-	@include form($placeholder: true);
-}
+input {}
+button {}
+[type="text"] {}
+[type="search"] {}
+[type="password"] {}
+[type="email"] {}
+[type="tel"] {}
+[type="url"] {}
+textarea {}
 
 /* 
 	Misc.
 ---------------------------------------------------------------------- */
-.hiddenFields {display: none;}
-iframe {width: 100%;}
+.hiddenFields {
+	display: none; }
+iframe {
+	width: 100%; }
 hr {
-	margin: 2em 0;
-	background: $primary;
-	background: fade-out($primary, 0.9);
-	@include box-shadow(0 1px 0 #fff); }
+	margin: $line 0;
+	background: $secondary;
+	height: 1px; }
 
 /* figure ------------------------------ */
 figure {}
@@ -315,47 +128,6 @@ td, th {
 	text-align: left;
 	border-top: 1px solid $primary;
 	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
-
-/* notices ---------------------- */
-.notice {
-	@include notice-base;
-	@extend %input-reset;
-	@include notice($success, #fff, darken($success, 20%), $text-align: center, $size: normal); }
-.n_subtle {
-	@extend .notice;
-	@include notice($subtle: true); }
-.n_info {
-	@extend .notice;
-	@include notice($info, #fff, darken($info, 20%), $text-align: center); }
-	
-.notice:nth-of-type(2) {
-	@include notice($info, #fff, darken($info, 20%), $text-align: center, $size: small) }
-.notice:nth-of-type(3) {
-	@include notice($danger, #fff, darken($danger, 20%), $text-align: center) }
-.notice:nth-of-type(4) {
-	@include notice($warning, #fff, darken($warning, 20%), $text-align: center, $size: big) }
-	
-/* modal ---------------------- */
-.modal {
-	@include modal;
-	h1, h2, h3 {
-		font-size: 100%;
-		margin-top: 0;
-		padding: 12px;
-		margin: 0;
-		color: fade-out(#fff, 0.1);
-		@include border-radius(3px);
-		@extend .notice;
-		@include notice($info, #fff, darken($info, 20%), $text-align: center); } }
-.overlay {
-	@include background(radial-gradient(fade-out(hsl(30, 10%, 20%), 0.7) 20%, fade-out(hsl(30, 10%, 20%), 0.1)), radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
-	@extend .rounded;
-	padding: 24px;
-	position: relative;
-	top:0; bottom: 0; left:0; right:0;
-	.no-cssgradients {
-		background: #000;
-		background: fade-out($black, 0.6); } }
 
 /*
 	Media queries

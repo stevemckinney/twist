@@ -50,10 +50,15 @@ $normal-size: 1em;
 $base-line-height: 1.5em;
 
 // px
-$base-px: 0.75em !default;
+$base-px: 12px !default;
 $line: $base-px*2 !default;
 
 $experimental-support-for-khtml: false;
+// uncomment if you're brave, or don't care
+/*
+$legacy-support-for-ie: false;
+$legacy-support-for-mozilla: false;
+*/
 
 // define responsive stuff
 // see responsive.scss for different media query styles

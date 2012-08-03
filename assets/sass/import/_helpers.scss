@@ -3,10 +3,6 @@
 //	mixins and extends
 // 	-----------------------------------------
 
-// Use any of these on any element, 
-// helps for a more object oriented CSS approach
-// without classitis and faster less bloated CSS
-// 
 // eg: @extend %transition;
 
 
@@ -14,14 +10,17 @@
 // Extends
 
 %transition {
-	@include transition(all .4s linear); }
+	@include transition(all .2s linear); }
 %rounded {
-	@include border-radius(5px); }
+	@include border-radius(4px); }
+%shadow {
+	@include box-shadow(0 1px 3px fade-out($black, 0.8)); }
 %left {
 	float: left; }
 %right {
 	float: right; }
-%hidden {
+// found a lot of times it's nice to be able to just use the hidden class
+.hidden {
 	display: none; visibility: hidden; }
 %screenreaders { 
 	border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
@@ -74,30 +73,33 @@
 %secondary {
 	color: $secondary; }
 
+// font size
+%base {
+	@include rem(font-size, 16px); }
 
 // mixins ---------------------- /
 
 // small mixins
+// hyphens for some reason was not in my compass
 @mixin hyphens($value: "manual") {
   @each $prefix in -webkit-, -moz-, -o-, "" {
-    #{$prefix}hyphens: $value;
-  }
-}
+    #{$prefix}hyphens: $value; } }
 
-@mixin wh($width, $height) {
-	
-	@if $width OR $height {
+@mixin wh($width: false, $height: false) {
+	$width: unquote($width);
+	@if $height != none { 
+		$height: unquote($height); }
+		
+	@if $height != none {
 		width: #{$width};
 		height: #{$height}; }
 	@else {
 		width: #{$width};
-		height: #{$width}; }
-}
+		height: #{$width}; } }
 
 // user-select for some reason was not in my compass
 @mixin user-select($select) {
   $select: unquote($select);
   @include experimental(user-select, $select,
     -moz, -webkit, not -o, not -ms, -khtml, official
-  );
-}
+  ); }

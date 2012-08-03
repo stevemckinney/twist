@@ -4,8 +4,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 
 audio, canvas, video {
 	display: inline-block;
-	*display: inline;
-	*zoom: 1; }
+	@if ($legacy-support-for-ie == true) {
+		*display: inline;
+		*zoom: 1; } }
 
 audio:not([controls]) {
 	display: none; }
@@ -93,38 +94,40 @@ legend {
 	border: 0; 
 	padding: 0;
 	white-space: normal; 
-	*margin-left: -7px; }
+	@if ($legacy-support-for-ie == true) {
+		*margin-left: -7px; } }
 
 button, input, select, textarea {
 	font-size: 100%; 
 	margin: 0; 
-	vertical-align: baseline; 
-	*vertical-align: middle; }
+	vertical-align: baseline;
+	@if ($legacy-support-for-ie == true) {
+		*vertical-align: middle; } }
 
 button, input {
 	line-height: normal; }
 
-button, input[type="button"], input[type="reset"], input[type="submit"] {
+button, [type="button"], [type="reset"], [type="submit"] {
 	cursor: pointer;
-	*overflow: visible; }
+	@if ($legacy-support-for-ie == true) {
+		*overflow: visible; } }
 
 
 [disabled] {
 	cursor: default; }
 
-input[type="checkbox"],
-input[type="radio"] {
-	@include box-sizing(border-box); 
+[type="checkbox"],
+[type="radio"] {
 	padding: 0; 
-	*height: 13px; 
-	*width: 13px; }
+	@if ($legacy-support-for-ie == true) {
+		*height: 13px; 
+		*width: 13px; } }
 
-input[type="search"] {
-	-webkit-appearance: textfield; 
-	@include box-sizing(content-box); }
+[type="search"] {
+	@include appearance(textfield); }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button {
 	-webkit-appearance: none; }
 
 button::-moz-focus-inner,
@@ -141,15 +144,10 @@ table {
 	border-spacing: 0; }
 
 :focus {
-	outline: auto 1px;
-	-webkit-focus-ring-color;
-	outline-offset: -2px;
-	-moz-outline: -moz-mac-focusring solid 2px;
-	-moz-outline-radius: 5px;
-	-moz-outline-offset: 0; }
-::-moz-selection{
-	background: #a9a465; color: #fff; text-shadow: none; }
+	outline: auto 1px; }
+::-moz-selection {
+	background: $secondary; color: #fff; text-shadow: none; }
 ::selection {
-	background: #a9a465; color: #fff; text-shadow: none; }
+	background: $secondary; color: #fff; text-shadow: none; }
 * {
 	@include box-sizing(border-box); }

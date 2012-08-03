@@ -66,12 +66,8 @@ hr {
 input, select {
 	vertical-align: middle; }
 :focus {
-	outline: auto 1px -webkit-focus-ring-color;
-	outline-offset: -2px; 
-	-moz-outline: -moz-mac-focusring solid 2px; 
-	-moz-outline-radius: 5px; 
-	-moz-outline-offset: 0; }
-::-moz-selection{
+	outline: auto 1px; }
+::-moz-selection {
 	background: $secondary; color: #fff; text-shadow: none; }
 ::selection {
 	background: $secondary; color: #fff; text-shadow: none; }

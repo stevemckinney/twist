@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
 	font: 700 36px/1.5 $sans;
-	@extend .em-padding;
+	@extend %em-padding;
 	a {
 		display: inline-block; } }
 
@@ -23,5 +23,15 @@ h6 {
 	
 p {
 	font: 1em/1.5em $serif;
-	padding: $line/2 0;
-	text-align: justify; }
+	padding: $line/2 0; }
+	
+a {
+	text-decoration: none; 
+	color: $secondary;
+	@extend %transition;
+	&:hover, &:focus, .hover {
+		color: $primary;
+	}	
+}
+p, li {
+	@include hyphens(auto); }

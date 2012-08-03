@@ -28,7 +28,7 @@ body {}
 /* nav ---------------------- */
 [role="navigation"] {
 	ul {
-		@extend .no-mp; }
+		@extend %no-mp; }
 	li {
 		@include inline-block; }
 	a {
@@ -48,7 +48,7 @@ div {}
 /* footer ---------------------- */
 [role="contentinfo"] {
 	ul {
-		@extend .no-mp; }
+		@extend %no-mp; }
 	li {
 		display: inline-block; } }
 
