@@ -22,8 +22,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
 	<!-- CSS -->
-	<link href="//get.pictos.cc/fonts/929/1" rel="stylesheet">
-	<link href="http://yandex.st/highlightjs/6.1/styles/default.min.css" rel="stylesheet">
 	<link href="assets/css/master.css" media="screen" rel="stylesheet">
 	
 	<!-- JavaScript -->
@@ -32,18 +30,15 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<!-- Other -->
-	<link rel="alternate" type="application/rss+xml" title="Blog | Portfolio of Steve McKinney" href="http://iamsteve.me/blog/feed">
+	<!-- <link rel="alternate" type="application/rss+xml" title="Blog | Portfolio of Steve McKinney" href="http://iamsteve.me/blog/feed">
 	<link rel="shortcut icon" href="http://iamsteve.me/favicon.ico">
-	<link rel="apple-touch-icon" href="http://iamsteve.me/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="http://iamsteve.me/apple-touch-icon.png"> -->
 	
 	<!-- IE -->
 	<meta http-equiv="cleartype" content="on">
 	<!--[if (gt IE 6)&(lte IE 8)]>
 		<script src="assets/js/selectivizr.js"></script>
 		<script src="assets/js/nwmatcher.js"></script>
-	<![endif]-->
-	<!--[if lte IE 6]>
-		<link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
 	<![endif]-->
 
 </head>

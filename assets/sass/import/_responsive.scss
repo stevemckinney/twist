@@ -6,12 +6,10 @@
 // target / context = result
 // long length version
 @function calc-percent($target, $container) {
-  @return ($target / $container) * 100%;
-}
+  @return ($target / $container) * 100%; }
 // shortcut
 @function cp($target, $container) {
-  @return calc-percent($target, $container);
-}
+  @return calc-percent($target, $container); }
 
 // Baseline, measured in pixels
 // The value should be the same as the font-size value for the html element
@@ -41,58 +39,39 @@
 @mixin respond-to($media) {
   @if $media == a {
     @media screen and (min-width: $a), screen and (min-device-width: $a) { 
-    	@content; }
-  }
+    	@content; } }
   @else if $media == b  {
     @media screen and (min-width: $b), screen and (min-device-width: $b) { 
-    	@content; }
-  }
+    	@content; } }
   @else if $media == c {
     @media screen and (min-width: $c), screen and (min-device-width: $c) { 
-    	@content; }
-  }
+    	@content; } }
   @else if $media == d {
     @media screen and (min-width: $d), screen and (min-device-width: $d) { 
-    	@content; }
-  }
+    	@content; } }
   @else if $media == e {
     @media screen and (min-width: $e), screen and (min-device-width: $e) { 
-    	@content; }
-  }
+    	@content; } }
   @else if $media == retina {
     @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) { 
-    	@content; }
-  }
-}
+    	@content; } } }
 
 // Better/flexible media queries, with old IE fallback see: https://github.com/jakearchibald/sass-ie
 @mixin respond-min($width) {
 	@if $fix-mqs {
 		@if $fix-mqs >= $width {
-			@content;	
-		}
-	}
+			@content;	 } }
 	@else {
 		@media screen and (min-width: $width) {
-			@content;
-		}
-	}
-}
+			@content; } } }
 @mixin respond-max($width) {
 	@if $fix-mqs {
 		@if $fix-mqs >= $width {
-			@content;	
-		}
-	}
+			@content; } }
 	@else {
 		@media screen and (max-width: $width) {
-			@content;
-		}
-	}
-}
+			@content; } } }
 
 @mixin old-ie {
 	@if $old-ie {
-		@content;
-	}
-}
+		@content; } }

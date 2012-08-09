@@ -14,11 +14,10 @@ audio:not([controls]) {
 [hidden] {
 	display: none; }
 
-
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility;  }
+	text-rendering: optimizeLegibility; }
 
 body {
 	margin: 0; }
@@ -67,9 +66,9 @@ dl, menu, ol, ul {
 	margin: 0;
 	padding: 0; }
 dd {
-	margin: 0 0 0 20px; }
+	margin: 0 0 0 $line; }
 menu, ol, ul {
-	padding: 0 0 0 20px; }
+	padding: 0 0 0 $line; }
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none; }

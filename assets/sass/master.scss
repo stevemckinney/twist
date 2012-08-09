@@ -20,7 +20,7 @@ header, section, footer {
 [role="banner"] {
 	h1 {
 		line-height: 1;
-		margin: 0; }  }
+		margin: 0; } }
 /* section ---------------------- */
 [role="region"] {}
 [role="main"] {}
@@ -48,9 +48,7 @@ pre {
 	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
 	code {
-		display: block; padding: 5px;
-	}
-}
+		display: block; padding: 5px; } }
 
 /* blockquote ---------------------- */
 blockquote {
@@ -67,9 +65,7 @@ blockquote {
 		position: absolute;
 		top: -32px;
 		left: -20px;
-		z-index: 0;
-	}
-}
+		z-index: 0; } }
 
 /* 
 	Lists
