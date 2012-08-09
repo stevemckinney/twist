@@ -1,0 +1,171 @@
+@import "imports";
+
+$total-cols         : 12;
+$col-width          : 6em;
+$gutter-width       : 2em;
+$side-gutter-width  : $gutter-width;
+
+/* 
+	Base stucture
+---------------------------------------------------------------------- */
+html, body {
+	font: #{$normal-size}/#{$base-line-height} $serif;
+	color: $primary; }
+body {}
+.container {}
+
+/* header ---------------------- */
+[role="banner"] {
+	h1 {}
+	img {} }
+
+/* section ---------------------- */
+[role="region"] {
+	&:last-child {
+		margin: 0; } }
+[role="main"] {}
+	
+/* nav ---------------------- */
+[role="navigation"] {
+	ul {
+		@extend %no-mp; }
+	li {
+		@include inline-block; }
+	a {
+		@include inline-block;
+		-webkit-tap-highlight-color: $primary; } }
+
+/* article ---------------------- */
+[role="article"] {
+	&:last-child {} }
+	
+/* div ---------------------- */
+div {}
+
+/* aside ---------------------- */
+[role="complementary"] {}
+
+/* footer ---------------------- */
+[role="contentinfo"] {
+	ul {
+		@extend %no-mp; }
+	li {
+		display: inline-block; } }
+
+
+/* 
+	Typography & links
+---------------------------------------------------------------------- */
+a {
+	text-decoration: none; 
+	color: $secondary;
+	&:hover, &:focus, .hover { }	
+}
+@import "styles/_typography.scss";
+
+p, li {
+	@include hyphens(auto); }
+
+/* pre/code ---------------------- */
+pre {
+	font: 16px/#{$base-line-height} $monospace;
+	code {} }
+
+/* blockquote ---------------------- */
+blockquote {
+	p {}
+	&:before {
+		content:'Ò'; } }
+
+/* 
+	Lists
+---------------------------------------------------------------------- */
+ul, li {}
+dl {}
+dt {}
+dd {
+	&:last-child {
+		margin: 0; } }
+		
+/*
+	Buttons
+-----------------------------------------------------------------------*/
+@import "import/_buttons.scss";
+
+/*
+	Forms
+-----------------------------------------------------------------------*/
+form {}
+[type="search"] {}
+[type="submit"] {}
+.form-text {}
+textarea {}
+select, .select {}
+label, [type="text"], [type="email"], select, .form-text, textarea {
+	display: block; }
+label {}
+.form-help {}
+form ul {
+	@include no-mp;
+	@include no-list-style; }	
+.radio, .check {
+	label {}
+	li label { } }
+	
+[type="image"] {}
+[type="checkbox"], [type="radio"] {}
+	
+.check {}
+.check label, li label {}
+	
+.error {}
+[placeholder] {}
+
+/* 
+	Misc.
+---------------------------------------------------------------------- */
+.hiddenFields {display: none;}
+iframe {width: 100%;}
+hr {
+	background: $primary;
+	background: fade-out($primary, 0.9);
+	@include box-shadow(0 1px 0 #fff); }
+
+/* figure ------------------------------ */
+figure {}
+figcaption {}
+
+/* table ---------------------- */
+table {}
+td, th {
+	&:nth-of-type(even) {} }
+
+/* notices ---------------------- */
+.notice {}
+	
+/* modal ---------------------- */
+.modal {
+	@include modal;
+	h1, h2, h3 {
+		font-size: 100%;
+		margin-top: 0;
+		padding: 12px;
+		margin: 0;
+		color: fade-out(#fff, 0.1);
+		@include border-radius(3px);
+		@extend .notice;
+		@include notice($info, #fff, darken($info, 20%), $text-align: center); } }
+.overlay {
+	@include background(radial-gradient(fade-out(hsl(30, 10%, 20%), 0.7) 20%, fade-out(hsl(30, 10%, 20%), 0.1)), radial-gradient(fade-out(hsl(30, 20%, 20%), 0.8), fade-out(hsl(30, 20%, 20%), 0.4)));
+	@extend .rounded;
+	padding: 24px;
+	position: relative;
+	top:0; bottom: 0; left:0; right:0;
+	.no-cssgradients {
+		background: #000;
+		background: fade-out($black, 0.6); } }
+
+/*
+	Media queries
+-----------------------------------------------------------------------*/
+@import "screens/iphone", "screens/tablet", "screens/ipad", "screens/desktop", "screens/max";
