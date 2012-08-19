@@ -1,0 +1,59 @@
+// 	----------------------------------------- 
+//	Element — A base, mixin and options
+//	Style anything with a consistent styl
+//	Works well for anything else you'd like to style similar apart from buttons/forms
+// 	-----------------------------------------
+@mixin element-base {
+	display: inline-block;
+	position: relative;
+	font: 400 $base-font-size/1 $sans; }
+
+@mixin element($main-colour: $default, $radius: 4px, $subtle: false, $shadow: true, $style: true) {
+	
+	$size: false;
+	$text-colour: $white;
+	$light-colour: lighten($main-colour, 10%);
+	$dark-colour: darken($main-colour, 20%);
+	
+	@include element-base;
+	color: $text-colour;
+	
+	@if $size == large {
+		padding: $line $line*2; }
+	@else if $size == normal {
+		padding: $base-px $line; }
+	@else if $size == small {
+		padding: $base-px/2 $line/2; }
+	@else if $size == xsmall {
+		padding: $base-px/4 $line/4; }
+	@else if $size == false {}
+	@else {
+		padding: $base-px $line; }
+	
+	@if $style == true {
+		@include background(
+			linear-gradient(
+				fade-out($light-colour, 0.5) 0%,
+				$main-colour 50%,
+				fade-out($dark-colour, 0.5) 100%), $main-colour);
+				
+		@if $shadow == true {		
+			@include box-shadow(
+				0 -1px 0 lighten($dark-colour, 10%),
+				0 0 0 1px $dark-colour,
+				inset 0 1px 0 $light-colour,
+				0 1px 3px fade-out($black, 0.75)); }
+		
+		@if $radius != none {
+			@include border-radius($radius); }
+			
+		text-shadow: 0 1px 1px $dark-colour;
+		
+		.no-boxshadow & {
+			border: 1px solid lighten($dark-colour, 10%);
+			border-bottom: 1px solid $dark-colour; }
+		.no-cssgradients & {
+			background: $main-colour; }	
+	} // close $style 
+	
+}

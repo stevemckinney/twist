@@ -3,10 +3,15 @@
 /* 
 	Base stucture
 ---------------------------------------------------------------------- */
-html, body {
-	color: $primary; }
-body {}
-.container {}
+html {
+	background: lighten(#e5ded3, 10%);
+	color: $primary;
+	font-size: 100%; }
+	
+.container {
+	margin: auto;
+	padding: 5%;
+	max-width: 760px; }
 		
 /* !Ensure all have consistent margin bottoms ---------------------- */
 h1, h2, h3, h4, h5, h6, hgroup,
@@ -16,25 +21,43 @@ pre, table, fieldset, hr,
 header, section, footer {
 	@include rem(margin-bottom, $line); }
 
-/* header ---------------------- */
-[role="banner"] {
-	h1 {
-		line-height: 1;
-		margin: 0; } }
-/* section ---------------------- */
-[role="region"] {}
-[role="main"] {}
-/* nav ---------------------- */
-[role="navigation"] {}
-/* article ---------------------- */
-[role="article"] {}
-/* div ---------------------- */
-div {}
-/* aside ---------------------- */
-[role="complementary"] {}
-/* footer ---------------------- */
-[role="contentinfo"] {}
+/* !Header ---------------------- */
+[role="banner"] {}
 
+/* !Nav ---------------------- */
+[role="navigation"] {
+	@include pie-clearfix;
+	@include element($secondary);
+	font-family: $serif;
+	width: 100%;
+	ul {
+		@include pie-clearfix;
+		padding: 0;
+		margin: 0; }
+	li {
+		float: left;
+		&:last-child {
+			a {
+				@include box-shadow(none);
+				border: none; } } }
+	a {
+		@include rem(padding, $base-px $line);
+		@include box-shadow(1px 0 0 lighten(fade-out($secondary, 0.7), 20%));
+		font-family: $sans;
+		text-transform: uppercase;
+		color: $white;
+		display: block;
+		border-right: 1px solid darken($secondary, 15%); } }
+
+/* !Footer ---------------------- */
+[role="contentinfo"] {
+	@include rem(padding, $line 0 0);
+	border-top: 1px solid #e5ded3;
+	ul {
+		padding: 0; }
+	li {
+		list-style: none;
+		font-family: $serif; } }
 
 /* 
 	Typography & links
@@ -44,9 +67,9 @@ div {}
 /* pre/code ---------------------- */
 pre {
 	@extend %margin;
-	font: 16px/#{$base-line-height} $monospace;
-	border: 1px solid #ccc;
 	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
+	font: #{$base-font-size}/#{$base-line-height} $monospace;
+	border: 1px solid #ccc;
 	code {
 		display: block; padding: 5px; } }
 
@@ -54,7 +77,7 @@ pre {
 blockquote {
 	padding: 0 0 0 56px;
 	position: relative;
-	font: #{$normal-size}/#{$base-line-height} $serif;
+	font: #{$base-font-size}/#{$base-line-height} $serif;
 	@extend %rounded;
 	p {position: relative; z-index: 1;}
 	&:before {
@@ -80,12 +103,15 @@ dd {}
 /*
 	Buttons
 -----------------------------------------------------------------------*/
-@import "import/_buttons.scss";
+@import "import/buttons";
+
+.button {
+	@include button($secondary); }
 
 /*
 	Forms
 -----------------------------------------------------------------------*/
-@import "import/_forms.scss";
+@import "import/forms";
 
 input {}
 button {}

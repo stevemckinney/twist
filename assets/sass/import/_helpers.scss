@@ -79,6 +79,13 @@
 
 // mixins ---------------------- /
 
+// useful from http://remy.bach.me.uk/2011/09/compass-background-image-mixin/
+@mixin knockout($_img) {
+	@include hide-text;
+	display: block;
+	background: url($_img) no-repeat;
+	height: image-height($_img);
+	width: image-width($_img); }
 // small mixins
 // hyphens for some reason was not in my compass
 @mixin hyphens($value: "manual") {

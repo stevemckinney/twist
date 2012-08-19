@@ -7,7 +7,7 @@
 <!--[if IE 7 ]><html class="ie ie7 no-js <?php echo $page; ?>" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8 no-js <?php echo $page; ?>" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9 no-js <?php echo $page; ?>" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js <?php echo $page; ?>" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="<?php echo $page; ?> no-js" lang="en"><!--<![endif]-->
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -19,14 +19,14 @@
 	<!-- Mobile -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
 	<link href="assets/css/master.css" media="screen" rel="stylesheet">
 	
 	<!-- JavaScript -->
 	<script src="assets/js/modernizr.js"></script>
-	<script src="http://use.typekit.com/yol4bnj.js"></script>
+	<script src="//use.typekit.net/yol4bnj.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<!-- Other -->

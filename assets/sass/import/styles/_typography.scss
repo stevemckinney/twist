@@ -1,11 +1,14 @@
 h1, h2, h3, h4, h5, h6 {
-	font: 700 36px/1.5 $sans;
-	@extend %em-padding;
-	a {
-		display: inline-block; } }
+	font-family: $heading;
+	padding: 0;
+	margin: 0;
+	display: block; }
 
 h1 {
-	font-size: 36px; }
+	@include rem(font-size, 36px);
+	[role="banner"] & {
+		@include rem(padding, 0 0 $base-px);
+		text-transform: uppercase; } }
 h2 {
 	font-size: 30px; }
 h3 {
@@ -22,16 +25,13 @@ h6 {
 	letter-spacing: 2px; }
 	
 p {
-	font: 1em/1.5em $serif;
-	padding: $line/2 0; }
+	font: 1em/1.5em $body; }
 	
 a {
 	text-decoration: none; 
 	color: $secondary;
 	@extend %transition;
-	&:hover, &:focus, .hover {
-		color: $primary;
-	}	
-}
+	&:hover, &:focus {
+		color: $primary; } }
 p, li {
 	@include hyphens(auto); }
