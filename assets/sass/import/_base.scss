@@ -44,9 +44,10 @@ $serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
 $monospace: Menlo, Monaco, "Courier New", monospace !default;
 
 // symbolset is brilliant but as i can't share mine it gives the option to turn it on if you have it
+// dont forget to import your file
 $symbolset: false !default;
+// @import "import/styles/symbolset";
 @if ($symbolset == true) {
-	@import "import/styles/symbolset";
 	$icons: "SSStandard" !default; }
 
 // found the need sometimes to switch fonts mid project, this makes sense when you have serif headings and it's decided they're now sans serif
