@@ -8,44 +8,44 @@
 	font: 400 $base-font-size/1 $sans; }
 	
 @mixin button($main-colour: $default, $radius: 4px, $subtle: false, $shadow: true, $size: normal, $style: true) { 
-
-	$text-colour: $white;
-	$light-colour: lighten($main-colour, 10%);
-	$dark-colour: darken($main-colour, 20%);
 	
-	$hover-main-colour: lighten($main-colour, 10%);
-	$hover-light-colour: lighten($light-colour, 10%);
+	$size: unquote($size);
+	$text-colour: $white;
+	$light-colour: lighten($main-colour, 7.5%);
+	$dark-colour: darken($main-colour, 10%);
+	
+	$hover-main-colour: lighten($main-colour, 7.5%);
+	$hover-light-colour: lighten($light-colour, 7.5%);
 	$hover-dark-colour: lighten($dark-colour, 10%);
 	
-	$active-main-colour: darken($main-colour, 10%);
-	$active-light-colour: darken($light-colour, 10%);
+	$active-main-colour: darken($main-colour, 7.5%);
+	$active-light-colour: darken($light-colour, 7.5%);
 	$active-dark-colour: darken($dark-colour, 10%);
 	
 	@include button-base;
 	color: $text-colour;
 	
 	@if $size == large {
-		padding: $line $line*2; }
+		@include rem(padding, $line $line*2); }
 	@else if $size == normal {
-		padding: $base-px $line; }
+		@include rem(padding, $base-px/1.3333333333 $line); }
 	@else if $size == small {
-		padding: $base-px/2 $line/2; }
+		@include rem(padding, $base-px/2 $line/2); }
 	@else if $size == xsmall {
-		padding: $base-px/4 $line/4; }
+		@include rem(padding, $base-px/4 $line/4); }
 	@else if $size == false {}
 	@else {
-		padding: $base-px $line; }
+		@include rem(padding, $base-px/1.3333333333 $line); }
 	
 	@if $style == true {
 		@include background(
 			linear-gradient(
-				fade-out($light-colour, 0.5) 0%,
-				$main-colour 50%,
-				fade-out($dark-colour, 0.5) 100%), $main-colour);
+				$main-colour 0%,
+				fade-out($dark-colour, 0.5) 90%), $main-colour);
 				
 		@if $shadow == true {		
 			@include box-shadow(
-				0 -1px 0 lighten($dark-colour, 10%),
+				0 1px 0 darken($dark-colour, 5%),
 				0 0 0 1px $dark-colour,
 				inset 0 1px 0 $light-colour,
 				0 1px 3px fade-out($black, 0.75)); }
@@ -65,13 +65,12 @@
 			color: $text-colour;
 			@include background(
 				linear-gradient(
-					fade-out($hover-light-colour, 0.5) 0%,
-					$hover-main-colour 50%,
-					fade-out($hover-dark-colour, 0.5) 100%), $hover-main-colour);
+					$hover-main-colour 0%,
+					fade-out($hover-dark-colour, 0.5) 90%), $hover-main-colour);
 				
 			@if $shadow == true {		
 				@include box-shadow(
-					0 -1px 0 lighten($hover-dark-colour, 10%),
+					0 1px 0 darken($hover-dark-colour, 5%),
 					0 0 0 1px $hover-dark-colour,
 					inset 0 1px 0 $hover-light-colour,
 					0 1px 3px fade-out($black, 0.75)); }
@@ -95,7 +94,7 @@
 				
 			@if $shadow == true {		
 				@include box-shadow(
-					0 1px 0 lighten($active-dark-colour, 10%),
+					0 1px 0 darken($active-dark-colour, 5%),
 					0 0 0 1px $active-dark-colour,
 					inset 0 1px 3px $active-dark-colour,
 					0 1px 1px fade-out($white, 0.75)); }

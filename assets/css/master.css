@@ -319,21 +319,21 @@ header, section, footer {
   position: relative;
   font: 400 16px "ratio-display", helvetica, sans-serif;
   color: white;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(133, 148, 168, 0.5)), color-stop(50%, #687a92), color-stop(100%, rgba(62, 72, 86, 0.5))), #687a92;
-  background: -webkit-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -moz-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -o-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -ms-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  -webkit-box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #687a92), color-stop(90%, rgba(83, 97, 116, 0.5))), #687a92;
+  background: -webkit-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -moz-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -o-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -ms-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  -webkit-box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  text-shadow: 0 1px 1px #3e4856;
+  text-shadow: 0 1px 1px #536174;
   font-family: "adelle", ff-meta-serif-web-pro, georgia, serif;
   width: 100%;
 }
@@ -343,12 +343,12 @@ header, section, footer {
   display: table;
   clear: both;
 }
-/* line 52, ../sass/import/_element.scss */
+/* line 59, ../sass/import/_element.scss */
 .no-boxshadow [role="navigation"] {
-  border: 1px solid #536174;
-  border-bottom: 1px solid #3e4856;
+  border: 1px solid #687a92;
+  border-bottom: 1px solid #536174;
 }
-/* line 55, ../sass/import/_element.scss */
+/* line 62, ../sass/import/_element.scss */
 .no-cssgradients [role="navigation"] {
   background: #687a92;
 }
@@ -537,27 +537,28 @@ blockquote:before {
   position: relative;
   font: 400 16px "ratio-display", helvetica, sans-serif;
   color: white;
-  padding: 12px 24px;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(133, 148, 168, 0.5)), color-stop(50%, #687a92), color-stop(100%, rgba(62, 72, 86, 0.5))), #687a92;
-  background: -webkit-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -moz-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -o-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: -ms-linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  background: linear-gradient(rgba(133, 148, 168, 0.5) 0%, #687a92 50%, rgba(62, 72, 86, 0.5) 100%), #687a92;
-  -webkit-box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 -1px 0 #536174, 0 0 0 1px #3e4856, inset 0 1px 0 #8594a8, 0 1px 3px rgba(0, 0, 0, 0.25);
+  padding: 9.0px 24px;
+  padding:  0.5625rem 1.5rem;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #687a92), color-stop(90%, rgba(83, 97, 116, 0.5))), #687a92;
+  background: -webkit-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -moz-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -o-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: -ms-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  background: linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
+  -webkit-box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 #485565, 0 0 0 1px #536174, inset 0 1px 0 #7d8da3, 0 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  text-shadow: 0 1px 1px #3e4856;
+  text-shadow: 0 1px 1px #536174;
 }
 /* line 58, ../sass/import/_buttons.scss */
 .no-boxshadow .button {
-  border: 1px solid #536174;
-  border-bottom: 1px solid #3e4856;
+  border: 1px solid #687a92;
+  border-bottom: 1px solid #536174;
 }
 /* line 61, ../sass/import/_buttons.scss */
 .no-cssgradients .button {
@@ -566,58 +567,58 @@ blockquote:before {
 /* line 64, ../sass/import/_buttons.scss */
 .button:hover, .button:focus {
   color: white;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(163, 174, 189, 0.5)), color-stop(50%, #8594a8), color-stop(100%, rgba(83, 97, 116, 0.5))), #8594a8;
-  background: -webkit-linear-gradient(rgba(163, 174, 189, 0.5) 0%, #8594a8 50%, rgba(83, 97, 116, 0.5) 100%), #8594a8;
-  background: -moz-linear-gradient(rgba(163, 174, 189, 0.5) 0%, #8594a8 50%, rgba(83, 97, 116, 0.5) 100%), #8594a8;
-  background: -o-linear-gradient(rgba(163, 174, 189, 0.5) 0%, #8594a8 50%, rgba(83, 97, 116, 0.5) 100%), #8594a8;
-  background: -ms-linear-gradient(rgba(163, 174, 189, 0.5) 0%, #8594a8 50%, rgba(83, 97, 116, 0.5) 100%), #8594a8;
-  background: linear-gradient(rgba(163, 174, 189, 0.5) 0%, #8594a8 50%, rgba(83, 97, 116, 0.5) 100%), #8594a8;
-  -webkit-box-shadow: 0 -1px 0 #687a92, 0 0 0 1px #536174, inset 0 1px 0 #a3aebd, 0 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 -1px 0 #687a92, 0 0 0 1px #536174, inset 0 1px 0 #a3aebd, 0 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 -1px 0 #687a92, 0 0 0 1px #536174, inset 0 1px 0 #a3aebd, 0 1px 3px rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d8da3), color-stop(90%, rgba(104, 122, 146, 0.5))), #7d8da3;
+  background: -webkit-linear-gradient(#7d8da3 0%, rgba(104, 122, 146, 0.5) 90%), #7d8da3;
+  background: -moz-linear-gradient(#7d8da3 0%, rgba(104, 122, 146, 0.5) 90%), #7d8da3;
+  background: -o-linear-gradient(#7d8da3 0%, rgba(104, 122, 146, 0.5) 90%), #7d8da3;
+  background: -ms-linear-gradient(#7d8da3 0%, rgba(104, 122, 146, 0.5) 90%), #7d8da3;
+  background: linear-gradient(#7d8da3 0%, rgba(104, 122, 146, 0.5) 90%), #7d8da3;
+  -webkit-box-shadow: 0 1px 0 #5d6e83, 0 0 0 1px #687a92, inset 0 1px 0 #94a1b3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 #5d6e83, 0 0 0 1px #687a92, inset 0 1px 0 #94a1b3, 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 #5d6e83, 0 0 0 1px #687a92, inset 0 1px 0 #94a1b3, 0 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  text-shadow: 0 1px 1px #536174;
+  text-shadow: 0 1px 1px #687a92;
 }
-/* line 84, ../sass/import/_buttons.scss */
+/* line 83, ../sass/import/_buttons.scss */
 .no-boxshadow .button:hover, .no-boxshadow .button:focus {
-  border: 1px solid #687a92;
-  border-bottom: 1px solid #536174;
+  border: 1px solid #8594a8;
+  border-bottom: 1px solid #687a92;
 }
-/* line 87, ../sass/import/_buttons.scss */
+/* line 86, ../sass/import/_buttons.scss */
 .no-cssgradients .button:hover, .no-cssgradients .button:focus {
-  background: #8594a8;
+  background: #7d8da3;
 }
-/* line 89, ../sass/import/_buttons.scss */
+/* line 88, ../sass/import/_buttons.scss */
 .button:active {
   color: white;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(40, 47, 57, 0.75)), color-stop(100%, rgba(40, 47, 57, 0.25))), #536174;
-  background: -webkit-linear-gradient(rgba(40, 47, 57, 0.75) 0%, rgba(40, 47, 57, 0.25) 100%), #536174;
-  background: -moz-linear-gradient(rgba(40, 47, 57, 0.75) 0%, rgba(40, 47, 57, 0.25) 100%), #536174;
-  background: -o-linear-gradient(rgba(40, 47, 57, 0.75) 0%, rgba(40, 47, 57, 0.25) 100%), #536174;
-  background: -ms-linear-gradient(rgba(40, 47, 57, 0.75) 0%, rgba(40, 47, 57, 0.25) 100%), #536174;
-  background: linear-gradient(rgba(40, 47, 57, 0.75) 0%, rgba(40, 47, 57, 0.25) 100%), #536174;
-  -webkit-box-shadow: 0 1px 0 #3e4856, 0 0 0 1px #282f39, inset 0 1px 3px #282f39, 0 1px 1px rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: 0 1px 0 #3e4856, 0 0 0 1px #282f39, inset 0 1px 3px #282f39, 0 1px 1px rgba(255, 255, 255, 0.25);
-  box-shadow: 0 1px 0 #3e4856, 0 0 0 1px #282f39, inset 0 1px 3px #282f39, 0 1px 1px rgba(255, 255, 255, 0.25);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(62, 72, 86, 0.75)), color-stop(100%, rgba(62, 72, 86, 0.25))), #58677c;
+  background: -webkit-linear-gradient(rgba(62, 72, 86, 0.75) 0%, rgba(62, 72, 86, 0.25) 100%), #58677c;
+  background: -moz-linear-gradient(rgba(62, 72, 86, 0.75) 0%, rgba(62, 72, 86, 0.25) 100%), #58677c;
+  background: -o-linear-gradient(rgba(62, 72, 86, 0.75) 0%, rgba(62, 72, 86, 0.25) 100%), #58677c;
+  background: -ms-linear-gradient(rgba(62, 72, 86, 0.75) 0%, rgba(62, 72, 86, 0.25) 100%), #58677c;
+  background: linear-gradient(rgba(62, 72, 86, 0.75) 0%, rgba(62, 72, 86, 0.25) 100%), #58677c;
+  -webkit-box-shadow: 0 1px 0 #333c48, 0 0 0 1px #3e4856, inset 0 1px 3px #3e4856, 0 1px 1px rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: 0 1px 0 #333c48, 0 0 0 1px #3e4856, inset 0 1px 3px #3e4856, 0 1px 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 0 #333c48, 0 0 0 1px #3e4856, inset 0 1px 3px #3e4856, 0 1px 1px rgba(255, 255, 255, 0.25);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  text-shadow: 0 1px 1px #282f39;
+  text-shadow: 0 1px 1px #3e4856;
 }
-/* line 108, ../sass/import/_buttons.scss */
+/* line 107, ../sass/import/_buttons.scss */
 .no-boxshadow .button:active {
-  border: 1px solid #3e4856;
-  border-bottom: 1px solid #282f39;
+  border: 1px solid #536174;
+  border-bottom: 1px solid #3e4856;
 }
-/* line 111, ../sass/import/_buttons.scss */
+/* line 110, ../sass/import/_buttons.scss */
 .no-cssgradients .button:active {
-  background: #536174;
+  background: #58677c;
 }
 
 /*
