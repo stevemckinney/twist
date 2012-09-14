@@ -4,67 +4,67 @@ $legacy-support-for-ie: false;
 $legacy-support-for-mozilla: false;
 */
 /* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
-/* line 2, ../sass/import/_normalize.scss */
+/* line 2, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
 
-/* line 5, ../sass/import/_normalize.scss */
+/* line 5, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 
-/* line 11, ../sass/import/_normalize.scss */
+/* line 11, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 audio:not([controls]) {
   display: none;
 }
 
-/* line 14, ../sass/import/_normalize.scss */
+/* line 14, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 [hidden] {
   display: none;
 }
 
-/* line 17, ../sass/import/_normalize.scss */
+/* line 17, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
 
-/* line 22, ../sass/import/_normalize.scss */
+/* line 22, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 body {
   margin: 0;
 }
 
-/* line 25, ../sass/import/_normalize.scss */
+/* line 25, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 a:hover, a:active, a:focus {
   outline: 0;
 }
 
-/* line 28, ../sass/import/_normalize.scss */
+/* line 28, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 31, ../sass/import/_normalize.scss */
+/* line 31, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 34, ../sass/import/_normalize.scss */
+/* line 34, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 37, ../sass/import/_normalize.scss */
+/* line 37, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 41, ../sass/import/_normalize.scss */
+/* line 41, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -76,22 +76,22 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 44, ../sass/import/_normalize.scss */
+/* line 44, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 q {
   quotes: none;
 }
-/* line 46, ../sass/import/_normalize.scss */
+/* line 46, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 51, ../sass/import/_normalize.scss */
+/* line 51, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 small {
   font-size: 75%;
 }
 
-/* line 54, ../sass/import/_normalize.scss */
+/* line 54, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -99,63 +99,63 @@ sub, sup {
   vertical-align: baseline;
 }
 
-/* line 60, ../sass/import/_normalize.scss */
+/* line 60, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 62, ../sass/import/_normalize.scss */
+/* line 62, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 65, ../sass/import/_normalize.scss */
+/* line 65, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 dl, menu, ol, ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 68, ../sass/import/_normalize.scss */
+/* line 68, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 dd {
   margin: 0 0 0 24px;
 }
 
-/* line 70, ../sass/import/_normalize.scss */
+/* line 70, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 menu, ol, ul {
   padding: 0 0 0 24px;
 }
 
-/* line 72, ../sass/import/_normalize.scss */
+/* line 72, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 nav ul, nav ol {
   list-style: none;
   list-style-image: none;
 }
 
-/* line 76, ../sass/import/_normalize.scss */
+/* line 76, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }
 
-/* line 81, ../sass/import/_normalize.scss */
+/* line 81, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 84, ../sass/import/_normalize.scss */
+/* line 84, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 figure, form {
   margin: 0;
 }
 
-/* line 87, ../sass/import/_normalize.scss */
+/* line 87, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 fieldset {
   border: none;
   margin: 0 0 12px;
   padding: 0;
 }
 
-/* line 92, ../sass/import/_normalize.scss */
+/* line 92, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 legend {
   border: 0;
   padding: 0;
@@ -163,7 +163,7 @@ legend {
   *margin-left: -7px;
 }
 
-/* line 99, ../sass/import/_normalize.scss */
+/* line 99, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
@@ -171,23 +171,23 @@ button, input, select, textarea {
   *vertical-align: middle;
 }
 
-/* line 106, ../sass/import/_normalize.scss */
+/* line 106, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 button, input {
   line-height: normal;
 }
 
-/* line 109, ../sass/import/_normalize.scss */
+/* line 109, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 button, [type="button"], [type="reset"], [type="submit"] {
   cursor: pointer;
   *overflow: visible;
 }
 
-/* line 115, ../sass/import/_normalize.scss */
+/* line 115, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 [disabled] {
   cursor: default;
 }
 
-/* line 119, ../sass/import/_normalize.scss */
+/* line 119, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 [type="checkbox"],
 [type="radio"] {
   padding: 0;
@@ -195,65 +195,65 @@ button, [type="button"], [type="reset"], [type="submit"] {
   *width: 13px;
 }
 
-/* line 125, ../sass/import/_normalize.scss */
+/* line 125, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-/* line 129, ../sass/import/_normalize.scss */
+/* line 129, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 [type="search"]::-webkit-search-decoration,
 [type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-/* line 133, ../sass/import/_normalize.scss */
+/* line 133, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 137, ../sass/import/_normalize.scss */
+/* line 137, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-/* line 141, ../sass/import/_normalize.scss */
+/* line 141, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 145, ../sass/import/_normalize.scss */
+/* line 145, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 :focus {
   outline: auto 1px;
 }
 
-/* line 147, ../sass/import/_normalize.scss */
+/* line 147, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 ::-moz-selection {
   background: #687a92;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 149, ../sass/import/_normalize.scss */
+/* line 149, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 ::selection {
   background: #687a92;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 151, ../sass/import/_normalize.scss */
+/* line 151, /Users/Steve/Sites/framework/assets/sass/import/_normalize.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 12, ../sass/import/_helpers.scss */
+/* line 12, /Users/Steve/Sites/framework/assets/sass/import/_helpers.scss */
 a {
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -262,7 +262,7 @@ a {
   transition: all 0.2s linear;
 }
 
-/* line 14, ../sass/import/_helpers.scss */
+/* line 14, /Users/Steve/Sites/framework/assets/sass/import/_helpers.scss */
 blockquote {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -271,15 +271,22 @@ blockquote {
   border-radius: 4px;
 }
 
-/* line 23, ../sass/import/_helpers.scss */
+/* line 23, /Users/Steve/Sites/framework/assets/sass/import/_helpers.scss */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 41, ../sass/import/_helpers.scss */
+/* line 41, /Users/Steve/Sites/framework/assets/sass/import/_helpers.scss */
 pre {
   margin: 12px 0;
+}
+
+/* line 6, /Users/Steve/Sites/framework/assets/sass/import/_element.scss */
+[role="navigation"] {
+  display: inline-block;
+  position: relative;
+  font: 400 16px "ratio-display", helvetica, sans-serif;
 }
 
 /* 
@@ -315,9 +322,6 @@ header, section, footer {
 /* line 28, ../sass/master.scss */
 [role="navigation"] {
   *zoom: 1;
-  display: inline-block;
-  position: relative;
-  font: 400 16px "ratio-display", helvetica, sans-serif;
   color: white;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #687a92), color-stop(90%, rgba(83, 97, 116, 0.5))), #687a92;
   background: -webkit-linear-gradient(#687a92 0%, rgba(83, 97, 116, 0.5) 90%), #687a92;
@@ -337,18 +341,18 @@ header, section, footer {
   font-family: "adelle", ff-meta-serif-web-pro, georgia, serif;
   width: 100%;
 }
-/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Users/Steve/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 [role="navigation"]:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 59, ../sass/import/_element.scss */
+/* line 64, /Users/Steve/Sites/framework/assets/sass/import/_element.scss */
 .no-boxshadow [role="navigation"] {
   border: 1px solid #687a92;
   border-bottom: 1px solid #536174;
 }
-/* line 62, ../sass/import/_element.scss */
+/* line 67, /Users/Steve/Sites/framework/assets/sass/import/_element.scss */
 .no-cssgradients [role="navigation"] {
   background: #687a92;
 }
@@ -358,7 +362,7 @@ header, section, footer {
   padding: 0;
   margin: 0;
 }
-/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Users/Steve/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 [role="navigation"] ul:after {
   content: "";
   display: table;
@@ -409,7 +413,7 @@ header, section, footer {
 /* 
 	Typography & links
 ---------------------------------------------------------------------- */
-/* line 1, ../sass/import/styles/_typography.scss */
+/* line 1, ../sass/styles/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "ratio-display", helvetica, sans-serif;
   padding: 0;
@@ -417,63 +421,63 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* line 7, ../sass/import/styles/_typography.scss */
+/* line 7, ../sass/styles/_typography.scss */
 h1 {
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 9, ../sass/import/styles/_typography.scss */
+/* line 9, ../sass/styles/_typography.scss */
 [role="banner"] h1 {
   padding: 0 0 12px;
   padding:  0 0 0.75rem;
   text-transform: uppercase;
 }
 
-/* line 12, ../sass/import/styles/_typography.scss */
+/* line 12, ../sass/styles/_typography.scss */
 h2 {
   font-size: 30px;
 }
 
-/* line 14, ../sass/import/styles/_typography.scss */
+/* line 14, ../sass/styles/_typography.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 16, ../sass/import/styles/_typography.scss */
+/* line 16, ../sass/styles/_typography.scss */
 h4 {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 20, ../sass/import/styles/_typography.scss */
+/* line 20, ../sass/styles/_typography.scss */
 h5 {
   font-size: 16px;
 }
 
-/* line 22, ../sass/import/styles/_typography.scss */
+/* line 22, ../sass/styles/_typography.scss */
 h6 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 27, ../sass/import/styles/_typography.scss */
+/* line 27, ../sass/styles/_typography.scss */
 p {
   font: 1em/1.5em "adelle", ff-meta-serif-web-pro, georgia, serif;
 }
 
-/* line 30, ../sass/import/styles/_typography.scss */
+/* line 30, ../sass/styles/_typography.scss */
 a {
   text-decoration: none;
   color: #687a92;
 }
-/* line 34, ../sass/import/styles/_typography.scss */
+/* line 34, ../sass/styles/_typography.scss */
 a:hover, a:focus {
   color: #383a3d;
 }
 
-/* line 36, ../sass/import/styles/_typography.scss */
+/* line 36, ../sass/styles/_typography.scss */
 p, li {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;

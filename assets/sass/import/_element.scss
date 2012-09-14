@@ -1,9 +1,9 @@
 // 	----------------------------------------- 
 //	Element — A base, mixin and options
-//	Style anything with a consistent styl
+//	Style anything consistently
 //	Works well for anything else you'd like to style similar apart from buttons/forms
 // 	-----------------------------------------
-@mixin element-base {
+%element-base {
 	display: inline-block;
 	position: relative;
 	font: 400 $base-font-size/1 $sans; }
@@ -23,7 +23,7 @@
 	$active-light-colour: darken($light-colour, 7.5%);
 	$active-dark-colour: darken($dark-colour, 10%);
 	
-	@include element-base;
+	@extend %element-base;
 	color: $text-colour;
 	
 	@if $size == large {
@@ -38,6 +38,10 @@
 	@else {
 		@include rem(padding, $base-px/1.3333333333 $line); }
 	
+	
+	// you may just want a button without style 
+	// as sometimes you may just want a nice start
+	// padding, etc
 	@if $style == true {
 		@include background(
 			linear-gradient(
@@ -56,6 +60,7 @@
 			
 		text-shadow: 0 1px 1px $dark-colour;
 		
+		// modernizr stuff
 		.no-boxshadow & {
 			border: 1px solid lighten($dark-colour, 10%);
 			border-bottom: 1px solid $dark-colour; }
@@ -82,11 +87,13 @@
 					
 				text-shadow: 0 1px 1px $hover-dark-colour;
 				
+				// modernizr stuff
 				.no-boxshadow & {
 					border: 1px solid lighten($hover-dark-colour, 10%);
 					border-bottom: 1px solid $hover-dark-colour; }
 				.no-cssgradients & {
 					background: $hover-main-colour; } }
+					
 			&:active {
 				color: $text-colour;
 				@include background(
@@ -110,7 +117,6 @@
 					border: 1px solid lighten($active-dark-colour, 10%);
 					border-bottom: 1px solid $active-dark-colour; }
 				.no-cssgradients & {
-					background: $active-main-colour; } } }
-	} // close $style 
+					background: $active-main-colour; } } } } // close $style 
 	
 }

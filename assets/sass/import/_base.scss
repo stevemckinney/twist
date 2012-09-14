@@ -1,21 +1,21 @@
 //	variable values number divided by 1000
-$ten						:	1%;
-$twenty					:	2%;
-$forty					:	4%;
-$sixty					:	6%;
-$eighty					:	8%;
+$ten: 1%;
+$twenty: 2%;
+$forty: 4%;
+$sixty: 6%;
+$eighty: 8%;
 
-$tenth					:	10%;
-$twentieth			:	20%;
-$quarter				:	25%;
-$third					:	33%;
-$half						:	50%;
-$twothirds			:	66%;
-$sixtyeight			:	68%;
-$threequarters	: 75%;
-$eighty					: 80%;
-$ninety					:	90%;
-$whole					:	100%;
+$tenth:	10%;
+$twentieth:	20%;
+$quarter: 25%;
+$third:	33%;
+$half: 50%;
+$twothirds: 66%;
+$sixtyeight:	68%;
+$threequarters: 75%;
+$eighty: 80%;
+$ninety: 90%;
+$whole: 100%;
 
 //	general variable colours
 $primary: #383a3d !default;
@@ -32,32 +32,30 @@ $default-text-shadow: #fff !default;
 $border: darken($default, 15%) !default;
 $focus: darken(#71bcc5, 25%) !default;
 
-$alt: 				#3a9ac9 !default;
-$danger: 			#dd453d !default;
-$warning: 		#f3bd30 !default;
-$success: 		#88a23d !default;
-$info: 				#71bcc5 !default;
+$alt: #3a9ac9 !default;
+$danger: #dd453d !default;
+$warning: #f3bd30 !default;
+$success: #88a23d !default;
+$info: #71bcc5 !default;
 
 // font stacks
 $sans: "ratio-display", helvetica, sans-serif !default;
 $serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
 $monospace: Menlo, Monaco, "Courier New", monospace !default;
-
-// symbolset is brilliant but as i can't share mine it gives the option to turn it on if you have it
-// dont forget to import your file
-$symbolset: false !default;
-// @import "import/styles/symbolset";
-@if ($symbolset == true) {
-	$icons: "SSStandard" !default; }
-
 // found the need sometimes to switch fonts mid project, this makes sense when you have serif headings and it's decided they're now sans serif
 $heading: $sans;
 $body: $serif;
 
+// symbolset is brilliant but as i can't share mine it gives the option to turn it on if you have it
+// dont forget to import your file
+$symbolset: false !default;
+// @import "styles/symbolset";
+@if ($symbolset == true) {
+	$icons: "SSStandard" !default; }
+
 // font sizes
 $base-font-size: 1em !default;
 $base-font-px: 16px !default;
-$normal-size: 1em !default;
 $base-line-height: 1.5em !default;
 
 // px
@@ -79,7 +77,8 @@ $fix-mqs: false !default;
 // rem conversion see responsive.scss
 $baseline-px: 16px;
 
-// change your responsive widths here, corresponds with screens scss files a lowest e highest
+// change your responsive widths here,
+// corresponds with screens scss files a lowest e highest
 $a: 480px !default;
 $b: 600px !default;
 $c: 768px !default;
