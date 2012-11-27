@@ -1,0 +1,83 @@
+@import "imports";
+
+$total-cols         : 12;
+$col-width          : 6em;
+$gutter-width       : 2em;
+$side-gutter-width  : $gutter-width;
+
+/* 
+	Base stucture
+---------------------------------------------------------------------- */
+html {
+	font: 100%/#{$base-line-height} $serif;
+	color: $primary; }
+body {}
+.container {}
+
+/* header ---------------------- */
+[role="banner"] {
+	h1 {}
+	img {} }
+
+/* section ---------------------- */
+[role="region"] {
+	&:last-child {
+		margin: 0; } }
+[role="main"] {}
+	
+/* nav ---------------------- */
+[role="navigation"] {
+	ul {
+		@extend %no-mp; }
+	li {
+		@include inline-block; }
+	a {
+		@include inline-block;
+		-webkit-tap-highlight-color: $primary; } }
+
+/* article ---------------------- */
+[role="article"] {
+	&:last-child {} }
+	
+/* div ---------------------- */
+div {}
+
+/* aside ---------------------- */
+[role="complementary"] {}
+
+/* footer ---------------------- */
+[role="contentinfo"] {
+	ul {
+		@extend %no-mp; }
+	li {
+		display: inline-block; } }
+
+
+/* 
+	Typography & links
+---------------------------------------------------------------------- */
+@import "styles/_typography";
+
+
+/* 
+	Lists
+---------------------------------------------------------------------- */
+ul, ol, li {}
+		
+/*
+	Buttons
+-----------------------------------------------------------------------*/
+@import "import/_buttons";
+
+/*
+	Forms
+-----------------------------------------------------------------------*/
+
+/* 
+	Misc.
+---------------------------------------------------------------------- */
+
+/*
+	Media queries
+-----------------------------------------------------------------------*/
+@import "screens/iphone", "screens/tablet", "screens/ipad", "screens/desktop", "screens/max";
