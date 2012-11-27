@@ -1,0 +1,178 @@
+@import "import/framework";
+
+/* 
+	Base stucture
+---------------------------------------------------------------------- */
+html {
+	background: lighten(#e5ded3, 10%);
+	color: $primary;
+	font-size: 100%; }
+	
+.container {
+	margin: auto;
+	padding: 5%;
+	max-width: 760px;
+	@include old-ie {
+		width: 760px; } }
+		
+/* !Ensure all have consistent margin bottoms ---------------------- */
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr,
+header, section, footer {
+	@include rem(margin-bottom, $line); }
+	
+[role="main"] {
+	@include pie-clearfix; }
+
+/* !Header ---------------------- */
+[role="banner"] {}
+
+/* !Nav ---------------------- */
+[role="navigation"] {
+	@include pie-clearfix;
+	@include element($secondary, $size: "small");
+	font-family: $serif;
+	width: 100%;
+	ul {
+		@include pie-clearfix;
+		padding: 0;
+		margin: 0; }
+	li {
+		float: left;
+		&:last-child {
+			a {
+				@include box-shadow(none);
+				border: none; } } }
+	a {
+		@include rem(padding, $base-px $line);
+		@include box-shadow(1px 0 0 lighten(fade-out($secondary, 0.7), 20%));
+		font-family: $sans;
+		text-transform: uppercase;
+		color: $white;
+		display: block;
+		border-right: 1px solid darken($secondary, 15%); } }
+
+/* !Footer ---------------------- */
+[role="contentinfo"] {
+	@include rem(padding, $line 0 0);
+	border-top: 1px solid #e5ded3;
+	ul {
+		padding: 0; }
+	li {
+		list-style: none;
+		font-family: $serif; } }
+
+/* 
+	Typography & links
+---------------------------------------------------------------------- */
+@import "styles/typography";
+
+/* pre/code ---------------------- */
+pre {
+	@extend %margin;
+	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
+	font: #{$base-font-size}/#{$base-line-height} $monospace;
+	border: 1px solid #ccc;
+	code {
+		display: block; padding: 5px; } }
+
+/* blockquote ---------------------- */
+blockquote {
+	padding: 0 0 0 56px;
+	position: relative;
+	font: #{$base-font-size}/#{$base-line-height} $serif;
+	@extend %rounded;
+	p {position: relative; z-index: 1;}
+	&:before {
+		content:'“';
+		color: fade-out($primary, 0.8);
+		font: 900 180px/1 $serif;
+		text-shadow: 0 1px 0 #fff;
+		position: absolute;
+		top: -32px;
+		left: -20px;
+		z-index: 0; } }
+
+/* 
+	Lists
+---------------------------------------------------------------------- */
+ul {}
+ol {} 
+li {}
+dl {}
+dt {}
+dd {}
+		
+/*
+	Buttons
+-----------------------------------------------------------------------*/
+@import "import/buttons";
+
+.button-xxsmall {
+	@include element($default, $size: "xxsmall", $hover: true); }
+.button-xsmall {
+	@include element($alt, $size: "xsmall", $hover: true); }
+.button-small {
+	@include element($warning, $size: "small", $hover: true); }
+.button {
+	@include element($danger, $size: "normal", $hover: true); }
+.button-large {
+	@include element($info, $size: "large", $hover: true); }
+.button-xlarge {
+	@include element($success, $size: "xlarge", $hover: true); }
+.button-subtle {
+	@include element($alt, $subtle: true, $size: normal, $hover: true); }
+
+[class^="button"] {
+	margin: 0 0 10px; }
+	
+i {
+	@include element($alt, $size: normal, $subtle: true, $hover: true); }
+
+
+/*
+	Forms
+-----------------------------------------------------------------------*/
+
+input {
+	@include form();
+}
+button {}
+[type="text"] {}
+[type="search"] {}
+[type="password"] {}
+[type="email"] {}
+[type="tel"] {}
+[type="url"] {}
+textarea {}
+
+/* 
+	Misc.
+---------------------------------------------------------------------- */
+.hiddenFields {
+	display: none; }
+iframe {
+	width: 100%; }
+hr {
+	margin: $line 0;
+	background: $secondary;
+	height: 1px; }
+
+
+/* figure ------------------------------ */
+figure {}
+figcaption {}
+
+/* table ---------------------- */
+table {
+	border: 1px solid $primary;
+	border-collapse: separate;
+	background: #fff; }
+td, th {
+	padding: $line/4;
+	line-height: $base-line-height;
+	text-align: left;
+	border-top: 1px solid $primary;
+	&:nth-of-type(even) { background: lighten($secondary, 21%); } }

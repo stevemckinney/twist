@@ -1,0 +1,261 @@
+/*
+$legacy-support-for-ie: true;
+$legacy-support-for-mozilla: true;
+$legacy-support-for-ie7: false;
+*/
+/* 5px / 16px */
+/* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
+/* line 2, ../sass/import/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/import/_normalize.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 11, ../sass/import/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 14, ../sass/import/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 17, ../sass/import/_normalize.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 22, ../sass/import/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 25, ../sass/import/_normalize.scss */
+a:hover, a:active, a:focus {
+  outline: 0;
+}
+
+/* line 28, ../sass/import/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 31, ../sass/import/_normalize.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 34, ../sass/import/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 37, ../sass/import/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 41, ../sass/import/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 44, ../sass/import/_normalize.scss */
+q {
+  quotes: none;
+}
+/* line 46, ../sass/import/_normalize.scss */
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 51, ../sass/import/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/* line 54, ../sass/import/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 60, ../sass/import/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 62, ../sass/import/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 65, ../sass/import/_normalize.scss */
+dl, menu, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 68, ../sass/import/_normalize.scss */
+dd {
+  margin: 0 0 0 24px;
+}
+
+/* line 70, ../sass/import/_normalize.scss */
+menu, ol, ul {
+  padding: 0 0 0 24px;
+}
+
+/* line 72, ../sass/import/_normalize.scss */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 76, ../sass/import/_normalize.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+}
+
+/* line 81, ../sass/import/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 84, ../sass/import/_normalize.scss */
+figure, form {
+  margin: 0;
+}
+
+/* line 87, ../sass/import/_normalize.scss */
+fieldset {
+  border: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+/* line 92, ../sass/import/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+/* line 99, ../sass/import/_normalize.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 106, ../sass/import/_normalize.scss */
+button, input {
+  line-height: normal;
+}
+
+/* line 109, ../sass/import/_normalize.scss */
+button, [type="button"], [type="reset"], [type="submit"] {
+  cursor: pointer;
+  *overflow: visible;
+}
+
+/* line 115, ../sass/import/_normalize.scss */
+[disabled] {
+  cursor: default;
+}
+
+/* line 119, ../sass/import/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+/* line 125, ../sass/import/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* line 129, ../sass/import/_normalize.scss */
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 133, ../sass/import/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 137, ../sass/import/_normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 141, ../sass/import/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 145, ../sass/import/_normalize.scss */
+:focus {
+  outline: 1px solid #444;
+}
+
+/* line 147, ../sass/import/_normalize.scss */
+::-moz-selection {
+  background: #687a92;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 149, ../sass/import/_normalize.scss */
+::selection {
+  background: #687a92;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 23, ../sass/import/_helpers.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* # To do
+ * - form label position?
+ * - input type?
+ * - status: error, success, disabled
+ * - 
+ */

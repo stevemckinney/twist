@@ -1,0 +1,20 @@
+%grid {
+	@include pie-clearfix; }
+
+%col {
+	float: left; }
+
+%col-1-6 {
+	width: 100%/6; }
+
+%col-1-5 {
+	width: 100%/5; }
+
+%col-1-4 {
+	width: 100%/4; }
+
+%col-3-4 {
+	width: (100%/4)*3; }
+
+%col-1-2 {
+	width: 100%/2; }

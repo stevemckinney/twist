@@ -1,0 +1,88 @@
+// 	----------------------------------------- 
+//	Base form styles
+// 	-----------------------------------------
+@mixin form-base {
+	@extend %input-reset;
+	@extend %primary;
+	font: 400 16px/1 $sans;
+	border: 1px solid $border; }
+
+@mixin form-label(
+	$position: "top" ) {
+
+	@if $label == "top" {
+		width: $whole;
+	}
+	@else {
+		width: $threequarters;
+		
+	}
+
+}
+
+@mixin form(
+	$type: "input",
+	$colour: $alt,
+	$status: "normal",
+	$padding: 6px,
+	$placeholder: false,
+	$radius: 3px ) {
+	@include form-base;
+	padding: $padding;
+	border-radius: $radius;
+	
+	// element type
+	@if $type == input {
+		background: lighten($default, 5%);
+		@if $status != "normal" {
+			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
+			border-color: fade-out($colour, 0.4);
+		}
+		@else {
+			@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 fade-out($white, 0.3));
+		}
+		@if $placeholder == true {
+			::-webkit-input-placeholder {
+				color: lighten(#afafaf, 10%);
+				font: 16px/1 $sans; }
+			:-moz-placeholder {
+				color: lighten($primary, 30%);
+				font: 16px/1 $sans; }
+		}
+		
+	}
+	@elseif $type == select {
+		@if $status != "normal" {
+			@include box-shadow(0 1px 0 fade-out($white, 0.3));
+			border-color: fade-out($colour, 0.4);
+		}
+		@else {
+			@include background(linear-gradient(lighten($default, 7%), lighten($default, 2%)));
+			@include box-shadow(0 1px 0 fade-out($white, 0.3), inset 0 -1px 0 fade-out($black, 0.95), inset 0 -5px 10px -5px fade-out($black, 0.9));
+		}
+		&:after {
+	  	font-family: 'Pictos Custom';
+	  	content: "d";
+	  	color: $primary;
+	  }
+	}
+	
+	// hover state
+	&:hover {
+		@if $type == input { 
+			background: $white; 
+		}
+		@elseif $type == select { 
+			@include background(linear-gradient(lighten($default, 9%), lighten($default, 4%))); 
+		}
+	}
+	
+	// active and focus states
+	&:active, &:focus {
+		border-color: fade-out($colour, 0.4);
+		outline: none;
+		// define for your success, warning, danger, etc statuses
+/* 		@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 0 8px fade-out($colour, 0.4), 0 1px 0 fade-out($white, 0.3)); */
+		@include box-shadow(inset 0 0 4px fade-out($black, 0.8), 0 0 8px fade-out($colour, 0.4));
+	}
+}
