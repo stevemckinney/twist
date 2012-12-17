@@ -1,12 +1,23 @@
 @import "import/framework";
 
-/* 
-	Base stucture
----------------------------------------------------------------------- */
+/*
+	Site structure
+-----------------------------------------------------------------------*/
 html {
 	background: lighten(#e5ded3, 10%);
 	color: $primary;
-	font-size: 100%; }
+	font-size: 100%;
+	font-family: "a";
+	@include respond-min($b) {
+		font-family: "b"; }
+	@include respond-min($c) {
+		font-family: "c"; }
+	@include respond-min($d) {
+		font-family: "d"; }
+	@include respond-min($e) {
+		font-family: "e"; }
+	@include respond-min($f) {
+		font-family: "f"; } }
 	
 .container {
 	margin: auto;
@@ -15,7 +26,8 @@ html {
 	@include old-ie {
 		width: 760px; } }
 		
-/* !Ensure all have consistent margin bottoms ---------------------- */
+// Consistent margin
+// ---------------------------
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dd,
 p, figure,
@@ -26,13 +38,15 @@ header, section, footer {
 [role="main"] {
 	@include pie-clearfix; }
 
-/* !Header ---------------------- */
+// Site header
+// ---------------------------
 [role="banner"] {}
 
-/* !Nav ---------------------- */
+// Site nav
+// ---------------------------
 [role="navigation"] {
 	@include pie-clearfix;
-	@include element($secondary, $size: "small");
+	@include element($secondary, $size: xxsmall);
 	font-family: $serif;
 	width: 100%;
 	ul {
@@ -47,14 +61,14 @@ header, section, footer {
 				border: none; } } }
 	a {
 		@include rem(padding, $base-px $line);
-		@include box-shadow(1px 0 0 lighten(fade-out($secondary, 0.7), 20%));
+		@include box-shadow(1px 0 0 scale-color($secondary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
-		text-transform: uppercase;
 		color: $white;
 		display: block;
-		border-right: 1px solid darken($secondary, 15%); } }
+		border-right: 1px solid scale-color($secondary, $lightness: -35%, $alpha: -50%); } }
 
-/* !Footer ---------------------- */
+// Site footer
+// ---------------------------
 [role="contentinfo"] {
 	@include rem(padding, $line 0 0);
 	border-top: 1px solid #e5ded3;
@@ -64,115 +78,50 @@ header, section, footer {
 		list-style: none;
 		font-family: $serif; } }
 
-/* 
-	Typography & links
----------------------------------------------------------------------- */
+
+// Base
+// ---------------------------
 @import "styles/typography";
-
-/* pre/code ---------------------- */
 pre {
-	@extend %margin;
-	@include box-shadow(inset 0 1px 3px fade-out($black, 0.9), 0 1px 0 #fff);
-	font: #{$base-font-size}/#{$base-line-height} $monospace;
-	border: 1px solid #ccc;
-	code {
-		display: block; padding: 5px; } }
-
-/* blockquote ---------------------- */
+	code {} }
 blockquote {
-	padding: 0 0 0 56px;
-	position: relative;
-	font: #{$base-font-size}/#{$base-line-height} $serif;
-	@extend %rounded;
-	p {position: relative; z-index: 1;}
+	p {
+		position: relative;
+		z-index: 1; }
 	&:before {
-		content:'“';
-		color: fade-out($primary, 0.8);
-		font: 900 180px/1 $serif;
-		text-shadow: 0 1px 0 #fff;
-		position: absolute;
-		top: -32px;
-		left: -20px;
-		z-index: 0; } }
+		content:'“'; } }
 
-/* 
-	Lists
----------------------------------------------------------------------- */
-ul {}
-ol {} 
-li {}
-dl {}
-dt {}
-dd {}
-		
-/*
-	Buttons
------------------------------------------------------------------------*/
-@import "import/buttons";
 
-.button-xxsmall {
-	@include element($default, $size: "xxsmall", $hover: true); }
-.button-xsmall {
-	@include element($alt, $size: "xsmall", $hover: true); }
-.button-small {
-	@include element($warning, $size: "small", $hover: true); }
+$alt: #3a9ac9 !default;
+$danger: #dd453d !default;
+$warning: #f3bd30 !default;
+$success: #88a23d !default;
+$info: #71bcc5 !default;
+
 .button {
-	@include element($danger, $size: "normal", $hover: true); }
-.button-large {
-	@include element($info, $size: "large", $hover: true); }
-.button-xlarge {
-	@include element($success, $size: "xlarge", $hover: true); }
-.button-subtle {
-	@include element($alt, $subtle: true, $size: normal, $hover: true); }
+	@include element(#eee, $hover: true); }
+.button2 {
+	@include element($alt, $hover: true) }
+.button3 {
+	@include element($danger, $hover: true) }
+.button4 {
+	@include element($danger, $subtle: true, $hover: true)
+}
+.button5 {
+	@include element($warning, $hover: true)
+}
+.button6 {
+	@include element($success, $hover: true)
+}
+.button7 {
+	@include element($info, $hover: true)
+}
+
 
 [class^="button"] {
 	margin: 0 0 10px; }
-	
-i {
-	@include element($alt, $size: normal, $subtle: true, $hover: true); }
-
-
-/*
-	Forms
------------------------------------------------------------------------*/
 
 input {
-	@include form();
-}
-button {}
-[type="text"] {}
-[type="search"] {}
-[type="password"] {}
-[type="email"] {}
-[type="tel"] {}
-[type="url"] {}
-textarea {}
-
-/* 
-	Misc.
----------------------------------------------------------------------- */
-.hiddenFields {
-	display: none; }
-iframe {
-	width: 100%; }
-hr {
-	margin: $line 0;
-	background: $secondary;
-	height: 1px; }
-
-
-/* figure ------------------------------ */
-figure {}
-figcaption {}
-
-/* table ---------------------- */
-table {
-	border: 1px solid $primary;
-	border-collapse: separate;
-	background: #fff; }
-td, th {
-	padding: $line/4;
-	line-height: $base-line-height;
-	text-align: left;
-	border-top: 1px solid $primary;
-	&:nth-of-type(even) { background: lighten($secondary, 21%); } }
+	@include form(); }
+[type="submit"] {
+	@include element(#e45757, $size: normal, $hover: true); }

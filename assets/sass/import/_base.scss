@@ -26,9 +26,9 @@ $info: #71bcc5 !default;
 
 // font stacks
 // ---------------------------
-$sans: "ratio-display", helvetica, sans-serif !default;
-$serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
-$monospace: Menlo, Monaco, "Courier New", monospace !default;
+$sans: "freight-sans-pro", sans-serif;
+$serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
+$monospace: Menlo, Monaco, "Courier New", monospace;
 
 // found the need sometimes to switch fonts mid project
 // ---------------------------
@@ -70,7 +70,7 @@ $fix-mqs: false !default;
 
 // consistent radius
 // ---------------------------
-$radius: .3125em; /* 5px / 16px */
+$radius: 5px;
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
@@ -80,3 +80,4 @@ $b: 37.5em !default;
 $c: 48em !default;
 $d: 60em !default;
 $e: 75em !default;
+$f: 90em !default;

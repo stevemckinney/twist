@@ -5,39 +5,64 @@
 	@extend %input-reset;
 	border: none;
 	font-family: $form;
-	padding: 12px;
-	display: block; }
+	display: block;
+	outline: none; }
 
-@mixin form-label(
-	$position: "top" ) {
-
-	@if $label == "top" {
-		width: $whole;
-	}
+/*
+@mixin form-label($position: "top") {
+	@if $position == "top" {
+		width: 100%; }
 	@else {
-		width: $threequarters;
-		
-	}
-
-}
+		width: 33.333333333%;
+		float: left;
+		& + input {} } }
+*/
 
 /* # To do
  * - form label position?
  * - input type?
  * - status: error, success, disabled
- * - 
  */
-
-@mixin form($main-color: #444, $radius: $radius, $shadow: true, $style: true, $size: false, $hover: false, $type: "input", $status: "normal") {
+@mixin form(
+	$main-color: $default,
+	$radius: $radius, 
+	$shadow: true, 
+	$style: true, 
+	$size: true,
+	$set-height: false, 
+	$hover: false, 
+	$type: "input", 
+	$status: "normal") {
+	
+	$type: unquote($type);
+	$status: unquote($status);
+	
+	$form-light: scale-color($main-color, $saturation: 20%, $lightness: 30%);
+	
+	// styles which remain consistent no matter the input
 	@extend %form-base;
-	
-	@if $radius != false {
-		@include border-radius($radius); }
-	
+	// if we want styles to be applied
 	@if $style == true {
 		@if $shadow == true {		
 			@include box-shadow(
 				inset 0 0 0 1px $main-color,
-				inset 0 2px 3px rgba($main-color, .2)); } } // end $style
+				inset 0 2px 3px rgba($main-color, .2)); }
+			.no-boxshadow & {
+				border: 1px solid $main-color; } } // end $style
+				
+	@else if $style == true AND $type == "select" OR $type == "dropdown" {
+		@include box-shadow(inset 0 0 0 1px $main-color);
+		@include background(linear-gradient(bottom, $form-light, scale-color($form-light, $lightness: 20%)));
+		.no-boxshadow & {
+			border: 1px solid $main-color; } }
+	@if $type != submit {	
+		@if $radius != false {
+			@include border-radius($radius); }
 		
-}
+		@if $size == true AND $set-height == false {
+			padding: em($base-px, $base-font-size) em($line, $base-font-size); }
+		@else {
+			padding: em(3px, $base-font-size) em($line, $base-font-size);
+			height: em(30px, $base-font-size); }
+	@else {
+		@include element($main-color, $style: true, $size: "normal", $hover: true); } } }
