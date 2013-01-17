@@ -121,15 +121,17 @@
 		left: $offset-left; }
 	@if $offset-right {
 		right: $offset-right; } }
-		
+
+
+// Color functions taken from: https://github.com/imathis/nice-buttons
 // Returns true if the color is brighter than 50% lightness
 @function is-bright($color) {
 	@return (lightness($color) > 50%); }
-
+	
 // Picks the color with the highest contrast
-@function if-bright($bg, $light: true, $dark: false) {
-	@return if(is-bright($bg), $light, $dark); }
-
+@function if-bright($color, $light: true, $dark: false) {
+	@return if(is-bright($color), $light, $dark); }
+	
 // Picks the color with the highest contrast
-@function text-contrast($bg, $dark-text: #000, $light-text: #fff) {
+@function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
 	@return if-bright($bg, $dark-text, $light-text); }

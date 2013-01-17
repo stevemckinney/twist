@@ -1,8 +1,7 @@
+@charset "UTF-8";
 /*
-$legacy-support-for-ie: true;
-$legacy-support-for-mozilla: true;
-$legacy-support-for-ie7: false;
-*/
+	Helpful RWD mixins	
+-----------------------------------------------------------------------*/
 /* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
 /* line 2, ../sass/import/_normalize.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
@@ -234,16 +233,142 @@ table {
 
 /* line 147, ../sass/import/_normalize.scss */
 ::-moz-selection {
-  background: #687a92;
+  background: #a7dbd8;
   color: #fff;
   text-shadow: none;
 }
 
 /* line 149, ../sass/import/_normalize.scss */
 ::selection {
-  background: #687a92;
+  background: #a7dbd8;
   color: #fff;
   text-shadow: none;
+}
+
+/* line 155, ../sass/import/_normalize.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+	An adapted version of foldy960
+	See original here: http://github.com/davatron5000/foldy960
+-----------------------------------------------------------------------*/
+/* line 11, ../sass/import/_grid.scss */
+.container {
+  max-width: 48em;
+  width: 92%;
+  margin: 3em auto auto;
+  position: relative;
+}
+
+/* line 17, ../sass/import/_grid.scss */
+.row {
+  clear: both;
+}
+
+/* line 21, ../sass/import/_grid.scss */
+.container {
+  width: 98%;
+}
+
+/* line 32, ../sass/import/_grid.scss */
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-half,
+.grid-full,
+.grid-unit {
+  float: left;
+  width: 96.969696969697%;
+  margin: 0 1.51515% 1.5em;
+}
+
+/* line 38, ../sass/import/_grid.scss */
+.gallery .grid-unit,
+.grid-half {
+  width: 46.969696969697%;
+  margin: 0 1.51515% 1.5em;
+}
+
+/* line 42, ../sass/import/_grid.scss */
+.grid-flow-opposite {
+  float: right;
+}
+
+/* line 46, ../sass/import/_grid.scss */
+.grid-1 {
+  width: 13.636363636364%;
+}
+
+/* line 48, ../sass/import/_grid.scss */
+.grid-2 {
+  width: 30.30303030303%;
+}
+
+/* line 51, ../sass/import/_grid.scss */
+.grid-3,
+.grid-half {
+  width: 46.969696969697%;
+}
+
+/* line 53, ../sass/import/_grid.scss */
+.grid-4 {
+  width: 63.636363636364%;
+}
+
+/* line 55, ../sass/import/_grid.scss */
+.grid-5 {
+  width: 80.30303030303%;
+}
+
+/* line 58, ../sass/import/_grid.scss */
+.grid-6,
+.grid-full {
+  width: 96.969696969697%;
+}
+
+/* line 61, ../sass/import/_grid.scss */
+.gallery .grid-unit {
+  width: 30.30303030303%;
+}
+
+/* line 63, ../sass/import/_grid.scss */
+.content-pad-right {
+  padding-right: 4%;
+  /* Use (or don't) as necessary. */
+}
+
+/* line 65, ../sass/import/_grid.scss */
+.content-pad-left {
+  padding-left: 4%;
+}
+
+/* Helpers
+-------------------------------------------------------------- */
+/* line 70, ../sass/import/_grid.scss */
+.show-grid div[class*='grid-'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #eee;
+  display: block;
+  padding: 0.75em 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* line 12, ../sass/import/_helpers.scss */
+a {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 /* line 23, ../sass/import/_helpers.scss */
@@ -252,17 +377,1002 @@ table {
   visibility: hidden;
 }
 
-/*
-@mixin form-label($position: "top") {
-	@if $position == "top" {
-		width: 100%; }
-	@else {
-		width: 33.333333333%;
-		float: left;
-		& + input {} } }
-*/
+/* line 15, ../sass/import/_element.scss */
+[role="navigation"], .button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6) {
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  font-family: "freight-sans-pro", sans-serif;
+}
+
 /* # To do
  * - form label position?
  * - input type?
  * - status: error, success, disabled
  */
+/*
+	Helpful RWD mixins	
+-----------------------------------------------------------------------*/
+/* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
+/* line 2, ../sass/import/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/import/_normalize.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 11, ../sass/import/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 14, ../sass/import/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 17, ../sass/import/_normalize.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 22, ../sass/import/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 25, ../sass/import/_normalize.scss */
+a:hover, a:active, a:focus {
+  outline: 0;
+}
+
+/* line 28, ../sass/import/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 31, ../sass/import/_normalize.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 34, ../sass/import/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 37, ../sass/import/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 41, ../sass/import/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 44, ../sass/import/_normalize.scss */
+q {
+  quotes: none;
+}
+/* line 46, ../sass/import/_normalize.scss */
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 51, ../sass/import/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/* line 54, ../sass/import/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 60, ../sass/import/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 62, ../sass/import/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 65, ../sass/import/_normalize.scss */
+dl, menu, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 68, ../sass/import/_normalize.scss */
+dd {
+  margin: 0 0 0 24px;
+}
+
+/* line 70, ../sass/import/_normalize.scss */
+menu, ol, ul {
+  padding: 0 0 0 24px;
+}
+
+/* line 72, ../sass/import/_normalize.scss */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 76, ../sass/import/_normalize.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+}
+
+/* line 81, ../sass/import/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 84, ../sass/import/_normalize.scss */
+figure, form {
+  margin: 0;
+}
+
+/* line 87, ../sass/import/_normalize.scss */
+fieldset {
+  border: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+/* line 92, ../sass/import/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+/* line 99, ../sass/import/_normalize.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 106, ../sass/import/_normalize.scss */
+button, input {
+  line-height: normal;
+}
+
+/* line 109, ../sass/import/_normalize.scss */
+button, [type="button"], [type="reset"], [type="submit"] {
+  cursor: pointer;
+  *overflow: visible;
+}
+
+/* line 115, ../sass/import/_normalize.scss */
+[disabled] {
+  cursor: default;
+}
+
+/* line 119, ../sass/import/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+/* line 125, ../sass/import/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* line 129, ../sass/import/_normalize.scss */
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 133, ../sass/import/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 137, ../sass/import/_normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 141, ../sass/import/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 145, ../sass/import/_normalize.scss */
+:focus {
+  outline: 1px solid #444;
+}
+
+/* line 147, ../sass/import/_normalize.scss */
+::-moz-selection {
+  background: #a7dbd8;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 149, ../sass/import/_normalize.scss */
+::selection {
+  background: #a7dbd8;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 155, ../sass/import/_normalize.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+	An adapted version of foldy960
+	See original here: http://github.com/davatron5000/foldy960
+-----------------------------------------------------------------------*/
+/* line 11, ../sass/import/_grid.scss */
+.container {
+  max-width: 48em;
+  width: 92%;
+  margin: 3em auto auto;
+  position: relative;
+}
+
+/* line 17, ../sass/import/_grid.scss */
+.row {
+  clear: both;
+}
+
+/* line 21, ../sass/import/_grid.scss */
+.container {
+  width: 98%;
+}
+
+/* line 32, ../sass/import/_grid.scss */
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-half,
+.grid-full,
+.grid-unit {
+  float: left;
+  width: 96.969696969697%;
+  margin: 0 1.51515% 1.5em;
+}
+
+/* line 38, ../sass/import/_grid.scss */
+.gallery .grid-unit,
+.grid-half {
+  width: 46.969696969697%;
+  margin: 0 1.51515% 1.5em;
+}
+
+/* line 42, ../sass/import/_grid.scss */
+.grid-flow-opposite {
+  float: right;
+}
+
+/* line 46, ../sass/import/_grid.scss */
+.grid-1 {
+  width: 13.636363636364%;
+}
+
+/* line 48, ../sass/import/_grid.scss */
+.grid-2 {
+  width: 30.30303030303%;
+}
+
+/* line 51, ../sass/import/_grid.scss */
+.grid-3,
+.grid-half {
+  width: 46.969696969697%;
+}
+
+/* line 53, ../sass/import/_grid.scss */
+.grid-4 {
+  width: 63.636363636364%;
+}
+
+/* line 55, ../sass/import/_grid.scss */
+.grid-5 {
+  width: 80.30303030303%;
+}
+
+/* line 58, ../sass/import/_grid.scss */
+.grid-6,
+.grid-full {
+  width: 96.969696969697%;
+}
+
+/* line 61, ../sass/import/_grid.scss */
+.gallery .grid-unit {
+  width: 30.30303030303%;
+}
+
+/* line 63, ../sass/import/_grid.scss */
+.content-pad-right {
+  padding-right: 4%;
+  /* Use (or don't) as necessary. */
+}
+
+/* line 65, ../sass/import/_grid.scss */
+.content-pad-left {
+  padding-left: 4%;
+}
+
+/* Helpers
+-------------------------------------------------------------- */
+/* line 70, ../sass/import/_grid.scss */
+.show-grid div[class*='grid-'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #eee;
+  display: block;
+  padding: 0.75em 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* line 12, ../sass/import/_helpers.scss */
+a {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+/* line 23, ../sass/import/_helpers.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 15, ../sass/import/_element.scss */
+[role="navigation"], .button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6) {
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  font-family: "freight-sans-pro", sans-serif;
+}
+
+/* # To do
+ * - form label position?
+ * - input type?
+ * - status: error, success, disabled
+ */
+/*
+	Site structure
+-----------------------------------------------------------------------*/
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+/* line 13, ../sass/master.scss */
+html {
+  background: #f8f6f3;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7dbd8), color-stop(50%, #e5ded3));
+  background: -webkit-linear-gradient(#a7dbd8, #e5ded3 50%);
+  background: -moz-linear-gradient(#a7dbd8, #e5ded3 50%);
+  background: -o-linear-gradient(#a7dbd8, #e5ded3 50%);
+  background: linear-gradient(#a7dbd8, #e5ded3 50%);
+  overflow-y: auto;
+  color: rgba(36, 15, 15, 0.4);
+  font-size: 100%;
+  font-family: "a";
+  font-family: "b";
+  font-family: "c";
+  font-family: "d";
+}
+
+/* line 32, ../sass/master.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 35, ../sass/master.scss */
+.container {
+  width: 760px;
+}
+
+/* line 39, ../sass/master.scss */
+[role="main"] {
+  *zoom: 1;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+[role="main"]:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 48, ../sass/master.scss */
+[role="navigation"] {
+  *zoom: 1;
+  padding: 0.25em 1em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #71bcc5), color-stop(70%, #50acb8)), #71bcc5;
+  background: -webkit-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: -moz-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: -o-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  -webkit-box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(69, 158, 168, 0.6);
+  font-family: "adelle", ff-meta-serif-web-pro, georgia, serif;
+  width: 100%;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+[role="navigation"]:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow [role="navigation"] {
+  border: 1px solid #5bb2bc;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients [role="navigation"] {
+  background: #71bcc5;
+}
+/* line 53, ../sass/master.scss */
+[role="navigation"] a {
+  -webkit-box-shadow: 1px 0 0 rgba(141, 201, 209, 0.35);
+  -moz-box-shadow: 1px 0 0 rgba(141, 201, 209, 0.35);
+  box-shadow: 1px 0 0 rgba(141, 201, 209, 0.35);
+  font-family: "freight-sans-pro", sans-serif;
+  color: white;
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-right: 1px solid rgba(58, 134, 143, 0.5);
+}
+
+/* line 63, ../sass/master.scss */
+[role="contentinfo"] {
+  padding: 1em 0 0;
+  border-top: 1px solid #e5ded3;
+}
+/* line 66, ../sass/master.scss */
+[role="contentinfo"] ul {
+  padding: 0;
+}
+/* line 68, ../sass/master.scss */
+[role="contentinfo"] li {
+  list-style: none;
+  font: 700 0.75em "adelle", ff-meta-serif-web-pro, georgia, serif;
+}
+
+/* line 1, ../sass/styles/_typography.scss */
+address, article, aside, blockquote, center, dir, div, dd, details, dl, dt, fieldset, figcaption, figure, form, footer, frameset, h1, h2, h3, h4, h5, h6, hr, header, hgroup, isindex, menu, nav, noframes, noscript, ol, p, pre, section, summary, ul {
+  margin-bottom: 1.5em;
+}
+
+/* line 6, ../sass/styles/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "freight-sans-pro", sans-serif;
+  padding: 0;
+}
+
+/* line 10, ../sass/styles/_typography.scss */
+h1, .h1 {
+  font-size: 2.625em;
+  line-height: 1.03571em;
+  margin: 0 0 0.4em;
+}
+/* line 14, ../sass/styles/_typography.scss */
+[role="banner"] h1 a, [role="banner"] .h1 a {
+  color: rgba(36, 15, 15, 0.4);
+}
+
+/* line 16, ../sass/styles/_typography.scss */
+h2, .h2 {
+  font-size: 2.25em;
+  line-height: 1.04167em;
+  margin: 0 0 0.5em;
+}
+
+/* line 19, ../sass/styles/_typography.scss */
+h3, .h3 {
+  font-size: 1.875em;
+  line-height: 1.05em;
+  margin: 0 0 0.66667em;
+}
+
+/* line 22, ../sass/styles/_typography.scss */
+h4, .h4 {
+  font-size: 1.5em;
+  line-height: 1.0625em;
+  margin: 0 0 0.5em;
+}
+
+/* line 25, ../sass/styles/_typography.scss */
+h5, .h5 {
+  font-size: 1.125em;
+  line-height: 1.08333em;
+  margin: 0 0 0.57143em;
+}
+
+/* line 28, ../sass/styles/_typography.scss */
+h6, .h6 {
+  font-size: 1em;
+  line-height: 1.125em;
+  margin: 0 0 0.57143em;
+}
+
+/* line 34, ../sass/styles/_typography.scss */
+p, li {
+  font: 16px/1.5 "adelle", ff-meta-serif-web-pro, georgia, serif;
+}
+
+/* line 37, ../sass/styles/_typography.scss */
+a {
+  text-decoration: none;
+  color: #a7dbd8;
+}
+/* line 41, ../sass/styles/_typography.scss */
+a:hover, a:focus {
+  color: rgba(36, 15, 15, 0.4);
+}
+
+/* line 81, ../sass/master.scss */
+blockquote p {
+  position: relative;
+  z-index: 1;
+}
+/* line 84, ../sass/master.scss */
+blockquote:before {
+  content: '“';
+}
+
+/* line 87, ../sass/master.scss */
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* line 93, ../sass/master.scss */
+.button {
+  margin: 0 0 1.5em;
+}
+/* line 95, ../sass/master.scss */
+.button:nth-of-type(1) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #a6a6a6), color-stop(70%, #8d8d8d)), #a6a6a6;
+  background: -webkit-linear-gradient(#a6a6a6 10%, #8d8d8d 70%), #a6a6a6;
+  background: -moz-linear-gradient(#a6a6a6 10%, #8d8d8d 70%), #a6a6a6;
+  background: -o-linear-gradient(#a6a6a6 10%, #8d8d8d 70%), #a6a6a6;
+  background: linear-gradient(#a6a6a6 10%, #8d8d8d 70%), #a6a6a6;
+  -webkit-box-shadow: inset 0 0 0 1px #7f7f7f, inset 0 2px 0 #bcbcbc, inset 0 -1px 3px #8d8d8d, inset -1px -3px 12px -3px rgba(127, 127, 127, 0.2), inset 1px -3px 12px -3px rgba(127, 127, 127, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #7f7f7f, inset 0 2px 0 #bcbcbc, inset 0 -1px 3px #8d8d8d, inset -1px -3px 12px -3px rgba(127, 127, 127, 0.2), inset 1px -3px 12px -3px rgba(127, 127, 127, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #7f7f7f, inset 0 2px 0 #bcbcbc, inset 0 -1px 3px #8d8d8d, inset -1px -3px 12px -3px rgba(127, 127, 127, 0.2), inset 1px -3px 12px -3px rgba(127, 127, 127, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(127, 127, 127, 0.6);
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(1) {
+  border: 1px solid #959595;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(1) {
+  background: #a6a6a6;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(1):hover, .button:nth-of-type(1):focus {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #b3b3b3), color-stop(70%, #989898)), #b3b3b3;
+  background: -webkit-linear-gradient(#b3b3b3 10%, #989898 70%), #b3b3b3;
+  background: -moz-linear-gradient(#b3b3b3 10%, #989898 70%), #b3b3b3;
+  background: -o-linear-gradient(#b3b3b3 10%, #989898 70%), #b3b3b3;
+  background: linear-gradient(#b3b3b3 10%, #989898 70%), #b3b3b3;
+  -webkit-box-shadow: inset 0 0 0 1px #898989, inset 0 2px 0 #c6c6c6, inset 0 -1px 3px #989898, inset -1px -3px 12px -3px rgba(137, 137, 137, 0.2), inset 1px -3px 12px -3px rgba(137, 137, 137, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #898989, inset 0 2px 0 #c6c6c6, inset 0 -1px 3px #989898, inset -1px -3px 12px -3px rgba(137, 137, 137, 0.2), inset 1px -3px 12px -3px rgba(137, 137, 137, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #898989, inset 0 2px 0 #c6c6c6, inset 0 -1px 3px #989898, inset -1px -3px 12px -3px rgba(137, 137, 137, 0.2), inset 1px -3px 12px -3px rgba(137, 137, 137, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(137, 137, 137, 0.6);
+}
+/* line 108, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(1):hover, .no-boxshadow .button:nth-of-type(1):focus {
+  border: 1px solid #afafaf;
+}
+/* line 110, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(1):hover, .no-cssgradients .button:nth-of-type(1):focus {
+  background: #b8b8b8;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(1):active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #959595), color-stop(70%, #7f7f7f)), #959595;
+  background: -webkit-linear-gradient(#959595 10%, #7f7f7f 70%), #959595;
+  background: -moz-linear-gradient(#959595 10%, #7f7f7f 70%), #959595;
+  background: -o-linear-gradient(#959595 10%, #7f7f7f 70%), #959595;
+  background: linear-gradient(#959595 10%, #7f7f7f 70%), #959595;
+  -webkit-box-shadow: inset 0 0 0 1px #6c6c6c, inset 0 1px 3px #7f7f7f, inset 0 -1px 3px #7f7f7f, inset -1px -3px 12px -3px rgba(108, 108, 108, 0.2), inset 1px -3px 12px -3px rgba(108, 108, 108, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #6c6c6c, inset 0 1px 3px #7f7f7f, inset 0 -1px 3px #7f7f7f, inset -1px -3px 12px -3px rgba(108, 108, 108, 0.2), inset 1px -3px 12px -3px rgba(108, 108, 108, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px #6c6c6c, inset 0 1px 3px #7f7f7f, inset 0 -1px 3px #7f7f7f, inset -1px -3px 12px -3px rgba(108, 108, 108, 0.2), inset 1px -3px 12px -3px rgba(108, 108, 108, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(108, 108, 108, 0.6);
+}
+/* line 119, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(1):active {
+  border: 1px solid #858585;
+}
+/* line 121, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(1):active {
+  background: #959595;
+}
+/* line 96, ../sass/master.scss */
+.button:nth-of-type(2) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #3a9ac9), color-stop(70%, #2f84ad)), #3a9ac9;
+  background: -webkit-linear-gradient(#3a9ac9 10%, #2f84ad 70%), #3a9ac9;
+  background: -moz-linear-gradient(#3a9ac9 10%, #2f84ad 70%), #3a9ac9;
+  background: -o-linear-gradient(#3a9ac9 10%, #2f84ad 70%), #3a9ac9;
+  background: linear-gradient(#3a9ac9 10%, #2f84ad 70%), #3a9ac9;
+  -webkit-box-shadow: inset 0 0 0 1px #287093, inset 0 2px 0 #6bb3d6, inset 0 -1px 3px #2f84ad, inset -1px -3px 12px -3px rgba(40, 112, 147, 0.2), inset 1px -3px 12px -3px rgba(40, 112, 147, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #287093, inset 0 2px 0 #6bb3d6, inset 0 -1px 3px #2f84ad, inset -1px -3px 12px -3px rgba(40, 112, 147, 0.2), inset 1px -3px 12px -3px rgba(40, 112, 147, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #287093, inset 0 2px 0 #6bb3d6, inset 0 -1px 3px #2f84ad, inset -1px -3px 12px -3px rgba(40, 112, 147, 0.2), inset 1px -3px 12px -3px rgba(40, 112, 147, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(40, 112, 147, 0.6);
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(2) {
+  border: 1px solid #328bb7;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(2) {
+  background: #3a9ac9;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(2):hover, .button:nth-of-type(2):focus {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #58a9d1), color-stop(70%, #3697c6)), #58a9d1;
+  background: -webkit-linear-gradient(#58a9d1 10%, #3697c6 70%), #58a9d1;
+  background: -moz-linear-gradient(#58a9d1 10%, #3697c6 70%), #58a9d1;
+  background: -o-linear-gradient(#58a9d1 10%, #3697c6 70%), #58a9d1;
+  background: linear-gradient(#58a9d1 10%, #3697c6 70%), #58a9d1;
+  -webkit-box-shadow: inset 0 0 0 1px #2e80a8, inset 0 2px 0 #81bfdd, inset 0 -1px 3px #3697c6, inset -1px -3px 12px -3px rgba(46, 128, 168, 0.2), inset 1px -3px 12px -3px rgba(46, 128, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #2e80a8, inset 0 2px 0 #81bfdd, inset 0 -1px 3px #3697c6, inset -1px -3px 12px -3px rgba(46, 128, 168, 0.2), inset 1px -3px 12px -3px rgba(46, 128, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #2e80a8, inset 0 2px 0 #81bfdd, inset 0 -1px 3px #3697c6, inset -1px -3px 12px -3px rgba(46, 128, 168, 0.2), inset 1px -3px 12px -3px rgba(46, 128, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(46, 128, 168, 0.6);
+}
+/* line 108, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(2):hover, .no-boxshadow .button:nth-of-type(2):focus {
+  border: 1px solid #4ea4ce;
+}
+/* line 110, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(2):hover, .no-cssgradients .button:nth-of-type(2):focus {
+  background: #61aed4;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(2):active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #328bb7), color-stop(70%, #286f92)), #328bb7;
+  background: -webkit-linear-gradient(#328bb7 10%, #286f92 70%), #328bb7;
+  background: -moz-linear-gradient(#328bb7 10%, #286f92 70%), #328bb7;
+  background: -o-linear-gradient(#328bb7 10%, #286f92 70%), #328bb7;
+  background: linear-gradient(#328bb7 10%, #286f92 70%), #328bb7;
+  -webkit-box-shadow: inset 0 0 0 1px #225f7c, inset 0 1px 3px #286f92, inset 0 -1px 3px #286f92, inset -1px -3px 12px -3px rgba(34, 95, 124, 0.2), inset 1px -3px 12px -3px rgba(34, 95, 124, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #225f7c, inset 0 1px 3px #286f92, inset 0 -1px 3px #286f92, inset -1px -3px 12px -3px rgba(34, 95, 124, 0.2), inset 1px -3px 12px -3px rgba(34, 95, 124, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px #225f7c, inset 0 1px 3px #286f92, inset 0 -1px 3px #286f92, inset -1px -3px 12px -3px rgba(34, 95, 124, 0.2), inset 1px -3px 12px -3px rgba(34, 95, 124, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(34, 95, 124, 0.6);
+}
+/* line 119, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(2):active {
+  border: 1px solid #2d7ca3;
+}
+/* line 121, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(2):active {
+  background: #328bb7;
+}
+/* line 97, ../sass/master.scss */
+.button:nth-of-type(3) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #dd453d;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(3):hover, .button:nth-of-type(3):focus {
+  background: #e05850;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(3):active {
+  background: #d82f26;
+}
+/* line 98, ../sass/master.scss */
+.button:nth-of-type(4) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #f3bd30), color-stop(70%, #eaad0e)), #f3bd30;
+  background: -webkit-linear-gradient(#f3bd30 10%, #eaad0e 70%), #f3bd30;
+  background: -moz-linear-gradient(#f3bd30 10%, #eaad0e 70%), #f3bd30;
+  background: -o-linear-gradient(#f3bd30 10%, #eaad0e 70%), #f3bd30;
+  background: linear-gradient(#f3bd30 10%, #eaad0e 70%), #f3bd30;
+  -webkit-box-shadow: inset 0 0 0 1px #c7930c, inset 0 2px 0 #f6ce64, inset 0 -1px 3px #eaad0e, inset -1px -3px 12px -3px rgba(199, 147, 12, 0.2), inset 1px -3px 12px -3px rgba(199, 147, 12, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #c7930c, inset 0 2px 0 #f6ce64, inset 0 -1px 3px #eaad0e, inset -1px -3px 12px -3px rgba(199, 147, 12, 0.2), inset 1px -3px 12px -3px rgba(199, 147, 12, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #c7930c, inset 0 2px 0 #f6ce64, inset 0 -1px 3px #eaad0e, inset -1px -3px 12px -3px rgba(199, 147, 12, 0.2), inset 1px -3px 12px -3px rgba(199, 147, 12, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(199, 147, 12, 0.6);
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(4) {
+  border: 1px solid #f1b414;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(4) {
+  background: #f3bd30;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(4):hover, .button:nth-of-type(4):focus {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #f5c74f), color-stop(70%, #f2b821)), #f5c74f;
+  background: -webkit-linear-gradient(#f5c74f 10%, #f2b821 70%), #f5c74f;
+  background: -moz-linear-gradient(#f5c74f 10%, #f2b821 70%), #f5c74f;
+  background: -o-linear-gradient(#f5c74f 10%, #f2b821 70%), #f5c74f;
+  background: linear-gradient(#f5c74f 10%, #f2b821 70%), #f5c74f;
+  -webkit-box-shadow: inset 0 0 0 1px #eaad0e, inset 0 2px 0 #f7d57b, inset 0 -1px 3px #f2b821, inset -1px -3px 12px -3px rgba(234, 173, 14, 0.2), inset 1px -3px 12px -3px rgba(234, 173, 14, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #eaad0e, inset 0 2px 0 #f7d57b, inset 0 -1px 3px #f2b821, inset -1px -3px 12px -3px rgba(234, 173, 14, 0.2), inset 1px -3px 12px -3px rgba(234, 173, 14, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #eaad0e, inset 0 2px 0 #f7d57b, inset 0 -1px 3px #f2b821, inset -1px -3px 12px -3px rgba(234, 173, 14, 0.2), inset 1px -3px 12px -3px rgba(234, 173, 14, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(234, 173, 14, 0.6);
+}
+/* line 108, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(4):hover, .no-boxshadow .button:nth-of-type(4):focus {
+  border: 1px solid #f4c445;
+}
+/* line 110, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(4):hover, .no-cssgradients .button:nth-of-type(4):focus {
+  background: #f5ca59;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(4):active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #f1b414), color-stop(70%, #d29c0c)), #f1b414;
+  background: -webkit-linear-gradient(#f1b414 10%, #d29c0c 70%), #f1b414;
+  background: -moz-linear-gradient(#f1b414 10%, #d29c0c 70%), #f1b414;
+  background: -o-linear-gradient(#f1b414 10%, #d29c0c 70%), #f1b414;
+  background: linear-gradient(#f1b414 10%, #d29c0c 70%), #f1b414;
+  -webkit-box-shadow: inset 0 0 0 1px #b3840a, inset 0 1px 3px #d29c0c, inset 0 -1px 3px #d29c0c, inset -1px -3px 12px -3px rgba(179, 132, 10, 0.2), inset 1px -3px 12px -3px rgba(179, 132, 10, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #b3840a, inset 0 1px 3px #d29c0c, inset 0 -1px 3px #d29c0c, inset -1px -3px 12px -3px rgba(179, 132, 10, 0.2), inset 1px -3px 12px -3px rgba(179, 132, 10, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px #b3840a, inset 0 1px 3px #d29c0c, inset 0 -1px 3px #d29c0c, inset -1px -3px 12px -3px rgba(179, 132, 10, 0.2), inset 1px -3px 12px -3px rgba(179, 132, 10, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(179, 132, 10, 0.6);
+}
+/* line 119, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(4):active {
+  border: 1px solid #dca30d;
+}
+/* line 121, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(4):active {
+  background: #f1b414;
+}
+/* line 99, ../sass/master.scss */
+.button:nth-of-type(5) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #88a23d), color-stop(70%, #6d8231)), #88a23d;
+  background: -webkit-linear-gradient(#88a23d 10%, #6d8231 70%), #88a23d;
+  background: -moz-linear-gradient(#88a23d 10%, #6d8231 70%), #88a23d;
+  background: -o-linear-gradient(#88a23d 10%, #6d8231 70%), #88a23d;
+  background: linear-gradient(#88a23d 10%, #6d8231 70%), #88a23d;
+  -webkit-box-shadow: inset 0 0 0 1px #5c6e29, inset 0 2px 0 #a0bc4e, inset 0 -1px 3px #6d8231, inset -1px -3px 12px -3px rgba(92, 110, 41, 0.2), inset 1px -3px 12px -3px rgba(92, 110, 41, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #5c6e29, inset 0 2px 0 #a0bc4e, inset 0 -1px 3px #6d8231, inset -1px -3px 12px -3px rgba(92, 110, 41, 0.2), inset 1px -3px 12px -3px rgba(92, 110, 41, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #5c6e29, inset 0 2px 0 #a0bc4e, inset 0 -1px 3px #6d8231, inset -1px -3px 12px -3px rgba(92, 110, 41, 0.2), inset 1px -3px 12px -3px rgba(92, 110, 41, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(92, 110, 41, 0.6);
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(5) {
+  border: 1px solid #7a9237;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(5) {
+  background: #88a23d;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(5):hover, .button:nth-of-type(5):focus {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #a0bc4e), color-stop(70%, #8aa43e)), #a0bc4e;
+  background: -webkit-linear-gradient(#a0bc4e 10%, #8aa43e 70%), #a0bc4e;
+  background: -moz-linear-gradient(#a0bc4e 10%, #8aa43e 70%), #a0bc4e;
+  background: -o-linear-gradient(#a0bc4e 10%, #8aa43e 70%), #a0bc4e;
+  background: linear-gradient(#a0bc4e 10%, #8aa43e 70%), #a0bc4e;
+  -webkit-box-shadow: inset 0 0 0 1px #758c35, inset 0 2px 0 #b8cd7a, inset 0 -1px 3px #8aa43e, inset -1px -3px 12px -3px rgba(117, 140, 53, 0.2), inset 1px -3px 12px -3px rgba(117, 140, 53, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #758c35, inset 0 2px 0 #b8cd7a, inset 0 -1px 3px #8aa43e, inset -1px -3px 12px -3px rgba(117, 140, 53, 0.2), inset 1px -3px 12px -3px rgba(117, 140, 53, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #758c35, inset 0 2px 0 #b8cd7a, inset 0 -1px 3px #8aa43e, inset -1px -3px 12px -3px rgba(117, 140, 53, 0.2), inset 1px -3px 12px -3px rgba(117, 140, 53, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(117, 140, 53, 0.6);
+}
+/* line 108, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(5):hover, .no-boxshadow .button:nth-of-type(5):focus {
+  border: 1px solid #9ab745;
+}
+/* line 110, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(5):hover, .no-cssgradients .button:nth-of-type(5):focus {
+  background: #a5c058;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(5):active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #7a9237), color-stop(70%, #62752c)), #7a9237;
+  background: -webkit-linear-gradient(#7a9237 10%, #62752c 70%), #7a9237;
+  background: -moz-linear-gradient(#7a9237 10%, #62752c 70%), #7a9237;
+  background: -o-linear-gradient(#7a9237 10%, #62752c 70%), #7a9237;
+  background: linear-gradient(#7a9237 10%, #62752c 70%), #7a9237;
+  -webkit-box-shadow: inset 0 0 0 1px #536325, inset 0 1px 3px #62752c, inset 0 -1px 3px #62752c, inset -1px -3px 12px -3px rgba(83, 99, 37, 0.2), inset 1px -3px 12px -3px rgba(83, 99, 37, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #536325, inset 0 1px 3px #62752c, inset 0 -1px 3px #62752c, inset -1px -3px 12px -3px rgba(83, 99, 37, 0.2), inset 1px -3px 12px -3px rgba(83, 99, 37, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px #536325, inset 0 1px 3px #62752c, inset 0 -1px 3px #62752c, inset -1px -3px 12px -3px rgba(83, 99, 37, 0.2), inset 1px -3px 12px -3px rgba(83, 99, 37, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(83, 99, 37, 0.6);
+}
+/* line 119, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(5):active {
+  border: 1px solid #6d8231;
+}
+/* line 121, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(5):active {
+  background: #7a9237;
+}
+/* line 100, ../sass/master.scss */
+.button:nth-of-type(6) {
+  padding: 0.375em 1.5em;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #71bcc5), color-stop(70%, #50acb8)), #71bcc5;
+  background: -webkit-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: -moz-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: -o-linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  background: linear-gradient(#71bcc5 10%, #50acb8 70%), #71bcc5;
+  -webkit-box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #459ea8, inset 0 2px 0 #95cdd3, inset 0 -1px 3px #50acb8, inset -1px -3px 12px -3px rgba(69, 158, 168, 0.2), inset 1px -3px 12px -3px rgba(69, 158, 168, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(69, 158, 168, 0.6);
+}
+/* line 96, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(6) {
+  border: 1px solid #5bb2bc;
+}
+/* line 98, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(6) {
+  background: #71bcc5;
+}
+/* line 104, ../sass/import/_element.scss */
+.button:nth-of-type(6):hover, .button:nth-of-type(6):focus {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #86c6ce), color-stop(70%, #62b5bf)), #86c6ce;
+  background: -webkit-linear-gradient(#86c6ce 10%, #62b5bf 70%), #86c6ce;
+  background: -moz-linear-gradient(#86c6ce 10%, #62b5bf 70%), #86c6ce;
+  background: -o-linear-gradient(#86c6ce 10%, #62b5bf 70%), #86c6ce;
+  background: linear-gradient(#86c6ce 10%, #62b5bf 70%), #86c6ce;
+  -webkit-box-shadow: inset 0 0 0 1px #4eabb7, inset 0 2px 0 #a4d4da, inset 0 -1px 3px #62b5bf, inset -1px -3px 12px -3px rgba(78, 171, 183, 0.2), inset 1px -3px 12px -3px rgba(78, 171, 183, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #4eabb7, inset 0 2px 0 #a4d4da, inset 0 -1px 3px #62b5bf, inset -1px -3px 12px -3px rgba(78, 171, 183, 0.2), inset 1px -3px 12px -3px rgba(78, 171, 183, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px #4eabb7, inset 0 2px 0 #a4d4da, inset 0 -1px 3px #62b5bf, inset -1px -3px 12px -3px rgba(78, 171, 183, 0.2), inset 1px -3px 12px -3px rgba(78, 171, 183, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(78, 171, 183, 0.6);
+}
+/* line 108, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(6):hover, .no-boxshadow .button:nth-of-type(6):focus {
+  border: 1px solid #7fc3cb;
+}
+/* line 110, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(6):hover, .no-cssgradients .button:nth-of-type(6):focus {
+  background: #8dc9d1;
+}
+/* line 115, ../sass/import/_element.scss */
+.button:nth-of-type(6):active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #5bb2bc), color-stop(70%, #459ea8)), #5bb2bc;
+  background: -webkit-linear-gradient(#5bb2bc 10%, #459ea8 70%), #5bb2bc;
+  background: -moz-linear-gradient(#5bb2bc 10%, #459ea8 70%), #5bb2bc;
+  background: -o-linear-gradient(#5bb2bc 10%, #459ea8 70%), #5bb2bc;
+  background: linear-gradient(#5bb2bc 10%, #459ea8 70%), #5bb2bc;
+  -webkit-box-shadow: inset 0 0 0 1px #3a868f, inset 0 1px 3px #459ea8, inset 0 -1px 3px #459ea8, inset -1px -3px 12px -3px rgba(58, 134, 143, 0.2), inset 1px -3px 12px -3px rgba(58, 134, 143, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 0 0 1px #3a868f, inset 0 1px 3px #459ea8, inset 0 -1px 3px #459ea8, inset -1px -3px 12px -3px rgba(58, 134, 143, 0.2), inset 1px -3px 12px -3px rgba(58, 134, 143, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px #3a868f, inset 0 1px 3px #459ea8, inset 0 -1px 3px #459ea8, inset -1px -3px 12px -3px rgba(58, 134, 143, 0.2), inset 1px -3px 12px -3px rgba(58, 134, 143, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(58, 134, 143, 0.6);
+}
+/* line 119, ../sass/import/_element.scss */
+.no-boxshadow .button:nth-of-type(6):active {
+  border: 1px solid #48a5b0;
+}
+/* line 121, ../sass/import/_element.scss */
+.no-cssgradients .button:nth-of-type(6):active {
+  background: #5bb2bc;
+}

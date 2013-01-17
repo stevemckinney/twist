@@ -3,10 +3,20 @@
 /*
 	Site structure
 -----------------------------------------------------------------------*/
+@-o-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
+  
 html {
-	background: lighten(#e5ded3, 10%);
+	background: $tertiary;
+	@include background(linear-gradient($secondary, #e5ded3 50%));
+	overflow-y: auto;
 	color: $primary;
 	font-size: 100%;
+	// set font-family to a letter for use in js to have conditional loading of js
 	font-family: "a";
 	@include respond-min($b) {
 		font-family: "b"; }
@@ -18,22 +28,13 @@ html {
 		font-family: "e"; }
 	@include respond-min($f) {
 		font-family: "f"; } }
-	
+
+html, body {
+	height: 100%; }
+
 .container {
-	margin: auto;
-	padding: 5%;
-	max-width: 760px;
 	@include old-ie {
 		width: 760px; } }
-		
-// Consistent margin
-// ---------------------------
-h1, h2, h3, h4, h5, h6, hgroup,
-ul, ol, dd,
-p, figure,
-pre, table, fieldset, hr,
-header, section, footer {
-	@include rem(margin-bottom, $line); }
 	
 [role="main"] {
 	@include pie-clearfix; }
@@ -46,44 +47,36 @@ header, section, footer {
 // ---------------------------
 [role="navigation"] {
 	@include pie-clearfix;
-	@include element($secondary, $size: xxsmall);
+	@include element($info, $size: 2);
 	font-family: $serif;
 	width: 100%;
-	ul {
-		@include pie-clearfix;
-		padding: 0;
-		margin: 0; }
-	li {
-		float: left;
-		&:last-child {
-			a {
-				@include box-shadow(none);
-				border: none; } } }
 	a {
-		@include rem(padding, $base-px $line);
-		@include box-shadow(1px 0 0 scale-color($secondary, $lightness: 20%, $alpha: -65%));
+		@include box-shadow(1px 0 0 scale-color($info, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
 		color: $white;
-		display: block;
-		border-right: 1px solid scale-color($secondary, $lightness: -35%, $alpha: -50%); } }
+		display: inline-block;
+		padding: em($base-px, $base-font-size) em($line, $base-font-size);
+		border-right: 1px solid scale-color($info, $lightness: -35%, $alpha: -50%); } }
 
 // Site footer
 // ---------------------------
 [role="contentinfo"] {
-	@include rem(padding, $line 0 0);
+	padding: em($base-px, $base-px) 0 0;
 	border-top: 1px solid #e5ded3;
 	ul {
 		padding: 0; }
 	li {
 		list-style: none;
-		font-family: $serif; } }
+		font: 700 .75em $serif; } }
 
 
 // Base
 // ---------------------------
 @import "styles/typography";
-pre {
+
+pre { 
 	code {} }
+
 blockquote {
 	p {
 		position: relative;
@@ -91,37 +84,17 @@ blockquote {
 	&:before {
 		content:'“'; } }
 
-
-$alt: #3a9ac9 !default;
-$danger: #dd453d !default;
-$warning: #f3bd30 !default;
-$success: #88a23d !default;
-$info: #71bcc5 !default;
+hr {
+	border: none;
+	height: 1px;
+	background: rgba($black, .15);
+	@include box-shadow(0 1px 0 rgba($white, .4)); }
 
 .button {
-	@include element(#eee, $hover: true); }
-.button2 {
-	@include element($alt, $hover: true) }
-.button3 {
-	@include element($danger, $hover: true) }
-.button4 {
-	@include element($danger, $subtle: true, $hover: true)
-}
-.button5 {
-	@include element($warning, $hover: true)
-}
-.button6 {
-	@include element($success, $hover: true)
-}
-.button7 {
-	@include element($info, $hover: true)
-}
-
-
-[class^="button"] {
-	margin: 0 0 10px; }
-
-input {
-	@include form(); }
-[type="submit"] {
-	@include element(#e45757, $size: normal, $hover: true); }
+	margin: 0 0 em($line, $base-font-size);
+	&:nth-of-type(1) { @include element($default, $hover: true); }
+	&:nth-of-type(2) { @include element($alt, $hover: true); }
+	&:nth-of-type(3) { @include element($danger, $hover: true, $shadow: false); }
+	&:nth-of-type(4) { @include element($warning, $hover: true); }
+	&:nth-of-type(5) { @include element($success, $hover: true); }
+	&:nth-of-type(6) { @include element($info, $hover: true); } }

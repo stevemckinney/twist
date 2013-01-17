@@ -8,7 +8,7 @@
 <!--[if IE 8 ]><html class="ie ie8 no-js <?php echo $page; ?>" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9 no-js <?php echo $page; ?>" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html class="<?php echo $page; ?> no-js" lang="en"><!--<![endif]-->
-
+<head>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -25,7 +25,7 @@
 	<meta name="apple-mobile-web-app-title" content="">
 	
 	<!-- CSS -->
-	<link href="assets/css/master.css" media="screen" rel="stylesheet">
+	<!--[if gt IE 8]><!--><link href="assets/css/master.css" rel="stylesheet"><!--<![endif]-->
 	
 	<!-- JavaScript -->
 	<script src="assets/js/modernizr.js"></script>
@@ -43,6 +43,7 @@
 	<!-- IE -->
 	<meta http-equiv="cleartype" content="on">
 	<!--[if lt IE 9]>
+		<link href="assets/css/ie.css" rel="stylesheet">
   	<script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
   	<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
   <![endif]-->
@@ -54,11 +55,7 @@
 
 	<header role="banner">
 		<h1><a href="/">Sass starter</a></h1>
-		<nav role="navigation">
-			<ul>
-				<li><a href="/" title="Back to the homepage">Home</a></li>
-				<li><a href="base.php" title="Base styles">Base CSS</a></li>
-				<li><a href="elements.php" title="Most commonly used elements">Elements</a></li>	
-			</ul>
+		<nav role="navigation" class="nav">
+			<a href="#" data-tab="0" title="Back to the homepage">Home</a><a href="#" data-tab="1" title="Base HTML elements styled">Basic elements</a><a href="#" data-tab="2" title="Mixins library">Mixins</a>
 		</nav>
 	</header>

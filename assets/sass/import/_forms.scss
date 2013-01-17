@@ -7,16 +7,28 @@
 	font-family: $form;
 	display: block;
 	outline: none; }
+%form-block {
+	display: block;
+	width: 100%; }
 
-/*
-@mixin form-label($position: "top") {
+@mixin form-label($position: "left", $main-color: inherit, $font-weight: 700, $font-size: $base-font-size, $font-family: $sans) {
+	
+	line-height: $base-line-height;
+	font: $font-weight #{$font-size}/#{$base-line-height} #{$font-family};
+	color: $main-color;
+	
 	@if $position == "top" {
-		width: 100%; }
+		@extend %form-block;
+		margin: 0 0 .375em;
+		& + input {
+			@extend %form-block; } }
 	@else {
 		width: 33.333333333%;
-		float: left;
-		& + input {} } }
-*/
+		display: inline-block;
+		& + input {
+			margin-left: -4px;
+			width: 66.666666667%;
+			display: inline-block; } } }
 
 /* # To do
  * - form label position?
@@ -24,7 +36,7 @@
  * - status: error, success, disabled
  */
 @mixin form(
-	$main-color: $default,
+	$main-color: #999,
 	$radius: $radius, 
 	$shadow: true, 
 	$style: true, 
@@ -41,28 +53,39 @@
 	
 	// styles which remain consistent no matter the input
 	@extend %form-base;
-	// if we want styles to be applied
-	@if $style == true {
-		@if $shadow == true {		
-			@include box-shadow(
-				inset 0 0 0 1px $main-color,
-				inset 0 2px 3px rgba($main-color, .2)); }
-			.no-boxshadow & {
-				border: 1px solid $main-color; } } // end $style
-				
-	@else if $style == true AND $type == "select" OR $type == "dropdown" {
-		@include box-shadow(inset 0 0 0 1px $main-color);
-		@include background(linear-gradient(bottom, $form-light, scale-color($form-light, $lightness: 20%)));
+	
+	@if $radius != false {
+		@include border-radius($radius); }
+		
+	@if $shadow == true {		
+		@include box-shadow(
+			inset 0 0 0 1px $main-color,
+			inset 0 2px 2px rgba($main-color, .4),
+			0 1px 1px rgba($white, .6));
 		.no-boxshadow & {
 			border: 1px solid $main-color; } }
-	@if $type != submit {	
-		@if $radius != false {
-			@include border-radius($radius); }
-		
-		@if $size == true AND $set-height == false {
-			padding: em($base-px, $base-font-size) em($line, $base-font-size); }
+	
+	// if we want styles to be applied
+	@if $style == true {
+		@if $type == select {}
+		@else if $type == input {
+			@include background(linear-gradient(scale-color($white, $lightness: -5%), $white), $white);
+			&:hover, &:focus {
+				@include background(linear-gradient(scale-color($white, $lightness: -2.5%), $white), $white);
+				@include box-shadow(
+					inset 0 0 0 1px scale-color($main-color, $lightness: -20%),
+					inset 0 2px 2px rgba($main-color, .6),
+					0 1px 1px rgba($white, .6));
+				outline: none; }
+			.no-cssgradients & {
+				background: $white; } }
+		@else {
+			@include element($main-color, $style: true, $size: "normal", $hover: true); } }
+			
+	@if $size == true {
+		@if $set-height == false {
+			padding: em($base-px, $base-font-size); }
 		@else {
 			padding: em(3px, $base-font-size) em($line, $base-font-size);
-			height: em(30px, $base-font-size); }
-	@else {
-		@include element($main-color, $style: true, $size: "normal", $hover: true); } } }
+			height: em(30px, $base-font-size); } }
+}

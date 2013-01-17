@@ -1,20 +1,76 @@
 %grid {
 	@include pie-clearfix; }
 
-%col {
-	float: left; }
+/*
+	An adapted version of foldy960
+	See original here: http://github.com/davatron5000/foldy960
+-----------------------------------------------------------------------*/
 
-%col-1-6 {
-	width: 100%/6; }
+// Grid > 6 Column Mobile First
+// ---------------------------
+.container {
+	max-width: $grid-max-width;
+	width: 92%;
+	margin: $grid-container-margin;
+	position: relative; }
 
-%col-1-5 {
-	width: 100%/5; }
+.row {
+	clear: both; }
 
-%col-1-4 {
-	width: 100%/4; }
+@include respond-min($a) {
+	.container {
+		width: 98%; }
 
-%col-3-4 {
-	width: (100%/4)*3; }
+	.grid-1,
+	.grid-2,
+	.grid-3,
+	.grid-4,
+	.grid-5,
+	.grid-6,
+	.grid-half,
+	.grid-full,
+	.grid-unit {
+		float: left;
+		width: 96.969696969697%;
+		margin: 0 1.515151515152% em($line, $base-font-size); }
 
-%col-1-2 {
-	width: 100%/2; }
+	.gallery .grid-unit,
+	.grid-half {
+		width: 46.969696969697%;
+		margin: 0 1.515151515152% em($line, $base-font-size); }
+
+	.grid-flow-opposite {
+		float: right } }
+
+@include respond-min($b) {
+	.grid-1 { 
+		width: 13.636363636364%; }
+	.grid-2 { 
+		width: 30.30303030303%; }
+	.grid-3,
+	.grid-half { 
+		width: 46.969696969697%; }
+	.grid-4 { 
+		width: 63.636363636364%; }
+	.grid-5 { 
+		width: 80.30303030303%; }
+	.grid-6,
+	.grid-full { 
+		width: 96.969696969697%; }
+
+	.gallery .grid-unit {
+		width: 30.30303030303%; }
+	.content-pad-right {
+		padding-right: 4%; /* Use (or don't) as necessary. */ }
+	.content-pad-left {
+		padding-left: 4%; } }
+
+/* Helpers
+-------------------------------------------------------------- */
+.show-grid div[class*='grid-'] {
+	@include box-sizing(border-box);
+	background-color: #eee;
+	display: block;
+	padding: em($base-px, $base-font-size) em($line, $base-font-size);
+	margin-bottom: em($line, $base-font-size);
+	text-align: center; }

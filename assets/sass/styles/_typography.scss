@@ -1,37 +1,42 @@
-h1, h2, h3, h4, h5, h6 {
+#{elements-of-type(block)} {
+	margin-bottom: em($line, $base-font-size); }
+	
+// Headings
+// ---------------------------
+#{headings()} {
 	font-family: $heading;
-	padding: 0;
-	margin: 0;
-	display: block; }
+	padding: 0; }
 
-h1 {
-	@include rem(font-size, 36px);
+h1, .h1 {
+	@include adjust-font-size-to(42px);
+	margin: 0 0 em($line, $base-px*5);
 	[role="banner"] & {
-		@include rem(padding, 0 0 $base-px);
-		text-transform: uppercase; } }
-h2 {
-	font-size: 30px; }
-h3 {
-	font-size: 24px; }
-h4 {
-	font-size: 18px; 
-	text-transform: uppercase;
-	letter-spacing: 2px; }
-h5 {
-	font-size: 16px; }
-h6 {
-	font-size: 12px; 
-	text-transform: uppercase;
-	letter-spacing: 2px; }
-	
-p {
-	font: 1em/1.5em $body; }
-	
+		a {
+			color: $combined; } } }
+h2, .h2 {
+	@include adjust-font-size-to(36px);
+	margin: 0 0 em($line, $base-px*4); }
+h3, .h3 {
+	@include adjust-font-size-to(30px);
+	margin: 0 0 em($line, $base-px*3); }
+h4, .h4 {
+	@include adjust-font-size-to(24px);
+	margin: 0 0 em($base-px, $base-px*2); }
+h5, .h5 {
+	@include adjust-font-size-to(18px);
+	margin: 0 0 em($base-px, 21px); }
+h6, .h6 {
+	@include adjust-font-size-to($base-font-size);
+	margin: 0 0 em($base-px, 21px);  }
+
+// General
+// ---------------------------
+p, li {
+	font: $base-font-size/#{$base-line-height} $body; }
+
 a {
-	text-decoration: none; 
+	text-decoration: none;
 	color: $secondary;
 	@extend %transition;
 	&:hover, &:focus {
 		color: $primary; } }
-p, li {
-	@include hyphens(auto); }

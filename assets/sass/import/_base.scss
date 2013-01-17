@@ -1,14 +1,17 @@
 //	general variable colours
 // --------------------------
-$primary: #383a3d !default;
-$secondary: #687a92 !default;
+$secondary: #a7dbd8 !default;
+$tertiary: lighten(#e5ded3, 10%);
+$primary: scale-color($secondary + saturate($tertiary, 40%), $lightness: -90%, $saturation: 40%, $alpha: -60%) !default;
+
+$combined: $primary;
 
 $black: #000;
 $white: #fff;
 
 // main element styling colours
 // ---------------------------
-$default: #ececec !default;
+$default: darken($white, 35%) !default;
 $default-text: #444 !default;
 $default-text-shadow: #fff !default;
 $subtle-color: #666;
@@ -51,17 +54,13 @@ $base-line-height: 1.5;
 $base-px: 12px !default;
 $line: $base-px*2 !default;
 
-// khtml support is pointless most times
-// ---------------------------
-$experimental-support-for-khtml: false;
 
-// uncomment if you're brave, or don't care
+// stop various browser support
 // ---------------------------
-/*
-$legacy-support-for-ie: true;
+// $legacy-support-for-ie: true;
+$experimental-support-for-khtml: false;
 $legacy-support-for-mozilla: true;
 $legacy-support-for-ie7: false;
-*/
 
 // define responsive stuff: see responsive.scss
 // ---------------------------
@@ -70,14 +69,19 @@ $fix-mqs: false !default;
 
 // consistent radius
 // ---------------------------
-$radius: 5px;
+$radius: 3px;
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
 // ---------------------------
-$a: 30em !default;
-$b: 37.5em !default;
-$c: 48em !default;
-$d: 60em !default;
-$e: 75em !default;
-$f: 90em !default;
+$a: 30em !default; // 480
+$b: 37.5em !default; // 600
+$c: 48em !default; // 768
+$d: 60em !default; // 960
+$e: 75em !default; // 1200
+$f: 90em !default; // 1440
+
+// grid.scss settings
+// ---------------------------
+$grid-max-width: $c;
+$grid-container-margin: 3em auto auto;
