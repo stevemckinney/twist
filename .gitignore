@@ -11,3 +11,6 @@ assets/sass/import/_future/_modals.scss
 
 assets/sass/import/_future/_notices.scss
 include
+include/*
+pages
+pages/*
