@@ -1,10 +1,10 @@
 //	general variable colours
 // --------------------------
-$secondary: #a7dbd8 !default;
-$tertiary: lighten(#e5ded3, 10%);
-$primary: scale-color($secondary + saturate($tertiary, 40%), $lightness: -90%, $saturation: 40%, $alpha: -60%) !default;
+$primary: #575d60 !default;
+$secondary: #3a9ac9 !default;
+$tertiary: #e5ded3 !default;
 
-$combined: $primary;
+$combined: mix($primary, $secondary);
 
 $black: #000;
 $white: #fff;
@@ -23,9 +23,17 @@ $focus: scale-color(#71bcc5, $lightness: -25%) !default;
 // ---------------------------
 $alt: #3a9ac9 !default;
 $danger: #dd453d !default;
-$warning: #f3bd30 !default;
+$warning: scale-lightness(#fad089, -25%) !default;
 $success: #88a23d !default;
 $info: #71bcc5 !default;
+
+// alternative colour names for the above
+// ---------------------------
+$error: $danger;
+$red: $danger;
+
+$blue: $alt;
+$green: $success;
 
 // font stacks
 // ---------------------------
@@ -83,5 +91,5 @@ $f: 90em !default; // 1440
 
 // grid.scss settings
 // ---------------------------
-$grid-max-width: $c;
-$grid-container-margin: 3em auto auto;
+$grid-max-width: $d;
+$grid-container-margin: 3em auto auto 0;

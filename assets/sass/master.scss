@@ -9,10 +9,9 @@
   width: device-width; }
 @viewport {
   width: device-width; }
-  
+ 
 html {
 	background: $tertiary;
-	@include background(linear-gradient($secondary, #e5ded3 50%));
 	overflow-y: auto;
 	color: $primary;
 	font-size: 100%;
@@ -37,32 +36,46 @@ html, body {
 		width: 760px; } }
 	
 [role="main"] {
-	@include pie-clearfix; }
+	@include pie-clearfix;
+	@extend .grid-4; }
+
+#{elements-of-type(block)}, table {
+	margin-bottom: em($line, $base-font-size); }
 
 // Site header
 // ---------------------------
-[role="banner"] {}
+[role="banner"] {
+	@extend .grid-full; }
 
 // Site nav
 // ---------------------------
 [role="navigation"] {
 	@include pie-clearfix;
-	@include element($info, $size: 2);
+	@include element($primary, $size: false, $shadow: false, $radius: 0 $radius $radius 0);
 	font-family: $serif;
-	width: 100%;
+	@extend .grid-2;
+	margin-left: -1.51515%;
 	a {
-		@include box-shadow(1px 0 0 scale-color($info, $lightness: 20%, $alpha: -65%));
+		@include box-shadow(0 1px 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
 		color: $white;
-		display: inline-block;
-		padding: em($base-px, $base-font-size) em($line, $base-font-size);
-		border-right: 1px solid scale-color($info, $lightness: -35%, $alpha: -50%); } }
+		display: block;
+		padding: em($base-px, $base-font-size);
+		padding-left: em($line, $base-font-size);
+		border-bottom: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
+		&:hover, &:focus {
+			color: $secondary; }
+		&:last-child { 
+			@include box-shadow(none);
+			border: none; } } }
 
 // Site footer
 // ---------------------------
 [role="contentinfo"] {
+	@extend .grid-full;
 	padding: em($base-px, $base-px) 0 0;
 	border-top: 1px solid #e5ded3;
+	clear: both;
 	ul {
 		padding: 0; }
 	li {
@@ -72,7 +85,7 @@ html, body {
 
 // Base
 // ---------------------------
-@import "styles/typography";
+@import "styles/typography", "styles/extends";
 
 pre { 
 	code {} }
@@ -94,7 +107,22 @@ hr {
 	margin: 0 0 em($line, $base-font-size);
 	&:nth-of-type(1) { @include element($default, $hover: true); }
 	&:nth-of-type(2) { @include element($alt, $hover: true); }
-	&:nth-of-type(3) { @include element($danger, $hover: true, $shadow: false); }
+	&:nth-of-type(3) { @include element($danger, $hover: true); }
 	&:nth-of-type(4) { @include element($warning, $hover: true); }
 	&:nth-of-type(5) { @include element($success, $hover: true); }
 	&:nth-of-type(6) { @include element($info, $hover: true); } }
+
+label {
+	@include form-label; }
+[type="text"], [type="email"], [type="password"], [type="url"], textarea {
+	@include form; }
+[type="submit"] {
+	@include form($type: submit); }
+[type="checkbox"], [type="radio"] {
+	@include form($type: radio); }
+select {
+	@include form($type: select); }
+.form-help {
+	margin: .375em 0 0 0;
+	font-size: 12px;
+	color: #999; }

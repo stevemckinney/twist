@@ -5,6 +5,7 @@
 // ---------------------------
 #{headings()} {
 	font-family: $heading;
+	color: $alt;
 	padding: 0; }
 
 h1, .h1 {
@@ -12,7 +13,7 @@ h1, .h1 {
 	margin: 0 0 em($line, $base-px*5);
 	[role="banner"] & {
 		a {
-			color: $combined; } } }
+			color: $secondary; } } }
 h2, .h2 {
 	@include adjust-font-size-to(36px);
 	margin: 0 0 em($line, $base-px*4); }

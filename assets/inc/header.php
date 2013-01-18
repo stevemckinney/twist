@@ -55,7 +55,8 @@
 
 	<header role="banner">
 		<h1><a href="/">Sass starter</a></h1>
-		<nav role="navigation" class="nav">
-			<a href="#" data-tab="0" title="Back to the homepage">Home</a><a href="#" data-tab="1" title="Base HTML elements styled">Basic elements</a><a href="#" data-tab="2" title="Mixins library">Mixins</a>
-		</nav>
 	</header>
+	<nav role="navigation" class="nav">
+		<a href="#" data-tab="0" title="Back to the homepage">Home</a><a href="#" data-tab="1" title="Base HTML elements styled">Basic elements</a><a href="#" data-tab="2" title="Mixins library">Mixins</a>
+	</nav>
+	<section role="main">

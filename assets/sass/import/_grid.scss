@@ -1,4 +1,4 @@
-%grid {
+%grid, %clear {
 	@include pie-clearfix; }
 
 /*
@@ -61,9 +61,52 @@
 	.gallery .grid-unit {
 		width: 30.30303030303%; }
 	.content-pad-right {
-		padding-right: 4%; /* Use (or don't) as necessary. */ }
+		padding-right: 4%; }
 	.content-pad-left {
 		padding-left: 4%; } }
+
+@if $legacy-support-for-ie8 == true {
+	@include old-ie {
+		.grid-1,
+		.grid-2,
+		.grid-3,
+		.grid-4,
+		.grid-5,
+		.grid-6,
+		.grid-half,
+		.grid-full,
+		.grid-unit {
+			float: left;
+			margin: 0 1.515151515152% em($line, $base-font-size); }
+	
+		.gallery .grid-unit,
+		.grid-half {
+			width: 46.969696969697%;
+			margin: 0 1.515151515152% em($line, $base-font-size); }
+	
+		.grid-flow-opposite {
+			float: right }
+		.grid-1 { 
+			width: 13.636363636364%; }
+		.grid-2 { 
+			width: 30.30303030303%; }
+		.grid-3,
+		.grid-half { 
+			width: 46.969696969697%; }
+		.grid-4 { 
+			width: 63.636363636364%; }
+		.grid-5 { 
+			width: 80.30303030303%; }
+		.grid-6,
+		.grid-full { 
+			width: 96.969696969697%; }
+		
+		.gallery .grid-unit {
+			width: 30.30303030303%; }
+		.content-pad-right {
+			padding-right: 4%; }
+		.content-pad-left {
+			padding-left: 4%; } } }
 
 /* Helpers
 -------------------------------------------------------------- */

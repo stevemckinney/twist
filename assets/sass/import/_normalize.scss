@@ -1,5 +1,5 @@
 /* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block; }
 
 audio, canvas, video {
@@ -108,17 +108,17 @@ button, input {
 
 button, [type="button"], [type="reset"], [type="submit"] {
 	cursor: pointer;
-	@if ($legacy-support-for-ie == true) {
+	@if ($legacy-support-for-ie7 == true) {
 		*overflow: visible; } }
 
 
-[disabled] {
+html [disabled] {
 	cursor: default; }
 
 [type="checkbox"],
 [type="radio"] {
 	padding: 0; 
-	@if ($legacy-support-for-ie == true) {
+	@if ($legacy-support-for-ie7 == true) {
 		*height: 13px; 
 		*width: 13px; } }
 
@@ -143,9 +143,9 @@ table {
 	border-spacing: 0; }
 
 :focus {
-	outline: 1px solid #444; }
+	outline: none; }
 ::-moz-selection {
-	background: $secondary; color: #fff; text-shadow: none; }
+	background: $secondary; color: scale-lightness($secondary, 35%); text-shadow: none; }
 ::selection {
 	background: $secondary; color: #fff; text-shadow: none; }
 

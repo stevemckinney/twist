@@ -1,3 +1,5 @@
+</section>
+
 <footer role="contentinfo">
 	<ul>
 		<li>Sass starter, free to use as you please as long as you don't sell it on.</li>

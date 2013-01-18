@@ -2,16 +2,16 @@
 //	Base form styles
 // 	-----------------------------------------
 %form-base {
-	@extend %input-reset;
 	border: none;
 	font-family: $form;
-	display: block;
-	outline: none; }
+	outline: none;
+	max-width: 100%;
+	color: $primary; }
 %form-block {
 	display: block;
 	width: 100%; }
 
-@mixin form-label($position: "left", $main-color: inherit, $font-weight: 700, $font-size: $base-font-size, $font-family: $sans) {
+@mixin form-label($position: "top", $main-color: inherit, $font-weight: 700, $font-size: $base-font-size, $font-family: $sans) {
 	
 	line-height: $base-line-height;
 	font: $font-weight #{$font-size}/#{$base-line-height} #{$font-family};
@@ -20,15 +20,20 @@
 	@if $position == "top" {
 		@extend %form-block;
 		margin: 0 0 .375em;
-		& + input {
+		& + input, & + select, & + textarea {
 			@extend %form-block; } }
 	@else {
 		width: 33.333333333%;
 		display: inline-block;
-		& + input {
+		@include respond-min($b) {
+			width: 100%; }
+		& + input, & + select, & + textarea {
 			margin-left: -4px;
 			width: 66.666666667%;
-			display: inline-block; } } }
+			display: inline-block;
+			@include respond-min($b) {
+				width: 100%;
+				margin-left: 0; } } } }
 
 /* # To do
  * - form label position?
@@ -37,55 +42,72 @@
  */
 @mixin form(
 	$main-color: #999,
+	$focus-color: $alt,
 	$radius: $radius, 
 	$shadow: true, 
 	$style: true, 
 	$size: true,
 	$set-height: false, 
 	$hover: false, 
-	$type: "input", 
-	$status: "normal") {
+	$type: "input") {
 	
 	$type: unquote($type);
-	$status: unquote($status);
-	
 	$form-light: scale-color($main-color, $saturation: 20%, $lightness: 30%);
 	
 	// styles which remain consistent no matter the input
 	@extend %form-base;
-	
 	@if $radius != false {
 		@include border-radius($radius); }
-		
-	@if $shadow == true {		
-		@include box-shadow(
-			inset 0 0 0 1px $main-color,
-			inset 0 2px 2px rgba($main-color, .4),
-			0 1px 1px rgba($white, .6));
-		.no-boxshadow & {
-			border: 1px solid $main-color; } }
 	
 	// if we want styles to be applied
 	@if $style == true {
-		@if $type == select {}
+		@if $type == checkbox {
+			margin: 0 em($base-px/2, $base-font-size) 0 0; }
+		@else if $type == radio {
+			margin: 0 em($base-px/2, $base-font-size) 0 0; }
+		@else if $type == select {
+			@extend %input-reset;
+			@include background(linear-gradient(darken($white, 2%) 46%, darken($white, 5%) 54%), $white);
+			@include box-shadow(
+				inset 0 0 0 1px $main-color,
+				0 1px 1px rgba($white, .6));
+			.no-boxshadow & {
+				border: 1px solid $main-color; }
+			&:focus {
+				@include box-shadow(
+					inset 0 0 0 1px scale-color($focus-color, $lightness: -20%),
+					inset 6px 0 12px -6px rgba($focus-color, .3),
+					inset -6px 0 12px -6px rgba($focus-color, .3),
+					0 0 6px rgba($focus-color, .6),
+					0 1px 1px rgba($white, .6)); } }
 		@else if $type == input {
+			@extend %input-reset;
 			@include background(linear-gradient(scale-color($white, $lightness: -5%), $white), $white);
-			&:hover, &:focus {
+			@include box-shadow(
+				inset 0 0 0 1px $main-color,
+				inset 0 2px 2px rgba($main-color, .4),
+				0 1px 1px rgba($white, .6));
+			.no-boxshadow & {
+				border: 1px solid $main-color; }
+			&:focus {
 				@include background(linear-gradient(scale-color($white, $lightness: -2.5%), $white), $white);
 				@include box-shadow(
-					inset 0 0 0 1px scale-color($main-color, $lightness: -20%),
-					inset 0 2px 2px rgba($main-color, .6),
-					0 1px 1px rgba($white, .6));
-				outline: none; }
+					inset 0 0 0 1px scale-color($focus-color, $lightness: -20%),
+					inset 6px 0 12px -6px rgba($focus-color, .3),
+					inset -6px 0 12px -6px rgba($focus-color, .3),
+					0 0 6px rgba($focus-color, .6),
+					0 1px 1px rgba($white, .6)); }
 			.no-cssgradients & {
 				background: $white; } }
 		@else {
-			@include element($main-color, $style: true, $size: "normal", $hover: true); } }
+			@include element($main-color, $style: true, $size: 3, $hover: true); } }
 			
-	@if $size == true {
+	@if $type != submit {
+	@if $type != checkbox {
+	@if $type != radio {
 		@if $set-height == false {
 			padding: em($base-px, $base-font-size); }
 		@else {
-			padding: em(3px, $base-font-size) em($line, $base-font-size);
-			height: em(30px, $base-font-size); } }
+			padding: em(3px, $base-font-size) em($base-px, $base-font-size);
+			height: em(42px, $base-font-size); } } } } 
 }

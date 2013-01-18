@@ -4,20 +4,26 @@
 //	Works well for anything else you'd like to style similar apart from buttons/forms
 //	-----------------------------------------
 
-@mixin element-base {
+// consistent stuff for each button
+// ---------------------------
+%element-base {
 	@include background-clip;
 	@include transition(none);
 	@include appearance(none);
 	@include user-select(none);
 	position: relative;
 	font-family: $sans; }
-	
-%element-base {
-	@include element-base; }
-	
-@function element-size($size: 3) {
-	@return (.75 * ($size / 6)) + em (1.5 * ($size / 3)) + em; }
 
+// calculate padding for top + bottom and left + right.
+// looks a fairly odd way to do it but generally works
+// quite well. basis is on 16px = 1em.
+// ---------------------------
+@function element-size($size: 3) {
+	@return (.75 * ($size / 4.75)) + em (1.5 * ($size / 3)) + em; }
+
+// separate the bulk of the styling into a mixin for ease of editing
+// $main-color is overridden by the element mixin below
+// ---------------------------
 @mixin element-shading($main-color: $alt, $state: normal) {
 	
 	@if $state == hover { $main-color: scale-lightness($main-color, 15%); }
@@ -25,55 +31,61 @@
 	
 	$light-color: scale-lightness($main-color, if-bright($main-color, 25%, 15%));
 	$dark-color: scale-lightness($main-color, if-bright($main-color, -15%, -20%));
-	$shadow-color: scale-lightness($dark-color, if-bright($dark-color, -10%, -15%));
+	$shadow-color: scale-lightness($main-color, if-bright($dark-color, -40%, -50%)); 
 	
 	@if $state == hover {
-		@include background(linear-gradient($main-color 10%, $dark-color 70%), $main-color);
+		@include background(linear-gradient($main-color, $dark-color));
 		@include box-shadow(
-			inset 0 0 0 1px $shadow-color,
-			inset 0 2px 0 $light-color,
-			inset 0 -1px 3px $dark-color,
-			inset -1px -3px 12px -3px rgba($shadow-color, .2),
-			inset 1px -3px 12px -3px rgba($shadow-color, .2),
-			0 1px 3px rgba($black, .2));
+			inset 0 0 0 1px rgba($shadow-color, .3),
+			inset 0 2px 0 rgba($light-color, .8),
+			inset 12px 0 18px -12px rgba($dark-color, .4),
+			inset -12px 0 18px -12px rgba($dark-color, .4),
+			0 1px 3px rgba($shadow-color, .3));
 		text-shadow: 0 1px 1px rgba($shadow-color, .6); }
 	@else if $state == active {
-		@include background(linear-gradient($main-color 10%, $dark-color 70%), $main-color);
+		@include background(linear-gradient($main-color, $dark-color));
 		@include box-shadow(
-			inset 0 0 0 1px $shadow-color,
-			inset 0 1px 3px $dark-color,
-			inset 0 -1px 3px $dark-color,
-			inset -1px -3px 12px -3px rgba($shadow-color, .2),
-			inset 1px -3px 12px -3px rgba($shadow-color, .2),
-			0 1px 0 rgba($white, .2));
+			inset 0 0 0 1px rgba($shadow-color, .3),
+			inset 0 2px 2px rgba($dark-color, .8),
+			inset 12px 0 18px -12px rgba($dark-color, .4),
+			inset -12px 0 18px -12px rgba($dark-color, .4),
+			0 1px 1px rgba($light-color, .3));
 		text-shadow: 0 1px 1px rgba($shadow-color, .6); }
 	@else {		
-		@include background(linear-gradient($main-color 10%, $dark-color 70%), $main-color);
+		@include background(linear-gradient($main-color, $dark-color));
 		@include box-shadow(
-			inset 0 0 0 1px $shadow-color,
-			inset 0 2px 0 $light-color,
-			inset 0 -1px 3px $dark-color,
-			inset -1px -3px 12px -3px rgba($shadow-color, .2),
-			inset 1px -3px 12px -3px rgba($shadow-color, .2),
-			0 1px 3px rgba($black, .2));
+			inset 0 0 0 1px rgba($shadow-color, .3),
+			inset 0 2px 0 rgba($light-color, .8),
+			inset 12px 0 18px -12px rgba($dark-color, .4),
+			inset -12px 0 18px -12px rgba($dark-color, .4),
+			0 1px 3px rgba($shadow-color, .3));
 		text-shadow: 0 1px 1px rgba($shadow-color, .6); } }
 
+// the actual mixin, 
+// has modernizr classes for features that don't exist
+// - border is set due to it being done with the box-shadow
+// - could use simple background fallback for gradient,
+//   though this keeps web inspector that bit cleaner
+// ---------------------------
 @mixin element(
 	$main-color: $alt,
 	$text-color: $white,
 	$radius: $radius, 
 	$subtle: false, 
-	$shadow: true, 
-	$style: true, 
+	$shadow: true, // disable for a flat button
+	$style: true, // disable for basic styles like padding and reset only
 	$size: 3, 
-	$hover: false,
-	$font-size: false,
+	$hover: false, // off by default as you can set this for alert/notice type things
+	$font-size: false, // set the font-size manually
 	$display: inline-block) {
 	
 	@extend %element-base;		
-	padding: element-size($size);
 	color: $text-color;
 	display: $display;
+	@if $size != false { 
+		padding: element-size($size); }
+	@if $font-size {
+		font-size: $font-size; }
 	
 	@if $radius != none OR $radius == false {
 		@include border-radius($radius); }
