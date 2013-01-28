@@ -1,4 +1,8 @@
 @import "compass";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+@import "compass/layout/stretching";
+@import "compass/css3/hyphenation";
 @import "import/base"; // variables
 @import "import/responsive"; // helpful responsive functions
 @import "import/normalize"; // "reset"
@@ -7,3 +11,4 @@
 @import "import/element"; // mixin for buttons/other similar elements
 @import "import/forms"; // form mixin
 @import "import/table"; // table mixin
+@import "import/blockquote"; // blockquote mixin

@@ -1,5 +1,8 @@
 <?php include('assets/inc/header.php'); ?>
-<h2>Buttons</h2>
+<h2 id="buttons">Buttons</h2>
+<a href="#" class="button">Button</a>
+<a href="#" class="button">Button</a>
+<a href="#" class="button">Button</a>
 <a href="#" class="button">Button</a>
 <a href="#" class="button">Button</a>
 <a href="#" class="button">Button</a>
@@ -9,7 +12,19 @@
 
 <hr>
 
-<h2>Forms</h2>
+<h2 id="alerts">Alerts</h2>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+<p class="alert">Here is an alert, hello.</p>
+
+<hr>
+
+<h2 id="forms">Forms</h2>
 <form action="/">
 	<fieldset>
 		<label for="name">Name</label>
@@ -61,7 +76,7 @@
 
 <hr>
 
-<h2>Table</h2>
+<h2 id="table">Table</h2>
 <table>
 	<thead>
 		<tr>
@@ -106,7 +121,9 @@
 
 <hr>
 
-<h2>Headings</h2>
+<h2 id="typography">Typography</h2>
+
+<h3>Headings</h3>
 <h1>Heading level one</h1>
 <h2>Heading level two</h2>
 <h3>Heading level three</h3>
@@ -114,4 +131,35 @@
 <h5>Heading level five</h5>
 <h6>Heading level six</h6>
 
+<blockquote>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="grid">Grid</h2>
+<div class="show-grid grid-unit">
+	<div class="grid-1">.grid-1</div>
+	<div class="grid-1">.grid-1</div>
+	<div class="grid-1">.grid-1</div>
+	<div class="grid-1">.grid-1</div>
+	<div class="grid-1">.grid-1</div>
+	<div class="grid-1">.grid-1</div>
+</div>
+<div class="show-grid grid-unit">
+	<div class="grid-2">.grid-2</div>
+	<div class="grid-2">.grid-2</div>
+	<div class="grid-2">.grid-2</div>
+</div>
+<div class="show-grid grid-unit">
+	<div class="grid-3">.grid-3</div>
+	<div class="grid-3">.grid-3</div>
+</div>
+<div class="show-grid grid-unit">
+	<div class="grid-4">.grid-4</div>
+	<div class="grid-2">.grid-2</div>
+</div>
+<div class="show-grid grid-unit">
+	<div class="grid-6">.grid-6</div>
+</div>
 <?php include('assets/inc/footer.php'); ?>

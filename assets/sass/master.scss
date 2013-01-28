@@ -37,7 +37,8 @@ html, body {
 	
 [role="main"] {
 	@include pie-clearfix;
-	@extend .grid-4; }
+	@extend .grid-4;
+	margin-left: 38.33333%; }
 
 #{elements-of-type(block)}, table {
 	margin-bottom: em($line, $base-font-size); }
@@ -52,9 +53,13 @@ html, body {
 [role="navigation"] {
 	@include pie-clearfix;
 	@include element($primary, $size: false, $shadow: false, $radius: 0 $radius $radius 0);
-	font-family: $serif;
 	@extend .grid-2;
-	margin-left: -1.51515%;
+	font-family: $serif;
+	margin-left: 0;
+	position: fixed;
+	left: 0;
+	top: 20%;
+	max-width: em(336px, $base-font-size);
 	a {
 		@include box-shadow(0 1px 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
@@ -110,10 +115,25 @@ hr {
 	&:nth-of-type(3) { @include element($danger, $hover: true); }
 	&:nth-of-type(4) { @include element($warning, $hover: true); }
 	&:nth-of-type(5) { @include element($success, $hover: true); }
-	&:nth-of-type(6) { @include element($info, $hover: true); } }
+	&:nth-of-type(6) { @include element($info, $hover: true); }
+	&:nth-of-type(7) { @include element($info, $hover: true, $shadow: false); }
+	&:nth-of-type(8) { @include element($info, $hover: true, $subtle: true); }
+	&:nth-of-type(9) { @include element($info, $hover: true, $subtle: true, $shadow: false); } }
+	
+.alert {
+	margin: 0 0 em($line, $base-font-size);
+	text-align: center;
+	&:nth-of-type(1) { @include element($default, $display: block); }
+	&:nth-of-type(2) { @include element($alt, $display: block); }
+	&:nth-of-type(3) { @include element($danger, $display: block); }
+	&:nth-of-type(4) { @include element($warning, $display: block); }
+	&:nth-of-type(5) { @include element($success, $display: block); }
+	&:nth-of-type(6) { @include element($info, $display: block); }
+	&:nth-of-type(7) { @include element($info, $white, $shadow: false, $display: block); }
+	&:nth-of-type(8) { @include element($info, $subtle: true, $display: block); } }
 
 label {
-	@include form-label; }
+	@include form-label(top); }
 [type="text"], [type="email"], [type="password"], [type="url"], textarea {
 	@include form; }
 [type="submit"] {
@@ -126,3 +146,15 @@ select {
 	margin: .375em 0 0 0;
 	font-size: 12px;
 	color: #999; }
+.radio {
+	ul {
+		list-style: none;
+		padding: 0; }
+	li {
+		display: inline-block;
+		padding-right: em($line, $base-font-size);
+		margin-left: -4px;
+		> label {
+			font-weight: 400; } } }
+table {
+	@include table; }

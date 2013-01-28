@@ -1,10 +1,8 @@
 //	general variable colours
 // --------------------------
 $primary: #575d60 !default;
-$secondary: #3a9ac9 !default;
+$secondary: scale-lightness(#ABCCBD, -25%) !default;
 $tertiary: #e5ded3 !default;
-
-$combined: mix($primary, $secondary);
 
 $black: #000;
 $white: #fff;
@@ -14,7 +12,7 @@ $white: #fff;
 $default: darken($white, 35%) !default;
 $default-text: #444 !default;
 $default-text-shadow: #fff !default;
-$subtle-color: #666;
+$default-subtle-color: #666 !default;
 
 $border: scale-color($default, $lightness: -15%) !default;
 $focus: scale-color(#71bcc5, $lightness: -25%) !default;
@@ -23,15 +21,22 @@ $focus: scale-color(#71bcc5, $lightness: -25%) !default;
 // ---------------------------
 $alt: #3a9ac9 !default;
 $danger: #dd453d !default;
-$warning: scale-lightness(#fad089, -25%) !default;
+$warning: scale-lightness(#fad089, -20%) !default;
 $success: #88a23d !default;
 $info: #71bcc5 !default;
+
+/*
+$alt: adjust-hue(scale-lightness(#ABCCBD, -25%), 65);
+$danger: adjust-hue(scale-lightness(#ABCCBD, -25%), -140);
+$warning: adjust-hue(scale-lightness(#ABCCBD, -25%), -100);
+$success: scale-lightness(#ABCCBD, -25%);
+$info: adjust-hue(scale-lightness(#ABCCBD, -25%), 30);
+*/
 
 // alternative colour names for the above
 // ---------------------------
 $error: $danger;
 $red: $danger;
-
 $blue: $alt;
 $green: $success;
 
@@ -92,4 +97,10 @@ $f: 90em !default; // 1440
 // grid.scss settings
 // ---------------------------
 $grid-max-width: $d;
+$grid-width: 88%;
 $grid-container-margin: 3em auto auto 0;
+$grid-margin: 2.5%;
+$grid-subtract: $grid-margin * 2;
+$grid-pad: 4%;
+$grid-move: $grid-pad;
+$grid-container-class: container;

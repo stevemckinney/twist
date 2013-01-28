@@ -11,29 +11,32 @@
 	display: block;
 	width: 100%; }
 
-@mixin form-label($position: "top", $main-color: inherit, $font-weight: 700, $font-size: $base-font-size, $font-family: $sans) {
+@mixin form-label($position: top, $main-color: inherit, $font-weight: 700, $font-size: $base-font-size, $font-family: $sans) {
+	
+	$position: unquote($position);
 	
 	line-height: $base-line-height;
 	font: $font-weight #{$font-size}/#{$base-line-height} #{$font-family};
 	color: $main-color;
 	
-	@if $position == "top" {
+	@if $position != left {
 		@extend %form-block;
 		margin: 0 0 .375em;
 		& + input, & + select, & + textarea {
 			@extend %form-block; } }
 	@else {
-		width: 33.333333333%;
+		width: 100%;
 		display: inline-block;
 		@include respond-min($b) {
-			width: 100%; }
-		& + input, & + select, & + textarea {
-			margin-left: -4px;
-			width: 66.666666667%;
+			width: 33.333333333%;
+			margin-left: -4px; }
+		& + input, & + select, & + textarea, & + ul {
+			width: 100%;
 			display: inline-block;
 			@include respond-min($b) {
-				width: 100%;
-				margin-left: 0; } } } }
+				width: 66.666666667%; } }
+		.check &, ul & {
+			width: 100%; } } }
 
 /* # To do
  * - form label position?
@@ -53,18 +56,22 @@
 	
 	$type: unquote($type);
 	$form-light: scale-color($main-color, $saturation: 20%, $lightness: 30%);
-	
+		
 	// styles which remain consistent no matter the input
 	@extend %form-base;
-	@if $radius != false {
+	@if $radius {
 		@include border-radius($radius); }
 	
 	// if we want styles to be applied
-	@if $style == true {
-		@if $type == checkbox {
+	@if $style {
+		
+		// checkbox/radio only need a margin really
+		// ---------------------------
+		@if $type == checkbox or $type == radio {
 			margin: 0 em($base-px/2, $base-font-size) 0 0; }
-		@else if $type == radio {
-			margin: 0 em($base-px/2, $base-font-size) 0 0; }
+		
+		// select elements
+		// ---------------------------
 		@else if $type == select {
 			@extend %input-reset;
 			@include background(linear-gradient(darken($white, 2%) 46%, darken($white, 5%) 54%), $white);
@@ -80,6 +87,9 @@
 					inset -6px 0 12px -6px rgba($focus-color, .3),
 					0 0 6px rgba($focus-color, .6),
 					0 1px 1px rgba($white, .6)); } }
+		
+		// general inputs
+		// ---------------------------
 		@else if $type == input {
 			@extend %input-reset;
 			@include background(linear-gradient(scale-color($white, $lightness: -5%), $white), $white);
@@ -99,15 +109,16 @@
 					0 1px 1px rgba($white, .6)); }
 			.no-cssgradients & {
 				background: $white; } }
+				
+		// submit buttons use the element mixin
+		// ---------------------------
 		@else {
 			@include element($main-color, $style: true, $size: 3, $hover: true); } }
-			
-	@if $type != submit {
-	@if $type != checkbox {
-	@if $type != radio {
-		@if $set-height == false {
-			padding: em($base-px, $base-font-size); }
-		@else {
+	
+	@if $type != submit or $type != checkbox or $type != radio {
+		@if $set-height {
 			padding: em(3px, $base-font-size) em($base-px, $base-font-size);
-			height: em(42px, $base-font-size); } } } } 
+			height: em(42px, $base-font-size); }
+		@else {
+			padding: em($base-px, $base-font-size); } }
 }

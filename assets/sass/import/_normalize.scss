@@ -45,8 +45,7 @@ q {
 	quotes: none;
 	&:before, &:after {
 		content: '';
-		content: none; }
-}
+		content: none; } }
 
 small {
 	font-size: 75%; }
@@ -66,9 +65,9 @@ dl, menu, ol, ul {
 	margin: 0;
 	padding: 0; }
 dd {
-	margin: 0 0 0 $line; }
+	margin: 0 0 0 em($line, $base-font-size); }
 menu, ol, ul {
-	padding: 0 0 0 $line; }
+	padding: 0 0 0 em($line, $base-font-size); }
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none; }
@@ -86,7 +85,7 @@ figure, form {
 
 fieldset {
 	border: none;
-	margin: 0 0 $base-px;
+	margin: 0 0 em($base-px, $base-font-size);
 	padding: 0; }
 
 legend {
@@ -145,9 +144,13 @@ table {
 :focus {
 	outline: none; }
 ::-moz-selection {
-	background: $secondary; color: scale-lightness($secondary, 35%); text-shadow: none; }
+	background: $secondary; 
+	color: scale-lightness($secondary, 25%); 
+	text-shadow: none; }
 ::selection {
-	background: $secondary; color: #fff; text-shadow: none; }
+	background: $secondary;
+	color: scale-lightness($secondary, 25%);
+	text-shadow: none; }
 
 // var set in _base.scss
 // some of us aren't so lucky sometimes to have such luxuries

@@ -57,6 +57,6 @@
 		<h1><a href="/">Sass starter</a></h1>
 	</header>
 	<nav role="navigation" class="nav">
-		<a href="#" data-tab="0" title="Back to the homepage">Home</a><a href="#" data-tab="1" title="Base HTML elements styled">Basic elements</a><a href="#" data-tab="2" title="Mixins library">Mixins</a>
+		<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a>
 	</nav>
 	<section role="main">

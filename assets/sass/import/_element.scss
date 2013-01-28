@@ -12,7 +12,7 @@
 	@include appearance(none);
 	@include user-select(none);
 	position: relative;
-	font-family: $sans; }
+	font-family: $element; }
 
 // calculate padding for top + bottom and left + right.
 // looks a fairly odd way to do it but generally works
@@ -26,12 +26,27 @@
 // ---------------------------
 @mixin element-shading($main-color: $alt, $state: normal) {
 	
-	@if $state == hover { $main-color: scale-lightness($main-color, 15%); }
-	@else if $state == active { $main-color: scale-lightness($main-color, -10%); }
+	@if $state == hover { $main-color: scale-lightness($main-color, 10%); }
+	@else if $state == active { $main-color: scale-lightness($main-color, if-bright($main-color, -10%, -5%)); }
 	
 	$light-color: scale-lightness($main-color, if-bright($main-color, 25%, 15%));
-	$dark-color: scale-lightness($main-color, if-bright($main-color, -15%, -20%));
-	$shadow-color: scale-lightness($main-color, if-bright($dark-color, -40%, -50%)); 
+	$dark-color: scale-lightness($main-color, if-bright($main-color, -15%, -25%));
+	
+	@if red($main-color) > green($main-color) and 
+			green($main-color) > blue($main-color) and
+			green($main-color) > 90 { 
+				$dark-color: scale-lightness(
+					adjust-hue($main-color, -12deg), 
+					if-bright($main-color, -5%, -15%)); }
+	@if blue($main-color) > green($main-color) and 
+			blue($main-color) > red($main-color) or
+			green($main-color) > red($main-color) and 
+			green($main-color) > blue($main-color) { 
+				$dark-color: scale-lightness(
+					adjust-hue($main-color, 12deg), 
+					if-bright($main-color, -5%, -15%)); }
+	
+	$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%)); 
 	
 	@if $state == hover {
 		@include background(linear-gradient($main-color, $dark-color));
@@ -46,7 +61,7 @@
 		@include background(linear-gradient($main-color, $dark-color));
 		@include box-shadow(
 			inset 0 0 0 1px rgba($shadow-color, .3),
-			inset 0 2px 2px rgba($dark-color, .8),
+			inset 0 1px 3px rgba($shadow-color, .6),
 			inset 12px 0 18px -12px rgba($dark-color, .4),
 			inset -12px 0 18px -12px rgba($dark-color, .4),
 			0 1px 1px rgba($light-color, .3));
@@ -71,7 +86,8 @@
 	$main-color: $alt,
 	$text-color: $white,
 	$radius: $radius, 
-	$subtle: false, 
+	$subtle: false,
+	$subtle-color: $default-subtle-color,
 	$shadow: true, // disable for a flat button
 	$style: true, // disable for basic styles like padding and reset only
 	$size: 3, 
@@ -80,29 +96,27 @@
 	$display: inline-block) {
 	
 	@extend %element-base;		
-	color: $text-color;
 	display: $display;
-	@if $size != false { 
-		padding: element-size($size); }
-	@if $font-size {
-		font-size: $font-size; }
 	
-	@if $radius != none OR $radius == false {
-		@include border-radius($radius); }
+	@if $size != false 		{ padding: element-size($size); }
+	@if $font-size 				{ font-size: $font-size; }
+	@if $subtle != true 	{ color: $text-color; }
+	@else 								{ color: $subtle-color; }
+	@if $radius 					{ @include border-radius($radius); }
 	
 	// you may just want a button without style 
 	// as sometimes you may just want a nice start
 	// padding, etc
-	@if $style == true {
+	@if $style {
 		// subtle start
-		@if $subtle == true {
+		@if $subtle {
 			@include box-shadow(inset 0 0 0 1px fade-out($subtle-color, 1));
 			.no-boxshadow & {
 				border: 1px solid transparent; } } // close $subtle true
 		
 		// non subtle start		
 		@else {
-			@if $shadow == true {
+			@if $shadow {
 				@include element-shading($main-color, normal);
 				// modernizr stuff
 				.no-boxshadow & {
@@ -112,9 +126,10 @@
 			@else {
 				background: $main-color; } } // close else
 				
-		@if $hover == true {
+		@if $hover {
 			&:hover, &:focus {
-				@if $shadow == true {
+				@if $subtle { color: $text-color; }
+				@if $shadow {
 					@include element-shading($main-color, hover);
 					// modernizr stuff
 					.no-boxshadow & {
@@ -125,7 +140,7 @@
 					background: scale-lightness($main-color, 10%); } }
 					
 			&:active {
-				@if $shadow == true {
+				@if $shadow {
 					@include element-shading($main-color, active);
 					// modernizr stuff
 					.no-boxshadow & {
