@@ -1,0 +1,5 @@
+site_name: "Sass Starter"
+markdown: rdiscount
+rdiscount: 
+extensions: [smart]
+permalinks: :title
