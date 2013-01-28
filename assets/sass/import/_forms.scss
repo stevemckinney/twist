@@ -115,7 +115,7 @@
 		@else {
 			@include element($main-color, $style: true, $size: 3, $hover: true); } }
 	
-	@if $type != submit or $type != checkbox or $type != radio {
+	@if $type == select or $type == input {
 		@if $set-height {
 			padding: em(3px, $base-font-size) em($base-px, $base-font-size);
 			height: em(42px, $base-font-size); }

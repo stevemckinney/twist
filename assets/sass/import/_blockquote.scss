@@ -38,6 +38,7 @@
 blockquote {
 	@include blockquote; }
 
+/*
 blockquote {
 	@extend %rounded !optional;
 	@extend %shadow !optional;
@@ -75,3 +76,4 @@ blockquote {
 		background: $danger;
 		top: 0;
 		left: $line*2; } }
+*/

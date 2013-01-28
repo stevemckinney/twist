@@ -90,10 +90,17 @@ html, body {
 
 // Base
 // ---------------------------
-@import "styles/typography", "styles/extends";
+@import "site/typography", "site/extends";
 
 pre { 
 	code {} }
+
+blockquote {
+	p {
+		position: relative;
+		z-index: 1; }
+	&:before {
+		content:'“'; } }
 
 hr {
 	border: none;

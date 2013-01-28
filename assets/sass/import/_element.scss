@@ -98,11 +98,11 @@
 	@extend %element-base;		
 	display: $display;
 	
-	@if $size != false 		{ padding: element-size($size); }
-	@if $font-size 				{ font-size: $font-size; }
-	@if $subtle != true 	{ color: $text-color; }
-	@else 								{ color: $subtle-color; }
-	@if $radius 					{ @include border-radius($radius); }
+	@if $size != false { padding: element-size($size); }
+	@if $font-size { font-size: $font-size; }
+	@if $subtle != true { color: $text-color; }
+	@else { color: $subtle-color; }
+	@if $radius { @include border-radius($radius); }
 	
 	// you may just want a button without style 
 	// as sometimes you may just want a nice start
