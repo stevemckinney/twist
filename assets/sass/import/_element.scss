@@ -21,13 +21,43 @@
 @function element-size($size: 3) {
 	@return (.75 * ($size / 4.75)) + em (1.5 * ($size / 3)) + em; }
 
+// general styling that doesn't involve
+// the look of the button overall
+// ---------------------------
+@mixin element-base(
+	$size: 3,
+	$font-size: false,
+	$text-color: $white,
+	$subtle: false,
+	$radius: $radius,
+	$display: inline-block) {
+	@extend %element-base;
+	@if $size != false {
+		padding: element-size($size); }
+	@if $font-size {	
+		font-size: $font-size; }
+	@if $subtle != true {
+		color: $text-color; }
+	@else {
+		color: $subtle-color; }
+	@if $radius {
+		@include border-radius($radius); }
+	display: $display; }
+	
 // separate the bulk of the styling into a mixin for ease of editing
 // $main-color is overridden by the element mixin below
+// this can also be used separately to apply style
+// combine with element-base to have more control of the
+// distribution of your css to make buttons
 // ---------------------------
-@mixin element-shading($main-color: $alt, $state: normal) {
+@mixin element-shading(
+	$main-color: $alt,
+	$state: normal,
+	$dark-background: false) {
 	
 	@if $state == hover { $main-color: scale-lightness($main-color, 10%); }
-	@else if $state == active { $main-color: scale-lightness($main-color, if-bright($main-color, -10%, -5%)); }
+	@else if $state == active { 
+		$main-color: scale-lightness($main-color, if-bright($main-color, -10%, -5%)); }
 	
 	$light-color: scale-lightness($main-color, if-bright($main-color, 25%, 15%));
 	$dark-color: scale-lightness($main-color, if-bright($main-color, -15%, -25%));
@@ -46,35 +76,22 @@
 					adjust-hue($main-color, 12deg), 
 					if-bright($main-color, -5%, -15%)); }
 	
-	$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%)); 
+	$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%));
+	@if $dark-background { $shadow-color: scale-lightness($shadow-color, -25%); }
 	
-	@if $state == hover {
-		@include background(linear-gradient($main-color, $dark-color));
-		@include box-shadow(
-			inset 0 0 0 1px rgba($shadow-color, .3),
-			inset 0 2px 0 rgba($light-color, .8),
-			inset 12px 0 18px -12px rgba($dark-color, .4),
-			inset -12px 0 18px -12px rgba($dark-color, .4),
-			0 1px 3px rgba($shadow-color, .3));
-		text-shadow: 0 1px 1px rgba($shadow-color, .6); }
-	@else if $state == active {
-		@include background(linear-gradient($main-color, $dark-color));
-		@include box-shadow(
-			inset 0 0 0 1px rgba($shadow-color, .3),
-			inset 0 1px 3px rgba($shadow-color, .6),
-			inset 12px 0 18px -12px rgba($dark-color, .4),
-			inset -12px 0 18px -12px rgba($dark-color, .4),
-			0 1px 1px rgba($light-color, .3));
-		text-shadow: 0 1px 1px rgba($shadow-color, .6); }
-	@else {		
-		@include background(linear-gradient($main-color, $dark-color));
-		@include box-shadow(
-			inset 0 0 0 1px rgba($shadow-color, .3),
-			inset 0 2px 0 rgba($light-color, .8),
-			inset 12px 0 18px -12px rgba($dark-color, .4),
-			inset -12px 0 18px -12px rgba($dark-color, .4),
-			0 1px 3px rgba($shadow-color, .3));
-		text-shadow: 0 1px 1px rgba($shadow-color, .6); } }
+	$highlight: inset 0 2px 0 rgba($light-color, .8);
+	@if $state == active {
+		$highlight: inset 0 1px 3px rgba($shadow-color, .6); }
+	
+	@include background(linear-gradient($main-color, $dark-color));
+	text-shadow: 0 1px 1px rgba($shadow-color, .6);
+	
+	@include box-shadow(
+		inset 0 0 0 1px rgba($shadow-color, .3),
+		$highlight,
+		inset 12px 0 18px -12px rgba($dark-color, .4),
+		inset -12px 0 18px -12px rgba($dark-color, .4),
+		0 1px 3px rgba($shadow-color, .3)); }
 
 // the actual mixin, 
 // has modernizr classes for features that don't exist
@@ -93,7 +110,8 @@
 	$size: 3, 
 	$hover: false, // off by default as you can set this for alert/notice type things
 	$font-size: false, // set the font-size manually
-	$display: inline-block) {
+	$display: inline-block,
+	$dark-background: false) {
 	
 	@extend %element-base;		
 	display: $display;
@@ -117,7 +135,7 @@
 		// non subtle start		
 		@else {
 			@if $shadow {
-				@include element-shading($main-color, normal);
+				@include element-shading($main-color, normal, $dark-background);
 				// modernizr stuff
 				.no-boxshadow & {
 					border: 1px solid scale-lightness($main-color, -10%); }
@@ -130,7 +148,7 @@
 			&:hover, &:focus {
 				@if $subtle { color: $text-color; }
 				@if $shadow {
-					@include element-shading($main-color, hover);
+					@include element-shading($main-color, hover, $dark-background);
 					// modernizr stuff
 					.no-boxshadow & {
 						border: 1px solid scale-lightness($main-color, 10%); }
@@ -141,7 +159,7 @@
 					
 			&:active {
 				@if $shadow {
-					@include element-shading($main-color, active);
+					@include element-shading($main-color, active, $dark-background);
 					// modernizr stuff
 					.no-boxshadow & {
 						border: 1px solid scale-lightness($main-color, -20%); }

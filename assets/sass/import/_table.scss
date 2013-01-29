@@ -1,19 +1,17 @@
 @mixin table(
 	$main-color: scale-lightness($tertiary, -5%),
-	$radius: $radius,
 	$width: 100%,
+	$margin: 0 0 em($line, $base-font-size),
 	$striped: true,
 	$font-family: $sans) {
 	
 	$dark-color: scale-color($main-color, $lightness: -10%, $saturation: -10%);
 	
 	& {
-		margin: 0;
+		margin: $margin;
 		padding: 0;
 		font-family: $font-family;
 		width: $width;
-		@if $radius {
-			@include border-radius($radius); }
 		@include respond-max($c) {
 			display: block;
 			position: relative;
@@ -31,10 +29,14 @@
 		@if $striped == true {
 			&:nth-child(even) {
 				td, th {
-					background: $main-color; } } }
+					background: $main-color;
+					@if if-bright($main-color) == false {
+						color: invert($main-color); } } } }
 		&:hover, &:focus {
 			td {
-				background: $dark-color; } } }
+				background: $dark-color;
+				@if if-bright($main-color) == false {
+					color: invert($main-color); } } } }
 				
 	@include respond-max($c) {
 		thead {

@@ -7,10 +7,13 @@
 
 
 
-// general extends
+// General extends
 // ---------------------------
 %transition {
-	@include transition(all .2s linear); }
+	@include transition(
+		color .2s linear,
+		background .2s linear,
+		border-color .2s linear); }
 %rounded {
 	@include border-radius($radius); }
 %shadow {
@@ -20,7 +23,7 @@
 %right {
 	float: right; }
 
-// hiding
+// Hiding
 // ---------------------------
 .hidden {
 	display: none;
@@ -35,7 +38,7 @@
 	position: absolute;
 	width: 1px; }
 
-// resets
+// Resets
 // ---------------------------
 %no-outline {
 	outline: none; }
@@ -44,7 +47,7 @@
 %no-list-style {
 	list-style: none; }
 
-// margins and paddings
+// Margins and paddings
 // ---------------------------
 %centre {
 	margin: auto; }
@@ -52,7 +55,7 @@
 	margin: 0;
 	padding: 0; }
 
-// colour use
+// Colour use
 // ---------------------------
 %primary {
 	color: $primary; }
@@ -61,10 +64,23 @@
 %tertiary {
 	color: $tertiary; }
 
-// font size
+// Font size
 // ---------------------------
 %base {
 	font-size: em($base-font-size, 16px); }
+
+// Sizes
+// ---------------------------
+.xlarge {
+	font-size: 140%; }
+.large {
+	font-size: 120%; }
+.regular {
+	font-size: 100%; }
+.small {
+	font-size: 80%; }
+.xsmall {
+	font-size: 60%; }
 
 // mixins
 // ---------------------------

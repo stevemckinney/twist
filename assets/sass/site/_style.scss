@@ -1,11 +1,11 @@
 .container {
+	padding: em($line*3, $base-font-size);
 	@include old-ie {
 		width: 760px; } }
 	
 [role="main"] {
 	@include pie-clearfix;
-	@extend .grid-4;
-	margin-left: 38.33333%; }
+	@extend .grid-full; }
 
 #{elements-of-type(block)}, table {
 	margin-bottom: em($line, $base-font-size); }
@@ -17,21 +17,30 @@
 
 // Site nav
 // ---------------------------
+@-webkit-keyframes drop {
+	60% {
+		top: 0; }
+	80% {
+		top: -6px; }
+	100% {
+		top: 0; } }
 [role="navigation"] {
 	@include pie-clearfix;
-	@include element($primary, $size: false, $shadow: false, $radius: 0 $radius $radius 0);
-	@extend .grid-2;
+	@include element($primary, $size: false, $radius: false);
 	font-family: $serif;
 	margin-left: 0;
 	position: fixed;
+	right: 0;
 	left: 0;
-	top: 20%;
-	max-width: em(336px, $base-font-size);
+	top: -50px;
+	z-index: 2;
+	white-space: nowrap;
+	-webkit-animation: drop .5s .75s ease-in-out forwards;
 	a {
 		@include box-shadow(0 1px 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
 		color: $white;
-		display: block;
+		display: inline-block;
 		padding: em($base-px, $base-font-size);
 		padding-left: em($line, $base-font-size);
 		border-bottom: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
@@ -57,7 +66,7 @@
 
 // Base
 // ---------------------------
-@import "styles/typography", "styles/extends";
+@import "typography", "extends";
 
 pre { 
 	code {} }

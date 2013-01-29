@@ -50,7 +50,7 @@
 	$shadow: true, 
 	$style: true, 
 	$size: true,
-	$set-height: false, 
+	$set-height: true, 
 	$hover: false, 
 	$type: "input") {
 	
@@ -86,7 +86,13 @@
 					inset 6px 0 12px -6px rgba($focus-color, .3),
 					inset -6px 0 12px -6px rgba($focus-color, .3),
 					0 0 6px rgba($focus-color, .6),
-					0 1px 1px rgba($white, .6)); } }
+					0 1px 1px rgba($white, .6)); }
+			&:before {
+				content: "\25BE";
+				color: inherit;
+				position: absolute;
+				top: em($base-px, $base-font-size); 
+				right: em($base-px, $base-font-size); } }
 		
 		// general inputs
 		// ---------------------------
@@ -120,5 +126,5 @@
 			padding: em(3px, $base-font-size) em($base-px, $base-font-size);
 			height: em(42px, $base-font-size); }
 		@else {
-			padding: em($base-px, $base-font-size); } }
+			padding: em($base-px/1.5, $base-font-size) em($base-px, $base-font-size); } }
 }
