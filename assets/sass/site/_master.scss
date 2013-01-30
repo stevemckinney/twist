@@ -1,0 +1,328 @@
+// Sizes
+// ---------------------------
+.xlarge {
+	font-size: $xlarge-size; }
+.large {
+	font-size: $large-size; }
+.regular {
+	font-size: $regular-size; }
+.small {
+	font-size: $small-size; }
+.xsmall {
+	font-size: $xsmall-size; }
+	
+/* Forms */
+
+	form { margin: 20px 0; -webkit-user-select: none; user-select: none; }
+
+		/* Styles */
+		form.inline { margin: 10px 0; }
+
+		/* Field containers */
+
+			.field { position: relative; margin: 10px 0; }
+				.field .field { margin: 0; }
+
+			.inline .field { display: inline; margin: 0 10px 0 0; padding: 0; }
+				.inline .field.submit { margin-right: 0; }
+
+			.submit .button:last-child { margin-right: 0; }
+
+			.buttons { display: inline; white-space: nowrap; }
+
+		/* Fields */
+			%field-base {
+				@include box-sizing(border-box);
+				color: #444;
+				text-decoration: none;
+				margin: 0;
+				padding: em($base-px/2, $base-font-size) em($line, $base-font-size);
+				line-height: em($line, $base-font-size);
+				min-height: em($line, $base-font-size);
+				max-width: 100%;
+				display: inline-block;
+				vertical-align: middle;
+				border: 1px solid #bbb;
+				outline: 0;
+				font-family: inherit; }
+				
+			.text, .select, .textarea, .file {
+				@extend %field-base;
+				&.error {
+					border-color: #cc0000; }
+				&.disabled {
+					@include user-select(none);
+					border-color: #bbb;
+					background: #eee;
+					color: #bbb;
+					cursor: default; }
+				&:hover, &:focus, &:active {
+					color: #444;
+					text-decoration: none;
+					border: 1px solid darken(#bbb, 15%); } }
+			.button {
+				@extend %field-base; }
+
+			::-moz-focus-inner { border: 0; padding: 0; }
+
+			.text, .select, .textarea, .file {
+				@include border-radius($radius);
+				background: $white;
+				max-width: 100%; }
+				
+				// Browsers will ignore this if they shared the same style comma separated
+				// as it will ignore the line totally if it doesn't support one of them
+				.placeholder { color: #aaa; font-weight: normal; }
+				::-webkit-input-placeholder { color: #aaa; font-weight: normal; }
+				::-moz-placeholder { color: #aaa; font-weight: normal; }
+				:-ms-input-placeholder { color: #aaa; font-weight: normal; }
+				::placeholder { color: #aaa; font-weight: normal; }
+
+			.text { 
+				cursor: text;
+				width: 100%;
+				&.date {
+					min-width: 200px; } }
+
+			.textarea {
+				@include user-select(text);
+				width: 100%;
+				cursor: text;
+				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: hidden;
+				display: block;
+				word-wrap: break-word;
+				resize: none;
+				line-height: 1.5; }
+
+			.select { width: 100%; background: #fff; min-width: 200px; text-align: left; cursor: pointer; -ms-appearance: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; position: relative; }
+				.select:before { content: "\25BE"; color: #bbb; position: absolute; top: 0; right: 0; display: block; padding: 8px; }
+				.select.active i, .select:active i, .select:focus i, .select:hover i { color: #999; }
+
+			.checkbox, .radio { vertical-align: 0; padding: 0; display: inline; cursor: pointer; margin-right: 5px; }
+				.checkbox { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
+				.checkbox.disabled, .radio.disabled { cursor: default; }
+
+			.button { font-size: 13px; line-height: 20px; padding: 8px 10px; text-transform: uppercase; letter-spacing: 1px; -webkit-user-select: none; user-select: none; text-align: center; color: #444; font-weight: bold; cursor: pointer; background: #eee; background-image: -webkit-linear-gradient(top, #f6f6f6, #ddd); background-image: -moz-linear-gradient(top, #f6f6f6, #ddd); background-image: linear-gradient(top, #f6f6f6, #ddd); margin-right: 10px; border-radius: 2px; min-width: 38px; *min-width: auto; }
+
+				.button-subtle { border-color: transparent; background: transparent; color: #999; }
+
+				.button:hover,
+				.button:focus  { position: relative; border: 1px solid #999; position: relative; text-decoration: none; cursor: pointer; color: #444; background: #eee; background-image: -webkit-linear-gradient(top, #fff, #eee); background-image: -moz-linear-gradient(top, #fff, #eee); background-image: linear-gradient(top, #fff, #eee); }
+				.button:active,
+				.button.active { color: #444; position:relative; border: 1px solid #999; background: #fefefe; background-image: -webkit-linear-gradient(top, #eee, #fff); background-image: -moz-linear-gradient(top, #eee, #fff); background-image: linear-gradient(top, #eee, #fff); }
+				.button.active { box-shadow: inset 0 1px 4px rgba(0,0,0,0.3); }
+				.button.disabled { color: #999; background: #ddd; border: 1px solid #bbb; cursor: default; box-shadow: none; }
+
+				.buttons .button, .buttons .button:hover { border-radius: 0; margin: 0 0 0 -1px; }
+				.buttons .button:first-child { margin-left: 0; border-top-left-radius: 2px; border-bottom-left-radius: 2px; }
+				.buttons .button:last-child { border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
+
+			.file { cursor: pointer; }
+
+				.file-browse { position: relative; *width: 78px; }
+					.file-browse .file { -moz-opacity: 0; filter:alpha(opacity=0); opacity: 0; position: absolute; top: 0; right: 0; bottom: 0; left: 0; *width: 80px; }
+
+				.file-preview { margin: 0 5px 0 0; }
+					.file-preview img { border: 1px solid #bbb; box-sizing: border-box; display: inline-block; width: 36px; height: 36px; display: inline-block; border-radius: 3px; border: 1px solid #999; }
+
+			.text.with-dropdown,
+			.select.with-dropdown,
+			.textarea.with-dropdown,
+			.button.with-dropdown { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+		/* Labels */
+		.field-label { display: block; }
+
+			.inline .field-label { display: inline; margin-right: 5px; display: none; }
+			.inline .field-label:last-child { margin-right: 0; }
+
+		/* Descriptions */
+		.field-description, .field-error { display: block; padding-top: 3px; color: #999; }
+		.field-error { font-weight: bold; color: #cc0000; }
+
+			.inline .field-description, .inline .field-error { display: none; }
+
+// Dropdown
+// ---------------------------
+.dropdown {
+	@include box-shadow(0 2px 5px -2px rgba($black, .2)); 
+	background: #fff;
+	position: absolute;
+	border: 1px solid #999;
+	margin-top: -1px;
+	border-top: 0;
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+	ul, li { 
+		margin: 0;
+		padding: 0; }
+	li { 
+		padding: 8px;
+		list-style-type: none; } }
+	.dropdown li, .selected {
+		cursor: pointer; }
+	.selected { 
+		cursor: pointer;
+		color: $white;
+		background: $secondary; }
+
+// Calendar
+// ---------------------------
+//.dropdown.dropdown-calendar { font-size: 13px; line-height: 18px; }
+.calendar {
+	margin: 0;
+	width: 100%;
+	caption { 
+		padding: em($base-px/2, $base-font-size) 0; 
+		font-weight: bold; }
+	th,
+	td {
+		padding: em($base-px/2, $base-font-size);
+		text-align: center; }
+	tr {
+		&:last-child td {
+			border-bottom: 0;
+			&:first-child {
+				@include border-radius(0 0 0 $radius); }
+			&:last-child {
+				@include border-radius(0 $radius 0 0); } } }
+
+// Days
+.day {
+	background: $white;
+	&:hover, &:focus {
+		cursor: pointer;
+		color: $white;
+		background: $secondary;
+		text-decoration: none; } }
+		
+.day-dow6,
+.day-dow0,
+.day-disabled,
+.day-disabled:hover { 
+	background: #eee; }
+
+.day-disabled,
+.day-disabled:hover { 
+	color: $primary; }
+	
+.day-null, .day-null:hover {
+	background: lighten(#eee, 5%); }
+	
+.day-today {}
+.day-active {}
+
+// Buttons
+.button-back,
+.button-forward {
+	@include element($secondary, $hover: true, $subtle: true, $size: 1);
+	position: absolute;
+	top: 0; }
+.button-back {
+	left: em($base-px/2, $base-font-size); }
+.button-forward {
+	right: em($base-px/2, $base-font-size); }
+	
+
+// Hints
+// ---------------------------
+.hint {
+	@include user-select(none);
+	@include box-shadow(0 1px 10px -5px rgba($black, .2));
+	@extend %transition;
+	 -webkit-font-smoothing: antialiased;
+	position: absolute;
+	background: #eee;
+	color: #444;
+	border: 1px solid #ccc;
+	padding: em($base-px, $base-font-size);
+	max-width: 200px;
+	&.coming, &.going { 
+		opacity: 0; }
+	&:before { 
+		position: absolute;
+		display: block;
+		margin: em(-$base-px, $base-font-size); } }
+
+// Primary position
+.hint-left,
+.hint-left-top,
+.hint-left-bottom {
+	margin-left: em($base-px, $base-font-size);
+	&:before { 
+		left: 0;
+		border: {
+			top: 10px solid transparent;
+			left: 10px solid #999;
+			bottom: 10px solid transparent; } } }
+			
+.hint-right,
+.hint-right-top,
+.hint-right-bottom {
+	margin-right: em($base-px, $base-font-size);
+	&:before {
+		right: 0;
+		border: {
+			top: 10px solid transparent;
+			right: 10px solid #999;
+			bottom: 10px solid transparent; } }
+	
+.hint-top,
+.hint-top-left,
+.hint-top-right {
+	margin-top: em($base-px, $base-font-size);
+	&:before {
+		top: 0;
+		border: {
+			top: 10px solid #999;
+			right: 10px solid transparent;
+			bottom: 10px solid transparent; } }
+	
+.hint-bottom,
+.hint-bottom-left,
+.hint-bottom-right {
+	margin-bottom: em($base-px, $base-font-size);
+	&:before {
+		bottom: 0;
+		border: {
+			top: 10px solid transparent;
+			right: 10px solid transparent;
+			bottom: 10px solid #999; } }
+
+// Secondary position
+.hint-left-top, 
+.hint-right-top { 
+	margin-top: em(-$base-px, $base-font-size);
+	&:before { 
+		top: 10px; } }
+	
+.hint-left-bottom,
+.hint-right-bottom { 
+	margin-top: em($base-px, $base-font-size);
+	&:before {
+		bottom: 10px; } }
+	
+.hint-top-left,
+.hint-bottom-left {
+	margin-left: em(-$base-px, $base-font-size);
+	&:before {
+		left: 10px; } }
+	
+.hint-top-right,
+.hint-bottom-right {
+	margin-left: em($base-px, $base-font-size);
+	&:before { 
+		right: 10px; } }
+
+// Arrow secondary position
+.hint-left,
+.hint-right {
+	&:before { 
+		top: 50%; } }
+
+.hint-top,
+.hint-bottom {
+	&:before {
+		left: 50%; } }

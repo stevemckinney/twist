@@ -115,9 +115,13 @@ label {
 [type="submit"] {
 	@include form($type: submit); }
 [type="checkbox"], [type="radio"] {
-	@include form($type: radio); }
+	@include form($type: "radio"); }
 select {
-	@include form($type: select); }
+	@include form($type: "select"); }
+textarea {
+	@include form($type: "textarea");
+	min-height: em($line*6, $base-font-size); }
+	
 .form-help {
 	margin: .375em 0 0 0;
 	font-size: 12px;

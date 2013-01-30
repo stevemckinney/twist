@@ -72,15 +72,15 @@
 // Sizes
 // ---------------------------
 .xlarge {
-	font-size: 140%; }
+	font-size: $xlarge-size; }
 .large {
-	font-size: 120%; }
-.regular {
-	font-size: 100%; }
+	font-size: $large-size; }
+.regular, .normal {
+	font-size: $normal-size; }
 .small {
-	font-size: 80%; }
+	font-size: $small-size; }
 .xsmall {
-	font-size: 60%; }
+	font-size: $xsmall-size; }
 
 // mixins
 // ---------------------------

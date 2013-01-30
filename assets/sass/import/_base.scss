@@ -34,20 +34,20 @@ $green: $success;
 
 // font stacks
 // ---------------------------
-$sans: "freight-sans-pro", sans-serif;
-$serif: "adelle", ff-meta-serif-web-pro, georgia, serif;
-$monospace: Menlo, Monaco, "Courier New", monospace;
+$sans: "freight-sans-pro", sans-serif !default;
+$serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
+$monospace: Menlo, Monaco, "Courier New", monospace !default;
 
 // found the need sometimes to switch fonts mid project
 // ---------------------------
-$heading: $sans;
-$body: $serif;
-$form: $sans;
-$element: $sans;
+$heading: $sans !default;
+$body: $serif !default;
+$form: $sans !default;
+$element: $sans !default;
 
 // if you have symbolset
 // ---------------------------
-$icons: "SSStandard";
+$icons: "SSStandard" !default;
 
 // font sizes
 // ---------------------------
@@ -96,3 +96,11 @@ $grid-subtract: $grid-margin * 2;
 $grid-pad: 4%;
 $grid-move: $grid-pad;
 $grid-container-class: container;
+
+// Sizing increments, set in _helpers.scss
+// ---------------------------
+$xlarge-size: 150%;
+$large-size: 131.25%;
+$normal-size: 100%;
+$small-size: 87.5%;
+$xsmall-size: 75%;
