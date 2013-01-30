@@ -5,30 +5,48 @@
 // ---------------------------
 #{headings()} {
 	font-family: $heading;
-	color: $secondary;
-	padding: 0; }
+	font-weight: 400;
+	color: $primary;
+	padding: 0;
+	a { 
+		color: $primary;
+		&:hover, &:focus {
+			color: $secondary; } } }
 
 h1, .h1 {
-	@include adjust-font-size-to(42px);
-	margin: 0 0 em($line, $base-px*5);
-	[role="banner"] & {
-		a {
-			color: $secondary; } } }
-h2, .h2 {
 	@include adjust-font-size-to(36px);
-	margin: 0 0 em($line, $base-px*4); }
-h3, .h3 {
+	margin: 0 0 em($line, 36px);
+	[role="banner"] & {
+		font-family: "cubano";
+		font-size: em($line*2, $base-font-size);
+		font-size: 5vw;
+		text-align: center;
+		display: block;
+		color: $secondary; } }
+h2, .h2 {
 	@include adjust-font-size-to(30px);
-	margin: 0 0 em($line, $base-px*3); }
-h4, .h4 {
+	margin: 0 0 em($line, 30px); }
+h3, .h3 {
 	@include adjust-font-size-to(24px);
-	margin: 0 0 em($base-px, $base-px*2); }
+	margin: 0 0 em($line, 24px); }
+h4, .h4 {
+	@include adjust-font-size-to(21px);
+	margin: 0 0 em($base-px, 21px); }
 h5, .h5 {
 	@include adjust-font-size-to(18px);
-	margin: 0 0 em($base-px, 21px); }
+	margin: 0 0 em($base-px, 18px); }
 h6, .h6 {
 	@include adjust-font-size-to($base-font-size);
-	margin: 0 0 em($base-px, 21px);  }
+	margin: 0 0 em($base-px, 16px); }
+
+.with-subheading {
+	margin: 0; }
+.subheading {
+	font-weight: 400;
+	color: scale-lightness($primary, 10%); }
+
+.mask {
+	-webkit-mask: image-url("mask.png") 200px -25px; }
 
 // General
 // ---------------------------
@@ -41,3 +59,6 @@ a {
 	@extend %transition;
 	&:hover, &:focus {
 		color: $primary; } }
+
+.text-center {
+	text-align: center; }

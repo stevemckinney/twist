@@ -5,7 +5,7 @@
 	
 [role="main"] {
 	@include pie-clearfix;
-	@extend .grid-full; }
+	clear: both; }
 
 #{elements-of-type(block)}, table {
 	margin-bottom: em($line, $base-font-size); }
@@ -13,7 +13,9 @@
 // Site header
 // ---------------------------
 [role="banner"] {
-	@extend .grid-full; }
+	@extend .grid-full;
+	@include filter(drop-shadow(0 1px 0 #fff));
+	@extend .mask; }
 
 // Site nav
 // ---------------------------
@@ -37,17 +39,17 @@
 	white-space: nowrap;
 	-webkit-animation: drop .5s .75s ease-in-out forwards;
 	a {
-		@include box-shadow(0 1px 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
+		@include box-shadow(1px 0 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
 		color: $white;
 		display: inline-block;
 		padding: em($base-px, $base-font-size);
-		padding-left: em($line, $base-font-size);
-		border-bottom: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
+		border-right: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
 		&:hover, &:focus {
 			color: $secondary; }
 		&:last-child { 
 			@include box-shadow(none);
+			float: right;
 			border: none; } } }
 
 // Site footer
@@ -55,7 +57,6 @@
 [role="contentinfo"] {
 	@extend .grid-full;
 	padding: em($base-px, $base-px) 0 0;
-	border-top: 1px solid #e5ded3;
 	clear: both;
 	ul {
 		padding: 0; }
@@ -79,10 +80,11 @@ blockquote {
 		content:'“'; } }
 
 hr {
+	clear: both;
 	border: none;
 	height: 1px;
-	background: rgba($black, .15);
-	@include box-shadow(0 1px 0 rgba($white, .4)); }
+	background: rgba($black, .1);
+	@include box-shadow(0 1px 0 rgba($white, .8)); }
 
 .button {
 	margin: 0 0 em($line, $base-font-size);
