@@ -1,0 +1,116 @@
+// 	-----------------------------------------
+//	Your traditional helper classes through
+//	mixins and extends
+// 	-----------------------------------------
+
+// eg: @extend %transition;
+
+
+
+// General extends
+// ---------------------------
+%transition {
+	@include transition(
+		color .2s linear,
+		background .2s linear,
+		border-color .2s linear); }
+%rounded {
+	@include border-radius($radius); }
+%shadow {
+	@include box-shadow(0 1px 3px fade-out($black, 0.8)); }
+%left {
+	float: left; }
+%right {
+	float: right; }
+
+// Hiding
+// ---------------------------
+.hidden {
+	display: none;
+	visibility: hidden; }
+%screenreaders {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px; }
+
+// Resets
+// ---------------------------
+%no-outline {
+	outline: none; }
+%input-reset {
+	@include appearance(none); }
+%no-list-style {
+	list-style: none; }
+
+// Margins and paddings
+// ---------------------------
+%centre {
+	margin: auto; }
+%no-mp {
+	margin: 0;
+	padding: 0; }
+
+// Colour use
+// ---------------------------
+%primary {
+	color: $primary; }
+%secondary {
+	color: $secondary; }
+%tertiary {
+	color: $tertiary; }
+
+// Font size
+// ---------------------------
+%base {
+	font-size: em($base-font-size, 16px); }
+
+// Sizes
+// ---------------------------
+.xlarge {
+	font-size: $xlarge-size; }
+.large {
+	font-size: $large-size; }
+.regular, .normal {
+	font-size: $normal-size; }
+.small {
+	font-size: $small-size; }
+.xsmall {
+	font-size: $xsmall-size; }
+
+// mixins
+// ---------------------------
+
+// set width and height,
+// pass one value to have both set for you
+@mixin wh($width: false, $height: false) {
+	$width: unquote($width);
+	@if $height != none {
+		$height: unquote($height); }
+
+	@if $height != false {
+		width: #{$width};
+		height: #{$height}; }
+	@else {
+		width: #{$width};
+		height: #{$width}; } }
+
+// colour functions
+// ---------------------------
+
+// Taken from: https://github.com/imathis/nice-buttons
+// Returns true if the color is brighter than 50% lightness
+@function is-bright($color) {
+	@return (lightness($color) > 50%); }
+
+// Picks the color with the highest contrast
+@function if-bright($color, $light: true, $dark: false) {
+	@return if(is-bright($color), $light, $dark); }
+
+// Picks the color with the highest contrast
+@function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
+	@return if-bright($bg, $dark-text, $light-text); }

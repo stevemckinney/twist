@@ -1,0 +1,62 @@
+@mixin table(
+	$main-color: scale-lightness($tertiary, -5%),
+	$width: 100%,
+	$margin: 0 0 em($line, $base-font-size),
+	$striped: true,
+	$font-family: $sans) {
+	
+	$dark-color: scale-color($main-color, $lightness: -10%, $saturation: -10%);
+	
+	& {
+		margin: $margin;
+		padding: 0;
+		font-family: $font-family;
+		width: $width;
+		@include respond-max($c) {
+			display: block;
+			position: relative;
+			border: 1px solid scale-lightness($main-color, -10%); } }
+	
+	th, td {
+		@extend %transition;
+		padding: em($base-px, $base-font-size) em($line, $base-font-size);
+		text-align: left;
+		border-bottom: 1px solid $dark-color;
+		color: $primary; }
+	th {
+		border-width: 2px; }
+	tr {
+		@if $striped == true {
+			&:nth-child(even) {
+				td, th {
+					background: $main-color;
+					@if if-bright($main-color) == false {
+						color: invert($main-color); } } } }
+		&:hover, &:focus {
+			td {
+				background: $dark-color;
+				@if if-bright($main-color) == false {
+					color: invert($main-color); } } } }
+				
+	@include respond-max($c) {
+		thead {
+			float: left;
+			background: $main-color;
+			border-right: 2px solid $dark-color; }
+		td, th {
+			min-height: em($line*2, $base-font-size); }
+		tbody {
+			@include nowrap;
+			width: auto;
+			position: relative;
+			overflow-x: auto;
+			tr { 
+				display: inline-block;
+				vertical-align: top;
+				margin-right: -4px; } }
+		th, td {
+			border-bottom: 1px solid $dark-color; }
+		td:last-child, th:last-child {
+			border-bottom: none; }
+		th, td, tbody, thead tr, thead { 
+			display: block; } } }

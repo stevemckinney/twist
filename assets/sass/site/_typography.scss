@@ -1,0 +1,43 @@
+#{elements-of-type(block)} {
+	margin-bottom: em($line, $base-font-size); }
+	
+// Headings
+// ---------------------------
+#{headings()} {
+	font-family: $heading;
+	color: $secondary;
+	padding: 0; }
+
+h1, .h1 {
+	@include adjust-font-size-to(42px);
+	margin: 0 0 em($line, $base-px*5);
+	[role="banner"] & {
+		a {
+			color: $secondary; } } }
+h2, .h2 {
+	@include adjust-font-size-to(36px);
+	margin: 0 0 em($line, $base-px*4); }
+h3, .h3 {
+	@include adjust-font-size-to(30px);
+	margin: 0 0 em($line, $base-px*3); }
+h4, .h4 {
+	@include adjust-font-size-to(24px);
+	margin: 0 0 em($base-px, $base-px*2); }
+h5, .h5 {
+	@include adjust-font-size-to(18px);
+	margin: 0 0 em($base-px, 21px); }
+h6, .h6 {
+	@include adjust-font-size-to($base-font-size);
+	margin: 0 0 em($base-px, 21px);  }
+
+// General
+// ---------------------------
+p, li {
+	font: $base-font-size/#{$base-line-height} $body; }
+
+a {
+	text-decoration: none;
+	color: $secondary;
+	@extend %transition;
+	&:hover, &:focus {
+		color: $primary; } }

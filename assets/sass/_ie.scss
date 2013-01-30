@@ -1,0 +1,16 @@
+// using old-ie mixin to set fallback values for < IE 9.
+// ---------------------------
+// example usage:
+// .container {
+//		width: 88%;
+//		@include old-ie {
+//			width: 760px; } 
+// ---------------------------
+// set up in your <head>
+// <!--[if gt IE 8]><!--><link href="assets/css/master.css" rel="stylesheet"><!--<![endif]-->
+// <!--[if lt IE 9]><!--><link href="assets/css/ie.css" rel="stylesheet"><!--<![endif]-->
+// ---------------------------
+// vars needed, set as false in _base.scss
+$old-ie: true;
+$fix-mqs: 65em;
+@import "import/framework", "master";

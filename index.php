@@ -1,6 +1,4 @@
----
-layout: default
----
+<?php include('assets/inc/header.php'); ?>
 <h2 id="buttons">Buttons</h2>
 <a href="#" class="button">Button</a>
 <a href="#" class="button">Button</a>
@@ -30,13 +28,13 @@ layout: default
 <form action="/">
 	<fieldset>
 		<label for="name">Name</label>
-		<input type="text" id="name" class="text">
+		<input type="text" id="name" class="form-text">
 		<p class="form-help">This is help text under the form field.</p>
 	</fieldset>
 	
 	<fieldset>
 		<label for="email">Email</label>
-		<input type="email" id="email" class="text">
+		<input type="email" id="email" class="form-text">
 	</fieldset>
 	
 	<fieldset>
@@ -133,7 +131,6 @@ layout: default
 <h5>Heading level five</h5>
 <h6>Heading level six</h6>
 
-<h3>Blockquote</h3>
 <blockquote>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </blockquote>
@@ -165,3 +162,4 @@ layout: default
 <div class="show-grid grid-unit">
 	<div class="grid-6">.grid-6</div>
 </div>
+<?php include('assets/inc/footer.php'); ?>

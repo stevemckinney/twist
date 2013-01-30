@@ -1,0 +1,8 @@
+// centre rem margin
+%crm {
+	@include pie-clearfix;
+	width: 88%;
+	margin: auto auto $line;
+	position: relative;
+	@include respond-min($d) {
+		@include rem(max-width, 960px); } }

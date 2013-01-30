@@ -1,0 +1,137 @@
+/*
+	An adapted version of foldy960
+	See original here: http://github.com/davatron5000/foldy960
+-----------------------------------------------------------------------*/
+
+// Grid > 6 Column Mobile First
+// ---------------------------
+%grid, %clear {
+	@include pie-clearfix; }
+	
+.#{$grid-container-class} {
+	@extend %clear;
+	max-width: $grid-max-width;
+	width: $grid-width;
+	margin: $grid-container-margin;
+	position: relative; }
+
+.row {
+	@extend %clear;
+	clear: both; }
+
+[class^="grid-"] {
+	@extend %clear; }
+
+@include respond-min($a) {
+	.grid-1,
+	.grid-2,
+	.grid-3,
+	.grid-4,
+	.grid-5,
+	.grid-6,
+	.grid-half,
+	.grid-full,
+	.grid-unit,
+	[class^="grid-"] {
+		float: left;
+		width: 100% - $grid-subtract;
+		margin: 0 $grid-margin em($line, $base-font-size); }
+
+	.gallery .grid-unit,
+	.grid-half {
+		width: (100% / 2) - $grid-subtract; }
+
+	.grid-flow-opposite {
+		float: right } }
+
+@include respond-min($b) {
+	.grid-1 { 
+		width: (100% / 6) - $grid-subtract; }
+		
+	.grid-2 { 
+		width: (100% / 3) - $grid-subtract; }
+		
+	.grid-3,
+	.grid-half { 
+		width: (100% / 2) - $grid-subtract; }
+		
+	.grid-4 { 
+		width: ((100% / 6) * 4) - $grid-subtract; }
+		
+	.grid-5 { 
+		width: ((100% / 6) * 5) - $grid-subtract; }
+		
+	.grid-6,
+	.grid-full { 
+		width: 100% - $grid-subtract; }
+
+	.gallery .grid-unit {
+		width: (100% / 3) - $grid-subtract; }
+		
+	.content-pad-right {
+		padding-right: $grid-pad; }
+		
+	.content-pad-left {
+		padding-left: $grid-pad; }
+		
+	.content-move-right {
+		margin-right: $grid-move; }
+		
+	.content-move-left {
+		margin-left: $grid-move; } }
+		
+@if $legacy-support-for-ie == true or $legacy-support-for-ie8 == true {
+	@include old-ie {
+		.grid-1 { 
+			width: (100% / 6) - $grid-subtract; }
+			
+		.grid-2 { 
+			width: (100% / 3) - $grid-subtract; }
+
+		.grid-3,
+		.grid-half { 
+			width: (100% / 2) - $grid-subtract; }
+
+		.grid-4 { 
+			width: ((100% / 6) * 4) - $grid-subtract; }
+
+		.grid-5 { 
+			width: ((100% / 6) * 5) - $grid-subtract; }
+
+		.grid-6,
+		.grid-full { 
+			width: 100% - $grid-subtract; }
+	
+		.gallery .grid-unit {
+			width: (100% / 3) - $grid-subtract; }
+			
+		.content-pad-right {
+			padding-right: $grid-pad; }
+			
+		.content-pad-left {
+			padding-left: $grid-pad; } } }
+
+// Helpers
+// ---------------------------
+.show-grid div[class*='grid-'] {
+	@include box-shadow(0 0 0 2px rgba($black, .1));
+	@include box-sizing(border-box);
+	@include border-radius($radius);
+	background-color: scale-lightness($tertiary, 20%);
+	display: block;
+	padding: em($base-px, $base-font-size) em($line, $base-font-size);
+	margin-bottom: em($line, $base-font-size);
+	text-align: center;
+	font-size: .75rem;
+	font-family: $sans; }
+	
+// Grid debugging
+// ---------------------------/
+/*
+	@debug "grid-1: " (100% / 6) - $grid-subtract;
+	@debug "grid-2: " (100% / 3) - $grid-subtract;
+	@debug "grid-3: " (100% / 2) - $grid-subtract;
+	@debug "grid-4: " ((100% / 6) * 4) - $grid-subtract;
+	@debug "grid-5: " ((100% / 6) * 5) - $grid-subtract;
+	@debug "grid-6: " 100% - $grid-subtract;
+*/

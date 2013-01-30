@@ -1,0 +1,16 @@
+.DS_Store
+*/.DS_Store
+icons
+.sass-cache
+*/.sass-cache
+assets/sass/import/styles/_symbolset.scss
+assets/sass/import/_future/*
+assets/sass/import/_future/_navigation.scss
+
+assets/sass/import/_future/_modals.scss
+
+assets/sass/import/_future/_notices.scss
+include
+include/*
+pages
+pages/*
