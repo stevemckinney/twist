@@ -62,7 +62,6 @@ $line: $base-px*2 !default;
 
 // stop various browser support
 // ---------------------------
-// $legacy-support-for-ie: true;
 $experimental-support-for-khtml: false;
 $legacy-support-for-mozilla: true;
 $legacy-support-for-ie7: false;
@@ -72,9 +71,10 @@ $legacy-support-for-ie7: false;
 $old-ie: false !default;
 $fix-mqs: false !default;
 
-// consistent radius
+// consistent values
 // ---------------------------
 $radius: 3px;
+$transition-duration: .2s;
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
@@ -89,7 +89,7 @@ $f: 90em !default; // 1440
 // grid.scss settings
 // ---------------------------
 $grid-max-width: $d;
-$grid-width: 75%;
+$grid-width: 100%;
 $grid-container-margin: 3em auto auto;
 $grid-margin: 1.25%;
 $grid-subtract: $grid-margin * 2;
