@@ -1,6 +1,5 @@
 //	Element — A base, mixin and options
-//	Style anything consistently
-//	Works well for anything else you'd like to style similar apart from buttons/forms
+//	Style notices/alerts, buttons consistently
 //	-----------------------------------------
 @mixin element(
 	$main-color: $alt,
@@ -54,51 +53,7 @@
 					background: scale-lightness($main-color, -10%); } } } } // close $style
 }
 
-// consistent stuff for each button
-// ---------------------------
-%element-base {
-	@include background-clip;
-	@include transition(none);
-	@include appearance(none);
-	@include user-select(none);
-	position: relative;
-	font-family: $element;
-	line-height: 1; }
-
-@function element-size($size: 1, $ratio: .375 - .0625) {
-  @return ($size * $ratio) + em (($size * 2) * $ratio) + em;
-}
-
-
-@mixin element-base(
-	$size: 3,
-	$font-size: false,
-	$text-color: $white,
-	$subtle: false,
-	$radius: $radius,
-	$display: inline-block) {
-	@extend %element-base;
-	@if $size != false {
-		padding: element-size($size); }
-	@if $font-size {	
-		font-size: $font-size; }
-	@if $subtle != true {
-		color: $text-color; }
-	@else {
-		color: $subtle-color; }
-	@if $radius {
-		@include border-radius($radius); }
-	display: $display; }
-	
-// separate the bulk of the styling into a mixin for ease of editing
-// $main-color is overridden by the element mixin below
-// this can also be used separately to apply style
-// combine with element-base to have more control of the
-// distribution of your css to make buttons.
-// has modernizr classes for features that don't exist
-// - border is set due to it being done with the box-shadow
-// - could use simple background fallback for gradient,
-//   though this keeps web inspector that bit cleaner
+// Separate the overall button style
 // ---------------------------
 @mixin element-shading(
 	$main-color: $alt,
@@ -127,6 +82,8 @@
 	
 	$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%));
 	
+	// Apply edits to the button style here
+	// ---------------------------
 	$highlight: inset 0 2px 0 rgba($light-color, .8);
 	@if $state == active {
 		$highlight: inset 0 1px 3px rgba($shadow-color, .6); }
@@ -146,3 +103,37 @@
 		border: 1px solid $dark-color; }
 	.no-cssgradients & {
 		background: $main-color; } }
+
+// consistent stuff for each button
+// ---------------------------
+%element-base {
+	@include background-clip;
+	@include transition(none);
+	@include appearance(none);
+	@include user-select(none);
+	position: relative;
+	font-family: $element;
+	line-height: 1; }
+
+@function element-size($size: 1, $ratio: .3125) {
+  @return ($size * $ratio) + em (($size * 2) * $ratio) + em; }
+
+@mixin element-base(
+	$size: 3,
+	$font-size: false,
+	$text-color: $white,
+	$subtle: false,
+	$radius: $radius,
+	$display: inline-block) {
+	@extend %element-base;
+	@if $size != false {
+		padding: element-size($size); }
+	@if $font-size {	
+		font-size: $font-size; }
+	@if $subtle != true {
+		color: $text-color; }
+	@else {
+		color: $subtle-color; }
+	@if $radius {
+		@include border-radius($radius); }
+	display: $display; }
