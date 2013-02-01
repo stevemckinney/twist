@@ -1,4 +1,3 @@
-//	----------------------------------------- 
 //	Element — A base, mixin and options
 //	Style anything consistently
 //	Works well for anything else you'd like to style similar apart from buttons/forms
@@ -11,7 +10,7 @@
 	$subtle-color: $default-subtle-color,
 	$shadow: true,
 	$style: true,
-	$size: 3, 
+	$size: 2, 
 	$hover: false,
 	$font-size: false,
 	$display: inline-block) {
@@ -25,9 +24,6 @@
 	@else { color: $subtle-color; }
 	@if $radius { @include border-radius($radius); }
 	
-	// you may just want a button without style 
-	// as sometimes you may just want a nice start
-	// padding, etc
 	@if $style {
 		// subtle start
 		@if $subtle {
@@ -66,18 +62,14 @@
 	@include appearance(none);
 	@include user-select(none);
 	position: relative;
-	font-family: $element; }
+	font-family: $element;
+	line-height: 1; }
 
-// calculate padding for top + bottom and left + right.
-// looks a fairly odd way to do it but generally works
-// quite well. basis is on 16px = 1em.
-// ---------------------------
-@function element-size($size: 3) {
-	@return (.75 * ($size / 4.75)) + em (1.5 * ($size / 3)) + em; }
+@function element-size($size: 1, $ratio: .375 - .0625) {
+  @return ($size * $ratio) + em (($size * 2) * $ratio) + em;
+}
 
-// general styling that doesn't involve
-// the look of the button overall
-// ---------------------------
+
 @mixin element-base(
 	$size: 3,
 	$font-size: false,

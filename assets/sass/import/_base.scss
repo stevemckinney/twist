@@ -99,8 +99,8 @@ $grid-container-class: container;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
-$xlarge-size: 150%;
-$large-size: 131.25%;
+$xlarge-size: 150%; /* $base-font-size * 1.5 = 24 */
+$large-size: 133%; /* $base-font-size * 1.3125 = 21 */
 $normal-size: 100%;
-$small-size: 87.5%;
-$xsmall-size: 75%;
+$small-size: 87.5%; /* $base-font-size * .875 = 14 */
+$xsmall-size: 75%; /* $base-font-size * .75 = 12 */

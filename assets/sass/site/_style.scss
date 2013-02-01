@@ -16,20 +16,16 @@
 		text-shadow: 0 1px 3px rgba($white, .4);
 		margin: 0; }
 	h1 {
-		font-family: "cubano";
-		font-size: 5vw;
+		font-family: "swingdancer";
+		font-size: 7vw;
 		text-align: center;
 		display: block; } }
 
 // Site nav
 // ---------------------------
 @-webkit-keyframes drop {
-	60% {
-		top: 0; }
-	80% {
-		top: -6px; }
 	100% {
-		top: 0; } }
+		@include transform(translateY(0)); } }
 [role="navigation"] {
 	@include pie-clearfix;
 	@include element($primary, $size: false, $radius: false);
@@ -38,10 +34,11 @@
 	position: fixed;
 	right: 0;
 	left: 0;
-	top: -50px;
+	top: 0;
 	z-index: 2;
 	white-space: nowrap;
-	-webkit-animation: drop .5s .75s ease-in-out forwards;
+	@include transform(translateY(-100px));
+	-webkit-animation: drop 350ms 750ms ceaser($easeOutBack) forwards;
 	a {
 		@include box-shadow(1px 0 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
