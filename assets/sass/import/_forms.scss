@@ -57,10 +57,10 @@
 	$type: unquote($type);
 	$form-light: scale-color($main-color, $saturation: 20%, $lightness: 30%);
 		
-	// styles which remain consistent no matter the input
-	@extend %form-base;
-	@if $radius {
-		@include border-radius($radius); }
+	// styles which remain consistent no matter 
+	// the input apart from submit buttons
+	@if $type != submit { @extend %form-base; }
+	@if $radius { @include border-radius($radius); }
 	
 	// if we want styles to be applied
 	@if $style {
@@ -120,7 +120,7 @@
 		// submit buttons use the element mixin
 		// ---------------------------
 		@else {
-			@include element($main-color, $style: true, $size: 3, $hover: true); } }
+			@include element($main-color, $style: true, $size: 2, $hover: true); } }
 	
 	@if $type == select or $type == input {
 		@if $set-height {
