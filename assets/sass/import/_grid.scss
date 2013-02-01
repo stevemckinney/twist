@@ -10,7 +10,8 @@
 	
 .#{$grid-container-class} {
 	@extend %clear;
-	max-width: $grid-max-width;
+	@if $grid-max-width { 
+		max-width: $grid-max-width; }
 	width: $grid-width;
 	margin: $grid-container-margin;
 	position: relative; }

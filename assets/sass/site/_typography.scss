@@ -1,34 +1,35 @@
-#{elements-of-type(block)} {
-	margin-bottom: em($line, $base-font-size); }
-	
 // Headings
 // ---------------------------
 #{headings()} {
 	font-family: $heading;
-	color: $secondary;
-	padding: 0; }
+	font-weight: 400;
+	color: $primary;
+	padding: 0;
+	line-height: 1.25;
+	a { 
+		color: $primary;
+		&:hover, &:focus {
+			color: $secondary; } } }
 
 h1, .h1 {
-	@include adjust-font-size-to(42px);
-	margin: 0 0 em($line, $base-px*5);
-	[role="banner"] & {
-		a {
-			color: $secondary; } } }
+	font-size: em($base-px*5, $base-font-size);
+	margin: 0 0 em($line, $base-px*5); }
 h2, .h2 {
-	@include adjust-font-size-to(36px);
+	font-size: em($base-px*4, $base-font-size);
 	margin: 0 0 em($line, $base-px*4); }
 h3, .h3 {
-	@include adjust-font-size-to(30px);
-	margin: 0 0 em($line, $base-px*3); }
+	font-size: em(24px, $base-font-size);
+	margin: 0 0 em($line, 24px); }
 h4, .h4 {
-	@include adjust-font-size-to(24px);
-	margin: 0 0 em($base-px, $base-px*2); }
+	font-size: em(21px, $base-font-size);
+	margin: 0 0 em($line, 21px); }
 h5, .h5 {
-	@include adjust-font-size-to(18px);
-	margin: 0 0 em($base-px, 21px); }
+	font-size: em(18px, $base-font-size);
+	margin: 0 0 em($line, 18px); }
 h6, .h6 {
-	@include adjust-font-size-to($base-font-size);
-	margin: 0 0 em($base-px, 21px);  }
+	font-size: em($base-font-size, $base-font-size);
+	margin: 0 0 em($line, $base-font-size); }
+
 
 // General
 // ---------------------------
@@ -41,3 +42,15 @@ a {
 	@extend %transition;
 	&:hover, &:focus {
 		color: $primary; } }
+
+// Reusable
+// ---------------------------
+.text-center {
+	text-align: center; }
+.mask {
+	-webkit-mask: image-url("mask.png") 400px -200px; }
+.with-subheading {
+	margin: 0; }
+.subheading {
+	font-weight: 400;
+	color: scale-lightness($primary, 10%); }

@@ -1,4 +1,4 @@
-site_name: "Sass Starter"
+site_name: "twist"
 markdown: rdiscount
 rdiscount: 
 extensions: [smart]

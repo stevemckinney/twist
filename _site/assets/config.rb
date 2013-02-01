@@ -1,6 +1,7 @@
 # Require any additional compass plugins here.
-require 'animate-sass'
-require 'compass-recipes'
+# require 'animate-sass'
+# require 'compass-recipes'
+require 'ceaser-easing'
 
 # Set this to the root of your project when deployed:
 http_path = "/"

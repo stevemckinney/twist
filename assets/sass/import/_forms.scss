@@ -27,16 +27,16 @@
 	@else {
 		width: 100%;
 		display: inline-block;
+		@include nowrap;
 		@include respond-min($b) {
-			width: 33.333333333%;
-			margin-left: -4px; }
+			width: (100% / 3); }
 		& + input, & + select, & + textarea, & + ul {
 			width: 100%;
 			display: inline-block;
+			clear: left;
 			@include respond-min($b) {
-				width: 66.666666667%; } }
-		.check &, ul & {
-			width: 100%; } } }
+				width: (100% / 3) * 2;
+				margin-left: -4px; } } } }
 
 /* # To do
  * - form label position?

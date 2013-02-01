@@ -1,11 +1,7 @@
 .container {
-	padding: em($line*3, $base-font-size);
+	padding: $grid-container-margin;
 	@include old-ie {
 		width: 760px; } }
-	
-[role="main"] {
-	@include pie-clearfix;
-	@extend .grid-full; }
 
 #{elements-of-type(block)}, table {
 	margin-bottom: em($line, $base-font-size); }
@@ -13,17 +9,23 @@
 // Site header
 // ---------------------------
 [role="banner"] {
-	@extend .grid-full; }
+	@extend .grid-full;
+	padding: em($line*3, $base-font-size) em($base-px, $base-font-size);
+	h1, h2 {
+		@extend .mask;
+		text-shadow: 0 1px 3px rgba($white, .4);
+		margin: 0; }
+	h1 {
+		font-family: "swingdancer";
+		font-size: 7vw;
+		text-align: center;
+		display: block; } }
 
 // Site nav
 // ---------------------------
 @-webkit-keyframes drop {
-	60% {
-		top: 0; }
-	80% {
-		top: -6px; }
 	100% {
-		top: 0; } }
+		@include transform(translateY(0)); } }
 [role="navigation"] {
 	@include pie-clearfix;
 	@include element($primary, $size: false, $radius: false);
@@ -32,30 +34,44 @@
 	position: fixed;
 	right: 0;
 	left: 0;
-	top: -50px;
+	top: 0;
 	z-index: 2;
 	white-space: nowrap;
-	-webkit-animation: drop .5s .75s ease-in-out forwards;
+	@include transform(translateY(-100px));
+	-webkit-animation: drop 350ms 750ms ceaser($easeOutBack) forwards;
 	a {
-		@include box-shadow(0 1px 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
+		@include box-shadow(1px 0 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
 		color: $white;
 		display: inline-block;
 		padding: em($base-px, $base-font-size);
-		padding-left: em($line, $base-font-size);
-		border-bottom: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
+		border-right: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
 		&:hover, &:focus {
-			color: $secondary; }
+			color: $alt; }
 		&:last-child { 
 			@include box-shadow(none);
+			float: right;
 			border: none; } } }
+
+// Site content
+// ---------------------------
+[role="main"] {
+	@include pie-clearfix;
+	clear: both;
+	h2, h3, hr {
+		-webkit-column-span: all;} }
+		
+article {
+	&:nth-of-type(2) {
+		@extend %two-columns;
+	}
+}
 
 // Site footer
 // ---------------------------
 [role="contentinfo"] {
 	@extend .grid-full;
 	padding: em($base-px, $base-px) 0 0;
-	border-top: 1px solid #e5ded3;
 	clear: both;
 	ul {
 		padding: 0; }
@@ -79,10 +95,11 @@ blockquote {
 		content:'“'; } }
 
 hr {
+	clear: both;
 	border: none;
 	height: 1px;
-	background: rgba($black, .15);
-	@include box-shadow(0 1px 0 rgba($white, .4)); }
+	background: rgba($black, .1);
+	@include box-shadow(0 1px 0 rgba($white, .8)); }
 
 .button {
 	margin: 0 0 em($line, $base-font-size);
@@ -108,8 +125,10 @@ hr {
 	&:nth-of-type(7) { @include element($info, $white, $shadow: false, $display: block); }
 	&:nth-of-type(8) { @include element($info, $subtle: true, $display: block); } }
 
-label {
+.form-top label {
 	@include form-label(top); }
+.form-left label {
+	@include form-label(left); }
 [type="text"], [type="email"], [type="password"], [type="url"], textarea {
 	@include form; }
 [type="submit"] {
@@ -133,7 +152,6 @@ textarea {
 	li {
 		display: inline-block;
 		padding-right: em($line, $base-font-size);
-		margin-left: -4px;
 		> label {
 			font-weight: 400; } } }
 table {
