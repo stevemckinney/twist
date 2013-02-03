@@ -10,9 +10,9 @@
 	
 .#{$grid-container-class} {
 	@extend %clear;
+	width: $grid-width;
 	@if $grid-max-width { 
 		max-width: $grid-max-width; }
-	width: $grid-width;
 	margin: $grid-container-margin;
 	position: relative; }
 

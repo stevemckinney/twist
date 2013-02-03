@@ -1,0 +1,12 @@
+@mixin element-group($children: ".button", $radius: $radius) {
+	
+	word-spacing: em(-5px, $base-font-size);
+	
+	#{unquote($children)} {
+		@include border-radius(0);
+		&:first-child {
+			@include border-top-left-radius($radius);
+			@include border-bottom-left-radius($radius); }
+		&:last-child {
+			@include border-top-right-radius($radius);
+			@include border-bottom-right-radius($radius); } } }

@@ -15,8 +15,8 @@ h1, .h1 {
 	font-size: em($base-px*5, $base-font-size);
 	margin: 0 0 em($line, $base-px*5); }
 h2, .h2 {
-	font-size: em($base-px*4, $base-font-size);
-	margin: 0 0 em($line, $base-px*4); }
+	font-size: em($base-px*3, $base-font-size);
+	margin: 0 0 em($line, $base-px*3); }
 h3, .h3 {
 	font-size: em(24px, $base-font-size);
 	margin: 0 0 em($line, 24px); }
@@ -25,11 +25,15 @@ h4, .h4 {
 	margin: 0 0 em($line, 21px); }
 h5, .h5 {
 	font-size: em(18px, $base-font-size);
-	margin: 0 0 em($line, 18px); }
+	margin: 0 0 em($line, 18px);
+	@extend %heading-bold; }
 h6, .h6 {
 	font-size: em($base-font-size, $base-font-size);
-	margin: 0 0 em($line, $base-font-size); }
+	margin: 0 0 em($line, $base-font-size);
+	@extend %heading-bold; }
 
+%heading-bold {
+	font-weight: 700; }
 
 // General
 // ---------------------------
@@ -42,6 +46,23 @@ a {
 	@extend %transition;
 	&:hover, &:focus {
 		color: $primary; } }
+		
+// Code
+// ---------------------------
+code {
+	font-size: em($base-font-size, $base-font-size);
+	font-weight: 400;
+	pre & {
+		max-height: 200px;
+		overflow: auto;
+		color: $primary;
+		direction: ltr;
+		text-align: left;
+		white-space: pre-line;
+	
+		-moz-tab-size: 2;
+		-o-tab-size: 2;
+		tab-size: 2; } }
 
 // Reusable
 // ---------------------------
@@ -54,3 +75,5 @@ a {
 .subheading {
 	font-weight: 400;
 	color: scale-lightness($primary, 10%); }
+.accordion {
+	cursor: pointer; }

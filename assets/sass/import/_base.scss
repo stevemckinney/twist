@@ -75,6 +75,7 @@ $fix-mqs: false !default;
 // ---------------------------
 $radius: 3px;
 $transition-duration: .2s;
+$default-size: 2; // for element mixin
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
@@ -88,9 +89,9 @@ $f: 90em !default; // 1440
 
 // grid.scss settings
 // ---------------------------
-$grid-max-width: $d;
+$grid-max-width: $c;
 $grid-width: 100%;
-$grid-container-margin: 3em auto auto;
+$grid-container-margin: auto;
 $grid-margin: 1.25%;
 $grid-subtract: $grid-margin * 2;
 $grid-pad: 4%;

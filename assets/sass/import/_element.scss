@@ -1,5 +1,5 @@
 //	Element — A base, mixin and options
-//	Style notices/alerts, buttons consistently
+//	Style notices/alerts, buttons, etc 
 //	-----------------------------------------
 @mixin element(
 	$main-color: $alt,
@@ -9,19 +9,15 @@
 	$subtle-color: $default-subtle-color,
 	$shadow: true,
 	$style: true,
-	$size: 2, 
+	$size: $default-size, 
 	$hover: false,
 	$font-size: false,
-	$display: inline-block) {
+	$display: inline-block,
+	$dry: false) {
 	
-	@extend %element-base;		
-	display: $display;
-	
-	@if $size != false { padding: element-size($size); }
-	@if $font-size { font-size: $font-size; }
-	@if $subtle != true { color: $text-color; }
-	@else { color: $subtle-color; }
-	@if $radius { @include border-radius($radius); }
+	// Use element-base mixin to keep repetitive stuff together
+	@if $dry == false {		
+		@include element-base($size, $font-size, $text-color, $subtle, $subtle-color, $radius, $display); }
 	
 	@if $style {
 		// subtle start
@@ -38,7 +34,7 @@
 				background: $main-color; } } // close else
 				
 		@if $hover {
-			&:hover:not(:disabled), &:focus:not(:disabled) {
+			&:hover, &:focus {
 				@if $subtle { 
 					color: $text-color; }
 				@if $shadow {
@@ -46,12 +42,12 @@
 				@else {
 					background: scale-lightness($main-color, 10%); } }
 					
-			&:active:not(:disabled) {
+			&:active {
+				z-index: 2;
 				@if $shadow {
 					@include element-shading($main-color, active); }
 				@else {
-					background: scale-lightness($main-color, -10%); } } } } // close $style
-}
+					background: scale-lightness($main-color, -10%); } } } } /* close $style */ }
 
 // Separate the overall button style
 // ---------------------------
@@ -104,7 +100,7 @@
 	.no-cssgradients & {
 		background: $main-color; } }
 
-// consistent stuff for each button
+// The most consistent stuff for each button
 // ---------------------------
 %element-base {
 	@include background-clip;
@@ -113,16 +109,18 @@
 	@include user-select(none);
 	position: relative;
 	font-family: $element;
-	line-height: 1; }
+	line-height: 1;
+	border: none; }
 
-@function element-size($size: 1, $ratio: .3125) {
-  @return ($size * $ratio) + em (($size * 2) * $ratio) + em; }
-
+// Separated stuff that will more often than not be
+// consistent so possibility for extending with this mixin
+// ---------------------------
 @mixin element-base(
-	$size: 3,
+	$size: $default-size,
 	$font-size: false,
 	$text-color: $white,
 	$subtle: false,
+	$subtle-color: false,
 	$radius: $radius,
 	$display: inline-block) {
 	@extend %element-base;
@@ -131,9 +129,14 @@
 	@if $font-size {	
 		font-size: $font-size; }
 	@if $subtle != true {
-		color: $text-color; }
+		&, &:hover, &:focus { color: $text-color; } }
 	@else {
 		color: $subtle-color; }
 	@if $radius {
 		@include border-radius($radius); }
 	display: $display; }
+
+// Create proportionally sized buttons
+// ---------------------------
+@function element-size($size: 1, $ratio: .3125) {
+  @return ($size * $ratio) + em (($size * 2) * $ratio) + em; }
