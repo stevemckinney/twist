@@ -1,7 +1,7 @@
 @mixin table(
 	$main-color: scale-lightness($tertiary, -5%),
 	$width: 100%,
-	$margin: 0 0 em($line, $base-font-size),
+	$margin: 0 0 em($line),
 	$striped: true,
 	$font-family: $sans) {
 	
@@ -19,7 +19,7 @@
 	
 	th, td {
 		@extend %transition;
-		padding: em($base-px, $base-font-size) em($line, $base-font-size);
+		padding: em($base-px) em($line);
 		text-align: left;
 		border-bottom: 1px solid $dark-color;
 		color: $primary; }
@@ -44,7 +44,7 @@
 			background: $main-color;
 			border-right: 2px solid $dark-color; }
 		td, th {
-			min-height: em($line*2, $base-font-size); }
+			min-height: em($line*2); }
 		tbody {
 			@include nowrap;
 			width: auto;

@@ -55,7 +55,7 @@
 		<hr>
 		
 		<nav role="navigation" class="nav">
-			<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/framework">View the Project on GitHub <small>stevemckinney/framework</small></a>
+			<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub <small>stevemckinney/twist</small></a>
 		</nav>
 		
 		<section role="main">
@@ -65,14 +65,12 @@
 		<hr>
 		
 		<footer role="contentinfo">
-			<ul>
-				<li>twist, free to use as you please as long as you don't sell it on.</li>
-			</ul>
+			<p>twist, free to use as you please.</p>
 		</footer>
 	</div>
 
 	<!-- JavaScript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script src="assets/js/consistent.js"></script>
 
 </body>

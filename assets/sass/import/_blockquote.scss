@@ -7,21 +7,19 @@
 	$shadow: 0 1px 3px rgba($black, .2),
 	$character: open-quote) {
 	
-	$quote-size: em($size*2, $base-font-size);
-	$padding-left: em($size*1.5, $base-font-size);
+	$quote-size: em($size*2);
+	$padding-left: em($size*1.5);
 	
-	$q: $main-color;
-	$qd: darken(desaturate($q, 50%), 40%);
-	$ql: lighten($q, 10%);
+	$dark-color: scale-color($main-color, $lightness: -40%, $saturation: -50%);
+	$light-color: scale-lightness($main-color, 20%);
 	
 	@include border-radius($radius);
 	@include box-shadow($shadow);
 	margin: 0;
 	padding-left: $padding-left;
-	position: relative;
 	
 	@include background(
-		linear-gradient(bottom, fade-out($qd, 0.75) .05em, transparent .05em), $q);
+		linear-gradient(bottom, fade-out($dark-color, 0.75) .05em, transparent .05em), $main-color);
 	@include background-size(100% 1.5em);
 	
 	p, & {

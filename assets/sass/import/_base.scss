@@ -1,11 +1,14 @@
+// Default variables override in site/_base.scss
+// ---------------------------
+
 //	general variable colours
 // --------------------------
 $primary: #575d60 !default;
 $secondary: adjust-hue(scale-lightness(#ABCCBD, -45%), 65) !default;
 $tertiary: scale-lightness($primary, 90%) !default;
 
-$black: #000;
-$white: #fff;
+$black: #000 !default;
+$white: #fff !default;
 
 // main element styling colours
 // ---------------------------
@@ -51,8 +54,8 @@ $icons: "SSStandard" !default;
 
 // font sizes
 // ---------------------------
-$base-font-size: 16px;
-$base-line-height: 1.5;
+$base-font-size: 16px !default;
+$base-line-height: 1.5 !default; // must be px if using compass vertical rhythm
 
 // px
 // ---------------------------
@@ -73,9 +76,9 @@ $fix-mqs: false !default;
 
 // consistent values
 // ---------------------------
-$radius: 3px;
-$transition-duration: .2s;
-$default-size: 2; // for element mixin
+$radius: 3px !default;
+$transition-duration: .2s !default;
+$default-size: 2 !default; // for element mixin
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
@@ -89,19 +92,19 @@ $f: 90em !default; // 1440
 
 // grid.scss settings
 // ---------------------------
-$grid-max-width: $c;
-$grid-width: 100%;
-$grid-container-margin: auto;
-$grid-margin: 1.25%;
-$grid-subtract: $grid-margin * 2;
-$grid-pad: 4%;
-$grid-move: $grid-pad;
-$grid-container-class: container;
+$grid-max-width: $c !default;
+$grid-width: 100% !default;
+$grid-container-margin: auto !default;
+$grid-margin: 1.25% !default;
+$grid-subtract: $grid-margin * 2 !default;
+$grid-pad: 4% !default;
+$grid-move: $grid-pad !default;
+$grid-container-class: container !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
-$xlarge-size: 150%; /* $base-font-size * 1.5 = 24 */
-$large-size: 133%; /* $base-font-size * 1.3125 = 21 */
-$normal-size: 100%;
-$small-size: 87.5%; /* $base-font-size * .875 = 14 */
-$xsmall-size: 75%; /* $base-font-size * .75 = 12 */
+$xlarge-size: 150% !default;
+$large-size: 133% !default;
+$normal-size: 100% !default;
+$small-size: 87.5% !default;
+$xsmall-size: 75% !default;

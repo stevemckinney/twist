@@ -22,6 +22,26 @@
 
 [class^="grid-"] {
 	@extend %clear; }
+	
+@for $i from 1 through 19 {
+  $num: $i * 5;
+  $percent: $num * 1%;
+
+  %grid-#{$num} {
+	  float: left;
+    width: $percent; }
+
+  %prefix-#{$num} {
+    margin-left: $percent; }
+
+  %suffix-#{$num} {
+    margin-right: $percent; }
+
+  %push-#{$num} {
+    left: $percent; }
+
+  %pull-#{$num} {
+    left: $percent * -1; } }
 
 @include respond-min($a) {
 	.grid-1,
@@ -36,7 +56,7 @@
 	[class^="grid-"] {
 		float: left;
 		width: 100% - $grid-subtract;
-		margin: 0 $grid-margin em($line, $base-font-size); }
+		margin: 0 $grid-margin em($line); }
 
 	.gallery .grid-unit,
 	.grid-half {
@@ -120,14 +140,14 @@
 	@include border-radius($radius);
 	background-color: scale-lightness($tertiary, 20%);
 	display: block;
-	padding: em($base-px, $base-font-size) em($line, $base-font-size);
-	margin-bottom: em($line, $base-font-size);
+	padding: em($base-px) em($line);
+	margin-bottom: em($line);
 	text-align: center;
 	font-size: .75rem;
 	font-family: $sans; }
 	
 // Grid debugging
-// ---------------------------/
+// ---------------------------
 /*
 	@debug "grid-1: " (100% / 6) - $grid-subtract;
 	@debug "grid-2: " (100% / 3) - $grid-subtract;

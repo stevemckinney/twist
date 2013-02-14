@@ -12,24 +12,24 @@
 			color: $secondary; } } }
 
 h1, .h1 {
-	font-size: em($base-px*5, $base-font-size);
-	margin: 0 0 em($line, $base-px*5); }
+	@include adjust-font-size-to($base-px*4);
+	margin: 0 0 rhythm(.5, $base-px*4); }
 h2, .h2 {
-	font-size: em($base-px*3, $base-font-size);
-	margin: 0 0 em($line, $base-px*3); }
+	@include adjust-font-size-to($base-px*3);
+	margin: 0 0 rhythm(.5, $base-px*3); }
 h3, .h3 {
-	font-size: em(24px, $base-font-size);
-	margin: 0 0 em($line, 24px); }
+	@include adjust-font-size-to($base-px*2);
+	margin: 0 0 rhythm(.5, $base-px*2); }
 h4, .h4 {
-	font-size: em(21px, $base-font-size);
-	margin: 0 0 em($line, 21px); }
+	@include adjust-font-size-to(21px);
+	margin: 0 0 rhythm(.5, 21px); }
 h5, .h5 {
-	font-size: em(18px, $base-font-size);
-	margin: 0 0 em($line, 18px);
+	@include adjust-font-size-to(18px);
+	margin: 0 0 rhythm(.5, 18px);
 	@extend %heading-bold; }
 h6, .h6 {
-	font-size: em($base-font-size, $base-font-size);
-	margin: 0 0 em($line, $base-font-size);
+	@include adjust-font-size-to($base-font-size);
+	margin: 0 0 rhythm(.5, $base-font-size);
 	@extend %heading-bold; }
 
 %heading-bold {
@@ -37,8 +37,8 @@ h6, .h6 {
 
 // General
 // ---------------------------
-p, li {
-	font: $base-font-size/#{$base-line-height} $body; }
+body {
+	font: 100%/#{$base-line-height} $body; }
 
 a {
 	text-decoration: none;
@@ -50,7 +50,7 @@ a {
 // Code
 // ---------------------------
 code {
-	font-size: em($base-font-size, $base-font-size);
+	font-size: em($base-font-size);
 	font-weight: 400;
 	pre & {
 		max-height: 200px;

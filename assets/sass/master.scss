@@ -14,7 +14,6 @@ html {
 	background: $tertiary;
 	overflow-y: auto;
 	color: $primary;
-	font-size: 100%;
 	// set font-family to a letter for use in js to have conditional loading of js
 	font-family: "a";
 	@include respond-min($b) {
@@ -31,6 +30,9 @@ html {
 html, body {
 	height: 100%; }
 
+#{elements-of-type("block")}, hr {
+	margin-bottom: em($line); }
+
 // ease of getting rid of styles related to the demo
 // ---------------------------
-@import "site/style";
+@import "site/site";

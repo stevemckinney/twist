@@ -213,8 +213,9 @@ Prism.languages.sass = Prism.languages.scss = {
 })( jQuery );
 
 $(function() {
-	//$(".thing").lettering();
-	//$(".thing").fittext();
+	
+	$(".thing").lettering();
+	$(".thing").fittext();
 	$('[role="main"]').fitVids();
 	
 	$accordion = $('.accordion'),

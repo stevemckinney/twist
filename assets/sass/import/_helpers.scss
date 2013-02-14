@@ -12,7 +12,7 @@
 %rounded {
 	@include border-radius($radius); }
 %shadow {
-	@include box-shadow(0 1px 3px fade-out($black, 0.8)); }
+	@include box-shadow(0 1px 3px rgba($black, .2)); }
 %left {
 	float: left; }
 %right {
@@ -21,8 +21,7 @@
 // Hiding
 // ---------------------------
 .hidden {
-	display: none;
-	visibility: hidden; }
+	display: none; }
 %screenreaders {
 	border: 0;
 	clip: rect(0 0 0 0);

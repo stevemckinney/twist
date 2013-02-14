@@ -1,9 +1,12 @@
-@mixin element-group($children: ".button", $radius: $radius) {
+@mixin element-group($children: "button", $negative-spacing: -5px, $radius: $radius) {
 	
-	word-spacing: em(-5px, $base-font-size);
+	@if $negative-spacing {
+		word-spacing: em($negative-spacing); }
 	
-	#{unquote($children)} {
+	#{unquote("." + $children)} {
 		@include border-radius(0);
+		@if $negative-spacing {
+			word-spacing: normal; }
 		&:first-child {
 			@include border-top-left-radius($radius);
 			@include border-bottom-left-radius($radius); }

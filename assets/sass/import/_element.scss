@@ -6,7 +6,6 @@
 	$text-color: $white,
 	$radius: $radius, 
 	$subtle: false,
-	$subtle-color: $default-subtle-color,
 	$shadow: true,
 	$style: true,
 	$size: $default-size, 
@@ -17,19 +16,18 @@
 	
 	// Use element-base mixin to keep repetitive stuff together
 	@if $dry == false {		
-		@include element-base($size, $font-size, $text-color, $subtle, $subtle-color, $radius, $display); }
+		@include element-base($size, $font-size, $text-color, $subtle, $radius, $display); }
 	
 	@if $style {
 		// subtle start
 		@if $subtle {
-			@include box-shadow(inset 0 0 0 1px rgba($subtle-color, 0));
 			.no-boxshadow & {
 				border: 1px solid transparent; } } // close $subtle true
 		
 		// non subtle start		
 		@else {
 			@if $shadow {
-				@include element-shading($main-color, normal); }
+				@include element-shading($main-color, normal, $text-color); }
 			@else {
 				background: $main-color; } } // close else
 				
@@ -43,7 +41,7 @@
 					background: scale-lightness($main-color, 10%); } }
 					
 			&:active {
-				z-index: 2;
+				z-index: 2; // makes button above others in a group
 				@if $shadow {
 					@include element-shading($main-color, active); }
 				@else {
@@ -53,25 +51,28 @@
 // ---------------------------
 @mixin element-shading(
 	$main-color: $alt,
-	$state: normal) {
+	$state: normal,
+	$text-color: false) {
 	
-	@if $state == hover { 
-		$main-color: scale-lightness($main-color, 10%); }
-	@else if $state == active { 
-		$main-color: scale-lightness($main-color, if-bright($main-color, -10%, -5%)); }
+	@if $state == hover or $state == active { 
+		$main-color: if($state == hover, scale-lightness($main-color, 10%), scale-lightness($main-color, if-bright($main-color, -10%, -5%))); }
+	
 	
 	$light-color: scale-lightness($main-color, if-bright($main-color, 25%, 15%));
 	$dark-color: scale-lightness($main-color, if-bright($main-color, -15%, -25%));
 	
 	@if red($main-color) > green($main-color) and 
 			green($main-color) > blue($main-color) and
-			green($main-color) > 90 { 
+			green($main-color) > 90 {
+			
 				$dark-color: scale-lightness(
 					adjust-hue($main-color, -12deg), 
 					if-bright($main-color, -5%, -15%)); }
+					
 	@if blue($main-color) > green($main-color) and blue($main-color) > red($main-color) or
 			green($main-color) > red($main-color) and 
-			green($main-color) > blue($main-color) { 
+			green($main-color) > blue($main-color) {
+			
 				$dark-color: scale-lightness(
 					adjust-hue($main-color, 12deg), 
 					if-bright($main-color, -5%, -15%)); }
@@ -79,20 +80,21 @@
 	$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%));
 	
 	// Apply edits to the button style here
-	// ---------------------------
-	$highlight: inset 0 2px 0 rgba($light-color, .8);
-	@if $state == active {
-		$highlight: inset 0 1px 3px rgba($shadow-color, .6); }
-	
+	// ---------------------------	
 	@include background(linear-gradient($main-color, $dark-color));
-	text-shadow: 0 1px 1px rgba($shadow-color, .6);
+	
+	text-shadow: 0 1px 1px if($text-color == $white, rgba($shadow-color, .6), rgba($light-color, .6));
 	
 	@include box-shadow(
 		inset 0 0 0 1px rgba($shadow-color, .3),
-		$highlight,
+		if($state == active,
+			inset 0 1px 3px rgba($shadow-color, .6),
+			inset 0 2px 0 rgba($light-color, .8)),
 		inset 12px 0 18px -12px rgba($dark-color, .4),
 		inset -12px 0 18px -12px rgba($dark-color, .4),
-		0 1px 3px rgba($shadow-color, .3));
+		if($state == active, 
+			0 1px 1px rgba($white, .5),
+			0 1px 3px rgba($shadow-color, .3)));
 		
 	// modernizr stuff
 	.no-boxshadow & {
@@ -120,18 +122,14 @@
 	$font-size: false,
 	$text-color: $white,
 	$subtle: false,
-	$subtle-color: false,
 	$radius: $radius,
 	$display: inline-block) {
 	@extend %element-base;
+	&, &:hover, &:focus { color: $text-color; }
 	@if $size != false {
 		padding: element-size($size); }
 	@if $font-size {	
 		font-size: $font-size; }
-	@if $subtle != true {
-		&, &:hover, &:focus { color: $text-color; } }
-	@else {
-		color: $subtle-color; }
 	@if $radius {
 		@include border-radius($radius); }
 	display: $display; }

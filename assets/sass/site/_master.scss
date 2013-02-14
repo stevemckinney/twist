@@ -10,25 +10,37 @@
 	font-size: $small-size; }
 .xsmall {
 	font-size: $xsmall-size; }
-	
+
 /* Forms */
 
-	form { margin: 20px 0; -webkit-user-select: none; user-select: none; }
+	form {
+		@include user-select(none);
+		margin: em($line) 0; }
 
 		/* Styles */
-		form.inline { margin: 10px 0; }
+		form.inline {
+			margin: em($base-px) 0; }
 
 		/* Field containers */
 
-			.field { position: relative; margin: 10px 0; }
+			.field {
+				position: relative;
+				margin: em($base-px) 0; }
 				.field .field { margin: 0; }
 
-			.inline .field { display: inline; margin: 0 10px 0 0; padding: 0; }
-				.inline .field.submit { margin-right: 0; }
+			.inline .field {
+				display: inline;
+				margin: 0 em($base-px) 0 0;
+				padding: 0; }
+				.inline .field.submit {
+					margin-right: 0; }
 
-			.submit .button:last-child { margin-right: 0; }
+			.submit .button:last-child {
+				margin-right: 0; }
 
-			.buttons { display: inline; white-space: nowrap; }
+			.buttons {
+				display: inline;
+				white-space: nowrap; }
 
 		/* Fields */
 			%field-base {
@@ -36,16 +48,16 @@
 				color: #444;
 				text-decoration: none;
 				margin: 0;
-				padding: em($base-px/2, $base-font-size) em($line, $base-font-size);
-				line-height: em($line, $base-font-size);
-				min-height: em($line, $base-font-size);
+				padding: em($base-px/2) em($line);
+				line-height: em($line);
+				min-height: em($line);
 				max-width: 100%;
 				display: inline-block;
 				vertical-align: middle;
 				border: 1px solid #bbb;
 				outline: 0;
 				font-family: inherit; }
-				
+
 			.text, .select, .textarea, .file {
 				@extend %field-base;
 				&.error {
@@ -69,16 +81,26 @@
 				@include border-radius($radius);
 				background: $white;
 				max-width: 100%; }
-				
+
 				// Browsers will ignore this if they shared the same style comma separated
 				// as it will ignore the line totally if it doesn't support one of them
-				.placeholder { color: #aaa; font-weight: normal; }
-				::-webkit-input-placeholder { color: #aaa; font-weight: normal; }
-				::-moz-placeholder { color: #aaa; font-weight: normal; }
-				:-ms-input-placeholder { color: #aaa; font-weight: normal; }
-				::placeholder { color: #aaa; font-weight: normal; }
+				.placeholder { 
+					color: #aaa;
+					font-weight: normal; }
+				::-webkit-input-placeholder {
+					color: #aaa;
+					font-weight: normal; }
+				::-moz-placeholder {
+					color: #aaa;
+					font-weight: normal; }
+				:-ms-input-placeholder { 
+					color: #aaa;
+					font-weight: normal; }
+				::placeholder {
+					color: #aaa;
+					font-weight: normal; }
 
-			.text { 
+			.text {
 				cursor: text;
 				width: 100%;
 				&.date {
@@ -96,17 +118,56 @@
 				resize: none;
 				line-height: 1.5; }
 
-			.select { width: 100%; background: #fff; min-width: 200px; text-align: left; cursor: pointer; -ms-appearance: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; position: relative; }
-				.select:before { content: "\25BE"; color: #bbb; position: absolute; top: 0; right: 0; display: block; padding: 8px; }
-				.select.active i, .select:active i, .select:focus i, .select:hover i { color: #999; }
+			.select {
+				@include appearance(none);
+				width: 100%;
+				background: #fff;
+				min-width: 200px;
+				text-align: left;
+				cursor: pointer;
+				position: relative;
+				&:before { 
+					content: "\25BE";
+					display: block;
+					color: #bbb;
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: 8px; }
+				&.active, &:active, &:focus, &:hover { 
+					i { 
+						color: #999; } }
 
-			.checkbox, .radio { vertical-align: 0; padding: 0; display: inline; cursor: pointer; margin-right: 5px; }
-				.checkbox { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
-				.checkbox.disabled, .radio.disabled { cursor: default; }
+			.checkbox, .radio {
+				padding: 0;
+				display: inline;
+				cursor: pointer;
+				margin-right: em($base-px/2);
+				&.disabled { 
+					cursor: default; } }
+				.checkbox {
+					@include border-radius(0); }
 
-			.button { font-size: 13px; line-height: 20px; padding: 8px 10px; text-transform: uppercase; letter-spacing: 1px; -webkit-user-select: none; user-select: none; text-align: center; color: #444; font-weight: bold; cursor: pointer; background: #eee; background-image: -webkit-linear-gradient(top, #f6f6f6, #ddd); background-image: -moz-linear-gradient(top, #f6f6f6, #ddd); background-image: linear-gradient(top, #f6f6f6, #ddd); margin-right: 10px; border-radius: 2px; min-width: 38px; *min-width: auto; }
+			.button {
+				@include user-select(none);
+				@include background(linear-gradient(top, #f6f6f6, #ddd));
+				@include border-radius(2px);
+				font-size: 13px;
+				line-height: $line;
+				padding: 8px $base-px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				text-align: center;
+				color: #444;
+				font-weight: bold;
+				cursor: pointer;
+				background: #eee;
+				min-width: 38px; *min-width: auto; }
 
-				.button-subtle { border-color: transparent; background: transparent; color: #999; }
+				.button-subtle {
+					border-color: transparent;
+					background: transparent;
+					color: #999; }
 
 				.button:hover,
 				.button:focus  { position: relative; border: 1px solid #999; position: relative; text-decoration: none; cursor: pointer; color: #444; background: #eee; background-image: -webkit-linear-gradient(top, #fff, #eee); background-image: -moz-linear-gradient(top, #fff, #eee); background-image: linear-gradient(top, #fff, #eee); }
@@ -147,7 +208,7 @@
 // Dropdown
 // ---------------------------
 .dropdown {
-	@include box-shadow(0 2px 5px -2px rgba($black, .2)); 
+	@include box-shadow(0 2px 5px -2px rgba($black, .2));
 	background: #fff;
 	position: absolute;
 	border: 1px solid #999;
@@ -155,15 +216,15 @@
 	border-top: 0;
 	-ms-overflow-y: auto;
 	overflow-y: auto;
-	ul, li { 
+	ul, li {
 		margin: 0;
 		padding: 0; }
-	li { 
+	li {
 		padding: 8px;
 		list-style-type: none; } }
 	.dropdown li, .selected {
 		cursor: pointer; }
-	.selected { 
+	.selected {
 		cursor: pointer;
 		color: $white;
 		background: $secondary; }
@@ -174,12 +235,12 @@
 .calendar {
 	margin: 0;
 	width: 100%;
-	caption { 
-		padding: em($base-px/2, $base-font-size) 0; 
+	caption {
+		padding: em($base-px/2) 0;
 		font-weight: bold; }
 	th,
 	td {
-		padding: em($base-px/2, $base-font-size);
+		padding: em($base-px/2);
 		text-align: center; }
 	tr {
 		&:last-child td {
@@ -197,20 +258,20 @@
 		color: $white;
 		background: $secondary;
 		text-decoration: none; } }
-		
+
 .day-dow6,
 .day-dow0,
 .day-disabled,
-.day-disabled:hover { 
+.day-disabled:hover {
 	background: #eee; }
 
 .day-disabled,
-.day-disabled:hover { 
+.day-disabled:hover {
 	color: $primary; }
-	
+
 .day-null, .day-null:hover {
 	background: lighten(#eee, 5%); }
-	
+
 .day-today {}
 .day-active {}
 
@@ -221,105 +282,105 @@
 	position: absolute;
 	top: 0; }
 .button-back {
-	left: em($base-px/2, $base-font-size); }
+	left: em($base-px/2); }
 .button-forward {
-	right: em($base-px/2, $base-font-size); }
-	
+	right: em($base-px/2); }
+
 
 // Hints
 // ---------------------------
 .hint {
 	@include user-select(none);
-	@include box-shadow(0 1px 10px -5px rgba($black, .2));
+	@include box-shadow(0 1px $base-px -5px rgba($black, .2));
 	@extend %transition;
 	 -webkit-font-smoothing: antialiased;
 	position: absolute;
 	background: #eee;
 	color: #444;
 	border: 1px solid #ccc;
-	padding: em($base-px, $base-font-size);
+	padding: em($base-px);
 	max-width: 200px;
-	&.coming, &.going { 
+	&.coming, &.going {
 		opacity: 0; }
-	&:before { 
+	&:before {
 		position: absolute;
 		display: block;
-		margin: em(-$base-px, $base-font-size); } }
+		margin: em(-$base-px); } }
 
 // Primary position
 .hint-left,
 .hint-left-top,
 .hint-left-bottom {
-	margin-left: em($base-px, $base-font-size);
-	&:before { 
+	margin-left: em($base-px);
+	&:before {
 		left: 0;
 		border: {
-			top: 10px solid transparent;
-			left: 10px solid #999;
-			bottom: 10px solid transparent; } } }
-			
+			top: $base-px solid transparent;
+			left: $base-px solid #999;
+			bottom: $base-px solid transparent; } } }
+
 .hint-right,
 .hint-right-top,
 .hint-right-bottom {
-	margin-right: em($base-px, $base-font-size);
+	margin-right: em($base-px);
 	&:before {
 		right: 0;
 		border: {
-			top: 10px solid transparent;
-			right: 10px solid #999;
-			bottom: 10px solid transparent; } }
-	
+			top: $base-px solid transparent;
+			right: $base-px solid #999;
+			bottom: $base-px solid transparent; } }
+
 .hint-top,
 .hint-top-left,
 .hint-top-right {
-	margin-top: em($base-px, $base-font-size);
+	margin-top: em($base-px);
 	&:before {
 		top: 0;
 		border: {
-			top: 10px solid #999;
-			right: 10px solid transparent;
-			bottom: 10px solid transparent; } }
-	
+			top: $base-px solid #999;
+			right: $base-px solid transparent;
+			bottom: $base-px solid transparent; } }
+
 .hint-bottom,
 .hint-bottom-left,
 .hint-bottom-right {
-	margin-bottom: em($base-px, $base-font-size);
+	margin-bottom: em($base-px);
 	&:before {
 		bottom: 0;
 		border: {
-			top: 10px solid transparent;
-			right: 10px solid transparent;
-			bottom: 10px solid #999; } }
+			top: $base-px solid transparent;
+			right: $base-px solid transparent;
+			bottom: $base-px solid #999; } }
 
 // Secondary position
-.hint-left-top, 
-.hint-right-top { 
-	margin-top: em(-$base-px, $base-font-size);
-	&:before { 
-		top: 10px; } }
-	
-.hint-left-bottom,
-.hint-right-bottom { 
-	margin-top: em($base-px, $base-font-size);
+.hint-left-top,
+.hint-right-top {
+	margin-top: em(-$base-px);
 	&:before {
-		bottom: 10px; } }
-	
+		top: $base-px; } }
+
+.hint-left-bottom,
+.hint-right-bottom {
+	margin-top: em($base-px);
+	&:before {
+		bottom: $base-px; } }
+
 .hint-top-left,
 .hint-bottom-left {
-	margin-left: em(-$base-px, $base-font-size);
+	margin-left: em(-$base-px);
 	&:before {
-		left: 10px; } }
-	
+		left: $base-px; } }
+
 .hint-top-right,
 .hint-bottom-right {
-	margin-left: em($base-px, $base-font-size);
-	&:before { 
-		right: 10px; } }
+	margin-left: em($base-px);
+	&:before {
+		right: $base-px; } }
 
 // Arrow secondary position
 .hint-left,
 .hint-right {
-	&:before { 
+	&:before {
 		top: 50%; } }
 
 .hint-top,

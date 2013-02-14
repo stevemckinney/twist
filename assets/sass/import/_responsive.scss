@@ -13,7 +13,7 @@
 
 // px to em
 // ---------------------------
-@function em($target-px, $context) {
+@function em($target-px, $context: $base-font-size) {
 	@return ($target-px / $context) * 1em; }
 
 // Baseline, measured in pixels

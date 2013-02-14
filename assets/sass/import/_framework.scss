@@ -1,17 +1,18 @@
-@import "compass";
-@import "ceaser-easing";
-@import "compass/css3";
-@import "compass/css3/user-interface";
-@import "compass/layout/stretching";
-@import "compass/css3/hyphenation";
-@import "import/base"; // variables
-@import "import/responsive"; // helpful responsive functions
-@import "import/normalize"; // "reset"
-@import "import/grid"; // foldy960 grid by davatron5000
-@import "import/helpers"; // helper classes and mixins
-@import "import/element"; // mixin for buttons/other similar elements
-@import "import/group"; // element groups, group forms, buttons anything together on one line
-@import "import/forms"; // form mixin
-@import "import/table"; // table mixin
-@import "import/blockquote"; // blockquote mixin
-@import "import/misc"; // misc style helpers
+@import "compass",
+				"compass/css3",
+				"compass/css3/user-interface",
+				"ceaser-easing",
+				"compass/layout/stretching",
+				"compass/css3/hyphenation",
+				"import/base",
+				"import/responsive",
+				"import/normalize",
+				"import/grid",
+				"import/helpers",
+				"import/group",
+				"import/element",
+				"import/forms",
+				"import/table",
+				"import/blockquote",
+				"import/misc"
+;

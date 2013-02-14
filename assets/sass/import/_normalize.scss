@@ -65,9 +65,9 @@ dl, menu, ol, ul {
 	margin: 0;
 	padding: 0; }
 dd {
-	margin: 0 0 0 em($line, $base-font-size); }
+	margin: 0 0 0 em($line); }
 menu, ol, ul {
-	padding: 0 0 0 em($line, $base-font-size); }
+	padding: 0 0 0 em($line); }
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none; }
@@ -85,7 +85,7 @@ figure, form {
 
 fieldset {
 	border: none;
-	margin: 0 0 em($base-px, $base-font-size);
+	margin: 0 0 em($base-px);
 	padding: 0; }
 
 legend {
