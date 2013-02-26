@@ -1,6 +1,5 @@
-/*
-	Helpful RWD mixins	
------------------------------------------------------------------------*/
+// Helpful RWD functions/mixins
+// ---------------------------
 
 // target / context = result
 // long length version
@@ -18,7 +17,7 @@
 
 // Baseline, measured in pixels
 // The value should be the same as the font-size value for the html element
-// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// If the html element's font-size is s to 62.5% (of the browser's default font-size of 16px),
 // then the variable below would be 10px.
 // $base-font-size: set in _base.scss
 @mixin rem($property, $px-values) {

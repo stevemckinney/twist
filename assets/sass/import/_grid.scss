@@ -103,6 +103,20 @@
 		
 @if $legacy-support-for-ie == true or $legacy-support-for-ie8 == true {
 	@include old-ie {
+		.grid-1,
+		.grid-2,
+		.grid-3,
+		.grid-4,
+		.grid-5,
+		.grid-6,
+		.grid-half,
+		.grid-full,
+		.grid-unit,
+		[class^="grid-"] {
+			float: left;
+			width: 100% - $grid-subtract;
+			margin: 0 $grid-margin em($line); }
+			
 		.grid-1 { 
 			width: (100% / 6) - $grid-subtract; }
 			

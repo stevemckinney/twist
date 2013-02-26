@@ -1,15 +1,13 @@
-@mixin element-group($children: "button", $negative-spacing: -5px, $radius: $radius) {
+@mixin element-group($children: ".button", $negative-spacing: -5px, $radius: $radius) {
 	
 	@if $negative-spacing {
-		word-spacing: em($negative-spacing); }
+		letter-spacing: em($negative-spacing); }
 	
-	#{unquote("." + $children)} {
+	#{unquote($children)} {
 		@include border-radius(0);
 		@if $negative-spacing {
-			word-spacing: normal; }
+			letter-spacing: normal; }
 		&:first-child {
-			@include border-top-left-radius($radius);
-			@include border-bottom-left-radius($radius); }
+			@include border-radius($radius 0 0 $radius); }
 		&:last-child {
-			@include border-top-right-radius($radius);
-			@include border-bottom-right-radius($radius); } } }
+			@include border-radius(0 $radius $radius 0); } } }

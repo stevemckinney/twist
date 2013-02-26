@@ -1,6 +1,6 @@
 // centre rem margin
 %crm {
-	@include pie-clearfix;
+	@extend %clear;
 	width: 88%;
 	margin: auto auto $line;
 	position: relative;

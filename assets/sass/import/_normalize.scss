@@ -1,12 +1,22 @@
 /* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
 	display: block; }
 
-audio, canvas, video {
-	display: inline-block;
-	@if ($legacy-support-for-ie == true) {
-		*display: inline;
-		*zoom: 1; } }
+audio,
+canvas,
+video {
+	display: inline-block; }
 
 audio:not([controls]) {
 	display: none; }
@@ -58,23 +68,26 @@ sub, sup {
 
 sup {
 	top: -0.5em; }
+
 sub {
 	bottom: -0.25em; }
 
 dl, menu, ol, ul {
 	margin: 0;
 	padding: 0; }
+
 dd {
 	margin: 0 0 0 em($line); }
+
 menu, ol, ul {
 	padding: 0 0 0 em($line); }
+
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none; }
 
 img {
 	border: 0; 
-	-ms-interpolation-mode: bicubic;
 	max-width: 100%; }
 
 svg:not(:root) {
@@ -91,35 +104,29 @@ fieldset {
 legend {
 	border: 0; 
 	padding: 0;
-	white-space: normal; 
-	@if ($legacy-support-for-ie == true) {
-		*margin-left: -7px; } }
+	white-space: normal; }
 
 button, input, select, textarea {
 	font-size: 100%; 
 	margin: 0; 
-	vertical-align: baseline;
-	@if ($legacy-support-for-ie == true) {
-		*vertical-align: middle; } }
+	vertical-align: baseline; }
+
+button, [type="submit"] {
+	@include appearance(none);
+	border: none; }
 
 button, input {
 	line-height: normal; }
 
 button, [type="button"], [type="reset"], [type="submit"] {
-	cursor: pointer;
-	@if ($legacy-support-for-ie7 == true) {
-		*overflow: visible; } }
-
+	cursor: pointer; }
 
 html [disabled] {
 	cursor: default; }
 
 [type="checkbox"],
 [type="radio"] {
-	padding: 0; 
-	@if ($legacy-support-for-ie7 == true) {
-		*height: 13px; 
-		*width: 13px; } }
+	padding: 0; }
 
 [type="search"] {
 	@include appearance(textfield); }
@@ -143,17 +150,17 @@ table {
 
 :focus {
 	outline: none; }
+	
 ::-moz-selection {
-	background: $secondary; 
-	color: scale-lightness($secondary, 25%); 
+	background: scale-lightness($secondary, 50%);
+	color: scale-lightness($secondary, -10%); 
 	text-shadow: none; }
+	
 ::selection {
-	background: $secondary;
-	color: scale-lightness($secondary, 25%);
+	background: scale-lightness($secondary, 50%);
+	color: scale-lightness($secondary, -10%);
 	text-shadow: none; }
-
-// var set in _base.scss
-// some of us aren't so lucky sometimes to have such luxuries
+	
 @if $legacy-support-for-ie7 == false {
 	* {
 		@include box-sizing(border-box); } }

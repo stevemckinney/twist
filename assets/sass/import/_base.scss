@@ -12,7 +12,7 @@ $white: #fff !default;
 
 // main element styling colours
 // ---------------------------
-$default: darken($white, 35%) !default;
+$default: #aeaeae !default;
 $default-text: #444 !default;
 $default-text-shadow: #fff !default;
 $default-subtle-color: #666 !default;
@@ -66,8 +66,11 @@ $line: $base-px*2 !default;
 // stop various browser support
 // ---------------------------
 $experimental-support-for-khtml: false;
+$experimental-support-for-opera: false;
+$support-for-original-webkit-gradients: false;
 $legacy-support-for-mozilla: true;
 $legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
 
 // define responsive stuff: see responsive.scss
 // ---------------------------
@@ -79,6 +82,13 @@ $fix-mqs: false !default;
 $radius: 3px !default;
 $transition-duration: .2s !default;
 $default-size: 2 !default; // for element mixin
+
+$default-set-height: 42px;
+
+// Shadow transparency
+// ---------------------------
+$default-dark-shadow: .4;
+$default-light-shadow: .6;
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest

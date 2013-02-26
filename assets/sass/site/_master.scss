@@ -180,12 +180,23 @@
 				.buttons .button:first-child { margin-left: 0; border-top-left-radius: 2px; border-bottom-left-radius: 2px; }
 				.buttons .button:last-child { border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
 
-			.file { cursor: pointer; }
+			.file { 
+				cursor: pointer; }
 
-				.file-browse { position: relative; *width: 78px; }
-					.file-browse .file { -moz-opacity: 0; filter:alpha(opacity=0); opacity: 0; position: absolute; top: 0; right: 0; bottom: 0; left: 0; *width: 80px; }
+				.file-browse {
+					position: relative;
+					*width: 78px;
+						.file {
+							@include opacity(0);
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							*width: 80px; }
 
-				.file-preview { margin: 0 5px 0 0; }
+				.file-preview { 
+					margin: 0 em($base-px/2) 0 0; }
 					.file-preview img { border: 1px solid #bbb; box-sizing: border-box; display: inline-block; width: 36px; height: 36px; display: inline-block; border-radius: 3px; border: 1px solid #999; }
 
 			.text.with-dropdown,
@@ -200,8 +211,13 @@
 			.inline .field-label:last-child { margin-right: 0; }
 
 		/* Descriptions */
-		.field-description, .field-error { display: block; padding-top: 3px; color: #999; }
-		.field-error { font-weight: bold; color: #cc0000; }
+		.field-description, .field-error { 
+			display: block;
+			padding-top: 3px;
+			color: #999; }
+		.field-error {
+			font-weight: bold;
+			color: #cc0000; }
 
 			.inline .field-description, .inline .field-error { display: none; }
 

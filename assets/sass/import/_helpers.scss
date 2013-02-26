@@ -93,6 +93,23 @@
 		width: #{$width};
 		height: #{$width}; } }
 
+// Sets the height of stuff with the line height to match
+// ---------------------------
+@mixin set-height($set-height: $default-set-height, $padding: $base-px, $context: $base-font-size) {
+	@if $set-height == true {
+		$set-height: em($default-set-height); }
+	@else {
+		$set-height: em($set-height, $context); }
+
+	padding: 0 em($padding, $context);
+	height: $set-height;
+	line-height: $set-height; }
+
+// Create proportionally sized elements
+// ---------------------------
+@function element-size($size: 1, $ratio: .3125) {
+  @return ($size * $ratio) + em (($size * 2) * $ratio) + em; }
+
 // Colour functions
 // ---------------------------
 

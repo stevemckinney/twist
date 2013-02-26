@@ -1,21 +1,13 @@
 // Form label positioning
 // ---------------------------
 @mixin form-label(
-	$position: top,
-	$main-color: inherit,
-	$font-weight: 700,
-	$font-size: $base-font-size,
-	$font-family: $sans) {
+	$position: top) {
 	
 	$position: unquote($position);
 	
-	line-height: $base-line-height;
-	font: $font-weight #{em($font-size)}/#{$base-line-height} #{$font-family};
-	color: $main-color;
-	
 	@if $position != left {
 		@extend %form-block;
-		margin: 0 0 .375em;
+		margin: 0 0 em($base-px/2);
 		& + input, & + select, & + textarea {
 			@extend %form-block; } }
 	@else {
@@ -32,84 +24,64 @@
 
 /* # To do
  * status: error, success, disabled
+ * more efficient code
  */
 
 // Form
 // ---------------------------
 @mixin form(
-	$main-color: #aeaeae,
+	$main-color: $default,
 	$focus-color: $alt,
+	$type: "input",
+	$state: normal,
 	$radius: $radius, 
-	$shadow: true, 
-	$style: true, 
+	$shading: true,
 	$size: true,
-	$set-height: true, 
-	$hover: false, 
-	$type: "input") {
+	$set-height: false) {
 	
 	$type: unquote($type);
-	$form-light: scale-color($main-color, $saturation: 20%, $lightness: 30%);
 		
 	// styles which remain consistent no matter 
 	// the input apart from submit buttons
-	@if $type != submit { 
-		@extend %form-base; }
+	@extend %form-base;
+	
 	@if $radius { 
 		@include border-radius($radius); }
 	
-	// if we want styles to be applied
-	@if $style {
-		
-		// checkbox/radio only need a margin really
-		// ---------------------------
-		@if $type == checkbox or $type == radio {
-			margin: 0 em($base-px/2) 0 0; }
-		
-		// select elements
-		// ---------------------------
-		@else if $type == select {
-			@extend %input-reset;
-			@include form-shading($main-color, $focus-color, normal, select);
-			.no-boxshadow & {
-				border: 1px solid $main-color; }
-			&:focus {
-				@include form-shading($main-color, $focus-color, focus, select); }
-			&:before {
-				content: "\25BE";
-				color: inherit;
-				position: absolute;
-				top: em($base-px); 
-				right: em($base-px); } }
-		
-		// general inputs
-		// ---------------------------
-		@else if $type == input or $type == textarea {
-			@extend %input-reset;
-			@include form-shading($main-color, $focus-color, normal, input);
-			.no-boxshadow & {
-				border: 1px solid $main-color; }
-			&:focus {
-				@include form-shading($main-color, $focus-color, focus, input);
-				.no-cssgradients & {
-					background: $white; } } }
-				
-		@else if $type == submit {
-			@warn "#{error("Please use element mixin to style submit buttons.")}"; }
-		@else {
-			@warn "#{error("Type not supported.")}"; } }
+	@if $set-height {
+		@include set-height($set-height); }
 	
-	@if $type == select or $type == input {
-		@if $set-height {
-			padding: em(3px) em($base-px);
-			height: em(42px); }
-		@else {
-			padding: em($base-px/1.5) em($base-px); } }
-	@if $type == textarea {
-		@if $set-height {
-			padding: em($base-px); }
-		@else {
-			padding: em($base-px); } }
-}
+	@else {
+		padding: em($base-px); }
+	
+	@if $type == checkbox or $type == radio {
+		margin: 0 em($base-px/2) 0 0; }
+	
+	// select elements
+	// ---------------------------
+	@else if $type == select {
+		@extend %input-reset;
+		
+		@if $shading {
+			@include form-shading($main-color, $state, select);
+			
+			&:focus {
+				@include form-shading($focus-color, focus, select); } } }
+	
+	// general inputs
+	// ---------------------------
+	@else if $type == input or $type == textarea {
+		@extend %input-reset;
+		@include form-shading($main-color, $state, input);
+		
+		&:focus {
+			@include form-shading($focus-color, focus, input); } }
+			
+	@else if $type == submit {
+		@warn "#{error("Please use element mixin to style submit buttons.")}"; }
+	
+	@else {
+		@warn "#{error("Type not supported.")}"; } }
 
 // The most consistent stuff for each form element
 // ---------------------------
@@ -124,35 +96,43 @@
 	display: block;
 	width: 100%; }
 	
-@mixin form-shading($main-color: #aeaeae, $focus-color: $alt, $state: normal, $type: input) {
+@mixin form-shading(
+	$main-color,
+	$state: normal,
+	$type: input) {
 	
-	@if $type == input and $state == normal {
-		@include background(linear-gradient(scale-color($white, $lightness: -5%), $white), $white); }
-		
-	@if $type == select and $state == normal {
-		@include background(linear-gradient(darken($white, 2%) 46%, darken($white, 5%) 54%), $white); }
-		
-	@include box-shadow(
-		inset 0 0 0 1px if($state == normal and $type == input, $main-color, scale-lightness($focus-color, -20%)),
-		inset 0 2px 2px rgba($main-color, .4),
-		if($state == focus, inset 6px 0 12px -6px rgba($focus-color, .3), false),
-		if($state == focus, inset -6px 0 12px -6px rgba($focus-color, .3), false),
-		if($state == focus, 0 0 6px rgba($focus-color, .6), false),
-		0 1px 1px rgba($white, .6)); }
-
-
-/*
-@include background(linear-gradient(scale-color($white, $lightness: -5%), $white), $white);
-			@include box-shadow(
-				inset 0 0 0 1px $main-color,
-				inset 0 2px 2px rgba($main-color, .4),
-				0 1px 1px rgba($white, .6));
--- focus
-@include box-shadow(
-inset 0 0 0 1px scale-color($focus-color, $lightness: -20%),
-inset 0 2px 2px rgba($main-color, .4),
-inset 6px 0 12px -6px rgba($focus-color, .3),
-inset -6px 0 12px -6px rgba($focus-color, .3),
-0 0 6px rgba($focus-color, .6),
-0 1px 1px rgba($white, .6)); }
-*/
+	$bg-color: if(grayscale($main-color), $main-color, saturate($main-color, 100%));
+	
+	@if $state == disabled {
+		background: scale-lightness($bg-color, 50%);
+		@include box-shadow(inset 0 0 0 1px $main-color); }
+	@else {
+		@if $type == input {
+			@include background(
+				linear-gradient(rgba($bg-color, .15) 0%,
+				rgba($bg-color, 0) 100%), $white); }
+			
+		@if $type == select  {
+			@include background(
+				linear-gradient(rgba($bg-color, .05) 46%,
+				rgba($bg-color, .15) 54%), $white);
+				
+			@if $state == normal { 
+				&:before {
+					content: "\25BE";
+					color: inherit;
+					position: absolute;
+					top: 0;
+					right: em($base-px); } } }
+			
+		@include box-shadow(
+			inset 0 0 0 1px $main-color,
+			if($type != select, inset 0 2px 2px rgba($main-color, .4), inset 0 1px 0 rgba($white, .2)),
+			if($state == focus, compact(inset 6px 0 12px -6px rgba($main-color, .3), inset -6px 0 12px -6px rgba($main-color, .3), 0 0 6px rgba($main-color, .6)), false),
+			if($type == select, 0 1px 2px rgba($black, $default-dark-shadow/3), false),
+			if($state == active, 0 1px 3px rgba($black, $default-dark-shadow), 0 1px 1px rgba($white, $default-light-shadow))); }
+	
+	.no-boxshadow & {
+		border: 1px solid $main-color; }
+	.no-cssgradients & {
+		background: $white; } }

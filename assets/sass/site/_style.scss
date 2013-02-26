@@ -2,6 +2,7 @@
 	@extend .container;
 	padding: 0 em($line*2);
 	@include gradient-background;
+	
 	@include old-ie {
 		width: 760px; } }
 
@@ -10,9 +11,11 @@
 [role="banner"] {
 	@extend .grid-full;
 	padding: em($line*4.5) em($base-px) em($line*3);
+	
 	h1, h2 {
 		text-shadow: 0 1px 3px rgba($white, .4);
 		margin: 0; }
+		
 	h1 {
 		font-family: "swingdancer";
 		font-size: 7vw;
@@ -40,7 +43,7 @@
 		transform: translateY(0); } }
 		
 [role="navigation"] {
-	@include pie-clearfix;
+	@extend %clear;
 	@include element($primary, $size: false, $radius: false);
 	font-family: $serif;
 	margin-left: 0;
@@ -54,6 +57,7 @@
 	-webkit-animation: drop 500ms 750ms ceaser($easeOutBack) forwards;
 	-moz-animation: drop 500ms 750ms ceaser($easeOutBack) forwards;
 	animation: drop 500ms 750ms ceaser($easeOutBack) forwards;
+	
 	a {
 		@include box-shadow(1px 0 0 scale-color($primary, $lightness: 20%, $alpha: -65%));
 		font-family: $sans;
@@ -61,8 +65,10 @@
 		display: inline-block;
 		padding: em($base-px);
 		border-right: 1px solid scale-color($primary, $lightness: -35%, $alpha: -50%);
+		
 		&:hover, &:focus {
 			color: $alt; }
+		
 		&:last-child { 
 			@include box-shadow(none);
 			float: right;
@@ -71,7 +77,7 @@
 // Site content
 // ---------------------------
 [role="main"] {
-	@include pie-clearfix;
+	@extend %clear;
 	clear: both; }
 
 // Site footer
@@ -80,8 +86,10 @@
 	@extend .grid-full;
 	padding: em($base-px, $base-px) 0 0;
 	clear: both;
+	
 	ul {
 		padding: 0; }
+	
 	li {
 		list-style: none;
 		font: 700 .75em $serif; } }
@@ -90,9 +98,11 @@
 // Base
 // ---------------------------
 blockquote {
+	
 	p {
 		position: relative;
 		z-index: 1; }
+	
 	&:before {
 		content:'“'; } }
 
@@ -117,7 +127,8 @@ hr {
 // Demo buttons
 // ---------------------------
 .group {
-	@include element-group(group-button); }
+	@include element-group(".group-button"); }
+
 .group-button {
 	@extend %element-base;
 	@include element($white, #666, $hover: true, $dry: false); }
@@ -127,15 +138,26 @@ hr {
 	
 .button {
 	margin: 0 0 em($line);
-	&:nth-of-type(1) { @include element($hover: true, $dry: true); }
-	&:nth-of-type(2) { @include element($danger, $hover: true, $dry: true); }
-	&:nth-of-type(3) { @include element($warning, $hover: true, $dry: true); }
-	&:nth-of-type(4) { @include element($success, $hover: true, $dry: true); }
-	&:nth-of-type(5) { @include element($info, $hover: true, $dry: true); }
-	&:nth-of-type(6) { @include element($default, $hover: true, $dry: true); }
-	&:nth-of-type(7) { @include element($hover: true, $shadow: false, $dry: true); }
-	&:nth-of-type(8) { @include element($hover: true, $subtle: true, $dry: true); }
-	&:nth-of-type(9) { @include element($hover: true, $subtle: true, $shadow: false, $dry: true); } }
+
+	&:nth-of-type(1) { 
+		@include element($alt, $hover: true, $dry: true);
+		@include add-icon(navigateleft); }
+
+	&:nth-of-type(2) { 
+		@include element($danger, $hover: true, $dry: true);
+		@include add-icon(⚠); }
+
+	&:nth-of-type(3) { 
+		@include element($warning, $hover: true, $dry: true); }
+
+	&:nth-of-type(4) { 
+		@include element($success, $hover: true, $dry: true); }
+
+	&:nth-of-type(5) { 
+		@include element($info, $hover: true, $dry: true); }
+
+	&:nth-of-type(6) { 
+		@include element($default, $hover: true, $dry: true); } }
 
 // Demo alert
 // ---------------------------
@@ -143,14 +165,30 @@ hr {
 	margin: 0 0 em($line);
 	text-align: center;
 	width: 100%;
-	&:nth-of-type(1) { @include element($default, $dry: false); }
-	&:nth-of-type(2) { @include element($alt, $dry: false); }
-	&:nth-of-type(3) { @include element($danger, $dry: false); }
-	&:nth-of-type(4) { @include element($warning, $dry: false); }
-	&:nth-of-type(5) { @include element($success, $dry: false); }
-	&:nth-of-type(6) { @include element($info, $dry: false); }
-	&:nth-of-type(7) { @include element($info, $white, $shadow: false); }
-	&:nth-of-type(8) { @include element($info, $subtle: true, $dry: false); } }
+	
+	&:nth-of-type(1) { 
+		@include element($default, $dry: false);
+		@include add-icon("+"); }
+	
+	&:nth-of-type(2) { 
+		@include element($alt, $dry: false);
+		@include add-icon(🔔); }
+	
+	&:nth-of-type(3) { 
+		@include element($danger, $dry: false);
+		@include add-icon(␡); }
+	
+	&:nth-of-type(4) { 
+		@include element($warning, $dry: false);
+		@include add-icon("-"); }
+	
+	&:nth-of-type(5) { 
+		@include element($success, $dry: false);
+		@include add-icon(✓); }
+	
+	&:nth-of-type(6) { 
+		@include element($info, $dry: false);
+		@include add-icon(ℹ); } }
 
 
 // Demo forms
@@ -162,10 +200,16 @@ hr {
 	@include form-label(left); }
 	
 [type="text"], [type="email"], [type="password"], [type="url"], textarea {
-	@include form; }
+	@include form;
+	&[disabled] {
+		@include form($state: disabled); }
+	&.error {
+		@include form($red, $state: error); }
+	&.success {
+		@include form($success, $state: success); } }
 	
 [type="checkbox"], [type="radio"] {
-	@include form($type: "radio"); }
+	@include form($type: "radio", $set-height: false); }
 
 [type="submit"] {
 	@include element($hover: true); }
@@ -174,9 +218,8 @@ select {
 	@include form($type: "select"); }
 	
 textarea {
-	@include form($type: "textarea");
 	min-height: em($line*6); }
-	
+
 .form-help {
 	margin: .375em 0 0 0;
 	font-size: 12px;
@@ -189,8 +232,10 @@ textarea {
 	li {
 		display: inline-block;
 		padding-right: em($line);
+		width: 100%/3;
 		> label {
-			font-weight: 400; } } }
+			font-weight: 400;
+			width: 100%; } } }
 
 // Demo table
 // ---------------------------

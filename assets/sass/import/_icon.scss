@@ -1,0 +1,48 @@
+@mixin add-icon-shared {
+	position: absolute;
+	display: block;
+	top: 0;
+	text-align: center; }
+	
+@mixin add-icon(
+	$icon-name: navigateright, 
+	$add: before,
+	$icon-font: $icons,
+	$icon-size: $base-font-size,
+	$shading: false,
+	$main-color: $default,
+	$height: $base-px*3) {
+	
+	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after"));
+	
+	& {
+		position: relative;
+		@if $add == before { 
+			padding-left: em($line*2, $icon-size); }
+		@if $add == after {
+			padding-right: em($line*2, $icon-size); } }
+	
+	#{$add-pseudo} {
+		@include add-icon-shared;
+		@include wh(em($height, $icon-size));
+
+		content: "#{$icon-name}";
+		font: #{em($icon-size, $base-font-size)}/#{em($height + 4, $icon-size)} $icon-font;
+		color: inherit;
+		
+		@if $add == before {
+			left: 0;
+			border-radius: $radius 0 0 $radius; }
+		
+		@if $add == after {
+			right: 0;
+			border-radius: 0 $radius $radius 0; }
+		
+		@if $shading == true {
+			@include element-shading($main-color); }
+			
+		@else {
+			@if $add == before {
+				box-shadow: 1px 0 0 rgba($white, .1), inset -1px 0 0 rgba($black, .1); }
+			@if $add == after {
+				box-shadow: -1px 0 0 rgba($black, .1), inset 1px 0 0 rgba($white, .1); } } } }
