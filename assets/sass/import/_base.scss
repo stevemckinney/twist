@@ -87,8 +87,8 @@ $default-set-height: 42px;
 
 // Shadow transparency
 // ---------------------------
-$default-dark-shadow: .4;
-$default-light-shadow: .6;
+$default-dark-shadow: .4 !default;
+$default-light-shadow: .6 !default;
 
 // change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
@@ -104,12 +104,19 @@ $f: 90em !default; // 1440
 // ---------------------------
 $grid-max-width: $c !default;
 $grid-width: 100% !default;
+
 $grid-container-margin: auto !default;
-$grid-margin: 1.25% !default;
-$grid-subtract: $grid-margin * 2 !default;
-$grid-pad: 4% !default;
-$grid-move: $grid-pad !default;
 $grid-container-class: container !default;
+
+$grid-direction: left !default;
+$grid-gutter: $line !default;
+
+$grid-pad: 5% !default;
+$grid-move: $grid-pad !default;
+
+.grid * > * {
+	background: #ccc;
+}
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

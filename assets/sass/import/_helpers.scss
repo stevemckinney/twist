@@ -6,6 +6,7 @@
 // ---------------------------
 %transition {
 	@include transition(
+		opacity $transition-duration linear,
 		color $transition-duration linear,
 		background $transition-duration linear,
 		border-color $transition-duration linear); }

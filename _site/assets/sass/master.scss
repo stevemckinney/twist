@@ -33,7 +33,15 @@ html, body {
 
 #{elements-of-type("block")}, hr {
 	margin-bottom: em($line); }
+	
+.container {
+	margin: auto;
+	max-width: 768px; }
 
 // ease of getting rid of styles related to the demo
 // ---------------------------
-@import "site/mixins", "site/extends", "site/symbolset", "site/typography", "site/style";
+@import "site/mixins", 
+				"site/extends", 
+				"site/symbolset", 
+				"site/typography", 
+				"site/style";

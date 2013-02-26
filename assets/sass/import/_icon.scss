@@ -11,15 +11,16 @@
 	$icon-size: $base-font-size,
 	$shading: false,
 	$main-color: $default,
-	$height: $base-px*3) {
+	$height: $base-px*3,
+	$padding: true) {
 	
 	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after"));
 	
 	& {
 		position: relative;
-		@if $add == before { 
+		@if $add == before and $padding { 
 			padding-left: em($line*2, $icon-size); }
-		@if $add == after {
+		@if $add == after and $padding {
 			padding-right: em($line*2, $icon-size); } }
 	
 	#{$add-pseudo} {
