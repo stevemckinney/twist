@@ -114,9 +114,8 @@ $grid-gutter: $line !default;
 $grid-pad: 5% !default;
 $grid-move: $grid-pad !default;
 
-.grid * > * {
-	background: #ccc;
-}
+// if your html is minified set to false
+$grid-space: true !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

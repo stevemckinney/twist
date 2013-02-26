@@ -1,7 +1,4 @@
 @charset "UTF-8";
-/* line 117, ../sass/import/_base.scss */
-.grid * > * { background: #ccc; }
-
 /* normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */
 /* line 13, ../sass/import/_normalize.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -137,35 +134,35 @@ table { border-collapse: collapse; border-spacing: 0; }
 .container { width: 100%; max-width: 48em; margin: auto; position: relative; }
 
 /* line 15, ../sass/import/_grid.scss */
-.grid { display: block; padding: 0; margin: 0 -12px; text-align: left; text-rendering: optimizespeed; }
-/* line 23, ../sass/import/_grid.scss */
+.grid { display: block; padding: 0; margin: 0 -12px; text-align: left; text-rendering: optimizespeed; letter-spacing: -0.31em; word-spacing: -0.43em; }
+/* line 25, ../sass/import/_grid.scss */
 .grid > .grid { overflow: hidden; margin-right: 0; margin-left: 0; }
 
-/* line 28, ../sass/import/_grid.scss */
-.grid-cell, .grid-1, .grid-2, .grid-3, .grid-half, .grid-4, .grid-5, .grid-6, .grid-full, [role="banner"], [role="contentinfo"] { display: inline-block; outline: 1px solid red; width: 100%; margin: 0; padding: 0 12px; vertical-align: top; text-align: left; letter-spacing: normal; word-spacing: normal; text-rendering: auto; }
+/* line 30, ../sass/import/_grid.scss */
+.grid-cell, .grid-1, .grid-2, .grid-3, .grid-half, .grid-4, .grid-5, .grid-6, .grid-full, [role="banner"], [role="contentinfo"] { display: inline-block; width: 100%; margin: 0; padding: 0 12px; vertical-align: top; text-align: left; letter-spacing: normal; word-spacing: normal; text-rendering: auto; }
 
-/* line 40, ../sass/import/_grid.scss */
+/* line 41, ../sass/import/_grid.scss */
 .grid-center { text-align: center; }
 
-/* line 43, ../sass/import/_grid.scss */
+/* line 44, ../sass/import/_grid.scss */
 .grid-cell-center { display: block; margin: 0 auto; }
 
-@media screen and (min-width: 37.5em) { /* line 47, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 48, ../sass/import/_grid.scss */
   .grid-1 { width: 16.66667%; } }
 
-@media screen and (min-width: 37.5em) { /* line 53, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 54, ../sass/import/_grid.scss */
   .grid-2 { width: 33.33333%; } }
 
-@media screen and (min-width: 37.5em) { /* line 60, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 61, ../sass/import/_grid.scss */
   .grid-3, .grid-half { width: 50%; } }
 
-@media screen and (min-width: 37.5em) { /* line 66, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 67, ../sass/import/_grid.scss */
   .grid-4 { width: 66.66667%; } }
 
-@media screen and (min-width: 37.5em) { /* line 72, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 73, ../sass/import/_grid.scss */
   .grid-5 { width: 83.33333%; } }
 
-/* line 83, ../sass/import/_grid.scss */
+/* line 84, ../sass/import/_grid.scss */
 .show-grid div[class*='grid-'] { -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; background-color: #f1f2f3; display: block; padding: 0.75em 1.5em; margin-bottom: 1.5em; text-align: center; font-size: .75rem; font-family: "freight-sans-pro", sans-serif; }
 
 /* line 7, ../sass/import/_helpers.scss */

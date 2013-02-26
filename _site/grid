@@ -59,7 +59,12 @@
 		</nav>
 		
 		<section role="main">
-			<div class="grid"><div class="grid-4"><div class="grid-2">stuff</div><div class="grid-2">stuff</div><div class="grid-2">stuff</div></div><div class="grid-2">stuff</div></div>
+			<div class="grid">
+	<div class="grid-4">
+		<div class="grid-2">stuff</div><div class="grid-2">stuff</div><div class="grid-2">stuff</div>
+	</div>
+	<div class="grid-2">stuff</div>
+</div>
 		</section>
 		
 		<hr>
