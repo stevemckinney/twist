@@ -6,6 +6,17 @@
 	@include old-ie {
 		width: 760px; } }
 
+.box {
+	box-shadow: 0 0 0 2px rgba($black, .1);
+	@include box-sizing(border-box);
+	border-radius: $radius;
+	background-color: scale-lightness($tertiary, 20%);
+	padding: em($base-px) em($line);
+	margin-bottom: em($line);
+	text-align: center;
+	font-size: .75rem;
+	font-family: $sans; }
+
 // Site header
 // ---------------------------
 [role="banner"] {
@@ -20,31 +31,27 @@
 		font-family: "swingdancer";
 		font-size: 7vw;
 		text-align: center;
-		display: block; } }
+		display: block; }
+	h2 {
+		font-size: 2vw; } }
 
 // Site nav
 // ---------------------------
 @-webkit-keyframes drop {
-	90% {
-		-webkit-transform: translateY(3px); }
 	100% {
 		-webkit-transform: translateY(0); } }
 
 @-moz-keyframes drop {
-	90% {
-		-moz-transform: translateY(3px); }
 	100% {
 		-moz-transform: translateY(0); } }
 
 @keyframes drop {
-	90% {
-		transform: translateY(3px); }
 	100% {
 		transform: translateY(0); } }
 		
 [role="navigation"] {
 	@extend %clear;
-	@include element($primary, $size: false, $radius: false);
+	@include element($primary, $size: false, $set-height: false, $radius: false);
 	font-family: $serif;
 	margin-left: 0;
 	position: fixed;
@@ -140,12 +147,10 @@ hr {
 	margin: 0 0 em($line);
 
 	&:nth-of-type(1) { 
-		@include element($alt, $hover: true, $dry: true);
-		@include add-icon(navigateleft); }
+		@include element($alt, $hover: true, $dry: true); }
 
 	&:nth-of-type(2) { 
-		@include element($danger, $hover: true, $dry: true);
-		@include add-icon(⚠); }
+		@include element($danger, $hover: true, $dry: true); }
 
 	&:nth-of-type(3) { 
 		@include element($warning, $hover: true, $dry: true); }
@@ -199,7 +204,7 @@ hr {
 .form-left label {
 	@include form-label(left); }
 	
-[type="text"], [type="email"], [type="password"], [type="url"], textarea {
+[type="text"], [type="email"], [type="password"], [type="url"] {
 	@include form;
 	&[disabled] {
 		@include form($state: disabled); }
@@ -218,6 +223,7 @@ select {
 	@include form($type: "select"); }
 	
 textarea {
+	@include form($type: "textarea");
 	min-height: em($line*6); }
 
 .form-help {

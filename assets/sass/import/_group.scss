@@ -4,10 +4,13 @@
 		letter-spacing: em($negative-spacing); }
 	
 	#{unquote($children)} {
-		@include border-radius(0);
+		border-radius: 0;
+		
 		@if $negative-spacing {
 			letter-spacing: normal; }
+		
 		&:first-child {
-			@include border-radius($radius 0 0 $radius); }
+			border-radius: $radius 0 0 $radius; }
+		
 		&:last-child {
-			@include border-radius(0 $radius $radius 0); } } }
+			border-radius: 0 $radius $radius 0; } } }

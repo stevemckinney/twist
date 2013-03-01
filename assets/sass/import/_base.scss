@@ -83,7 +83,7 @@ $radius: 3px !default;
 $transition-duration: .2s !default;
 $default-size: 2 !default; // for element mixin
 
-$default-set-height: 42px;
+$default-set-height: 36px;
 
 // Shadow transparency
 // ---------------------------
@@ -109,13 +109,15 @@ $grid-container-margin: auto !default;
 $grid-container-class: container !default;
 
 $grid-direction: left !default;
-$grid-gutter: $line !default;
+$grid-gutter: 1.5em !default;
 
 $grid-pad: 5% !default;
 $grid-move: $grid-pad !default;
 
 // if your html is minified set to false
-$grid-space: true !default;
+// as it cuts out that little bit of css 
+// needed to collapse whitespace
+$grid-space: true !default; 
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

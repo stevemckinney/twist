@@ -19,7 +19,7 @@
 	
 	th, td {
 		@extend %transition;
-		padding: em($base-px) em($line);
+		padding: em($base-px);
 		text-align: left;
 		border-bottom: 1px solid $dark-color;
 		color: $primary; }

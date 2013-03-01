@@ -21,9 +21,8 @@
 	
 	@if $grid-space {
 		letter-spacing: -0.31em;
-		word-spacing: -0.43em; }
+		/* word-spacing: -0.43em; */ }
 	> .grid {
-	  overflow: hidden;
 	  margin-right: 0;
 	  margin-left: 0; } }
   
@@ -40,7 +39,7 @@
 
 .grid-center {
 	text-align: center; }
-	
+
 .grid-cell-center {
 	display: block;
 	margin: 0 auto; }
@@ -48,13 +47,13 @@
 .grid-1 {
 	@extend .grid-cell;
 	@include respond-min($b) {
-		width: 16.66667%;
+		width: 16.6666666667%;
 		@include old-ie; } }
 
 .grid-2 {
 	@extend .grid-cell;
 	@include respond-min($b) {
-		width: 33.33333%;
+		width: 33.333333333%;
 		@include old-ie; } }
 		
 .grid-3,
@@ -67,32 +66,20 @@
 .grid-4 {
 	@extend .grid-cell;
 	@include respond-min($b) {
-		width: 66.66667%;
+		width: 66.666666667%;
 		@include old-ie; } }
 		
 .grid-5 {
 	@extend .grid-cell;
 	@include respond-min($b) {
-		width: 83.33333%;
+		width: 83.333333333%;
 		@include old-ie; } }
 		
 .grid-6, .grid-full {
 	@extend .grid-cell; }
 
-// Helpers
+// Loop for percentages
 // ---------------------------
-.show-grid div[class*='grid-'] {
-	@include box-shadow(0 0 0 2px rgba($black, .1));
-	@include box-sizing(border-box);
-	@include border-radius($radius);
-	background-color: scale-lightness($tertiary, 20%);
-	display: block;
-	padding: em($base-px) em($line);
-	margin-bottom: em($line);
-	text-align: center;
-	font-size: .75rem;
-	font-family: $sans; }
-
 @for $i from 1 through 19 {
   $num: $i * 5;
   $percent: $num * 1%;

@@ -11,7 +11,7 @@
 	$icon-size: $base-font-size,
 	$shading: false,
 	$main-color: $default,
-	$height: $base-px*3,
+	$height: $default-set-height,
 	$padding: true) {
 	
 	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after"));
@@ -25,11 +25,14 @@
 	
 	#{$add-pseudo} {
 		@include add-icon-shared;
-		@include wh(em($height, $icon-size));
 
 		content: "#{$icon-name}";
 		font: #{em($icon-size, $base-font-size)}/#{em($height + 4, $icon-size)} $icon-font;
 		color: inherit;
+		
+		top: 0;
+		bottom: 0;
+		padding: 0 em($base-px);
 		
 		@if $add == before {
 			left: 0;

@@ -134,36 +134,33 @@ table { border-collapse: collapse; border-spacing: 0; }
 .container { width: 100%; max-width: 48em; margin: auto; position: relative; }
 
 /* line 15, ../sass/import/_grid.scss */
-.grid { display: block; padding: 0; margin: 0 -12px; text-align: left; text-rendering: optimizespeed; letter-spacing: -0.31em; word-spacing: -0.43em; }
+.grid { display: block; padding: 0; margin: 0 -0.75em; text-align: left; text-rendering: optimizespeed; letter-spacing: -0.31em; /* word-spacing: -0.43em; */ }
 /* line 25, ../sass/import/_grid.scss */
-.grid > .grid { overflow: hidden; margin-right: 0; margin-left: 0; }
+.grid > .grid { margin-right: 0; margin-left: 0; }
 
-/* line 30, ../sass/import/_grid.scss */
-.grid-cell, .grid-1, .grid-2, .grid-3, .grid-half, .grid-4, .grid-5, .grid-6, .grid-full, [role="banner"], [role="contentinfo"] { display: inline-block; width: 100%; margin: 0; padding: 0 12px; vertical-align: top; text-align: left; letter-spacing: normal; word-spacing: normal; text-rendering: auto; }
+/* line 29, ../sass/import/_grid.scss */
+.grid-cell, .grid-1, .grid-2, .grid-3, .grid-half, .grid-4, .grid-5, .grid-6, .grid-full, [role="banner"], [role="contentinfo"] { display: inline-block; width: 100%; margin: 0; padding: 0 0.75em; vertical-align: top; text-align: left; letter-spacing: normal; word-spacing: normal; text-rendering: auto; }
 
-/* line 41, ../sass/import/_grid.scss */
+/* line 40, ../sass/import/_grid.scss */
 .grid-center { text-align: center; }
 
-/* line 44, ../sass/import/_grid.scss */
+/* line 43, ../sass/import/_grid.scss */
 .grid-cell-center { display: block; margin: 0 auto; }
 
-@media screen and (min-width: 37.5em) { /* line 48, ../sass/import/_grid.scss */
-  .grid-1 { width: 16.66667%; } }
+@media screen and (min-width: 37.5em) { /* line 47, ../sass/import/_grid.scss */
+  .grid-1 { width: 16.6666666667%; } }
 
-@media screen and (min-width: 37.5em) { /* line 54, ../sass/import/_grid.scss */
-  .grid-2 { width: 33.33333%; } }
+@media screen and (min-width: 37.5em) { /* line 53, ../sass/import/_grid.scss */
+  .grid-2 { width: 33.333333333%; } }
 
-@media screen and (min-width: 37.5em) { /* line 61, ../sass/import/_grid.scss */
+@media screen and (min-width: 37.5em) { /* line 60, ../sass/import/_grid.scss */
   .grid-3, .grid-half { width: 50%; } }
 
-@media screen and (min-width: 37.5em) { /* line 67, ../sass/import/_grid.scss */
-  .grid-4 { width: 66.66667%; } }
+@media screen and (min-width: 37.5em) { /* line 66, ../sass/import/_grid.scss */
+  .grid-4 { width: 66.666666667%; } }
 
-@media screen and (min-width: 37.5em) { /* line 73, ../sass/import/_grid.scss */
-  .grid-5 { width: 83.33333%; } }
-
-/* line 84, ../sass/import/_grid.scss */
-.show-grid div[class*='grid-'] { -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; background-color: #f1f2f3; display: block; padding: 0.75em 1.5em; margin-bottom: 1.5em; text-align: center; font-size: .75rem; font-family: "freight-sans-pro", sans-serif; }
+@media screen and (min-width: 37.5em) { /* line 72, ../sass/import/_grid.scss */
+  .grid-5 { width: 83.333333333%; } }
 
 /* line 7, ../sass/import/_helpers.scss */
 a, table th, table td { -webkit-transition: opacity 0.2s linear, color 0.2s linear, background 0.2s linear, border-color 0.2s linear; -moz-transition: opacity 0.2s linear, color 0.2s linear, background 0.2s linear, border-color 0.2s linear; transition: opacity 0.2s linear, color 0.2s linear, background 0.2s linear, border-color 0.2s linear; }
@@ -172,7 +169,7 @@ a, table th, table td { -webkit-transition: opacity 0.2s linear, color 0.2s line
 .hidden { display: none; }
 
 /* line 40, ../sass/import/_helpers.scss */
-[type="text"], [type="email"], [type="password"], [type="url"], textarea, [type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled], textarea[disabled], [type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error, textarea.error, [type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success, textarea.success, select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+[type="text"], [type="email"], [type="password"], [type="url"], [type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled], [type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error, [type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success, select, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 
 /* line 57, ../sass/import/_helpers.scss */
 .secondary { color: #4e6180; }
@@ -192,30 +189,39 @@ a, table th, table td { -webkit-transition: opacity 0.2s linear, color 0.2s line
 /* line 77, ../sass/import/_helpers.scss */
 .xsmall { font-size: 75%; }
 
-/* line 138, ../sass/import/_element.scss */
+/* line 142, ../sass/import/_element.scss */
 .button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6), [role="navigation"], .group-button, .button, .alert, .alert:nth-of-type(1), .alert:nth-of-type(2), .alert:nth-of-type(3), .alert:nth-of-type(4), .alert:nth-of-type(5), .alert:nth-of-type(6), [type="submit"] { -webkit-background-clip: padding; -moz-background-clip: padding; background-clip: padding-box; -webkit-transition: none; -moz-transition: none; transition: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; position: relative; font-family: "freight-sans-pro", sans-serif; line-height: 1; border: none; }
 
-/* line 147, ../sass/import/_element.scss */
-.button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; }
-/* line 119, ../sass/import/_element.scss */
+/* line 151, ../sass/import/_element.scss */
+.button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; }
+/* line 120, ../sass/import/_element.scss */
 .button:nth-of-type(1), .button:nth-of-type(2), .button:nth-of-type(3), .button:nth-of-type(4), .button:nth-of-type(5), .button:nth-of-type(6), .button:hover:nth-of-type(1), .button:hover:nth-of-type(2), .button:hover:nth-of-type(3), .button:hover:nth-of-type(4), .button:hover:nth-of-type(5), .button:hover:nth-of-type(6), .button:focus:nth-of-type(1), .button:focus:nth-of-type(2), .button:focus:nth-of-type(3), .button:focus:nth-of-type(4), .button:focus:nth-of-type(5), .button:focus:nth-of-type(6) { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 
-/* # To do status: error, success, disabled more efficient code */
-/* line 130, ../sass/import/_forms.scss */
-[type="text"], [type="email"], [type="password"], [type="url"], textarea, [type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled], textarea[disabled], [type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error, textarea.error, [type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success, textarea.success, [type="checkbox"], [type="radio"], select { border: none; font-family: "freight-sans-pro", sans-serif; outline: none; max-width: 100%; color: #575d60; }
+/* # To do status: error, success, disabled more efficient code 	eg: $dry: true like element mixin */
+/* line 135, ../sass/import/_forms.scss */
+::-webkit-input-placeholder { color: #999ea1; }
 
 /* line 137, ../sass/import/_forms.scss */
+::-moz-placeholder { color: #999ea1; }
+
+/* line 139, ../sass/import/_forms.scss */
+:-ms-input-placeholder { color: #999ea1; }
+
+/* line 146, ../sass/import/_forms.scss */
+[type="text"], [type="email"], [type="password"], [type="url"], [type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled], [type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error, [type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success, [type="checkbox"], [type="radio"], select, textarea { border: none; font-family: "freight-sans-pro", sans-serif; outline: none; max-width: 100%; color: #575d60; }
+
+/* line 153, ../sass/import/_forms.scss */
 .form-top label, .form-top label + input, .form-top label + select, .form-top label + textarea { display: block; width: 100%; }
 
-/* line 47, ../sass/import/_blockquote.scss */
-blockquote { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); margin: 0; padding-left: 6.75em; background: -webkit-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: -moz-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; -webkit-background-size: 100% 1.5em; -moz-background-size: 100% 1.5em; background-size: 100% 1.5em; }
-/* line 27, ../sass/import/_blockquote.scss */
+/* line 48, ../sass/import/_blockquote.scss */
+blockquote { background: -webkit-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: -moz-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; -webkit-background-size: 100% 1.5em; -moz-background-size: 100% 1.5em; background-size: 100% 1.5em; margin: 0; padding-left: 6.75em; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+/* line 28, ../sass/import/_blockquote.scss */
 blockquote p, blockquote { position: relative; }
-/* line 29, ../sass/import/_blockquote.scss */
+/* line 30, ../sass/import/_blockquote.scss */
 blockquote p { z-index: 1; }
-/* line 31, ../sass/import/_blockquote.scss */
+/* line 32, ../sass/import/_blockquote.scss */
 blockquote:before { content: "open-quote"; font-size: 9em; position: absolute; float: left; top: 0; left: 0; }
-/* line 38, ../sass/import/_blockquote.scss */
+/* line 39, ../sass/import/_blockquote.scss */
 blockquote:after { content: ""; display: inline-block; width: 10px; height: 100%; background: #dd453d; top: 0; left: 48px; }
 
 /*
@@ -375,231 +381,222 @@ pre code { max-height: 200px; overflow: auto; color: #575d60; direction: ltr; te
 .container:before, .container:after { content: ""; position: absolute; display: block; }
 /* line 20, ../sass/import/_misc.scss */
 .container:before { z-index: -1; left: -3px; right: -3px; top: 0; height: 60em; background: -webkit-linear-gradient(top, rgba(238, 239, 239, 0) 0%, #eeefef 100%); background: -moz-linear-gradient(top, rgba(238, 239, 239, 0) 0%, #eeefef 100%); background: linear-gradient(top, rgba(238, 239, 239, 0) 0%, #eeefef 100%); }
-/* line 27, ../sass/import/_misc.scss */
-.container:after { z-index: -2; top: 0; right: 0; left: 0; height: 58.5em; -webkit-box-shadow: 0 0 3px rgba(163, 168, 171, 0.6); -moz-box-shadow: 0 0 3px rgba(163, 168, 171, 0.6); box-shadow: 0 0 3px rgba(163, 168, 171, 0.6); }
+/* line 28, ../sass/import/_misc.scss */
+.container:after { z-index: -2; top: 0; right: 0; left: 0; height: 58.5em; box-shadow: 0 0 3px rgba(138, 145, 149, 0.6); }
 
-/* line 11, ../sass/site/_style.scss */
+/* line 9, ../sass/site/_style.scss */
+.box { box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border-radius: 3px; background-color: #f1f2f3; padding: 0.75em 1.5em; margin-bottom: 1.5em; text-align: center; font-size: .75rem; font-family: "freight-sans-pro", sans-serif; }
+
+/* line 22, ../sass/site/_style.scss */
 [role="banner"] { padding: 6.75em 0.75em 4.5em; }
-/* line 15, ../sass/site/_style.scss */
+/* line 26, ../sass/site/_style.scss */
 [role="banner"] h1, [role="banner"] h2 { text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4); margin: 0; }
-/* line 19, ../sass/site/_style.scss */
+/* line 30, ../sass/site/_style.scss */
 [role="banner"] h1 { font-family: "swingdancer"; font-size: 7vw; text-align: center; display: block; }
+/* line 35, ../sass/site/_style.scss */
+[role="banner"] h2 { font-size: 2vw; }
 
-@-webkit-keyframes drop { /* line 28, ../sass/site/_style.scss */
-  90% { -webkit-transform: translateY(3px); }
-  /* line 30, ../sass/site/_style.scss */
+@-webkit-keyframes drop { /* line 41, ../sass/site/_style.scss */
   100% { -webkit-transform: translateY(0); } }
 
-@-moz-keyframes drop { /* line 34, ../sass/site/_style.scss */
-  90% { -moz-transform: translateY(3px); }
-  /* line 36, ../sass/site/_style.scss */
+@-moz-keyframes drop { /* line 45, ../sass/site/_style.scss */
   100% { -moz-transform: translateY(0); } }
 
-@keyframes drop { /* line 40, ../sass/site/_style.scss */
-  90% { transform: translateY(3px); }
-  /* line 42, ../sass/site/_style.scss */
+@keyframes drop { /* line 49, ../sass/site/_style.scss */
   100% { transform: translateY(0); } }
 
-/* line 45, ../sass/site/_style.scss */
-[role="navigation"] { display: inline-block; background: -webkit-linear-gradient(#575d60, #4a4e52); background: -moz-linear-gradient(#575d60, #4a4e52); background: linear-gradient(#575d60, #4a4e52); -webkit-filter: drop-shadow(0 1px 1px rgba(30, 33, 34, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(30, 33, 34, 0.4)); filter: drop-shadow(0 1px 1px rgba(30, 33, 34, 0.4)); box-shadow: inset 0 0 0 1px rgba(30, 33, 34, 0.3), inset 0 2px 0 rgba(110, 118, 122, 0.8), inset 0.75em 0 1.125em -0.75em rgba(74, 78, 82, 0.4), inset -0.75em 0 1.125em -0.75em rgba(74, 78, 82, 0.4); font-family: "adelle", ff-meta-serif-web-pro, georgia, serif; margin-left: 0; position: fixed; right: 0; left: 0; top: 0; z-index: 2; white-space: nowrap; -webkit-transform: translateY(-60px); -moz-transform: translateY(-60px); -ms-transform: translateY(-60px); transform: translateY(-60px); -webkit-animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; -moz-animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; }
-/* line 119, ../sass/import/_element.scss */
+/* line 52, ../sass/site/_style.scss */
+[role="navigation"] { display: inline-block; background: -webkit-linear-gradient(#575d60, #4a4e52); background: -moz-linear-gradient(#575d60, #4a4e52); background: linear-gradient(#575d60, #4a4e52); box-shadow: inset 0 0 0 1px rgba(30, 33, 34, 0.3), inset 0 2px 0 rgba(110, 118, 122, 0.8), inset 0.75em 0 1.125em -0.75em rgba(74, 78, 82, 0.4), inset -0.75em 0 1.125em -0.75em rgba(74, 78, 82, 0.4), 0 1px 3px rgba(30, 33, 34, 0.4); font-family: "adelle", ff-meta-serif-web-pro, georgia, serif; margin-left: 0; position: fixed; right: 0; left: 0; top: 0; z-index: 2; white-space: nowrap; -webkit-transform: translateY(-60px); -moz-transform: translateY(-60px); -ms-transform: translateY(-60px); transform: translateY(-60px); -webkit-animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; -moz-animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; animation: drop 500ms 750ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards; }
+/* line 120, ../sass/import/_element.scss */
 [role="navigation"], [role="navigation"]:hover, [role="navigation"]:focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow [role="navigation"] { border: 1px solid #4a4e52; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients [role="navigation"] { background: #575d60; }
-/* line 61, ../sass/site/_style.scss */
+/* line 68, ../sass/site/_style.scss */
 [role="navigation"] a { -webkit-box-shadow: 1px 0 0 rgba(118, 126, 130, 0.35); -moz-box-shadow: 1px 0 0 rgba(118, 126, 130, 0.35); box-shadow: 1px 0 0 rgba(118, 126, 130, 0.35); font-family: "freight-sans-pro", sans-serif; color: white; display: inline-block; padding: 0.75em; border-right: 1px solid rgba(57, 60, 62, 0.5); }
-/* line 69, ../sass/site/_style.scss */
+/* line 76, ../sass/site/_style.scss */
 [role="navigation"] a:hover, [role="navigation"] a:focus { color: #3a9ac9; }
-/* line 72, ../sass/site/_style.scss */
+/* line 79, ../sass/site/_style.scss */
 [role="navigation"] a:last-child { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; float: right; border: none; }
 
-/* line 79, ../sass/site/_style.scss */
+/* line 86, ../sass/site/_style.scss */
 [role="main"] { clear: both; }
 
-/* line 85, ../sass/site/_style.scss */
+/* line 92, ../sass/site/_style.scss */
 [role="contentinfo"] { padding: 1em 0 0; clear: both; }
-/* line 90, ../sass/site/_style.scss */
+/* line 97, ../sass/site/_style.scss */
 [role="contentinfo"] ul { padding: 0; }
-/* line 93, ../sass/site/_style.scss */
+/* line 100, ../sass/site/_style.scss */
 [role="contentinfo"] li { list-style: none; font: 700 0.75em "adelle", ff-meta-serif-web-pro, georgia, serif; }
 
-/* line 102, ../sass/site/_style.scss */
+/* line 109, ../sass/site/_style.scss */
 blockquote p { position: relative; z-index: 1; }
-/* line 106, ../sass/site/_style.scss */
+/* line 113, ../sass/site/_style.scss */
 blockquote:before { content: '“'; }
 
-/* line 109, ../sass/site/_style.scss */
+/* line 116, ../sass/site/_style.scss */
 dl { font-family: "adelle", ff-meta-serif-web-pro, georgia, serif; }
 
-/* line 112, ../sass/site/_style.scss */
+/* line 119, ../sass/site/_style.scss */
 dt { font-weight: 700; }
-/* line 114, ../sass/site/_style.scss */
+/* line 121, ../sass/site/_style.scss */
 dt:after { content: ": "; }
 
-/* line 120, ../sass/site/_style.scss */
+/* line 127, ../sass/site/_style.scss */
 hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
 
-/* line 129, ../sass/site/_style.scss */
+/* line 136, ../sass/site/_style.scss */
 .group { letter-spacing: -0.3125em; }
 /* line 6, ../sass/import/_group.scss */
-.group .group-button { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0; letter-spacing: normal; }
-/* line 10, ../sass/import/_group.scss */
-.group .group-button:first-child { -webkit-border-radius: 3px 0 0 3px; -moz-border-radius: 3px 0 0 3px; -ms-border-radius: 3px 0 0 3px; border-radius: 3px 0 0 3px; }
+.group .group-button { border-radius: 0; letter-spacing: normal; }
 /* line 12, ../sass/import/_group.scss */
-.group .group-button:last-child { -webkit-border-radius: 0 3px 3px 0; -moz-border-radius: 0 3px 3px 0; -ms-border-radius: 0 3px 3px 0; border-radius: 0 3px 3px 0; }
+.group .group-button:first-child { border-radius: 3px 0 0 3px; }
+/* line 15, ../sass/import/_group.scss */
+.group .group-button:last-child { border-radius: 0 3px 3px 0; }
 
-/* line 132, ../sass/site/_style.scss */
-.group-button { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); -webkit-filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+/* line 139, ../sass/site/_style.scss */
+.group-button { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), 0 1px 3px rgba(128, 128, 128, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .group-button, .group-button:hover, .group-button:focus { color: #666666; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .group-button { border: 1px solid #d9d9d9; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .group-button { background: white; }
-/* line 36, ../sass/import/_element.scss */
-.group-button:hover, .group-button:focus { background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); -webkit-filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); filter: drop-shadow(0 1px 1px rgba(128, 128, 128, 0.4)); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.group-button:hover, .group-button:focus { background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), 0 1px 3px rgba(128, 128, 128, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .group-button:hover, .no-boxshadow .group-button:focus { border: 1px solid #d9d9d9; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .group-button:hover, .no-cssgradients .group-button:focus { background: white; }
-/* line 46, ../sass/import/_element.scss */
-.group-button:active { z-index: 2; background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 1px 3px rgba(128, 128, 128, 0.6), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.group-button:active { z-index: 2; background: -webkit-linear-gradient(#ffffff, #d9d9d9); background: -moz-linear-gradient(#ffffff, #d9d9d9); background: linear-gradient(#ffffff, #d9d9d9); box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.3), inset 0 1px 3px rgba(128, 128, 128, 0.6), inset 0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), inset -0.75em 0 1.125em -0.75em rgba(217, 217, 217, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .group-button:active { border: 1px solid #d9d9d9; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .group-button:active { background: white; }
 
-/* line 136, ../sass/site/_style.scss */
-.button, .alert { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; }
-/* line 119, ../sass/import/_element.scss */
+/* line 143, ../sass/site/_style.scss */
+.button, .alert { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; }
+/* line 120, ../sass/import/_element.scss */
 .button, .button:hover, .button:focus, .alert, .alert:hover, .alert:focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 
-/* line 139, ../sass/site/_style.scss */
+/* line 146, ../sass/site/_style.scss */
 .button { margin: 0 0 1.5em; }
-/* line 142, ../sass/site/_style.scss */
-.button:nth-of-type(1) { background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); -webkit-filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 2px 0 rgba(107, 179, 214, 0.8), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4); }
+/* line 149, ../sass/site/_style.scss */
+.button:nth-of-type(1) { background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 2px 0 rgba(107, 179, 214, 0.8), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), 0 1px 3px rgba(28, 77, 102, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(1) { border: 1px solid #3577c1; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(1) { background: #3a9ac9; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(1):hover, .button:nth-of-type(1):focus { background: -webkit-linear-gradient(#4ea4ce, #4383cb); background: -moz-linear-gradient(#4ea4ce, #4383cb); background: linear-gradient(#4ea4ce, #4383cb); -webkit-filter: drop-shadow(0 1px 1px rgba(31, 85, 111, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(31, 85, 111, 0.4)); filter: drop-shadow(0 1px 1px rgba(31, 85, 111, 0.4)); box-shadow: inset 0 0 0 1px rgba(31, 85, 111, 0.3), inset 0 2px 0 rgba(122, 187, 219, 0.8), inset 0.75em 0 1.125em -0.75em rgba(67, 131, 203, 0.4), inset -0.75em 0 1.125em -0.75em rgba(67, 131, 203, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(1):hover, .button:nth-of-type(1):focus { background: -webkit-linear-gradient(#4ea4ce, #4383cb); background: -moz-linear-gradient(#4ea4ce, #4383cb); background: linear-gradient(#4ea4ce, #4383cb); box-shadow: inset 0 0 0 1px rgba(31, 85, 111, 0.3), inset 0 2px 0 rgba(122, 187, 219, 0.8), inset 0.75em 0 1.125em -0.75em rgba(67, 131, 203, 0.4), inset -0.75em 0 1.125em -0.75em rgba(67, 131, 203, 0.4), 0 1px 3px rgba(31, 85, 111, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(1):hover, .no-boxshadow .button:nth-of-type(1):focus { border: 1px solid #4383cb; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(1):hover, .no-cssgradients .button:nth-of-type(1):focus { background: #4ea4ce; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(1):active { z-index: 2; background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 1px 3px rgba(28, 77, 102, 0.6), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(1):active { z-index: 2; background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 1px 3px rgba(28, 77, 102, 0.6), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(1):active { border: 1px solid #3577c1; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(1):active { background: #3a9ac9; }
-/* line 19, ../sass/import/_icon.scss */
-.button:nth-of-type(1) { position: relative; padding-left: 3em; }
-/* line 26, ../sass/import/_icon.scss */
-.button:nth-of-type(1):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "navigateleft"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 146, ../sass/site/_style.scss */
-.button:nth-of-type(2) { background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); -webkit-filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 2px 0 rgba(230, 115, 109, 0.8), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4); }
+/* line 152, ../sass/site/_style.scss */
+.button:nth-of-type(2) { background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 2px 0 rgba(230, 115, 109, 0.8), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), 0 1px 3px rgba(120, 26, 21, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(2) { border: 1px solid #cc2c24; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(2) { background: #dd453d; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(2):hover, .button:nth-of-type(2):focus { background: -webkit-linear-gradient(#e05850, #da3229); background: -moz-linear-gradient(#e05850, #da3229); background: linear-gradient(#e05850, #da3229); -webkit-filter: drop-shadow(0 1px 1px rgba(130, 28, 23, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(130, 28, 23, 0.4)); filter: drop-shadow(0 1px 1px rgba(130, 28, 23, 0.4)); box-shadow: inset 0 0 0 1px rgba(130, 28, 23, 0.3), inset 0 2px 0 rgba(232, 129, 124, 0.8), inset 0.75em 0 1.125em -0.75em rgba(218, 50, 41, 0.4), inset -0.75em 0 1.125em -0.75em rgba(218, 50, 41, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(2):hover, .button:nth-of-type(2):focus { background: -webkit-linear-gradient(#e05850, #da3229); background: -moz-linear-gradient(#e05850, #da3229); background: linear-gradient(#e05850, #da3229); box-shadow: inset 0 0 0 1px rgba(130, 28, 23, 0.3), inset 0 2px 0 rgba(232, 129, 124, 0.8), inset 0.75em 0 1.125em -0.75em rgba(218, 50, 41, 0.4), inset -0.75em 0 1.125em -0.75em rgba(218, 50, 41, 0.4), 0 1px 3px rgba(130, 28, 23, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(2):hover, .no-boxshadow .button:nth-of-type(2):focus { border: 1px solid #da3229; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(2):hover, .no-cssgradients .button:nth-of-type(2):focus { background: #e05850; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(2):active { z-index: 2; background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 1px 3px rgba(120, 26, 21, 0.6), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(2):active { z-index: 2; background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 1px 3px rgba(120, 26, 21, 0.6), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(2):active { border: 1px solid #cc2c24; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(2):active { background: #dd453d; }
-/* line 19, ../sass/import/_icon.scss */
-.button:nth-of-type(2) { position: relative; padding-left: 3em; }
-/* line 26, ../sass/import/_icon.scss */
-.button:nth-of-type(2):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "⚠"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 150, ../sass/site/_style.scss */
-.button:nth-of-type(3) { background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); -webkit-filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 2px 0 rgba(249, 198, 111, 0.8), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4); }
+/* line 155, ../sass/site/_style.scss */
+.button:nth-of-type(3) { background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 2px 0 rgba(249, 198, 111, 0.8), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), 0 1px 3px rgba(149, 96, 6, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(3) { border: 1px solid #f68530; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(3) { background: #f7b23f; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(3):hover, .button:nth-of-type(3):focus { background: -webkit-linear-gradient(#f8ba52, #f79042); background: -moz-linear-gradient(#f8ba52, #f79042); background: linear-gradient(#f8ba52, #f79042); -webkit-filter: drop-shadow(0 1px 1px rgba(158, 102, 7, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(158, 102, 7, 0.4)); filter: drop-shadow(0 1px 1px rgba(158, 102, 7, 0.4)); box-shadow: inset 0 0 0 1px rgba(158, 102, 7, 0.3), inset 0 2px 0 rgba(250, 203, 125, 0.8), inset 0.75em 0 1.125em -0.75em rgba(247, 144, 66, 0.4), inset -0.75em 0 1.125em -0.75em rgba(247, 144, 66, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(3):hover, .button:nth-of-type(3):focus { background: -webkit-linear-gradient(#f8ba52, #f79042); background: -moz-linear-gradient(#f8ba52, #f79042); background: linear-gradient(#f8ba52, #f79042); box-shadow: inset 0 0 0 1px rgba(158, 102, 7, 0.3), inset 0 2px 0 rgba(250, 203, 125, 0.8), inset 0.75em 0 1.125em -0.75em rgba(247, 144, 66, 0.4), inset -0.75em 0 1.125em -0.75em rgba(247, 144, 66, 0.4), 0 1px 3px rgba(158, 102, 7, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(3):hover, .no-boxshadow .button:nth-of-type(3):focus { border: 1px solid #f79042; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(3):hover, .no-cssgradients .button:nth-of-type(3):focus { background: #f8ba52; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(3):active { z-index: 2; background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 1px 3px rgba(149, 96, 6, 0.6), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(3):active { z-index: 2; background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 1px 3px rgba(149, 96, 6, 0.6), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(3):active { border: 1px solid #f68530; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(3):active { background: #f7b23f; }
-/* line 153, ../sass/site/_style.scss */
-.button:nth-of-type(4) { background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); -webkit-filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 2px 0 rgba(160, 188, 78, 0.8), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4); }
+/* line 158, ../sass/site/_style.scss */
+.button:nth-of-type(4) { background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 2px 0 rgba(160, 188, 78, 0.8), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), 0 1px 3px rgba(48, 57, 21, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(4) { border: 1px solid #628a34; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(4) { background: #88a23d; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(4):hover, .button:nth-of-type(4):focus { background: -webkit-linear-gradient(#9ab745, #6f9b3b); background: -moz-linear-gradient(#9ab745, #6f9b3b); background: linear-gradient(#9ab745, #6f9b3b); -webkit-filter: drop-shadow(0 1px 1px rgba(54, 64, 24, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(54, 64, 24, 0.4)); filter: drop-shadow(0 1px 1px rgba(54, 64, 24, 0.4)); box-shadow: inset 0 0 0 1px rgba(54, 64, 24, 0.3), inset 0 2px 0 rgba(169, 195, 96, 0.8), inset 0.75em 0 1.125em -0.75em rgba(111, 155, 59, 0.4), inset -0.75em 0 1.125em -0.75em rgba(111, 155, 59, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(4):hover, .button:nth-of-type(4):focus { background: -webkit-linear-gradient(#9ab745, #6f9b3b); background: -moz-linear-gradient(#9ab745, #6f9b3b); background: linear-gradient(#9ab745, #6f9b3b); box-shadow: inset 0 0 0 1px rgba(54, 64, 24, 0.3), inset 0 2px 0 rgba(169, 195, 96, 0.8), inset 0.75em 0 1.125em -0.75em rgba(111, 155, 59, 0.4), inset -0.75em 0 1.125em -0.75em rgba(111, 155, 59, 0.4), 0 1px 3px rgba(54, 64, 24, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(4):hover, .no-boxshadow .button:nth-of-type(4):focus { border: 1px solid #6f9b3b; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(4):hover, .no-cssgradients .button:nth-of-type(4):focus { background: #9ab745; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(4):active { z-index: 2; background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 1px 3px rgba(48, 57, 21, 0.6), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(4):active { z-index: 2; background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 1px 3px rgba(48, 57, 21, 0.6), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(4):active { border: 1px solid #628a34; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(4):active { background: #88a23d; }
-/* line 156, ../sass/site/_style.scss */
-.button:nth-of-type(5) { background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); -webkit-filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 2px 0 rgba(149, 205, 211, 0.8), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4); }
+/* line 161, ../sass/site/_style.scss */
+.button:nth-of-type(5) { background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 2px 0 rgba(149, 205, 211, 0.8), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), 0 1px 3px rgba(45, 103, 110, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(5) { border: 1px solid #66a5c1; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(5) { background: #71bcc5; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(5):hover, .button:nth-of-type(5):focus { background: -webkit-linear-gradient(#7fc3cb, #73adc6); background: -moz-linear-gradient(#7fc3cb, #73adc6); background: linear-gradient(#7fc3cb, #73adc6); -webkit-filter: drop-shadow(0 1px 1px rgba(48, 110, 117, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(48, 110, 117, 0.4)); filter: drop-shadow(0 1px 1px rgba(48, 110, 117, 0.4)); box-shadow: inset 0 0 0 1px rgba(48, 110, 117, 0.3), inset 0 2px 0 rgba(159, 210, 216, 0.8), inset 0.75em 0 1.125em -0.75em rgba(115, 173, 198, 0.4), inset -0.75em 0 1.125em -0.75em rgba(115, 173, 198, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(5):hover, .button:nth-of-type(5):focus { background: -webkit-linear-gradient(#7fc3cb, #73adc6); background: -moz-linear-gradient(#7fc3cb, #73adc6); background: linear-gradient(#7fc3cb, #73adc6); box-shadow: inset 0 0 0 1px rgba(48, 110, 117, 0.3), inset 0 2px 0 rgba(159, 210, 216, 0.8), inset 0.75em 0 1.125em -0.75em rgba(115, 173, 198, 0.4), inset -0.75em 0 1.125em -0.75em rgba(115, 173, 198, 0.4), 0 1px 3px rgba(48, 110, 117, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(5):hover, .no-boxshadow .button:nth-of-type(5):focus { border: 1px solid #73adc6; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(5):hover, .no-cssgradients .button:nth-of-type(5):focus { background: #7fc3cb; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(5):active { z-index: 2; background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 1px 3px rgba(45, 103, 110, 0.6), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(5):active { z-index: 2; background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 1px 3px rgba(45, 103, 110, 0.6), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(5):active { border: 1px solid #66a5c1; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(5):active { background: #71bcc5; }
-/* line 159, ../sass/site/_style.scss */
-.button:nth-of-type(6) { background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); -webkit-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4); }
+/* line 164, ../sass/site/_style.scss */
+.button:nth-of-type(6) { background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), 0 1px 3px rgba(87, 87, 87, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(6) { border: 1px solid #949494; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(6) { background: #aeaeae; }
-/* line 36, ../sass/import/_element.scss */
-.button:nth-of-type(6):hover, .button:nth-of-type(6):focus { background: -webkit-linear-gradient(#b6b6b6, #9b9b9b); background: -moz-linear-gradient(#b6b6b6, #9b9b9b); background: linear-gradient(#b6b6b6, #9b9b9b); -webkit-filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); box-shadow: inset 0 0 0 1px rgba(91, 91, 91, 0.3), inset 0 2px 0 rgba(200, 200, 200, 0.8), inset 0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), inset -0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+.button:nth-of-type(6):hover, .button:nth-of-type(6):focus { background: -webkit-linear-gradient(#b6b6b6, #9b9b9b); background: -moz-linear-gradient(#b6b6b6, #9b9b9b); background: linear-gradient(#b6b6b6, #9b9b9b); box-shadow: inset 0 0 0 1px rgba(91, 91, 91, 0.3), inset 0 2px 0 rgba(200, 200, 200, 0.8), inset 0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), inset -0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), 0 1px 3px rgba(91, 91, 91, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(6):hover, .no-boxshadow .button:nth-of-type(6):focus { border: 1px solid #9b9b9b; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(6):hover, .no-cssgradients .button:nth-of-type(6):focus { background: #b6b6b6; }
-/* line 46, ../sass/import/_element.scss */
-.button:nth-of-type(6):active { z-index: 2; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 1px 3px rgba(87, 87, 87, 0.6), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+.button:nth-of-type(6):active { z-index: 2; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 1px 3px rgba(87, 87, 87, 0.6), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .button:nth-of-type(6):active { border: 1px solid #949494; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients .button:nth-of-type(6):active { background: #aeaeae; }
 
-/* line 164, ../sass/site/_style.scss */
-.alert { margin: 0 0 1.5em; text-align: center; width: 100%; }
 /* line 169, ../sass/site/_style.scss */
-.alert:nth-of-type(1) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); -webkit-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert { margin: 0 0 1.5em; text-align: center; width: 100%; }
+/* line 174, ../sass/site/_style.scss */
+.alert:nth-of-type(1) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), 0 1px 3px rgba(87, 87, 87, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(1), .alert:nth-of-type(1):hover, .alert:nth-of-type(1):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(1) { border: 1px solid #949494; }
@@ -608,10 +605,10 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(1) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(1):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "+"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 173, ../sass/site/_style.scss */
-.alert:nth-of-type(2) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); -webkit-filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); filter: drop-shadow(0 1px 1px rgba(28, 77, 102, 0.4)); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 2px 0 rgba(107, 179, 214, 0.8), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert:nth-of-type(1):before { position: absolute; display: block; top: 0; text-align: center; content: "+"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+/* line 178, ../sass/site/_style.scss */
+.alert:nth-of-type(2) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#3a9ac9, #3577c1); background: -moz-linear-gradient(#3a9ac9, #3577c1); background: linear-gradient(#3a9ac9, #3577c1); box-shadow: inset 0 0 0 1px rgba(28, 77, 102, 0.3), inset 0 2px 0 rgba(107, 179, 214, 0.8), inset 0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(53, 119, 193, 0.4), 0 1px 3px rgba(28, 77, 102, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(2), .alert:nth-of-type(2):hover, .alert:nth-of-type(2):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(2) { border: 1px solid #3577c1; }
@@ -620,10 +617,10 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(2) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(2):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "🔔"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 177, ../sass/site/_style.scss */
-.alert:nth-of-type(3) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); -webkit-filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); filter: drop-shadow(0 1px 1px rgba(120, 26, 21, 0.4)); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 2px 0 rgba(230, 115, 109, 0.8), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert:nth-of-type(2):before { position: absolute; display: block; top: 0; text-align: center; content: "🔔"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+/* line 182, ../sass/site/_style.scss */
+.alert:nth-of-type(3) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#dd453d, #cc2c24); background: -moz-linear-gradient(#dd453d, #cc2c24); background: linear-gradient(#dd453d, #cc2c24); box-shadow: inset 0 0 0 1px rgba(120, 26, 21, 0.3), inset 0 2px 0 rgba(230, 115, 109, 0.8), inset 0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), inset -0.75em 0 1.125em -0.75em rgba(204, 44, 36, 0.4), 0 1px 3px rgba(120, 26, 21, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(3), .alert:nth-of-type(3):hover, .alert:nth-of-type(3):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(3) { border: 1px solid #cc2c24; }
@@ -632,10 +629,10 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(3) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(3):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "␡"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 181, ../sass/site/_style.scss */
-.alert:nth-of-type(4) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); -webkit-filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); filter: drop-shadow(0 1px 1px rgba(149, 96, 6, 0.4)); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 2px 0 rgba(249, 198, 111, 0.8), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert:nth-of-type(3):before { position: absolute; display: block; top: 0; text-align: center; content: "␡"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+/* line 186, ../sass/site/_style.scss */
+.alert:nth-of-type(4) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#f7b23f, #f68530); background: -moz-linear-gradient(#f7b23f, #f68530); background: linear-gradient(#f7b23f, #f68530); box-shadow: inset 0 0 0 1px rgba(149, 96, 6, 0.3), inset 0 2px 0 rgba(249, 198, 111, 0.8), inset 0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), inset -0.75em 0 1.125em -0.75em rgba(246, 133, 48, 0.4), 0 1px 3px rgba(149, 96, 6, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(4), .alert:nth-of-type(4):hover, .alert:nth-of-type(4):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(4) { border: 1px solid #f68530; }
@@ -644,10 +641,10 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(4) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(4):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "-"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 185, ../sass/site/_style.scss */
-.alert:nth-of-type(5) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); -webkit-filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); filter: drop-shadow(0 1px 1px rgba(48, 57, 21, 0.4)); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 2px 0 rgba(160, 188, 78, 0.8), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert:nth-of-type(4):before { position: absolute; display: block; top: 0; text-align: center; content: "-"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+/* line 190, ../sass/site/_style.scss */
+.alert:nth-of-type(5) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#88a23d, #628a34); background: -moz-linear-gradient(#88a23d, #628a34); background: linear-gradient(#88a23d, #628a34); box-shadow: inset 0 0 0 1px rgba(48, 57, 21, 0.3), inset 0 2px 0 rgba(160, 188, 78, 0.8), inset 0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), inset -0.75em 0 1.125em -0.75em rgba(98, 138, 52, 0.4), 0 1px 3px rgba(48, 57, 21, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(5), .alert:nth-of-type(5):hover, .alert:nth-of-type(5):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(5) { border: 1px solid #628a34; }
@@ -656,10 +653,10 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(5) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(5):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "✓"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
-/* line 189, ../sass/site/_style.scss */
-.alert:nth-of-type(6) { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); -webkit-filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); filter: drop-shadow(0 1px 1px rgba(45, 103, 110, 0.4)); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 2px 0 rgba(149, 205, 211, 0.8), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+.alert:nth-of-type(5):before { position: absolute; display: block; top: 0; text-align: center; content: "✓"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+/* line 194, ../sass/site/_style.scss */
+.alert:nth-of-type(6) { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#71bcc5, #66a5c1); background: -moz-linear-gradient(#71bcc5, #66a5c1); background: linear-gradient(#71bcc5, #66a5c1); box-shadow: inset 0 0 0 1px rgba(45, 103, 110, 0.3), inset 0 2px 0 rgba(149, 205, 211, 0.8), inset 0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), inset -0.75em 0 1.125em -0.75em rgba(102, 165, 193, 0.4), 0 1px 3px rgba(45, 103, 110, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 .alert:nth-of-type(6), .alert:nth-of-type(6):hover, .alert:nth-of-type(6):focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow .alert:nth-of-type(6) { border: 1px solid #66a5c1; }
@@ -668,119 +665,129 @@ hr { clear: both; border: none; height: 1px; background: rgba(0, 0, 0, 0.1); -we
 /* line 19, ../sass/import/_icon.scss */
 .alert:nth-of-type(6) { position: relative; padding-left: 3em; }
 /* line 26, ../sass/import/_icon.scss */
-.alert:nth-of-type(6):before { position: absolute; display: block; top: 0; text-align: center; width: 2.25em; height: 2.25em; content: "ℹ"; font: 1em/2.5em "SSStandard"; color: inherit; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
+.alert:nth-of-type(6):before { position: absolute; display: block; top: 0; text-align: center; content: "ℹ"; font: 1em/2.5em "SSStandard"; color: inherit; top: 0; bottom: 0; padding: 0 0.75em; left: 0; border-radius: 3px 0 0 3px; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1); }
 
-/* line 196, ../sass/site/_style.scss */
+/* line 201, ../sass/site/_style.scss */
 .form-top label { margin: 0 0 0.375em; }
 
-/* line 199, ../sass/site/_style.scss */
+/* line 204, ../sass/site/_style.scss */
 .form-left label { width: 100%; }
-@media screen and (min-width: 37.5em) { /* line 199, ../sass/site/_style.scss */
+@media screen and (min-width: 37.5em) { /* line 204, ../sass/site/_style.scss */
   .form-left label { display: inline-block; width: 30%; } }
 /* line 18, ../sass/import/_forms.scss */
 .form-left label + input, .form-left label + select, .form-left label + textarea, .form-left label + ul { width: 100%; clear: left; }
 @media screen and (min-width: 37.5em) { /* line 18, ../sass/import/_forms.scss */
   .form-left label + input, .form-left label + select, .form-left label + textarea, .form-left label + ul { display: inline-block; width: 70%; } }
 
-/* line 202, ../sass/site/_style.scss */
-[type="text"], [type="email"], [type="password"], [type="url"], textarea { border-radius: 3px; padding: 0.75em; background: -webkit-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: -moz-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #aeaeae, inset 0 2px 2px rgba(174, 174, 174, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #aeaeae, inset 0 2px 2px rgba(174, 174, 174, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #aeaeae, inset 0 2px 2px rgba(174, 174, 174, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"], .no-boxshadow [type="email"], .no-boxshadow [type="password"], .no-boxshadow [type="url"], .no-boxshadow textarea { border: 1px solid #aeaeae; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"], .no-cssgradients [type="email"], .no-cssgradients [type="password"], .no-cssgradients [type="url"], .no-cssgradients textarea { background: white; }
-/* line 76, ../sass/import/_forms.scss */
-[type="text"]:focus, [type="email"]:focus, [type="password"]:focus, [type="url"]:focus, textarea:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"]:focus, .no-boxshadow [type="email"]:focus, .no-boxshadow [type="password"]:focus, .no-boxshadow [type="url"]:focus, .no-boxshadow textarea:focus { border: 1px solid #3a9ac9; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"]:focus, .no-cssgradients [type="email"]:focus, .no-cssgradients [type="password"]:focus, .no-cssgradients [type="url"]:focus, .no-cssgradients textarea:focus { background: white; }
-/* line 204, ../sass/site/_style.scss */
-[type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled], textarea[disabled] { border-radius: 3px; padding: 0.75em; background: #d7d7d7; -webkit-box-shadow: inset 0 0 0 1px #aeaeae; -moz-box-shadow: inset 0 0 0 1px #aeaeae; box-shadow: inset 0 0 0 1px #aeaeae; }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"][disabled], .no-boxshadow [type="email"][disabled], .no-boxshadow [type="password"][disabled], .no-boxshadow [type="url"][disabled], .no-boxshadow textarea[disabled] { border: 1px solid #aeaeae; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"][disabled], .no-cssgradients [type="email"][disabled], .no-cssgradients [type="password"][disabled], .no-cssgradients [type="url"][disabled], .no-cssgradients textarea[disabled] { background: white; }
-/* line 76, ../sass/import/_forms.scss */
-[type="text"][disabled]:focus, [type="email"][disabled]:focus, [type="password"][disabled]:focus, [type="url"][disabled]:focus, textarea[disabled]:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"][disabled]:focus, .no-boxshadow [type="email"][disabled]:focus, .no-boxshadow [type="password"][disabled]:focus, .no-boxshadow [type="url"][disabled]:focus, .no-boxshadow textarea[disabled]:focus { border: 1px solid #3a9ac9; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"][disabled]:focus, .no-cssgradients [type="email"][disabled]:focus, .no-cssgradients [type="password"][disabled]:focus, .no-cssgradients [type="url"][disabled]:focus, .no-cssgradients textarea[disabled]:focus { background: white; }
-/* line 206, ../sass/site/_style.scss */
-[type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error, textarea.error { border-radius: 3px; padding: 0.75em; background: -webkit-linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; background: -moz-linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; background: linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #dd453d, inset 0 2px 2px rgba(221, 69, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #dd453d, inset 0 2px 2px rgba(221, 69, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #dd453d, inset 0 2px 2px rgba(221, 69, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"].error, .no-boxshadow [type="email"].error, .no-boxshadow [type="password"].error, .no-boxshadow [type="url"].error, .no-boxshadow textarea.error { border: 1px solid #dd453d; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"].error, .no-cssgradients [type="email"].error, .no-cssgradients [type="password"].error, .no-cssgradients [type="url"].error, .no-cssgradients textarea.error { background: white; }
-/* line 76, ../sass/import/_forms.scss */
-[type="text"].error:focus, [type="email"].error:focus, [type="password"].error:focus, [type="url"].error:focus, textarea.error:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"].error:focus, .no-boxshadow [type="email"].error:focus, .no-boxshadow [type="password"].error:focus, .no-boxshadow [type="url"].error:focus, .no-boxshadow textarea.error:focus { border: 1px solid #3a9ac9; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"].error:focus, .no-cssgradients [type="email"].error:focus, .no-cssgradients [type="password"].error:focus, .no-cssgradients [type="url"].error:focus, .no-cssgradients textarea.error:focus { background: white; }
-/* line 208, ../sass/site/_style.scss */
-[type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success, textarea.success { border-radius: 3px; padding: 0.75em; background: -webkit-linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; background: -moz-linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; background: linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #88a23d, inset 0 2px 2px rgba(136, 162, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #88a23d, inset 0 2px 2px rgba(136, 162, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #88a23d, inset 0 2px 2px rgba(136, 162, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"].success, .no-boxshadow [type="email"].success, .no-boxshadow [type="password"].success, .no-boxshadow [type="url"].success, .no-boxshadow textarea.success { border: 1px solid #88a23d; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"].success, .no-cssgradients [type="email"].success, .no-cssgradients [type="password"].success, .no-cssgradients [type="url"].success, .no-cssgradients textarea.success { background: white; }
-/* line 76, ../sass/import/_forms.scss */
-[type="text"].success:focus, [type="email"].success:focus, [type="password"].success:focus, [type="url"].success:focus, textarea.success:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; -webkit-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
-.no-boxshadow [type="text"].success:focus, .no-boxshadow [type="email"].success:focus, .no-boxshadow [type="password"].success:focus, .no-boxshadow [type="url"].success:focus, .no-boxshadow textarea.success:focus { border: 1px solid #3a9ac9; }
-/* line 125, ../sass/import/_forms.scss */
-.no-cssgradients [type="text"].success:focus, .no-cssgradients [type="email"].success:focus, .no-cssgradients [type="password"].success:focus, .no-cssgradients [type="url"].success:focus, .no-cssgradients textarea.success:focus { background: white; }
-
+/* line 207, ../sass/site/_style.scss */
+[type="text"], [type="email"], [type="password"], [type="url"] { border-radius: 3px; padding: 0 0.75em; height: 2.25em; line-height: 2.25em; background: -webkit-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: -moz-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; box-shadow: inset 0 0 0 1px #aeaeae, inset 0 2px 2px rgba(174, 174, 174, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"], .no-boxshadow [type="email"], .no-boxshadow [type="password"], .no-boxshadow [type="url"] { border: 1px solid #aeaeae; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"], .no-cssgradients [type="email"], .no-cssgradients [type="password"], .no-cssgradients [type="url"] { background: white; }
+/* line 80, ../sass/import/_forms.scss */
+[type="text"]:focus, [type="email"]:focus, [type="password"]:focus, [type="url"]:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"]:focus, .no-boxshadow [type="email"]:focus, .no-boxshadow [type="password"]:focus, .no-boxshadow [type="url"]:focus { border: 1px solid #3a9ac9; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"]:focus, .no-cssgradients [type="email"]:focus, .no-cssgradients [type="password"]:focus, .no-cssgradients [type="url"]:focus { background: white; }
+/* line 209, ../sass/site/_style.scss */
+[type="text"][disabled], [type="email"][disabled], [type="password"][disabled], [type="url"][disabled] { border-radius: 3px; padding: 0 0.75em; height: 2.25em; line-height: 2.25em; background: #d7d7d7; box-shadow: inset 0 0 0 1px #aeaeae; }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"][disabled], .no-boxshadow [type="email"][disabled], .no-boxshadow [type="password"][disabled], .no-boxshadow [type="url"][disabled] { border: 1px solid #aeaeae; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"][disabled], .no-cssgradients [type="email"][disabled], .no-cssgradients [type="password"][disabled], .no-cssgradients [type="url"][disabled] { background: white; }
+/* line 80, ../sass/import/_forms.scss */
+[type="text"][disabled]:focus, [type="email"][disabled]:focus, [type="password"][disabled]:focus, [type="url"][disabled]:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"][disabled]:focus, .no-boxshadow [type="email"][disabled]:focus, .no-boxshadow [type="password"][disabled]:focus, .no-boxshadow [type="url"][disabled]:focus { border: 1px solid #3a9ac9; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"][disabled]:focus, .no-cssgradients [type="email"][disabled]:focus, .no-cssgradients [type="password"][disabled]:focus, .no-cssgradients [type="url"][disabled]:focus { background: white; }
 /* line 211, ../sass/site/_style.scss */
-[type="checkbox"], [type="radio"] { border-radius: 3px; padding: 0.75em; margin: 0 0.375em 0 0; }
+[type="text"].error, [type="email"].error, [type="password"].error, [type="url"].error { border-radius: 3px; padding: 0 0.75em; height: 2.25em; line-height: 2.25em; background: -webkit-linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; background: -moz-linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; background: linear-gradient(rgba(221, 69, 61, 0.15) 0%, rgba(221, 69, 61, 0) 100%), white; box-shadow: inset 0 0 0 1px #dd453d, inset 0 2px 2px rgba(221, 69, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"].error, .no-boxshadow [type="email"].error, .no-boxshadow [type="password"].error, .no-boxshadow [type="url"].error { border: 1px solid #dd453d; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"].error, .no-cssgradients [type="email"].error, .no-cssgradients [type="password"].error, .no-cssgradients [type="url"].error { background: white; }
+/* line 80, ../sass/import/_forms.scss */
+[type="text"].error:focus, [type="email"].error:focus, [type="password"].error:focus, [type="url"].error:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"].error:focus, .no-boxshadow [type="email"].error:focus, .no-boxshadow [type="password"].error:focus, .no-boxshadow [type="url"].error:focus { border: 1px solid #3a9ac9; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"].error:focus, .no-cssgradients [type="email"].error:focus, .no-cssgradients [type="password"].error:focus, .no-cssgradients [type="url"].error:focus { background: white; }
+/* line 213, ../sass/site/_style.scss */
+[type="text"].success, [type="email"].success, [type="password"].success, [type="url"].success { border-radius: 3px; padding: 0 0.75em; height: 2.25em; line-height: 2.25em; background: -webkit-linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; background: -moz-linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; background: linear-gradient(rgba(136, 162, 61, 0.15) 0%, rgba(136, 162, 61, 0) 100%), white; box-shadow: inset 0 0 0 1px #88a23d, inset 0 2px 2px rgba(136, 162, 61, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"].success, .no-boxshadow [type="email"].success, .no-boxshadow [type="password"].success, .no-boxshadow [type="url"].success { border: 1px solid #88a23d; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"].success, .no-cssgradients [type="email"].success, .no-cssgradients [type="password"].success, .no-cssgradients [type="url"].success { background: white; }
+/* line 80, ../sass/import/_forms.scss */
+[type="text"].success:focus, [type="email"].success:focus, [type="password"].success:focus, [type="url"].success:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow [type="text"].success:focus, .no-boxshadow [type="email"].success:focus, .no-boxshadow [type="password"].success:focus, .no-boxshadow [type="url"].success:focus { border: 1px solid #3a9ac9; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients [type="text"].success:focus, .no-cssgradients [type="email"].success:focus, .no-cssgradients [type="password"].success:focus, .no-cssgradients [type="url"].success:focus { background: white; }
 
-/* line 214, ../sass/site/_style.scss */
-[type="submit"] { display: inline-block; padding: 0.625em 1.25em; border-radius: 3px; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); -webkit-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); filter: drop-shadow(0 1px 1px rgba(87, 87, 87, 0.4)); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4); }
-/* line 119, ../sass/import/_element.scss */
+/* line 216, ../sass/site/_style.scss */
+[type="checkbox"], [type="radio"] { border-radius: 3px; padding: 0.625em; margin: 0 0.375em 0 0; }
+
+/* line 219, ../sass/site/_style.scss */
+[type="submit"] { display: inline-block; padding: 0 1.5em; height: 2.25em; line-height: 2.25em; border-radius: 3px; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 2px 0 rgba(194, 194, 194, 0.8), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), 0 1px 3px rgba(87, 87, 87, 0.4); }
+/* line 120, ../sass/import/_element.scss */
 [type="submit"], [type="submit"]:hover, [type="submit"]:focus { color: white; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow [type="submit"] { border: 1px solid #949494; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients [type="submit"] { background: #aeaeae; }
-/* line 36, ../sass/import/_element.scss */
-[type="submit"]:hover, [type="submit"]:focus { background: -webkit-linear-gradient(#b6b6b6, #9b9b9b); background: -moz-linear-gradient(#b6b6b6, #9b9b9b); background: linear-gradient(#b6b6b6, #9b9b9b); -webkit-filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); -moz-filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); filter: drop-shadow(0 1px 1px rgba(91, 91, 91, 0.4)); box-shadow: inset 0 0 0 1px rgba(91, 91, 91, 0.3), inset 0 2px 0 rgba(200, 200, 200, 0.8), inset 0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), inset -0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4); }
+/* line 37, ../sass/import/_element.scss */
+[type="submit"]:hover, [type="submit"]:focus { background: -webkit-linear-gradient(#b6b6b6, #9b9b9b); background: -moz-linear-gradient(#b6b6b6, #9b9b9b); background: linear-gradient(#b6b6b6, #9b9b9b); box-shadow: inset 0 0 0 1px rgba(91, 91, 91, 0.3), inset 0 2px 0 rgba(200, 200, 200, 0.8), inset 0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), inset -0.75em 0 1.125em -0.75em rgba(155, 155, 155, 0.4), 0 1px 3px rgba(91, 91, 91, 0.4); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow [type="submit"]:hover, .no-boxshadow [type="submit"]:focus { border: 1px solid #9b9b9b; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients [type="submit"]:hover, .no-cssgradients [type="submit"]:focus { background: #b6b6b6; }
-/* line 46, ../sass/import/_element.scss */
-[type="submit"]:active { z-index: 2; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); -webkit-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); -moz-filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6)); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 1px 3px rgba(87, 87, 87, 0.6), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4); }
+/* line 47, ../sass/import/_element.scss */
+[type="submit"]:active { z-index: 2; background: -webkit-linear-gradient(#aeaeae, #949494); background: -moz-linear-gradient(#aeaeae, #949494); background: linear-gradient(#aeaeae, #949494); box-shadow: inset 0 0 0 1px rgba(87, 87, 87, 0.3), inset 0 1px 3px rgba(87, 87, 87, 0.6), inset 0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), inset -0.75em 0 1.125em -0.75em rgba(148, 148, 148, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); }
 /* line 103, ../sass/import/_element.scss */
 .no-boxshadow [type="submit"]:active { border: 1px solid #949494; }
 /* line 105, ../sass/import/_element.scss */
 .no-cssgradients [type="submit"]:active { background: #aeaeae; }
 
-/* line 217, ../sass/site/_style.scss */
-select { border-radius: 3px; padding: 0.75em; background: -webkit-linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; background: -moz-linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; background: linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; -webkit-box-shadow: inset 0 0 0 1px #aeaeae, inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #aeaeae, inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #aeaeae, inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 109, ../sass/import/_forms.scss */
+/* line 222, ../sass/site/_style.scss */
+select { border-radius: 3px; padding: 0 0.75em; height: 2.25em; line-height: 2.25em; background: -webkit-linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; background: -moz-linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; background: linear-gradient(rgba(174, 174, 174, 0.05) 46%, rgba(174, 174, 174, 0.15) 54%), white; box-shadow: inset 0 0 0 1px #aeaeae, inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 114, ../sass/import/_forms.scss */
 select:before { content: "\25BE"; color: inherit; position: absolute; top: 0; right: 0.75em; }
-/* line 123, ../sass/import/_forms.scss */
+/* line 128, ../sass/import/_forms.scss */
 .no-boxshadow select { border: 1px solid #aeaeae; }
-/* line 125, ../sass/import/_forms.scss */
+/* line 131, ../sass/import/_forms.scss */
 .no-cssgradients select { background: white; }
-/* line 67, ../sass/import/_forms.scss */
-select:focus, select:hover { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; background: linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; -webkit-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); -moz-box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); }
-/* line 123, ../sass/import/_forms.scss */
+/* line 68, ../sass/import/_forms.scss */
+select:focus, select:hover { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; background: linear-gradient(rgba(58, 154, 201, 0.05) 46%, rgba(58, 154, 201, 0.15) 54%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 2px rgba(0, 0, 0, 0.13333), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
 .no-boxshadow select:focus, .no-boxshadow select:hover { border: 1px solid #3a9ac9; }
-/* line 125, ../sass/import/_forms.scss */
+/* line 131, ../sass/import/_forms.scss */
 .no-cssgradients select:focus, .no-cssgradients select:hover { background: white; }
 
-/* line 220, ../sass/site/_style.scss */
-textarea { min-height: 9em; }
-
-/* line 223, ../sass/site/_style.scss */
-.form-help { margin: 0.375em 0 0 0; font-size: 12px; color: #999; }
+/* line 225, ../sass/site/_style.scss */
+textarea { border-radius: 3px; padding: 0.625em; background: -webkit-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: -moz-linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; background: linear-gradient(rgba(174, 174, 174, 0.15) 0%, rgba(174, 174, 174, 0) 100%), white; box-shadow: inset 0 0 0 1px #aeaeae, inset 0 2px 2px rgba(174, 174, 174, 0.4), 0 1px 1px rgba(255, 255, 255, 0.6); line-height: 24px; min-height: 9em; }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow textarea { border: 1px solid #aeaeae; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients textarea { background: white; }
+/* line 80, ../sass/import/_forms.scss */
+textarea:focus { background: -webkit-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: -moz-linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; background: linear-gradient(rgba(58, 154, 201, 0.15) 0%, rgba(58, 154, 201, 0) 100%), white; box-shadow: inset 0 0 0 1px #3a9ac9, inset 0 2px 2px rgba(58, 154, 201, 0.4), inset 6px 0 12px -6px rgba(58, 154, 201, 0.3), inset -6px 0 12px -6px rgba(58, 154, 201, 0.3), 0 0 6px rgba(58, 154, 201, 0.6), 0 1px 1px rgba(255, 255, 255, 0.6); }
+/* line 128, ../sass/import/_forms.scss */
+.no-boxshadow textarea:focus { border: 1px solid #3a9ac9; }
+/* line 131, ../sass/import/_forms.scss */
+.no-cssgradients textarea:focus { background: white; }
 
 /* line 229, ../sass/site/_style.scss */
+.form-help { margin: 0.375em 0 0 0; font-size: 12px; color: #999; }
+
+/* line 235, ../sass/site/_style.scss */
 .radio ul { list-style: none; padding: 0; }
-/* line 232, ../sass/site/_style.scss */
+/* line 238, ../sass/site/_style.scss */
 .radio li { display: inline-block; padding-right: 1.5em; width: 100%/3; }
-/* line 236, ../sass/site/_style.scss */
+/* line 242, ../sass/site/_style.scss */
 .radio li > label { font-weight: 400; width: 100%; }
 
 /* line 10, ../sass/import/_table.scss */
@@ -788,7 +795,7 @@ table { margin: 0 0 1.5em; padding: 0; font-family: "freight-sans-pro", sans-ser
 @media screen and (max-width: 48em) { /* line 10, ../sass/import/_table.scss */
   table { display: block; position: relative; border: 1px solid #cacdcf; } }
 /* line 20, ../sass/import/_table.scss */
-table th, table td { padding: 0.75em 1.5em; text-align: left; border-bottom: 1px solid #cacdce; color: #575d60; }
+table th, table td { padding: 0.75em; text-align: left; border-bottom: 1px solid #cacdce; color: #575d60; }
 /* line 26, ../sass/import/_table.scss */
 table th { border-width: 2px; }
 /* line 31, ../sass/import/_table.scss */
@@ -811,42 +818,42 @@ table tr:hover td, table tr:focus td { background: #cacdce; }
   table th, table td, table tbody, table thead tr, table thead { display: block; } }
 
 /** prism.js Monokai theme for CSS & Sass/Scss  @todo test for JavaScript & HTML  @author @MoOx */
-/* line 277, ../sass/site/_style.scss */
+/* line 283, ../sass/site/_style.scss */
 code[class*="language-"], pre[class*="language-"] { -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; white-space: pre; white-space: pre-wrap; word-break: break-all; word-wrap: break-word; font-family: Menlo, Monaco, "Courier New", monospace; font-size: 0.875rem; line-height: 18px; color: #76d9e6; text-shadow: 0 1px 0 black; }
 
-/* line 302, ../sass/site/_style.scss */
+/* line 308, ../sass/site/_style.scss */
 pre[class*="language-"], :not(pre) > code[class*="language-"] { background: #2a2a2a; }
 
-/* line 306, ../sass/site/_style.scss */
+/* line 312, ../sass/site/_style.scss */
 pre[class*="language-"] { padding: 0.85714em; border-radius: 5px; border: 1px solid #e1e1e8; }
 
-/* line 312, ../sass/site/_style.scss */
+/* line 318, ../sass/site/_style.scss */
 :not(pre) > code[class*="language-"] { padding: 0.15em 0.2em 0.05em; border-radius: .3em; border: 0.13em solid #7a6652; box-shadow: 1px 1px 0.3em -0.1em black inset; }
 
-/* line 318, ../sass/site/_style.scss */
+/* line 324, ../sass/site/_style.scss */
 .namespace { opacity: .7; }
 
-/* line 325, ../sass/site/_style.scss */
-.token.comment, .token.prolog, .token.doctype, .token.cdata { color: #6f705e; }
 /* line 331, ../sass/site/_style.scss */
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: #6f705e; }
+/* line 337, ../sass/site/_style.scss */
 .token.null, .token.operator, .token.boolean, .token.number { color: #a77afe; }
-/* line 339, ../sass/site/_style.scss */
+/* line 345, ../sass/site/_style.scss */
 .token.attr-name, .token.string, .token.entity, .token.url, .language-css .token.string, .style .token.string { color: #e6d06c; }
-/* line 342, ../sass/site/_style.scss */
+/* line 348, ../sass/site/_style.scss */
 .token.selector { color: #a6e22d; }
-/* line 351, ../sass/site/_style.scss */
+/* line 357, ../sass/site/_style.scss */
 .token.atrule, .token.attr-value, .token.keyword, .token.control, .token.directive, .token.important, .token.unit { color: #f12770; }
-/* line 355, ../sass/site/_style.scss */
+/* line 361, ../sass/site/_style.scss */
 .token.regex, .token.statement { color: #76d9e6; }
-/* line 359, ../sass/site/_style.scss */
+/* line 365, ../sass/site/_style.scss */
 .token.placeholder, .token.variable { color: white; }
-/* line 363, ../sass/site/_style.scss */
+/* line 369, ../sass/site/_style.scss */
 .token.property, .token.tag { font-style: italic; }
-/* line 367, ../sass/site/_style.scss */
-.token.important, .token.statement { font-weight: bold; }
-/* line 370, ../sass/site/_style.scss */
-.token.punctuation { color: #bebec5; }
 /* line 373, ../sass/site/_style.scss */
+.token.important, .token.statement { font-weight: bold; }
+/* line 376, ../sass/site/_style.scss */
+.token.punctuation { color: #bebec5; }
+/* line 379, ../sass/site/_style.scss */
 .token.entity { cursor: help; }
-/* line 377, ../sass/site/_style.scss */
+/* line 383, ../sass/site/_style.scss */
 .token.debug { color: red; }

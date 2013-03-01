@@ -11,9 +11,9 @@
 		background $transition-duration linear,
 		border-color $transition-duration linear); }
 %rounded {
-	@include border-radius($radius); }
+	border-radius: $radius; }
 %shadow {
-	@include box-shadow(0 1px 3px rgba($black, .2)); }
+	box-shadow: 0 1px 3px rgba($black, .2); }
 %left {
 	float: left; }
 %right {
@@ -108,8 +108,11 @@
 
 // Create proportionally sized elements
 // ---------------------------
-@function element-size($size: 1, $ratio: .3125) {
-  @return ($size * $ratio) + em (($size * 2) * $ratio) + em; }
+@function element-size($size: $default-size, $equal: false, $ratio: .3125) {
+  @return if(
+  	$equal == false, 
+  	($size * $ratio) + em (($size * 2) * $ratio) + em, 
+  	($size * $ratio) + em); }
 
 // Colour functions
 // ---------------------------

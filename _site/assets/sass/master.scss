@@ -38,10 +38,13 @@ html, body {
 	margin: auto;
 	max-width: 768px; }
 
-// ease of getting rid of styles related to the demo
+// Site imports
 // ---------------------------
 @import "site/mixins", 
 				"site/extends", 
 				"site/symbolset", 
-				"site/typography", 
-				"site/style";
+				"site/typography";
+				
+// ease of getting rid of styles related to the demo
+// ---------------------------
+@import "site/style";
