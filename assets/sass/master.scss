@@ -15,16 +15,22 @@ html {
 	background: $tertiary;
 	overflow-y: auto;
 	color: $primary;
+	
 	// set font-family to a letter for use in js
 	font-family: "a";
+	
 	@include respond-min($b) {
 		font-family: "b"; }
+	
 	@include respond-min($c) {
 		font-family: "c"; }
+	
 	@include respond-min($d) {
 		font-family: "d"; }
+	
 	@include respond-min($e) {
 		font-family: "e"; }
+	
 	@include respond-min($f) {
 		font-family: "f"; } }
 
@@ -33,18 +39,17 @@ html, body {
 
 #{elements-of-type("block")}, hr {
 	margin-bottom: em($line); }
-	
-.container {
-	margin: auto;
-	max-width: 768px; }
 
 // Site imports
 // ---------------------------
 @import "site/mixins", 
 				"site/extends", 
 				"site/symbolset", 
-				"site/typography";
+				"site/typography",
+				"site/actionable",
+				"site/structure";
 				
-// ease of getting rid of styles related to the demo
+// Remove below if need be
 // ---------------------------
-@import "site/style";
+table {
+	@include table; }

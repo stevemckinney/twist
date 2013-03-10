@@ -3,8 +3,6 @@
 @mixin form-label(
 	$position: top) {
 	
-	$position: unquote($position);
-	
 	@if $position != left {
 		@extend %form-block;
 		margin: 0 0 em($base-px/2);
@@ -33,26 +31,29 @@
 @mixin form(
 	$main-color: $default,
 	$focus-color: $alt,
-	$type: "input",
+	$type: text,
 	$state: normal,
 	$radius: $radius, 
 	$shading: true,
-	$set-height: true,
+	$set-height: false,
 	$dry: false) {
 	
 	$type: unquote($type);
 		
 	// styles which remain consistent no matter 
 	// the input apart from submit buttons
-	@extend %form-base;
-	
-	@if $radius { 
-		border-radius: $radius; }
-	
-	@if $set-height and $type != textarea {
-		@include set-height($set-height); }
+	@if $dry == false {
+		@extend %form-base;
+		
+		@if $radius { 
+			border-radius: $radius; }
+		
+		@if $set-height and $type != textarea {
+			@include set-height($set-height); }
+		@else {
+			padding: element-size($default-size, true); } }
 	@else {
-		padding: element-size($default-size, true); }
+		@extend %form-base-with-mixin; }
 	
 	@if $type == checkbox or $type == radio {
 		margin: 0 em($base-px/2) 0 0; }
@@ -65,12 +66,12 @@
 		@if $shading {
 			@include form-shading($main-color, $state, select);
 			
-			&:focus, &:hover {
+			&:focus {
 				@include form-shading($focus-color, focus, select); } } }
 	
 	// general inputs
 	// ---------------------------
-	@else if $type == input or $type == textarea {
+	@else if $type == text or $type == textarea {
 		@extend %input-reset;
 		@include form-shading($main-color, $state, input);
 		
@@ -84,12 +85,13 @@
 		@warn "#{error("Please use element mixin to style submit buttons.")}"; }
 	
 	@else {
+		@debug #{$type};
 		@warn "#{error("Type not supported.")}"; } }
 	
 @mixin form-shading(
 	$main-color,
 	$state: normal,
-	$type: input) {
+	$type: text) {
 	
 	$bg-color: if(grayscale($main-color), $main-color, saturate($main-color, 100%));
 	
@@ -98,7 +100,7 @@
 		box-shadow: inset 0 0 0 1px $main-color; }
 	
 	@else {
-		@if $type == input {
+		@if $type == text {
 			@include background(
 				linear-gradient(
 					rgba($bg-color, .15) 0%,
@@ -117,7 +119,7 @@
 					position: absolute;
 					top: 0;
 					right: em($base-px); } } }
-			
+		
 		box-shadow:
 			inset 0 0 0 1px $main-color,
 			if($type != select, inset 0 2px 2px rgba($main-color, .4), inset 0 1px 0 rgba($white, .2)),
@@ -131,6 +133,22 @@
 	.no-cssgradients & {
 		background: $white; } }
 
+@mixin form-base(
+	$type: text,
+	$radius: $radius,
+	$set-height: false) {
+	@extend %form-base;
+	
+	@if $radius { 
+		border-radius: $radius; }
+	
+	@if $set-height and $type != textarea {
+		@include set-height($set-height); }
+	@else {
+		padding: element-size($default-size, true); } }
+
+// Placeholder styles
+// ---------------------------
 @mixin placeholder($color: scale-color($primary, $lightness: 40%, $saturation: -15%)) {
 	::-webkit-input-placeholder {
 	 color: $color; }
@@ -139,8 +157,6 @@
 	:-ms-input-placeholder {  
 	 color: $color; } }
 
-@include placeholder;
-
 // The most consistent stuff for each form element
 // ---------------------------
 %form-base {
@@ -148,8 +164,13 @@
 	font-family: $form;
 	outline: none;
 	max-width: 100%;
-	color: $primary; }
-	
+	color: $primary;
+	line-height: normal; }
+
+%form-base-with-mixin {
+	@extend %form-base;
+	@include form-base; }
+
 %form-block {
 	display: block;
 	width: 100%; }

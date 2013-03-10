@@ -159,7 +159,8 @@ table {
 	background: scale-lightness($secondary, 50%);
 	color: scale-lightness($secondary, -10%);
 	text-shadow: none; }
-	
-@if $legacy-support-for-ie7 == false {
-	* {
-		@include box-sizing(border-box); } }
+
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box); }

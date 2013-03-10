@@ -50,6 +50,7 @@
 			width: auto;
 			position: relative;
 			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
 			tr { 
 				display: inline-block;
 				vertical-align: top;

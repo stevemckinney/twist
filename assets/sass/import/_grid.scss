@@ -1,82 +1,70 @@
 // Simple 6 column grid using
 // display: inline-block
 // ---------------------------
-%grid, %clear {
-	@include pie-clearfix; }
+@mixin grid(
+	$grid-space: $grid-space,
+	$grid-container-selector: $grid-container-selector,
+	$grid-gutter: $grid-gutter,
+	$grid-max-width: $grid-max-width,
+	$grid-direction: $grid-direction) {
+		
+	#{unquote($grid-container-selector)} {
+		@extend %clear;
+		width: $grid-width;
+		@if $grid-max-width { 
+			max-width: $grid-max-width; }
+		margin: $grid-container-margin;
+		position: relative; }
 	
-.#{$grid-container-class} {
-	@extend %clear;
-	width: $grid-width;
-	@if $grid-max-width { 
-		max-width: $grid-max-width; }
-	margin: $grid-container-margin;
-	position: relative; }
-
-.grid {
-	display: block;
-	padding: 0;
-	margin: 0 -0.5 * $grid-gutter;
-	text-align: $grid-direction;
-	text-rendering: optimizespeed;
+	.grid {
+		display: block;
+		padding: 0;
+		margin: 0 -0.5 * $grid-gutter;
+		text-align: $grid-direction;
+		text-rendering: optimizespeed;
+		
+		@if $grid-space {
+			letter-spacing: -0.31em;
+			/* word-spacing: -0.43em; */ }
+		> .grid {
+		  margin-right: 0;
+		  margin-left: 0; } }
+	  
+	.grid-cell {
+		display: inline-block;
+		width: 100%;
+		margin: 0;
+		padding: 0 0.5 * $grid-gutter;
+		vertical-align: top;
+		text-align: $grid-direction;
+		letter-spacing: normal;
+		word-spacing: normal;
+		text-rendering: auto; }
 	
-	@if $grid-space {
-		letter-spacing: -0.31em;
-		/* word-spacing: -0.43em; */ }
-	> .grid {
-	  margin-right: 0;
-	  margin-left: 0; } }
-  
-.grid-cell {
-	display: inline-block;
-	width: 100%;
-	margin: 0;
-	padding: 0 0.5 * $grid-gutter;
-	vertical-align: top;
-	text-align: $grid-direction;
-	letter-spacing: normal;
-	word-spacing: normal;
-	text-rendering: auto; }
-
-.grid-center {
-	text-align: center; }
-
-.grid-cell-center {
-	display: block;
-	margin: 0 auto; }
-
-.grid-1 {
-	@extend .grid-cell;
-	@include respond-min($b) {
-		width: 16.6666666667%;
-		@include old-ie; } }
-
-.grid-2 {
-	@extend .grid-cell;
-	@include respond-min($b) {
-		width: 33.333333333%;
-		@include old-ie; } }
+	.grid-center {
+		text-align: center; }
+	
+	.grid-cell-center {
+		display: block;
+		margin: 0 auto; }
+	
+	@for $i from 1 through 5 {
+		$w: 16.6666666667% * $i;
 		
-.grid-3,
-.grid-half {
-	@extend .grid-cell;
-	@include respond-min($b) {
-		width: 50%;
-		@include old-ie; } }
-		
-.grid-4 {
-	@extend .grid-cell;
-	@include respond-min($b) {
-		width: 66.666666667%;
-		@include old-ie; } }
-		
-.grid-5 {
-	@extend .grid-cell;
-	@include respond-min($b) {
-		width: 83.333333333%;
-		@include old-ie; } }
-		
-.grid-6, .grid-full {
-	@extend .grid-cell; }
+		.grid-#{$i} {
+			@extend .grid-cell;
+			
+			@include respond-min($b) {
+				width: $w; } }
+				
+		.before-#{$i} {
+			margin-left: $w; }
+			
+		.after-#{$i} {
+			margin-left: $w; } }
+			
+	.grid-6, .grid-full {
+		@extend .grid-cell; } }
 
 // Loop for percentages
 // ---------------------------

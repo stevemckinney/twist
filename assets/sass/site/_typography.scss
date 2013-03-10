@@ -2,7 +2,7 @@
 // ---------------------------
 #{headings()} {
 	font-family: $heading;
-	font-weight: 400;
+	font-weight: 700;
 	color: $primary;
 	padding: 0;
 
@@ -12,12 +12,13 @@
 			color: $secondary; } } }
 
 h1, .h1 {
-	@include adjust-font-size-to($base-px*4);
-	margin: 0 0 rhythm(1, $base-px*4); }
+	@include adjust-font-size-to($base-px*6);
+	@extend .mask;
+	margin: 0 0 rhythm(1, $base-px*6); }
 	
 h2, .h2 {
-	@include adjust-font-size-to($base-px*3);
-	margin: 0 0 rhythm(1, $base-px*3); }
+	@include adjust-font-size-to($base-px*4);
+	margin: 0 0 rhythm(1, $base-px*4); }
 	
 h3, .h3 {
 	@include adjust-font-size-to($base-px*2);
@@ -35,10 +36,12 @@ h6, .h6 {
 	@include adjust-font-size-to($base-font-size);
 	margin: 0 0 rhythm(1, $base-font-size); }
 
+
+
 // General
 // ---------------------------
 body {
-	font: 400 100%/#{$base-line-height} $body; }
+	font: 400 100%/#{em($base-line-height)} $body; }
 
 a {
 	text-decoration: none;
@@ -73,7 +76,7 @@ code {
 	-webkit-mask: image-url("mask.png") 400px -200px; }
 
 .with-subheading {
-	margin: 0; }
+	margin-bottom: 0; }
 
 .subheading {
 	font-weight: 400;

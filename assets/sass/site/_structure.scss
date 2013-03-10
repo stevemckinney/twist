@@ -1,0 +1,46 @@
+// Header
+// ---------------------------
+[role="banner"] {
+	@extend %offset-tb;
+	@include gradient-background($content-height: 300px);
+	
+	h1 {
+		font-family: swingdancer;
+		font-weight: 400; }
+		
+	@include respond-min($c) {}
+		
+	@include respond-min($d) {} }
+
+// Navigation
+// ---------------------------
+[role="navigation"] {
+	a {
+		@extend %inset-highlight;
+		
+		display: block;
+		
+		padding: em($base-px/2) 0;
+		margin: 0 em($base-px/2); }
+	
+	@include respond-min($c) {}
+	
+	@include respond-min($d) {} }
+
+// Content
+// ---------------------------
+[role="main"] {
+	@extend %offset-tb;
+
+	@include respond-min($c) {}
+	
+	@include respond-min($d) {} }
+
+// Footer
+// ---------------------------
+[role="contentinfo"] {
+	clear: both;
+	
+	@include respond-min($c) {}
+	
+	@include respond-min($d) {} }

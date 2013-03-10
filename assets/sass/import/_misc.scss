@@ -1,6 +1,6 @@
 // Faded backgrounds with a shadow
 // ---------------------------
-@mixin gradient-background($main-bg: $tertiary, $content-bg: true, $content-height: 60em, $shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6), $shadow2: false, $shadow3: false, $shadow4: false) {
+@mixin gradient-background($main-bg: $tertiary, $content-bg: true, $content-height: 600px, $shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6), $shadow2: false, $shadow3: false, $shadow4: false, $context: $base-font-size) {
 
 	$shadow: compact($shadow, $shadow2, $shadow3, $shadow4);
 	
@@ -8,7 +8,7 @@
 		$content-bg: scale-color($main-bg, $lightness: 20%, $saturation: -20%);
 		@include background(linear-gradient(top, rgba($content-bg, 1) 20%, rgba($content-bg, 0) 100%)); }
 	
-	background-size: 100% $content-height;
+	background-size: 100% em($content-height, $context);
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
@@ -22,7 +22,7 @@
 		left: -3px;
 		right: -3px;
 		top: 0;
-		height: $content-height;
+		height: em($content-height, $context);
 		@if $main-bg {
 			@include background(linear-gradient(top, rgba($main-bg, 0) 0%, rgba($main-bg, 1) 100%)); } }
 	&:after {
@@ -30,7 +30,7 @@
 		top: 0;
 		right: 0;
 		left: 0;
-		height: $content-height - 1.5em;
+		height: em($content-height, $context) - 1.5em;
 		box-shadow: $shadow; } }
 
 // Triangles

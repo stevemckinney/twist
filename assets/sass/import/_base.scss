@@ -37,8 +37,8 @@ $green: $success;
 
 // font stacks
 // ---------------------------
-$sans: "freight-sans-pro", sans-serif !default;
-$serif: "adelle", ff-meta-serif-web-pro, georgia, serif !default;
+$sans: "ratio", sans-serif !default;
+$serif: "ff-meta-serif-web-pro", serif !default;
 $monospace: Menlo, Monaco, "Courier New", monospace !default;
 
 // found the need sometimes to switch fonts mid project
@@ -81,8 +81,9 @@ $fix-mqs: false !default;
 // ---------------------------
 $radius: 3px !default;
 $transition-duration: .2s !default;
-$default-size: 2 !default; // for element mixin
 
+$default-size: 1 !default; // for element mixin
+$default-ratio: .4875 !default; // for element mixin
 $default-set-height: 36px;
 
 // Shadow transparency
@@ -102,17 +103,14 @@ $f: 90em !default; // 1440
 
 // grid.scss settings
 // ---------------------------
-$grid-max-width: $c !default;
-$grid-width: 100% !default;
+$grid-max-width: $d !default;
+$grid-width: 85% !default;
 
 $grid-container-margin: auto !default;
-$grid-container-class: container !default;
+$grid-container-selector: ".container" !default;
 
 $grid-direction: left !default;
-$grid-gutter: 1.5em !default;
-
-$grid-pad: 5% !default;
-$grid-move: $grid-pad !default;
+$grid-gutter: 3em !default;
 
 // if your html is minified set to false
 // as it cuts out that little bit of css 
@@ -121,8 +119,10 @@ $grid-space: true !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
+$xxlarge-size: 200% !default;
 $xlarge-size: 150% !default;
 $large-size: 133% !default;
 $normal-size: 100% !default;
 $small-size: 87.5% !default;
 $xsmall-size: 75% !default;
+$xxsmall-size: 50% !default;

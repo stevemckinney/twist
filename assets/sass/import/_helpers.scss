@@ -18,11 +18,14 @@
 	float: left; }
 %right {
 	float: right; }
+%grid, %clear {
+	@include pie-clearfix; }
 
 // Hiding
 // ---------------------------
 .hidden {
 	display: none; }
+	
 %screenreaders {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -66,6 +69,8 @@
 
 // Sizes
 // ---------------------------
+.xxlarge {
+	font-size: $xxlarge-size; }
 .xlarge {
 	font-size: $xlarge-size; }
 .large {
@@ -76,6 +81,8 @@
 	font-size: $small-size; }
 .xsmall {
 	font-size: $xsmall-size; }
+.xxsmall {
+	font-size: $xxsmall-size; }
 
 // Mixins
 // ---------------------------
@@ -108,7 +115,7 @@
 
 // Create proportionally sized elements
 // ---------------------------
-@function element-size($size: $default-size, $equal: false, $ratio: .3125) {
+@function element-size($size: $default-size, $equal: false, $ratio: $default-ratio) {
   @return if(
   	$equal == false, 
   	($size * $ratio) + em (($size * 2) * $ratio) + em, 

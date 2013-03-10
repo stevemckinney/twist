@@ -2,7 +2,17 @@
 %crm {
 	@extend %clear;
 	width: 88%;
+	max-width: $d;
 	margin: auto auto $line;
-	position: relative;
-	@include respond-min($d) {
-		@include rem(max-width, 960px); } }
+	position: relative; }
+
+// For offsetting from the top and bottom of the viewport
+%offset-tb {
+	padding: {
+		top: em($line);
+		bottom: em($line); } }
+
+// Add an inset highlight type effect
+%inset-highlight {
+	box-shadow: 0 1px #fff;
+	border-bottom: 1px solid scale-lightness($tertiary, -10%); }

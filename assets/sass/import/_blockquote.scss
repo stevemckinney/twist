@@ -70,7 +70,7 @@ blockquote {
 	&:before {
 		@include rem(margin, 0 $line 0 0);
 		content: "pullquote";
-		font: 900 100%/1.5 $icons;
+		font: 700 100%/1.5 $icons;
 		color: $qd;
 		display: inline-block;
 		opacity: .5;

@@ -1,28 +1,12 @@
-// using old-ie mixin to set fallback values for < IE 9.
+// Better/flexible media queries, with old IE fallback 
+// see: https://github.com/jakearchibald/sass-ie
 // ---------------------------
-// example usages:
-// .container {
-//		width: 88%;
-//		@include old-ie {
-//			width: 760px; } }
-//
-// .container {
-//   @include respond-min($c) {
-//		 width: 80%;
-//		 @include old-ie; }
-//   @include respond-min($d) {
-//		 border: 1px solid red; } }
-// doing @include old-ie in a breakpoint ensures this gets
-// output in your ie.css minus the @media query
-// @include old-ie isn't needed in $d as it matches our $fix-mqs width
-// ---------------------------
-// set up in your <head>
-// <!--[if gt IE 8]><!--><link href="assets/css/master.css" rel="stylesheet"><!--<![endif]-->
-// <!--[if lt IE 9]><!--><link href="assets/css/ie.css" rel="stylesheet"><!--<![endif]-->
-// ---------------------------
-// vars needed, set as false in _base.scss
-
 $old-ie: true;
-$fix-mqs: 60em; // value of the media query to be included for IE
+$fix-mqs: 48em;
 
 @import "import/framework", "master";
+
+// IE specific fixes
+// ---------------------------
+html {
+	font-family: "d"; }
