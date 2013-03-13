@@ -29,20 +29,39 @@ $i: 1;
 	@include element($alt, $hover: true, $dry: true); }
 	
 .group { 
-	@include element-group(".group-button"); }
+	@include element-group(compact(unquote(".group-button"), unquote("input")));
+	input + input {
+		margin-left: -1px; } }
 
 // Forms
 // ---------------------------
 label {
-	@include form-label; }
+	@include form-label;
+	@extend .h5; }
 
+// Text
 [type=text],
 [type=email],
 [type=password],
 [type=search],
 [type=url],
 textarea {
-	@include form; }
+	@extend %form-base-with-mixin;
+	@include form-shading(scale-color($tertiary, $lightness: -30%, $saturation: -20%));
+	&:focus {
+		@include form-shading($alt, focus); } }
 
+// Select
 select {
-	@include form($type: select); }
+	@include form(scale-color($tertiary, $lightness: -30%, $saturation: -20%), $type: select);
+	&:focus {
+		@include form-shading($alt, focus, select); } }
+	
+// Checkbox
+[type=radio],
+[type=checkbox] {
+	@include form($type: radio); }
+
+// States
+[disabled] {
+	@include form-shading(scale-color($tertiary, $lightness: -30%, $saturation: -20%), $state: disabled); }

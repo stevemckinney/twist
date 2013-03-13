@@ -3,9 +3,9 @@
 
 //	general variable colours
 // --------------------------
-$primary: #575d60 !default;
-$secondary: adjust-hue(scale-lightness(#ABCCBD, -45%), 65) !default;
-$tertiary: scale-lightness($primary, 90%) !default;
+$primary: #403b33 !default;
+$secondary: #d3643b !default;
+$tertiary: #edebe6 !default;
 
 $black: #000 !default;
 $white: #fff !default;
@@ -23,8 +23,8 @@ $focus: scale-color(#71bcc5, $lightness: -25%) !default;
 // colours for status type things
 // ---------------------------
 $alt: #3a9ac9 !default;
-$danger: #dd453d !default;
-$warning: scale-lightness(#fad089, -20%) !default;
+$danger: #d3643b /* #dd453d */ !default;
+$warning: #f7b23f !default;
 $success: #88a23d !default;
 $info: #71bcc5 !default;
 
@@ -37,14 +37,14 @@ $green: $success;
 
 // font stacks
 // ---------------------------
-$sans: "ratio", sans-serif !default;
-$serif: "ff-meta-serif-web-pro", serif !default;
+$sans: "ff-dagny-web-pro", sans-serif !default;
+$serif: "utopia-std-display", serif !default;
 $monospace: Menlo, Monaco, "Courier New", monospace !default;
 
 // found the need sometimes to switch fonts mid project
 // ---------------------------
-$heading: $sans !default;
-$body: $serif !default;
+$heading: $serif !default;
+$body: $sans !default;
 $form: $sans !default;
 $element: $sans !default;
 
@@ -110,7 +110,7 @@ $grid-container-margin: auto !default;
 $grid-container-selector: ".container" !default;
 
 $grid-direction: left !default;
-$grid-gutter: 3em !default;
+$grid-gutter: 1.5em !default;
 
 // if your html is minified set to false
 // as it cuts out that little bit of css 

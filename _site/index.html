@@ -48,7 +48,7 @@
 	<div class="container">
 	
 		<header role="banner" class="grid-2">
-			<h1 class="with-subheading text-center"><a href="/">twist</a></h1>
+			<a href="/" class="logo with-subheading text-center">twist</a>
       <h2 class="h5 subheading text-center">A bunch of flexible mixins, using Sass/Compass.</h2>
       <nav role="navigation" class="nav">
 				<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub</a>
@@ -59,10 +59,12 @@
 			<article>
 	<header class="twist-header">
 		<h2 id="buttons" class="with-subheading">Element</h2>
-		<h3 class="h6 subheading"><strong>Example usage</strong>: @include element($main-color: #444, $text-color: #fff, $hover: true);</h3>
+		<h3 class="h5 subheading">Create buttons, alerts, generally apply this style where you see fit.</h3>
+		<p>Simple usage with the <code>@include element;</code>, and beyond to more complex usage <code>@include element-base; @include element-shading;</code>. Built with reusability, customisability and speed. The current style button should always produce great results no matter what colour you throw at it. Should you want to change the style and I encourage it, you should copy the element-shading mixin into a new file and make changes.</p>
 	</header>
 	<section>
-		<h3>Buttons</h3>
+		<h3 class="with-subheading">Button</h3>
+		<h4 class="h5 subheading">Usage: .button { @include element(#444, $hover: true); }</h4>
 		<a href="#" class="button">Button</a>
 		<a href="#" class="button">Button</a>
 		<a href="#" class="button">Button</a>
@@ -70,7 +72,7 @@
 		<a href="#" class="button">Button</a>
 		<a href="#" class="button">Button</a>
 		<h3 class="with-subheading">Button groups</h3>
-		<h4 class="h6 subheading">Usage: .group { @include group(.button-class); }</h4>
+		<h4 class="h5 subheading">Usage: .group { @include group(.button-class); }</h4>
 		<div class="group">
 			<a href="#" class="group-button">Button</a>
 			<a href="#" class="group-button">Button</a>
@@ -122,9 +124,9 @@
 <article>
 	<header class="twist-header">
 		<h2 id="forms" class="with-subheading">Forms</h2>
-		<h3 class="h6 subheading"><strong>Usage</strong>: @include form($main-color: #444, $type: input);<br>@include form-label($position: top);</h3>
+		<h3 class="h5 subheading"><strong>Usage</strong>: @include form($main-color: #444, $type: input);<br>@include form-label($position: top);</h3>
 	</header>
-	<form action="/" class="form-top">
+	<form action="/" class="form-left">
 		<fieldset>
 			<label for="name">Name</label><input type="text" id="name" class="text">
 			<p class="form-help">This is help text under the form field.</p>
@@ -158,7 +160,7 @@
 			<label for="bio">Bio</label><textarea id="bio"></textarea>
 		</fieldset>
 		
-		<fieldset class="check">
+		<fieldset class="checkbox">
 			<label><input type="checkbox"> I accept the terms of service and lorem ipsum.</label>
 		</fieldset>
 	
@@ -180,7 +182,7 @@
 <article>
 	<header class="twist-header">
 		<h2 id="table" class="with-subheading">Table</h2>
-		<h3 class="h6 subheading"><strong>Usage</strong>: @include table($main-color: #444, $striped: true);</h3>
+		<h3 class="h5 subheading"><strong>Usage</strong>: @include table($main-color: #444, $striped: true);</h3>
 	</header>
 	<table>
 		<thead>
@@ -230,7 +232,7 @@
 <article>
 	<header class="twist-header">
 		<h2 id="grid" class="with-subheading">Grid</h2>
-		<h3 class="h6 subheading">6 column grid, .grid-[number] class names</h3>
+		<h3 class="h5 subheading">6 column grid, .grid-[number] class names</h3>
 	</header>
 	
 	<div class="grid">
@@ -256,7 +258,7 @@
 <article>
 	<header class="twist-header">
 		<h2 id="typography" class="with-subheading">Typography <em class="sub-heading xsmall">work in progress</em></h2>
-		<h3 class="h6 subheading">Base font size of 16px</h3>
+		<h3 class="h5 subheading">Base font size of 16px</h3>
 	</header>
 	<section>	
 		<h3>Headings</h3>
@@ -265,7 +267,7 @@
 		<h3>Heading level three</h3>
 		<h4>Heading level four</h4>
 		<h5>Heading level five</h5>
-		<h6>Heading level six</h6>
+		<h5>Heading level six</h5>
 	</section>
 </article>
 		</section>

@@ -3,14 +3,14 @@
 [role="banner"] {
 	@extend %offset-tb;
 	@include gradient-background($content-height: 300px);
-	
-	h1 {
-		font-family: swingdancer;
-		font-weight: 400; }
 		
 	@include respond-min($c) {}
 		
 	@include respond-min($d) {} }
+	
+.logo {
+	font: 400 em($line*3) swingdancer;
+	display: block; }
 
 // Navigation
 // ---------------------------
