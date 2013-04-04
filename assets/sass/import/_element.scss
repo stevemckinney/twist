@@ -1,23 +1,44 @@
-//	Element — A base, mixin and options
-//	Style notices/alerts, buttons, etc 
-//	-----------------------------------------
+// Default vars
+// ---------------------------
+$default-element-main-color: $default !default;
+$default-element-text-color: $white !default;
+$default-element-dark-bg: $default-dark-bg !default;
+$default-element-radius: $radius !default;
+$default-element-subtle: false !default;
+$default-element-shading: $default-shading !default;
+$default-element-size: $default-size !default;
+$default-element-set-height: false !default;
+$default-element-hover: false !default;
+$default-element-font-size: false !default;
+$default-element-display: $default-display !default;
+$default-element-dry: $default-dry !default;
+$default-element-state: $default-state !default;
+
+
+// TODO: Dark background adjustments
+// ------------------------------------------
+// Element — A base, mixin and options
+// Style notices/alerts, buttons, etc 
+// -----------------------------------------
 @mixin element(
-	$main-color: $default,
-	$text-color: $white,
-	$radius: $radius, 
-	$subtle: false,
-	$shading: true,
-	$size: $default-size,
-	$set-height: false, 
-	$hover: false,
-	$font-size: false,
-	$display: inline-block,
-	$dry: false) {
+	$main-color	: $default-element-main-color,
+	$text-color	: $default-element-text-color,
+	$dark-bg		: $default-element-dark-bg,
+	$radius			: $default-element-radius, 
+	$subtle			: $default-element-subtle,
+	$shading		: $default-element-shading,
+	$size				: $default-element-size,
+	$set-height	: $default-element-set-height, 
+	$hover			: $default-element-hover,
+	$font-size	: $default-element-font-size,
+	$display		: $default-element-display,
+	$dry				: $default-element-dry
+) {
 	
 	// Use element-base mixin to keep repetitive stuff together
 	@if $dry == false {		
 		@include element-base($size, $set-height, $font-size, $text-color, $radius, $display); }
-	@else {
+	@else { 
 		@extend %element-base-with-mixin; }
 	
 	@if $subtle {
@@ -29,7 +50,7 @@
 	// non subtle start		
 	@else {
 		@if $shading {
-			@include element-shading($main-color, normal, $text-color); }
+			@include element-shading($main-color, normal, $text-color, $dark-bg); }
 		@else {
 			background: $main-color; } }
 			
@@ -39,7 +60,7 @@
 				color: $text-color; }
 			
 			@if $shading {
-				@include element-shading($main-color, hover); }
+				@include element-shading($main-color, hover, false, $dark-bg); }
 			
 			@else {
 				background: scale-lightness($main-color, 10%); } }
@@ -48,7 +69,7 @@
 			z-index: 2; // makes button above others in a group
 			
 			@if $shading {
-				@include element-shading($main-color, active); }
+				@include element-shading($main-color, active, false, $dark-bg); }
 			
 			@else {
 				background: scale-lightness($main-color, -10%); } } } }
@@ -56,9 +77,10 @@
 // Separate the overall button style
 // ---------------------------
 @mixin element-shading(
-	$main-color: $alt,
-	$state: normal,
-	$text-color: false) {
+	$main-color: $default-element-main-color,
+	$state: $default-element-state,
+	$text-color: $default-element-text-color,
+	$dark-bg: $default-element-dark-bg) {
 	
 	@if $state == hover or $state == active { 
 		$main-color: if($state == hover, scale-lightness($main-color, 10%), $main-color); }
@@ -72,10 +94,7 @@
 			green($main-color) > blue($main-color) and
 			green($main-color) > 90 {
 				
-				$dark-color: scale-lightness(
-					adjust-hue($main-color, -12deg), 
-					if-bright($main-color, -5%, -15%));
-					
+				$dark-color: scale-lightness(adjust-hue($main-color, -12deg), if-bright($main-color, -5%, -15%));
 				$shadow-color: scale-lightness($main-color, if-bright($main-color, -50%, -65%)); }
 	
 	// Aimed at blue/greens
@@ -83,10 +102,7 @@
 			green($main-color) > red($main-color) and 
 			green($main-color) > blue($main-color) {
 			
-				$dark-color: scale-lightness(
-					adjust-hue($main-color, 20deg), 
-					if-bright($main-color, -5%, -15%));
-				
+				$dark-color: scale-lightness(adjust-hue($main-color, 20deg), if-bright($main-color, -5%, -15%));
 				$shadow-color: scale-lightness($main-color, if-bright($main-color, -55%, -65%)); }
 	
 	
@@ -95,20 +111,13 @@
 	@include background(
 		linear-gradient($main-color, $dark-color));	
 	box-shadow:
-		inset 0 -1px 1px rgba($shadow-color, .3),
+		inset 0 -1px rgba($shadow-color, .6),
 		inset 0 0 0 1px rgba($shadow-color, .3),
 		if($state == active,
-			inset 0 1px 3px rgba($shadow-color, .6),
-			inset 0 2px 0 rgba($light-color, .8)), 
-		inset em($base-px) 0 em(18px) em(-$base-px) rgba($dark-color, .4),
-		inset em(-$base-px) 0 em(18px) em(-$base-px) rgba($dark-color, .4),
-		if($state == active, 
-			0 1px 1px rgba($white, $default-light-shadow),
-			0 1px 3px rgba($shadow-color, $default-dark-shadow));
+			compact(inset 0 1px 3px rgba($shadow-color, .6), 0 1px 1px rgba($white, $default-light-shadow)),
+			compact(inset 0 2px rgba($light-color, .6), 0 1px 1px rgba($shadow-color, .2)));
 
 	// modernizr stuff
-	.no-boxshadow & {
-		border: 1px solid $dark-color; }
 	.no-cssgradients & {
 		background: $main-color; } }
 
@@ -116,12 +125,12 @@
 // consistent so possibility for extending with this mixin
 // ---------------------------
 @mixin element-base(
-	$size: $default-size,
-	$set-height: false,
-	$font-size: false,
-	$text-color: $white,
-	$radius: $radius,
-	$display: inline-block) {
+	$size: $default-element-size,
+	$set-height: $default-element-set-height,
+	$font-size: $default-element-font-size,
+	$text-color: $default-element-text-color,
+	$radius: $default-element-radius,
+	$display: $default-element-display) {
 	@extend %element-base;
 	
 	&, &:hover, &:focus { 

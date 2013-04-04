@@ -5,7 +5,6 @@
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<!-- In loving memory of Albert Phillips -->
 	<title>twist</title>
 	<meta name="description" content="framework, sass">
@@ -13,18 +12,25 @@
 
 	<!-- Mobile -->
 	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="twist">
 	
 	<!-- CSS -->
-	<!--[if gt IE 8]><!--><link href="assets/css/master.css" rel="stylesheet"><!--<![endif]-->
+	<link href="assets/css/master.css" rel="stylesheet">
 	
 	<!-- JavaScript -->
 	<script src="assets/js/modernizr.js"></script>
-	<script src="//use.typekit.net/yol4bnj.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">
+	  (function() {
+	    var config = {
+	      kitId: 'yol4bnj',
+	      scriptTimeout: 3000
+	    };
+	    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+	  })();
+	</script>
 
 	<!-- Other -->
 	<!-- <link rel="alternate" type="application/rss+xml" title="Blog | Portfolio of Steve McKinney" href="http://iamsteve.me/blog/feed">
@@ -36,27 +42,28 @@
 	
 	<!-- IE -->
 	<meta http-equiv="cleartype" content="on">
-	<!--[if lt IE 9]>
-		<link href="assets/css/ie.css" rel="stylesheet">
-  	<script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
-  	<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-  <![endif]-->
+<!--[if lt IE 9]>
+	<link href="assets/css/ie.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+	<script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
 
 </head>
 <body>
 
 	<div class="container">
 	
-		<header role="banner" class="grid-2">
+		<header role="banner">
 			<a href="/" class="logo with-subheading text-center">twist</a>
       <h2 class="h5 subheading text-center">A bunch of flexible mixins, using Sass/Compass.</h2>
       <nav role="navigation" class="nav">
 				<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub</a>
 			</nav>
-		</header><!--
-		
-		--><section role="main" class="grid-4">
-			<header>
+		</header>
+		<section role="main">
+	<div class="grid-4">
+<header>
   <hgroup>
     <!-- Example comment: Add valid elements within header group -->
     <h1>HTML5 Elements</h1>
@@ -281,7 +288,7 @@
     <p>This is the <code>&lt;footer&gt;</code> for this <code>&lt;section&gt; of this page/site</code>.</p>
   </footer>
 </section>
-<aside>
+</div><aside class="grid-2">
   <h3>The <code>&lt;aside&gt;</code> to the <code>&lt;section&gt;</code></h3>
   <h4>Elements included in this demo:</h4>
   <p><a id="toggle1" href="#" title="View / hide list of elements">View / hide</a> list of elements</p>

@@ -9,7 +9,7 @@ $i: 1;
 		$color: nth($colors, $i);
 	
 		&:nth-of-type(#{$i}) {
-			@include element($color, $hover: true, $dry: true); } } }
+			@include element($color, $hover: true, $dry: true, $dark-bg: true); } } }
 
 // Alert
 .alert {
@@ -45,17 +45,18 @@ label {
 [type=password],
 [type=search],
 [type=url],
+[type=number],
 textarea {
 	@extend %form-base-with-mixin;
 	@include form-shading(scale-color($tertiary, $lightness: -30%, $saturation: -20%));
 	&:focus {
-		@include form-shading($alt, focus); } }
+		@include form-shading($info, focus); } }
 
 // Select
 select {
 	@include form(scale-color($tertiary, $lightness: -30%, $saturation: -20%), $type: select);
 	&:focus {
-		@include form-shading($alt, focus, select); } }
+		@include form-shading($info, focus, select); } }
 	
 // Checkbox
 [type=radio],

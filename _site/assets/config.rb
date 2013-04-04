@@ -1,6 +1,9 @@
 # Require any additional compass plugins here.
 # require 'animate-sass'
 # require 'compass-recipes'
+
+# path: /Users/Steve/.rvm/gems/ruby-2.0.0-p0/gems/
+
 require 'ceaser-easing'
 
 # Set this to the root of your project when deployed:
@@ -13,7 +16,8 @@ fonts_dir = "fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compact
+environment = :development
+output_style = (environment == :production) ? :compressed : :compact
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

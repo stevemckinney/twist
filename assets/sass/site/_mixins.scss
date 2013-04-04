@@ -1,6 +1,6 @@
 // Mixin setup
 // ---------------------------
-@include grid($grid-space, $grid-container-selector, $grid-gutter, $grid-max-width, $grid-direction);
+@include grid($default-grid-columns, $default-grid-space, $default-grid-container-selector, $default-grid-gutter, $default-grid-max-width, $default-grid-direction);
 @include placeholder;
 
 

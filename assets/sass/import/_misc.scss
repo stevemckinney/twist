@@ -1,6 +1,20 @@
+// Gradient background default vars
+// ---------------------------
+$default-gradient-background-main-color: $tertiary !default;
+$default-gradient-background-content-height: 600px !default;
+$default-gradient-background-shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6) !default;
+$default-gradient-background-context: $default-context !default;
+
 // Faded backgrounds with a shadow
 // ---------------------------
-@mixin gradient-background($main-color: $tertiary, $content-height: 600px, $shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6), $shadow2: false, $shadow3: false, $shadow4: false, $context: $base-font-size) {
+@mixin gradient-background(
+	$main-color			: $default-gradient-background-main-color,
+	$content-height	: $default-gradient-background-content-height, 
+	$shadow					: $default-gradient-background-shadow,
+	$shadow2				: false,
+	$shadow3				: false,
+	$shadow4				: false,
+	$context				: $default-gradient-background-context) {
 
 	$shadow: compact($shadow, $shadow2, $shadow3, $shadow4);
 	
@@ -32,14 +46,25 @@
 		height: em($content-height, $context) - 1.5em;
 		box-shadow: $shadow; } }
 
-// Triangles
+// Triangle default vars
+// ---------------------------
+$default-triangle-direction: left !default;
+$default-triangle-size: 48px !default;
+$default-triangle-color: inherit !default;
+$default-triangle-context: $default-context !default;
+
+// Triangle
 // ---------------------------
 %triangle-base {
 	@include wh(0);
 	display: block;
 	position: absolute; }
 	
-@mixin triangle($direction: left, $size: 48px, $color: inherit) {
+@mixin triangle(
+	$direction: $default-triangle-direction,
+	$size: $default-triangle-size,
+	$color: $default-triangle-color,
+	$context: $default-triangle-context) {
 	
 	$size: em($size) / 2;
 	$negative-size: -$size;

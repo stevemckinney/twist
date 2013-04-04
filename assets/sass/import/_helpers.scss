@@ -5,11 +5,7 @@
 // General extends
 // ---------------------------
 %transition {
-	@include transition(
-		opacity $transition-duration linear,
-		color $transition-duration linear,
-		background $transition-duration linear,
-		border-color $transition-duration linear); }
+	@include transition(all $default-transition-duration linear); }
 %rounded {
 	border-radius: $radius; }
 %shadow {
@@ -65,7 +61,7 @@
 // Font size
 // ---------------------------
 %base {
-	font-size: em($base-font-size, 16px); }
+	font-size: em($base-font-size, $base-font-size); }
 
 // Sizes
 // ---------------------------
@@ -75,7 +71,8 @@
 	font-size: $xlarge-size; }
 .large {
 	font-size: $large-size; }
-.regular, .normal {
+.regular,
+.normal {
 	font-size: $normal-size; }
 .small {
 	font-size: $small-size; }
@@ -89,21 +86,30 @@
 
 // set width and height,
 // pass one value to have both set for you
-@mixin wh($width: false, $height: false) {
+@mixin wh(
+	$width	: false,
+	$height	: false
+) {
 	$width: unquote($width);
 	@if $height != none {
 		$height: unquote($height); }
 
-	@if $height != false {
+	@if $height {
 		width: #{$width};
 		height: #{$height}; }
 	@else {
 		width: #{$width};
-		height: #{$width}; } }
+		height: #{$width}; }
+
+}
 
 // Sets the height of stuff with the line height to match
 // ---------------------------
-@mixin set-height($set-height: $default-set-height, $padding: $base-px, $context: $base-font-size) {
+@mixin set-height(
+	$set-height	: $default-set-height,
+	$padding		: $base-px,
+	$context		: $default-context
+) {
 	@if $set-height == true {
 		$set-height: em($default-set-height); }
 	@else {
@@ -115,7 +121,11 @@
 
 // Create proportionally sized elements
 // ---------------------------
-@function element-size($size: $default-size, $equal: false, $ratio: $default-ratio) {
+@function element-size(
+	$size	: $default-size,
+	$equal: false,
+	$ratio: $default-ratio
+) {
   @return if(
   	$equal == false, 
   	($size * $ratio) + em (($size * 2) * $ratio) + em, 
@@ -132,7 +142,7 @@
 // Picks the color with the highest contrast
 @function if-bright($color, $light: true, $dark: false) {
 	@return if(is-bright($color), $light, $dark); }
-
+	
 // Picks the color with the highest contrast
 @function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
 	@return if-bright($bg, $dark-text, $light-text); }

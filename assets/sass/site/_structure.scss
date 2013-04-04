@@ -1,11 +1,12 @@
 // Header
 // ---------------------------
 [role="banner"] {
-	@extend %offset-tb;
 	@include gradient-background($content-height: 300px);
-		
+	
+	padding: em($line*2) em($line);
+	-webkit-flex: 2;
+	
 	@include respond-min($c) {}
-		
 	@include respond-min($d) {} }
 	
 .logo {
@@ -24,23 +25,30 @@
 		margin: 0 em($base-px/2); }
 	
 	@include respond-min($c) {}
-	
 	@include respond-min($d) {} }
 
 // Content
 // ---------------------------
+.container {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-flex-wrap: wrap; }
+
 [role="main"] {
-	@extend %offset-tb;
+	padding: em($line*2) em($line);
+	
+	-webkit-flex: 4;
 
 	@include respond-min($c) {}
-	
 	@include respond-min($d) {} }
 
 // Footer
 // ---------------------------
 [role="contentinfo"] {
+	display: block;
 	clear: both;
+	width: 100%;
 	
 	@include respond-min($c) {}
-	
 	@include respond-min($d) {} }

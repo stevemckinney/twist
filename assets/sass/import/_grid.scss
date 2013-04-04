@@ -2,19 +2,22 @@
 // display: inline-block
 // ---------------------------
 @mixin grid(
-	$grid-space: $grid-space,
-	$grid-container-selector: $grid-container-selector,
-	$grid-gutter: $grid-gutter,
-	$grid-max-width: $grid-max-width,
-	$grid-direction: $grid-direction) {
+	$grid-columns							: $default-grid-columns,
+	$grid-space								: $default-grid-space,
+	$grid-container-selector	: $default-grid-container-selector,
+	$grid-gutter							: $default-grid-gutter,
+	$grid-max-width						: $default-grid-max-width,
+	$grid-direction						: $default-grid-direction,
+	$grid-respond-width				: $default-grid-respond-width) {
 		
 	#{unquote($grid-container-selector)} {
 		@extend %clear;
-		width: $grid-width;
-		@if $grid-max-width { 
-			max-width: $grid-max-width; }
 		margin: $grid-container-margin;
-		position: relative; }
+		position: relative;
+		width: $grid-width;
+		
+		@if $grid-max-width { 
+			max-width: $grid-max-width; } }
 	
 	.grid {
 		display: block;
@@ -24,44 +27,56 @@
 		text-rendering: optimizespeed;
 		
 		@if $grid-space {
-			letter-spacing: -0.31em;
-			/* word-spacing: -0.43em; */ }
+			letter-spacing: -0.31em; }
+			
 		> .grid {
 		  margin-right: 0;
 		  margin-left: 0; } }
-	  
+	
+	%grid-padding {
+		padding: 0 0.5 * $grid-gutter; }
+	
 	.grid-cell {
+		position: relative;
 		display: inline-block;
 		width: 100%;
 		margin: 0;
-		padding: 0 0.5 * $grid-gutter;
 		vertical-align: top;
 		text-align: $grid-direction;
 		letter-spacing: normal;
 		word-spacing: normal;
 		text-rendering: auto; }
 	
-	.grid-cell-center, .grid-center {
+	.grid-center {
 		display: block;
 		margin: 0 auto; }
 	
-	@for $i from 1 through 5 {
-		$w: 16.6666666667% * $i;
+	$i: 1;
+	
+	@for $i from 1 through $grid-columns {
+		$w: (100% / $grid-columns) * $i;
 		
 		.grid-#{$i} {
-			@extend .grid-cell;
-			
-			@include respond-min($b) {
-				width: $w; } }
-				
+			@extend %grid-padding; }
+		
 		.before-#{$i} {
 			margin-left: $w; }
 			
 		.after-#{$i} {
-			margin-left: $w; } }
-			
-	.grid-6, .grid-full {
-		@extend .grid-cell; } }
+			margin-right: $w; }
+		
+		@if $i == $grid-columns {
+			.grid-#{$i},
+			.grid-c#{$i} {
+				@extend .grid-cell; } }
+				
+		@else {
+			.grid-#{$i},
+			.grid-c#{$i} {
+				@extend .grid-cell;
+				
+				@include respond-min($grid-respond-width) {
+					width: $w; } } } } }
 
 // Loop for percentages
 // ---------------------------

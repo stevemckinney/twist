@@ -1,7 +1,19 @@
+// Default vars
+// ---------------------------
+$default-form-label-position: top !default;
+
+$default-form-main-color: $default !default;
+$default-form-focus-color: $alt !default;
+$default-form-type: text !default;
+$default-form-state: $default-state !default;
+$default-form-radius: $radius !default;
+$default-form-shading: $default-shading !default;
+$default-form-set-height: false !default;
+$default-form-dry: $default-dry !default;
+
 // Form label positioning
 // ---------------------------
-@mixin form-label(
-	$position: top) {
+@mixin form-label($position: $default-form-label-position) {
 	
 	@if $position != left {
 		@extend %form-block;
@@ -29,14 +41,14 @@
 // Form
 // ---------------------------
 @mixin form(
-	$main-color: $default,
-	$focus-color: $alt,
-	$type: text,
-	$state: normal,
-	$radius: $radius, 
-	$shading: true,
-	$set-height: false,
-	$dry: false) {
+	$main-color: $default-form-main-color,
+	$focus-color: $default-form-focus-color,
+	$type: $default-form-type,
+	$state: $default-form-state,
+	$radius: $default-form-radius, 
+	$shading: $default-form-shading,
+	$set-height: $default-form-set-height,
+	$dry: $default-form-dry) {
 	
 	$type: unquote($type);
 		
@@ -89,9 +101,9 @@
 		@warn "#{error("Type not supported.")}"; } }
 	
 @mixin form-shading(
-	$main-color: $default,
-	$state: normal,
-	$type: text) {
+	$main-color: $default-form-main-color,
+	$state: $default-form-state,
+	$type: $default-form-type) {
 	
 	$bg-color: if(grayscale($main-color), $main-color, saturate($main-color, 100%));
 	
@@ -128,7 +140,7 @@
 		box-shadow:
 			inset 0 0 0 1px $main-color,
 			if($type != select, inset 0 2px 2px rgba($main-color, .4), inset 0 1px 0 rgba($white, .2)),
-			if($state == focus, compact(inset 6px 0 12px -6px rgba($main-color, .3), inset -6px 0 12px -6px rgba($main-color, .3), 0 0 6px rgba($main-color, .6)), compact(false)),
+			if($state == focus, compact(inset 6px 0 12px -6px rgba($main-color, .2), inset -6px 0 12px -6px rgba($main-color, .2), 0 0 6px rgba($main-color, .6)), compact(false)),
 			if($type == select, 0 1px 2px rgba($black, $default-dark-shadow/3), compact(false)),
 			if($state == active, 0 1px 3px rgba($black, $default-dark-shadow), 0 1px 1px rgba($white, $default-light-shadow));
 	
@@ -139,9 +151,9 @@
 		background: $white; } }
 
 @mixin form-base(
-	$type: text,
-	$radius: $radius,
-	$set-height: false) {
+	$type: $default-form-type,
+	$radius: $default-form-radius,
+	$set-height: $default-form-set-height) {
 	@extend %form-base;
 	
 	@if $radius { 

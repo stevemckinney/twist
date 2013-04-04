@@ -3,30 +3,39 @@
 
 //	general variable colours
 // --------------------------
+
+// Primary colours
 $primary: #403b33 !default;
+
+// Secondary colours
 $secondary: #d3643b !default;
+
+// Tertiary colours
 $tertiary: #edebe6 !default;
 
+// Neutral colours
+$neutral: #94C7B6 !default;
+
+// Loop through each colour set and vary style
+$c: 1;
+$list: $primary $secondary $tertiary $neutral;
+
+// Just because
 $black: #000 !default;
 $white: #fff !default;
 
-// main element styling colours
+// Main element styling colours
 // ---------------------------
-$default: #aeaeae !default;
-$default-text: #444 !default;
-$default-text-shadow: #fff !default;
-$default-subtle-color: #666 !default;
-
 $border: scale-color($default, $lightness: -15%) !default;
 $focus: scale-color(#71bcc5, $lightness: -25%) !default;
 
-// colours for status type things
+// Colours for status type things
 // ---------------------------
-$alt: #3a9ac9 !default;
+$alt: #71a7c5 !default;
 $danger: #d3643b /* #dd453d */ !default;
 $warning: #f7b23f !default;
 $success: #88a23d !default;
-$info: #71bcc5 !default;
+$info: #71c3c5 !default;
 
 // alternative colour names for the above
 // ---------------------------
@@ -40,19 +49,16 @@ $green: $success;
 $sans: "ff-dagny-web-pro", sans-serif !default;
 $serif: "utopia-std-display", serif !default;
 $monospace: Menlo, Monaco, "Courier New", monospace !default;
+$icons: "SSStandard" !default;
 
 // found the need sometimes to switch fonts mid project
 // ---------------------------
-$heading: $serif !default;
+$heading: $sans !default;
 $body: $sans !default;
 $form: $sans !default;
 $element: $sans !default;
 
-// if you have symbolset
-// ---------------------------
-$icons: "SSStandard" !default;
-
-// font sizes
+// Font sizes
 // ---------------------------
 $base-font-size: 16px !default;
 $base-line-height: 1.5 !default; // must be px if using compass vertical rhythm
@@ -62,36 +68,49 @@ $base-line-height: 1.5 !default; // must be px if using compass vertical rhythm
 $base-px: 12px !default;
 $line: $base-px*2 !default;
 
-
-// stop various browser support
-// ---------------------------
-$experimental-support-for-khtml: false;
-$experimental-support-for-opera: false;
-$support-for-original-webkit-gradients: false;
-$legacy-support-for-mozilla: true;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: true;
-
-// define responsive stuff: see responsive.scss
+// Define responsive stuff: see responsive.scss
 // ---------------------------
 $old-ie: false !default;
 $fix-mqs: false !default;
 
-// consistent values
+// Defaults
 // ---------------------------
-$radius: 3px !default;
-$transition-duration: .2s !default;
+$radius: 4px !default;
+
+$default-transition-duration: .2s !default;
+$transition-duration: $default-transition-duration !default;
+
+$default-negative-spacing: -5px !default;
+
+$default: #aeaeae !default;
+$default-text: #444 !default;
+$default-text-shadow: #fff !default;
+$default-subtle-color: #666 !default;
 
 $default-size: 1 !default; // for element mixin
 $default-ratio: .4875 !default; // for element mixin
-$default-set-height: 36px;
+$default-set-height: 36px !default;
 
-// Shadow transparency
-// ---------------------------
+$default-dark-bg: false !default;
+$default-shading: true !default;
+$default-display: inline-block !default;
+$default-dry: false !default;
+$default-state: normal !default;
+
 $default-dark-shadow: .4 !default;
 $default-light-shadow: .6 !default;
 
-// change your responsive widths here,
+$default-context: $base-font-size !default;
+
+$default-selection-background: scale-lightness($secondary, 60%) !default;
+$default-selection-color: scale-lightness($secondary, -20%) !default;
+
+$default-mark-color: $primary !default;
+$default-mark-background: #fefeca !default;
+
+$default-container: 960px;
+
+// Change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
 // ---------------------------
 $a: 30em !default; // 480
@@ -103,14 +122,14 @@ $f: 90em !default; // 1440
 
 // grid.scss settings
 // ---------------------------
-$grid-max-width: $d !default;
-$grid-width: 85% !default;
-
-$grid-container-margin: auto !default;
-$grid-container-selector: ".container" !default;
-
-$grid-direction: left !default;
-$grid-gutter: 1.5em !default;
+$default-grid-columns: 48em !default;
+$default-grid-max-width: $d !default;
+$default-grid-width: 85% !default;
+$default-grid-container-margin: auto !default;
+$default-grid-container-selector: ".container" !default;
+$default-grid-direction: left !default;
+$default-grid-gutter: 1.5em !default;
+$default-grid-respond-width: 48em !default;
 
 // if your html is minified set to false
 // as it cuts out that little bit of css 

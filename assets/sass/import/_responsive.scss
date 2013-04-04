@@ -4,15 +4,15 @@
 // target / context = result
 // long length version
 // ---------------------------
-@function calc-percent($target, $container) {
+@function calc-percent($target, $container: $default-container) {
 	@return ($target / $container) * 100%; }
 // shortcut
-@function cp($target, $container) {
+@function cp($target, $container: $default-container) {
 	@return calc-percent($target, $container); }
 
 // px to em
 // ---------------------------
-@function em($target-px, $context: $base-font-size) {
+@function em($target-px, $context: $default-context) {
 	@return ($target-px / $context) * 1em; }
 
 // Baseline, measured in pixels

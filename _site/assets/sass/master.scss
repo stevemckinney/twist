@@ -1,5 +1,4 @@
 @import "import/framework";
-@import "site/base"; // variable overrides
 
 /*
 	Site structure
@@ -13,7 +12,7 @@
  
 html {
 	background: $tertiary;
-	overflow-y: auto;
+	overflow-y: scroll;
 	color: $primary;
 	
 	// set font-family to a letter for use in js

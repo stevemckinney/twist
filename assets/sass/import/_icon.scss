@@ -1,18 +1,33 @@
+// Default vars
+// ---------------------------
+$default-add-icon-icon: navigateright !default;
+$default-add-icon-add: before !default;
+$default-add-icon-font: $icons !default;
+$default-add-icon-size: $base-font-size !default;
+$default-add-icon-shading: $default-shading !default;
+$default-add-icon-height: $default-set-height !default;
+$default-add-icon-padding: true !default;
+
+// Shared
+// ---------------------------
 @mixin add-icon-shared {
 	position: absolute;
 	display: block;
 	top: 0;
 	text-align: center; }
 	
+// Add an icon to an element
+// ---------------------------
 @mixin add-icon(
-	$icon-name: navigateright, 
-	$add: before,
-	$icon-font: $icons,
-	$icon-size: $base-font-size,
-	$shading: false,
-	$main-color: $default,
-	$height: $default-set-height,
-	$padding: true) {
+	$icon-name	: $default-add-icon-icon, 
+	$add				: $default-add-icon-add,
+	$icon-font	: $default-add-icon-font,
+	$icon-size	: $default-add-icon-size,
+	$shading		: $default-add-icon-shading,
+	$main-color	: $default,
+	$height			: $default-add-icon-height,
+	$padding		: $default-add-icon-padding
+) {
 	
 	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after"));
 	

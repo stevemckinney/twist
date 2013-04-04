@@ -31,8 +31,9 @@ html {
 body {
 	margin: 0; }
 
-a:hover, a:active, a:focus {
-	outline: 0; }
+a {
+	&, &:active, &:focus {
+		outline: 0; } }
 
 abbr[title] { 
 	border-bottom: 1px dotted; }
@@ -44,8 +45,8 @@ dfn {
 	font-style: italic; }
 
 mark {
-	background: #ff0;
-	color: #000; }
+	background: $default-mark-background;
+	color: $default-mark-color; }
 
 pre {
 	@include force-wrap; }
@@ -76,12 +77,13 @@ dl, menu, ol, ul {
 	padding: 0; }
 
 dd {
-	margin: 0 0 0 em($line); }
+	margin: 0 0 0 em($line - 4px); }
 
 menu, ol, ul {
-	padding: 0 0 0 em($line); }
+	padding: 0 0 0 em($line - 4px); }
 
 nav ul, nav ol {
+	padding: 0;
 	list-style: none;
 	list-style-image: none; }
 
@@ -97,7 +99,7 @@ figure, form {
 
 fieldset {
 	border: none;
-	margin: 0 0 em($base-px);
+	margin: 0 0 em($line);
 	padding: 0; }
 
 legend {
@@ -151,13 +153,13 @@ table {
 	outline: none; }
 	
 ::-moz-selection {
-	background: scale-lightness($secondary, 50%);
-	color: scale-lightness($secondary, -10%); 
+	background: $default-selection-background;
+	color: $default-selection-color; 
 	text-shadow: none; }
 	
 ::selection {
-	background: scale-lightness($secondary, 50%);
-	color: scale-lightness($secondary, -10%);
+	background: $default-selection-background;
+	color: $default-selection-color;
 	text-shadow: none; }
 
 *,

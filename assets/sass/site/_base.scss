@@ -1,3 +1,12 @@
 // Override variables from import/_base.scss here
 // ---------------------------
-$grid: new !default;
+$grid-columns: 6;
+
+// stop various browser support
+// ---------------------------
+$experimental-support-for-khtml: false;
+$experimental-support-for-opera: false;
+$support-for-original-webkit-gradients: false;
+$legacy-support-for-mozilla: true;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;

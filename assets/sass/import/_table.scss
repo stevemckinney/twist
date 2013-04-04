@@ -1,9 +1,21 @@
+// Default table vars
+// ---------------------------
+$default-table-main-color: scale-lightness($tertiary, -5%) !default;
+$default-table-hover: true !default;
+$default-table-width: 100% !default;
+$default-table-margin: 0 0 em($line) !default;
+$default-table-striped: true !default;
+$default-table-font-family: $sans !default;
+
+// Table
+// ---------------------------
 @mixin table(
-	$main-color: scale-lightness($tertiary, -5%),
-	$width: 100%,
-	$margin: 0 0 em($line),
-	$striped: true,
-	$font-family: $sans) {
+	$main-color	: $default-table-main-color,
+	$hover			: $default-table-hover,
+	$width			: $default-table-width,
+	$margin			: $default-table-margin,
+	$striped		: $default-table-striped,
+	$font-family: $default-table-font-family) {
 	
 	$dark-color: scale-color($main-color, $lightness: -10%, $saturation: -10%);
 	
@@ -26,17 +38,18 @@
 	th {
 		border-width: 2px; }
 	tr {
-		@if $striped == true {
+		@if $striped {
 			&:nth-child(even) {
 				td, th {
 					background: $main-color;
 					@if if-bright($main-color) == false {
 						color: invert($main-color); } } } }
-		&:hover, &:focus {
-			td {
-				background: $dark-color;
-				@if if-bright($main-color) == false {
-					color: invert($main-color); } } } }
+		@if $hover {
+			&:hover, &:focus {
+				td {
+					background: $dark-color;
+					@if if-bright($main-color) == false {
+						color: invert($main-color); } } } } }
 				
 	@include respond-max($c) {
 		thead {
