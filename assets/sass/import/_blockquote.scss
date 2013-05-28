@@ -30,7 +30,7 @@
 	p {
 		z-index: 1; }
 	&:before {
-		content: "#{$character}";
+		content: #{$character};
 		font-size: $quote-size;
 		position: absolute;
 		float: left;

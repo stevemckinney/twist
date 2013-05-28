@@ -69,6 +69,23 @@
 		@media (-webkit-max-device-pixel-ratio: 1.5), (max-resolution: 144dpi) { 
 			@content; } } }
 
+// Set up variables for our loop
+$breakpoints: $default-breakpoints;
+$i: 1;
+	
+@mixin breakpoint(
+	$width, 
+	$type: $default-breakpoint-type
+) {
+  // For all of our breakpoints
+	@for $i from 1 through length($breakpoints) {
+	  // Set choose our breakpoint from our $breakpoints
+	  $breakpoint: nth($breakpoints, $i);
+		
+		@if $breakpoint == $width {
+			@media screen and (#{$type}-width: $breakpoint) {
+        @content; } } } }
+
 // Better/flexible media queries, with old IE fallback 
 // see: https://github.com/jakearchibald/sass-ie
 // ---------------------------

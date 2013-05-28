@@ -38,17 +38,11 @@
 [role="main"] {
 	padding: em($line*2) em($line);
 	
-	-webkit-flex: 4;
-
-	@include respond-min($c) {}
-	@include respond-min($d) {} }
+	-webkit-flex: 4; }
 
 // Footer
 // ---------------------------
 [role="contentinfo"] {
 	display: block;
 	clear: both;
-	width: 100%;
-	
-	@include respond-min($c) {}
-	@include respond-min($d) {} }
+	width: 100%; }

@@ -11,12 +11,7 @@ $default-gradient-background-context: $default-context !default;
 	$main-color			: $default-gradient-background-main-color,
 	$content-height	: $default-gradient-background-content-height, 
 	$shadow					: $default-gradient-background-shadow,
-	$shadow2				: false,
-	$shadow3				: false,
-	$shadow4				: false,
 	$context				: $default-gradient-background-context) {
-
-	$shadow: compact($shadow, $shadow2, $shadow3, $shadow4);
 	
 	@if $main-color {
 		@include background(linear-gradient(top, rgba($main-color, 1) 20%, rgba($main-color, 0) 100%)); }

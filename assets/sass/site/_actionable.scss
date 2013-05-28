@@ -3,13 +3,17 @@
 $colors: $default $alt $info $danger $success $warning;
 $i: 1;
 
-.button, [type=submit] {
+.button {
 	@extend %element-base-with-mixin;
 	@for $i from 1 through length($colors) {
 		$color: nth($colors, $i);
 	
 		&:nth-of-type(#{$i}) {
-			@include element($color, $hover: true, $dry: true, $dark-bg: true); } } }
+			@include element($color, $hover: true, $dry: true); } } }
+
+[type="submit"] {
+	@extend %element-base-with-mixin;
+	@include element($danger, $hover: true, $dry: true); }
 
 // Alert
 .alert {
@@ -29,7 +33,7 @@ $i: 1;
 	@include element($alt, $hover: true, $dry: true); }
 	
 .group { 
-	@include element-group(compact(unquote(".group-button"), unquote("input")));
+	@include group(compact(unquote(".group-button"), unquote("input")));
 	input + input {
 		margin-left: -1px; } }
 

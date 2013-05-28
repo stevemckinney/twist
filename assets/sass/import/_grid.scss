@@ -8,7 +8,9 @@
 	$grid-gutter							: $default-grid-gutter,
 	$grid-max-width						: $default-grid-max-width,
 	$grid-direction						: $default-grid-direction,
-	$grid-respond-width				: $default-grid-respond-width) {
+	$grid-respond-width				: $default-grid-respond-width,
+	$grid-width								: $default-grid-width,
+	$grid-container-margin		: $default-grid-container-margin) {
 		
 	#{unquote($grid-container-selector)} {
 		@extend %clear;

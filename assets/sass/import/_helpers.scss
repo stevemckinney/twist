@@ -14,7 +14,8 @@
 	float: left; }
 %right {
 	float: right; }
-%grid, %clear {
+%grid,
+%clear {
 	@include pie-clearfix; }
 
 // Hiding
@@ -48,6 +49,8 @@
 %no-mp {
 	margin: 0;
 	padding: 0; }
+%margin-bottom {
+	margin: 0 0 em($line); }
 
 // Colour use
 // ---------------------------
@@ -60,7 +63,7 @@
 
 // Font size
 // ---------------------------
-%base {
+%base-font-size {
 	font-size: em($base-font-size, $base-font-size); }
 
 // Sizes
@@ -151,7 +154,7 @@
 // ---------------------------
 %two-columns {
 	@include column-count(2);
-	@include column-gap(3em);
+	@include column-gap(em($line*2));
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
 	break-inside: avoid; }

@@ -1,7 +1,6 @@
 // centre rem margin
 %crm {
 	@extend %clear;
-	width: 88%;
 	max-width: $d;
 	margin: auto auto $line;
 	position: relative; }

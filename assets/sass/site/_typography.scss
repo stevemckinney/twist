@@ -43,13 +43,14 @@ body {
 	font: 400 100%/#{em($base-line-height)} $body; }
 
 p {
-	margin: 0 0 em($line);
+	@extend %margin-bottom;
 	text-shadow: 0 1px 0 rgba($white, $default-light-shadow); }
 
 a {
+	@extend %transition;
 	text-decoration: none;
 	color: $secondary;
-	@extend %transition;
+	
 	&:hover, &:focus {
 		color: $primary; } }
 		

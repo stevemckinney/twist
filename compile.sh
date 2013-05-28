@@ -1,3 +1,3 @@
-jekyll --auto &
+jekyll serve &
 cd assets;
-compass watch;
+compass watch &

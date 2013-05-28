@@ -1,7 +1,7 @@
 // Default variables override in site/_base.scss
 // ---------------------------
 
-//	general variable colours
+// General variable colours
 // --------------------------
 
 // Primary colours
@@ -16,35 +16,26 @@ $tertiary: #edebe6 !default;
 // Neutral colours
 $neutral: #94C7B6 !default;
 
-// Loop through each colour set and vary style
-$c: 1;
-$list: $primary $secondary $tertiary $neutral;
-
 // Just because
 $black: #000 !default;
 $white: #fff !default;
 
 // Main element styling colours
 // ---------------------------
-$border: scale-color($default, $lightness: -15%) !default;
-$focus: scale-color(#71bcc5, $lightness: -25%) !default;
-
-// Colours for status type things
-// ---------------------------
-$alt: #71a7c5 !default;
-$danger: #d3643b /* #dd453d */ !default;
-$warning: #f7b23f !default;
-$success: #88a23d !default;
+$alt: #4595ca !default;
+$danger: #f06533 !default;
+$warning: #f2ce3b !default;
+$success: scale-color(#afcc17, $saturation: -20%) !default;
 $info: #71c3c5 !default;
 
-// alternative colour names for the above
+// Alternative colour names for the above
 // ---------------------------
 $error: $danger;
 $red: $danger;
 $blue: $alt;
 $green: $success;
 
-// font stacks
+// Font stacks
 // ---------------------------
 $sans: "ff-dagny-web-pro", sans-serif !default;
 $serif: "utopia-std-display", serif !default;
@@ -61,7 +52,7 @@ $element: $sans !default;
 // Font sizes
 // ---------------------------
 $base-font-size: 16px !default;
-$base-line-height: 1.5 !default; // must be px if using compass vertical rhythm
+$base-line-height: 24px !default; // must be px if using compass vertical rhythm
 
 // px
 // ---------------------------
@@ -80,61 +71,79 @@ $radius: 4px !default;
 $default-transition-duration: .2s !default;
 $transition-duration: $default-transition-duration !default;
 
+// For grouped elements the space left if inline-block is set
 $default-negative-spacing: -5px !default;
 
+// General default colours
 $default: #aeaeae !default;
 $default-text: #444 !default;
 $default-text-shadow: #fff !default;
 $default-subtle-color: #666 !default;
 
+// Default sizing for elements
 $default-size: 1 !default; // for element mixin
 $default-ratio: .4875 !default; // for element mixin
 $default-set-height: 36px !default;
 
+// Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
 $default-shading: true !default;
 $default-display: inline-block !default;
 $default-dry: false !default;
 $default-state: normal !default;
 
+// Default opacity for dark and light values
 $default-dark-shadow: .4 !default;
 $default-light-shadow: .6 !default;
 
+// Context in which em functions are based on
 $default-context: $base-font-size !default;
 
-$default-selection-background: scale-lightness($secondary, 60%) !default;
-$default-selection-color: scale-lightness($secondary, -20%) !default;
+// Set your browser selection colour
+$default-selection-background: #fefeca !default;
+$default-selection-color: $primary !default;
 
+// Set the <mark> element styles
 $default-mark-color: $primary !default;
 $default-mark-background: #fefeca !default;
 
+// Default container width eg <div class="container">
 $default-container: 960px;
+
+// If you have border/focus colours
+$border: scale-color($default, $lightness: -15%) !default;
+$focus: $alt !default;
 
 // Change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
 // ---------------------------
-$a: 30em !default; // 480
-$b: 37.5em !default; // 600
-$c: 48em !default; // 768
-$d: 60em !default; // 960
-$e: 75em !default; // 1200
-$f: 90em !default; // 1440
+
+// Set up some breakpoints
+$a: 30em !default;
+$b: 37.5em !default;
+$c: 48em !default;
+$d: 60em !default;
+$e: 75em !default;
+$f: 90em !default;
+
+$default-breakpoints: compact($a, $b, $c, $d, $e, $f) !default;
+$default-breakpoint-type: min !default;
 
 // grid.scss settings
 // ---------------------------
-$default-grid-columns: 48em !default;
+$default-grid-columns: 6 !default;
 $default-grid-max-width: $d !default;
 $default-grid-width: 85% !default;
 $default-grid-container-margin: auto !default;
 $default-grid-container-selector: ".container" !default;
 $default-grid-direction: left !default;
 $default-grid-gutter: 1.5em !default;
-$default-grid-respond-width: 48em !default;
+$default-grid-respond-width: $d !default;
 
 // if your html is minified set to false
 // as it cuts out that little bit of css 
 // needed to collapse whitespace
-$grid-space: true !default; 
+$default-grid-space: true !default; 
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

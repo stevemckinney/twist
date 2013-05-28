@@ -88,7 +88,7 @@ $default-form-dry: $default-dry !default;
 		@include form-shading($main-color, $state, text);
 		
 		@if $type == textarea {
-			line-height: $base-line-height; }
+			line-height: em($base-line-height); }
 		
 		&:focus {
 			@include form-shading($focus-color, focus, text); } }

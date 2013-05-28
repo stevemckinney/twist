@@ -36,6 +36,20 @@ html {
 html, body {
 	height: 100%; }
 
+/*
+	<div class="grid">
+		
+		<div class="grid-3">
+			<section class="box some-unique-name">
+			</section>
+		</div>
+		
+		<div class="grid-3">
+			<section class="box some-unique-name">
+			</section>
+		</div>
+		
+	</div> */
 .box {
 	border-radius: $radius;
 	box-shadow: inset 0 0 0 2px scale-lightness($tertiary, -30%);
@@ -44,25 +58,23 @@ html, body {
 	vertical-align: middle;
 	padding: em($base-px); }
 
-// Consistent margins
-// --------------------------- 
-hr,
-.button,
-[type=submit],
-#{elements-of-type("block")} {
-	margin-bottom: em($line); }
-
-.alert {
-	margin: 0 0 em($base-px); }
-
 // Remove below if need be
 // ---------------------------
 table {
 	@include table; }
-	
+
 hr {
-	border: none;
-	@extend %inset-highlight; }
+	@extend %margin-bottom;
+	@extend %inset-highlight;
+	border: none; }
+
+section,
+article,
+nav,
+header,
+.button {
+	@extend %margin-bottom; }
+
 
 // Site imports
 // ---------------------------
