@@ -63,40 +63,42 @@
 			@content; } }
 	// decisions behind this: http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
 	@else if $media == retina {
-		@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
+		@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) { 
 			@content; } }
 	@else if $media == nonretina {
-		@media (-webkit-max-device-pixel-ratio: 1.5), (max-resolution: 144dpi) { 
+		@media (-webkit-max-device-pixel-ratio: 1.5), (max-resolution: 144dppx) { 
 			@content; } } }
 
-// Set up variables for our loop
-$breakpoints: $default-breakpoints;
-$i: 1;
-	
-@mixin breakpoint(
-	$width, 
+@mixin bp(
+	$width: $default-breakpoint-width,
+	$retina: $default-breakpoint-retina,
 	$type: $default-breakpoint-type
 ) {
-  // For all of our breakpoints
-	@for $i from 1 through length($breakpoints) {
-	  // Set choose our breakpoint from our $breakpoints
-	  $breakpoint: nth($breakpoints, $i);
-		
-		@if $breakpoint == $width {
-			@media screen and (#{$type}-width: $breakpoint) {
-        @content; } } } }
+	@if $width and $retina {
+		@media (#{$type}-width: $width) and (-webkit-max-device-pixel-ratio: $default-breakpoint-pixel-ratio),
+					 (#{$type}-width: $width) and (min-resolution: $default-breakpoint-min-resolution) {
+   		@content; } }
+  @else if $width == false and $retina {
+		@media (-webkit-max-device-pixel-ratio: $default-breakpoint-pixel-ratio),
+					 (min-resolution: $default-breakpoint-min-resolution) {
+   		@content; } }
+	@else {
+		@media (#{$type}-width: $width) {
+   		@content; } } }
 
 // Better/flexible media queries, with old IE fallback 
 // see: https://github.com/jakearchibald/sass-ie
 // ---------------------------
 @mixin respond-min($width) {
+	@warn "Deprecated use bp mixin";
 	@if $fix-mqs {
 		@if $fix-mqs >= $width {
 			@content;	 } }
 	@else {
-		@media screen and (min-width: $width) {
+		@media (min-width: $width) {
 			@content; } } }
 @mixin respond-max($width) {
+	@warn "Deprecated use bp mixin";
 	@if $fix-mqs {
 		@if $fix-mqs >= $width {
 			@content; } }
@@ -111,7 +113,7 @@ $i: 1;
 // idea from http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss 
 // adapted for further efficiency
 // ---------------------------
-@mixin image-2x($image) {
+@mixin image-2x($image, $context: $default-context) {
 	@include respond-to(retina) {
 		background-image: url($image);
-		background-size: image-width($image)/2 image-height($image)/2; } }
+		background-size: em(image-width($image)/2, $context) em(image-height($image)/2, $context); } }

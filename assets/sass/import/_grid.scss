@@ -3,6 +3,7 @@
 // ---------------------------
 @mixin grid(
 	$grid-columns							: $default-grid-columns,
+	$grid-padding							: $default-grid-padding,
 	$grid-space								: $default-grid-space,
 	$grid-container-selector	: $default-grid-container-selector,
 	$grid-gutter							: $default-grid-gutter,
@@ -24,12 +25,17 @@
 	.grid {
 		display: block;
 		padding: 0;
-		margin: 0 -0.5 * $grid-gutter;
 		text-align: $grid-direction;
 		text-rendering: optimizespeed;
 		
+		@if $grid-padding {
+			margin: 0 -0.5 * $grid-gutter; }
+		
 		@if $grid-space {
-			letter-spacing: -0.31em; }
+	    letter-spacing: -0.31em;
+			
+			.opera-only :-o-prefocus & {
+		    word-spacing: -0.43em; } }
 			
 		> .grid {
 		  margin-right: 0;
@@ -58,8 +64,9 @@
 	@for $i from 1 through $grid-columns {
 		$w: (100% / $grid-columns) * $i;
 		
-		.grid-#{$i} {
-			@extend %grid-padding; }
+		@if $grid-padding {
+			.grid-#{$i} {
+				@extend %grid-padding; } }
 		
 		.before-#{$i} {
 			margin-left: $w; }
@@ -68,16 +75,14 @@
 			margin-right: $w; }
 		
 		@if $i == $grid-columns {
-			.grid-#{$i},
-			.grid-c#{$i} {
+			.grid-#{$i} {
 				@extend .grid-cell; } }
 				
 		@else {
-			.grid-#{$i},
-			.grid-c#{$i} {
+			.grid-#{$i} {
 				@extend .grid-cell;
 				
-				@include respond-min($grid-respond-width) {
+				@include bp($grid-respond-width) {
 					width: $w; } } } } }
 
 // Loop for percentages

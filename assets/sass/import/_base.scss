@@ -22,18 +22,21 @@ $white: #fff !default;
 
 // Main element styling colours
 // ---------------------------
-$alt: #4595ca !default;
-$danger: #f06533 !default;
-$warning: #f2ce3b !default;
-$success: scale-color(#afcc17, $saturation: -20%) !default;
-$info: #71c3c5 !default;
+$alt: #00b2b7 !default;
+$danger: #ef4c48 !default;
+$warning: #ffaf66 !default;
+$success: #a2c6a0 !default;
+$info: #88cbbe !default;
 
-// Alternative colour names for the above
+// Alternative colours
 // ---------------------------
-$error: $danger;
-$red: $danger;
-$blue: $alt;
-$green: $success;
+$error: $danger !default;
+$red: $danger !default;
+$blue: $alt !default;
+$green: $success !default;
+$yellow: $warning !default;
+$purple: #7375a5 !default;
+$light-grey: #e3e6ea !default;
 
 // Font stacks
 // ---------------------------
@@ -66,7 +69,7 @@ $fix-mqs: false !default;
 
 // Defaults
 // ---------------------------
-$radius: 4px !default;
+$radius: 3px !default;
 
 $default-transition-duration: .2s !default;
 $transition-duration: $default-transition-duration !default;
@@ -75,7 +78,7 @@ $transition-duration: $default-transition-duration !default;
 $default-negative-spacing: -5px !default;
 
 // General default colours
-$default: #aeaeae !default;
+$default: #7d7e81 !default;
 $default-text: #444 !default;
 $default-text-shadow: #fff !default;
 $default-subtle-color: #666 !default;
@@ -84,6 +87,10 @@ $default-subtle-color: #666 !default;
 $default-size: 1 !default; // for element mixin
 $default-ratio: .4875 !default; // for element mixin
 $default-set-height: 36px !default;
+$default-set-height-padding: $base-px !default;
+$default-equal: false !default;
+// How many times larger should the padding-left/right be than padding-top/bottom
+$default-multiplier: 2 !default;
 
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
@@ -93,7 +100,7 @@ $default-dry: false !default;
 $default-state: normal !default;
 
 // Default opacity for dark and light values
-$default-dark-shadow: .4 !default;
+$default-dark-shadow: .2 !default;
 $default-light-shadow: .6 !default;
 
 // Context in which em functions are based on
@@ -128,14 +135,19 @@ $f: 90em !default;
 
 $default-breakpoints: compact($a, $b, $c, $d, $e, $f) !default;
 $default-breakpoint-type: min !default;
+$default-breakpoint-retina: false !default;
+$default-breakpoint-width: false !default;
+$default-breakpoint-min-resolution: 144dppx !default;
+$default-breakpoint-pixel-ratio: 1.5 !default;
 
 // grid.scss settings
 // ---------------------------
 $default-grid-columns: 6 !default;
+$default-grid-padding: true !default;
 $default-grid-max-width: $d !default;
 $default-grid-width: 85% !default;
 $default-grid-container-margin: auto !default;
-$default-grid-container-selector: ".container" !default;
+$default-grid-container-selector: ".site" !default;
 $default-grid-direction: left !default;
 $default-grid-gutter: 1.5em !default;
 $default-grid-respond-width: $d !default;

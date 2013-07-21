@@ -9,7 +9,7 @@
 	@include respond-min($c) {}
 	@include respond-min($d) {} }
 	
-.logo {
+.site-logo {
 	font: 400 em($line*3) swingdancer;
 	display: block; }
 
@@ -29,7 +29,7 @@
 
 // Content
 // ---------------------------
-.container {
+.site {
 	display: -webkit-flex;
 	-webkit-flex-direction: row;
   -webkit-justify-content: space-between;

@@ -1,6 +1,7 @@
 // Buttons & alerts
 // ---------------------------
-$colors: $default $alt $info $danger $success $warning;
+$colors: $default $alt $info $danger $success $warning $light-grey $white !default;
+//$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
 $i: 1;
 
 .button {
@@ -25,7 +26,7 @@ $i: 1;
 		$color: nth($colors, $i);
 	
 		&:nth-of-type(#{$i}) {
-			@include element($color, $dry: true); } } }
+			@include element($color, $dry: true, $dark-bg: false); } } }
 
 // Grouped
 .group-button {
@@ -39,11 +40,16 @@ $i: 1;
 
 // Forms
 // ---------------------------
+form ul {
+	padding: 0;
+	list-style: none; }
+	
 label {
 	@include form-label;
 	@extend .h5; }
 
 // Text
+// ---------------------------
 [type=text],
 [type=email],
 [type=password],
@@ -57,16 +63,34 @@ textarea {
 		@include form-shading($info, focus); } }
 
 // Select
-select {
+// ---------------------------
+.field-select {
+	position: relative;
+	
+	&:before {
+		font-family: $icons;
+		content: "▾";
+		color: inherit;
+		position: absolute;
+		bottom: em(3px, $base-px);
+		right: em($base-px, $base-px);
+		font-size: em($base-px);
+		z-index: 1; } }
+		
+select,
+.select {
 	@include form(scale-color($tertiary, $lightness: -30%, $saturation: -20%), $type: select);
 	&:focus {
 		@include form-shading($info, focus, select); } }
-	
-// Checkbox
+
+
+// Check/radio
+// ---------------------------
 [type=radio],
 [type=checkbox] {
 	@include form($type: radio); }
 
-// States
+// Disabled
+// ---------------------------
 [disabled] {
 	@include form-shading(scale-color($tertiary, $lightness: -30%, $saturation: -20%), $state: disabled); }

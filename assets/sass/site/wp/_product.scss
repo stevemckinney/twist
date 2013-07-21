@@ -115,8 +115,6 @@ a.added_to_cart {
 	display: inline-block; }
 
 form.cart {
-	@warn "css may be dodgy here";
-	
 	table {
 		border-width: 0 0 1px 0;
 

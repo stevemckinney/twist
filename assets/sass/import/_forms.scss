@@ -1,6 +1,9 @@
 // Default vars
 // ---------------------------
 $default-form-label-position: top !default;
+$default-form-label-margin: 0 0 em($base-px/2) !default;
+$default-form-label-breakpoint: $b !default;
+$default-form-label-input-width: 66.66667% !default;
 
 $default-form-main-color: $default !default;
 $default-form-focus-color: $alt !default;
@@ -13,24 +16,39 @@ $default-form-dry: $default-dry !default;
 
 // Form label positioning
 // ---------------------------
-@mixin form-label($position: $default-form-label-position) {
+@mixin form-label(
+	$position: $default-form-label-position,
+	$margin: $default-form-label-margin,
+	$breakpoint: $default-form-label-breakpoint,
+	$input-width: $default-form-label-input-width
+) {
 	
 	@if $position != left {
 		@extend %form-block;
-		margin: 0 0 em($base-px/2);
-		& + input, & + select, & + textarea {
-			@extend %form-block; } }
+		&,
+		& + input, 
+		& + select, 
+		& + textarea {
+			@extend %form-block;
+			margin: $margin; } }
+	
 	@else {
 		width: 100%;
-		@include respond-min($b) {
+		
+		@include respond-min($breakpoint) {
 			display: inline-block;
-			width: (100% / 10) * 3; }
-		& + input, & + select, & + textarea, & + ul {
+			width: 100% - $input-width; }
+			
+		& + ul
+		& + input, 
+		& + select, 
+		& + textarea {
 			width: 100%;
 			clear: left;
+			
 			@include respond-min($b) {
 				display: inline-block;
-				width: (100% / 10) * 7; } } } }
+				width: $input-width; } } } }
 
 /* # To do
  * status: error, success, disabled
@@ -54,7 +72,7 @@ $default-form-dry: $default-dry !default;
 		
 	// styles which remain consistent no matter 
 	// the input apart from submit buttons
-	@if $dry == false {
+	@if $dry == false and ($type != checkbox or $type != radio) {
 		@extend %form-base;
 		
 		@if $radius { 
@@ -64,7 +82,7 @@ $default-form-dry: $default-dry !default;
 			@include set-height($set-height); }
 		@else {
 			padding: element-size($default-size, true); } }
-	@else {
+	@else if $dry and ($type != checkbox or $type != radio) {
 		@extend %form-base-with-mixin; }
 	
 	@if $type == checkbox or $type == radio {
@@ -111,26 +129,21 @@ $default-form-dry: $default-dry !default;
 		@if $state != disabled {
 			@include background(
 				linear-gradient(
-					rgba($bg-color, .15) 0%,
-					rgba($bg-color, 0) 100%), $white); }
+					rgba($bg-color, .2) -50%,
+					rgba($bg-color, 0) 50%), $white); }
+					
 		@if $state == disabled {
 			@include background(
 				linear-gradient(
-					rgba($bg-color, .25) 0%,
-					rgba($bg-color, .15) 100%), $white); } }
+					rgba($bg-color, .35) -40%,
+					rgba($bg-color, .15) 140%), $white); } }
 		
 	@if $type == select  {
 		@if $state != disabled {
 			@include background(
 				linear-gradient(
-					rgba($bg-color, .05) 46%,
-					rgba($bg-color, .15) 54%), $white); 
-			&:before {
-				content: "\25BE";
-				color: inherit;
-				position: absolute;
-				top: 0;
-				right: em($base-px); } }
+					rgba($bg-color, .05) 40%,
+					rgba($bg-color, .15) 60%), $white); }
 		@if $state == disabled {
 			@include background(
 				linear-gradient(
@@ -138,11 +151,23 @@ $default-form-dry: $default-dry !default;
 					rgba($bg-color, .2) 54%), $white); } }
 		
 		box-shadow:
+			if($type != select, 
+				inset 0 1px scale-lightness($main-color, -20%),
+				inset 0 -1px scale-lightness($main-color, -20%)),
 			inset 0 0 0 1px $main-color,
-			if($type != select, inset 0 2px 2px rgba($main-color, .4), inset 0 1px 0 rgba($white, .2)),
-			if($state == focus, compact(inset 6px 0 12px -6px rgba($main-color, .2), inset -6px 0 12px -6px rgba($main-color, .2), 0 0 6px rgba($main-color, .6)), compact(false)),
-			if($type == select, 0 1px 2px rgba($black, $default-dark-shadow/3), compact(false)),
-			if($state == active, 0 1px 3px rgba($black, $default-dark-shadow), 0 1px 1px rgba($white, $default-light-shadow));
+			if($type != select, 
+				inset 0 2px 3px rgba($main-color, .4),
+				if($state != focus, 
+					inset 0 1px 0 rgba($white, .4), compact(false))),
+			if($state == focus, 
+					0 0 6px rgba($main-color, .6), 
+				compact(false)),
+			if($type == select, 
+				0 1px 2px rgba($black, $default-dark-shadow/3), 
+				compact(false)),
+			if($state == active, 
+				0 1px 3px rgba($black, $default-dark-shadow),
+				0 1px 1px rgba($white, $default-light-shadow));
 	
 	.no-boxshadow & {
 		border: 1px solid $main-color; }
@@ -161,12 +186,14 @@ $default-form-dry: $default-dry !default;
 	
 	@if $set-height and $type != textarea {
 		@include set-height($set-height); }
+		
 	@else {
 		padding: element-size($default-size, true); } }
 
 // Placeholder styles
 // ---------------------------
-@mixin placeholder($color: scale-color($primary, $lightness: 40%, $saturation: -15%)) {
+@mixin placeholder(
+	$color: scale-color($primary, $lightness: 60%, $saturation: -35%)) {
 	::-webkit-input-placeholder {
 	 color: $color; }
 	::-moz-placeholder {
@@ -191,3 +218,13 @@ $default-form-dry: $default-dry !default;
 %form-block {
 	display: block;
 	width: 100%; }
+
+// Alternate form components
+// ---------------------------
+$default-search-selector: '[type="search"]';
+
+@mixin form-search($search-selector: $default-search-selector) {
+	#{unquote($search-selector)} {
+		
+	}
+}

@@ -110,7 +110,7 @@
 // ---------------------------
 @mixin set-height(
 	$set-height	: $default-set-height,
-	$padding		: $base-px,
+	$padding		: $default-set-height-padding,
 	$context		: $default-context
 ) {
 	@if $set-height == true {
@@ -118,20 +118,23 @@
 	@else {
 		$set-height: em($set-height, $context); }
 
-	padding: 0 em($padding, $context);
+	@if $padding {
+		padding: $padding; }
+		
 	height: $set-height;
 	line-height: $set-height; }
 
 // Create proportionally sized elements
 // ---------------------------
 @function element-size(
-	$size	: $default-size,
-	$equal: false,
-	$ratio: $default-ratio
+	$size				: $default-size,
+	$equal			: $default-equal,
+	$ratio			: $default-ratio,
+	$multiplier	: $default-multiplier
 ) {
   @return if(
   	$equal == false, 
-  	($size * $ratio) + em (($size * 2) * $ratio) + em, 
+  	($size * $ratio) + em (($size * $multiplier) * $ratio) + em, 
   	($size * $ratio) + em); }
 
 // Colour functions
