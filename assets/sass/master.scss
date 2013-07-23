@@ -1,86 +1,35 @@
-@import "import/framework";
-
-/*
-	Site structure
------------------------------------------------------------------------*/
-@-o-viewport {
-  width: device-width; }
-@-ms-viewport {
-  width: device-width; }
-@viewport {
-  width: device-width; }
- 
-html {
-	background: $tertiary;
-	overflow-y: scroll;
-	color: $primary;
-	
-	// set font-family to a letter for use in js
-	font-family: "a";
-	
-	@include respond-min($b) {
-		font-family: "b"; }
-	
-	@include respond-min($c) {
-		font-family: "c"; }
-	
-	@include respond-min($d) {
-		font-family: "d"; }
-	
-	@include respond-min($e) {
-		font-family: "e"; }
-	
-	@include respond-min($f) {
-		font-family: "f"; } }
-
-html, body {
-	height: 100%; }
-
-/*
-	<div class="grid">
-		
-		<div class="grid-3">
-			<section class="box some-unique-name">
-			</section>
-		</div>
-		
-		<div class="grid-3">
-			<section class="box some-unique-name">
-			</section>
-		</div>
-		
-	</div> */
-.box {
-	border-radius: $radius;
-	box-shadow: inset 0 0 0 2px scale-lightness($tertiary, -30%);
-	background: scale-lightness($tertiary, -20%);
-	text-align: center;
-	vertical-align: middle;
-	padding: em($base-px); }
-
-// Remove below if need be
+// Framework required
 // ---------------------------
-table {
-	@include table; }
+@import "compass",
+				"compass/css3",
+				"compass/css3/user-interface",
+				"compass/layout/stretching",
+				"compass/css3/hyphenation",
+				"framework/base",
+				"site/base";
+				
+// Framework components
+// ---------------------------
+@import "framework/responsive",
+				"framework/normalize",
+				"framework/grid",
+				"framework/helpers",
+				"framework/group",
+				"framework/element",
+				"framework/icon",
+				"framework/forms",
+				"framework/table",
+				"framework/blockquote",
+				"framework/misc";
 
-hr {
-	@extend %margin-bottom;
-	@extend %inset-highlight;
-	border: none; }
-
-section,
-article,
-nav,
-header,
-.button {
-	@extend %margin-bottom; }
-
-
-// Site imports
+// Site base
 // ---------------------------
 @import "site/mixins", 
 				"site/extends", 
 				"site/symbolset", 
 				"site/typography",
-				"site/actionable",
 				"site/structure";
+
+// Site objects
+// ---------------------------
+@import "objects/buttons";
