@@ -52,16 +52,16 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="site">
 	
-		<header role="banner">
-			<a href="/" class="logo with-subheading text-center">twist</a>
+		<header role="banner" class="site-header">
+			<a href="/" class="site-logo with-subheading text-center">twist</a>
       <h2 class="h5 subheading text-center">A bunch of flexible mixins, using Sass/Compass.</h2>
-      <nav role="navigation" class="nav">
+      <nav role="navigation" class="site-navigation">
 				<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub</a>
 			</nav>
 		</header>
-		<section role="main">
+		<section role="main" class="site-main">
 	<div class="grid-4">
 <header>
   <hgroup>
@@ -437,7 +437,7 @@
 		
 		<hr>
 		
-		<footer role="contentinfo">
+		<footer role="contentinfo" class="site-footer">
 			<p>twist, free to use as you please.</p>
 		</footer>
 	</div>

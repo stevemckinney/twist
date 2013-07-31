@@ -36,6 +36,20 @@ html {
 html, body {
 	height: 100%; }
 
+/*
+	<div class="grid">
+		
+		<div class="grid-3">
+			<section class="box some-unique-name">
+			</section>
+		</div>
+		
+		<div class="grid-3">
+			<section class="box some-unique-name">
+			</section>
+		</div>
+		
+	</div> */
 .box {
 	border-radius: $radius;
 	box-shadow: inset 0 0 0 2px scale-lightness($tertiary, -30%);
@@ -48,7 +62,7 @@ html, body {
 // ---------------------------
 table {
 	@include table; }
-	
+
 hr {
 	@extend %margin-bottom;
 	@extend %inset-highlight;
@@ -70,7 +84,3 @@ header,
 				"site/typography",
 				"site/actionable",
 				"site/structure";
-
-// Wordpress imports
-// ---------------------------
-@import "site/wp/all";
