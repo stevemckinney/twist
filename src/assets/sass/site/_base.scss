@@ -1,0 +1,14 @@
+// Override variables from import/_base.scss here
+// ---------------------------
+$default-grid-columns: 6;
+$default-transition-duration: .2s;
+
+// Stop various browser support
+// ---------------------------
+$experimental-support-for-khtml: false;
+$experimental-support-for-opera: false;
+$support-for-original-webkit-gradients: false;
+$legacy-support-for-mozilla: false;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
