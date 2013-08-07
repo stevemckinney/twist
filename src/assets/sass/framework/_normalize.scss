@@ -73,12 +73,11 @@ sup {
 sub {
 	bottom: -.25em; }
 
-dl,
-%dl {
+dl, %dl {
 	margin: 0;
 	padding: 0; }
 
-dd {
+dd, %dd {
 	margin: 0; }
 	
 menu {

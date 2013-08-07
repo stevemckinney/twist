@@ -53,76 +53,76 @@ sup { top: -.5em; }
 /* line 73, ../sass/framework/_normalize.scss */
 sub { bottom: -.25em; }
 
-/* line 77, ../sass/framework/_normalize.scss */
+/* line 76, ../sass/framework/_normalize.scss */
 dl { margin: 0; padding: 0; }
 
-/* line 81, ../sass/framework/_normalize.scss */
-dd { margin: 0; }
+/* line 80, ../sass/framework/_normalize.scss */
+dd, menu, ol, ul { margin: 0; }
 
-/* line 84, ../sass/framework/_normalize.scss */
+/* line 83, ../sass/framework/_normalize.scss */
 menu, ol, ul { padding: 0 0 0 1.25em; }
 
-/* line 94, ../sass/framework/_normalize.scss */
+/* line 93, ../sass/framework/_normalize.scss */
 nav ul, nav ol { padding: 0; list-style: none; list-style-image: none; }
 
-/* line 99, ../sass/framework/_normalize.scss */
+/* line 98, ../sass/framework/_normalize.scss */
 img { border: 0; max-width: 100%; }
 
-/* line 103, ../sass/framework/_normalize.scss */
+/* line 102, ../sass/framework/_normalize.scss */
 svg:not(:root) { overflow: hidden; }
 
-/* line 106, ../sass/framework/_normalize.scss */
+/* line 105, ../sass/framework/_normalize.scss */
 figure, form { margin: 0; }
 
-/* line 109, ../sass/framework/_normalize.scss */
+/* line 108, ../sass/framework/_normalize.scss */
 fieldset { border: none; margin: 0 0 1.5em; padding: 0; }
 
-/* line 114, ../sass/framework/_normalize.scss */
+/* line 113, ../sass/framework/_normalize.scss */
 legend { border: 0; padding: 0; white-space: normal; }
 
-/* line 122, ../sass/framework/_normalize.scss */
+/* line 121, ../sass/framework/_normalize.scss */
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; }
 
-/* line 128, ../sass/framework/_normalize.scss */
+/* line 127, ../sass/framework/_normalize.scss */
 button, [type="submit"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; }
 
-/* line 133, ../sass/framework/_normalize.scss */
+/* line 132, ../sass/framework/_normalize.scss */
 button, input { line-height: normal; }
 
-/* line 139, ../sass/framework/_normalize.scss */
+/* line 138, ../sass/framework/_normalize.scss */
 button, [type="button"], [type="reset"], [type="submit"] { cursor: pointer; }
 
-/* line 142, ../sass/framework/_normalize.scss */
+/* line 141, ../sass/framework/_normalize.scss */
 html [disabled] { cursor: default; }
 
-/* line 146, ../sass/framework/_normalize.scss */
+/* line 145, ../sass/framework/_normalize.scss */
 [type="checkbox"], [type="radio"] { padding: 0; }
 
-/* line 149, ../sass/framework/_normalize.scss */
+/* line 148, ../sass/framework/_normalize.scss */
 [type="search"] { -webkit-appearance: textfield; -moz-appearance: textfield; appearance: textfield; }
 
-/* line 153, ../sass/framework/_normalize.scss */
+/* line 152, ../sass/framework/_normalize.scss */
 [type="search"]::-webkit-search-decoration, [type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
-/* line 157, ../sass/framework/_normalize.scss */
+/* line 156, ../sass/framework/_normalize.scss */
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-/* line 161, ../sass/framework/_normalize.scss */
+/* line 160, ../sass/framework/_normalize.scss */
 textarea { overflow: auto; vertical-align: top; }
 
-/* line 165, ../sass/framework/_normalize.scss */
+/* line 164, ../sass/framework/_normalize.scss */
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* line 169, ../sass/framework/_normalize.scss */
+/* line 168, ../sass/framework/_normalize.scss */
 :focus { outline: none; }
 
-/* line 172, ../sass/framework/_normalize.scss */
+/* line 171, ../sass/framework/_normalize.scss */
 ::-moz-selection { background: #fefeca; color: #403b33; text-shadow: none; }
 
-/* line 177, ../sass/framework/_normalize.scss */
+/* line 176, ../sass/framework/_normalize.scss */
 ::selection { background: #fefeca; color: #403b33; text-shadow: none; }
 
-/* line 184, ../sass/framework/_normalize.scss */
+/* line 183, ../sass/framework/_normalize.scss */
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* line 7, ../sass/framework/_helpers.scss */
@@ -175,7 +175,6 @@ p { margin: 0 0 1.5em; }
 /* line 204, ../sass/framework/_element.scss */
 .button, .button-secondary, .group-button, .button:hover, .button-secondary:hover, .group-button:hover, .button:focus, .button-secondary:focus, .group-button:focus { color: white; }
 
-/* # To do status: error, success, disabled more efficient code 	eg: $dry: true like element mixin */
 /* line 48, ../sass/framework/_blockquote.scss */
 blockquote { background: -webkit-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: -moz-linear-gradient(bottom, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; background: linear-gradient(to top, rgba(176, 159, 101, 0.25) 0.05em, transparent 0.05em), #f6efd7; -webkit-background-size: 100% 1.5em; -moz-background-size: 100% 1.5em; background-size: 100% 1.5em; margin: 0; padding-left: 6.75em; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
 /* line 28, ../sass/framework/_blockquote.scss */
@@ -296,13 +295,13 @@ blockquote {
 /* line 74, ../sass/framework/_grid.scss */
 .after-6 { margin-right: 100%; }
 
-/* line 203, ../sass/framework/_forms.scss */
+/* line 78, ../sass/framework/_form_types.scss */
 ::-webkit-input-placeholder { color: #7d7e81; }
 
-/* line 205, ../sass/framework/_forms.scss */
+/* line 80, ../sass/framework/_form_types.scss */
 ::-moz-placeholder { color: #7d7e81; }
 
-/* line 207, ../sass/framework/_forms.scss */
+/* line 82, ../sass/framework/_form_types.scss */
 :-ms-input-placeholder { color: #7d7e81; }
 
 /*
