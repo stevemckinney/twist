@@ -1,0 +1,65 @@
+@import "variables";
+
+// Variables
+// ---------------------------
+$default-form-select-dropdown: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22dropdown%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20width%3D%2212px%22%20height%3D%227.5px%22%20viewBox%3D%220%200%2012%207.5%22%20enable-background%3D%22new%200%200%2012%207.5%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%3E%0D%0A%09%3Cpath%20fill%3D%22%23444444%22%20d%3D%22M6.2%2C7.4C6.1%2C7.5%2C6.1%2C7.5%2C6%2C7.5c-0.1%2C0-0.2%2C0-0.2-0.1l-5.7-7C0%2C0.3%2C0%2C0.2%2C0%2C0.1C0.1%2C0.1%2C0.1%2C0%2C0.2%2C0h11.5%0D%0A%09%09c0.1%2C0%2C0.2%2C0.1%2C0.2%2C0.1c0%2C0.1%2C0%2C0.2%2C0%2C0.3L6.2%2C7.4z%22/%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A') no-repeat right 12px center !default;
+
+@mixin form-shading(
+	$main-color: $default-form-main-color,
+	$state: $default-form-state,
+	$type: $default-form-type,
+	$text-elements: $default-text-elements,
+	$check-elements: $default-check-elements) {
+	
+	$background-shading-color: if(grayscale($main-color), $main-color, saturate($main-color, 100%));
+	$background-color: if($state != disabled, $default-form-background-color, scale-lightness($main-color, 80%));
+	
+	// Text
+	// ---------------------------
+	@if index($text-elements, unquote($type)) and $state == normal {
+		@include background(
+			linear-gradient(
+				rgba($background-shading-color, .2) -50%,
+				rgba($background-shading-color, 0) 50%), $background-color); }
+	
+	// Select
+	// ---------------------------
+	@else if $type == select and $state == normal {
+		@include background(
+			linear-gradient(
+				rgba($background-color, .025) 0%,
+				rgba($background-shading-color, .15) 60%), $default-form-select-dropdown, $background-color); }
+	
+	// Check
+	// ---------------------------
+	@else if index($check-elements, unquote($type)) and $state == normal {
+		@include form-check; }
+	
+	// Shadow
+	// ---------------------------
+	box-shadow:
+		if($state == focus, 
+			0 0 3px rgba($main-color, .6), 
+			compact(false)),
+		if($type != select, 
+			inset 0 1px scale-lightness($main-color, -20%),
+			inset 0 -1px scale-lightness($main-color, -20%)),
+		inset 0 0 0 1px $main-color,
+		if($type != select, 
+			inset 0 2px 3px rgba($main-color, .8),
+			if($state != focus, 
+				inset 0 1px 0 rgba($white, .4), compact(false))),
+		if($type == select, 
+			0 1px 2px rgba($black, $default-dark-shadow/3), 
+			compact(false)),
+		if($state == active, 
+			0 1px 3px rgba($black, $default-dark-shadow),
+			0 1px 1px rgba($white, $default-light-shadow));
+			
+	// Modernizr
+	// ---------------------------
+	.no-boxshadow & {
+		border: 1px solid $main-color; }
+	
+	.no-cssgradients & {
+		background: $white; } }

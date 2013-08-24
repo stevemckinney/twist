@@ -1,0 +1,33 @@
+@import "variables";
+
+// Text
+// ---------------------------
+@mixin form-text(
+	$main-color: $default-form-main-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color) {
+	
+	@include form-shading($main-color, normal, text);
+	
+	&:focus {
+		@include form-shading($focus-color, focus, text); } }
+
+// Select
+// ---------------------------
+@mixin form-select(
+	$main-color: $default-form-main-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color) {
+	
+	@include form-shading($main-color, normal, select);
+	
+	&:focus {
+		@include form-shading($focus-color, focus, select); } }
+
+// Check
+// ---------------------------
+@mixin form-check(
+	$main-color: $default-form-main-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color) {
+	margin: 0 em($base-px/2) 0 0; }

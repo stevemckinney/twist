@@ -55,3 +55,10 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	padding: em($base-px); }
+
+// Get rid of margins on the bottom of all elements in modules
+// ---------------------------
+.module > *:last-child,
+.module > *:last-child > *:last-child,
+.module > *:last-child > *:last-child > *:last-child {
+  margin: 0; }

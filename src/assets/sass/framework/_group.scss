@@ -23,9 +23,10 @@ $default-group-radius: $radius !default;
 		
 		+ & {
 			margin-left: -1px; }
-		
-		&:first-child {
-			border-radius: $radius 0 0 $radius; }
-		
-		&:last-child {
-			border-radius: 0 $radius $radius 0; } } }
+
+		@if $radius {
+			&:first-child {
+				border-radius: $radius 0 0 $radius; }
+			
+			&:last-child {
+				border-radius: 0 $radius $radius 0; } } } }

@@ -1,0 +1,34 @@
+// Forms
+// ---------------------------
+form ul {
+	padding: 0;
+	list-style: none; }
+	
+label {
+	@include form-label;
+	@extend .h5; }
+
+// Text
+// ---------------------------
+.text,
+textarea,
+[type=url],
+[type=search] {
+	@extend %form-base-with-mixin;
+	@include form; }
+
+// Select
+// ---------------------------
+select {
+	@include form(select); }
+
+// Check/radio
+// ---------------------------
+[type=radio],
+[type=checkbox] {
+	@include form($type: radio); }
+
+// Submit
+// ---------------------------
+[type=submit] {
+	@include element($hover: true); }

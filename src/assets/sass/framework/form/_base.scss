@@ -1,0 +1,33 @@
+// Form basic styles
+// ---------------------------
+@mixin form-base(
+	$type: $default-form-type,
+	$radius: $default-form-radius,
+	$set-height: $default-form-set-height) {
+	@extend %form-base;
+	
+	@if $radius { 
+		border-radius: $radius; }
+	
+	@if $set-height and $type != textarea {
+		@include set-height($set-height); }
+		
+	@else {
+		padding: element-size($default-size, true); } }
+		
+%form-base {
+	@include appearance(none);
+	border: none;
+	font-family: $form;
+	outline: none;
+	max-width: 100%;
+	color: $primary;
+	line-height: normal; }
+
+%form-base-with-mixin {
+	@extend %form-base;
+	@include form-base; }
+
+%form-block {
+	display: block;
+	width: 100%; }

@@ -7,12 +7,12 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			dist: {
-				src: ['<%= pkg.path.js %>lettering.js', 
-							'<%= pkg.path.js %>fittext.js',
-							'<%= pkg.path.js %>fitvids.js', 
-							'<%= pkg.path.js %>prism.js',
-							'<%= pkg.path.js %>global.js'],
-				dest: '<%= pkg.path.js %><%= pkg.name %>.js'
+				src: ['src/assets/js/lettering.js', 
+							'src/assets/js/fittext.js',
+							'src/assets/js/fitvids.js', 
+							'src/assets/js/prism.js',
+							'src/assets/js/global.js'],
+				dest: 'site/assets/js/<%= pkg.name %>.js'
 			}
 		},
 		uglify: {
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'<%= pkg.path.js %><%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'site/assets/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
@@ -40,26 +40,45 @@ module.exports = function(grunt) {
 		compass: {
 			dev: {
 				options: {
-					config: '<%= pkg.path.assets %>config.rb'
+					sassDir: 'src/assets/sass',
+					cssDir: 'site/assets/css',
+					httpPath: '/',
+					imagesDir: 'site/assets/images',
+					javascriptsDir: 'src/assets/js',
+					fontsDir: 'src/assets/fonts',
+					outputStyle: 'expanded'
 				}
 			}
 		},
+		htmlmin: {
+	    dist: {
+	      options: {
+	        removeComments: true,
+	        collapseWhitespace: true
+	      },
+	      files: {
+	        '<%= pkg.path.src %>**/*': '<%= pkg.path.templates %>**/*',
+	      }
+	    },
+		},
 		watch: {
 			jekyll: {
-				files: ['<%= pkg.path.src %>*.html'],
+				files: ['src/*.html', 'site/*.html'],
 				tasks: ['jekyll:dev']
 			},
 			sass: {
-        files: ['<%= pkg.path.sass %>*.scss', '<%= pkg.path.sass %>**/*.scss'],
+        files: ['src/assets/sass/*.scss', 'src/assets/sass/**/*.scss'],
         tasks: ['compass:dev']
+      },
+      grunticon: {
+        files: ['src/assets/images/', 'site/assets/images/'],
+        tasks: ['grunticon']
       }
 		},
 		jekyll: {
 			server : {
 				src : '<%= pkg.path.src %>',
 				dest: '<%= pkg.path.dest %>',
-				server : true,
-				server_port : 8000,
 				auto : true
 			},
 			dev: {
@@ -71,12 +90,15 @@ module.exports = function(grunt) {
 				dest: '<%= pkg.path.dest %>'
 			}
 		},
-		copy: {
-		  main: {
-		    src: '<%= pkg.path.src %>*',
-		    dest: '<%= pkg.path.dest %>',
-		  },
-		},
+		grunticon: {
+	    icons: {
+	        options: {
+	        	src: "src/assets/images/",
+						dest: "site/assets/images/",
+						svgo: true
+	      }
+	    }
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -86,18 +108,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-jekyll');
 	
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 	
-	// Static site use jekyll
-	grunt.registerTask('default', ['watch', 'compass', 'jekyll']);
-	
-	// Nonstatic site use copy
-	// grunt.registerTask('default', ['watch', 'compass', 'copy']);
-	
-	grunt.registerTask('dev', ['default']);
-
-	grunt.registerTask('deploy', ['default', 'concat', 'jshint', 'uglify']);
+	// Tasks
+	grunt.registerTask('default', ['watch', 'htmlmin', 'grunticon', 'jekyll:dev', 'compass:dev']);
+	grunt.registerTask('build', ['watch', 'htmlmin', 'grunticon', 'jekyll:dev', 'compass:dev']);
 
 };

@@ -32,10 +32,7 @@
 			margin: 0 -0.5 * $grid-gutter; }
 		
 		@if $grid-space {
-	    letter-spacing: -0.31em;
-			
-			.opera-only :-o-prefocus & {
-		    word-spacing: -0.43em; } }
+	    letter-spacing: -0.31em; }
 			
 		> .grid {
 		  margin-right: 0;
@@ -68,12 +65,6 @@
 			.grid-#{$i} {
 				@extend %grid-padding; } }
 		
-		.before-#{$i} {
-			margin-left: $w; }
-			
-		.after-#{$i} {
-			margin-right: $w; }
-		
 		@if $i == $grid-columns {
 			.grid-#{$i} {
 				@extend .grid-cell; } }
@@ -91,14 +82,14 @@
   $num: $i * 5;
   $percent: $num * 1%;
 
-  %grid-#{$num} {
-	  float: left;
+  %percentage-#{$num} {
+  	@extend .grid-cell;
     width: $percent; }
 
-  %prefix-#{$num} {
+  %before-#{$num} {
     margin-left: $percent; }
 
-  %suffix-#{$num} {
+  %after-#{$num} {
     margin-right: $percent; }
 
   %push-#{$num} {

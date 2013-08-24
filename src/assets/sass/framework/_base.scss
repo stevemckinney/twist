@@ -120,13 +120,13 @@ $default-negative-spacing: -5px !default;
 
 // General default colours
 $default: #7d7e81 !default;
-$default-text: #444 !default;
+$default-text: #7d7e81 !default;
 $default-text-shadow: #fff !default;
-$default-subtle-color: #666 !default;
+$default-subtle-color: scale-lightness($default, 20%) !default;
 
 // Default sizing for elements
 $default-size: 1 !default; // for element mixin
-$default-ratio: .4875 !default; // for element mixin
+$default-ratio: .5 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
 $default-equal: false !default;
@@ -171,12 +171,12 @@ $focus: $alt !default;
 // ---------------------------
 
 // Set up some breakpoints
-$a: 30em !default;
-$b: 37.5em !default;
-$c: 48em !default;
-$d: 60em !default;
-$e: 75em !default;
-$f: 90em !default;
+$a: (480px / $default-context) * 1em !default;
+$b: (600px / $default-context) * 1em!default;
+$c: (768px / $default-context) * 1em !default;
+$d: (960px / $default-context) * 1em !default;
+$e: (1200px / $default-context) * 1em !default;
+$f: (1440px / $default-context) * 1em !default;
 
 $default-hide-small-breakpoint: $b !default;
 $default-hide-med-min-breakpoint: $b !default;
