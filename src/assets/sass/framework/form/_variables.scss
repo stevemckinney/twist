@@ -17,5 +17,8 @@ $default-form-dry: $default-dry !default;
 
 // Elements
 $default-text-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local !default;
-$default-check-elements: radio, checkbox !default;
-$default-styled-elements: $default-text-elements, select !default;
+$default-boolean-elements: radio, checkbox !default;
+$default-non-boolean-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local, select !default;
+
+// Boolean
+$default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;

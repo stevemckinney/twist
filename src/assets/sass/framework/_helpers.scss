@@ -94,6 +94,7 @@
 	$height	: false
 ) {
 	$width: unquote($width);
+	
 	@if $height != none {
 		$height: unquote($height); }
 
@@ -102,9 +103,7 @@
 		height: #{$height}; }
 	@else {
 		width: #{$width};
-		height: #{$width}; }
-
-}
+		height: #{$width}; } }
 
 // Sets the height of stuff with the line height to match
 // ---------------------------
@@ -113,16 +112,14 @@
 	$padding		: $default-set-height-padding,
 	$context		: $default-context
 ) {
-	@if $set-height == true {
-		$set-height: em($default-set-height); }
-	@else {
-		$set-height: em($set-height, $context); }
 
-	@if $padding {
-		padding: $padding; }
+	$set-height: if($set-height == true, em($default-set-height), em($set-height, $context));
 		
 	height: $set-height;
-	line-height: $set-height; }
+	line-height: $set-height;
+	
+	@if $padding {
+		padding: $padding; } }
 
 // Create proportionally sized elements
 // ---------------------------
@@ -166,6 +163,37 @@
 	-moz-column-break-inside: avoid;
 	break-inside: avoid; }
 
+// Inline block
+// ---------------------------
+%inline-block {
+	display: inline-block; }
+	
+%vertical-align-top {
+	@extend %inline-block;
+	vertical-align: top; }
+
+%vertical-align-middle {
+	@extend %inline-block;
+	vertical-align: middle; }
+
+%vertical-align-bottom {
+	@extend %inline-block;
+	vertical-align: bottom; }
+
+// Entry widths
+// ---------------------------
+%entry-half {
+	@extend %vertical-align-bottom;
+	width: 50%;
+	margin-right: -5px; }
+
+// Module last margin removal
+// ---------------------------
+%module > *:last-child,
+%module > *:last-child > *:last-child,
+%module > *:last-child > *:last-child > *:last-child {
+  margin: 0; }
+
 // Display classes
 // ---------------------------
 .hide-small {
@@ -173,7 +201,7 @@
 		display: none; } }
 
 .hide-med {
-	@media (min-width: $default-hide-med-min-breakpoint) and (max-width: $default-hide-med-max-breakpoint) {
+	@include breakpoint($default-hide-med-min-breakpoint $default-hide-med-max-breakpoint) {
 		display: none; } }
 
 .hide-large {

@@ -1,67 +1,35 @@
 // Default vars
 // ---------------------------
-$default-add-icon-icon: navigateright !default;
-$default-add-icon-add: before !default;
-$default-add-icon-font: $icons !default;
-$default-add-icon-size: $base-font-size !default;
-$default-add-icon-shading: $default-shading !default;
-$default-add-icon-height: $default-set-height !default;
-$default-add-icon-padding: true !default;
+$default-icon-icon: navigateright !default;
+$default-icon-add: before !default;
+$default-icon-font: $icons !default;
+$default-icon-size: $base-font-size !default;
+$default-icon-shading: $default-shading !default;
+$default-icon-height: $default-set-height !default;
+$default-icon-padding: true !default;
+$default-icon-font-family: $icons !default;
+$default-icon-color: inherit !default;
 
 // Shared
 // ---------------------------
-@mixin add-icon-shared {
+%icon-shared {
 	position: absolute;
 	display: block;
 	top: 0;
-	text-align: center; }
+	text-align: center;
+	font-family: $default-icon-font-family; }
 	
 // Add an icon to an element
 // ---------------------------
-@mixin add-icon(
-	$icon-name	: $default-add-icon-icon, 
-	$add				: $default-add-icon-add,
-	$icon-font	: $default-add-icon-font,
-	$icon-size	: $default-add-icon-size,
-	$shading		: $default-add-icon-shading,
-	$main-color	: $default,
-	$height			: $default-add-icon-height,
-	$padding		: $default-add-icon-padding
+@mixin icon(
+	$icon-name	: $default-icon-icon, 
+	$add				: $default-icon-add,
+	$icon-font	: $default-icon-font,
+	$icon-size	: $default-icon-size,
+	$shading		: $default-icon-shading,
+	$color			: $default-icon-color,
+	$height			: $default-icon-height,
+	$padding		: $default-icon-padding
 ) {
 	
-	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after"));
-	
-	& {
-		position: relative;
-		@if $add == before and $padding { 
-			padding-left: em($line*2, $icon-size); }
-		@if $add == after and $padding {
-			padding-right: em($line*2, $icon-size); } }
-	
-	#{$add-pseudo} {
-		@include add-icon-shared;
-
-		content: "#{$icon-name}";
-		font: #{em($icon-size, $base-font-size)}/#{em($height + 4, $icon-size)} $icon-font;
-		color: inherit;
-		
-		top: 0;
-		bottom: 0;
-		padding: 0 em($base-px);
-		
-		@if $add == before {
-			left: 0;
-			border-radius: $radius 0 0 $radius; }
-		
-		@if $add == after {
-			right: 0;
-			border-radius: 0 $radius $radius 0; }
-		
-		@if $shading == true {
-			@include element-shading($main-color); }
-			
-		@else {
-			@if $add == before {
-				box-shadow: 1px 0 0 rgba($white, .1), inset -1px 0 0 rgba($black, .1); }
-			@if $add == after {
-				box-shadow: -1px 0 0 rgba($black, .1), inset 1px 0 0 rgba($white, .1); } } } }
+	$add-pseudo: if($add == before, unquote("&:before"), unquote("&:after")); }

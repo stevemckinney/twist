@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8 no-js " lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9 no-js " lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js " lang="en"><!--<![endif]-->
+<html class="no-js " lang="en">
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -143,52 +141,53 @@
 		<h3 class="h5 subheading"><strong>Usage</strong>: @include form($main-color: #444, $type: input);<br>@include form-label($position: top);</h3>
 	</header>
 	<form action="/" class="form-left">
-		<fieldset>
-			<label for="name">Name</label><input type="text" id="name" class="text">
-			<p class="form-help">This is help text under the form field.</p>
+		<fieldset class="field">
+			<label for="name">Name</label><input type="text" id="name" class="input-text">
+			<p class="field-hint">This is help text under the form field.</p>
 		</fieldset>
 		
-		<fieldset>
-			<label for="email">Email</label><input disabled type="email" id="email" class="text success">
+		<fieldset class="field">
+			<label for="email">Email</label><input disabled type="email" id="email" class="input-text input-success">
 		</fieldset>
 		
-		<fieldset>
-			<label for="gender">Gender</label><select id="gender">
+		<fieldset class="field">
+			<label for="gender">Gender</label><select id="gender" class="input-select input-error">
 				<option>Male</option>
 				<option>Female</option>
 				<option>Cylon</option>
 			</select>
+			<p class="field-error">This is help text under the form field.</p>
 		</fieldset>
 	
-		<fieldset class="radio">
+		<fieldset class="field" class="radio">
 			<label for="notifications">Notifications</label><ul>
-				<li><label><input type="radio" name="notifications"> Send me email</label></li>
-				<li><label><input type="radio" name="notifications"> Don't send me email</label></li>
-				<li><label><input type="radio" name="notifications"> Send me flowers</label></li>
+				<li><label><input type="radio" class="input-radio" name="notifications"> Send me email</label></li>
+				<li><label><input type="radio" class="input-radio" name="notifications"> Don't send me email</label></li>
+				<li><label><input type="radio" class="input-radio" name="notifications"> Send me flowers</label></li>
 			</ul>
 		</fieldset>
 	
-		<fieldset>
-			<label for="url">URL</label><input type="url" id="url" class="form-text error" placeholder="http://yourdomain.com">
+		<fieldset class="field">
+			<label for="url">URL</label><input type="url" id="url" class="input-text" placeholder="http://yourdomain.com">
 		</fieldset>
 	
-		<fieldset>
+		<fieldset class="field">
 			<label for="bio">Bio</label><textarea id="bio"></textarea>
 		</fieldset>
 		
-		<fieldset class="checkbox">
-			<label><input type="checkbox"> I accept the terms of service and lorem ipsum.</label>
+		<fieldset class="field-checkbox">
+			<label><input type="checkbox" class="input-checkbox">I accept the terms of service and lorem ipsum.</label>
 		</fieldset>
 	
-		<fieldset class="form-actions">
-			<input type="submit" value="Submit">
+		<fieldset class="field-actions">
+			<input type="submit" value="Submit" class="button-submit">
 		</fieldset>
 	</form>
 	
 	<h2>Search form</h2>
 	<form class="form-top">
-		<fieldset class="form-actions group">
-			<input type="search" class="form-text"><input type="submit" value="Submit">
+		<fieldset class="field" class="form-actions form-group">
+			<input type="search" class="input-text"><input type="submit" value="Submit" class="button-submit">
 		</fieldset>
 	</form>
 </article>

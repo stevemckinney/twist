@@ -9,7 +9,10 @@
 	@extend %element-base;
 	
 	@if $display {
-		display: $display; }
+		display: $display;
+		
+		@if $display == inline-block {
+			vertical-align: top; } }
 	
 	@if $size {
 		padding: element-size($size); }

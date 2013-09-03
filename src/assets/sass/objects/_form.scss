@@ -10,25 +10,30 @@ label {
 
 // Text
 // ---------------------------
-.text,
-textarea,
-[type=url],
-[type=search] {
+.input-text,
+textarea {
 	@extend %form-base-with-mixin;
 	@include form; }
 
 // Select
 // ---------------------------
-select {
+.input-select {
 	@include form(select); }
 
 // Check/radio
 // ---------------------------
-[type=radio],
-[type=checkbox] {
-	@include form($type: radio); }
+.input-checkbox {
+	@include form(checkbox); }
+
+.input-radio {
+	@include form(radio); }
 
 // Submit
 // ---------------------------
-[type=submit] {
-	@include element($hover: true); }
+.button-submit {
+	@include element($red, $hover: true); }
+
+// States
+// ---------------------------
+.input-success {
+	@include form-shading(text, $success); }

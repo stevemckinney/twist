@@ -1,6 +1,21 @@
 // Override variables from import/_base.scss here
+// General site variables
 // ---------------------------
-$default-grid-columns: 6;
+$sans: "ff-dagny-web-pro", sans-serif !default;
+$serif: "utopia-std-display", serif !default;
+$monospace: Menlo, Monaco, "Courier New", monospace !default;
+$icons: "SSStandard" !default;
+$heading: $sans !default;
+$body: $sans !default;
+$form: $sans !default;
+$element: $sans !default;
+
+// Color
+// ---------------------------
+
+// Misc
+// ---------------------------
+$debug-mode: false;
 $default-transition-duration: .2s;
 
 // Stop various browser support

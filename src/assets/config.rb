@@ -32,3 +32,25 @@ relative_assets = true
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+module Sass::Script::Functions
+  # Wrapper around Ruby's Array#include? method.
+  # https://gist.github.com/4088394
+  #
+  # value - Value to check for in the list.
+  # list  - List to look through.
+  #
+  # Examples
+  #   
+  #   $list: a b c;
+  #   @debug contains(b, $list);
+  #   # => true
+  #
+  # Returns True if the value is found in the list, false if it isn't.
+  def contains(value, list)
+    assert_type list, :List
+    
+    Sass::Script::Bool.new(list.value.include?(value))
+  end
+  declare :contains, [:value, :list]
+end

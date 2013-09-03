@@ -19,7 +19,8 @@
 				"framework/icon",
 				"framework/form",
 				"framework/table",
-				"framework/misc";
+				"framework/misc",
+				"framework/debug";
 
 // Site base
 // ---------------------------
@@ -37,3 +38,48 @@
 				"objects/header",
 				"objects/nav",
 				"objects/footer";
+
+// Remove all below
+// ---------------------------
+.site {
+	max-width: 640px;
+	margin-top: em(48px);
+	
+	.button {
+		margin: em($base-px/2); } }
+	
+.site-logo {
+	@extend .with-subheading;
+	@extend .text-center;
+	font: em(72px)/#{1} swingdancer;
+	width: 100%;
+	display: block; }
+
+.site-header {
+	h2 {
+		@extend .text-center;
+		line-height: 1; } }
+
+.site-navigation {
+	@extend .text-center;
+	border-top: 1px solid rgba($secondary, .2);
+	border-bottom: 1px solid rgba($secondary, .2);
+	padding: em($line) 0;
+	margin: 0 0 em($line);
+	
+	a {
+		@extend %vertical-align-top;
+		padding: em($base-px);
+		line-height: 1; } }
+
+.alert {
+	@extend %element-base-with-mixin;
+	width: 100%;
+	text-align: center;
+	
+	@for $i from 1 through length($colors) {
+		$color: nth($colors, $i);
+		@include icon;
+		
+		&:nth-of-type(#{$i}) {
+			@include element($color); } } }

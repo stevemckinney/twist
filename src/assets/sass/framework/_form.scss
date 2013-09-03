@@ -8,27 +8,67 @@
 	$focus-color: $default-form-focus-color,
 	$background-color: $default-form-background-color,
 	$state: $default-form-state,
+	$size: $default-form-size,
 	$radius: $default-form-radius, 
 	$shading: $default-form-shading,
-	$set-height: $default-form-set-height,
-	$dry: $default-form-dry,
-	$text-elements: $default-text-elements,
-	$check-elements: $default-check-elements) {
+	$dry: $default-form-dry) {
+	
+	$type: unquote($type);
 	
 	// Text
 	// ---------------------------
-	@if index($text-elements, unquote($type)) {
-		@include form-text($main-color, $focus-color, $background-color); }
+	@if $type == text or
+			$type == textarea or
+			$type == password or
+			$type == search or
+			$type == email or
+			$type == url or
+			$type == number or
+			$type == date or
+			$type == month or
+			$type == week or
+			$type == year or
+			$type == datetime or
+			$type == datetime-local {
+		@include form-text($main-color, $focus-color, $background-color);
+		
+		@if $dry {
+			@extend %form-base-with-mixin; }
+			
+		@else {
+			@include form-base(
+				$type: $type,
+				$radius: $radius,
+				$size: $size); } }
 	
 	// Select
 	// ---------------------------
-	@else if unquote($type) == select {
-		@include form-select($main-color, $focus-color, $background-color); }
+	@else if $type == select {
+		@include form-select($main-color, $focus-color, $background-color);
+		
+		@if $dry {
+			@extend %form-base-with-mixin; }
+			
+		@else {
+			@include form-base(
+				$type: $type,
+				$radius: $radius,
+				$size: $size); } }
 	
-	// Check
+	// Boolean (checkbox/radio)
 	// ---------------------------
-	@else if index($check-elements, unquote($type)) {
-		@include form-check($main-color, $focus-color, $background-color); }
+	@else if $type == checkbox or
+					 $type == radio {
+		@include form-boolean($main-color, $focus-color, $background-color);
+		
+		@if $type == radio {
+			@extend %form-boolean-base;
+			@extend %form-radio-radius; }
+		
+		// Reusable styles for checkbox inputs	
+		@if $type == checkbox {
+			@extend %form-boolean-base;
+			@extend %form-checkbox-radius; } }
 		
 	// Submit
 	// ---------------------------
@@ -38,15 +78,4 @@
 	// Not supported
 	// ---------------------------
 	@else {
-		@warn "#{$type} not supported."; }
-	
-	// Reusability
-	// ---------------------------
-	@if $dry == false and $type != (radio or check) {
-		@include form-base(
-			$type: $default-form-type,
-			$radius: $default-form-radius,
-			$set-height: $default-form-set-height); }
-			
-	@else if $dry and $type != (radio or check) {
-		@extend %form-base-with-mixin; } }
+		@warn "#{$type} not supported."; } }

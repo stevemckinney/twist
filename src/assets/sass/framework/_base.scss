@@ -5,7 +5,7 @@
 // --------------------------
 
 // Primary colours
-$primary: #403b33 !default;
+$primary: #333 !default;
 $primary-d1: scale-lightness($primary, -10%);
 $primary-d2: scale-lightness($primary, -20%);
 $primary-d3: scale-lightness($primary, -30%);
@@ -18,7 +18,7 @@ $primary-l4: scale-lightness($primary, 40%);
 $primary-l5: scale-lightness($primary, 50%);
 
 // Secondary colours
-$secondary: #d3643b !default;
+$secondary: hsl(240, 20%, 50%)  !default;
 $secondary-d1: scale-lightness($secondary, -10%);
 $secondary-d2: scale-lightness($secondary, -20%);
 $secondary-d3: scale-lightness($secondary, -30%);
@@ -31,7 +31,7 @@ $secondary-l4: scale-lightness($secondary, 40%);
 $secondary-l5: scale-lightness($secondary, 50%);
 
 // Tertiary colours
-$tertiary: #edebe6 !default;
+$tertiary: hsl(200, 4%, 98%) !default;
 $tertiary-d1: scale-lightness($tertiary, -10%);
 $tertiary-d2: scale-lightness($tertiary, -20%);
 $tertiary-d3: scale-lightness($tertiary, -30%);
@@ -81,17 +81,7 @@ $success: $green !default;
 
 // Font stacks
 // ---------------------------
-$sans: "ff-dagny-web-pro", sans-serif !default;
-$serif: "utopia-std-display", serif !default;
-$monospace: Menlo, Monaco, "Courier New", monospace !default;
-$icons: "SSStandard" !default;
-
-// found the need sometimes to switch fonts mid project
-// ---------------------------
-$heading: $sans !default;
-$body: $sans !default;
-$form: $sans !default;
-$element: $sans !default;
+// None here? See site/_base.scss
 
 // Font sizes
 // ---------------------------
@@ -126,6 +116,7 @@ $default-subtle-color: scale-lightness($default, 20%) !default;
 
 // Default sizing for elements
 $default-size: 1 !default; // for element mixin
+$default-form-size: $default-size !default;
 $default-ratio: .5 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
@@ -139,7 +130,6 @@ $default-shading: true !default;
 $default-display: inline-block !default;
 $default-dry: false !default;
 $default-state: normal !default;
-
 
 // Default form placeholder
 $default-placeholder-color: $default !default;
@@ -216,3 +206,7 @@ $normal-size: 100% !default;
 $small-size: 87.5% !default;
 $xsmall-size: 75% !default;
 $xxsmall-size: 50% !default;
+
+// Misc
+// ---------------------------
+$debug-mode: false !default;

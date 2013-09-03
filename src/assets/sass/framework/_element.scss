@@ -6,7 +6,7 @@
 // Style notices/alerts, buttons, etc 
 // -----------------------------------------
 @mixin element(
-	$main-color	: $default-element-main-color,
+	$color	: $default-element-color,
 	$text-shadow: $default-element-text-shadow,
 	$dark-bg		: $default-element-dark-bg,
 	$radius			: $default-element-radius,
@@ -26,24 +26,24 @@
 		@extend %element-base-with-mixin; }
 
 	@if $shading {
-		@include element-shading($main-color, normal, $text-shadow, $dark-bg); }
+		@include element-shading($color, normal, $text-shadow, $dark-bg); }
 	
 	@else {
-		background: $main-color; }
+		background: $color; }
 			
 	@if $hover {
 		&:hover, &:focus {
 			@if $shading {
-				@include element-shading($main-color, hover, $text-shadow, $dark-bg); }
+				@include element-shading($color, hover, $text-shadow, $dark-bg); }
 			
 			@else {
-				background: scale-lightness($main-color, 10%); } }
+				background: scale-lightness($color, 10%); } }
 				
 		&:active {
 			z-index: 2; // makes button above others in a group
 			
 			@if $shading {
-				@include element-shading($main-color, active, $text-shadow, $dark-bg); }
+				@include element-shading($color, active, $text-shadow, $dark-bg); }
 			
 			@else {
-				background: scale-lightness($main-color, -10%); } } } }
+				background: scale-lightness($color, -10%); } } } }

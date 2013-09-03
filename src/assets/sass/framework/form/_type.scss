@@ -7,10 +7,10 @@
 	$focus-color: $default-form-focus-color,
 	$background-color: $default-form-background-color) {
 	
-	@include form-shading($main-color, normal, text);
+	@include form-shading(text, $main-color, normal);
 	
 	&:focus {
-		@include form-shading($focus-color, focus, text); } }
+		@include form-shading(text, $focus-color, focus); } }
 
 // Select
 // ---------------------------
@@ -19,15 +19,19 @@
 	$focus-color: $default-form-focus-color,
 	$background-color: $default-form-background-color) {
 	
-	@include form-shading($main-color, normal, select);
+	@include form-shading(select, $main-color, normal);
 	
 	&:focus {
-		@include form-shading($focus-color, focus, select); } }
+		@include form-shading(select, $focus-color, focus); } }
 
 // Check
 // ---------------------------
-@mixin form-check(
+@mixin form-boolean(
 	$main-color: $default-form-main-color,
 	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color) {
-	margin: 0 em($base-px/2) 0 0; }
+	$background-color: $default-form-background-color,
+	$margin: $default-form-boolean-margin) {
+	
+	@include form-shading(boolean, $main-color, normal);
+	@include wh(em($base-px));
+	margin: $margin; }
