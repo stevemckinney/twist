@@ -1,0 +1,78 @@
+// Import related files
+// ---------------------------
+@import "form/variables", "form/base", "form/type", "form/label", "form/shading",  "form/placeholder.scss";
+
+@mixin form(
+	$type: $default-form-type,
+	$color: $default-form-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color,
+	$state: $default-form-state,
+	$size: $default-form-size,
+	$radius: $default-form-radius, 
+	$shading: $default-form-shading,
+	$dry: $default-form-dry) {
+	
+	$type: unquote($type);
+	$base: $type, $radius, $size;
+	
+	// Text
+	// ---------------------------
+	@if $type == text or
+			$type == textarea or
+			$type == password or
+			$type == search or
+			$type == email or
+			$type == url or
+			$type == number or
+			$type == date or
+			$type == month or
+			$type == week or
+			$type == year or
+			$type == datetime or
+			$type == datetime-local {
+		@include form-text($color, $focus-color, $background-color);
+		
+		@if $dry {
+			@extend %form-base-with-mixin; }
+			
+		@else {
+			@include form-base($base...); } }
+	
+	// Select
+	// ---------------------------
+	@else if $type == select {
+		@include form-select($color, $focus-color, $background-color);
+		
+		@if $dry {
+			@extend %form-base-with-mixin; }
+			
+		@else {
+			@include form-base(
+				$type: $type,
+				$radius: $radius,
+				$size: $size); } }
+	
+	// Checkbox
+	// ---------------------------
+	@else if $type == checkbox {
+		@include form-checkbox($color, $focus-color, $background-color);
+		@extend %form-boolean-base;
+		@extend %form-checkbox-radius; }
+	
+	// Checkbox
+	// ---------------------------
+	@else if $type == radio {
+		@include form-radio($color, $focus-color, $background-color);
+		@extend %form-boolean-base;
+		@extend %form-radio-radius; }
+		
+	// Submit
+	// ---------------------------
+	@else if $type == submit {
+		@warn "Please use element mixin to style submit buttons."; }
+	
+	// Not supported
+	// ---------------------------
+	@else {
+		@warn "#{$type} not supported."; } }

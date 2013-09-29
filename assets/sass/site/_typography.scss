@@ -1,0 +1,103 @@
+// Headings
+// ---------------------------
+#{headings()} {
+	font-family: $heading;
+	color: $primary;
+	
+	a { 
+		color: $primary;
+		&:hover, &:focus {
+			color: $secondary; } } }
+
+h1, .h1 {
+	font-size: em(36px);
+	margin: 0 0 rhythm(1, 36px); }
+	
+h2, .h2 {
+	font-size: em(30px);
+	margin: 0 0 rhythm(1, 30px); }
+	
+h3, .h3 {
+	font-size: em(24px);
+	margin: 0 0 rhythm(1, 24px); }
+	
+h4, .h4 {
+	font-size: em(21px);
+	margin: 0 0 rhythm(1, 21px); }
+	
+h5, .h5 {
+	font-size: em(18px);
+	margin: 0 0 rhythm(1, 18px); }
+	
+h6, .h6 {
+	font-size: em($base-font-size);
+	margin: 0 0 rhythm(1, $base-font-size); }
+
+// General
+// ---------------------------
+body {
+	font: 400 100%/1.5 $body; }
+
+p {
+	@extend %margin-bottom; }
+
+a {
+	@extend %transition;
+	text-decoration: none;
+	color: $secondary;
+	
+	&:hover, &:focus {
+		color: $primary; } }
+		
+// Code
+// ---------------------------
+code {
+	font: 400 em($base-font-size - 2px)/#{em($base-line-height)} $monospace;
+	background: rgba($primary, .05);
+	border-radius: 2px;
+	box-shadow: 0 1px 0 rgba($white, .4);
+	padding: em(2px) em(6px);
+	
+	pre & {
+		max-height: 200px;
+		overflow: auto;
+		color: $primary;
+		direction: ltr;
+		text-align: left;
+		white-space: pre-line;
+		-moz-tab-size: 2;
+		-o-tab-size: 2;
+		tab-size: 2; } }
+
+// Reusable
+// ---------------------------
+.text-right {
+	text-align: right; }
+	
+.text-center {
+	text-align: center; }
+
+.with-subheading {
+	@include rem(margin-bottom, -6px); }
+
+.subheading {
+	font-family: $sans;
+	font-weight: 400;
+	color: $secondary; }
+
+.accordion {
+	cursor: pointer; }
+
+// Extends
+// ---------------------------
+%heading-bold {
+	font-weight: 700; }
+
+%small-caps {
+	@extend %heading-bold;
+	text-transform: uppercase;
+	letter-spacing: em(2px); }
+	
+%with-border {
+	padding-bottom: rhythm(1, $base-px*4);
+	border-bottom: 1px solid $primary; }

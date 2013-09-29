@@ -1,0 +1,83 @@
+@import "variables";
+
+// Text
+// ---------------------------
+@mixin form-text(
+	$main-color: $default-form-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color) {
+	
+	@include form-shading(text, $main-color, normal);
+	
+	&:focus {
+		@include form-shading(text, $focus-color, focus); } }
+
+// Select
+// ---------------------------
+@mixin form-select(
+	$main-color: $default-form-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color) {
+	
+	@include form-shading(select, $main-color, normal);
+	
+	&:focus {
+		@include form-shading(select, $focus-color, focus); } }
+
+// Checkbox
+// ---------------------------
+@mixin form-checkbox(
+	$main-color: $default-form-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color,
+	$margin: $default-form-boolean-margin) {
+	
+	@include form-shading(checkbox, $main-color, normal);
+	@include wh(em($base-font-size));
+	position: relative;
+	top: em($base-font-size / 6);
+	margin: $margin; }
+
+// Radio
+// ---------------------------
+@mixin form-radio(
+	$main-color: $default-form-color,
+	$focus-color: $default-form-focus-color,
+	$background-color: $default-form-background-color,
+	$margin: $default-form-boolean-margin) {
+	
+	@include form-shading(radio, $main-color, normal);
+	@include wh(em($base-font-size));
+	position: relative;
+	top: em($base-font-size / 6);
+	margin: $margin; }
+
+// Search
+// ---------------------------
+@mixin form-search(
+	$selector: $default-form-search-selector,
+	$position: $default-form-search-position,
+	$size: $default-form-search-size,
+	$icon: $default-form-search-image,
+	$fallback: $default-form-search-png
+) {
+	position: relative;
+	
+	#{$selector} {
+		@include hide-text(left);
+		position: absolute;
+		background: $icon;
+		padding: element-size($size);
+		top: 0;
+		
+		@if $position == right {
+			right: 0; }
+			
+		@else if $position == left {
+			left: 0; }
+			
+		@else {
+			@warn "#{$position} isn't a valid position, must be left or right." }
+		
+		.no-svg & {
+			background: $fallback; } } }

@@ -1,0 +1,48 @@
+// Forms
+// ---------------------------
+label {
+	@extend .h5; }
+
+// Text
+// ---------------------------
+.input-text,
+textarea {
+	@extend %form-base-with-mixin;
+	@include form;
+	width: 100%; }
+
+// Select
+// ---------------------------
+.input-select {
+	@include form(select); }
+
+// Check/radio
+// ---------------------------
+.input-checkbox {
+	@include form(checkbox); }
+
+.input-radio {
+	@include form(radio); }
+
+// Submit
+// ---------------------------
+.button-submit {
+	@include element($red, $hover: true); }
+
+// States
+// ---------------------------
+.input-success {
+	@include form-shading(text, $success); }
+
+// Search
+// ---------------------------
+.form-search {
+	@include form-search; }
+
+// Disabled
+// ---------------------------
+.input-text[disabled] {
+	@include form-shading($state: disabled); }
+
+.input-select[disabled] {
+	@include form-shading(select, $state: disabled); }

@@ -1,0 +1,83 @@
+// Override variables from import/_base.scss here
+// ---------------------------
+
+// Primary colours
+$primary: #333 !default;
+$primary-d1: scale-lightness($primary, -10%);
+$primary-d2: scale-lightness($primary, -20%);
+$primary-d3: scale-lightness($primary, -30%);
+$primary-d4: scale-lightness($primary, -40%);
+$primary-d5: scale-lightness($primary, -50%);
+$primary-l1: scale-lightness($primary, 10%);
+$primary-l2: scale-lightness($primary, 20%);
+$primary-l3: scale-lightness($primary, 30%);
+$primary-l4: scale-lightness($primary, 40%);
+$primary-l5: scale-lightness($primary, 50%);
+
+// Secondary colours
+$secondary: hsl(240, 20%, 50%)  !default;
+$secondary-d1: scale-lightness($secondary, -10%);
+$secondary-d2: scale-lightness($secondary, -20%);
+$secondary-d3: scale-lightness($secondary, -30%);
+$secondary-d4: scale-lightness($secondary, -40%);
+$secondary-d5: scale-lightness($secondary, -50%);
+$secondary-l1: scale-lightness($secondary, 10%);
+$secondary-l2: scale-lightness($secondary, 20%);
+$secondary-l3: scale-lightness($secondary, 30%);
+$secondary-l4: scale-lightness($secondary, 40%);
+$secondary-l5: scale-lightness($secondary, 50%);
+
+// Tertiary colours
+$tertiary: hsl(200, 4%, 98%) !default;
+$tertiary-d1: scale-lightness($tertiary, -10%);
+$tertiary-d2: scale-lightness($tertiary, -20%);
+$tertiary-d3: scale-lightness($tertiary, -30%);
+$tertiary-d4: scale-lightness($tertiary, -40%);
+$tertiary-d5: scale-lightness($tertiary, -50%);
+$tertiary-l1: scale-lightness($tertiary, 10%);
+$tertiary-l2: scale-lightness($tertiary, 20%);
+$tertiary-l3: scale-lightness($tertiary, 30%);
+$tertiary-l4: scale-lightness($tertiary, 40%);
+$tertiary-l5: scale-lightness($tertiary, 50%);
+
+// Neutral colours
+$neutral: #94C7B6 !default;
+$neutral-d1: scale-lightness($neutral, -10%);
+$neutral-d2: scale-lightness($neutral, -20%);
+$neutral-d3: scale-lightness($neutral, -30%);
+$neutral-d4: scale-lightness($neutral, -40%);
+$neutral-d5: scale-lightness($neutral, -50%);
+$neutral-l1: scale-lightness($neutral, 10%);
+$neutral-l2: scale-lightness($neutral, 20%);
+$neutral-l3: scale-lightness($neutral, 30%);
+$neutral-l4: scale-lightness($neutral, 40%);
+$neutral-l5: scale-lightness($neutral, 50%);
+
+// General site variables
+// ---------------------------
+$sans: "ff-dagny-web-pro", sans-serif !default;
+$serif: "utopia-std-display", serif !default;
+$monospace: Menlo, Monaco, "Courier New", monospace !default;
+$icons: "SSStandard" !default;
+$heading: $sans !default;
+$body: $sans !default;
+$form: $sans !default;
+$element: $sans !default;
+
+// Color
+// ---------------------------
+
+// Misc
+// ---------------------------
+$debug-mode: false;
+$default-transition-duration: .2s;
+
+// Stop various browser support
+// ---------------------------
+$experimental-support-for-khtml: false;
+$experimental-support-for-opera: false;
+$support-for-original-webkit-gradients: false;
+$legacy-support-for-mozilla: false;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;

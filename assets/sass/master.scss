@@ -1,0 +1,72 @@
+// Framework required
+// ---------------------------
+@import "compass",
+				"compass/css3",
+				"compass/css3/user-interface",
+				"compass/layout/stretching",
+				"compass/css3/hyphenation",
+				"ceaser-easing",
+				"framework/base", // lots of default variables
+				"site/base"; // override defaults here, fonts and colour also
+				
+// Framework components, don't edit
+// ---------------------------
+@import "framework/responsive",
+				"framework/normalize",
+				"framework/grid",
+				"framework/helpers",
+				"framework/group",
+				"framework/element",
+				"framework/icon",
+				"framework/form",
+				"framework/table",
+				"framework/tooltip",
+				"framework/misc",
+				"framework/debug";
+
+// Site base
+// ---------------------------
+@import "site/mixins", // Override existing framework mixins here, or break them into files
+				"site/extends", 
+				"site/symbolset", 
+				"site/typography",
+				"site/structure",
+				"site/shame"; // anything to be ashamed of goes in here, refactor later
+
+// Site objects
+// ---------------------------
+@import "objects/button",
+				"objects/form",
+				"objects/header",
+				"objects/nav",
+				"objects/footer";
+
+// Remove all below
+// ---------------------------
+.site {
+	max-width: 640px;
+	margin-top: em(48px); }
+	
+.site-logo {
+	@extend .with-subheading;
+	@extend .text-center;
+	font: em(72px)/#{1} swingdancer;
+	width: 100%;
+	display: block; }
+
+.site-header {
+	h2 {
+		@extend .text-center;
+		line-height: 1; } }
+
+.site-navigation {
+	@extend .text-center;
+	border-top: 1px solid rgba($secondary, .2);
+	border-bottom: 1px solid rgba($secondary, .2);
+	padding: em($line) 0;
+	margin: 0 0 em($line);
+	
+	a {
+		@extend %vertical-align-top;
+		padding: em($base-px);
+		line-height: 1; } }

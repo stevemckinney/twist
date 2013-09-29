@@ -1,0 +1,135 @@
+// Default variables override in site/_base.scss
+// ---------------------------
+
+// Colours (see: site/base for main site palette)
+// --------------------------
+$black: #000 !default;
+$white: #fff !default;
+$red: #e14d31 !default;
+$blue: #478afa !default;
+$cyan: #66cccc !default;
+$green: #8bb65b !default;
+$orange: #ee7836 !default;
+$yellow: #f4c042 !default;
+$purple: #7375a5 !default;
+$light-grey: #e3e6ea !default;
+
+// Related names
+// ---------------------------
+$alt: $blue !default;
+$danger: $red !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$success: $green !default;
+
+// Font stacks
+// ---------------------------
+// None here? See site/_base.scss
+
+// Font sizes
+// ---------------------------
+$base-font-size: 16px !default;
+$base-line-height: 24px !default; // must be px if using compass vertical rhythm
+
+// px
+// ---------------------------
+$base-px: 12px !default;
+$line: $base-px*2 !default;
+
+// Defaults
+// ---------------------------
+$radius: 3px !default;
+$default-transition-duration: .2s !default;
+$transition-duration: $default-transition-duration !default;
+
+// For grouped elements the space left if inline-block is set
+$default-negative-spacing: -5px !default;
+
+// General default colours
+$default: #7d7e81 !default;
+$default-text: #7d7e81 !default;
+$default-text-shadow: #fff !default;
+
+// Default sizing for elements
+$default-size: 1 !default; // for element mixin
+$default-form-size: $default-size !default;
+$default-ratio: .5 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
+$default-set-height: 36px !default;
+$default-set-height-padding: $base-px !default;
+$default-equal: false !default;
+
+// How many times larger should the padding-left/right be than padding-top/bottom
+$default-multiplier: 2 !default;
+
+// Normal is a good choice, as firefox doesn't 
+// allow line-height change on inputs this allows
+// for consistency in everything
+$default-framework-line-height: normal !default;
+
+// Defaults for element/form paramaters and others
+$default-dark-bg: false !default;
+$default-shading: true !default;
+$default-display: inline-block !default;
+$default-dry: false !default;
+$default-state: normal !default;
+
+// Default form placeholder
+$default-placeholder-color: $default !default;
+
+// Default opacity for dark and light values
+$default-dark-shadow: .2 !default;
+$default-light-shadow: .6 !default;
+
+// Context in which em functions are based on
+$default-context: $base-font-size !default;
+
+// Set your browser selection colour
+$default-selection-background: #fefeca !default;
+$default-selection-color: inherit !default;
+
+// Set the <mark> element styles
+$default-mark-color: inherit !default;
+$default-mark-background: #fefeca !default;
+
+// If you have border/focus colours
+$border: scale-color($default, $lightness: -15%) !default;
+$focus: $alt !default;
+
+// Change your responsive widths here,
+// corresponds with screens scss files a lowest e highest
+// ---------------------------
+
+// Set up some breakpoints
+$breakpoint-subtract: (1px / $default-context) * 1em !default;
+$a: (480px / $default-context) * 1em !default;
+$b: (600px / $default-context) * 1em!default;
+$c: (768px / $default-context) * 1em !default;
+$d: (960px / $default-context) * 1em !default;
+$e: (1200px / $default-context) * 1em !default;
+$f: (1440px / $default-context) * 1em !default;
+
+$default-hide-small-breakpoint: $b !default;
+$default-hide-medium-min-breakpoint: $b !default;
+$default-hide-medium-max-breakpoint: $c !default;
+$default-hide-large-breakpoint: $d !default;
+
+$default-breakpoints: compact($a, $b, $c, $d, $e, $f) !default;
+$default-breakpoint-type: min !default;
+$default-breakpoint-retina: false !default;
+$default-breakpoint-width: false !default;
+$default-breakpoint-min-resolution: 144dppx !default;
+$default-breakpoint-pixel-ratio: 1.5 !default;
+
+// Sizing increments, set in _helpers.scss
+// ---------------------------
+$xxlarge-size: 200% !default;
+$xlarge-size: 150% !default;
+$large-size: 133% !default;
+$normal-size: 100% !default;
+$small-size: 87.5% !default;
+$xsmall-size: 75% !default;
+$xxsmall-size: 50% !default;
+
+// Misc
+// ---------------------------
+$debug-mode: false !default;

@@ -1,0 +1,76 @@
+// Buttons
+// ---------------------------
+$colors: $default $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
+//$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
+$i: 1;
+
+.button {
+	@extend %element-base-with-mixin;
+	margin-bottom: em($line); }
+
+.button-primary {
+	@include element($primary, $hover: true); }
+
+.button-secondary {
+	@include element($secondary, $hover: true); }
+
+.button-tertiary {
+	@include element($tertiary, $hover: true); }
+
+.button-neutral {
+	@include element($neutral, $hover: true); }
+
+.button-danger {
+	@include element($danger, $hover: true); }
+
+.button-warning {
+	@include element($warning, $hover: true); }
+
+.button-success {
+	@include element($success, $hover: true); }
+
+.button-info {
+	@include element($info, $hover: true); }
+
+.button-default {
+	@include element($default, $hover: true); }
+
+.button-link {
+	background: none;
+	color: $secondary;
+	
+	&:hover,
+	&:focus {
+		@include element-shading($secondary, $state: hover); }
+	
+	&:active {
+		@include element-shading($secondary, $state: active); } }
+
+// Grouped buttons
+// ---------------------------
+.group {
+	@include group(".button-group"); }
+
+.button-group {
+	@extend .button;
+	@extend .button-default; }
+
+// Disabled
+// ---------------------------
+.button[disabled] {
+	@include element-shading($light-grey, $state: disabled);
+	pointer-events: none; }
+		
+// Alert
+// ---------------------------
+.alert {
+	@extend %element-base-with-mixin;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	
+	@for $i from 1 through length($colors) {
+		$color: nth($colors, $i);
+		
+		&:nth-of-type(#{$i}) {
+			@include element($color); } } }
