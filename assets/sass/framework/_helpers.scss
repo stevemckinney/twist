@@ -141,39 +141,6 @@
 	@if $padding {
 		padding: $padding; } }
 
-// Create proportionally sized elements
-// ---------------------------
-@function element-size(
-	$size				: $default-size,
-	$equal			: $default-equal,
-	$ratio			: $default-ratio,
-	$multiplier	: $default-multiplier
-) {
-  @return if(
-  	$equal == false, 
-  	($size * $ratio) + em (($size * $multiplier) * $ratio) + em, 
-  	($size * $ratio) + em); }
-
-// Colour functions
-// ---------------------------
-
-// Taken from: https://github.com/imathis/nice-buttons
-// Returns true if the color is brighter than 50% lightness
-@function is-bright($color) {
-	@return (lightness($color) > 50%); }
-
-// Picks the color with the highest contrast
-@function if-bright($color, $light: true, $dark: false) {
-	@return if(is-bright($color), $light, $dark); }
-	
-// Picks the color with the highest contrast
-@function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
-	@return if-bright($bg, $dark-text, $light-text); }
-
-// Returns true if the color greater than 50% saturation
-@function is-saturated($color) {
-	@return (saturation($color) > 50%); }
-
 // Layout
 // ---------------------------
 %two-columns {

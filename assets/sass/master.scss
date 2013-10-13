@@ -11,7 +11,8 @@
 				
 // Framework components, don't edit
 // ---------------------------
-@import "framework/responsive",
+@import "framework/conversion",
+				"framework/media",
 				"framework/normalize",
 				"framework/grid",
 				"framework/helpers",
@@ -39,7 +40,9 @@
 				"objects/form",
 				"objects/header",
 				"objects/nav",
-				"objects/footer";
+				"objects/footer",
+				"objects/table",
+				"objects/list";
 
 // Remove all below
 // ---------------------------
@@ -50,9 +53,14 @@
 .site-logo {
 	@extend .with-subheading;
 	@extend .text-center;
-	font: em(72px)/#{1} swingdancer;
+	font: 400 italic em(72px) $serif;
 	width: 100%;
 	display: block; }
+
+.site-subtitle {
+	font-weight: 100;
+	font-size: em(18px);
+	margin: 0 0 em($line, 18px); }
 
 .site-header {
 	h2 {
@@ -61,8 +69,8 @@
 
 .site-navigation {
 	@extend .text-center;
-	border-top: 1px solid rgba($secondary, .2);
-	border-bottom: 1px solid rgba($secondary, .2);
+	border-top: 1px solid rgba($secondary, .25);
+	border-bottom: 1px solid rgba($secondary, .25);
 	padding: em($line) 0;
 	margin: 0 0 em($line);
 	
@@ -70,3 +78,9 @@
 		@extend %vertical-align-top;
 		padding: em($base-px);
 		line-height: 1; } }
+
+[id*=list] {
+	display: none; }
+
+[id*=toggle]:target {
+	display: block; }

@@ -3,40 +3,41 @@
 #{headings()} {
 	font-family: $heading;
 	color: $primary;
-	
-	a { 
-		color: $primary;
-		&:hover, &:focus {
-			color: $secondary; } } }
+	text-rendering: optimizeLegibility;
+	line-height: 1;
+	margin-top: 0; }
 
 h1, .h1 {
 	font-size: em(36px);
-	margin: 0 0 rhythm(1, 36px); }
+	margin-bottom: rhythm(1, 36px); }
 	
 h2, .h2 {
 	font-size: em(30px);
-	margin: 0 0 rhythm(1, 30px); }
+	margin-bottom: rhythm(1, 30px); }
 	
 h3, .h3 {
 	font-size: em(24px);
-	margin: 0 0 rhythm(1, 24px); }
+	margin-bottom: rhythm(1, 24px); }
 	
 h4, .h4 {
 	font-size: em(21px);
-	margin: 0 0 rhythm(1, 21px); }
+	margin-bottom: rhythm(.5, 21px); }
 	
 h5, .h5 {
 	font-size: em(18px);
-	margin: 0 0 rhythm(1, 18px); }
+	margin-bottom: rhythm(.5, 18px); }
 	
 h6, .h6 {
 	font-size: em($base-font-size);
-	margin: 0 0 rhythm(1, $base-font-size); }
-
+	margin-bottom: rhythm(.5, $base-font-size); }
+	
 // General
 // ---------------------------
 body {
-	font: 400 100%/1.5 $body; }
+	font: 400 87.5%/1.5 $body;
+	
+	@include breakpoint($b) {
+		font-size: 100%; } }
 
 p {
 	@extend %margin-bottom; }
@@ -52,11 +53,10 @@ a {
 // Code
 // ---------------------------
 code {
-	font: 400 em($base-font-size - 2px)/#{em($base-line-height)} $monospace;
+	font: 400 em($base-font-size - 2px) $monospace;
 	background: rgba($primary, .05);
-	border-radius: 2px;
-	box-shadow: 0 1px 0 rgba($white, .4);
-	padding: em(2px) em(6px);
+	border-radius: $radius;
+	padding: em(2px, $base-font-size - 2px) em(6px, $base-font-size - 2px);
 	
 	pre & {
 		max-height: 200px;
@@ -78,7 +78,7 @@ code {
 	text-align: center; }
 
 .with-subheading {
-	@include rem(margin-bottom, -6px); }
+	margin-bottom: 0; }
 
 .subheading {
 	font-family: $sans;

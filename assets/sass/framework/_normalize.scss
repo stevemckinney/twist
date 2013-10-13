@@ -38,7 +38,8 @@ a {
 abbr[title] { 
 	border-bottom: 1px dotted; }
 
-b, strong {
+b, 
+strong {
 	font-weight: bold; }
 
 dfn {
@@ -53,6 +54,7 @@ pre {
 
 q {
 	quotes: none;
+	
 	&:before, &:after {
 		content: '';
 		content: none; } }
@@ -73,16 +75,18 @@ sup {
 sub {
 	bottom: -.25em; }
 
-dl, %dl {
+dl, 
+%dl {
 	margin: 0;
 	padding: 0; }
 
-dd, %dd {
+dd, 
+%dd {
 	margin: 0; }
 	
 menu {
 	@extend %dd;
-	padding: 0 0 0 em($line - 4px); }
+	padding: 0; }
 
 ol,
 ul {
@@ -95,7 +99,9 @@ nav ol {
 	list-style: none;
 	list-style-image: none; }
 
-img {
+img,
+iframe,
+object {
 	border: 0; 
 	max-width: 100%; }
 
@@ -107,7 +113,6 @@ figure, form {
 
 fieldset {
 	border: none;
-	margin: 0 0 em($line);
 	padding: 0; }
 
 legend {

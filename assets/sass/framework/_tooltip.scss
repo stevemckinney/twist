@@ -143,7 +143,6 @@ $default-tooltip-triangle-size: 6px !default;
     	@else if $position == left {
 	    	margin-right: -$triangle-size + em(1px, $context); } } } }
 
-
 // Shading
 // ---------------------------
 @mixin tooltip-shading(

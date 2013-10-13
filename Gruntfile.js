@@ -6,79 +6,116 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		
+		path: {
+        assets: 'assets/',
+        src: 'src',
+        dist: 'dist',
+        sass: '<%= path.assets %>/sass',
+        js: '<%= path.assets %>/js',
+        images: '<%= path.assets %>/images',
+        fonts: '<%= path.assets %>/fonts',
+    },
+		
 		watch: {
       sass: {
-        files: ['assets/sass/*.scss', 'assets/sass/**/*.scss'],
+        files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
         tasks: ['compass:dev']
       },
       jekyll: {
-				files: ['src/*.html', 'site/*.html'],
+				files: ['<%= path.src %>/**/*', '<%= path.dist %>'],
 				tasks: ['jekyll:dev']
 			},
       grunticon: {
-        files: ['src/assets/images/', 'site/assets/images/'],
+        files: ['<%= path.images %>/', '<%= path.dist %>/images'],
         tasks: ['grunticon']
       },
       js: {
-        files: ['src/js/**/*.js'],
+        files: ['<%= path.js %>/**/*.js'],
         tasks: 'concat'
       }
     },
     
-    compass: {
+    sass: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '<%= path.sass %>',
+					dest: '<%= path.dist %>/',
+					src: ['master.scss'],
+					ext: '.css'
+				}],
+				sourcemap: true,
+				style: 'expanded',
+				compass: true,
+				require: ['compass']
+			},
+			live: {
+				files: [{
+					expand: true,
+					src: ['<%= path.sass %>/*.scss'],
+					dest: '<%= path.dist %>/',
+					ext: '.css'
+				}],
+				style: 'compressed',
+				compass: true,
+				require: ['compass']
+			}
+		},
+		
+		compass: {
 			dev: {
 				options: {
-					sassDir: 'assets/sass',
-					cssDir: 'dist/assets/css',
+					sassDir: '<%= path.sass %>',
+					cssDir: '<%= path.dist %>/css',
 					httpPath: '/',
-					imagesDir: 'dist/assets/images',
-					javascriptsDir: 'dist/assets/js',
-					fontsDir: 'dist/assets/fonts',
+					imagesDir: '<%= path.dist %>/images',
+					javascriptsDir: '<%= path.dist %>/js',
+					fontsDir: '<%= path.dist %>/fonts',
 					outputStyle: 'expanded',
 					relativeAssets: true,
-					require: ['ceaser-easing', 'susy']
+					require: ['ceaser-easing', 'susy'],
+					quiet: true
 				}
 			},
 			live: {
 				options: {
-					sassDir: 'assets/sass',
-					cssDir: 'dist/assets/css',
+					sassDir: '<%= path.sass %>',
+					cssDir: '<%= path.dist %>/css',
 					httpPath: '/',
-					imagesDir: 'dist/assets/images',
-					javascriptsDir: 'dist/assets/js',
-					fontsDir: 'dist/assets/fonts',
+					imagesDir: '<%= path.dist %>/images',
+					javascriptsDir: '<%= path.dist %>/js',
+					fontsDir: '<%= path.dist %>/fonts',
 					outputStyle: 'compressed',
-					relativeAssets: true,
 					require: ['ceaser-easing', 'susy']
 				}
 			}
 		},
-    
+		
     jekyll: {
 			server : {
-				src : '<%= pkg.path.src %>',
-				dest: '<%= pkg.path.dest %>',
-				auto : true
+				src : '<%= path.src %>',
+				dest: '<%= path.dist %>',
+				auto: true
 			},
 			dev: {
-				src: '<%= pkg.path.src %>',
-				dest: '<%= pkg.path.dest %>'
+				src: '<%= path.src %>',
+				dest: '<%= path.dist %>'
 			},
 			live: {
-				src: '<%= pkg.path.src %>',
-				dest: '<%= pkg.path.dest %>'
+				src: '<%= path.src %>',
+				dest: '<%= path.dist %>'
 			}
 		},
 		
 		concat: {
 			dist: {
-				src: ['assets/js/enquire.js',
-							'assets/js/lettering.js', 
-							'assets/js/fittext.js',
-							'assets/js/fitvids.js', 
-							'assets/js/prism.js',
-							'assets/js/global.js'],
-				dest: 'dist/assets/js/<%= pkg.name %>.js'
+				src: ['<%= path.js %>/enquire.js',
+							'<%= path.js %>/lettering.js', 
+							'<%= path.js %>/fittext.js',
+							'<%= path.js %>/fitvids.js', 
+							'<%= path.js %>/prism.js',
+							'<%= path.js %>/global.js'],
+				dest: '<%= path.dist %>/js/<%= pkg.name %>.js'
 			}
 		},
 		
@@ -88,7 +125,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'dist/assets/js/<%= pkg.name %>.js': ['<%= concat.dist.dest %>']
+					'dist/js/<%= pkg.name %>.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
@@ -100,26 +137,43 @@ module.exports = function(grunt) {
 	        collapseWhitespace: true
 	      },
 	      files: {
-	        '<%= pkg.path.src %>**/*': '<%= pkg.path.templates %>**/*',
+	        '<%= path.src %>/**/*': '<%= path.dest %>/**/*',
 	      }
 	    },
 		},
 		
 		grunticon: {
 	    icons: {
-	        options: {
-	        	src: "assets/images/",
-						dest: "site/assets/images/",
-						svgo: true
-	      }
+				options: {
+					src: '<%= path.images %>',
+					dest: '<%= path.dist %>/images'
+				}
 	    }
+    },
+    
+    copy: {
+      modernizr: {
+        files: [
+          { expand: true, cwd: '<%= path.js %>', src: ['modernizr.js'], dest: '<%= path.dist %>/js' }
+        ]
+      },
+      images: {
+        files: [
+          { expand: true, cwd: '<%= path.images %>', src: ['./**/*'], dest: '<%= path.dist %>/' }
+        ]
+      },
+      fonts: {
+        files: [
+          { expand: true, cwd: '<%= path.fonts %>', src: ['./**/*'], dest: '<%= path.dist %>/fonts/' }
+        ]
+      }
     }
     
 	});
 	
 	// Tasks
-	grunt.registerTask('default', ['watch', 'copy']);
-	grunt.registerTask('build', ['watch', 'htmlmin', 'grunticon', 'jekyll:live', 'compass:live']);
+	grunt.registerTask('default', ['concat', 'copy', 'watch']);
+	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'jekyll:live', 'compass:dev']);
 	grunt.registerTask('dev', ['watch', 'copy']);
 	
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);

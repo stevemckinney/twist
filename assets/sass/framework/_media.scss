@@ -1,0 +1,36 @@
+// Breakpoint mixin
+// ---------------------------
+$default-breakpoint-orientation: false !default;
+
+@mixin breakpoint(
+	$breakpoint: $default-breakpoint-width,
+	$type: $default-breakpoint-type,
+	$orientation: $default-breakpoint-orientation
+) {
+	
+	$breakpoint: $breakpoint;
+	$breakpoint-1: nth($breakpoint, 1);
+	$retina: if($breakpoint == retina, true, false);
+	
+	@if length($breakpoint) > 1 { 
+		$breakpoint-2: nth($breakpoint, 2);
+		
+		@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2 - $breakpoint-subtract) {
+   		@content; } }
+   		
+  @else if $retina {
+		@media (-webkit-min-device-pixel-ratio: $default-breakpoint-pixel-ratio),
+					 (min-resolution: $default-breakpoint-min-resolution) {
+   		@content; } }
+   		
+	@else {
+		@media (#{$type}-width: if($type == max, $breakpoint-1 - $breakpoint-subtract, $breakpoint-1)) {
+   		@content; } } }
+
+// idea from http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss 
+// adapted for further efficiency
+// ---------------------------
+@mixin image-2x($image, $context: $default-context) {
+	@include breakpoint(false, $retina: true) {
+		background-image: url($image);
+		background-size: em(image-width($image)/2, $context) em(image-height($image)/2, $context); } }

@@ -1,43 +1,22 @@
-// Inline list
+// Unordered & ordered
 // ---------------------------
-.inline-list {
-	li {
-		display: inline-block; } }
+ul,
+ol {
+	@extend %margin-bottom;
+	
+	ul,
+	ol {
+		margin-left: em($line); } }
 
-// Headline list
+li {
+	list-style: square; }
+
+// Definition
 // ---------------------------
-.headline-list {
-	margin-bottom: em($line);
+dl {
+	@extend %margin-bottom; }
 
-	&.flush {
-		margin: 0; }
+dt {
+	font-weight: 700; }
 
-	h4 {
-		font-weight: normal; }
-
-	li {
-		padding: em($base-px/2) 0; } }
-
-/* Post List */
-.post-list {
-	li {
-		margin-bottom: $space;
-	}
-}
-
-// Bullet list
-// ---------------------------
-.bullet-list {
-	list-style: square;
-
-	li {
-		margin-bottom: em($line); } }
-
-// Text list
-// ---------------------------
-.text-list {
-	margin: 0 0 1em;
-	line-height: 1.3;
-
-	li {
-		margin-bottom: $space; } }
+dd {}

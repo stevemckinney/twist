@@ -1,13 +1,13 @@
 // Default vars
 // ---------------------------
-$default-element-color: $default !default;
+$default-element-color: $default-color !default;
 $default-element-text-color: $white !default;
-$default-element-dark-bg: $default-dark-bg !default;
+$default-element-dark-bg: $default-bg-base !default;
 $default-element-radius: $radius !default;
 $default-element-subtle: false !default;
 $default-element-shading: $default-shading !default;
 $default-element-size: $default-size !default;
-$default-element-hover: false !default;
+$default-element-hover: true !default;
 $default-element-font-size: false !default;
 $default-element-display: $default-display !default;
 $default-element-dry: $default-dry !default;

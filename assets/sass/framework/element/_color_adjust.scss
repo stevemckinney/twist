@@ -67,7 +67,7 @@
 	// blue/cyan
 	@else if hue($color) > 150 and hue($color) < 229 and
 			saturation($color) > 20 {
-		@return if($positive, scale-lightness($color, 2.5%), scale-lightness($color, -2.5%)); }
+		@return if($positive, scale-lightness($color, 2.5%), scale-lightness($color, -15%)); }
 	
 	// purple
 	@else if hue($color) > 230 and hue($color) < 289 and

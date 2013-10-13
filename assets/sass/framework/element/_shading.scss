@@ -3,22 +3,22 @@
 @import "variables";
 
 @mixin element-shading(
-	$color			: $default-element-color,
-	$state			: $default-element-state,
-	$text-shadow: $default-element-text-shadow,
-	$dark-bg		: $default-element-dark-bg
+	$color				: $default-element-color,
+	$state				: $default-element-state,
+	$text-shadow	: $default-element-text-shadow,
+	$dark-bg			: $default-element-dark-bg
 ) {
 	
 	// Shading vars
 	// ---------------------------
-	$color: if($state == hover, scale-color($color, $lightness: 10%, $saturation: 3%), $color);
-	$light-color: scale-color($color, $lightness: 10%, $saturation: 3%);
-	$dark-color: scale-color($color, $lightness: -10%, $saturation: -3%);
+	$color: if($state == hover, scale-color($color, $lightness: 10%, $saturation: if(grayscale($color), 0%, 3%)), $color);
+	$light-color: scale-color($color, $lightness: 10%, $saturation: if(grayscale($color), 0%, 3%));
+	$dark-color: scale-color($color, $lightness: -10%);
 	$hue-color: if(element-hue-adjust($color), element-hue-adjust($color), $color);
 	$hue-color: element-lightness-adjust($hue-color);
 	
 	// Shadows
-	$border-color: scale-lightness($dark-color, -20%);
+	$border-color: scale-lightness(element-lightness-adjust($dark-color), -10%);
 	$border-color-dark: $border-color;
 	$highlight-color: element-lightness-adjust($light-color, true);
 	$text-shadow-color: if($state != disabled, if(lightness($color) < 80%, rgba(scale-lightness($dark-color, -20%), .6), rgba(scale-lightness($highlight-color, 20%), .6)), rgba($white, .2));
@@ -26,7 +26,7 @@
 	// Other colors
 	$background-main-color: $color;
 	$background-dark-color: $hue-color;
-	$element-text-color: if(lightness($color) < 80%, scale-lightness($color, 80%), scale-lightness($color, -20%)) !default;
+	$element-text-color: if(lightness($color) < 80%, scale-lightness($color, 80%), scale-lightness($color, -40%)) !default;
 	
 	@if $dark-bg {
 		$border-color: rgba($black, .8);
@@ -54,9 +54,6 @@
 			background: $background-main-color; } }
 	
 	@else {
-		$border-color: scale-lightness($dark-color, -10%);
-		
 		background: $background-main-color;
-		box-shadow:
-			inset 0 0 0 1px $border-color;
-		color: $element-text-color; } }
+		box-shadow: inset 0 0 0 1px $border-color;
+		color: element-lightness-adjust($dark-color); } }

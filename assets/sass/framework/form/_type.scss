@@ -47,9 +47,9 @@
 	$margin: $default-form-boolean-margin) {
 	
 	@include form-shading(radio, $main-color, normal);
-	@include wh(em($base-font-size));
+	@include wh($default-form-radio-width, $default-form-radio-height);
 	position: relative;
-	top: em($base-font-size / 6);
+	top: em(2px);
 	margin: $margin; }
 
 // Search

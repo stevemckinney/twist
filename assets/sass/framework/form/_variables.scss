@@ -21,6 +21,11 @@ $default-form-search-image-color: E14D31 !default;
 
 // Elements
 $default-text-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local !default;
+
+//$default-text-elements: (text-elements: "text textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local");
+
+$default-form-types: (text-elements: "text textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local", boolean-elements: "radio, checkbox", select: "select");
+
 $default-boolean-elements: radio, checkbox !default;
 $default-non-boolean-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local, select !default;
 
@@ -33,6 +38,10 @@ $default-form-search-size: $default-size !default;
 // Check/radio
 // ---------------------------
 $default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;
+$default-form-radio-size: em(18px) !default;
+$default-form-radio-width: $default-form-radio-size !default;
+$default-form-radio-height: $default-form-radio-size !default;
+$default-form-radio-radial-gradient-color-stop: em(6px) !default;
 
 // Select images
 // ---------------------------

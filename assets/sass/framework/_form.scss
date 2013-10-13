@@ -1,6 +1,11 @@
 // Import related files
 // ---------------------------
-@import "form/variables", "form/base", "form/type", "form/label", "form/shading",  "form/placeholder.scss";
+@import "form/variables",
+				"form/base",
+				"form/type",
+				"form/label",
+				"form/shading",
+				"form/placeholder.scss";
 
 @mixin form(
 	$type: $default-form-type,
@@ -48,10 +53,7 @@
 			@extend %form-base-with-mixin; }
 			
 		@else {
-			@include form-base(
-				$type: $type,
-				$radius: $radius,
-				$size: $size); } }
+			@include form-base($base...); } }
 	
 	// Checkbox
 	// ---------------------------

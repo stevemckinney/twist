@@ -30,6 +30,7 @@ $success: $green !default;
 // ---------------------------
 $base-font-size: 16px !default;
 $base-line-height: 24px !default; // must be px if using compass vertical rhythm
+$base-line-height-unitless: 1.5 !default;
 
 // px
 // ---------------------------
@@ -43,10 +44,12 @@ $default-transition-duration: .2s !default;
 $transition-duration: $default-transition-duration !default;
 
 // For grouped elements the space left if inline-block is set
+// Awkwardly 4px in chrome/safari/firefox but IE is -5px
+// Not sure if this should be em based?
 $default-negative-spacing: -5px !default;
 
 // General default colours
-$default: #7d7e81 !default;
+$default-color: #7d7e81 !default;
 $default-text: #7d7e81 !default;
 $default-text-shadow: #fff !default;
 
@@ -67,14 +70,14 @@ $default-multiplier: 2 !default;
 $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
-$default-dark-bg: false !default;
+$default-bg-base: false !default;
 $default-shading: true !default;
 $default-display: inline-block !default;
 $default-dry: false !default;
 $default-state: normal !default;
 
 // Default form placeholder
-$default-placeholder-color: $default !default;
+$default-placeholder-color: $default-color !default;
 
 // Default opacity for dark and light values
 $default-dark-shadow: .2 !default;
@@ -91,44 +94,44 @@ $default-selection-color: inherit !default;
 $default-mark-color: inherit !default;
 $default-mark-background: #fefeca !default;
 
-// If you have border/focus colours
-$border: scale-color($default, $lightness: -15%) !default;
-$focus: $alt !default;
-
 // Change your responsive widths here,
 // corresponds with screens scss files a lowest e highest
 // ---------------------------
 
 // Set up some breakpoints
 $breakpoint-subtract: (1px / $default-context) * 1em !default;
-$a: (480px / $default-context) * 1em !default;
-$b: (600px / $default-context) * 1em!default;
-$c: (768px / $default-context) * 1em !default;
-$d: (960px / $default-context) * 1em !default;
-$e: (1200px / $default-context) * 1em !default;
-$f: (1440px / $default-context) * 1em !default;
+$a:		(480px / $default-context) * 1em !default;
+$ab: 	(480px / $default-context) * 1em !default; 
+$b: 	(600px / $default-context) * 1em!default;
+$bc:	(680px / $default-context) * 1em !default;
+$c: 	(768px / $default-context) * 1em !default;
+$cd:	(840px / $default-context) * 1em !default;
+$d: 	(960px / $default-context) * 1em !default;
+$de:	(1100px / $default-context) * 1em !default;
+$e: 	(1200px / $default-context) * 1em !default;
+$ef:	(1300px / $default-context) * 1em !default;
+$f: 	(1440px / $default-context) * 1em !default;
 
 $default-hide-small-breakpoint: $b !default;
 $default-hide-medium-min-breakpoint: $b !default;
 $default-hide-medium-max-breakpoint: $c !default;
 $default-hide-large-breakpoint: $d !default;
 
-$default-breakpoints: compact($a, $b, $c, $d, $e, $f) !default;
 $default-breakpoint-type: min !default;
 $default-breakpoint-retina: false !default;
 $default-breakpoint-width: false !default;
-$default-breakpoint-min-resolution: 144dppx !default;
+$default-breakpoint-min-resolution: 144dpi !default;
 $default-breakpoint-pixel-ratio: 1.5 !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
-$xxlarge-size: 200% !default;
+$xxlarge-size: 225% !default;
 $xlarge-size: 150% !default;
-$large-size: 133% !default;
+$large-size: 131.25% !default;
 $normal-size: 100% !default;
 $small-size: 87.5% !default;
 $xsmall-size: 75% !default;
-$xxsmall-size: 50% !default;
+$xxsmall-size: 62.5% !default;
 
 // Misc
 // ---------------------------

@@ -9,6 +9,7 @@ $default-table-font-family: $sans !default;
 $default-table-responsive: true !default;
 $default-table-border-width: 1px !default;
 $default-table-th-border-width: 2px !default;
+$default-table-breakpoint: $b !default;
 
 // Table
 // ---------------------------
@@ -29,7 +30,9 @@ $default-table-th-border-width: 2px !default;
 		margin: $margin;
 		padding: 0;
 		font-family: $font-family;
-		width: $width;
+		@if $width {
+			width: $width; }
+			
 		@if $responsive {
 			@include breakpoint($c, max) {
 				display: block;
@@ -62,26 +65,49 @@ $default-table-th-border-width: 2px !default;
 						color: invert($main-color); } } } } }
 	
 	@if $responsive {
-		@include breakpoint($c, max) {
+		@include breakpoint($default-table-breakpoint, max) {
 			thead {
 				float: left;
 				background: $main-color;
 				border-right: 2px solid $dark-color; }
+				
 			td, th {
 				min-height: em($line*2); }
+				
 			tbody {
 				@include nowrap;
 				width: auto;
 				position: relative;
 				overflow-x: auto;
 				-webkit-overflow-scrolling: touch;
+				
 				tr { 
 					display: inline-block;
 					vertical-align: top;
 					margin-right: -4px; } }
+					
 			th, td {
 				border-bottom: 1px solid $dark-color; }
+				
 			td:last-child, th:last-child {
 				border-bottom: none; }
+				
 			th, td, tbody, thead tr, thead { 
 				display: block; } } } }
+
+// Table styled
+// ---------------------------
+$default-table-styled-color: $default-color !default;
+$default-table-styled-width: 100% !default;
+
+@mixin table-styled(
+	$color: $default-table-styled-color,
+	$width: $default-table-styled-width
+) {
+	@if $width {
+		width: $width; }
+	
+	th {
+		@include element-shading($color);
+	}
+}

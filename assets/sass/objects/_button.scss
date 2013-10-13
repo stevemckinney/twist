@@ -1,6 +1,6 @@
 // Buttons
 // ---------------------------
-$colors: $default $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
+$colors: $default-color $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
 //$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
 $i: 1;
 
@@ -9,31 +9,31 @@ $i: 1;
 	margin-bottom: em($line); }
 
 .button-primary {
-	@include element($primary, $hover: true); }
+	@include element($primary); }
 
 .button-secondary {
-	@include element($secondary, $hover: true); }
+	@include element($secondary); }
 
 .button-tertiary {
-	@include element($tertiary, $hover: true); }
+	@include element($tertiary); }
 
 .button-neutral {
-	@include element($neutral, $hover: true); }
+	@include element($neutral); }
 
 .button-danger {
-	@include element($danger, $hover: true); }
+	@include element($danger); }
 
 .button-warning {
-	@include element($warning, $hover: true); }
+	@include element($warning); }
 
 .button-success {
-	@include element($success, $hover: true); }
+	@include element($success); }
 
 .button-info {
-	@include element($info, $hover: true); }
+	@include element($info); }
 
 .button-default {
-	@include element($default, $hover: true); }
+	@include element($default-color); }
 
 .button-link {
 	background: none;

@@ -1,0 +1,72 @@
+// Conversion mixins
+// ---------------------------
+
+// target / context = result
+// long length version
+// ---------------------------
+@function calc-percent($target, $container: $default-container) {
+	@return ($target / $container) * 100%; }
+	
+// shortcut
+@function cp($target, $container: $default-container) {
+	@return calc-percent($target, $container); }
+
+// px to em
+// ---------------------------
+@function em($target-px, $context: $default-context) {
+	@return (if(unitless($target-px), $target-px + "px", $target-px) / $context) * 1em; }
+
+// rem conversion
+// ---------------------------
+@mixin rem($property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $base-font-size / 1rem;
+	// Print the first line in pixel values
+	#{$property}: $px-values;
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: $px-values / $baseline-rem; }
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: unquote("");
+		@each $value in $px-values {
+			// If the value is zero, return 0
+			@if $value == 0 {
+				$rem-values: append($rem-values, $value); }
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem); } }
+		// Return the property and its list of converted values
+		#{$property}: $rem-values; } }
+
+// Colour functions
+// ---------------------------
+
+// Taken from: https://github.com/imathis/nice-buttons
+// Returns true if the color is brighter than 50% lightness
+@function is-bright($color) {
+	@return (lightness($color) > 50%); }
+
+// Picks the color with the highest contrast
+@function if-bright($color, $light: true, $dark: false) {
+	@return if(is-bright($color), $light, $dark); }
+	
+// Picks the color with the highest contrast
+@function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
+	@return if-bright($bg, $dark-text, $light-text); }
+
+// Returns true if the color greater than 50% saturation
+@function is-saturated($color) {
+	@return (saturation($color) > 50%); }
+
+// Create proportionally sized elements
+// ---------------------------
+@function element-size(
+	$size				: $default-size,
+	$equal			: $default-equal,
+	$ratio			: $default-ratio,
+	$multiplier	: $default-multiplier
+) {
+  @return if(
+  	$equal == false, 
+  	($size * $ratio) + em (($size * $multiplier) * $ratio) + em, 
+  	($size * $ratio) + em); }

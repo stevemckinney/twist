@@ -81,11 +81,6 @@
 		box-shadow: 
 			inset 0 0 0 1px $color,
 			inset 0 2px 1px $white;
-		
-		@include background(
-			linear-gradient(
-				rgba($background-color, .025) 0%,
-				rgba($background-shading-color, .15) 60%));
 
 		&:checked {
 			box-shadow: 
@@ -94,21 +89,15 @@
 				
 			@include background(
 				radial-gradient(
-					em($base-px) em($base-px),
-					$background-shading-color 5px,
-					rgba($background-shading-color, .001) 5px),
+					$background-shading-color $default-form-radio-radial-gradient-color-stop,
+					rgba($background-shading-color, .1) $default-form-radio-radial-gradient-color-stop),
 				linear-gradient(
 					rgba($background-color, .025) 0%,
-					rgba($background-shading-color, .15) 60%)); } }
+					rgba($background-shading-color, .15) 60%), $background-color); } }
 
 	// Checkbox
 	// ---------------------------			
 	@if $type == checkbox {
-		@include background(
-			linear-gradient(
-				rgba($background-color, .025) 0%,
-				rgba($background-shading-color, .15) 60%));
-		
 		box-shadow: 
 			inset 0 0 0 1px $color,
 			inset 0 2px 1px $white;
