@@ -34,14 +34,15 @@ $default-non-boolean-elements: text, textarea, password, search, email, url, num
 $default-form-search-position: right !default;
 $default-form-search-selector: unquote(".button-search") !default;
 $default-form-search-size: $default-size !default;
+$default-form-search-has-label: false !default;
 
 // Check/radio
 // ---------------------------
 $default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;
-$default-form-radio-size: em(18px) !default;
+$default-form-radio-size: em(16px) !default;
 $default-form-radio-width: $default-form-radio-size !default;
 $default-form-radio-height: $default-form-radio-size !default;
-$default-form-radio-radial-gradient-color-stop: em(6px) !default;
+$default-form-radio-radial-gradient-color-stop: 4px !default;
 
 // Select images
 // ---------------------------

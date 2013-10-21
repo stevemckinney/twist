@@ -1,0 +1,45 @@
+// Align
+// ---------------------------
+.text-right {
+	text-align: right; }
+	
+.text-center {
+	text-align: center; }
+	
+.text-left {
+	text-align: left; }
+	
+// Colour
+// ---------------------------
+.text-error {
+	color: $error; }
+
+.text-success {
+	color: $success; }
+
+.text-warning {
+	color: $warning; }
+
+.text-info {
+	color: $info; }
+
+// Various
+// ---------------------------
+.caption {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .125em; }
+	
+// Extends
+// ---------------------------
+%heading-bold {
+	font-weight: 700; }
+
+%small-caps {
+	@extend %heading-bold;
+	text-transform: uppercase;
+	letter-spacing: em(2px); }
+	
+%with-border {
+	padding-bottom: rhythm(1, $base-px*4);
+	border-bottom: 1px solid $primary; }

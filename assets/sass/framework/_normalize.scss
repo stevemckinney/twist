@@ -35,7 +35,8 @@ a {
 	&, &:active, &:focus {
 		outline: 0; } }
 
-abbr[title] { 
+abbr[title] {
+	cursor: help;
 	border-bottom: 1px dotted; }
 
 b, 
@@ -48,6 +49,14 @@ dfn {
 mark {
 	background: $default-mark-background;
 	color: $default-mark-color; }
+
+kbd {
+	background: $default-kbd-background; }
+	
+kbd,
+pre,
+samp {
+	font-family: $monospace; }
 
 pre {
 	@include force-wrap; }
@@ -108,7 +117,8 @@ object {
 svg:not(:root) {
 	overflow: hidden; }
 
-figure, form {
+figure,
+form {
 	margin: 0; }
 
 fieldset {
@@ -135,7 +145,7 @@ button,
 
 button,
 input {
-	line-height: normal; }
+	line-height: $default-framework-line-height; }
 
 button,
 [type="button"],
@@ -164,7 +174,7 @@ input::-moz-focus-inner {
 
 textarea {
 	overflow: auto; 
-	vertical-align: top;  }
+	vertical-align: top; }
 
 table {
 	border-collapse: collapse;

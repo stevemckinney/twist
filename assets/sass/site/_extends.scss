@@ -15,3 +15,8 @@
 %inset-highlight {
 	box-shadow: 0 1px #fff;
 	border-bottom: 1px solid scale-lightness($tertiary, -10%); }
+
+// General helpers
+// ---------------------------
+.overflow-hidden {
+	overflow: hidden; }

@@ -55,13 +55,20 @@
 // Search
 // ---------------------------
 @mixin form-search(
-	$selector: $default-form-search-selector,
-	$position: $default-form-search-position,
-	$size: $default-form-search-size,
-	$icon: $default-form-search-image,
-	$fallback: $default-form-search-png
+	$selector	: $default-form-search-selector,
+	$position	: $default-form-search-position,
+	$size			: $default-form-search-size,
+	$icon 		: $default-form-search-image,
+	$has-label: $default-form-search-has-label,
+	$fallback	: $default-form-search-png
 ) {
 	position: relative;
+	
+	@if $has-label {
+		label {
+			position: absolute;
+			top: -9999px;
+			left: -9999px; } }
 	
 	#{$selector} {
 		@include hide-text(left);

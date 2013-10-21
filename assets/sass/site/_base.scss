@@ -53,13 +53,14 @@ $element: $sans;
 // ---------------------------
 $debug-mode: false;
 $default-transition-duration: .2s;
+$site-width: 960px;
+$remove-inline-block-whitespace: true !global;
+$negative-spacing: $default-negative-spacing;
 
-// Stop various browser support
+// Browser support and prefixing
 // ---------------------------
-$experimental-support-for-khtml: false;
-$experimental-support-for-opera: false;
-$support-for-original-webkit-gradients: false;
-$legacy-support-for-mozilla: false;
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: true;
+@if $debug-mode { $debug-browser-support: true; }
+$browser-minimum-versions: ("chrome": null, "firefox": null, "ie": "8", "safari": "6");
+$supported-browsers: reject(browsers(), opera-mini, opera);
+
+$box-shadow-support-threshold: 0;

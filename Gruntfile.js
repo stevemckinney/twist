@@ -22,8 +22,8 @@ module.exports = function(grunt) {
         tasks: ['compass:dev']
       },
       jekyll: {
-				files: ['<%= path.src %>/**/*', '<%= path.dist %>'],
-				tasks: ['jekyll:dev']
+				files: ['<%= path.src %>/**/*', '<%= path.dist %>/'],
+				tasks: ['jekyll:dev', 'compass:dev', 'concat']
 			},
       grunticon: {
         files: ['<%= path.images %>/', '<%= path.dist %>/images'],
@@ -92,18 +92,15 @@ module.exports = function(grunt) {
 		},
 		
     jekyll: {
-			server : {
-				src : '<%= path.src %>',
-				dest: '<%= path.dist %>',
-				auto: true
+			options: {
+				src : '<%= path.src %>/',
+				dest: '<%= path.dist %>/'
 			},
 			dev: {
-				src: '<%= path.src %>',
-				dest: '<%= path.dist %>'
+				auto: true
 			},
 			live: {
-				src: '<%= path.src %>',
-				dest: '<%= path.dist %>'
+
 			}
 		},
 		

@@ -47,10 +47,10 @@
 	
 		@if $state == normal {
 			@include background(
-				linear-gradient(
-					rgba($background-color, .025) 0%,
-					rgba($background-shading-color, .15) 60%), 
 				$default-form-select-image,
+				linear-gradient(
+					$background-color 0%,
+					rgba($background-shading-color, .15) 100%), 
 				$background-color);
 			
 			.no-svg & {

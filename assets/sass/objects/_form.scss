@@ -1,46 +1,79 @@
 // Forms
 // ---------------------------
-label {
-	@extend .h5; }
+.form {
+	@extend %margin-bottom; }
 
-// Text
+// Label
 // ---------------------------
-.input-text,
-textarea {
-	@extend %form-base-with-mixin;
-	@include form;
-	width: 100%; }
+.field-label {
+	@extend .h5;
+	@extend %inline-block;
+	width: 33.333333%;
+	
+	@if $remove-inline-block-whitespace {
+		margin-left: $negative-spacing; }
+	
+	& + .input-text,
+	& + .input-select {
+		@extend %inline-block;
+		width: 66.666666%; } }
 
-// Select
+// Legend
 // ---------------------------
-.input-select {
-	@include form(select); }
+.field-legend {
+	@extend .h3; }
 
-// Check/radio
+// Fieldset
 // ---------------------------
-.input-checkbox {
-	@include form(checkbox); }
+.field-checkbox {
+	display: block;
+	line-height: $base-line-height-unitless; }
+	
+.field-radio {
+	@extend .field-checkbox; }
 
-.input-radio {
-	@include form(radio); }
-
-// Submit
+.field-search {
+	@include form-search($has-label: true);
+	text-align: right; }
+	
+// Input
 // ---------------------------
-.button-submit {
-	@include element($red, $hover: true); }
-
+	
+	// Text
+	// ---------------------------
+	.input-text {
+		@extend %form-base-with-mixin;
+		@include form;
+		width: 100%; }
+	
+	// Select
+	// ---------------------------
+	.input-select {
+		@include form(select); }
+	
+	// Check/radio
+	// ---------------------------
+	.input-checkbox {
+		@include form(checkbox); }
+	
+	.input-radio {
+		@include form(radio);
+		position: relative;
+		top: 2px; }
+		
+	// Submit
+	// ---------------------------
+	.button-submit {
+		@include element($red, $hover: true); }
+	
 // States
 // ---------------------------
-.input-success {
+.is-valid {
 	@include form-shading(text, $success); }
 
-// Search
-// ---------------------------
-.form-search {
-	@include form-search; }
+.is-error {
+	@include form-shading(text, $error); }
 
-// Disabled
-// ---------------------------
 .input-text[disabled] {
 	@include form-shading($state: disabled); }
 

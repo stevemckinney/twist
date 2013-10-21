@@ -7,6 +7,7 @@
 	<title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.site_name }}</title>
 	<meta name="description" content="framework, sass">
 	<meta name="keywords" content="A SASS/Compass framework">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Mobile -->
 	{% include mobile.html %}
@@ -16,7 +17,7 @@
 	<link href="css/master.css" rel="stylesheet">
 	
 	<!-- JavaScript -->
-	<script src="js/modernizr.js"></script>
+	<script src="http://twist.dev/js/modernizr.js"></script>
 
 	<!-- Other -->
 	{% include other.html %}
@@ -26,14 +27,17 @@
 
 </head>
 <body>
-
+	
+	<nav role="navigation" class="navigation navigation-small navigation-inactive">
+		<a href="#" class="navigation-item navigation-toggle">␡</a><a class="navigation-item" href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a class="navigation-item" href="#alerts"  title="Alert styles">Alerts</a><a class="navigation-item" href="#forms" title="Form styles">Forms</a><a class="navigation-item" href="#table" title="Table styles">Table</a><a class="navigation-item" href="#typography" title="Heading styles, etc">Typography</a><a class="navigation-item" href="#grid" title="6 column grid">Grid</a>
+	</nav>
+	
 	<div class="site">
 	
-		<header role="banner" class="site-header">
+		<header role="banner" class="header">
 			<a href="/" class="site-logo">twist</a>
-      <h2 class="site-subtitle">A bunch of flexible mixins, using Sass/Compass.</h2>
-      <nav role="navigation" class="site-navigation">
-				<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub</a>
-			</nav>
+      <h2 class="site-subtitle"><a href="http://www.ackernaut.com/space-station/zip/html5-elements.zip" title="Download the HTML and asset files">A bunch of flexible mixins, using Sass/Compass.</a></h2>
+      <a href="#" class="navigation-toggle">toggle</a>
 		</header>
+		
 		<section role="main" class="site-main">

@@ -42,13 +42,15 @@
 				"objects/nav",
 				"objects/footer",
 				"objects/table",
+				"objects/tooltip",
+				"objects/text",
 				"objects/list";
 
 // Remove all below
 // ---------------------------
 .site {
-	max-width: 640px;
-	margin-top: em(48px); }
+	width: 100%;
+	padding-top: em(48px); }
 	
 .site-logo {
 	@extend .with-subheading;
@@ -63,20 +65,10 @@
 	margin: 0 0 em($line, 18px); }
 
 .site-header {
+	background: $white;
+	padding: em($line) calc(50% - 380px);
 	h2 {
 		@extend .text-center;
-		line-height: 1; } }
-
-.site-navigation {
-	@extend .text-center;
-	border-top: 1px solid rgba($secondary, .25);
-	border-bottom: 1px solid rgba($secondary, .25);
-	padding: em($line) 0;
-	margin: 0 0 em($line);
-	
-	a {
-		@extend %vertical-align-top;
-		padding: em($base-px);
 		line-height: 1; } }
 
 [id*=list] {
@@ -84,3 +76,22 @@
 
 [id*=toggle]:target {
 	display: block; }
+
+fieldset {
+	@extend %margin-bottom; }
+
+.site-main {
+	@include display-flex;
+	@include flex-flow(row wrap);
+	@include align-items(flex-start);
+	@include justify-content(space-between);
+	
+	h1 {
+		@include flex(0 1 100%); }
+	
+	section {
+		@include flex(0 1 48%);
+		padding: em($line);
+		background: $white;
+		border-radius: $radius;
+		box-shadow: 0 1px 3px #ccc; } }

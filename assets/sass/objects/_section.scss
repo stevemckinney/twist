@@ -1,7 +1,6 @@
+// Section
+// ---------------------------
 .section {
-	margin: 0 0 $space;
-}
+	@extend %margin-bottom; }
 
-.section-title {
-	margin-bottom: $space-half;
-}
+.section-title {}

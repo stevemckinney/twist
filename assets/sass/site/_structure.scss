@@ -9,5 +9,25 @@
  
 body {
 	background: $tertiary;
-	overflow-y: scroll;
-	color: $primary; }
+	color: $primary;
+	
+	@include breakpoint($c, max) {
+		background: scale-lightness($neutral, -20%); } }
+
+// Site
+// ---------------------------
+.site {
+	@include transition(transform .5s);
+		
+	// Make sure the this is a layer above .navigation
+	position: relative;
+	z-index: $z-index-2;
+	min-height: 100vh;
+	
+	// Needs a background to cancel out the .navigation
+	@include breakpoint($c, max) {
+		background: $tertiary; } }
+
+.site-active {
+	@include transform(translate3d(-16em, 0, 0));
+	@include experimental(transition, transform .5s); }

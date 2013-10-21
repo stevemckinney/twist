@@ -5,22 +5,40 @@
 // --------------------------
 $black: #000 !default;
 $white: #fff !default;
-$red: #e14d31 !default;
+$red: adjust-hue(#478afa, -220deg) !default;
 $blue: #478afa !default;
 $cyan: #66cccc !default;
-$green: #8bb65b !default;
-$orange: #ee7836 !default;
-$yellow: #f4c042 !default;
+$green: #A1C820 !default;
+$orange: adjust-hue(#478afa, -195deg) !default;
+$yellow: adjust-hue(#478afa, -175deg) !default;
 $purple: #7375a5 !default;
 $light-grey: #e3e6ea !default;
 
-// Related names
+// Colour alternate names
 // ---------------------------
 $alt: $blue !default;
 $danger: $red !default;
+$error: $red !default;
 $info: $cyan !default;
 $warning: $orange !default;
 $success: $green !default;
+
+// Colour defaults
+// ---------------------------
+$default-color: #7d7e81 !default;
+$default-text: #7d7e81 !default;
+$default-text-shadow: #fff !default;
+
+// <kbd> background colour
+$default-kbd-background: #fff;
+
+// Set your browser selection colour
+$default-selection-background: #fefeca !default;
+$default-selection-color: inherit !default;
+
+// Set the <mark> element styles
+$default-mark-color: inherit !default;
+$default-mark-background: #fefeca !default;
 
 // Font stacks
 // ---------------------------
@@ -47,11 +65,6 @@ $transition-duration: $default-transition-duration !default;
 // Awkwardly 4px in chrome/safari/firefox but IE is -5px
 // Not sure if this should be em based?
 $default-negative-spacing: -5px !default;
-
-// General default colours
-$default-color: #7d7e81 !default;
-$default-text: #7d7e81 !default;
-$default-text-shadow: #fff !default;
 
 // Default sizing for elements
 $default-size: 1 !default; // for element mixin
@@ -85,14 +98,6 @@ $default-light-shadow: .6 !default;
 
 // Context in which em functions are based on
 $default-context: $base-font-size !default;
-
-// Set your browser selection colour
-$default-selection-background: #fefeca !default;
-$default-selection-color: inherit !default;
-
-// Set the <mark> element styles
-$default-mark-color: inherit !default;
-$default-mark-background: #fefeca !default;
 
 // Change your responsive widths here,
 // corresponds with screens scss files a lowest e highest

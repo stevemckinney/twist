@@ -17,6 +17,9 @@ $i: 1;
 .button-tertiary {
 	@include element($tertiary); }
 
+.button-alternate {
+	@include element($alt); }
+
 .button-neutral {
 	@include element($neutral); }
 
@@ -41,10 +44,10 @@ $i: 1;
 	
 	&:hover,
 	&:focus {
-		@include element-shading($secondary, $state: hover); }
+		@include element-shading($yellow, $state: hover); }
 	
 	&:active {
-		@include element-shading($secondary, $state: active); } }
+		@include element-shading($yellow, $state: active); } }
 
 // Grouped buttons
 // ---------------------------
@@ -57,8 +60,8 @@ $i: 1;
 
 // Disabled
 // ---------------------------
-.button[disabled] {
-	@include element-shading($light-grey, $state: disabled);
+.button-success[disabled] {
+	@include element-shading($success, $state: disabled);
 	pointer-events: none; }
 		
 // Alert
@@ -73,4 +76,4 @@ $i: 1;
 		$color: nth($colors, $i);
 		
 		&:nth-of-type(#{$i}) {
-			@include element($color); } } }
+			@include element($color, $hover: false); } } }

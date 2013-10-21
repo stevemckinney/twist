@@ -8,7 +8,7 @@ $default-tooltip-context: $default-context !default;
 $default-tooltip-transition-delay: .01s !default;
 
 // Shading
-$default-tooltip-color: rgba($black, .8) !default;
+$default-tooltip-color: $primary !default;
 $default-tooltip-text-color: $white !default;
 $default-tooltip-triangle-size: 6px !default;
 
@@ -109,10 +109,10 @@ $default-tooltip-triangle-size: 6px !default;
 	    margin-left: -$triangle-size;
 	    
 	    @if $position == top {
-    		margin-bottom: -$triangle-size + em(1px, $context); }
+    		margin-bottom: -$triangle-size; }
     		
     	@else if $position == bottom {
-	    	margin-top: -$triangle-size + em(1px, $context); } } }
+	    	margin-top: -$triangle-size; } } }
     
   @else if $position == right or $position == left {
 	  &:before,
@@ -138,10 +138,10 @@ $default-tooltip-triangle-size: 6px !default;
 			margin-top: -$triangle-size;
 			
 	    @if $position == right {
-    		margin-left: -$triangle-size + em(1px, $context); }
+    		margin-left: -$triangle-size; }
     		
     	@else if $position == left {
-	    	margin-right: -$triangle-size + em(1px, $context); } } } }
+	    	margin-right: -$triangle-size; } } } }
 
 // Shading
 // ---------------------------

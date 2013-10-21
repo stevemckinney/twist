@@ -14,9 +14,18 @@ li {
 // Definition
 // ---------------------------
 dl {
+	@extend %clear;
 	@extend %margin-bottom; }
 
 dt {
-	font-weight: 700; }
+	@extend %vertical-align-top;
+	font-weight: 700;
+	width: 33.333333%;
+	
+	@if $remove-inline-block-whitespace {
+		margin-right: $negative-spacing; } }
 
-dd {}
+dd {
+	@extend %vertical-align-top;
+	width: 66.666666%;
+	padding-left: cp(24px, $site-width); }

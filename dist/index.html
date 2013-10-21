@@ -7,6 +7,7 @@
 	<title></title>
 	<meta name="description" content="framework, sass">
 	<meta name="keywords" content="A SASS/Compass framework">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Mobile -->
 	<meta name="HandheldFriendly" content="True">
@@ -20,7 +21,7 @@
 	<link href="css/master.css" rel="stylesheet">
 	
 	<!-- JavaScript -->
-	<script src="js/modernizr.js"></script>
+	<script src="http://twist.dev/js/modernizr.js"></script>
 
 	<!-- Other -->
 	<!-- <link rel="alternate" type="application/rss+xml" title="Blog | Portfolio of Steve McKinney" href="http://iamsteve.me/blog/feed">
@@ -41,620 +42,361 @@
 
 </head>
 <body>
-
+	
+	<nav role="navigation" class="navigation navigation-small navigation-inactive">
+		<a href="#" class="navigation-item navigation-toggle">␡</a><a class="navigation-item" href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a class="navigation-item" href="#alerts"  title="Alert styles">Alerts</a><a class="navigation-item" href="#forms" title="Form styles">Forms</a><a class="navigation-item" href="#table" title="Table styles">Table</a><a class="navigation-item" href="#typography" title="Heading styles, etc">Typography</a><a class="navigation-item" href="#grid" title="6 column grid">Grid</a>
+	</nav>
+	
 	<div class="site">
 	
-		<header role="banner" class="site-header">
+		<header role="banner" class="header">
 			<a href="/" class="site-logo">twist</a>
-      <h2 class="site-subtitle">A bunch of flexible mixins, using Sass/Compass.</h2>
-      <nav role="navigation" class="site-navigation">
-				<a href="#buttons" title="Back to the top effectively and all button styles">Buttons</a><a href="#alerts"  title="Alert styles">Alerts</a><a href="#forms" title="Form styles">Forms</a><a href="#table" title="Table styles">Table</a><a href="#typography" title="Heading styles, etc">Typography</a><a href="#grid" title="6 column grid">Grid</a><a href="https://github.com/stevemckinney/twist">View the Project on GitHub</a>
-			</nav>
+      <h2 class="site-subtitle"><a href="http://www.ackernaut.com/space-station/zip/html5-elements.zip" title="Download the HTML and asset files">A bunch of flexible mixins, using Sass/Compass.</a></h2>
+      <a href="#" class="navigation-toggle">toggle</a>
 		</header>
+		
 		<section role="main" class="site-main">
-		<header class="twist-header">
-		<h2 id="buttons" class="with-subheading">Element</h2>
-		<h3 class="h5 subheading">Create buttons, alerts, generally apply this style where you see fit.</h3>
-		<p>Simple usage with the <code>@include element;</code>, and beyond to more complex usage <code>@include element-base; @include element-shading;</code>. Built with reusability, customisability and speed. The current style button should always produce great results no matter what colour you throw at it. Should you want to change the style and I encourage it, you should copy the element-shading mixin into a new file and make changes.</p>
-	</header>
-	
-	<section>
-		<h3>Tooltip</h3>
-		<p>A tooltip lorem <a href="#" data-title="Some tooltip">ipsum</a> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	
-	<section>
-		<h3 class="with-subheading">Button</h3>
-		<h4 class="h5 subheading">Usage: .button { @include element(#444, $hover: true); }</h4>
-		<button class="button button-primary">Button</button>
-		<button class="button button-secondary">Button</button>
-		<button class="button button-tertiary">Button</button>
-		<button class="button button-neutral">Button</button>
-		<button class="button button-danger">Button</button>
-		<button class="button button-warning">Button</button>
-		<button class="button button-success">Button</button>
-		<button class="button button-info">Button</button>
-		<button class="button button-default">Button</button>
-		<button class="button button-link">Button</button>
-		<button class="button button-success" disabled>Button</button>
-	
-		<hr>
-		<h3 class="with-subheading">Button groups</h3>
-		<h4 class="h5 subheading">Usage: .group { @include group(.button-class); }</h4>
-		<div class="group">
-			<button href="#" class="button button-group">Button</button>
-			<button href="#" class="button button-group">Button</button>
-			<button href="#" class="button button-group">Button</button>
-		</div>
-	</section>
-	
-	<section>
-		<h3 class="with-subheading">Alerts</h3>
-		<h4 class="h5 subheading">Usage: .button { @include element(#444); }</h4>
-		<p class="alert">Here is an alert, hello.</p>
-		<p class="alert">Here is an alert, hello.</p>
-		<p class="alert">Here is an alert, hello.</p>
-		<p class="alert">Here is an alert, hello.</p>
-		<p class="alert">Here is an alert, hello.</p>
-		<p class="alert">Here is an alert, hello.</p>
-	</section>
-		<hr>
-	<section>
-		<h2 class="h3 accordion">Detailed usage &#9662;</h2>
-		<pre class="language-scss"><code>@include element(
-	$main-color: $alt, // any colour
-	$text-color: $white, // any colour
-	$radius: $radius, // any radius, false for none
-	$subtle: false, // fully only styled on hover/active
-	$shading: true, // remove gradients/shadows
-	$size: $default-size, // adjust the size with a number 1, 2, 3, etc
-	$hover: false, // add a hover state
-	$font-size: false, // change font-size
-	$display: inline-block, // change the display type
-	$dry: false // use no repetitive code see alternative usage
-);</code></pre>
-	<hr>
-		<h2 class="h3 accordion">Alternative usage &#9662;</h2>
-		<pre class="language-scss"><code>// extend this
-@include element-base(
-	$size: $default-size, // adjust the size with a number 1, 2, 3, etc
-	$font-size: false, // any size
-	$text-color: $white, // any colour
-	$subtle: false, // fully only styled on hover/active
-	$radius: $radius, // any radius, false for nothing 
-	$display: inline-block // change the display type
-);
-@include element($alt, $dry: true);</code></pre>
-	</section>
-	
-</article>
+	<h1>Atoms</h1>
+<section><ul class="sg-colors">
+	<li>
+		<span class="sg-swatch" style="background: #ff0000;"></span>
+		<span class="sg-label">#ff0000</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #00ff00;"></span>
+		<span class="sg-label">#00ff00</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #0000ff;"></span>
+		<span class="sg-label">#0000ff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ffff00;"></span>
+		<span class="sg-label">#ffff00</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #00ffff;"></span>
+		<span class="sg-label">#00ffff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ff00ff;"></span>
+		<span class="sg-label">#ff00ff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ffffff;"></span>
+		<span class="sg-label">#ffffff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #808080;"></span>
+		<span class="sg-label">#808080</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #000000;"></span>
+		<span class="sg-label">#000000</span>
+	</li>
+</ul></section>
+<section><p>Primary font: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</p>
+<p><em>Primary font italic: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</em></p>
+<p><strong>Primary font bold: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</strong></p>
+<p class="font-secondary">Secondary font: Georgia, Times, "Times New Roman", serif;</p>
+<p class="font-secondary"><em>Secondary font italic: Georgia, Times, "Times New Roman", serif;</em></p>
+<p class="font-secondary"><strong>Secondary font bold: Georgia, Times, "Times New Roman", serif;</strong></p></section>
+<section><div class="demo-animate animate-fade"><strong>Fade:</strong> Duration: 0.3s Easing: ease-out (Hover to see effect)</div>
 
-<hr>
+<div class="demo-animate animate-move"><div class="demo-shape"></div><strong>Movement:</strong> Duration: 0.8s  Easing: ease-in-out; (Hover to see effect)</div></section>
+<section><p class="hide-small">This text is hidden on smaller screens</p>
 
-<article>
-	<header class="twist-header">
-		<h2 id="forms" class="with-subheading">Forms</h2>
-		<h3 class="h5 subheading"><strong>Usage</strong>: @include form($main-color: #444, $type: input);<br>@include form-label($position: top);</h3>
-	</header>
-	<form action="/" class="form-left">
-		<fieldset class="field">
-			<label for="name">Name</label><input type="text" id="name" class="input-text">
-			<p class="field-hint">This is help text under the form field.</p>
-		</fieldset>
-		
-		<fieldset class="field">
-			<label for="email">Email</label><input disabled type="email" id="email" class="input-text input-success">
-		</fieldset>
-		
-		<fieldset class="field">
-			<label for="gender">Gender</label><select id="gender" class="input-select input-error">
-				<option>Male</option>
-				<option>Female</option>
-				<option>Cylon</option>
-			</select>
-			<p class="field-error">This is help text under the form field.</p>
-		</fieldset>
-	
-		<fieldset class="field" class="radio">
-			<label for="notifications">Notifications</label><ul>
-				<li><label><input type="radio" class="input-radio" name="notifications"> Send me email</label></li>
-				<li><label><input type="radio" class="input-radio" name="notifications"> Don't send me email</label></li>
-				<li><label><input type="radio" class="input-radio" name="notifications"> Send me flowers</label></li>
+<p class="hide-med hide-large"><em>This text is only visible on smaller screens</em></p>
+
+<p class="hide-med">This text is hidden on medium screens only</p>
+
+<p class="hide-small hide-large"><em>This text is only visible on medium screens</em></p>
+
+<p class="hide-large">This text is hidden on large screens</p>
+
+<p class="hide-small hide-med"><em>This text is only visible on large screens</em></p></section>
+<section><h1>Heading Level 1</h1>
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>  
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5> 
+<h6>Heading Level 6</h6></section>
+<section><h1 class="subheading">Subheading Level 1</h1>
+<h2 class="subheading">Subheading Level 2</h2>
+<h3 class="subheading">Subheading Level 3</h3>  
+<h4 class="subheading">Subheading Level 4</h4>
+<h5 class="subheading">Subheading Level 5</h5> 
+<h6 class="subheading">Subheading Level 6</h6></section>
+<section><h1><a href="#">Heading 1 with link</a></h1>
+<h2><a href="#">Heading 2 with link</a></h2>
+<h3><a href="#">Heading 3 with link</a></h3>  
+<h4><a href="#">Heading 4 with link</a></h4>
+<h5><a href="#">Heading 5 with link</a></h5> 
+<h6><a href="#">Heading 6 with link</a></h6></section>
+<section><p>This is a paragraph.</p></section>
+<section><blockquote>
+	<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+</blockquote></section>
+<section><div class="text">
+	<p><a href="#">This is a text link</a></p>
+
+	<p><strong>Strong is used to indicate strong importance</strong></p>
+
+	<p><em>This text has added emphasis</em></p>
+
+	<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
+
+	<p>The <i>i element</i> is text that is set off from the normal text</p>
+
+	<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>
+
+	<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>
+
+	<p><s>This text has a strikethrough</s></p>
+
+	<p>Superscript<sup>®</sup></p>
+
+	<p>Subscript for things like H<sub>2</sub>O</p>
+
+	<p><small>This small text is small for for fine print, etc.</small></p>
+
+	<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+
+	<p>Keybord input: <kbd>Cmd</kbd></p>
+
+	<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
+
+	<p><cite>This is a citation</cite>
+
+	</p><p>The <dfn>dfn element</dfn> indicates a definition.</p>
+
+	<p>The <mark>mark element</mark> indicates a highlight</p>
+
+	<p><code>This is what inline code looks like.</code></p>
+
+	<p><samp>This is sample output from a computer program</samp></p>
+
+	<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>
+</div><!--end .text--></section>
+<section><time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></section>
+<section><pre>  	
+P R E F O R M A T T E D T E X T
+! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ 
+</pre></section>
+<section><p class="text-error">This is what error text looks like</p>
+<p class="text-success">This is what valid text looks like</p>
+<p class="text-warning">This is what warning text looks like</p>
+<p class="text-info">This is what information text looks like.</p></section>
+<section><hr /></section>
+<section><p class="caption">A caption can be applied to an image, quote, form field, etc.</p></section>
+<section><div class="text">
+	<ul>
+		<li>This is a list item in an unordered list</li>
+		<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
+		<li>
+			Lists can be nested inside of each other
+			<ul>
+				<li>This is a nested list item</li>
+				<li>This is another nested list item in an unordered list</li>
 			</ul>
-		</fieldset>
-	
-		<fieldset class="field">
-			<label for="url">URL</label><input type="url" id="url" class="input-text" placeholder="http://yourdomain.com">
-		</fieldset>
-	
-		<fieldset class="field">
-			<label for="bio">Bio</label><textarea id="bio"></textarea>
-		</fieldset>
-		
-		<fieldset class="field-checkbox">
-			<label><input type="checkbox" class="input-checkbox">I accept the terms of service and lorem ipsum.</label>
-		</fieldset>
-	
-		<fieldset class="field-actions">
-			<input type="submit" value="Submit" class="button-submit">
-		</fieldset>
-	</form>
-	
-	<h2>Search form</h2>
-	<form class="form-top form-search">
-		<fieldset class="field" class="form-actions form-group">
-			<input type="search" class="input-text"><input type="submit" value="Submit" class="button-search">
-		</fieldset>
-	</form>
-</article>
-
-<hr>
-
-<article>
-	<header class="twist-header">
-		<h2 id="table" class="with-subheading">Table</h2>
-		<h3 class="h5 subheading"><strong>Usage</strong>: @include table($main-color: #444, $striped: true);</h3>
-	</header>
-	<table>
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Date</th>
-				<th>Rating</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Cheddar</td>
-				<td>Jan 3, 2012</td>
-				<td>★★★</td>
-			</tr>
-			<tr>
-				<td>Havarti</td>
-				<td>Jan 12, 2012</td>
-				<td>★★★★</td>
-			</tr>
-			<tr>
-				<td>Muenster</td>
-				<td>Jan 20, 2012</td>
-				<td>★★</td>
-			</tr>
-			<tr>
-				<td>Swiss</td>
-				<td>Jan 22, 2012</td>
-				<td>★</td>
-			</tr>
-			<tr>
-				<td>Gouda</td>
-				<td>Jan 25, 2012</td>
-				<td>★★★★★</td>
-			</tr>
-			<tr>
-				<td>Emmentaler</td>
-				<td>Jan 27, 2012</td>
-				<td>★★★</td>
-			</tr>
-		</tbody>
-	</table>
-</article>
-
-<hr>
-
-<article>
-	<header class="twist-header">
-		<h2 id="grid" class="with-subheading">Grid</h2>
-		<h3 class="h5 subheading">6 column grid, .grid-[number] class names</h3>
-	</header>
-	
-	<div class="grid">
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-1"><div class="box">.grid-1</div></div>
-		<div class="grid-2"><div class="box">.grid-2</div></div>
-		<div class="grid-2"><div class="box">.grid-2</div></div>
-		<div class="grid-2"><div class="box">.grid-2</div></div>
-		<div class="grid-3"><div class="box">.grid-3</div></div>
-		<div class="grid-3"><div class="box">.grid-3</div></div>
-		<div class="grid-4"><div class="box">.grid-4</div></div>
-		<div class="grid-2"><div class="box">.grid-2</div></div>
-		<div class="grid-6"><div class="box">.grid-6</div></div>
-	</div>
-</article>
-
-<hr>
-
-<article>
-	<header class="twist-header">
-		<h2 id="typography" class="with-subheading">Typography <em class="sub-heading xsmall">work in progress</em></h2>
-		<h3 class="h5 subheading">Base font size of 16px</h3>
-	</header>
-	<section>	
-		<h3>Headings</h3>
-		<h1>Heading level one</h1>
-		<h2>Heading level two</h2>
-		<h3>Heading level three</h3>
-		<h4>Heading level four</h4>
-		<h5>Heading level five</h5>
-		<h5>Heading level six</h5>
-	</section>
-</article>
-
-<div class="grid">
-<div class="grid-4">
-<header>
-  <hgroup>
-    <!-- Example comment: Add valid elements within header group -->
-    <h1>HTML5 Elements</h1>
-  </hgroup>
-  <p>This is the global <code>&lt;header&gt;</code> element for this page, including the <code>&lt;hgroup&gt;</code> and <code>&lt;nav&gt;</code> elements.</p>
-  <nav>
-    <ul>
-      <li><a href="#" title="Global header link">Global <code>&lt;nav&gt;</code> link within the <code>&lt;header&gt;</code></a></li>
-      <li><a href="#" title="Global header link">Global <code>&lt;nav&gt;</code> link within the <code>&lt;header&gt;</code></a></li>
-      <li><a href="#" title="Global header link">Global <code>&lt;nav&gt;</code> link within the <code>&lt;header&gt;</code></a></li>
-    </ul>
-  </nav>
-</header>
-<section>
-  <header>
-    <h2>Section header</h2>
-  </header>
-  <article>
-    <header>
-      <h3>Article header</h3>
-    </header>
-    <div>
-      <p><a href="http://www.ackernaut.com/space-station/zip/html5-elements.zip" title="Download the HTML and asset files">Download the HTML and asset files</a> <br>
-        (ZIP does not include audio or video to reduce file size. <br>
-        You can download them from this page using your browser.)</p>
-      <h4>Purpose of this document:</h4>
-      <ul>
-        <li>Includes all the HTML5 elements as listed in the side column. </li>
-        <li>Minimal styling has been used. Use this document to test CSS files (base, reset, custom, etc.) on desired elements in various browsers.</li>
-        <li>Use this document to create comprehensive templates that need to use many of the common HTML5 elements.</li>
-        <li>Includes jQuery because it comes in handy.</li>
-        <li>Includes HTML5 compatibility for Internet Explorer.</li>
-        <li>Includes CSS files for screen, print, mobile and smart phones.</li>
-        <li>See <a href="#info" title="Reference links below">reference links below</a> for more information.</li>
-        <li>This page validates as HTML5.</li>
-      </ul>
-      <p><span>Note:</span> This is only a guide &mdash; a starting point &mdash; if you will.</p>
-      <hr>
-      <h1>Header 1 &lt;h1&gt;</h1>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <h2>Header 2 &lt;h2&gt;</h2>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <h3>Header 3 &lt;h3&gt;</h3>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <h4>Header 1 &lt;h4&gt;</h4>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <h5>Header &lt;h5&gt;</h5>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <h6>Header &lt;h6&gt;</h6>
-      <p>This is an example paragrah used within this article for this document.</p>
-      <hr>
-      <h4>Unordered list</h4>
-      <ul>
-        <li>Unordered list item</li>
-        <li>Unordered list item
-          <ul>
-            <li>Unordered list item</li>
-            <li>Unordered list item
-              <ul>
-                <li>Unordered list item</li>
-                <li>Unordered list item</li>
-                <li>Unordered list item</li>
-              </ul>
-            </li>
-            <li>Unordered list item</li>
-          </ul>
-        </li>
-        <li>Unordered list item</li>
-      </ul>
-      <h4>Ordered list</h4>
-      <ol>
-        <li>Ordered list item</li>
-        <li>Ordered list item
-          <ol>
-            <li>Ordered list item</li>
-            <li>Ordered list item
-              <ol>
-                <li>Ordered list item</li>
-                <li>Ordered list item</li>
-                <li>Ordered list item</li>
-              </ol>
-            </li>
-            <li>Ordered list item</li>
-          </ol>
-        </li>
-        <li>Ordered list item</li>
-      </ol>
-      <hr>
-      <h4>Address and blockquote:</h4>
-      <address>
-      700 Address Element Road<br>
-      Town, State Zip
-      </address>
-      <blockquote>This is a blockquote.</blockquote>
-      <hr>
-      <h4>Audio and video:</h4>
-      <p>Example of the <code>&lt;audio&gt;</code> element:</p>
-      <audio controls autobuffer>
-        <source src="assets/audio/kahvi285d_jim_black-yoctosecond.ogg" />
-        <!-- Find the audio file here: http://www.kahvi.org/releases.php?release_number=285 -->
-        Your browser does not support OGG audio. Try using Safari, Chrome or Firefox.</audio>
-      <p>Example of the <code>&lt;video&gt;</code> element:</p>
-      <video width="400" height="300" src="assets/video/a-new-computer-small.ogg" controls autobuffer>
-        <!-- Find the video file here: http://www.polycrystal.org/lego/movies.html -->
-        <p>Try using Safari, Chrome or Firefox to view this video. You can also <a href="assets/video/a-new-computer-small.ogg">download the video</a>.</p>
-      </video>
-      <hr>
-      <h4>Figure:</h4>
-      <figure>
-        <p>Use an <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> or <code>&lt;table&gt;</code> as content for the <code>&lt;figure&gt;</code> element.</p>
-        <img src="assets/img/sky.jpg" width="240" height="160" alt="Watching the Sky by Nathaniel Reinhart"><br>
-        <figcaption><a href="http://www.flickr.com/photos/0mega/3178584649/" title="Watching the Sky by Nathaniel Reinhart">Watching the Sky</a> by Nathaniel Reinhart (<code>&lt;figcaption&gt;</code>)</figcaption>
-      </figure>
-      <hr>
-      <h4>Form:</h4>
-      <form>
-        <fieldset>
-        <legend>Form legend</legend>
-        <label for="text-input">Text input</label>
-        <input id="text-input" type="text">
-        <br>
-        <button title="button">Button</button>
-        <br>
-        <select>
-          <optgroup label="Options">
-          <option value="Option 1">Option 1</option>
-          <option value="Option 2">Option 2</option>
-          <option value="Option 3">Option 3</option>
-          </optgroup>
+		</li>
+		<li>This is the last list item</li>
+	</ul>
+</div></section>
+<section><div class="text">
+	<ol>
+		<li>This is a list item in an ordered list</li>
+		<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+		<li>
+			Lists can be nested inside of each other
+			<ol>
+				<li>This is a nested list item</li>
+				<li>This is another nested list item in an ordered list</li>
+			</ol>
+		</li>
+		<li>This is the last list item</li>
+	</ol>
+</div></section>
+<section><dl>
+	<dt>Definition List</dt>
+	<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>
+    <dt>This is a term.</dt>
+    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>
+    <dt>Here is another term.</dt>
+    <dd>And it gets a definition too, which is this line.</dd>
+    <dt>Here is term that shares a definition with the term below.</dt>
+    <dd>And it gets a definition too, which is this line.</dd>
+</dl></section>
+<section><a href="/"><img src="http://placekitten.com/200/100" class="logo" alt="Logo Alt Text"></a></section>
+<section><img src="http://placekitten.com/400/300" alt="400x300"></section>
+<section><img src="http://placekitten.com/1280/720" alt="16:9"></section>
+<section><img src="" alt="" /></section>
+<section><img src="http://placekitten.com/200/200" alt="Avatar"></section>
+<section><ul class="icons inline-list">
+	<li class="icon-twitter"></li>
+	<li class="icon-facebook"></li>
+	<li class="icon-stumbleupon"></li>
+	<li class="icon-linkedin"></li>
+	<li class="icon-pinterest"></li>
+	<li class="icon-google-plus"></li>
+	<li class="icon-youtube"></li>
+	<li class="icon-feed"></li>
+	<li class="icon-search"></li>
+	<li class="icon-play"></li>
+</ul></section>
+<section><img src="../../images/ajax-loader.gif" alt="Loading"></section>
+<section><img src="http://placekitten.com/16/16">
+<img src="http://placekitten.com/32/32"></section>
+<section><form class="form" action="#">
+    <fieldset class="field-container">
+      <label class="field-label" for="text">Text Input <abbr title="Required">*</abbr></label>
+      <input class="input-text" id="text" type="text" placeholder="Text Input">
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" for="password">Password</label>
+      <input class="input-text" id="password" type="password" placeholder="Type your Password">
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" for="webaddress">Web Address</label>
+      <input class="input-text" id="webaddress" type="url" placeholder="http://yoursite.com">
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" for="emailaddress">Email Address</label>
+      <input class="input-text" id="emailaddress" type="email" placeholder="name@email.com">
+    </fieldset>
+    <fieldset class="field-container field-search">
+      <label class="field-label" for="search">Search</label>
+      <input class="input-text" id="search" type="search" placeholder="Enter Search Term">
+      <button class="button-search">Search</button>
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" for="text">Number Input <abbr title="Required">*</abbr></label>
+      <input class="input-text" id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" for="textarea">Textarea</label>
+      <textarea class="input-text" id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" class="error">Error Input</label>
+      <input class="input-text is-error" type="text" placeholder="Text Input">
+    </fieldset>
+    <fieldset class="field-container">
+      <label class="field-label" class="valid">Valid</label>
+      <input class="input-text is-valid" type="text" placeholder="Text Input">
+    </fieldset>
+</form></section>
+<section><form class="form" action="#">
+    <fieldset class="field-container">
+        <label class="field-label" for="select">Select</label>
+        <select class="input-select" id="select">
+            <optgroup label="Option Group">
+                <option>Option One</option>
+                <option>Option Two</option>
+                <option>Option Three</option>
+            </optgroup>
         </select>
-        <br>
-        <textarea></textarea>
-        <br>
-        </fieldset>
-      </form>
-      <hr>
-      <h4>Inline text formatting:</h4>
-      <p>This is the <abbr title="Abbreviation">ABBR</abbr> element.</p>
-      <p>This is the <b>b</b> element.</p>
-      <p>This is the <cite>cite</cite> element.</p>
-      <p>This is the <code>code</code> element.</p>
-      <p>This is the <del>del</del> element.</p>
-      <p>This is the <dfn>dfn</dfn> element.</p>
-      <p>This is the <em>em</em> element.</p>
-      <p>This is the <i>i</i> element.</p>
-      <p>This is the <ins>ins</ins> element.</p>
-      <p>This is the <kbd>kbd</kbd> element.</p>
-      <p>This is the
-        <mark>mark</mark>
-        element.</p>
-      <p>This is the <samp>samp</samp> element.</p>
-      <p>This is the <small>small</small> element.</p>
-      <p>This is the <strong>strong</strong> element.</p>
-      <p>This is the <sub>sub</sub> element.</p>
-      <p>This is the <sup>sup</sup> element.</p>
-      <p>This is the <var>var</var> element.</p>
-      <hr>
-      <h4>Meter:</h4>
-      <p>An example of the <code>&lt;meter&gt;</code> element: Your score is:
-        <meter value="91" min="0" max="100" low="40" high="90" optimum="100">A+</meter>
-      </p>
-      <hr>
-      <h4>Pre and span:</h4>
-      <p>This is the <code>&lt;pre&gt;</code> element:</p>
-      <pre>pre</pre>
-      <p>This is the <span>span</span> element. All <code>&lt;span&gt;</code> elements within this demo are set to <span>bold</span> for styling purposes only.</p>
-      <hr>
-      <h4>Table:</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Table header</th>
-            <th>Table header</th>
-            <th>Table header</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <td>Table footer</td>
-            <td>Table footer</td>
-            <td>Table footer</td>
-          </tr>
-        </tfoot>
-        <tbody>
-          <tr>
-            <td>Table data</td>
-            <td>Table data</td>
-            <td>Table data</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <h4>Time:</h4>
-      <p>The following is an example of the <code>&lt;time&gt;</code> element:</p>
-      <time datetime="2010-03-22T11:00-06:00">11AM in Texas on March 22, 2010</time>
-    </div>
-    <hr>
-    <footer class="article">
-      <p>This is the <code>&lt;footer&gt;</code> for this <code>&lt;article&gt;</code>.</p>
-      <h4><a id="info"></a>Details and summary:</h4>
-      <details>
-        <summary>Article Summary</summary>
-        <p>Details: Here is information and links related to / referenced within this article. This uses the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements.</p>
-        <ul>
-          <li><a href="http://html5doctor.com/glossary/" title="HTML5doctor: HTML5 Glossary">HTML5doctor: HTML5 Glossary</a></li>
-          <li><a href="http://www.w3schools.com/html5/html5_reference.asp" title="W3Schools: HTML 5 Tag Reference">W3Schools: HTML 5 Tag Reference</a></li>
-          <li><a href="http://code.google.com/apis/ajaxlibs/documentation/index.html#jquery" title="jQuery provided by Google">jQuery provided by Google</a></li>
-          <li><a href="http://remysharp.com/2009/01/07/html5-enabling-script/" title="HTML5 enabling script">HTML5 enabling script</a> (for Internet Explorer)</li>
-          <li><a href="http://flesler.blogspot.com/2007/10/jquerylocalscroll-10.html" title="jQuery.LocalScroll">jQuery.LocalScroll</a> by Ariel Flesler</li>
-          <li>See source code for HTML and CSS for other references to stylesheet inspiration etc.</li>
-          <li>What's next? You need to check out these:
-            <ul>
-              <li> <a href="http://diveintohtml5.org/" title="Dive into HTML5">Dive into HTML5</a></li>
-              <li> <a href="http://html5demos.com/" title="HTML 5 Demos and Examples">HTML 5 Demos and Examples</a> </li>
-            </ul>
-          </li>
-        </ul>
-      </details>
-    </footer>
-  </article>
-  <footer>
-    <p>This is the <code>&lt;footer&gt;</code> for this <code>&lt;section&gt; of this page/site</code>.</p>
-  </footer>
-</section>
-</div><aside class="grid-2">
-  <h3>The <code>&lt;aside&gt;</code> to the <code>&lt;section&gt;</code></h3>
-  <h4>Elements included in this demo:</h4>
-  <p><a id="toggle1" href="#" title="View / hide list of elements">View / hide</a> list of elements</p>
-  <p><span>Note:</span> Some elements are only used within the source code and not as examples.</p>
-  <ul id="list1">
-    <li><code>&lt;!-- Comments --&gt;</code></li>
-    <li><code>&lt;!DOCTYPE&gt;</code></li>
-    <li><code>&lt;a&gt;</code></li>
-    <li><code>&lt;abbr&gt;</code></li>
-    <li><code>&lt;address&gt;</code></li>
-    <li><code>&lt;article&gt;</code></li>
-    <li><code>&lt;aside&gt;</code></li>
-    <li><code>&lt;audio&gt;</code></li>
-    <li><code>&lt;b&gt;</code></li>
-    <li><code>&lt;blockquote&gt;</code></li>
-    <li><code>&lt;body&gt;</code></li>
-    <li><code>&lt;br&gt;</code></li>
-    <li><code>&lt;button&gt;</code></li>
-    <li><code>&lt;cite&gt;</code></li>
-    <li><code>&lt;code&gt;</code></li>
-    <li><code>&lt;del&gt;</code></li>
-    <li><code>&lt;details&gt;</code></li>
-    <li><code>&lt;dfn&gt;</code></li>
-    <li><code>&lt;div&gt;</code></li>
-    <li><code>&lt;em&gt;</code></li>
-    <li><code>&lt;fieldset&gt;</code></li>
-    <li><code>&lt;figcaption&gt;</code></li>
-    <li><code>&lt;figure&gt;</code></li>
-    <li><code>&lt;footer&gt;</code></li>
-    <li><code>&lt;form&gt;</code></li>
-    <li><code>&lt;h1&gt;</code> &ndash; <code>&lt;h6&gt;</code></li>
-    <li><code>&lt;head&gt;</code></li>
-    <li><code>&lt;header&gt;</code></li>
-    <li><code>&lt;hgroup&gt;</code></li>
-    <li><code>&lt;hr&gt;</code></li>
-    <li><code>&lt;html&gt;</code></li>
-    <li><code>&lt;i&gt;</code></li>
-    <li><code>&lt;img&gt;</code></li>
-    <li><code>&lt;input&gt;</code></li>
-    <li><code>&lt;ins&gt;</code></li>
-    <li><code>&lt;kbd&gt;</code></li>
-    <li><code>&lt;label&gt;</code></li>
-    <li><code>&lt;legend&gt;</code></li>
-    <li><code>&lt;li&gt;</code></li>
-    <li><code>&lt;link&gt;</code></li>
-    <li><code>&lt;mark&gt;</code></li>
-    <li><code>&lt;meta&gt;</code></li>
-    <li><code>&lt;meter&gt;</code></li>
-    <li><code>&lt;nav&gt;</code></li>
-    <li><code>&lt;noscript&gt;</code></li>
-    <li><code>&lt;ol&gt;</code></li>
-    <li><code>&lt;optgroup&gt;</code></li>
-    <li><code>&lt;option&gt;</code></li>
-    <li><code>&lt;p&gt;</code></li>
-    <li><code>&lt;pre&gt;</code></li>
-    <li><code>&lt;q&gt;</code></li>
-    <li><code>&lt;samp&gt;</code></li>
-    <li><code>&lt;script&gt;</code></li>
-    <li><code>&lt;section&gt;</code></li>
-    <li><code>&lt;select&gt;</code></li>
-    <li><code>&lt;small&gt;</code></li>
-    <li><code>&lt;source&gt;</code></li>
-    <li><code>&lt;span&gt;</code></li>
-    <li><code>&lt;strong&gt;</code></li>
-    <li><code>&lt;style&gt;</code></li>
-    <li><code>&lt;sub&gt;</code></li>
-    <li><code>&lt;summary&gt;</code></li>
-    <li><code>&lt;sup&gt;</code></li>
-    <li><code>&lt;table&gt;</code></li>
-    <li><code>&lt;tbody&gt;</code></li>
-    <li><code>&lt;td&gt;</code></li>
-    <li><code>&lt;textarea&gt;</code></li>
-    <li><code>&lt;tfoot&gt;</code></li>
-    <li><code>&lt;th&gt;</code></li>
-    <li><code>&lt;thead&gt;</code></li>
-    <li><code>&lt;time&gt;</code></li>
-    <li><code>&lt;title&gt;</code></li>
-    <li><code>&lt;tr&gt;</code></li>
-    <li><code>&lt;ul&gt;</code></li>
-    <li><code>&lt;var&gt;</code></li>
-    <li><code>&lt;video&gt;</code></li>
-  </ul>
-  <h4>Elements not included in this demo:</h4>
-  <p><a id="toggle2" href="#" title="View / hide list of elements">View / hide</a> list of elements</p>
-  <ul id="list2">
-    <li><code>&lt;area&gt;</code></li>
-    <li><code>&lt;base&gt;</code></li>
-    <li><code>&lt;bdo&gt;</code></li>
-    <li><code>&lt;canvas&gt;</code></li>
-    <li><code>&lt;caption&gt;</code></li>
-    <li><code>&lt;col&gt;</code></li>
-    <li><code>&lt;colgroup&gt;</code></li>
-    <li><code>&lt;command&gt;</code></li>
-    <li><code>&lt;datalist&gt;</code></li>
-    <li><code>&lt;dd&gt;</code></li>
-    <li><code>&lt;dl&gt;</code></li>
-    <li><code>&lt;dt&gt;</code></li>
-    <li><code>&lt;embed&gt;</code></li>
-    <li><code>&lt;iframe&gt;</code></li>
-    <li><code>&lt;keygen&gt;</code></li>
-    <li><code>&lt;map&gt;</code></li>
-    <li><code>&lt;menu&gt;</code></li>
-    <li><code>&lt;object&gt;</code></li>
-    <li><code>&lt;output&gt;</code></li>
-    <li><code>&lt;param&gt;</code></li>
-    <li><code>&lt;progress&gt;</code></li>
-    <li><code>&lt;rp&gt;</code></li>
-    <li><code>&lt;rt&gt;</code></li>
-    <li><code>&lt;ruby&gt;</code></li>
-  </ul>
-  <h4>Elements not supported by HTML5:</h4>
-  <p><a id="toggle3" href="#" title="View / hide list of elements">View / hide</a> list of elements</p>
-  <ul id="list3">
-    <li><code>&lt;acronym&gt;</code></li>
-    <li><code>&lt;applet&gt;</code></li>
-    <li><code>&lt;basefont&gt;</code></li>
-    <li><code>&lt;big&gt;</code></li>
-    <li><code>&lt;center&gt;</code></li>
-    <li><code>&lt;dir&gt;</code></li>
-    <li><code>&lt;font&gt;</code></li>
-    <li><code>&lt;frame&gt;</code></li>
-    <li><code>&lt;frameset&gt;</code></li>
-    <li><code>&lt;noframes&gt;</code></li>
-    <li><code>&lt;s&gt;</code></li>
-    <li><code>&lt;strike&gt;</code></li>
-    <li><code>&lt;tt&gt;</code></li>
-    <li><code>&lt;u&gt;</code></li>
-    <li><code>&lt;xmp&gt;</code></li>
-  </ul>
-</aside>
-<footer>
-  <p>This is the global <code>&lt;footer&gt;</code> for this page/site.</p>
-  <nav>
-    <ul>
-      <li><a href="#" title="Global footer link">Global footer <code>&lt;nav&gt;</code> link</a></li>
-      <li><a href="#" title="Global footer link">Global footer <code>&lt;nav&gt;</code> link</a></li>
-      <li><a href="#" title="Global footer link">Global footer <code>&lt;nav&gt;</code> link</a></li>
-    </ul>
-  </nav>
-  <p>This document was prepared by <a href="http://www.ackernaut.com/" title="the Ackernaut">the Ackernaut</a> for the benefit of the web development community. <br>
-    If you have suggestions on how to improve this page let me know: terry / at / ackernaut / dot / com<br>
-    Feel free to borrow and share a link! <br>
-    Created on March 22, 2010 | Last updated on April 9, 2010</p>
-</footer>
-</div>
+    </fieldset>
+</fieldset></section>
+<section><form action="#">
+	<fieldset class="field-container field-options">
+		<legend class="field-legend">Checkbox <abbr title="Required">*</abbr></legend>
+		<label class="field-checkbox" for="checkbox1"><input class="input-checkbox" id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label>
+		<label class="field-checkbox" for="checkbox2"><input class="input-checkbox" id="checkbox2" name="checkbox" type="checkbox"> Choice B</label>
+		<label class="field-checkbox" for="checkbox3"><input class="input-checkbox" id="checkbox3" name="checkbox" type="checkbox"> Choice C</label>
+	</fieldset>
+</form></section>
+<section><form class="form" action="#">
+    <fieldset class="field-container field-options">
+        <legend>Radio</legend>
+            <label class="field-radio" for="radio1"><input class="input-radio" id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label>
+            <label class="field-radio" for="radio2"><input class="input-radio" id="radio2" name="radio" type="radio" class="radio"> Option 2</label>
+            <label class="field-radio" for="radio3"><input class="input-radio" id="radio3" name="radio" type="radio" class="radio"> Option 3</label>
+    </fieldset>
+</form></section>
+<section><form class="form" action="#">
+  <fieldset class="field-container"><label class="field-label" for="ic">Color input</label><input class="input-color" type="color" id="ic" value="#000000"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="in">Number input</label><input class="input-text" type="number" id="in" min="0" max="10" value="5"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="ir">Range input</label><input class="input-range" type="range" id="ir" value="10"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="idd">Date input</label><input class="input-text" type="date" id="idd" value="1970-01-01"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="idm">Month input</label><input class="input-text" type="month" id="idm" value="1970-01"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="idw">Week input</label><input class="input-text" type="week" id="idw" value="1970-W01"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="idt">Datetime input</label><input class="input-text" type="datetime" id="idt" value="1970-01-01T00:00:00Z"></fieldset>
+  <fieldset class="field-container"><label class="field-label" for="idtl">Datetime-local input</label><input class="input-text" type="datetime-local" id="idtl" value="1970-01-01T00:00"></fieldset>
+</fieldset></section>
+<section><p><a href="#" class="button button-primary">button-primary</a></p>
+<p><a href="#" class="button button-secondary">button-secondary</a></p>
+<p><a href="#" class="button button-tertiary">button-tertiary</a></p>
+<p><a href="#" class="button button-neutral">button-neutral</a></p>
+<p><a href="#" class="button button-danger">button-danger</a></p>
+<p><a href="#" class="button button-success">button-success</a></p>
+<p><a href="#" class="button button-info">button-info</a></p>
+<p><a href="#" class="button button-warning">button-warning</a></p></section>
+<section><table>
+	<thead>
+		<tr>
+			<th>Table Heading 1</th>
+			<th>Table Heading 2</th>
+			<th>Table Heading 3</th>
+			<th>Table Heading 3</th>
+			<th>Table Heading 4</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>Table Footer 1</th>
+			<th>Table Footer 2</th>
+			<th>Table Footer 3</th>
+			<th>Table Footer 3</th>
+			<th>Table Footer 4</th>
+		</tr>
+	</tfoot>
+	<tbody>
+	<tr>
+		<td>Table Cell 1</td>
+		<td>Table Cell 2</td>
+		<td>Table Cell 3</td>
+		<td>Table Cell 4</td>
+		<td>Table Cell 5</td>
+	</tr>
+	<tr>
+		<td>Table Cell 1</td>
+		<td>Table Cell 2</td>
+		<td>Table Cell 3</td>
+		<td>Table Cell 4</td>
+		<td>Table Cell 5</td>
+	</tr>
+	<tr>
+		<td>Table Cell 1</td>
+		<td>Table Cell 2</td>
+		<td>Table Cell 3</td>
+		<td>Table Cell 4</td>
+		<td>Table Cell 5</td>
+	</tr>
+	<tr>
+		<td>Table Cell 1</td>
+		<td>Table Cell 2</td>
+		<td>Table Cell 3</td>
+		<td>Table Cell 4</td>
+		<td>Table Cell 5</td>
+	</tr>
+	</tbody>
+</table></section>
+<section><video width="640" height="360" controls="">
+	<source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+	<source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+	<source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+	<img src="" width="640" height="360" alt="Big Buck Bunny" title="No video playback capabilities, please download">
+</video></section>
+<section><audio controls="controls">  
+   <source src="#" />  
+   <source src="#" />  
+</audio></section>
 		</section>
 		
 		<hr>
@@ -666,7 +408,7 @@
 
 	<!-- JavaScript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="js/twist.js"></script>
+	<script src="http://twist.dev/js/twist.js"></script>
 
 </body>
 </html>
