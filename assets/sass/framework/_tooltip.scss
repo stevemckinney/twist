@@ -7,6 +7,10 @@ $default-tooltip-size: $default-size !default;
 $default-tooltip-context: $default-context !default;
 $default-tooltip-transition-delay: .01s !default;
 
+// Sometimes you get a 1px space, not ideal.
+// Number is added to initial value
+$default-tooltip-triangle-pixel-offset: em(1px) !default;
+
 // Shading
 $default-tooltip-color: $primary !default;
 $default-tooltip-text-color: $white !default;
@@ -39,9 +43,10 @@ $default-tooltip-triangle-size: 6px !default;
     
   &:before {
   	@extend %tooltip-shared;
-  	@include tooltip-triangle($position, $color,$triangle-size);
+  	@include tooltip-triangle($position, $color, $triangle-size);
   	@include wh(0);
-    content: ""; }
+    content: "";
+    -webkit-backface-visibility: hidden; }
     
   &:hover:before,
   &:hover:after {
@@ -84,7 +89,7 @@ $default-tooltip-triangle-size: 6px !default;
 ) {
 	
 	$triangle-size: em($triangle-size, $context);
-	    
+
   @if $position == top or $position == bottom {
 	  &:before,
 	  &:after {
@@ -109,10 +114,10 @@ $default-tooltip-triangle-size: 6px !default;
 	    margin-left: -$triangle-size;
 	    
 	    @if $position == top {
-    		margin-bottom: -$triangle-size; }
+    		margin-bottom: -$triangle-size + $default-tooltip-triangle-pixel-offset; }
     		
     	@else if $position == bottom {
-	    	margin-top: -$triangle-size; } } }
+	    	margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset; } } }
     
   @else if $position == right or $position == left {
 	  &:before,
@@ -135,13 +140,13 @@ $default-tooltip-triangle-size: 6px !default;
 			@include transform(translateY(-50%)); }
 	    
 		&:before {
-			margin-top: -$triangle-size;
+			margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset;
 			
 	    @if $position == right {
-    		margin-left: -$triangle-size; }
+    		margin-left: -$triangle-size + $default-tooltip-triangle-pixel-offset; }
     		
     	@else if $position == left {
-	    	margin-right: -$triangle-size; } } } }
+	    	margin-right: -$triangle-size + $default-tooltip-triangle-pixel-offset; } } } }
 
 // Shading
 // ---------------------------

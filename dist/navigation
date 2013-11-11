@@ -31,7 +31,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144x144.png"> -->
 	
-	<!-- IE -->
+	<!-- IE <a href="http://www.ackernaut.com/space-station/zip/html5-elements.zip" title="Download the HTML and asset files">-->
 	<meta http-equiv="cleartype" content="on">
 <!--[if lt IE 9]>
 	<link href="assets/css/ie.css" rel="stylesheet">
@@ -51,19 +51,18 @@
 	
 		<header role="banner" class="header">
 			<a href="/" class="site-logo">twist</a>
-      <h2 class="site-subtitle"><a href="http://www.ackernaut.com/space-station/zip/html5-elements.zip" title="Download the HTML and asset files">A bunch of flexible mixins, using Sass/Compass.</a></h2>
+      <p class="site-subtitle">A bunch of flexible mixins, using Sass/Compass.</p>
       <a href="#" class="navigation-toggle">toggle</a>
 		</header>
 		
-		<section role="main" class="site-main">
+		<main role="main" class="main">
 	<h1>Navigation Page</h1>
-		</section>
+		</main>
 		
-		<hr>
-		
-		<footer role="contentinfo" class="site-footer">
+		<footer role="contentinfo" class="footer">
 			<p>twist, free to use as you please.</p>
 		</footer>
+		
 	</div>
 
 	<!-- JavaScript -->

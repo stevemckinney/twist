@@ -14,7 +14,7 @@
 // px to em
 // ---------------------------
 @function em($target-px, $context: $default-context) {
-	@return (if(unitless($target-px), $target-px + "px", $target-px) / $context) * 1em; }
+	@return ($target-px / $context) * 1em; }
 
 // rem conversion
 // ---------------------------

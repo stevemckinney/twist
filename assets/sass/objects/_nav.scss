@@ -17,12 +17,12 @@
 	.navigation-large {}
 	
 	.navigation-inactive {
-		@include experimental(transition, compact(transform .5s, opacity .5s));
+		@include transition(transform .5s, opacity .5s);
 		@include transform(scale(.95) translate3d(0, em($line), 0));
 		opacity: .6; }
 		
 	.navigation-active {
-		@include experimental(transition, compact(transform .5s, opacity .5s));
+		@include transition(transform .5s, opacity .5s);
 		@include transform(scale(1) translate3d(0, 0, 0));
 		opacity: 1; }
 
@@ -30,7 +30,7 @@
 // ---------------------------
 .navigation-item {
 	@extend %vertical-align-top;
-	@include experimental(transition, background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration);
+	@include transition(background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration);
 	
 	@include breakpoint($c, max) {
 		display: block;

@@ -50,26 +50,45 @@
 // ---------------------------
 .site {
 	width: 100%;
+	max-width: 100%;
 	padding-top: em(48px); }
 	
 .site-logo {
-	@extend .with-subheading;
-	@extend .text-center;
-	font: 400 italic em(72px) $serif;
+	font: 700 italic em(36px) $serif;
 	width: 100%;
-	display: block; }
+	display: block;
+	color: $primary; }
 
 .site-subtitle {
-	font-weight: 100;
-	font-size: em(18px);
-	margin: 0 0 em($line, 18px); }
+	font-size: em(14px);
+	margin: 0;
+	letter-spacing: -1px;
+	
+	a { color: $primary; } }
 
-.site-header {
-	background: $white;
+.site-logo,
+.site-subtitle {}
+
+.header {
+	@include pie-clearfix;
+	position: relative;
 	padding: em($line) calc(50% - 380px);
-	h2 {
-		@extend .text-center;
-		line-height: 1; } }
+	width: 100%;
+	margin: 0 0 em($line);
+	background: $white; }
+
+.navigation {
+	position: absolute;
+	bottom: em($base-px);
+	right: calc(50% - 380px);
+	border-radius: $radius; }
+
+.navigation-item {
+	font-family: $body;
+	font-size: em(14px);
+	padding: em($base-px, 14px);
+	letter-spacing: -1px;
+	color: $primary; }
 
 [id*=list] {
 	display: none; }
@@ -80,7 +99,10 @@
 fieldset {
 	@extend %margin-bottom; }
 
-.site-main {
+.main,
+.footer {
+	padding: em($line) calc(50% - 380px);
+/*
 	@include display-flex;
 	@include flex-flow(row wrap);
 	@include align-items(flex-start);
@@ -94,4 +116,5 @@ fieldset {
 		padding: em($line);
 		background: $white;
 		border-radius: $radius;
-		box-shadow: 0 1px 3px #ccc; } }
+		box-shadow: 0 1px 3px #ccc; }
+*/ }

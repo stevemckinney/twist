@@ -6,11 +6,12 @@
 	text-rendering: optimizeLegibility;
 	line-height: 1;
 	margin-top: 0;
-	font-weight: 400; }
+	font-weight: 700; }
 
 h1, .h1 {
 	font-size: em(36px);
-	margin-bottom: rhythm(1, 36px); }
+	margin-bottom: rhythm(1, 36px);
+	letter-spacing: em(-2px, 36px); }
 	
 h2, .h2 {
 	font-size: em(30px);
@@ -41,7 +42,8 @@ body {
 		font-size: 100%; } }
 
 p {
-	@extend %margin-bottom; }
+	@extend %margin-bottom;
+	@extend %module; }
 
 a {
 	@extend %transition;
@@ -79,7 +81,7 @@ code {
 	@include rem(margin-bottom, 6px); }
 
 .subheading {
-	font-family: $sans;
+	font-family: $heading;
 	font-weight: 400;
 	color: $secondary;
-	margin-bottom: 0; }
+	line-height: 1; }

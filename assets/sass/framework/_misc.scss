@@ -43,9 +43,9 @@ $default-gradient-background-context: $default-context !default;
 
 // Triangle default vars
 // ---------------------------
-$default-triangle-direction: left !default;
-$default-triangle-size: 48px !default;
-$default-triangle-color: inherit !default;
+$default-triangle-position: bottom !default;
+$default-triangle-size: 6px !default;
+$default-triangle-color: $primary !default;
 $default-triangle-context: $default-context !default;
 
 // Triangle
@@ -56,17 +56,17 @@ $default-triangle-context: $default-context !default;
 	position: absolute; }
 	
 @mixin triangle(
-	$direction: $default-triangle-direction,
-	$size: $default-triangle-size,
+	$position: $default-triangle-position,
 	$color: $default-triangle-color,
+	$size: $default-triangle-size,
 	$context: $default-triangle-context) {
 	
-	$size: em($size) / 2;
-	$negative-size: -$size;
+	$halved-size: $size/2;
+	$negative-size: -$halved-size;
 	
 	@extend %triangle-base;
 	
-	@if $direction == top {
+	@if $position == top {
 		border: {
 			right: $size solid transparent;
 			bottom: $size solid $color;
@@ -74,7 +74,8 @@ $default-triangle-context: $default-context !default;
 		bottom: 100%;
 		left: 50%;
 		margin-left: $negative-size; }
-	@else if $direction == right {
+		
+	@else if $position == right {
 		border: {
 			top: $size solid transparent;
 			bottom: $size solid transparent;
@@ -82,7 +83,8 @@ $default-triangle-context: $default-context !default;
 		left: 100%;
 		top: 50%;
 		margin-top: $negative-size; }
-	@else if $direction == bottom {
+		
+	@else if $position == bottom {
 		border: {
 			top: $size solid $color;
 			right: $size solid transparent;
@@ -90,7 +92,8 @@ $default-triangle-context: $default-context !default;
 		top: 100%;
 		left: 50%;
 		margin-left: $negative-size; }
-	@else if $direction == left {
+		
+	@else if $position == left {
 		border: {
 			top: $size solid transparent;
 			right: $size solid $color;

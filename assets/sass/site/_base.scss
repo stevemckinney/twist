@@ -14,19 +14,19 @@ $z-index-300: 300;
 
 // Color
 // ---------------------------
-$primary: #666 !default;
+$primary: #444 !default;
 $primary-d1: scale-lightness($primary, -10%);
 $primary-d2: scale-lightness($primary, -20%);
 $primary-l1: scale-lightness($primary, 10%);
 $primary-l2: scale-lightness($primary, 20%);
 
-$secondary: #aaa !default;
+$secondary: $red !default;
 $secondary-d1: scale-lightness($secondary, -10%);
 $secondary-d2: scale-lightness($secondary, -20%);
 $secondary-l1: scale-lightness($secondary, 10%);
 $secondary-l2: scale-lightness($secondary, 20%);
 
-$tertiary: #fcfcfc !default;
+$tertiary: $light-grey !default;
 $tertiary-d1: scale-lightness($tertiary, -10%);
 $tertiary-d2: scale-lightness($tertiary, -20%);
 $tertiary-l1: scale-lightness($tertiary, 10%);
@@ -40,12 +40,12 @@ $neutral-l2: scale-lightness($neutral, 20%);
 
 // Fonts
 // ---------------------------
-$sans: "Ideal Sans SSm A", "Ideal Sans SSm B", sans-serif !default;
-$serif: "Archer SSm A", "Archer SSm B", serif !default;
+$sans: "Ideal Sans SSm A", "Ideal Sans SSm B", sans-serif;
+$serif: "Archer SSm A", "Archer SSm B", serif;
 $monospace: Menlo, Monaco, "Courier New", monospace;
 $icons: "SSStandard";
-$heading: $sans;
-$body: $sans;
+$heading: 'Mercury SSm A', 'Mercury SSm B';
+$body: 'Mercury SSm A', 'Mercury SSm B';
 $form: $sans;
 $element: $sans;
 
@@ -53,7 +53,7 @@ $element: $sans;
 // ---------------------------
 $debug-mode: false;
 $default-transition-duration: .2s;
-$site-width: 960px;
+$site-width: 800px;
 $remove-inline-block-whitespace: true !global;
 $negative-spacing: $default-negative-spacing;
 
