@@ -9,12 +9,12 @@ $default-tooltip-transition-delay: .01s !default;
 
 // Sometimes you get a 1px space, not ideal.
 // Number is added to initial value
-$default-tooltip-triangle-pixel-offset: em(1px) !default;
+$default-tooltip-triangle-pixel-offset: em(2px) !default;
 
 // Shading
 $default-tooltip-color: $primary !default;
 $default-tooltip-text-color: $white !default;
-$default-tooltip-triangle-size: 6px !default;
+$default-tooltip-triangle-size: 8px !default;
 
 // Tooltip
 // ---------------------------
@@ -166,17 +166,18 @@ $default-tooltip-triangle-size: 6px !default;
 	padding: element-size($size);
 	white-space: nowrap;
 	display: inline-block;
-  visibility: hidden;
+	pointer-events: none;
+  // visibility: hidden;
 
 	@if $radius {
 		border-radius: $radius; } }
 
 %tooltip-shared {
-	@include transition(.2s ceaser($easeInSine));
+	@include transition(.2s .6s);
+	-webkit-backface-visibility: hidden;
 	position: absolute;
 	opacity: 0; }
 
 %tooltip-shared-hover {
-	@include transition(.3s .2s ceaser($easeOutSine));
-  visibility: visible;
+	@include transition(.2s .2s ease-in);
   opacity: 1; }

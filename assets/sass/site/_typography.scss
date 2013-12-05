@@ -8,28 +8,34 @@
 	margin-top: 0;
 	font-weight: 700; }
 
-h1, .h1 {
+h1,
+.h1 {
 	font-size: em(36px);
 	margin-bottom: rhythm(1, 36px);
 	letter-spacing: em(-2px, 36px); }
 	
-h2, .h2 {
+h2,
+.h2 {
 	font-size: em(30px);
 	margin-bottom: rhythm(1, 30px); }
 	
-h3, .h3 {
+h3,
+.h3 {
 	font-size: em(24px);
 	margin-bottom: rhythm(1, 24px); }
 	
-h4, .h4 {
+h4,
+.h4 {
 	font-size: em(21px);
 	margin-bottom: rhythm(.5, 21px); }
 	
-h5, .h5 {
+h5,
+.h5 {
 	font-size: em(18px);
 	margin-bottom: rhythm(.5, 18px); }
 	
-h6, .h6 {
+h6,
+.h6 {
 	font-size: em($base-font-size);
 	margin-bottom: rhythm(.5, $base-font-size); }
 	
@@ -50,7 +56,8 @@ a {
 	text-decoration: none;
 	color: $secondary;
 	
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $primary; } }
 		
 // Code

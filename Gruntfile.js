@@ -2,40 +2,40 @@
 
 module.exports = function(grunt) {
 	'use strict';
-	
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		
+
 		path: {
-        assets: 'assets/',
-        src: 'src',
-        dist: 'dist',
-        sass: '<%= path.assets %>/sass',
-        js: '<%= path.assets %>/js',
-        images: '<%= path.assets %>/images',
-        fonts: '<%= path.assets %>/fonts',
-    },
-		
+				assets: 'assets/',
+				src: 'src',
+				dist: 'dist',
+				sass: '<%= path.assets %>/sass',
+				js: '<%= path.assets %>/js',
+				images: '<%= path.assets %>/images',
+				fonts: '<%= path.assets %>/fonts',
+		},
+
 		watch: {
-      sass: {
-        files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
-        tasks: ['compass:dev']
-      },
-      jekyll: {
-				files: ['<%= path.src %>/**/*', '<%= path.dist %>/'],
-				tasks: ['jekyll:dev', 'compass:dev', 'concat']
+			sass: {
+				files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
+				tasks: ['compass:dev']
 			},
-      grunticon: {
-        files: ['<%= path.images %>/', '<%= path.dist %>/images'],
-        tasks: ['grunticon']
-      },
-      js: {
-        files: ['<%= path.js %>/**/*.js'],
-        tasks: 'concat'
-      }
-    },
-    
-    sass: {
+			jekyll: {
+				files: ['<%= path.src %>', '<%= path.dist %>'],
+				tasks: ['jekyll:dev']
+			},
+			grunticon: {
+				files: ['<%= path.images %>/', '<%= path.dist %>/images'],
+				tasks: ['grunticon']
+			},
+			js: {
+				files: ['<%= path.js %>/**/*.js'],
+				tasks: 'concat'
+			}
+		},
+
+		sass: {
 			dist: {
 				files: [{
 					expand: true,
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 				sourcemap: true,
 				style: 'expanded',
 				compass: true,
-				require: ['compass']
+				require: ['compass', 'ceaser-easing']
 			},
 			live: {
 				files: [{
@@ -58,10 +58,10 @@ module.exports = function(grunt) {
 				}],
 				style: 'compressed',
 				compass: true,
-				require: ['compass']
+				require: ['compass', 'compass-yiq-color-contrast', 'ceaser-easing']
 			}
 		},
-		
+
 		compass: {
 			dev: {
 				options: {
@@ -90,8 +90,8 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
-    jekyll: {
+
+		jekyll: {
 			options: {
 				src : '<%= path.src %>/',
 				dest: '<%= path.dist %>/'
@@ -103,19 +103,19 @@ module.exports = function(grunt) {
 
 			}
 		},
-		
+
 		concat: {
 			dist: {
 				src: ['<%= path.js %>/enquire.js',
-							'<%= path.js %>/lettering.js', 
+							'<%= path.js %>/lettering.js',
 							'<%= path.js %>/fittext.js',
-							'<%= path.js %>/fitvids.js', 
+							'<%= path.js %>/fitvids.js',
 							'<%= path.js %>/prism.js',
 							'<%= path.js %>/global.js'],
 				dest: '<%= path.dist %>/js/<%= pkg.name %>.js'
 			}
 		},
-		
+
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -126,53 +126,68 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
+
 		htmlmin: {
-	    dist: {
-	      options: {
-	        removeComments: true,
-	        collapseWhitespace: true
-	      },
-	      files: {
-	        '<%= path.src %>/**/*': '<%= path.dest %>/**/*',
-	      }
-	    },
+			 dist: {
+				 options: {
+					 removeComments: true,
+					 collapseWhitespace: true
+				 },
+				 files: {
+					 '<%= path.src %>/**/*': '<%= path.dest %>/**/*',
+				 }
+			 },
 		},
-		
+
 		grunticon: {
-	    icons: {
+			 icons: {
 				options: {
 					src: '<%= path.images %>',
 					dest: '<%= path.dist %>/images'
 				}
-	    }
-    },
-    
-    copy: {
-      modernizr: {
-        files: [
-          { expand: true, cwd: '<%= path.js %>', src: ['modernizr.js'], dest: '<%= path.dist %>/js' }
-        ]
-      },
-      images: {
-        files: [
-          { expand: true, cwd: '<%= path.images %>', src: ['./**/*'], dest: '<%= path.dist %>/' }
-        ]
-      },
-      fonts: {
-        files: [
-          { expand: true, cwd: '<%= path.fonts %>', src: ['./**/*'], dest: '<%= path.dist %>/fonts/' }
-        ]
-      }
-    }
-    
+			 }
+		},
+
+		copy: {
+			modernizr: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= path.js %>',
+						src: ['modernizr.js'],
+						dest: '<%= path.dist %>/js/'
+					}
+				]
+			},
+			images: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= path.images %>',
+						src: ['./**/*'],
+						dest: '<%= path.dist %>/images/'
+					}
+				]
+			},
+			fonts: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= path.fonts %>',
+						src: ['./**/*'],
+						dest: '<%= path.dist %>/fonts/'
+					}
+				]
+			}
+		}
+
 	});
-	
+
 	// Tasks
 	grunt.registerTask('default', ['concat', 'copy', 'watch']);
 	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'jekyll:live', 'compass:dev']);
-	grunt.registerTask('dev', ['watch', 'copy']);
-	
+	grunt.registerTask('dev', ['copy', 'watch']);
+
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 };

@@ -6,9 +6,89 @@ category: code
 ---
 <article class="twist-buttons">
 	<h1 class="with-subheading">Buttons</h1>
-	<p class="subheading">Buttons are simply made by using the <code>element</code> mixin.</p>
-	
+	<p class="subheading">Buttons are simply made by using the <code data-title="@include element(#f00)">element</code> mixin.</p>
+
 	<dl>
-		<dt><button class="button button-primary">.button-primary</button></dt>
+		<dt><button class="button">button</button></dt>
+		<dd>.button</dd>
+		<dt><button class="button button-primary">primary</button></dt>
+		<dd>.button-primary</dd>
+		<dt><button class="button button-secondary">secondary</button></dt>
+		<dd>.button-secondary</dd>
+		<dt><button class="button button-tertiary">tertiary</button></dt>
+		<dd>.button-tertiary</dd>
 	</dl>
+</article>
+
+<article class="twist-buttons">
+	<h1 class="with-subheading">Forms</h1>
+	<p class="subheading">Form fields are simply made by using the <code data-title="@include form(text, #ccc)">form</code> mixin.</p>
+
+	<form class="form">
+		<fieldset class="field">
+			<label for="text" class="field-label">.field-label</label>
+			<input type="text" class="input-text" id="text" name="text">
+		</fieldset>
+		<fieldset class="field">
+			<label for="select" class="field-label">.field-label</label>
+			<select class="input-select" id="select" name="select">
+				<optgroup label="Options">
+					<option>Option 1</option>
+				</optgroup>
+			</select>
+		</fieldset>
+		<fieldset class="field">
+			<label for="check" class="field-label"><input id="check" type="checkbox" class="input-checkbox"> .field-label</label>
+			<label for="radio" class="field-label"><input id="radio" type="radio" class="input-radio"> .field-label</label>
+		</fieldset>
+	</form>
+</article>
+
+<article class="twist-grid">
+	<h1 class="with-subheading">Grid</h1>
+	<p class="subheading">The grid is setup by using the <code>grid</code> mixin.</p>
+
+	<div class="grid grid-with-gutter">
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-5"><div class="grid-content">.grid-5</div></div>
+		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-4"><div class="grid-content">.grid-4</div></div>
+		<div class="grid-3"><div class="grid-content">.grid-3</div></div>
+		<div class="grid-3"><div class="grid-content">.grid-3</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-6"><div class="grid-content">.grid-6</div></div>
+	</div>
+</article>
+
+<article class="twist-table">
+	<h1 class="with-subheading">Table</h1>
+	<p class="subheading">The grid is setup by using the <code>table-styled</code> mixin.</p>
+
+	<table class="table-styled">
+		<caption>Table Caption</caption>
+		<thead>
+			<tr>
+				<th>Table heading</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>Table footer</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>Table cell</td>
+			</tr>
+		</tbody>
+	</table>
+	
 </article>

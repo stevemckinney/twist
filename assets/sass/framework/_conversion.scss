@@ -40,11 +40,52 @@
 
 // Colour functions
 // ---------------------------
+// YIQ contrast function: https://github.com/timhettler/compass-yiq-color-contrast
+$yiq-contrasted-dark-default: #000 !default;
+$yiq-contrasted-light-default: #fff !default;
+$yiq-contrasted-threshold: 128 !default;
+$yiq-debug: false !default;
+
+@function yiq-is-light(
+  $color,
+  $threshold: $yiq-contrasted-threshold
+) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  $yiq: (($red*299)+($green*587)+($blue*114))/1000;
+
+  @if $yiq-debug { @debug $yiq, $threshold; }
+
+  @return if($yiq >= $threshold, true, false); }
+
+@function yiq-contrast-color(
+  $color,
+  $dark: $yiq-contrasted-dark-default,
+  $light: $yiq-contrasted-light-default,
+  $threshold: $yiq-contrasted-threshold
+) {
+  @return if(yiq-is-light($color, $threshold), $yiq-contrasted-dark-default, $yiq-contrasted-light-default); }
+
+@mixin yiq-contrasted(
+  $background-color,
+  $dark: $yiq-contrasted-dark-default,
+  $light: $yiq-contrasted-light-default,
+  $threshold: $yiq-contrasted-threshold
+) {
+  background-color: $background-color;
+  color: yiq-contrast-color($background-color, $dark, $light, $threshold); }
 
 // Taken from: https://github.com/imathis/nice-buttons
 // Returns true if the color is brighter than 50% lightness
 @function is-bright($color) {
 	@return (lightness($color) > 50%); }
+
+// Percentage based conditional brightness
+// ---------------------------
+@function if-brightness($color, $brightness: 80%) {
+	@return (lightness($color) > $brightness); }
 
 // Picks the color with the highest contrast
 @function if-bright($color, $light: true, $dark: false) {

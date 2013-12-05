@@ -40,10 +40,6 @@ $default-selection-color: inherit !default;
 $default-mark-color: inherit !default;
 $default-mark-background: #fefeca !default;
 
-// Font stacks
-// ---------------------------
-// None here? See site/_base.scss
-
 // Font sizes
 // ---------------------------
 $base-font-size: 16px !default;
@@ -83,7 +79,7 @@ $default-multiplier: 2 !default;
 $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
-$default-bg-base: false !default;
+$default-dark-bg: false !default;
 $default-shading: true !default;
 $default-display: inline-block !default;
 $default-dry: false !default;
@@ -104,10 +100,11 @@ $default-context: $base-font-size !default;
 // ---------------------------
 
 // Set up some breakpoints
-$breakpoint-subtract: (1px / $default-context) * 1em !default;
+$breakpoint-subtract: .01em !default;
+$aa:	(280px / $default-context) * 1em !default;
 $a:		(480px / $default-context) * 1em !default;
-$ab: 	(480px / $default-context) * 1em !default; 
-$b: 	(600px / $default-context) * 1em!default;
+$ab: 	(540px / $default-context) * 1em !default; 
+$b: 	(600px / $default-context) * 1em !default;
 $bc:	(680px / $default-context) * 1em !default;
 $c: 	(768px / $default-context) * 1em !default;
 $cd:	(840px / $default-context) * 1em !default;

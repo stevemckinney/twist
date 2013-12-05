@@ -1,5 +1,25 @@
 // Navigation
 // ---------------------------
+/**
+ *	Use pattern
+ **
+ 
+  <nav role="navigation" class="navigation navigation-small navigation-inactive">
+		<a href="#" class="navigation-item navigation-toggle">␡</a>
+		...
+	</nav>
+	
+	<div class="site">
+	
+		<header role="banner" class="header">
+			...
+      <a href="#" class="navigation-toggle">toggle</a>
+		</header>
+		...
+		
+	</div>
+ */
+
 .navigation {}
 	
 	.navigation-small {
@@ -11,7 +31,7 @@
 		left: 0;
 		
 		// Adjustable styles
-		background: $neutral;
+		background: scale-lightness($tertiary, -5%);
 		text-align: right; }
 	
 	.navigation-large {}
@@ -32,19 +52,20 @@
 	@extend %vertical-align-top;
 	@include transition(background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration);
 	
+	color: scale-lightness($tertiary-d1, -20%);
+	
 	@include breakpoint($c, max) {
 		display: block;
-		color: $tertiary;
 		padding: em($line);
-		box-shadow: 0 1px 0 $neutral-d1;
+		box-shadow: 0 1px 0 $tertiary-d1;
 		
 		&:hover,
 		&:focus {
-			color: $tertiary;
-			background: $neutral-d1;
+			color: $secondary;
+			background: $tertiary-d1;
 			box-shadow: 
-				0 -1px 0 scale-lightness($neutral-d1, -10%),
-				0 1px 0 scale-lightness($neutral-d1, -10%); } } }
+				0 -1px 0 scale-lightness($tertiary-d1, -10%),
+				0 1px 0 scale-lightness($tertiary-d1, -10%); } } }
 
 // Toggle
 // ---------------------------

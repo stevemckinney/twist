@@ -4,8 +4,8 @@
 
 # path: /Users/Steve/.rvm/gems/ruby-2.0.0-p0/gems/
 
-require 'ceaser-easing'
-require 'susy'
+# require 'ceaser-easing'
+# require 'susy'
 
 # Set this to the root of your project when deployed:
 http_path = "/"

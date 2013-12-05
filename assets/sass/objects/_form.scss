@@ -25,6 +25,9 @@
 
 // Fieldset
 // ---------------------------
+.field {
+	@extend %margin-bottom; }
+	
 .field-checkbox {
 	display: block;
 	line-height: $base-line-height-unitless; }
@@ -35,7 +38,7 @@
 .field-search {
 	@include form-search($has-label: true);
 	text-align: right; }
-	
+
 // Input
 // ---------------------------
 	
@@ -43,8 +46,7 @@
 	// ---------------------------
 	.input-text {
 		@extend %form-base-with-mixin;
-		@include form;
-		width: 100%; }
+		@include form; }
 	
 	// Select
 	// ---------------------------
