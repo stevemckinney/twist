@@ -1,6 +1,20 @@
 // Breakpoint mixin
 // ---------------------------
 $default-breakpoint-orientation: false !default;
+$default-min-resolution: min-resolution 144dpi !default;
+
+$breakpoint-subtract: .01em !default;
+
+$default-hide-small-breakpoint: $b !default;
+$default-hide-medium-min-breakpoint: $b !default;
+$default-hide-medium-max-breakpoint: $c !default;
+$default-hide-large-breakpoint: $d !default;
+
+$default-breakpoint-type: min !default;
+$default-breakpoint-retina: false !default;
+$default-breakpoint-width: false !default;
+$default-breakpoint-min-resolution: 144dpi !default;
+$default-breakpoint-pixel-ratio: 1.5 !default;
 
 @mixin breakpoint(
 	$breakpoint: $default-breakpoint-width,
@@ -31,6 +45,6 @@ $default-breakpoint-orientation: false !default;
 // adapted for further efficiency
 // ---------------------------
 @mixin image-2x($image, $context: $default-context) {
-	@include breakpoint(false, $retina: true) {
+	@include breakpoint(retina) {
 		background-image: url($image);
 		background-size: em(image-width($image)/2, $context) em(image-height($image)/2, $context); } }

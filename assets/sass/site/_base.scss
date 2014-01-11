@@ -54,7 +54,7 @@ $element: $sans;
 $debug-mode: false;
 $default-transition-duration: .2s;
 $site-width: 800px;
-$remove-inline-block-whitespace: true !global;
+$remove-inline-block-whitespace: true;
 $negative-spacing: $default-negative-spacing;
 
 // Browser support and prefixing

@@ -22,16 +22,20 @@ module.exports = function(grunt) {
 				tasks: ['compass:dev']
 			},
 			jekyll: {
-				files: ['<%= path.src %>', '<%= path.dist %>'],
+				files: ['<%= path.src %>/*.html', '<%= path.dist %>'],
 				tasks: ['jekyll:dev']
 			},
 			grunticon: {
-				files: ['<%= path.images %>/', '<%= path.dist %>/images'],
+				files: ['**/*.{svg}', '<%= path.dist %>'],
 				tasks: ['grunticon']
 			},
 			js: {
 				files: ['<%= path.js %>/**/*.js'],
 				tasks: 'concat'
+			},
+			images: {
+				files: ['**/*.{png,jpg,gif}', '<%= path.dist %>'],
+				tasks: 'imagemin'
 			}
 		},
 
@@ -58,7 +62,7 @@ module.exports = function(grunt) {
 				}],
 				style: 'compressed',
 				compass: true,
-				require: ['compass', 'compass-yiq-color-contrast', 'ceaser-easing']
+				require: ['compass', 'ceaser-easing']
 			}
 		},
 
@@ -93,8 +97,8 @@ module.exports = function(grunt) {
 
 		jekyll: {
 			options: {
-				src : '<%= path.src %>/',
-				dest: '<%= path.dist %>/'
+				src : '<%= path.src %>',
+				dest: '<%= path.dist %>'
 			},
 			dev: {
 				auto: true
@@ -113,6 +117,10 @@ module.exports = function(grunt) {
 							'<%= path.js %>/prism.js',
 							'<%= path.js %>/global.js'],
 				dest: '<%= path.dist %>/js/<%= pkg.name %>.js'
+			},
+			modernizr: {
+				src: '<%= path.js %>/modernizr.js',
+				dest: '<%= path.dist %>/js/modernizr.js'
 			}
 		},
 
@@ -147,28 +155,36 @@ module.exports = function(grunt) {
 				}
 			 }
 		},
+		
+		imagemin: {
+			 images: {
+				 files: [{
+					 expand: true,
+					 cwd: 'src/',
+					 src: ['**/*.{png,jpg,gif}'],
+					 dest: '<%= path.dist %>/'
+				 }]
+			 }
+		 },
+		 
+		svgmin: {
+			options: {
+				plugins: [{
+					removeViewBox: false
+				}]
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '<%= path.images %>',
+					src: ['*.svg'],
+					dest: '<%= path.dist %>/images',
+					ext: '.svg'
+				}]
+			}
+		},
 
 		copy: {
-			modernizr: {
-				files: [
-					{
-						expand: true,
-						cwd: '<%= path.js %>',
-						src: ['modernizr.js'],
-						dest: '<%= path.dist %>/js/'
-					}
-				]
-			},
-			images: {
-				files: [
-					{
-						expand: true,
-						cwd: '<%= path.images %>',
-						src: ['./**/*'],
-						dest: '<%= path.dist %>/images/'
-					}
-				]
-			},
 			fonts: {
 				files: [
 					{
@@ -184,7 +200,7 @@ module.exports = function(grunt) {
 	});
 
 	// Tasks
-	grunt.registerTask('default', ['concat', 'copy', 'watch']);
+	grunt.registerTask('default', ['watch']);
 	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'jekyll:live', 'compass:dev']);
 	grunt.registerTask('dev', ['copy', 'watch']);
 

@@ -18,9 +18,23 @@ $default-form-dry: $default-dry !default;
 // Elements
 $default-text-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local !default;
 
-//$default-text-elements: (text-elements: "text textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local");
+$default-text-elements: (
+	text: text, 
+	textarea: textarea,
+	password: password,
+	search: search,
+	email: email,
+	url: url,
+	number: number,
+	date: date,
+	month: month,
+	week: week,
+	year: year,
+	datetime: datetime,
+	datetime-local: datetime-local
+);
 
-$default-form-types: (text-elements: "text textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local", boolean-elements: "radio, checkbox", select: "select, multiple");
+$default-form-types: (text-elements: "text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local", boolean-elements: "radio, checkbox", select: "select, multiple");
 
 $default-boolean-elements: radio, checkbox !default;
 $default-non-boolean-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local, select !default;

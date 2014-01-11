@@ -10,6 +10,10 @@ $default-tooltip-transition-delay: .01s !default;
 // Sometimes you get a 1px space, not ideal.
 // Number is added to initial value
 $default-tooltip-triangle-pixel-offset: em(2px) !default;
+$default-tooltip-triangle-pixel-offset-top: $default-tooltip-triangle-pixel-offset !default;
+$default-tooltip-triangle-pixel-offset-right: $default-tooltip-triangle-pixel-offset !default;
+$default-tooltip-triangle-pixel-offset-bottom: $default-tooltip-triangle-pixel-offset !default;
+$default-tooltip-triangle-pixel-offset-left: $default-tooltip-triangle-pixel-offset !default;
 
 // Shading
 $default-tooltip-color: $primary !default;
@@ -114,10 +118,10 @@ $default-tooltip-triangle-size: 8px !default;
 	    margin-left: -$triangle-size;
 	    
 	    @if $position == top {
-    		margin-bottom: -$triangle-size + $default-tooltip-triangle-pixel-offset; }
+    		margin-bottom: -$triangle-size + $default-tooltip-triangle-pixel-offset-bottom; }
     		
     	@else if $position == bottom {
-	    	margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset; } } }
+	    	margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset-top; } } }
     
   @else if $position == right or $position == left {
 	  &:before,
@@ -140,13 +144,13 @@ $default-tooltip-triangle-size: 8px !default;
 			@include transform(translateY(-50%)); }
 	    
 		&:before {
-			margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset;
+			margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset-top;
 			
 	    @if $position == right {
-    		margin-left: -$triangle-size + $default-tooltip-triangle-pixel-offset; }
+    		margin-left: -$triangle-size + $default-tooltip-triangle-pixel-offset-right; }
     		
     	@else if $position == left {
-	    	margin-right: -$triangle-size + $default-tooltip-triangle-pixel-offset; } } } }
+	    	margin-right: -$triangle-size + $default-tooltip-triangle-pixel-offset-left; } } } }
 
 // Shading
 // ---------------------------
@@ -173,7 +177,7 @@ $default-tooltip-triangle-size: 8px !default;
 		border-radius: $radius; } }
 
 %tooltip-shared {
-	@include transition(.2s .6s);
+	@include transition(.2s .4s);
 	-webkit-backface-visibility: hidden;
 	position: absolute;
 	opacity: 0; }

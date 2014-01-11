@@ -9,34 +9,34 @@ $i: 1;
 	margin-bottom: em($line); }
 
 .button-primary {
-	@include element($primary); }
+	@include element($primary, $dark-bg:true); }
 
 .button-secondary {
-	@include element($secondary); }
+	@include element($secondary, $dark-bg:true); }
 
 .button-tertiary {
-	@include element($tertiary); }
-
+	@include element($tertiary, $dark-bg:true); }
+/*
 .button-alternate {
-	@include element($alt); }
+	@include element($alt, $dark-bg:true); }
 
 .button-neutral {
-	@include element($neutral); }
+	@include element($neutral, $dark-bg:true); }
 
 .button-danger {
-	@include element($danger); }
+	@include element($danger, $dark-bg:true); }
 
 .button-warning {
-	@include element($warning); }
+	@include element($warning, $dark-bg:true); }
 
 .button-success {
-	@include element($success); }
+	@include element($success, $dark-bg:true); }
 
 .button-info {
-	@include element($info); }
+	@include element($info, $dark-bg:true); }
 
 .button-default {
-	@include element($default-color); }
+	@include element($default-color, $dark-bg:true); }
 
 .button-link {
 	background: none;
@@ -77,3 +77,4 @@ $i: 1;
 		
 		&:nth-of-type(#{$i}) {
 			@include element($color, $hover: false); } } }
+*/

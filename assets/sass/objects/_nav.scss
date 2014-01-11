@@ -22,29 +22,29 @@
 
 .navigation {}
 	
-	.navigation-small {
-		position: absolute;
-		z-index: $z-index-1;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		
-		// Adjustable styles
-		background: scale-lightness($tertiary, -5%);
-		text-align: right; }
+.navigation-small {
+	position: absolute;
+	z-index: $z-index-1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	
-	.navigation-large {}
+	// Adjustable styles
+	background: scale-lightness($tertiary, -5%);
+	text-align: right; }
+
+.navigation-large {}
+
+.navigation-inactive {
+	@include transition(transform .5s, opacity .5s);
+	@include transform(scale(.95) translate3d(0, em($line), 0));
+	opacity: .6; }
 	
-	.navigation-inactive {
-		@include transition(transform .5s, opacity .5s);
-		@include transform(scale(.95) translate3d(0, em($line), 0));
-		opacity: .6; }
-		
-	.navigation-active {
-		@include transition(transform .5s, opacity .5s);
-		@include transform(scale(1) translate3d(0, 0, 0));
-		opacity: 1; }
+.navigation-active {
+	@include transition(transform .5s, opacity .5s);
+	@include transform(scale(1) translate3d(0, 0, 0));
+	opacity: 1; }
 
 // Items
 // ---------------------------

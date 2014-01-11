@@ -18,15 +18,14 @@
 	
 	// Text
 	// ---------------------------
-	@if $type == text {
+	@if map-get($default-text-elements, $type) {
 		background: $background-color;
 		
 		@if $state != disabled {
 			box-shadow:
-				0 0 9px -3px rgba($color, .6),
 				inset 0 1px scale-lightness($color, -10%),
 				inset 0 0 0 1px $color,
-				0 1px rgba($white, if-bright($color, .6, .2)),
+				0 1px rgba($white, .2),
 				if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 100%)); }
 			
 		@if $state == disabled {

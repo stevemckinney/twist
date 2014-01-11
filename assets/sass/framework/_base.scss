@@ -95,12 +95,8 @@ $default-light-shadow: .6 !default;
 // Context in which em functions are based on
 $default-context: $base-font-size !default;
 
-// Change your responsive widths here,
-// corresponds with screens scss files a lowest e highest
+// Breakpoints
 // ---------------------------
-
-// Set up some breakpoints
-$breakpoint-subtract: .01em !default;
 $aa:	(280px / $default-context) * 1em !default;
 $a:		(480px / $default-context) * 1em !default;
 $ab: 	(540px / $default-context) * 1em !default; 
@@ -114,16 +110,7 @@ $e: 	(1200px / $default-context) * 1em !default;
 $ef:	(1300px / $default-context) * 1em !default;
 $f: 	(1440px / $default-context) * 1em !default;
 
-$default-hide-small-breakpoint: $b !default;
-$default-hide-medium-min-breakpoint: $b !default;
-$default-hide-medium-max-breakpoint: $c !default;
-$default-hide-large-breakpoint: $d !default;
-
-$default-breakpoint-type: min !default;
-$default-breakpoint-retina: false !default;
-$default-breakpoint-width: false !default;
-$default-breakpoint-min-resolution: 144dpi !default;
-$default-breakpoint-pixel-ratio: 1.5 !default;
+$breakpoint-to-ems: true;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

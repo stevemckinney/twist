@@ -5,7 +5,7 @@
 				"form/type",
 				"form/label",
 				"form/shading",
-				"form/placeholder.scss";
+				"form/placeholder";
 
 @mixin form(
 	$type: $default-form-type,
@@ -23,19 +23,7 @@
 	
 	// Text
 	// ---------------------------
-	@if $type == text or
-			$type == textarea or
-			$type == password or
-			$type == search or
-			$type == email or
-			$type == url or
-			$type == number or
-			$type == date or
-			$type == month or
-			$type == week or
-			$type == year or
-			$type == datetime or
-			$type == datetime-local {
+	@if map-get($default-text-elements, $type) {
 		@include form-text($color, $focus-color, $background-color);
 		
 		@if $dry {

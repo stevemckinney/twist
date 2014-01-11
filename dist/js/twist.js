@@ -1019,14 +1019,14 @@ Prism.languages.insertBefore('scss', 'ignore', {
 ;
 var $n = $('.navigation'),
 		$nt = $('.navigation-toggle'),
-		$c = $('.site'),
+		$containerontainer = $('.site'),
 		$h = $('.header'),
 		$b = $('body');
 
 var navigation_size_class_names = 'navigation-small navigation-large',
 		navigation_state_class = 'navigation-inactive navigation-active';
 
-// $c
+// Breakpoint $c
 enquire.register('screen and (min-width: 48em)', {
 	
 	match : function() {
@@ -1035,7 +1035,7 @@ enquire.register('screen and (min-width: 48em)', {
 		$n.toggleClass(navigation_size_class_names)
 			.removeClass(navigation_state_class)
 			.appendTo($h);
-		$c.removeClass('site-active');
+		$container.removeClass('site-active');
 	},
 	
 	unmatch : function() {
@@ -1064,7 +1064,7 @@ $nt.on('click touchstart', function(e) {
 	$nt.toggleClass('navigation-toggle-active');
 	
 	// Slide the container over
-	$c.toggleClass('site-active');
+	$container.toggleClass('site-active');
 	
 	// Apply overflow: hidden to body,
 	// otherwise we get a nasty empty scroll area,
