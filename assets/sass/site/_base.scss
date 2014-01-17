@@ -14,25 +14,25 @@ $z-index-300: 300;
 
 // Color
 // ---------------------------
-$primary: #444 !default;
-$primary-d1: scale-lightness($primary, -10%);
-$primary-d2: scale-lightness($primary, -20%);
+$primary: #4c4d4c !default;
+$primary-d1: #1c1c1c;
+$primary-d2: scale-lightness($primary-d1, -20%);
 $primary-l1: scale-lightness($primary, 10%);
 $primary-l2: scale-lightness($primary, 20%);
 
-$secondary: $red !default;
+$secondary: #6cd0d9 !default;
 $secondary-d1: scale-lightness($secondary, -10%);
 $secondary-d2: scale-lightness($secondary, -20%);
 $secondary-l1: scale-lightness($secondary, 10%);
 $secondary-l2: scale-lightness($secondary, 20%);
 
-$tertiary: $light-grey !default;
+$tertiary: #f2f0f0 !default;
 $tertiary-d1: scale-lightness($tertiary, -10%);
 $tertiary-d2: scale-lightness($tertiary, -20%);
 $tertiary-l1: scale-lightness($tertiary, 10%);
 $tertiary-l2: scale-lightness($tertiary, 20%);
 
-$neutral: #94C7B6 !default;
+$neutral: #f2495c !default;
 $neutral-d1: scale-lightness($neutral, -10%);
 $neutral-d2: scale-lightness($neutral, -20%);
 $neutral-l1: scale-lightness($neutral, 10%);
@@ -64,3 +64,5 @@ $browser-minimum-versions: ("chrome": null, "firefox": null, "ie": "8", "safari"
 $supported-browsers: reject(browsers(), opera-mini, opera);
 
 $box-shadow-support-threshold: 0;
+$gradient-support-threshold: 6.51;
+//$svg-gradient-shim-threshold: 10.0;

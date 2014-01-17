@@ -88,3 +88,15 @@
 		
 		.no-svg & {
 			background: $fallback; } } }
+
+// Logically named alias for form-search
+// ---------------------------
+@mixin form-button(
+	$selector	: $default-form-search-selector,
+	$position	: $default-form-search-position,
+	$size			: $default-form-search-size,
+	$icon 		: $default-form-search-image,
+	$has-label: $default-form-search-has-label,
+	$fallback	: $default-form-search-png
+) {
+	@include form-search($selector, $position, $size, $icon, $has-label, $fallback); }

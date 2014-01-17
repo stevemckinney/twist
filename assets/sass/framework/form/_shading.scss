@@ -5,8 +5,8 @@
 	$color: $default-form-color,
 	$state: $default-form-state) {
 	
-	$background-shading-color: if(grayscale($color), $color, saturate($color, 100%));
-	$background-color: if($state == disabled, scale-lightness($color, 80%), $white);
+	$background-color: if($state == disabled, scale-lightness($color, 80%), $default-form-background-color);
+	$background-shading-color: scale-lightness($background-color, -2%);
 	
 	// Modernizr
 	// ---------------------------
@@ -20,13 +20,17 @@
 	// ---------------------------
 	@if map-get($default-text-elements, $type) {
 		background: $background-color;
-		
+		@include background(
+			linear-gradient(
+				bottom,
+				$background-color 0%,
+				$background-shading-color 100%));
+					
 		@if $state != disabled {
 			box-shadow:
 				inset 0 1px scale-lightness($color, -10%),
 				inset 0 0 0 1px $color,
-				0 1px rgba($white, .2),
-				if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 100%)); }
+				if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 20%)); }
 			
 		@if $state == disabled {
 			box-shadow:
@@ -39,19 +43,15 @@
 		
 		@if $type != disabled {
 			box-shadow:
-				0 0 9px -3px rgba($color, .6),
-				inset 0 -1px scale-lightness($color, -20%),
-				inset 0 0 0 1px $color,
-				inset 0 1px 0 rgba($white, .4),
-				0 1px 2px rgba($black, $default-dark-shadow/3); }
+				inset 0 -1px scale-lightness($color, -10%),
+				inset 0 0 0 1px $color; }
 	
 		@if $state == normal {
 			@include background(
 				$default-form-select-image,
 				linear-gradient(
 					$background-color 0%,
-					rgba($background-shading-color, .15) 100%), 
-				$background-color);
+					$background-shading-color 100%));
 			
 			.no-svg & {
 				background: $default-form-select-png; } }
@@ -72,8 +72,8 @@
 	@if ($type == checkbox or $type == radio) and $state == normal {		
 		@include background(
 			linear-gradient(
-				rgba($background-color, .025) 0%,
-				rgba($background-shading-color, .15) 60%), $background-color); }
+				$background-color 0%,
+				$background-shading-color 60%)); }
 	
 	// Radio
 	// ---------------------------
@@ -89,11 +89,11 @@
 			
 			@include background(
 				radial-gradient(
-					$background-shading-color $default-form-radio-radial-gradient-color-stop,
-					rgba($background-shading-color, .025) $default-form-radio-radial-gradient-color-stop),
+					scale-lightness($background-shading-color, -20%) $default-form-radio-radial-gradient-color-stop,
+					$background-shading-color $default-form-radio-radial-gradient-color-stop),
 				linear-gradient(
-					rgba($background-color, .025) 0%,
-					rgba($background-shading-color, .15) 60%), $background-color); } }
+					$background-color 0%,
+					$background-shading-color 60%), $background-color); } }
 
 	// Checkbox
 	// ---------------------------			

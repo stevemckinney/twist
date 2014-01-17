@@ -18,12 +18,12 @@
 		@return adjust-hue($color, -10deg); }
 	
 	// green
-	@else if hue($color) > 80 and hue($color) < 149 and
+	@else if hue($color) > 80 and hue($color) < 169 and
 			saturation($color) > 20 {
-		@return adjust-hue($color, 20deg); }
+		@return adjust-hue($color, 10deg); }
 	
 	// blue/cyan
-	@else if hue($color) > 150 and hue($color) < 229 and
+	@else if hue($color) > 170 and hue($color) < 229 and
 			saturation($color) > 20 {
 		@return adjust-hue($color, 10deg); }
 	
@@ -60,12 +60,12 @@
 		@return if($positive, scale-lightness($color, 5%), scale-lightness($color, -5%)); }
 	
 	// green
-	@else if hue($color) > 80 and hue($color) < 149 and
+	@else if hue($color) > 80 and hue($color) < 169 and
 			saturation($color) > 20 {
 		@return if($positive, scale-lightness($color, 10%), scale-lightness($color, -10%)); }
 	
 	// blue/cyan
-	@else if hue($color) > 150 and hue($color) < 229 and
+	@else if hue($color) > 170 and hue($color) < 229 and
 			saturation($color) > 20 {
 		@return if($positive, scale-lightness($color, 2.5%), scale-lightness($color, -15%)); }
 	

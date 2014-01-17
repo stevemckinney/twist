@@ -44,7 +44,7 @@
 $yiq-contrasted-dark-default: #000 !default;
 $yiq-contrasted-light-default: #fff !default;
 $yiq-contrasted-threshold: 128 !default;
-$yiq-debug: false !default;
+$yiq-debug: true !default;
 
 @function yiq-is-light(
   $color,
@@ -86,16 +86,8 @@ $yiq-debug: false !default;
   $yiq-blue: blue($color);
 
   $yiq: (($yiq-red*299)+($yiq-green*587)+($yiq-blue*114))/1000;
+  @debug "yiq: " + $yiq + " color: " + $color + " red: " + $yiq-red*299 + " green: " + $yiq-green*587 + " blue: " + $yiq-blue*114;
   @return $yiq; }
-
-@function yiq-percentage($color) {
-	$yiq-red: red($color);
-  $yiq-green: green($color);
-  $yiq-blue: blue($color);
-
-  $yiq: (($yiq-red*299)+($yiq-green*587)+($yiq-blue*114))/1000;
-  @return ($yiq / 10);
-}
 
 // Taken from: https://github.com/imathis/nice-buttons
 // Returns true if the color is brighter than 50% lightness

@@ -5,8 +5,8 @@ $default-form-label-margin: 0 0 em($base-px/2) !default;
 $default-form-label-breakpoint: $b !default;
 $default-form-label-input-width: 66.66667% !default;
 
-$default-form-color: scale-lightness($tertiary, -20%) !default;
-$default-form-focus-color: $alt !default;
+$default-form-color: scale-lightness($tertiary, -10%) !default;
+$default-form-focus-color: scale-lightness($tertiary, -30%) !default;
 $default-form-background-color: $white !default;
 $default-form-type: text !default;
 $default-form-state: $default-state !default;

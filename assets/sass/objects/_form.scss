@@ -6,9 +6,10 @@
 // Label
 // ---------------------------
 .field-label {
-	@extend .h5;
+	@extend .h6;
 	@extend %inline-block;
 	width: 33.333333%;
+	font-weight: 700;
 	
 	@if $remove-inline-block-whitespace {
 		margin-left: $negative-spacing; }

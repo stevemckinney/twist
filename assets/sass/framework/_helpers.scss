@@ -180,6 +180,12 @@
 %module > *:last-child > *:last-child > *:last-child {
   margin: 0; }
 
+// Check state for form/element
+// ---------------------------
+@function isnt-state($isnt: hover) {
+	@return $state != $isnt;
+}
+
 // Display classes
 // ---------------------------
 .hide-small {
