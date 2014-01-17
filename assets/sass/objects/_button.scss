@@ -6,7 +6,7 @@ $i: 1;
 
 .button {
 	@extend %element-base-with-mixin;
-	margin-bottom: em($line); }
+	text-transform: uppercase; }
 
 .button-primary {
 	@include element($primary); }

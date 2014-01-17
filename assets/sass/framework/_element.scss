@@ -12,44 +12,19 @@
 	$color			: $default-element-color,
 	$text-shadow: $default-element-text-shadow,
 	$dark-bg		: $default-element-dark-bg,
-	$radius			: $default-element-radius,
 	$shading		: $default-element-shading,
 	$size				: $default-element-size,
-	$hover			: $default-element-hover,
-	$font-size	: $default-element-font-size,
-	$display		: $default-element-display,
-	$dry				: $default-element-dry
+	$hover			: $default-element-hover
 ) {
 	
-	$base: $size, $font-size, $radius, $display;
-	
-	// Use element-base mixin to keep repetitive stuff together
-	@if $dry == false {		
-		@include element-base($base...); }
-	
-	@else { 
-		@extend %element-base-with-mixin; }
-
-	@if $shading {
-		@include element-shading($color, normal, $text-shadow, $dark-bg); }
-	
-	@else {
-		color: if(lightness($color) < 80%, scale-lightness($color, 80%), scale-lightness($color, -20%));
-		background: $color; }
+	@extend %element-base-with-mixin;
+	@include element-shading($color, normal, $text-shadow, $dark-bg);
 			
 	@if $hover {
-		&:hover, &:focus {
-			@if $shading {
-				@include element-shading($color, hover, $text-shadow, $dark-bg); }
-			
-			@else {
-				background: scale-lightness($color, 10%); } }
+		&:hover,
+		&:focus {
+			@include element-shading($color, hover, $text-shadow, $dark-bg); } }
 				
 		&:active {
 			z-index: 2; // makes button above others in a group
-			
-			@if $shading {
-				@include element-shading($color, active, $text-shadow, $dark-bg); }
-			
-			@else {
-				background: scale-lightness($color, -10%); } } } }
+			@include element-shading($color, active, $text-shadow, $dark-bg); } }

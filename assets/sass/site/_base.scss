@@ -40,12 +40,12 @@ $neutral-l2: scale-lightness($neutral, 20%);
 
 // Fonts
 // ---------------------------
-$sans: "Ideal Sans SSm A", "Ideal Sans SSm B", sans-serif;
-$serif: "Archer SSm A", "Archer SSm B", serif;
+$sans: Verlag A, Verlag B, sans-serif;
+$serif: Sentinel A, Sentinel B, serif;
 $monospace: Menlo, Monaco, "Courier New", monospace;
 $icons: "SSStandard";
-$heading: 'Mercury SSm A', 'Mercury SSm B';
-$body: 'Mercury SSm A', 'Mercury SSm B';
+$heading: $serif;
+$body: $sans;
 $form: $sans;
 $element: $sans;
 

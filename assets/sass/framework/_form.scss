@@ -24,7 +24,7 @@
 	// Text
 	// ---------------------------
 	@if map-get($default-text-elements, $type) {
-		@include form-text($color, $focus-color, $background-color);
+		@include form-text($color, $focus-color, $background-color, $shading);
 		
 		@if $dry {
 			@extend %form-base-with-mixin; }
@@ -35,7 +35,7 @@
 	// Select
 	// ---------------------------
 	@else if $type == select {
-		@include form-select($color, $focus-color, $background-color);
+		@include form-select($color, $focus-color, $background-color, $shading);
 		
 		@if $dry {
 			@extend %form-base-with-mixin; }
@@ -46,14 +46,14 @@
 	// Checkbox
 	// ---------------------------
 	@else if $type == checkbox {
-		@include form-checkbox($color, $focus-color, $background-color);
+		@include form-checkbox($color, $focus-color, $background-color, $shading);
 		@extend %form-boolean-base;
 		@extend %form-checkbox-radius; }
 	
 	// Checkbox
 	// ---------------------------
 	@else if $type == radio {
-		@include form-radio($color, $focus-color, $background-color);
+		@include form-radio($color, $focus-color, $background-color, $shading);
 		@extend %form-boolean-base;
 		@extend %form-radio-radius; }
 		
