@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 				sourcemap: true,
 				style: 'expanded',
 				compass: true,
-				require: ['compass', 'ceaser-easing']
+				require: ['compass']
 			},
 			live: {
 				files: [{
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 				}],
 				style: 'compressed',
 				compass: true,
-				require: ['compass', 'ceaser-easing']
+				require: ['compass']
 			}
 		},
 
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 					fontsDir: '<%= path.dist %>/fonts',
 					outputStyle: 'expanded',
 					relativeAssets: true,
-					require: ['ceaser-easing', 'susy'],
+					require: ['breakpoint', 'ceaser-easing'],
 					quiet: true
 				}
 			},
