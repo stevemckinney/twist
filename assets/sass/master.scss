@@ -5,6 +5,7 @@
 				"compass/css3/user-interface",
 				"compass/layout/stretching",
 				"compass/css3/hyphenation",
+				"breakpoint",
 				"ceaser-easing",
 				"yiq-color-contrast",
 				"framework/base", // lots of default variables
@@ -80,3 +81,5 @@ header {
 .logo {
 	font-size: 21px;
 	font-family: $sans; }
+
+dt,dd {margin-bottom:em($line); @include breakpoint($c) { background: red; }}

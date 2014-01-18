@@ -63,10 +63,10 @@ $transition-duration: $default-transition-duration !default;
 $default-negative-spacing: -5px !default;
 
 // Default sizing for elements
-$default-size: 1 !default; // for element mixin
+$default-size: 1.35 !default; // for element mixin
 $default-form-size: $default-size !default;
-$default-ratio: .7 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
-$default-set-height: 42px !default;
+$default-ratio: .53125 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
+$default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
 $default-equal: false !default;
 
@@ -80,10 +80,10 @@ $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
-$default-shading: false !default;
+$default-shading: true !default;
 $default-display: inline-block !default;
 $default-dry: false !default;
-$default-state: normal !default;
+$default-state: disabled !default;
 
 // Default form placeholder
 $default-placeholder-color: $default-color !default;

@@ -41,9 +41,9 @@
 // Colour functions
 // ---------------------------
 // YIQ contrast function: https://github.com/timhettler/compass-yiq-color-contrast
-$yiq-contrasted-dark-default: #000 !default;
+$yiq-contrasted-dark-default: #666 !default;
 $yiq-contrasted-light-default: #fff !default;
-$yiq-contrasted-threshold: 128 !default;
+$yiq-contrasted-threshold: 200 !default;
 $yiq-debug: true !default;
 
 @function yiq-is-light(
@@ -66,7 +66,7 @@ $yiq-debug: true !default;
   $light: $yiq-contrasted-light-default,
   $threshold: $yiq-contrasted-threshold
 ) {
-  @return if(yiq-is-light($color, $threshold), $yiq-contrasted-dark-default, $yiq-contrasted-light-default); }
+  @return if(yiq-is-light($color, $threshold), $dark, $light); }
 
 @mixin yiq-contrasted(
   $background-color,

@@ -6,67 +6,50 @@
 	$color				: $default-element-color,
 	$state				: $default-element-state,
 	$text-shadow	: $default-element-text-shadow,
+	$shading			: $default-element-shading,
 	$dark-bg			: $default-element-dark-bg,
 	$border				: $default-element-border
-) {
+) {margin: 20px 0;
 	
-	// Shading vars
+	// Colors
 	// ---------------------------
 	$color: if($state == hover, scale-color($color, $lightness: if($dark-bg, 5%, 10%), $saturation: if(grayscale($color), 0%, 3%)), $color);
+	$color-hue: if(element-hue-adjust($color), element-hue-adjust($color), $color);
+
+	// Light colors
+	// ---------------------------
+	$light-color: if(yiq-is-light($color, 200), scale-lightness($color, 40%), if-bright($color, scale-lightness($color, 30%), scale-lightness($color, 10%)));
+	$highlight-color: $light-color;
 	
-	$light-color: scale-lightness($color, 10%);
-	@if brightness($color) > 80% { $light-color: scale-lightness($color, 40%); }
-	@else if brightness($color) < 35% { $light-color: scale-lightness($color, 2%); }
+	// Dark colors
+	// ---------------------------
+	$dark-color: if(yiq-is-light($color, 200), scale-lightness($color, -5%), scale-lightness($color, -20%));
+	$dark-color-hue: if(element-hue-adjust($dark-color), element-hue-adjust($dark-color), $dark-color);
+	$border-color: if(yiq-is-light($color, 200), scale-lightness($dark-color, -15%), scale-lightness($dark-color, -20%));
+	$border-dark-color: if(yiq-is-light($color, 200), scale-lightness($border-color, -10%), scale-lightness($border-color, -15%));
 	
-	$dark-color: scale-color($color, $lightness: -10%);
-	
-	$hue-color: if(element-hue-adjust($color), element-lightness-adjust(element-hue-adjust($color)), $color);
-	
-	// Shadows
-	$border-color: scale-lightness(element-lightness-adjust($dark-color), -10%);
-	
-	$highlight-color: element-lightness-adjust($light-color, true);
-	
-	$text-shadow-color: 
-		if($state != disabled, 
-			if(lightness($color) < 80%, 
-				rgba(scale-lightness($dark-color, -20%), .6),
-				rgba(scale-lightness($highlight-color, 20%), .6)), rgba($white, .2));
-	
-	// Other colors
-	$background-main-color: $color;
-	$background-dark-color: $hue-color;
-	$element-text-color: if(lightness($color) < 80%, $white, scale-lightness($color, -40%)) !default;
-	
+	// Dark background adjustments
+	// ---------------------------
 	@if $dark-bg {
-		$border-color: scale-lightness($color, if-bright($color, -80%, -60%));
-		$highlight-color: scale-lightness($color, if(lightness($color) > 70%, 40%, 10%));
-		$dark-color: scale-lightness($dark-color, -20%);
-		$hue-color: scale-lightness($light-color, -10%); }
+		$border-color: scale-lightness($dark-color, -80%);
+		$border-dark-color: scale-lightness($border-color, -10%);
+		$color-hue: scale-lightness($color-hue, -5%); }
 	
-	@if $text-shadow {
-		text-shadow: 0 1px $text-shadow-color; }
-	
-	@if $state != disabled {
-		@include background(
-			linear-gradient(
-				$background-main-color,
-				rgba($background-dark-color, .2))
-			$background-main-color);
+	// Base
+	// ---------------------------
+	color: if($state == disabled, scale-lightness($color, -30%), yiq-contrast-color($color, scale-lightness($color, -30%), $white, 200));
+
+	// Shading styles
+	// ---------------------------
+	@if $shading and $state != disabled {
+		@include background(linear-gradient($color, $color-hue));
 		
-		box-shadow: 
-			if($border, inset 0 0 0 1px $border-color, compact(false)),
-			if($state != active, inset 0 if($border, 2px, 1px) $highlight-color, if($dark-bg, inset 0 3px 4px $dark-color, inset 0 2px 3px $dark-color)),
-			if($dark-bg, compact(false), if($state != active, 0 1px 1px rgba(scale-lightness($dark-color, -40%), .1), compact(false)));
-			
-		color: $element-text-color;
+		box-shadow: if($border, compact(inset 0 if($state != active, -1px, 1px) $border-dark-color, inset 0 0 0 1px $border-color), compact(false)),
+								if($state != active, inset 0 if($border, 2px, 1px) $highlight-color, inset 0 if($border, 2px, 1px) 2px $dark-color); }
 		
-		.no-cssgradients & {
-			background: $background-main-color; } }
-	
 	@else {
-		background: $background-main-color;
-		color: element-lightness-adjust($border-color);
+		background: $color;
 		
-		@if $border { 
-			box-shadow: inset 0 0 0 1px $border-color; } } }
+		@if $border { box-shadow: inset 0 0 0 1px $border-color; } }
+	
+}
