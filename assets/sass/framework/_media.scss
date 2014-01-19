@@ -1,22 +1,3 @@
-// Breakpoint mixin
-// ---------------------------
-
-$default-breakpoint-orientation: false !default;
-$default-min-resolution: min-resolution 144dpi !default;
-
-$breakpoint-subtract: .01em !default;
-
-$default-hide-small-breakpoint: $b !default;
-$default-hide-medium-min-breakpoint: $b !default;
-$default-hide-medium-max-breakpoint: $c !default;
-$default-hide-large-breakpoint: $d !default;
-
-$default-breakpoint-type: min !default;
-$default-breakpoint-retina: false !default;
-$default-breakpoint-width: false !default;
-$default-breakpoint-min-resolution: 144dpi !default;
-$default-breakpoint-pixel-ratio: 1.5 !default;
-
 // idea from http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss 
 // adapted for further efficiency
 // ---------------------------

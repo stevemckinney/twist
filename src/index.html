@@ -9,16 +9,34 @@ category: code
 	<p class="subheading">Buttons are simply made by using the <code data-title="@include element(#f00)">element</code> mixin.</p>
 
 	<dl>
-		<dt><button class="button">button</button></dt>
-		<dd>.button</dd>
-		<dt><button class="button button-primary">primary</button></dt>
+		<dt><button class="button button-default">Default</button></dt>
+		<dd>.button-default</dd>
+		<dt><button class="button button-primary">Primary</button></dt>
 		<dd>.button-primary</dd>
-		<dt><button class="button button-secondary">secondary</button></dt>
+		<dt><button class="button button-secondary">Secondary</button></dt>
 		<dd>.button-secondary</dd>
-		<dt><button class="button button-tertiary">tertiary</button></dt>
+		<dt><button class="button button-tertiary">Tertiary</button></dt>
 		<dd>.button-tertiary</dd>
-		<dt><button class="button button-neutral">tertiary</button></dt>
+		<dt><button class="button button-neutral">Neutral</button></dt>
 		<dd>.button-neutral</dd>
+	</dl>
+</article>
+
+<article class="twist-alert">
+	<h1 class="with-subheading">Alert</h1>
+	<p class="subheading">Buttons are simply made by using the <code data-title="@include element(#f00)">element</code> mixin.</p>
+
+	<dl>
+		<dt><p class="alert alert-default">Default</p></dt>
+		<dd>.alert-default</dd>
+		<dt><p class="alert alert-red">Red/Danger</p></dt>
+		<dd>.alert-red</dd>
+		<dt><p class="alert alert-green">Green/Success</p></dt>
+		<dd>.alert-green</dd>
+		<dt><p class="alert alert-blue">Blue/Info</p></dt>
+		<dd>.alert-blue</dd>
+		<dt><p class="alert alert-yellow">Yellow/Warning</p></dt>
+		<dd>.alert-yellow</dd>
 	</dl>
 </article>
 
@@ -27,11 +45,11 @@ category: code
 	<p class="subheading">Form fields are simply made by using the <code data-title="@include form(text, #ccc)">form</code> mixin.</p>
 
 	<form class="form">
-		<fieldset class="field">
+		<fieldset class="field field-half">
 			<label for="text" class="field-label">.field-label</label>
 			<input type="text" class="input-text" id="text" name="text">
 		</fieldset>
-		<fieldset class="field">
+		<fieldset class="field field-half">
 			<label for="select" class="field-label">.field-label</label>
 			<select class="input-select" id="select" name="select">
 				<optgroup label="Options">
@@ -39,9 +57,14 @@ category: code
 				</optgroup>
 			</select>
 		</fieldset>
-		<fieldset class="field">
+		<fieldset class="field field-half">
 			<label for="check" class="field-label"><input id="check" type="checkbox" class="input-checkbox"> .field-label</label>
+		</fieldset>
+		<fieldset class="field field-half">
 			<label for="radio" class="field-label"><input id="radio" type="radio" class="input-radio"> .field-label</label>
+		</fieldset>
+		<fieldset class="field form-actions">
+			<input type="submit" class="button button-secondary">
 		</fieldset>
 	</form>
 </article>
@@ -51,22 +74,22 @@ category: code
 	<p class="subheading">The grid is setup by using the <code>grid</code> mixin.</p>
 
 	<div class="grid grid-with-gutter">
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-5"><div class="grid-content">.grid-5</div></div>
-		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
-		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
-		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
-		<div class="grid-2"><div class="grid-content">.grid-2</div></div>
-		<div class="grid-4"><div class="grid-content">.grid-4</div></div>
-		<div class="grid-3"><div class="grid-content">.grid-3</div></div>
-		<div class="grid-3"><div class="grid-content">.grid-3</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-1"><div class="grid-content">.grid-1</div></div>
-		<div class="grid-6"><div class="grid-content">.grid-6</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-5"><div class="grid-content">.grid-5</div></div>
+		<div class="grid-cell grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-cell grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-cell grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-cell grid-2"><div class="grid-content">.grid-2</div></div>
+		<div class="grid-cell grid-4"><div class="grid-content">.grid-4</div></div>
+		<div class="grid-cell grid-3"><div class="grid-content">.grid-3</div></div>
+		<div class="grid-cell grid-3"><div class="grid-content">.grid-3</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-1"><div class="grid-content">.grid-1</div></div>
+		<div class="grid-cell grid-6"><div class="grid-content">.grid-6</div></div>
 	</div>
 </article>
 

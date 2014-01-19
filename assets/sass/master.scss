@@ -82,4 +82,19 @@ header {
 	font-size: 21px;
 	font-family: $sans; }
 
-dt,dd {margin-bottom:em($line); @include breakpoint($c) { background: red; }}
+dl {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+dt {
+	flex: 3 0 60%;
+}
+
+dd {
+	flex: 1 0 40%;
+}
+
+dt,dd {
+	margin-bottom:em($line);
+	vertical-align: middle; }

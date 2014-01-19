@@ -1,14 +1,8 @@
 // Variables
 // ---------------------------
-$default-grid-columns: 6 !default;
-$default-grid-padding: true !default;
-$default-grid-max-width: $d !default;
-$default-grid-width: 85% !default;
-$default-grid-container-margin: auto !default;
-$default-grid-container-selector: ".site" !default;
-$default-grid-direction: left !default;
+$default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
-$default-grid-respond-width: $d !default;
+$default-grid-map: ( small: $a, medium: $b, large: $c );
 
 //	<div class="grid grid-with-gutter">
 //		<div class="grid-cell grid-4">
@@ -22,23 +16,8 @@ $default-grid-respond-width: $d !default;
 // ---------------------------
 @mixin grid(
 	$grid-columns							: $default-grid-columns,
-	$grid-padding							: $default-grid-padding,
-	$grid-container-selector	: $default-grid-container-selector,
 	$grid-gutter							: $default-grid-gutter,
-	$grid-max-width						: $default-grid-max-width,
-	$grid-direction						: $default-grid-direction,
-	$grid-respond-width				: $default-grid-respond-width,
-	$grid-width								: $default-grid-width,
-	$grid-container-margin		: $default-grid-container-margin) {
-		
-	#{unquote($grid-container-selector)} {
-		@extend %clear;
-		margin: $grid-container-margin;
-		position: relative;
-		width: $grid-width;
-		
-		@if $grid-max-width { 
-			max-width: $grid-max-width; } }
+	$grid-map									: $default-grid-map) {
 	
 	// Grid container
 	// ---------------------------
@@ -75,38 +54,11 @@ $default-grid-respond-width: $d !default;
 	
 	$column-increment: 1;
 	
-	@for $column-increment from 1 through $grid-columns {
-		$w: (100% / $grid-columns) * $column-increment;
-		
-		@if $column-increment == $grid-columns {
-			.grid-#{$column-increment} {
-				@extend .grid-cell; } }
-				
-		@else {
-			.grid-#{$column-increment} {
-				@extend .grid-cell;
-				
-				@include breakpoint($grid-respond-width) {
+	@each $breakpoint, $width in $grid-map {
+		$class: if($breakpoint == large, ".grid", ".grid-#{$breakpoint}");
+	
+		@include breakpoint($width) {
+			@for $column-increment from 1 through $grid-columns {
+				#{$class}-#{$column-increment} {
+					$w: (100% / $grid-columns) * $column-increment;
 					width: $w; } } } } }
-
-// Loop for percentages
-// ---------------------------
-@for $column-increment from 1 through 19 {
-	$num: $column-increment * 5;
-	$percent: $num * 1%;
-
-	%percentage-#{$num} {
-		@extend .grid-cell;
-		width: $percent; }
-
-	%before-#{$num} {
-		margin-left: $percent; }
-
-	%after-#{$num} {
-		margin-right: $percent; }
-
-	%push-#{$num} {
-		left: $percent; }
-
-	%pull-#{$num} {
-		left: $percent * -1; } }

@@ -32,7 +32,7 @@ $tertiary-d2: scale-lightness($tertiary, -20%);
 $tertiary-l1: scale-lightness($tertiary, 10%);
 $tertiary-l2: scale-lightness($tertiary, 20%);
 
-$neutral: #f2495c !default;
+$neutral: #f24969 !default;
 $neutral-d1: scale-lightness($neutral, -10%);
 $neutral-d2: scale-lightness($neutral, -20%);
 $neutral-l1: scale-lightness($neutral, 10%);
@@ -66,3 +66,7 @@ $supported-browsers: reject(browsers(), opera-mini, opera);
 $box-shadow-support-threshold: 0;
 $gradient-support-threshold: 6.51;
 //$svg-gradient-shim-threshold: 10.0;
+
+// Breakpoints
+// ---------------------------
+$breakpoint-base-font-size: $base-font-size

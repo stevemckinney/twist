@@ -1,23 +1,27 @@
 // Forms
 // ---------------------------
 .form {
-	@extend %margin-bottom; }
+	@extend %clear;
+	
+	@include breakpoint($b) {
+		margin: 0 em(-$base-px) em($line); } }
 
 // Label
 // ---------------------------
 .field-label {
 	@extend .h6;
-	@extend %inline-block;
-	width: 33.333333%;
+	display: block;
 	font-weight: 700;
 	
+/*
 	@if $remove-inline-block-whitespace {
 		margin-left: $negative-spacing; }
 	
 	& + .input-text,
 	& + .input-select {
 		@extend %inline-block;
-		width: 66.666666%; } }
+		width: 66.666666%; }
+*/ }
 
 // Legend
 // ---------------------------
@@ -27,7 +31,13 @@
 // Fieldset
 // ---------------------------
 .field {
-	@extend %margin-bottom; }
+	@extend %margin-bottom;
+	padding: 0 em($base-px); }
+
+.field-half {
+	@include breakpoint($b) {
+		float: left;
+		width: 50%; } }
 	
 .field-checkbox {
 	display: block;
@@ -42,6 +52,9 @@
 
 // Input
 // ---------------------------
+	.input-text,
+	.input-select {
+		width: 100%; }
 	
 	// Text
 	// ---------------------------

@@ -179,17 +179,3 @@
 %module > *:last-child > *:last-child,
 %module > *:last-child > *:last-child > *:last-child {
   margin: 0; }
-
-// Display classes
-// ---------------------------
-.hide-small {
-	@include breakpoint($default-hide-small-breakpoint, max) {
-		display: none; } }
-
-.hide-medium {
-	@include breakpoint($default-hide-medium-min-breakpoint $default-hide-medium-max-breakpoint) {
-		display: none; } }
-
-.hide-large {
-	@include breakpoint($default-hide-large-breakpoint) {
-  	display: none; } }

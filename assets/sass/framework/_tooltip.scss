@@ -9,16 +9,16 @@ $default-tooltip-transition-delay: .01s !default;
 
 // Sometimes you get a 1px space, not ideal.
 // Number is added to initial value
-$default-tooltip-triangle-pixel-offset: em(2px) !default;
+$default-tooltip-triangle-pixel-offset: em(1px) !default;
 $default-tooltip-triangle-pixel-offset-top: $default-tooltip-triangle-pixel-offset !default;
 $default-tooltip-triangle-pixel-offset-right: $default-tooltip-triangle-pixel-offset !default;
 $default-tooltip-triangle-pixel-offset-bottom: $default-tooltip-triangle-pixel-offset !default;
 $default-tooltip-triangle-pixel-offset-left: $default-tooltip-triangle-pixel-offset !default;
 
 // Shading
-$default-tooltip-color: $primary !default;
+$default-tooltip-color: $default-color !default;
 $default-tooltip-text-color: $white !default;
-$default-tooltip-triangle-size: 8px !default;
+$default-tooltip-triangle-size: 6px !default;
 
 // Tooltip
 // ---------------------------

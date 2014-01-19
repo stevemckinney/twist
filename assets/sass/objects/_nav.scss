@@ -54,7 +54,7 @@
 	
 	color: scale-lightness($tertiary-d1, -20%);
 	
-	@include breakpoint($c, max) {
+	@include breakpoint($c-max) {
 		display: block;
 		padding: em($line);
 		box-shadow: 0 1px 0 $tertiary-d1;

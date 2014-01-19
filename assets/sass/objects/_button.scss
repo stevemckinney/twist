@@ -6,7 +6,7 @@ $i: 1;
 
 .button {
 	@extend %element-base-with-mixin;
-	text-transform: uppercase; }
+	text-transform: capitalize; }
 
 .button-primary {
 	@include element($primary); }
@@ -67,13 +67,28 @@ $i: 1;
 // Alert
 // ---------------------------
 .alert {
-	@extend %element-base-with-mixin;
-	width: 100%;
-	text-align: center;
+	@extend %element-base;
+	border-radius: $radius;
 	position: relative;
+	margin: 0;
+	padding: element-size(2, true);
+	box-shadow: inset 0 0 0 1px currentcolor; }
+
+.alert-default {
+	color: $default-color; }
+
+.alert-success,
+.alert-green {
+	color: $green; }
 	
-	@for $i from 1 through length($colors) {
-		$color: nth($colors, $i);
-		
-		&:nth-of-type(#{$i}) {
-			@include element($color, $hover: false); } } }
+.alert-info,
+.alert-blue {
+	color: $blue; }
+	
+.alert-danger,
+.alert-red {
+	color: $red; }
+	
+.alert-warning,
+.alert-yellow {
+	color: $yellow; }
