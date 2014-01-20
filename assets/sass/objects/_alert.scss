@@ -1,0 +1,28 @@
+// Alert
+// ---------------------------
+.alert {
+	@extend %element-base;
+	position: relative;
+	margin: 0;
+	padding: element-size(2, true); }
+
+$alerts: (
+	default: $default-color,
+	green: $green,
+	blue: $blue,
+	red: $red,
+	yellow: $yellow
+);
+
+@each $alert, $color in $alerts {
+	.alert-#{$alert} {
+		color: scale-lightness($color, -20%);
+		background: scale-lightness($color, 85%);
+		box-shadow: inset 2px 0 $color; }
+	
+	.alert-#{$alert}-heading { 
+		color: $color; } }
+
+.alert-body {
+	margin: 0;
+	color: $primary; }

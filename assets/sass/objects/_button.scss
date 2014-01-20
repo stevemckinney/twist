@@ -8,35 +8,23 @@ $i: 1;
 	@extend %element-base-with-mixin;
 	text-transform: capitalize; }
 
-.button-primary {
-	@include element($primary); }
+$buttons: (
+	default: $default-color,
+	primary: $primary,
+	secondary: $secondary,
+	tertiary: $tertiary,
+	alternate: $alt,
+	neutral: $neutral,
+	red: $red,
+	yellow: $yellow,
+	green: $green,
+	blue: $blue,
+	light-blue: $info
+);
 
-.button-secondary {
-	@include element($secondary); }
-
-.button-tertiary {
-	@include element($tertiary); }
-
-.button-alternate {
-	@include element($alt); }
-
-.button-neutral {
-	@include element($neutral); }
-
-.button-danger {
-	@include element($danger); }
-
-.button-warning {
-	@include element($warning); }
-
-.button-success {
-	@include element($success); }
-
-.button-info {
-	@include element($info); }
-
-.button-default {
-	@include element($default-color); }
+@each $button, $color in $buttons {
+	.button-#{$button} {
+		@include element($color); } }
 
 .button-link {
 	background: none;
@@ -63,32 +51,3 @@ $i: 1;
 .button-success[disabled] {
 	@include element-shading($success, $state: disabled);
 	pointer-events: none; }
-		
-// Alert
-// ---------------------------
-.alert {
-	@extend %element-base;
-	border-radius: $radius;
-	position: relative;
-	margin: 0;
-	padding: element-size(2, true);
-	box-shadow: inset 0 0 0 1px currentcolor; }
-
-.alert-default {
-	color: $default-color; }
-
-.alert-success,
-.alert-green {
-	color: $green; }
-	
-.alert-info,
-.alert-blue {
-	color: $blue; }
-	
-.alert-danger,
-.alert-red {
-	color: $red; }
-	
-.alert-warning,
-.alert-yellow {
-	color: $yellow; }
