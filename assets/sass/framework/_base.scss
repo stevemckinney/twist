@@ -5,10 +5,10 @@
 // --------------------------
 $black: #000 !default;
 $white: #fff !default;
-$red: #c13e3e !default;
+$red: #cf4647 !default;
 $blue: #478afa !default;
 $cyan: #40bfbb !default;
-$green: #A1C820 !default;
+$green: #78ae62 !default;
 $orange: adjust-hue(#478afa, -195deg) !default;
 $yellow: adjust-hue(#478afa, -175deg) !default;
 $purple: #7375a5 !default;
@@ -65,7 +65,7 @@ $default-negative-spacing: -5px !default;
 // Default sizing for elements
 $default-size: 1.35 !default; // for element mixin
 $default-form-size: $default-size !default;
-$default-ratio: .53125 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
+$default-ratio: .394 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
 $default-equal: false !default;

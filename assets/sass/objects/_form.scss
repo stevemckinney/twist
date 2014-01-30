@@ -1,5 +1,8 @@
 // Forms
 // ---------------------------
+$default-form-shading: false;
+$default-element-shading: false;
+
 .form {
 	@extend %clear;
 	
@@ -9,19 +12,8 @@
 // Label
 // ---------------------------
 .field-label {
-	@extend .h6;
-	display: block;
 	font-weight: 700;
-	
-/*
-	@if $remove-inline-block-whitespace {
-		margin-left: $negative-spacing; }
-	
-	& + .input-text,
-	& + .input-select {
-		@extend %inline-block;
-		width: 66.666666%; }
-*/ }
+	line-height: 2.25; }
 
 // Legend
 // ---------------------------
@@ -40,8 +32,7 @@
 		width: 50%; } }
 	
 .field-checkbox {
-	display: block;
-	line-height: $base-line-height-unitless; }
+	display: block; }
 	
 .field-radio {
 	@extend .field-checkbox; }
@@ -49,6 +40,9 @@
 .field-search {
 	@include form-search($has-label: true);
 	text-align: right; }
+
+.form-actions {
+	padding: 0 em($base-px); }
 
 // Input
 // ---------------------------
@@ -65,6 +59,7 @@
 	// Select
 	// ---------------------------
 	.input-select {
+		@extend %form-base-with-mixin;
 		@include form(select); }
 	
 	// Check/radio
@@ -85,10 +80,14 @@
 // States
 // ---------------------------
 .is-valid {
-	@include form-shading(text, $success); }
+	@include form-shading(text, $green, $state: normal);
+	
+	&:focus { @include form-shading(text, $green, $state: focus); } }
 
 .is-error {
-	@include form-shading(text, $error); }
+	@include form-shading(text, $red, $state: normal);
+	
+	&:focus { @include form-shading(text, $red, $state: focus); }  }
 
 .input-text[disabled] {
 	@include form-shading($state: disabled); }

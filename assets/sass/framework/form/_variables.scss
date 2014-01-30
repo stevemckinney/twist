@@ -1,23 +1,26 @@
-// Default vars
+// Default
 // ---------------------------
 $default-form-label-position: top !default;
 $default-form-label-margin: 0 0 em($base-px/2) !default;
 $default-form-label-breakpoint: $b !default;
 $default-form-label-input-width: 66.66667% !default;
-
-$default-form-color: scale-lightness($tertiary, -10%) !default;
-$default-form-focus-color: scale-lightness($tertiary, -30%) !default;
-$default-form-background-color: $white !default;
-$default-form-type: text !default;
 $default-form-state: $default-state !default;
+$default-form-type: text !default;
+
+// Default styling
+// ---------------------------
+$default-form-base: false !default;
+$default-form-focus-color: $cyan !default;
+$default-form-background-color: $white !default;
 $default-form-radius: $radius !default;
 $default-form-shading: $default-shading !default;
-$default-form-set-height: false !default;
-$default-form-dry: $default-dry !default;
 
-// Elements
-$default-text-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local !default;
+// Default style
+// ---------------------------
+$default-form-color: scale-lightness($tertiary, -10%) !default;
+$default-form-text-color: $primary !default;
 
+// Text elements map
 $default-text-elements: (
 	text: text, 
 	textarea: textarea,
@@ -34,19 +37,14 @@ $default-text-elements: (
 	datetime-local: datetime-local
 );
 
-$default-form-types: (text-elements: "text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local", boolean-elements: "radio, checkbox", select: "select, multiple");
-
-$default-boolean-elements: radio, checkbox !default;
-$default-non-boolean-elements: text, textarea, password, search, email, url, number, date, month, week, year, datetime, datetime-local, select !default;
-
-// Form search
+// Defaults for form search
 // ---------------------------
 $default-form-search-position: right !default;
 $default-form-search-selector: unquote(".button-search") !default;
 $default-form-search-size: $default-size !default;
 $default-form-search-has-label: false !default;
 
-// Check/radio
+// Defaults for checkbox/radio
 // ---------------------------
 $default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;
 $default-form-radio-size: em(16px) !default;
@@ -55,20 +53,17 @@ $default-form-radio-height: $default-form-radio-size !default;
 $default-form-radio-radial-gradient-color-stop: 4px !default;
 $default-form-checkbox-background-size: em(12px) !default;
 
-// Form images (change colour in svg file)
+// Default select images (change colour in svg file)
 // ---------------------------
-
-// Select images
 $default-form-select-image: inline-image("dropdown.svg") no-repeat right 12px center !default;
-
 $default-form-select-png: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAICAYAAADjoT9jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG2YAABzjgAA+3UAAITUAAB6swAA/2cAADBbAAAQhVDPV6EAAAB9SURBVHjaYly3bt0ZBgYGYwbigVBgYOB7YhUzMTAwpDMwMBCrgRS1cAvOQjUSArOgmIFUCxgYGBhWMzAwVOBRt4dIR+C0gIGBgaETahE6uMfAwBDGQCZgwhLGZ5H47xkYGFxJDXd8FryHuhZmYBjUB2QDFjxBogQNe4oAYACFGReifjWlEAAAAABJRU5ErkJggg==) no-repeat 95% center !default;
 
-// Checkbox images
+// Default checkbox images (change colour in svg file)
+// ---------------------------
 $default-form-checkbox-image: inline-image("checkbox.svg") center center no-repeat !default;
-
 $default-form-checkbox-png: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAnElEQVQYV2NkIADOnz8v8O3X7/1MjAwTLc3MFjDiUw9TDFRkAFLHyMiQiFMDumIUDcdOnlrwn4FBn4uN1dHQ0PADFsUf/zMyOFibmV1gPHbidAED4/9+kAlATReY/rEG/mP6vR7mDKAwXDHYlqOnThkw/mc4AGTzY/EPimKwBhCBQxOGYrgGLJqwKkbRANf07/+G/0yMASAPYgtyAGuNU4CDB/GHAAAAAElFTkSuQmCC) center center no-repeat !default;
 
-// Search
+// Default search images (change colour in svg file)
+// ---------------------------
 $default-form-search-image: inline-image("search.svg") center center no-repeat !default;
-
 $default-form-search-png: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABXUlEQVQ4T62TO07DUBBFZ56Dq8AGCAoFSIQCHCGxA4qgfKTQgqBmAxSuXWQD1CBEi4TFp6BgCUCDI5kC89lAksqJ3/DGxFFiG4ufuyfNuXNn5hoh43utrzalFLuAsByWETwSyeP5y4ezCMM03q0szOja9MkIjBcpIT/o7ixeP3VSBbxq2VZwiYDeMQDLJ+mwho6iRBqYCDjLbooXd42EQGibRIvh/qBX5y7jBtjdVC5vs4hAeZAQiLpDQPvFq/ubtBG9TWMDNDxkF0mBWtllyB901+LdIzG3slLQc9otv/9f4LlqnCLi+jdHcL5eItFbP+g1Upeo5c9Vk0LqEl9qxh4BmmFulAgSWr4M2uEZhbZESCbDaoGOOmN9wkF0wqx0DhPpqCBtTwQpDiOQhUidQOJWuJPPKDtCyKM5OxblOMyzjRdlOcK/wGEOvGFw+PGTzqO/0asaLUBs/gZmkQ8mWr4I/FuHwAAAAABJRU5ErkJggg==) center center no-repeat !default;

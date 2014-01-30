@@ -1019,7 +1019,7 @@ Prism.languages.insertBefore('scss', 'ignore', {
 ;
 var $n = $('.navigation'),
 		$nt = $('.navigation-toggle'),
-		$containerontainer = $('.site'),
+		$container = $('.site'),
 		$h = $('.header'),
 		$b = $('body');
 
@@ -1071,3 +1071,15 @@ $nt.on('click touchstart', function(e) {
 	// certain this is a bug
 	$b.toggleClass('overflow-hidden');
 });
+
+function show_password(checkbox, password) {
+	checkbox = typeof checkbox !== 'undefined' ? checkbox : '#checkbox-password';
+	password = typeof password !== 'undefined' ? password : '.input-password';
+	
+	$(checkbox).change(function() {
+		console.log(password);
+		if ($(password).attr('type') == 'text') $(password).attr('type', 'password')
+		else $(password).attr('type', 'text')
+	});
+}
+show_password();

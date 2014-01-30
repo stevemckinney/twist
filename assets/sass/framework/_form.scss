@@ -8,40 +8,30 @@
 				"form/placeholder";
 
 @mixin form(
-	$type: $default-form-type,
-	$color: $default-form-color,
-	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color,
-	$state: $default-form-state,
-	$size: $default-form-size,
-	$radius: $default-form-radius, 
-	$shading: $default-form-shading,
-	$dry: $default-form-dry) {
+	$type							: $default-form-type,
+	$color						: $default-form-color,
+	$focus-color			: $default-form-focus-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading,
+	$base 						: $default-form-base
+) {
 	
 	$type: unquote($type);
-	$base: $type, $radius, $size;
 	
 	// Text
 	// ---------------------------
 	@if map-get($default-text-elements, $type) {
-		@include form-text($color, $focus-color, $background-color, $shading);
+		@if $base {
+			@include form-base($base...); }
 		
-		@if $dry {
-			@extend %form-base-with-mixin; }
-			
-		@else {
-			@include form-base($base...); } }
+		@include form-text($color, $focus-color, $background-color, $shading); }
 	
 	// Select
 	// ---------------------------
 	@else if $type == select {
-		@include form-select($color, $focus-color, $background-color, $shading);
-		
-		@if $dry {
-			@extend %form-base-with-mixin; }
-			
-		@else {
-			@include form-base($base...); } }
+		@if $base {
+			@include form-base($base...); }
+		@include form-select($color, $focus-color, $background-color, $shading); }
 	
 	// Checkbox
 	// ---------------------------
@@ -50,7 +40,7 @@
 		@extend %form-boolean-base;
 		@extend %form-checkbox-radius; }
 	
-	// Checkbox
+	// Radio
 	// ---------------------------
 	@else if $type == radio {
 		@include form-radio($color, $focus-color, $background-color, $shading);

@@ -1,7 +1,6 @@
 // Alert
 // ---------------------------
 .alert {
-	@extend %element-base;
 	position: relative;
 	margin: 0;
 	padding: element-size(2, true); }
@@ -14,15 +13,21 @@ $alerts: (
 	yellow: $yellow
 );
 
+%alert-heading {
+	font: 700 em(18px) $sans;
+	margin: 0; }
+
 @each $alert, $color in $alerts {
 	.alert-#{$alert} {
 		color: scale-lightness($color, -20%);
 		background: scale-lightness($color, 85%);
 		box-shadow: inset 2px 0 $color; }
 	
-	.alert-#{$alert}-heading { 
+	.alert-#{$alert}-heading {
+		@extend %alert-heading;
 		color: $color; } }
 
 .alert-body {
 	margin: 0;
-	color: $primary; }
+	color: $primary;
+	font-weight: 400; }

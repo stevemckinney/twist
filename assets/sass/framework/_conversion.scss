@@ -44,7 +44,7 @@
 $yiq-contrasted-dark-default: #666 !default;
 $yiq-contrasted-light-default: #fff !default;
 $yiq-contrasted-threshold: 200 !default;
-$yiq-debug: true !default;
+$yiq-debug: false !default;
 
 @function yiq-is-light(
   $color,

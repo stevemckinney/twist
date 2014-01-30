@@ -31,6 +31,6 @@
 			width: 100%;
 			clear: left;
 			
-			@include respond-min($b) {
+			@include breakpoint($breakpoint) {
 				display: inline-block;
 				width: $input-width; } } } }

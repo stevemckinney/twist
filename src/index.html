@@ -82,14 +82,32 @@ category: code
 				</optgroup>
 			</select>
 		</fieldset>
+		<fieldset class="field field-half has-error">
+			<label for="text" class="field-label">.field-label</label>
+			<input type="email" class="input-text is-error" id="text" name="text">
+			<span class="field-error">Something wrong</span>
+		</fieldset>
+		<fieldset class="field field-half has-valid">
+			<label for="text" class="field-label">.field-label</label>
+			<input type="password" class="input-text input-password is-valid" id="text" name="text">
+			<label for="checkbox-password" class="field-label"><input id="checkbox-password" type="checkbox" class="input-checkbox">Show password</label>
+		</fieldset>
 		<fieldset class="field field-half">
-			<label for="check" class="field-label"><input id="check" type="checkbox" class="input-checkbox"> .field-label</label>
+			<label for="checkbox" class="field-label"><input id="checkbox" type="checkbox" class="input-checkbox"> .field-label</label>
 		</fieldset>
 		<fieldset class="field field-half">
 			<label for="radio" class="field-label"><input id="radio" type="radio" class="input-radio"> .field-label</label>
 		</fieldset>
 		<fieldset class="field form-actions">
 			<input type="submit" class="button button-secondary">
+		</fieldset>
+	</form>
+	
+	<h2>Combined forms</h2>
+	<form class="form form-search">
+		<fieldset class="field field-search">
+			<label for="search">Search</label>
+			<input type="search" id="search" name="search" placeholder="Search terms&hellip;"><input type="submit" class="button button-search">
 		</fieldset>
 	</form>
 </article>

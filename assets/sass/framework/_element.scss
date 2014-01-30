@@ -13,13 +13,17 @@
 	$text-shadow: $default-element-text-shadow,
 	$dark-bg		: $default-element-dark-bg,
 	$shading		: $default-element-shading,
-	$size				: $default-element-size,
-	$hover			: $default-element-hover
+	$hover			: $default-element-hover,
+	$base 			: $default-element-base
 ) {
-	
-	@extend %element-base-with-mixin;
 	@include element-shading($color, normal, $text-shadow, $shading, $dark-bg);
-			
+	
+	@if $base {
+		// For buttons that require a lot of changes override the base
+		// Otherwise set a base class eg: .button { @extend %element-base-with-mixin; }
+		@include element-base($base...); }
+	
+	// You may need to disable hover states	
 	@if $hover {
 		&:hover,
 		&:focus {

@@ -33,6 +33,9 @@
 	line-height: $default-element-line-height;
 	font-weight: $default-element-font-weight; }
 
+// Most buttons tend to be pretty consistent per site.
+// Extending this makes sure you do not repeat any code
+// ---------------------------
 %element-base-with-mixin {
 	@extend %element-base;
 	@include element-base; }

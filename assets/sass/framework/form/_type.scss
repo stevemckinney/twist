@@ -3,74 +3,44 @@
 // Text
 // ---------------------------
 @mixin form-text(
-	$color: $default-form-color,
-	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color,
-	$shading: $default-form-shading) {
-	
-	@if $shading {
-		@include form-shading(text, $color, normal);
-		
-		&:focus {
-			@include form-shading(text, $focus-color, focus); } }
-	
-	@else {
-		box-shadow: inset 0 0 0 1px $color;
-		background: $background-color;
-		
-		&:focus {
-			box-shadow: inset 0 0 0 1px $focus-color; } } }
+	$color						: $default-form-color,
+	$focus-color			: $default-form-focus-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading
+) {
+	@include form-shading(text, $color, $background-color, normal, $shading);
+
+	&:focus {
+		@include form-shading(text, $focus-color, $background-color, focus, $shading); } }
 
 // Select
 // ---------------------------
 @mixin form-select(
-	$color: $default-form-color,
-	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color,
-	$shading: $default-form-shading) {
-	
-	@if $shading {
-		@include form-shading(select, $color, normal);
-		
-		&:focus {
-			@include form-shading(select, $focus-color, focus); } }
-	
-	@else {
-		box-shadow: inset 0 0 0 1px $color;
-		background: $default-form-select-image $background-color;
-		
-		.no-svg & {
-			background: $default-form-select-png; }
-		
-		&:focus {
-			box-shadow: inset 0 0 0 1px $focus-color; } } }
+	$color						: $default-form-color,
+	$focus-color			: $default-form-focus-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading
+) {	
+	@include form-shading(select, $color, $background-color, normal, $shading);
+
+	&:focus {
+		@include form-shading(select, $focus-color, $background-color, focus, $shading); } }
 
 // Checkbox
 // ---------------------------
 @mixin form-checkbox(
-	$color: $default-form-color,
-	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color,
-	$shading: $default-form-shading,
-	$margin: $default-form-boolean-margin) {
-	
+	$color						: $default-form-color,
+	$focus-color			: $default-form-focus-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading,
+	$margin						: $default-form-boolean-margin
+) {	
 	@include wh(em($base-font-size));
 	position: relative;
 	top: em($base-font-size / 6);
 	margin: $margin;
 	
-	@if $shading {
-		@include form-shading(checkbox, $color, normal); }
-	
-	@else {
-		box-shadow: inset 0 0 0 1px $color;
-		
-		&:checked {
-			background: $default-form-checkbox-image $background-color;
-			background-size: $default-form-checkbox-background-size;
-			
-			.no-svg & {
-				background: $default-form-checkbox-png; } } } }
+	@include form-shading(checkbox, $color, $background-color, normal, $shading); }
 
 // Radio
 // ---------------------------
@@ -79,26 +49,13 @@
 	$focus-color: $default-form-focus-color,
 	$background-color: $default-form-background-color,
 	$shading: $default-form-shading,
-	$margin: $default-form-boolean-margin) {
-	
+	$margin: $default-form-boolean-margin
+) {	
 	@include wh($default-form-radio-width, $default-form-radio-height);
 	position: relative;
 	top: em(2px);
 	margin: $margin;
-	
-	@if $shading {
-		@include form-shading(radio, $color, normal); }
-		
-	@else	{
-		box-shadow: inset 0 0 0 1px $color;
-		
-		&:checked {
-			box-shadow: inset 0 0 0 1px $color;
-			
-			@include background(
-				radial-gradient(
-					$color $default-form-radio-radial-gradient-color-stop,
-					$background-color $default-form-radio-radial-gradient-color-stop), $background-color); } } }
+	@include form-shading(radio, $color, $background-color, normal, $shading); }
 
 // Search
 // ---------------------------

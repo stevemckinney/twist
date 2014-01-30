@@ -12,26 +12,29 @@
 		
 	@if $size {
 		padding: element-size($size, $equal: true); } }
-		
+
+// Most form elements will need these styles
+// ---------------------------	
 %form-base {
-	@extend %input-reset;
+	@include appearance(none);
 	border: none;
 	font-family: $form;
 	outline: none;
 	max-width: 100%;
-	color: $primary;
+	color: $default-form-text-color;
 	line-height: normal; }
 
+// Most form elements share a lot of basic styles.
+// Extend this on text/select generally
+// ---------------------------
 %form-base-with-mixin {
 	@extend %form-base;
 	@include form-base; }
 
-%form-block {
-	display: block;
-	width: 100%; }
-
+// Basic styles for each radio/checkbox
+// ---------------------------
 %form-boolean-base {
-	-webkit-appearance: none;
+	-webkit-appearance: none; // only using webkit as firefox doesn't customise well
 	border: none; }
 
 %form-checkbox-radius {
@@ -39,3 +42,9 @@
 
 %form-radio-radius {
 	border-radius: $radius * 10; }
+	
+// Full width form elements
+// ---------------------------
+%form-block {
+	display: block;
+	width: 100%; }
