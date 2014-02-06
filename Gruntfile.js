@@ -21,10 +21,6 @@ module.exports = function(grunt) {
 				files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
 				tasks: ['compass:dev']
 			},
-			jekyll: {
-				files: ['<%= path.src %>/*.html', '<%= path.dist %>'],
-				tasks: ['jekyll:dev']
-			},
 			grunticon: {
 				files: ['**/*.{svg}', '<%= path.dist %>'],
 				tasks: ['grunticon']
@@ -201,7 +197,7 @@ module.exports = function(grunt) {
 
 	// Tasks
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'jekyll:live', 'compass:dev']);
+	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'compass:dev']);
 	grunt.registerTask('dev', ['copy', 'watch']);
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);

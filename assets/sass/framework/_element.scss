@@ -27,8 +27,8 @@
 	@if $hover {
 		&:hover,
 		&:focus {
-			@include element-shading($color, hover, $text-shadow, $shading, $dark-bg); } }
+			@include element-shading($color, hover, $text-shadow, $shading, $dark-bg); }
 				
 		&:active {
 			z-index: 2; // makes button above others in a group
-			@include element-shading($color, active, $text-shadow, $shading, $dark-bg); } }
+			@include element-shading($color, active, $text-shadow, $shading, $dark-bg); } } }

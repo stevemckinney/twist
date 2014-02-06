@@ -2,7 +2,7 @@
 // ---------------------------
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
-$default-grid-map: ( small: $a, medium: $b, large: $c );
+$default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 
 //	<div class="grid grid-with-gutter">
 //		<div class="grid-cell grid-4">
