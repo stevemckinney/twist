@@ -16,13 +16,13 @@
 	$base 						: $default-form-base
 ) {
 	
-	$type: unquote($type);
-	
 	// Text
 	// ---------------------------
 	@if map-get($default-text-elements, $type) {
 		@if $base {
 			@include form-base($base...); }
+		@else {
+			@extend %form-base-with-mixin; }
 		
 		@include form-text($color, $focus-color, $background-color, $shading); }
 	
@@ -31,6 +31,9 @@
 	@else if $type == select {
 		@if $base {
 			@include form-base($base...); }
+		@else {
+			@extend %form-base-with-mixin; }
+			
 		@include form-select($color, $focus-color, $background-color, $shading); }
 	
 	// Checkbox
