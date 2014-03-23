@@ -27,6 +27,7 @@
 // ---------------------------
 %element-base {
 	@include user-select(none);
+	border: none;
 	background-clip: padding-box;
 	position: relative;
 	font-family: $element;

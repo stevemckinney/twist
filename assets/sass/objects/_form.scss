@@ -1,14 +1,27 @@
 // Forms
 // ---------------------------
 .form {
-	@extend %clear;
+	@extend %clear; }
+
+.form-flex {
+	.field {
+		@include display-flex;
+		@include justify-content(flex-start);
+		@include flex-flow(row wrap);
+		@include align-items(center); }
 	
-	@include breakpoint($b) {
-		margin: 0 em(-$base-px) em($line); } }
+	.field-label {
+		@include flex(1);
+		padding-right: em($line); }
+	
+	.input-text,
+	.input-select {
+		@include flex(2); } }
 
 // Label
 // ---------------------------
 .field-label {
+	display: block;
 	font-weight: 700;
 	line-height: 2.25; }
 
@@ -19,14 +32,16 @@
 
 // Fieldset
 // ---------------------------
-.field {
-	@extend %margin-bottom;
-	padding: 0 em($base-px); }
+.field {}
 
-.field-half {
-	@include breakpoint($b) {
-		float: left;
-		width: 50%; } }
+.field-group {
+	display: table;
+	
+	.button-submit,
+	.field-label,
+	.input-text {
+		display: table-cell;
+		vertical-align: middle; } }
 	
 .field-checkbox {
 	display: block; }
@@ -39,7 +54,8 @@
 	text-align: right; }
 
 .form-actions {
-	padding: 0 em($base-px); }
+	clear: both;
+	width: 100%; }
 
 // Input
 // ---------------------------
@@ -51,7 +67,10 @@
 	// ---------------------------
 	.input-text {
 		@extend %form-base-with-mixin;
-		@include form; }
+		@include form;
+		
+		&[readonly] {
+			@include form-shading($state: readonly); } }
 	
 	// Select
 	// ---------------------------
@@ -62,12 +81,18 @@
 	// Check/radio
 	// ---------------------------
 	.input-checkbox {
-		@include form(checkbox); }
+		@include form(checkbox);
+		@include wh(em($base-font-size));
+		position: relative;
+		top: em($base-font-size / 6);
+		margin: $default-form-boolean-margin; }
 	
 	.input-radio {
 		@include form(radio);
+		@include wh($default-form-radio-width, $default-form-radio-height);
 		position: relative;
-		top: 2px; }
+		top: em(2px);
+		margin: $default-form-boolean-margin; }
 		
 	// Submit
 	// ---------------------------

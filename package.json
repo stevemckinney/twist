@@ -12,7 +12,6 @@
     "grunt-contrib-watch": "~0.4.3",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-grunticon": "~0.6.0",
-    "grunticon-sass": "~0.6.8",
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.4.0",
@@ -23,6 +22,8 @@
     "grunt-breakshots": "~0.2.0",
     "grunt-contrib-imagemin": "~0.4.0",
     "grunt-svgmin": "~0.3.0",
-    "grunt-styleguide": "~0.2.14"
+    "grunt-styleguide": "~0.2.14",
+    "grunt-sync": "0.0.5",
+    "grunt-svgstore": "0.0.2"
   }
 }

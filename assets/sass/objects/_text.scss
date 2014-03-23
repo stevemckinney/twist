@@ -1,28 +1,26 @@
 // Align
 // ---------------------------
-.text-right {
-	text-align: right; }
-	
-.text-center {
-	text-align: center; }
-	
-.text-left {
-	text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
 	
 // Colour
 // ---------------------------
-.text-error {
-	color: $error; }
+$text-color-helpers: (
+	white: $white,
+	error: $red,
+	success: $green,
+	warning: $orange,
+	info: $cyan
+);
 
-.text-success {
-	color: $success; }
+@each $name, $color in $text-color-helpers {
+	.text-#{$name} { color: $color; } }
 
-.text-warning {
-	color: $warning; }
-
-.text-info {
-	color: $info; }
-
+// General elements
+// ---------------------------
+address { font-style: normal; }
+	
 // Various
 // ---------------------------
 .caption {
@@ -32,8 +30,7 @@
 	
 // Extends
 // ---------------------------
-%heading-bold {
-	font-weight: 700; }
+%heading-bold { font-weight: 700; }
 
 %small-caps {
 	@extend %heading-bold;

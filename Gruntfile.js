@@ -32,33 +32,10 @@ module.exports = function(grunt) {
 			images: {
 				files: ['**/*.{png,jpg,gif}', '<%= path.dist %>'],
 				tasks: 'imagemin'
-			}
-		},
-
-		sass: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '<%= path.sass %>',
-					dest: '<%= path.dist %>/',
-					src: ['master.scss'],
-					ext: '.css'
-				}],
-				sourcemap: true,
-				style: 'expanded',
-				compass: true,
-				require: ['compass']
 			},
-			live: {
-				files: [{
-					expand: true,
-					src: ['<%= path.sass %>/*.scss'],
-					dest: '<%= path.dist %>/',
-					ext: '.css'
-				}],
-				style: 'compressed',
-				compass: true,
-				require: ['compass']
+			styleguide: {
+				files: ['src/**/*.{php,js,png,html,css}', '<%= path.dist %>'],
+				tasks: 'copy:styleguide'
 			}
 		},
 
@@ -74,7 +51,8 @@ module.exports = function(grunt) {
 					outputStyle: 'expanded',
 					relativeAssets: true,
 					require: ['breakpoint', 'ceaser-easing'],
-					quiet: true
+					quiet: true,
+					sourcemap: true
 				}
 			},
 			live: {
@@ -88,19 +66,6 @@ module.exports = function(grunt) {
 					outputStyle: 'compressed',
 					require: ['ceaser-easing', 'susy']
 				}
-			}
-		},
-
-		jekyll: {
-			options: {
-				src : '<%= path.src %>',
-				dest: '<%= path.dist %>'
-			},
-			dev: {
-				auto: true
-			},
-			live: {
-
 			}
 		},
 
@@ -129,18 +94,6 @@ module.exports = function(grunt) {
 					'dist/js/<%= pkg.name %>.js': ['<%= concat.dist.dest %>']
 				}
 			}
-		},
-
-		htmlmin: {
-			 dist: {
-				 options: {
-					 removeComments: true,
-					 collapseWhitespace: true
-				 },
-				 files: {
-					 '<%= path.src %>/**/*': '<%= path.dest %>/**/*',
-				 }
-			 },
 		},
 
 		grunticon: {
@@ -179,7 +132,16 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-
+		
+		svgstore: {
+			options: {
+				prefix : 'shape-',
+			},
+			files: {
+				'<%= path.dist %>/images/sprite.svg': ['<%= path.images %>/*.svg']
+			}
+		},
+		
 		copy: {
 			fonts: {
 				files: [
@@ -190,6 +152,14 @@ module.exports = function(grunt) {
 						dest: '<%= path.dist %>/fonts/'
 					}
 				]
+			},
+			styleguide: {
+				files: [{
+					expand: true,
+					cwd: '<%= path.src %>/',
+					src: ['./**/*'],
+					dest: '<%= path.dist %>/'
+				}]
 			}
 		}
 

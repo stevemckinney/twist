@@ -60,9 +60,20 @@
 %no-mp {
 	margin: 0;
 	padding: 0; }
-	
+
 %margin-bottom {
-	margin: 0 0 em($line); }
+	margin: 0 0 rem($base-px);
+
+	@include for-legacy-browser("ie", "5.5", "8") {
+		.no-rem & {
+			margin: 0 0 $base-px; } } }
+	
+%margin-bottom-large {
+	margin: 0 0 rem($line);
+
+	@include for-legacy-browser("ie", "5.5", "8") {
+		.no-rem & {
+			margin: 0 0 $line; } } }
 
 // Colour use
 // ---------------------------

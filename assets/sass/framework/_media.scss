@@ -2,6 +2,6 @@
 // adapted for further efficiency
 // ---------------------------
 @mixin image-2x($image, $context: $default-context) {
-	@include breakpoint(retina) {
+	@include breakpoint($retina) {
 		background-image: url($image);
 		background-size: em(image-width($image)/2, $context) em(image-height($image)/2, $context); } }

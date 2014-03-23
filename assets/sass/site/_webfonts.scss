@@ -20,19 +20,11 @@
 	font-style: normal; }
 
 /* This triggers a redraw in IE to Fix IE8's :before content rendering. */
-html:hover [class^="ss-"] {
+html:hover %ss-icon {
 	-ms-zoom: 1; }
 
-%ss-icon,
-.ss-icon.ss-standard,
-[class^="ss-"]:before,
-[class*=" ss-"]:before,
-[class^="ss-"].ss-standard:before,
-[class*=" ss-"].ss-standard:before,
-[class^="ss-"].right:after,
-[class*=" ss-"].right:after,
-[class^="ss-"].ss-standard.right:after,
-[class*=" ss-"].ss-standard.right:after {
+%ss-icon:before,
+%ss-icon:after {
 	font-family: "SSStandard";
 	font-style: normal;
 	font-weight: 400;
@@ -51,12 +43,6 @@ html:hover [class^="ss-"] {
 [class*=" ss-"].ss-standard.right:before {
 	display: none;
 	content: ""; }
-
-[data-icon]:before {
-	content: attr(data-icon); }
-
-[data-icon-after]:after {
-	content: attr(data-icon-after); }
 
 %ss-cursor:before,
 %ss-cursor.right:after {

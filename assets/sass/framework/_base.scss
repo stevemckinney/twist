@@ -53,7 +53,7 @@ $line: $base-px*2 !default;
 
 // Defaults
 // ---------------------------
-$radius: 4px !default;
+$radius: 3px !default;
 $default-transition-duration: .2s !default;
 $transition-duration: $default-transition-duration !default;
 
@@ -63,15 +63,15 @@ $transition-duration: $default-transition-duration !default;
 $default-negative-spacing: -5px !default;
 
 // Default sizing for elements
-$default-size: 1.35 !default; // for element mixin
+$default-size: 1 !default; // for element mixin
 $default-form-size: $default-size !default;
-$default-ratio: .394 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
+$default-ratio: .555 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
 $default-equal: false !default;
 
 // How many times larger should the padding-left/right be than padding-top/bottom
-$default-multiplier: 2 !default;
+$default-multiplier: 1.5 !default;
 
 // Normal is a good choice, as firefox doesn't 
 // allow line-height change on inputs this allows
@@ -99,6 +99,7 @@ $default-context: $base-font-size !default;
 // ---------------------------
 $breakpoint-to-ems: true;
 $breakpoint-subtract: 1px !default;
+$default-no-query-selector: "no-mediaqueries" !default;
 
 // min-width
 $aa:	280px !default;

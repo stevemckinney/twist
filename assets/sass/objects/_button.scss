@@ -3,10 +3,17 @@
 $colors: $default-color $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
 //$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
 $i: 1;
-
+@import "keyframes";
 .button {
 	@extend %element-base-with-mixin;
-	text-transform: capitalize; }
+	text-transform: capitalize;
+	
+	&:active {
+		-webkit-animation-duration: 1s;
+		-webkit-animation-name: spring;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-fill-mode: both;
+		-webkit-backface-visibility: visible; } }
 
 $buttons: (
 	default: $default-color,
@@ -25,6 +32,43 @@ $buttons: (
 @each $button, $color in $buttons {
 	.button-#{$button} {
 		@include element($color); } }
+		
+.button-inline {
+	background: transparent;
+	box-shadow: inset 0 0 0 1px $red;
+	color: $red;
+	margin: 0 0 24px;
+	position: relative;
+	-webkit-backface-visibility: hidden;
+	overflow: hidden;
+	
+	&,
+	&:after {
+		transition: .35s;
+		border-radius: $radius; }
+	
+	&:after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background: transparent;
+		@include transform(rotateX(180deg));
+		@include perspective(800px);
+		-webkit-transform-style: preserve-3d; }
+	
+	&:hover,
+	&:focus {
+		box-shadow: inset 0 0 0 1px scale-lightness($red, -20%);
+		color: $white;
+		
+		&:after {
+			@include transform(rotateX(0));
+			background: $red;
+			width: 100%; } } }
 
 .button-link {
 	background: none;
@@ -48,6 +92,6 @@ $buttons: (
 
 // Disabled
 // ---------------------------
-.button-success[disabled] {
-	@include element-shading($success, $state: disabled);
+.button[disabled] {
+	opacity: .75;
 	pointer-events: none; }

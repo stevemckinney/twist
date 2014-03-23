@@ -25,7 +25,7 @@
 				"framework/tooltip",
 				"framework/misc",
 				"framework/debug";
-
+				
 // Site base
 // ---------------------------
 @import "site/mixins", // Override existing framework mixins here, or break them into files
@@ -38,63 +38,17 @@
 // Site objects
 // ---------------------------
 @import "objects/button",
+				"objects/alert",
 				"objects/form",
 				"objects/header",
 				"objects/nav",
-				"objects/footer",
-				"objects/table",
+				"objects/footer";
+
+// Optional Imports
+// ---------------------------
+@import "objects/table",
 				"objects/tooltip",
 				"objects/text",
 				"objects/list",
-				"objects/alert";
-
-// Remove all below
-// ---------------------------
-body {
-	background: $tertiary;
-	color: $primary; }
-	
-.site {
-	max-width: 800px;
-	margin: auto; }
-	
-#{headings()} {
-	font-weight: 200; }
-
-article {
-	background: scale-lightness($tertiary, 70%);
-	border-radius: $radius;
-	padding: em($line*2);
-	margin: 0 0 em($line*2); }
-
-header {
-	overflow: hidden;
-	padding: em($line) 0; }
-
-.logo,
-.site-subtitle {
-	float: left; }
-	
-.navigation {
-	float: right; }
-	
-.logo {
-	font-size: 21px;
-	font-family: $sans; }
-
-dl {
-	display: flex;
-	flex-flow: row wrap;
-}
-
-dt {
-	flex: 3 0 60%;
-}
-
-dd {
-	flex: 1 0 40%;
-}
-
-dt,dd {
-	margin-bottom:em($line);
-	vertical-align: middle; }
+				"objects/figure",
+				"objects/blockquote";

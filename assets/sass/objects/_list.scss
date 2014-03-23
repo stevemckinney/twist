@@ -8,8 +8,33 @@ ol {
 	ol {
 		margin-left: em($line); } }
 
-li {
+ul li {
 	list-style: square; }
+
+// Lists
+// ---------------------------
+.list-default {
+	padding-left: 0;
+	
+	li {
+		list-style: none; } }
+
+.list-spacing {
+	li {
+		@extend %margin-bottom; } }
+
+.list-spacing-large {
+	li {
+		@extend %margin-bottom-large; } }
+
+.list-custom-bullet {
+	li {
+		list-style: none;
+		
+		&:before {
+			content: "▪";
+			margin-right: em($base-px/2);
+			color: $secondary; } } }
 
 // Definition
 // ---------------------------
@@ -18,7 +43,8 @@ dl {
 	@extend %margin-bottom; }
 
 dt {
-	@extend %vertical-align-top;
+	float: left;
+	clear: right;
 	font-weight: 700;
 	width: 33.333333%;
 	
@@ -26,6 +52,6 @@ dt {
 		margin-right: $negative-spacing; } }
 
 dd {
-	@extend %vertical-align-top;
+	float: right;
 	width: 66.666666%;
 	padding-left: cp(24px, $site-width); }

@@ -15,7 +15,7 @@
 	// ---------------------------
 	$color: $color;
 	$color-1: nth($color, 1);
-	$color-2: if(length($color) > 1, nth($color, 2), scale-lightness($color-1, if(brightness($color-1) > 80%, -5%, -15%)));
+	$color-2: if(length($color) > 1, nth($color, 2), scale-lightness($color-1, if(brightness($color-1) > 80%, -7.5%, -10%)));
 	
 	// Hover
 	// ---------------------------
@@ -25,14 +25,14 @@
 	
 	// Light colors
 	// ---------------------------
-	$light-color: if(yiq-is-light($color-1, 200), scale-lightness($color-1, 40%), if(lightness($color-1) > 80%, scale-lightness($color-1, 30%), scale-lightness($color-1, 20%)));
+	$light-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($color-1, 40%), if(lightness($color-1) > 80%, scale-lightness($color-1, 30%), scale-lightness($color-1, 20%)));
 	$highlight-color: $light-color;
 	
 	// Dark colors
 	// ---------------------------
-	$dark-color: if(yiq-is-light($color-1, 200), scale-lightness($color-1, -5%), scale-lightness($color-1, -20%));
-	$border-color: if(yiq-is-light($color-1, 200), scale-lightness($dark-color, -15%), scale-lightness($dark-color, -20%));
-	$border-dark-color: if(yiq-is-light($color-1, 200), scale-lightness($border-color, -10%), scale-lightness($border-color, -15%));
+	$dark-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($color-1, -5%), scale-lightness($color-1, -20%));
+	$border-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($dark-color, -15%), scale-lightness($dark-color, -20%));
+	$border-dark-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($border-color, -10%), scale-lightness($border-color, -15%));
 	
 	// Dark background adjustments
 	// ---------------------------
@@ -44,7 +44,7 @@
 	// Base
 	// ---------------------------
 	@if $state == (normal or disabled) {
-		color: if($state == disabled, scale-lightness($color-1, -30%), yiq-contrast-color($color-1, scale-lightness($color-1, -30%), $white, 200)); }
+		color: if($state == disabled, scale-lightness($color-1, -30%), yiq-contrast-color($color-1, scale-lightness($color-1, -30%), $white, $default-element-yiq-threshold * $default-element-yiq-multiplier)); }
 
 	// Shading styles
 	// ---------------------------

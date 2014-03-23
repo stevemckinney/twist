@@ -22,7 +22,7 @@
 	outline: none;
 	max-width: 100%;
 	color: $default-form-text-color;
-	line-height: normal; }
+	line-height: $default-form-line-height; }
 
 // Most form elements share a lot of basic styles.
 // Extend this on text/select generally
@@ -38,10 +38,10 @@
 	border: none; }
 
 %form-checkbox-radius {
-	border-radius: $radius; }
+	border-radius: $default-form-checkbox-radius; }
 
 %form-radio-radius {
-	border-radius: $radius * 10; }
+	border-radius: $default-form-radio-radius; }
 	
 // Full width form elements
 // ---------------------------

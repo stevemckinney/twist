@@ -1,0 +1,808 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* line 7, ../../assets/sass/framework/_normalize.scss */
+html {
+  font-family: Verlag A, Verlag B, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 12, ../../assets/sass/framework/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 15, ../../assets/sass/framework/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 29, ../../assets/sass/framework/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 36, ../../assets/sass/framework/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 40, ../../assets/sass/framework/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 46, ../../assets/sass/framework/_normalize.scss */
+a {
+  background: transparent;
+}
+/* line 49, ../../assets/sass/framework/_normalize.scss */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* line 53, ../../assets/sass/framework/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 56, ../../assets/sass/framework/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 60, ../../assets/sass/framework/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 63, ../../assets/sass/framework/_normalize.scss */
+mark {
+  background: #fefeca;
+  color: inherit;
+}
+
+/* line 67, ../../assets/sass/framework/_normalize.scss */
+kbd {
+  background: white;
+}
+
+/* line 70, ../../assets/sass/framework/_normalize.scss */
+small {
+  font-size: 87.5%;
+}
+
+/* line 73, ../../assets/sass/framework/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 80, ../../assets/sass/framework/_normalize.scss */
+sup {
+  top: -.5em;
+}
+
+/* line 83, ../../assets/sass/framework/_normalize.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* line 86, ../../assets/sass/framework/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 91, ../../assets/sass/framework/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 1em;
+}
+
+/* line 98, ../../assets/sass/framework/_normalize.scss */
+img,
+iframe,
+object {
+  border: 0;
+  max-width: 100%;
+}
+
+/* line 104, ../../assets/sass/framework/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 107, ../../assets/sass/framework/_normalize.scss */
+hr {
+  height: 0;
+}
+
+/* line 112, ../../assets/sass/framework/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 121, ../../assets/sass/framework/_normalize.scss */
+button {
+  border: none;
+  overflow: visible;
+}
+
+/* line 125, ../../assets/sass/framework/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 129, ../../assets/sass/framework/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 136, ../../assets/sass/framework/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 140, ../../assets/sass/framework/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+/* line 145, ../../assets/sass/framework/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/* line 148, ../../assets/sass/framework/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 152, ../../assets/sass/framework/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 156, ../../assets/sass/framework/_normalize.scss */
+fieldset,
+legend {
+  border: none;
+}
+
+/* line 160, ../../assets/sass/framework/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 163, ../../assets/sass/framework/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 168, ../../assets/sass/framework/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"],
+fieldset,
+legend,
+td,
+th,
+dl,
+ul,
+ol,
+menu {
+  padding: 0;
+}
+
+/* line 180, ../../assets/sass/framework/_normalize.scss */
+dl,
+dd,
+ol,
+ul,
+menu,
+fieldset,
+figure {
+  margin: 0;
+}
+
+/* line 191, ../../assets/sass/framework/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 197, ../../assets/sass/framework/_normalize.scss */
+:focus {
+  outline: none;
+}
+
+/* line 200, ../../assets/sass/framework/_normalize.scss */
+::-moz-selection {
+  background: #fefeca;
+  color: inherit;
+  text-shadow: none;
+}
+
+/* line 205, ../../assets/sass/framework/_normalize.scss */
+::selection {
+  background: #fefeca;
+  color: inherit;
+  text-shadow: none;
+}
+
+/* line 210, ../../assets/sass/framework/_normalize.scss */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 31, ../../assets/sass/framework/_helpers.scss */
+.hidden {
+  display: none;
+}
+
+/* line 96, ../../assets/sass/framework/_helpers.scss */
+.xxlarge {
+  font-size: 225%;
+}
+
+/* line 99, ../../assets/sass/framework/_helpers.scss */
+.xlarge {
+  font-size: 150%;
+}
+
+/* line 102, ../../assets/sass/framework/_helpers.scss */
+.large {
+  font-size: 131.25%;
+}
+
+/* line 105, ../../assets/sass/framework/_helpers.scss */
+.normal {
+  font-size: 100%;
+}
+
+/* line 108, ../../assets/sass/framework/_helpers.scss */
+.small {
+  font-size: 87.5%;
+}
+
+/* line 111, ../../assets/sass/framework/_helpers.scss */
+.xsmall {
+  font-size: 75%;
+}
+
+/* line 114, ../../assets/sass/framework/_helpers.scss */
+.xxsmall {
+  font-size: 62.5%;
+}
+
+/* line 31, ../../assets/sass/styleguide.scss */
+.sg-header {
+  background: #fcfcfc;
+  box-shadow: 0 1px 1px rgba(197, 188, 188, 0.4), 0 1px #dcd6d6;
+  flex-direction: row;
+}
+
+/* line 36, ../../assets/sass/styleguide.scss */
+.sg-info, .sg-base-styles {
+  padding-bottom: 1.5rem;
+}
+
+/* line 39, ../../assets/sass/styleguide.scss */
+.sg-container {
+  padding: 1.5rem calc(50% - 320px);
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+}
+
+/* line 46, ../../assets/sass/styleguide.scss */
+.sg-body {
+  flex-direction: column;
+}
+
+/* line 49, ../../assets/sass/styleguide.scss */
+.sg-animated {
+  transition: all .6s ease;
+}
+
+/* line 54, ../../assets/sass/styleguide.scss */
+.sg-logo {
+  color: #c5bcbc;
+  margin: 0;
+}
+
+/* Navigation
+---------------------------------------------------------------------------- */
+/* line 62, ../../assets/sass/styleguide.scss */
+.js .sg-submit-btn {
+  display: none;
+}
+
+/* Headings
+---------------------------------------------------------------------------- */
+/* line 67, ../../assets/sass/styleguide.scss */
+.sg-h1,
+.sg-h2,
+.sg-h3 {
+  flex: 1 1 100%;
+  align-self: stretch;
+  border-bottom: 3px solid #ddd;
+  font-family: Verlag A, Verlag B, sans-serif;
+  font-weight: normal;
+  margin-bottom: 1.5em;
+  padding-bottom: .375em;
+  margin-top: 0;
+}
+
+/* line 79, ../../assets/sass/styleguide.scss */
+.sg-h1 {
+  font-size: 2.25em;
+  font-weight: bold;
+}
+
+/* line 83, ../../assets/sass/styleguide.scss */
+.sg-h2 {
+  border-bottom-width: 2px;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+/* Buttons
+---------------------------------------------------------------------------- */
+/* line 91, ../../assets/sass/styleguide.scss */
+.sg-btn {
+  float: left;
+  padding: .5em .9em;
+  text-decoration: none;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px #4c4d4c;
+  color: #4c4d4c;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+/* line 102, ../../assets/sass/styleguide.scss */
+.sg-btn, .sg-btn:after {
+  transition: .35s;
+  border-radius: 3px;
+}
+/* line 107, ../../assets/sass/styleguide.scss */
+.sg-btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+/* line 118, ../../assets/sass/styleguide.scss */
+.sg-btn:hover, .sg-btn:focus {
+  box-shadow: inset 0 0 0 1px #3d3e3d;
+  color: white;
+}
+/* line 123, ../../assets/sass/styleguide.scss */
+.sg-btn:hover:after, .sg-btn:focus:after {
+  -moz-transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  background: #4c4d4c;
+  width: 100%;
+}
+
+/* line 128, ../../assets/sass/styleguide.scss */
+.sg-btn--top {
+  float: right;
+}
+
+/* line 131, ../../assets/sass/styleguide.scss */
+.sg-btn--select {
+  border-radius: 0 0.3em;
+  position: absolute;
+  right: 1px;
+  top: 14px;
+}
+
+/* line 137, ../../assets/sass/styleguide.scss */
+.sg-btn--select.is-active:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  top: 45px;
+  color: #fff;
+  content: "Selected code ready to be copied";
+  font-size: .8em;
+  display: block;
+  right: 5px;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98;
+}
+
+/* line 153, ../../assets/sass/styleguide.scss */
+.sg-btn--select.is-active:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 0 6px 6px 6px;
+  top: 40px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99;
+}
+
+/* Hide specific buttons for use with JS */
+/* line 166, ../../assets/sass/styleguide.scss */
+.sg-btn--source,
+.sg-btn--select {
+  display: none;
+}
+
+/* Show specific buttons if JS enabled */
+/* line 172, ../../assets/sass/styleguide.scss */
+.js .sg-btn--source,
+.js .sg-btn--select {
+  display: block;
+}
+
+/* Hide specific buttons conditionally */
+/* line 178, ../../assets/sass/styleguide.scss */
+.operamini .sg-btn--source,
+.legacy .sg-btn--source {
+  display: none;
+}
+
+/* Sections
+---------------------------------------------------------------------------- */
+/* line 186, ../../assets/sass/styleguide.scss */
+.sg-section {
+  margin-bottom: 3rem;
+}
+
+/* line 189, ../../assets/sass/styleguide.scss */
+.sg-anchor {
+  display: block;
+  color: #6f716f;
+}
+
+/* Colors
+---------------------------------------------------------------------------- */
+/* line 196, ../../assets/sass/styleguide.scss */
+.sg-colors {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+/* line 201, ../../assets/sass/styleguide.scss */
+.sg-color {
+  flex: 0 0 12.5%;
+  padding: 3em;
+  background: #fff;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 209, ../../assets/sass/styleguide.scss */
+.sg-color-swatch {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 214, ../../assets/sass/styleguide.scss */
+.sg-color-swatch span {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  background: inherit;
+  color: #fff;
+  font-size: .8em;
+  margin: 0;
+  opacity: 0;
+  padding: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  width: auto;
+}
+
+/* line 230, ../../assets/sass/styleguide.scss */
+.sg-color-swatch:hover span {
+  opacity: 1;
+}
+
+/* line 233, ../../assets/sass/styleguide.scss */
+.sg-color--a {
+  background: #4c4d4c;
+}
+
+/* line 234, ../../assets/sass/styleguide.scss */
+.sg-color--b {
+  background: #6cd0d9;
+}
+
+/* line 235, ../../assets/sass/styleguide.scss */
+.sg-color--c {
+  background: #f2f0f0;
+}
+
+/* line 236, ../../assets/sass/styleguide.scss */
+.sg-color--d {
+  background: #f24969;
+}
+
+/* line 237, ../../assets/sass/styleguide.scss */
+.sg-color--e {
+  background: #478afa;
+}
+
+/* line 238, ../../assets/sass/styleguide.scss */
+.sg-color--f {
+  background: #7d7e81;
+}
+
+/* Fonts
+---------------------------------------------------------------------------- */
+/* line 242, ../../assets/sass/styleguide.scss */
+.sg-font {
+  font-size: 1.5em;
+}
+
+/* line 245, ../../assets/sass/styleguide.scss */
+.sg-font-secondary {
+  font-family: Sentinel A, Sentinel B, serif;
+}
+
+/* Markup
+---------------------------------------------------------------------------- */
+/* line 252, ../../assets/sass/styleguide.scss */
+.sg-markup-controls {
+  display: flex;
+  padding-top: 1.5em;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+/* line 260, ../../assets/sass/styleguide.scss */
+.sg-source {
+  position: relative;
+}
+
+/* line 263, ../../assets/sass/styleguide.scss */
+.sg-source pre {
+  background: #333;
+  border-radius: .5em;
+  border: 1px solid #ddd;
+  color: #fff;
+  overflow-x: scroll;
+  padding: .5em .3em;
+  font-size: 12px;
+  tab-size: 2;
+}
+
+/* line 273, ../../assets/sass/styleguide.scss */
+.sg-source pre code {
+  background: transparent;
+}
+
+/* line 276, ../../assets/sass/styleguide.scss */
+.js .sg-source {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* line 281, ../../assets/sass/styleguide.scss */
+.js .sg-source.is-active,
+.operamini .sg-source,
+.legacy .sg-source {
+  max-height: 2400px;
+}
+
+/* -------------------------------------------------------------------------
+ Prettyprint
+---------------------------------------------------------------------------- */
+/* line 291, ../../assets/sass/styleguide.scss */
+.pln {
+  color: #fff;
+}
+
+/* plain text */
+@media screen {
+  /* line 294, ../../assets/sass/styleguide.scss */
+  .str,
+  .string {
+    color: #E6DB74;
+  }
+
+  /* string content */
+  /* line 297, ../../assets/sass/styleguide.scss */
+  .kwd,
+  .keyword {
+    color: #66D9EF;
+  }
+
+  /* a keyword */
+  /* line 300, ../../assets/sass/styleguide.scss */
+  .com,
+  .comment {
+    color: #75715E;
+  }
+
+  /* a comment */
+  /* line 303, ../../assets/sass/styleguide.scss */
+  .typ {
+    color: #A6E22E;
+  }
+
+  /* a type name */
+  /* line 305, ../../assets/sass/styleguide.scss */
+  .lit,
+  .number {
+    color: #AE81FF;
+  }
+
+  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  /* .pun, .opn, .clo { color: #660 } */
+  /* line 311, ../../assets/sass/styleguide.scss */
+  .tag {
+    color: #F92672;
+  }
+
+  /* a markup tag name */
+  /* line 313, ../../assets/sass/styleguide.scss */
+  .atn {
+    color: #A6E22E;
+  }
+
+  /* a markup attribute name */
+  /* line 315, ../../assets/sass/styleguide.scss */
+  .atv {
+    color: #E6DB74;
+  }
+
+  /* a markup attribute value */
+  /*.dec, .var { color: #606 }*/
+  /* a declaration; a variable name */
+  /* line 319, ../../assets/sass/styleguide.scss */
+  .fun {
+    color: #FF0000;
+  }
+
+  /* a function name */
+}
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  /* line 324, ../../assets/sass/styleguide.scss */
+  .str {
+    color: #060;
+  }
+
+  /* line 326, ../../assets/sass/styleguide.scss */
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 328, ../../assets/sass/styleguide.scss */
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  /* line 330, ../../assets/sass/styleguide.scss */
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  /* line 332, ../../assets/sass/styleguide.scss */
+  .lit {
+    color: #044;
+  }
+
+  /* line 334, ../../assets/sass/styleguide.scss */
+  .pun,
+  .opn,
+  .clo {
+    color: #440;
+  }
+
+  /* line 339, ../../assets/sass/styleguide.scss */
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 341, ../../assets/sass/styleguide.scss */
+  .atn {
+    color: #404;
+  }
+
+  /* line 343, ../../assets/sass/styleguide.scss */
+  .atv {
+    color: #060;
+  }
+}
+/* Specify class=linenums on a pre to get line numbering */
+/* line 347, ../../assets/sass/styleguide.scss */
+ol.linenums {
+  border-left: 1px solid #444;
+  margin: 0 0 0 3.3em;
+  /* IE indents via margin-left */
+  padding: 0;
+}
+
+/* line 353, ../../assets/sass/styleguide.scss */
+ol.linenums li {
+  color: #bebec5;
+  line-height: 1.5;
+  padding-left: .8em;
+}
+
+/*# sourceMappingURL=styleguide.css.map */

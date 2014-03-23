@@ -3,6 +3,7 @@
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
 $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
+$default-grid-no-mediaqueries: $default-no-query-selector !default; // can be false
 
 //	<div class="grid grid-with-gutter">
 //		<div class="grid-cell grid-4">
@@ -11,7 +12,7 @@ $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 //		</div>
 //	</div>
 
-// Simple 6 column grid using
+// Simple grid using
 // display: inline-block
 // ---------------------------
 @mixin grid(
@@ -41,7 +42,6 @@ $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 	// ---------------------------
 	.grid-cell {
 		display: inline-block;
-		font-size: 16px;
 		font-size: 1rem;
 		margin: 0;
 		padding: 0;

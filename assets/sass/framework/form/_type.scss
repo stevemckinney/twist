@@ -32,29 +32,18 @@
 	$color						: $default-form-color,
 	$focus-color			: $default-form-focus-color,
 	$background-color	: $default-form-background-color,
-	$shading					: $default-form-shading,
-	$margin						: $default-form-boolean-margin
+	$shading					: $default-form-shading
 ) {	
-	@include wh(em($base-font-size));
-	position: relative;
-	top: em($base-font-size / 6);
-	margin: $margin;
-	
 	@include form-shading(checkbox, $color, $background-color, normal, $shading); }
 
 // Radio
 // ---------------------------
 @mixin form-radio(
-	$color: $default-form-color,
-	$focus-color: $default-form-focus-color,
-	$background-color: $default-form-background-color,
-	$shading: $default-form-shading,
-	$margin: $default-form-boolean-margin
+	$color						: $default-form-color,
+	$focus-color			: $default-form-focus-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading
 ) {	
-	@include wh($default-form-radio-width, $default-form-radio-height);
-	position: relative;
-	top: em(2px);
-	margin: $margin;
 	@include form-shading(radio, $color, $background-color, normal, $shading); }
 
 // Search
@@ -71,9 +60,7 @@
 	
 	@if $has-label {
 		label {
-			position: absolute;
-			top: -9999px;
-			left: -9999px; } }
+			@extend %screenreaders; } }
 	
 	#{$selector} {
 		@include hide-text(left);

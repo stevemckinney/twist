@@ -47,18 +47,20 @@ body {
 		font-size: 100%; } }
 
 p {
-	@extend %margin-bottom;
-	@extend %module; }
+	@extend %margin-bottom; }
 
 a {
-	@extend %transition;
+	@include transition(.2s);
 	text-decoration: none;
 	color: $secondary;
 	
 	&:hover,
 	&:focus {
 		opacity: .8; } }
-		
+
+.field {
+	font-size: 1rem; }
+
 // Code
 // ---------------------------
 code {

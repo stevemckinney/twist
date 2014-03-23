@@ -401,15 +401,14 @@
 
 })( jQuery );
 /*global jQuery */
-/*jshint multistr:true browser:true */
+/*jshint browser:true */
 /*!
-* FitVids 1.0
+* FitVids 1.1
 *
-* Copyright 2011, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
 * Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 * Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 *
-* Date: Thu Sept 01 18:00:00 2011 -0500
 */
 
 (function( $ ){
@@ -422,33 +421,12 @@
     };
 
     if(!document.getElementById('fit-vids-style')) {
-
-      var div = document.createElement('div'),
-          ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
-
-      div.className = 'fit-vids-style';
-      div.id = 'fit-vids-style';
-      div.style.display = 'none';
-      div.innerHTML = '&shy;<style>         \
-        .fluid-width-video-wrapper {        \
-           width: 100%;                     \
-           position: relative;              \
-           padding: 0;                      \
-        }                                   \
-                                            \
-        .fluid-width-video-wrapper iframe,  \
-        .fluid-width-video-wrapper object,  \
-        .fluid-width-video-wrapper embed {  \
-           position: absolute;              \
-           top: 0;                          \
-           left: 0;                         \
-           width: 100%;                     \
-           height: 100%;                    \
-        }                                   \
-      </style>';
-
-      ref.parentNode.insertBefore(div,ref);
-
+      // appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
+      var div = document.createElement('div');
+      div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
+      head.appendChild(div.childNodes[1]);
     }
 
     if ( options ) {
@@ -487,7 +465,8 @@
       });
     });
   };
-})( jQuery );
+// Works with either jQuery or Zepto
+})( window.jQuery || window.Zepto );
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
  * MIT license http://www.opensource.org/licenses/mit-license.php/
@@ -694,7 +673,7 @@ var _ = self.Prism = {
 			
 			pattern = pattern.pattern || pattern;
 			
-			for (var i=0; i<strarr.length; i++) { // Donâ€™t cache length as it changes during the loop
+			for (var i=0; i<strarr.length; i++) { // Don’t cache length as it changes during the loop
 				
 				var str = strarr[i];
 				
@@ -846,7 +825,7 @@ Prism.languages.markup = {
 	'doctype': /&lt;!DOCTYPE.+?>/,
 	'cdata': /&lt;!\[CDATA\[[\w\W]*?]]>/i,
 	'tag': {
-		pattern: /&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,
+		pattern: /&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|[^\s'">=]+))?\s*)*\/?>/gi,
 		inside: {
 			'tag': {
 				pattern: /^&lt;\/?[\w:-]+/i,
@@ -880,7 +859,8 @@ Prism.hooks.add('wrap', function(env) {
 	if (env.type === 'entity') {
 		env.attributes['title'] = env.content.replace(/&amp;/, '&');
 	}
-});;
+});
+;
 Prism.languages.css = {
 	'comment': /\/\*[\w\W]*?\*\//g,
 	'atrule': {
@@ -941,7 +921,7 @@ Prism.languages.clike = {
 			punctuation: /(\.|\\)/
 		}
 	},
-	'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,
+	'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,
 	'boolean': /\b(true|false)\b/g,
 	'function': {
 		pattern: /[a-z0-9_]+\(/ig,
@@ -953,9 +933,10 @@ Prism.languages.clike = {
 	'operator': /[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,
 	'ignore': /&(lt|gt|amp);/gi,
 	'punctuation': /[{}[\];(),.:]/g
-};;
+};
+;
 Prism.languages.javascript = Prism.languages.extend('clike', {
-	'keyword': /\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,
+	'keyword': /\b(var|let|if|else|while|do|for|return|in|instanceof|function|get|set|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,
 	'number': /\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g
 });
 
@@ -979,7 +960,95 @@ if (Prism.languages.markup) {
 			}
 		}
 	});
-};
+}
+;
+/**
+ * Original by Aaron Harun: http://aahacreative.com/2012/07/31/php-syntax-highlighting-prism/
+ * Modified by Miles Johnson: http://milesj.me
+ *
+ * Supports the following:
+ * 		- Extends clike syntax
+ * 		- Support for PHP 5.3 and 5.4 (namespaces, traits, etc)
+ * 		- Smarter constant and function matching
+ *
+ * Adds the following new token classes:
+ * 		constant, delimiter, variable, function, package
+ */
+
+Prism.languages.php = Prism.languages.extend('clike', {
+	'keyword': /\b(and|or|xor|array|as|break|case|cfunction|class|const|continue|declare|default|die|do|else|elseif|enddeclare|endfor|endforeach|endif|endswitch|endwhile|extends|for|foreach|function|include|include_once|global|if|new|return|static|switch|use|require|require_once|var|while|abstract|interface|public|implements|private|protected|parent|throw|null|echo|print|trait|namespace|final|yield|goto|instanceof|finally|try|catch)\b/ig,
+	'constant': /\b[A-Z0-9_]{2,}\b/g
+});
+
+Prism.languages.insertBefore('php', 'keyword', {
+	'delimiter': /(\?>|&lt;\?php|&lt;\?)/ig,
+	'variable': /(\$\w+)\b/ig,
+	'package': {
+		pattern: /(\\|namespace\s+|use\s+)[\w\\]+/g,
+		lookbehind: true,
+		inside: {
+			punctuation: /\\/
+		}
+	}
+});
+
+// Must be defined after the function pattern
+Prism.languages.insertBefore('php', 'operator', {
+	'property': {
+		pattern: /(->)[\w]+/g,
+		lookbehind: true
+	}
+});
+
+// Add HTML support of the markup language exists
+if (Prism.languages.markup) {
+
+	// Tokenize all inline PHP blocks that are wrapped in <?php ?>
+	// This allows for easy PHP + markup highlighting
+	Prism.hooks.add('before-highlight', function(env) {
+		if (env.language !== 'php') {
+			return;
+		}
+
+		env.tokenStack = [];
+
+		env.code = env.code.replace(/(?:&lt;\?php|&lt;\?|<\?php|<\?)[\w\W]*?(?:\?&gt;|\?>)/ig, function(match) {
+			env.tokenStack.push(match);
+
+			return '{{{PHP' + env.tokenStack.length + '}}}';
+		});
+	});
+
+	// Re-insert the tokens after highlighting
+	Prism.hooks.add('after-highlight', function(env) {
+		if (env.language !== 'php') {
+			return;
+		}
+
+		for (var i = 0, t; t = env.tokenStack[i]; i++) {
+			env.highlightedCode = env.highlightedCode.replace('{{{PHP' + (i + 1) + '}}}', Prism.highlight(t, env.grammar, 'php'));
+		}
+
+		env.element.innerHTML = env.highlightedCode;
+	});
+
+	// Wrap tokens in classes that are missing them
+	Prism.hooks.add('wrap', function(env) {
+		if (env.language === 'php' && env.type === 'markup') {
+			env.content = env.content.replace(/(\{\{\{PHP[0-9]+\}\}\})/g, "<span class=\"token php\">$1</span>");
+		}
+	});
+
+	// Add the rules before all others
+	Prism.languages.insertBefore('php', 'comment', {
+		'markup': {
+			pattern: /(&lt;|<)[^?]\/?(.*?)(>|&gt;)/g,
+			inside: Prism.languages.markup
+		},
+		'php': /\{\{\{PHP[0-9]+\}\}\}/g
+	});
+}
+;
 Prism.languages.scss = Prism.languages.extend('css', {
 	'comment': {
 		pattern: /(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,
@@ -1017,6 +1086,236 @@ Prism.languages.insertBefore('scss', 'ignore', {
 	'operator': /\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g
 });
 ;
+(function(){
+
+if (!self.Prism) {
+	return;
+}
+
+var url = /\b([a-z]{3,7}:\/\/|tel:)[\w-+%~/.:#=?&amp;]+/,
+    email = /\b\S+@[\w.]+[a-z]{2}/,
+    linkMd = /\[([^\]]+)]\(([^)]+)\)/,
+    
+	// Tokens that may contain URLs and emails
+    candidates = ['comment', 'url', 'attr-value', 'string'];
+
+for (var language in Prism.languages) {
+	var tokens = Prism.languages[language];
+	
+	Prism.languages.DFS(tokens, function (type, def) {
+		if (candidates.indexOf(type) > -1) {
+			if (!def.pattern) {
+				def = this[type] = {
+					pattern: def
+				};
+			}
+			
+			def.inside = def.inside || {};
+			
+			if (type == 'comment') {
+				def.inside['md-link'] = linkMd;
+			}
+			if (type == 'attr-value') {
+				Prism.languages.insertBefore('inside', 'punctuation', { 'url-link': url }, def);
+			}
+			else {
+				def.inside['url-link'] = url;
+			}
+			
+			def.inside['email-link'] = email;
+		}
+	});
+	
+	tokens['url-link'] = url;
+	tokens['email-link'] = email;
+}
+
+Prism.hooks.add('wrap', function(env) {
+	if (/-link$/.test(env.type)) {
+		env.tag = 'a';
+		
+		var href = env.content;
+		
+		if (env.type == 'email-link' && href.indexOf('mailto:') != 0) {
+			href = 'mailto:' + href;
+		}
+		else if (env.type == 'md-link') {
+			// Markdown
+			var match = env.content.match(linkMd);
+			
+			href = match[2];
+			env.content = match[1];
+		}
+		
+		env.attributes.href = href;
+	}
+});
+
+})();
+;
+(function(){
+
+if (!self.Prism) {
+	return;
+}
+
+if (Prism.languages.css) {
+	Prism.languages.css.atrule.inside['atrule-id'] = /^@[\w-]+/;
+	
+	// check whether the selector is an advanced pattern before extending it
+	if (Prism.languages.css.selector.pattern)
+	{
+		Prism.languages.css.selector.inside['pseudo-class'] = /:[\w-]+/;
+		Prism.languages.css.selector.inside['pseudo-element'] = /::[\w-]+/;
+	}
+	else
+	{
+		Prism.languages.css.selector = {
+			pattern: Prism.languages.css.selector,
+			inside: {
+				'pseudo-class': /:[\w-]+/,
+				'pseudo-element': /::[\w-]+/
+			}
+		};
+	}
+}
+
+if (Prism.languages.markup) {
+	Prism.languages.markup.tag.inside.tag.inside['tag-id'] = /[\w-]+/;
+	
+	var Tags = {
+		HTML: {
+			'a': 1, 'abbr': 1, 'acronym': 1, 'b': 1, 'basefont': 1, 'bdo': 1, 'big': 1, 'blink': 1, 'cite': 1, 'code': 1, 'dfn': 1, 'em': 1, 'kbd': 1,  'i': 1, 
+			'rp': 1, 'rt': 1, 'ruby': 1, 's': 1, 'samp': 1, 'small': 1, 'spacer': 1, 'strike': 1, 'strong': 1, 'sub': 1, 'sup': 1, 'time': 1, 'tt': 1,  'u': 1, 
+			'var': 1, 'wbr': 1, 'noframes': 1, 'summary': 1, 'command': 1, 'dt': 1, 'dd': 1, 'figure': 1, 'figcaption': 1, 'center': 1, 'section': 1, 'nav': 1,
+			'article': 1, 'aside': 1, 'hgroup': 1, 'header': 1, 'footer': 1, 'address': 1, 'noscript': 1, 'isIndex': 1, 'main': 1, 'mark': 1, 'marquee': 1,
+			'meter': 1, 'menu': 1
+		},
+		SVG: {
+			'animateColor': 1, 'animateMotion': 1, 'animateTransform': 1, 'glyph': 1, 'feBlend': 1, 'feColorMatrix': 1, 'feComponentTransfer': 1, 
+			'feFuncR': 1, 'feFuncG': 1, 'feFuncB': 1, 'feFuncA': 1, 'feComposite': 1, 'feConvolveMatrix': 1, 'feDiffuseLighting': 1, 'feDisplacementMap': 1, 
+			'feFlood': 1, 'feGaussianBlur': 1, 'feImage': 1, 'feMerge': 1, 'feMergeNode': 1, 'feMorphology': 1, 'feOffset': 1, 'feSpecularLighting': 1, 
+			'feTile': 1, 'feTurbulence': 1, 'feDistantLight': 1, 'fePointLight': 1, 'feSpotLight': 1, 'linearGradient': 1, 'radialGradient': 1, 'altGlyph': 1, 
+			'textPath': 1, 'tref': 1, 'altglyph': 1, 'textpath': 1, 'tref': 1, 'altglyphdef': 1, 'altglyphitem': 1, 'clipPath': 1, 'color-profile': 1, 'cursor': 1, 
+			'font-face': 1, 'font-face-format': 1, 'font-face-name': 1, 'font-face-src': 1, 'font-face-uri': 1, 'foreignObject': 1, 'glyph': 1, 'glyphRef': 1, 
+			'hkern': 1, 'vkern': 1, 
+		},
+		MathML: {}
+	}
+}
+
+var language;
+
+Prism.hooks.add('wrap', function(env) {
+	if ((['tag-id'].indexOf(env.type) > -1
+		|| (env.type == 'property' && env.content.indexOf('-') != 0)
+		|| (env.type == 'atrule-id'&& env.content.indexOf('@-') != 0)
+		|| (env.type == 'pseudo-class'&& env.content.indexOf(':-') != 0) 
+		|| (env.type == 'pseudo-element'&& env.content.indexOf('::-') != 0) 
+	    || (env.type == 'attr-name' && env.content.indexOf('data-') != 0)
+	    ) && env.content.indexOf('<') === -1
+	) {
+		var searchURL = 'w/index.php?fulltext&search=';
+		
+		env.tag = 'a';
+		
+		var href = 'http://docs.webplatform.org/';
+		
+		if (env.language == 'css') {
+			href += 'wiki/css/'
+			
+			if (env.type == 'property') {
+				href += 'properties/';
+			}
+			else if (env.type == 'atrule-id') {
+				href += 'atrules/';
+			}
+			else if (env.type == 'pseudo-class') {
+				href += 'selectors/pseudo-classes/';
+			}
+			else if (env.type == 'pseudo-element') {
+				href += 'selectors/pseudo-elements/';
+			}
+		}
+		else if (env.language == 'markup') {
+			if (env.type == 'tag-id') {
+				// Check language
+				language = getLanguage(env.content) || language;
+				
+				if (language) {
+					href += 'wiki/' + language + '/elements/';
+				}
+				else {
+					href += searchURL;
+				}
+			}
+			else if (env.type == 'attr-name') {
+				if (language) {
+					href += 'wiki/' + language + '/attributes/';
+				}
+				else {
+					href += searchURL;
+				}
+			}
+		}
+		
+		href += env.content;
+		
+		env.attributes.href = href;
+		env.attributes.target = '_blank';
+	}
+});
+
+function getLanguage(tag) {
+	var tagL = tag.toLowerCase();
+	
+	if (Tags.HTML[tagL]) {
+		return 'html';
+	}
+	else if (Tags.SVG[tag]) {
+		return 'svg';
+	}
+	else if (Tags.MathML[tag]) {
+		return 'mathml';
+	}
+	
+	// Not in dictionary, perform check
+	if (Tags.HTML[tagL] !== 0) {
+		var htmlInterface = (document.createElement(tag).toString().match(/\[object HTML(.+)Element\]/) || [])[1];
+		
+		if (htmlInterface && htmlInterface != 'Unknown') {
+			Tags.HTML[tagL] = 1;
+			return 'html';
+		}
+	}
+	
+	Tags.HTML[tagL] = 0;
+	
+	if (Tags.SVG[tag] !== 0) {
+		var svgInterface = (document.createElementNS('http://www.w3.org/2000/svg', tag).toString().match(/\[object SVG(.+)Element\]/) || [])[1];
+		
+		if (svgInterface && svgInterface != 'Unknown') {
+			Tags.SVG[tag] = 1;
+			return 'svg';
+		}
+	}
+	
+	Tags.SVG[tag] = 0;
+	
+	// Lame way to detect MathML, but browsers don’t expose interface names there :(
+	if (Tags.MathML[tag] !== 0) {
+		if (tag.indexOf('m') === 0) {
+			Tags.MathML[tag] = 1;
+			return 'mathml';
+		}
+	}
+	
+	Tags.MathML[tag] = 0;
+	
+	return null;
+}
+
+})();;
 var $n = $('.navigation'),
 		$nt = $('.navigation-toggle'),
 		$container = $('.site'),
