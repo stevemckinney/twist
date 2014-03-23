@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 					fontsDir: '<%= path.dist %>/fonts',
 					outputStyle: 'expanded',
 					relativeAssets: true,
-					require: ['breakpoint', 'ceaser-easing'],
+					require: ['breakpoint', 'ceaser-easing', 'susy'],
 					quiet: true,
 					sourcemap: true
 				}
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 					javascriptsDir: '<%= path.dist %>/js',
 					fontsDir: '<%= path.dist %>/fonts',
 					outputStyle: 'compressed',
-					require: ['ceaser-easing', 'susy']
+					require: ['breakpoint', 'ceaser-easing', 'susy']
 				}
 			}
 		},
