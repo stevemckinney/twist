@@ -3,25 +3,17 @@
 $colors: $default-color $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
 //$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
 $i: 1;
-@import "keyframes";
+
 .button {
-	@extend %element-base-with-mixin;
-	text-transform: capitalize;
-	
-	&:active {
-		-webkit-animation-duration: 1s;
-		-webkit-animation-name: spring;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-fill-mode: both;
-		-webkit-backface-visibility: visible; } }
+	@extend %element-base-with-mixin; }
 
 $buttons: (
-	default: $default-color,
+	default: $default-color adjust-color($default-color, $blue: 60),
 	primary: $primary,
-	secondary: $secondary,
+	secondary: $secondary adjust-hue($secondary, 20deg),
 	tertiary: $tertiary,
 	alternate: $alt,
-	neutral: $neutral,
+	neutral: $neutral adjust-hue($neutral, -20deg),
 	red: $red,
 	yellow: $yellow,
 	green: $green,
@@ -56,7 +48,7 @@ $buttons: (
 		bottom: 0;
 		width: 100%;
 		background: transparent;
-		@include transform(rotateX(180deg));
+		@include transform(rotateX(90deg));
 		@include perspective(800px);
 		-webkit-transform-style: preserve-3d; }
 	

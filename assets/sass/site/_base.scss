@@ -1,38 +1,28 @@
 // Override variables from import/_base.scss here
 // General site variables
 // ---------------------------
-$z-index-0: 0;
-$z-index-1: 1;
-$z-index-2: 2;
-$z-index-3: 3;
-$z-index-4: 4;
-$z-index-5: 5;
-$z-index-10: 10;
-$z-index-100: 100;
-$z-index-200: 200;
-$z-index-300: 300;
 
 // Color
 // ---------------------------
-$primary: #4c4d4c !default;
+$primary: #4c4d4c !global;
 $primary-d1: #1c1c1c;
 $primary-d2: scale-lightness($primary-d1, -20%);
 $primary-l1: scale-lightness($primary, 10%);
 $primary-l2: scale-lightness($primary, 20%);
 
-$secondary: #6cd0d9 !default;
+$secondary: #61bd89 !global;
 $secondary-d1: scale-lightness($secondary, -10%);
 $secondary-d2: scale-lightness($secondary, -20%);
 $secondary-l1: scale-lightness($secondary, 10%);
 $secondary-l2: scale-lightness($secondary, 20%);
 
-$tertiary: #f2f0f0 !default;
+$tertiary: #f2f0f0 !global;
 $tertiary-d1: scale-lightness($tertiary, -10%);
 $tertiary-d2: scale-lightness($tertiary, -20%);
 $tertiary-l1: scale-lightness($tertiary, 10%);
 $tertiary-l2: scale-lightness($tertiary, 20%);
 
-$neutral: #f24969 !default;
+$neutral: #f25049 !global;
 $neutral-d1: scale-lightness($neutral, -10%);
 $neutral-d2: scale-lightness($neutral, -20%);
 $neutral-l1: scale-lightness($neutral, 10%);
@@ -40,22 +30,19 @@ $neutral-l2: scale-lightness($neutral, 20%);
 
 // Fonts
 // ---------------------------
-$sans: Verlag A, Verlag B, sans-serif;
-$serif: Sentinel A, Sentinel B, serif;
-$monospace: Menlo, Monaco, "Courier New", monospace;
-$icons: "SSStandard";
-$heading: $serif;
-$body: $sans;
-$form: $sans;
-$element: $sans;
+$sans: Verlag A, Verlag B, sans-serif !global;
+$serif: Sentinel A, Sentinel B, serif !global;
+$monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !default;
+$icons: "SSStandard" !default;
+$heading: $serif !default;
+$body: $sans !default;
+$form: $sans !default;
+$element: $sans !default;
 
 // Misc
 // ---------------------------
-$debug-mode: false;
 $default-transition-duration: .2s;
 $site-width: 800px;
-$remove-inline-block-whitespace: true;
-$negative-spacing: $default-negative-spacing;
 
 // Browser support and prefixing
 // ---------------------------
@@ -69,4 +56,4 @@ $gradient-support-threshold: 6.51;
 
 // Breakpoints
 // ---------------------------
-$breakpoint-base-font-size: $base-font-size
+$breakpoint-base-font-size: $base-font-size;

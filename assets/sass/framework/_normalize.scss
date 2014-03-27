@@ -7,10 +7,9 @@
 html {
 	font-family: $body;
 	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%; }
-
-body {
-	margin: 0; }
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; }
 
 article,
 aside,
@@ -41,6 +40,30 @@ audio:not([controls]) {
 template {
 	display: none; }
 
+// Shared
+// ---------------------------
+td,
+th,
+dl,
+ul,
+ol,
+menu,
+legend,
+// fieldset,
+input[type="radio"],
+input[type="checkbox"] {
+	padding: 0; }
+
+dl,
+dd,
+ol,
+ul,
+menu,
+// figure,
+// fieldset,
+body {
+	margin: 0; }
+
 // Text
 // ---------------------------
 a {
@@ -55,7 +78,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold; }
+	font-weight: font-weight(bold); }
 	
 dfn {
 	font-style: italic; }
@@ -162,29 +185,6 @@ textarea {
 
 optgroup {
 	font-weight: bold; }
-
-// Shared
-// ---------------------------
-input[type="checkbox"],
-input[type="radio"],
-fieldset,
-legend,
-td,
-th,
-dl,
-ul,
-ol,
-menu {
-	padding: 0; }
-
-dl,
-dd,
-ol,
-ul,
-menu,
-fieldset,
-figure {
-	margin: 0; }
 
 // Table
 // ---------------------------

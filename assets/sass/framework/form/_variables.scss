@@ -10,9 +10,10 @@ $default-form-type: text !default;
 // Default styling
 // ---------------------------
 $default-form-base: false !default;
-$default-form-focus-color: $cyan !default;
-$default-form-background-focus-color: $white !default;
-$default-form-background-color: $white !default;
+$default-form-focus-color: if(variable-exists(alt), $alt, #444) !default;
+$default-form-background-focus-color: scale-lightness($white, -20%) !default;
+$default-form-background-color: scale-lightness($white, -5%) !default;
+$default-form-focus-background-color: $white !default;
 $default-form-radius: $radius !default;
 $default-form-checkbox-radius: $radius !default;
 $default-form-radio-radius: $radius * 10 !default;

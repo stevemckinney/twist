@@ -30,9 +30,9 @@
 	
 	// Dark colors
 	// ---------------------------
-	$dark-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($color-1, -5%), scale-lightness($color-1, -20%));
-	$border-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($dark-color, -15%), scale-lightness($dark-color, -20%));
-	$border-dark-color: if(yiq-is-light($color-1, $default-element-yiq-threshold), scale-lightness($border-color, -10%), scale-lightness($border-color, -15%));
+	$dark-color: scale-color($color-1, $saturation: -20%, $lightness: -20%);
+	$border-color: scale-color($dark-color, $lightness: -10%, $saturation: -10%);
+	$border-dark-color: scale-lightness($border-color, -5%);
 	
 	// Dark background adjustments
 	// ---------------------------
@@ -44,15 +44,20 @@
 	// Base
 	// ---------------------------
 	@if $state == (normal or disabled) {
-		color: if($state == disabled, scale-lightness($color-1, -30%), yiq-contrast-color($color-1, scale-lightness($color-1, -30%), $white, $default-element-yiq-threshold * $default-element-yiq-multiplier)); }
+		color: if($state == disabled, scale-lightness($color-1, -30%), yiq-contrast-color($color-1, scale-lightness($color-1, -40%), $white, $default-element-yiq-threshold)); }
 
 	// Shading styles
 	// ---------------------------
 	@if $shading and $state != disabled {
 		@include background(linear-gradient($color-1, $color-2));
 		
-		box-shadow: if($border, compact(inset 0 if($state != active, -1px, 1px) $border-dark-color, inset 0 0 0 1px $border-color), compact(false)),
-								if($state != active, inset 0 if($border, 2px, 1px) $highlight-color, inset 0 if($border, 2px, 1px) 2px $dark-color); }
+		box-shadow: 
+			if($border, 
+				compact(inset 0 if($state != active, -1px, 1px) $border-dark-color, 
+				inset 0 0 0 1px $border-color), compact(false)),
+			if($state != active, 
+				if($default-element-highlight, inset 0 if($border, 2px, 1px) $highlight-color, compact(false)), 
+				inset 0 if($border, 2px, 1px) 2px $dark-color); }
 		
 	@else {
 		background: $color-1;

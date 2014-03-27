@@ -12,7 +12,8 @@
 				
 // Framework components, don't edit
 // ---------------------------
-@import "framework/conversion",
+@import "framework/maps",
+				"framework/conversion",
 				"framework/media",
 				"framework/normalize",
 				"framework/grid",
@@ -30,7 +31,6 @@
 // ---------------------------
 .sg-header {
   background: scale-lightness($tertiary, 80%);
-  box-shadow: 0 1px 1px rgba($tertiary-d2, .4), 0 1px $tertiary-d1;
   flex-direction: row; }
 
 .sg-info, .sg-base-styles {
@@ -52,8 +52,11 @@
 // Logo
 // ---------------------------
 .sg-logo {
-	color: $tertiary-d2;
-	margin: 0; }
+	color: $neutral;
+	margin: 0;
+	font-weight: 100;
+	font-style: italic;
+	letter-spacing: -4px; }
 
 /* Navigation
 ---------------------------------------------------------------------------- */
@@ -81,9 +84,18 @@
   font-weight: bold; }
 
 .sg-h2 {
-  border-bottom-width: 2px;
-  font-size: 1.5em;
-  text-transform: capitalize; }
+	border-radius: $radius $radius 0 0;
+  border-bottom-width: 0;
+  font-size: .75em;
+  margin: em(-$line, 12px);
+  margin-bottom: em($line, 12px);
+  padding: em($line, 12px);
+  background: $primary;
+  font-weight: font-weight(bold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  a { color: #fff; display: block; } }
 
 
 /* Buttons
@@ -184,7 +196,10 @@
 /* Sections
 ---------------------------------------------------------------------------- */
 .sg-section {
-  margin-bottom: 3rem; }
+	background: $white;
+	padding: em($line);
+  margin-bottom: 3rem;
+  border-radius: $radius; }
 
 .sg-anchor {
   display: block;

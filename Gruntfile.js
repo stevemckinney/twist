@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		path: {
-				assets: 'assets/',
+				assets: 'assets',
 				src: 'src',
 				dist: 'dist',
 				sass: '<%= path.assets %>/sass',
@@ -19,11 +19,11 @@ module.exports = function(grunt) {
 		watch: {
 			sass: {
 				files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
-				tasks: ['compass:dev']
+				tasks: 'compass:dev'
 			},
 			grunticon: {
 				files: ['**/*.{svg}', '<%= path.dist %>'],
-				tasks: ['grunticon']
+				tasks: 'grunticon'
 			},
 			js: {
 				files: ['<%= path.js %>/**/*.js'],
@@ -48,9 +48,9 @@ module.exports = function(grunt) {
 					imagesDir: '<%= path.dist %>/images',
 					javascriptsDir: '<%= path.dist %>/js',
 					fontsDir: '<%= path.dist %>/fonts',
-					outputStyle: 'expanded',
-					relativeAssets: true,
 					require: ['breakpoint', 'ceaser-easing', 'susy'],
+					relativeAssets: true,
+					outputStyle: 'expanded',
 					quiet: true,
 					sourcemap: true
 				}
@@ -63,8 +63,9 @@ module.exports = function(grunt) {
 					imagesDir: '<%= path.dist %>/images',
 					javascriptsDir: '<%= path.dist %>/js',
 					fontsDir: '<%= path.dist %>/fonts',
-					outputStyle: 'compressed',
-					require: ['breakpoint', 'ceaser-easing', 'susy']
+					require: ['breakpoint', 'ceaser-easing', 'susy'],
+					relativeAssets: true,
+					outputStyle: 'compressed'
 				}
 			}
 		},
@@ -87,7 +88,8 @@ module.exports = function(grunt) {
 
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+				mangle: true
 			},
 			dist: {
 				files: {
@@ -137,8 +139,10 @@ module.exports = function(grunt) {
 			options: {
 				prefix : 'shape-',
 			},
-			files: {
-				'<%= path.dist %>/images/sprite.svg': ['<%= path.images %>/*.svg']
+			dist: {
+				files: {
+					'<%= path.dist %>/images/sprite.svg' : ['<%= path.images %>/*.svg']
+				}
 			}
 		},
 		
@@ -166,9 +170,25 @@ module.exports = function(grunt) {
 	});
 
 	// Tasks
-	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['concat', 'uglify', 'grunticon', 'compass:dev']);
-	grunt.registerTask('dev', ['copy', 'watch']);
+	grunt.registerTask('default', [
+		'copy',
+		'watch'
+	]);
+	grunt.registerTask('dev', [
+		'concat',
+		'grunticon',
+		'svgmin',
+		'imagemin',
+		'compass:dev'
+	]);
+	grunt.registerTask('build', [
+		'concat',
+		'uglify',
+		'grunticon',
+		'svgmin',
+		'imagemin',
+		'compass:live'
+	]);
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 

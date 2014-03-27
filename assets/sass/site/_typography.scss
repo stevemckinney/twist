@@ -8,35 +8,27 @@
 	margin-top: 0;
 	font-weight: 700; }
 
-h1,
-.h1 {
-	font-size: em(36px);
-	margin-bottom: rhythm(1, 36px); }
+$text-elements: (
+	"h1, .h1": ( font-size: em(36px), margin-bottom: em($line, 36px) ),
+	"h2, .h2": ( font-size: em(30px), margin-bottom: em($line, 30px) ),
+	"h3, .h3": ( font-size: em(24px), margin-bottom: em($line, 24px) ),
+	"h4, .h4": ( font-size: em(21px), margin-bottom: em($base-px, 21px) ),
+	"h5, .h5": ( font-size: em(18px), margin-bottom: em($base-px, 18px) ),
+	"h6, .h6": ( font-size: em(16px), margin-bottom: em($base-px, 16px) )
+);
+
+$text-increment: 1;
+
+@each $selector, $properties in $text-elements {
+	$selector: unquote($selector);
+	$keys: map-keys($properties);
+	$values: map-values($properties);
 	
-h2,
-.h2 {
-	font-size: em(30px);
-	margin-bottom: rhythm(1, 30px); }
-	
-h3,
-.h3 {
-	font-size: em(24px);
-	margin-bottom: rhythm(1, 24px); }
-	
-h4,
-.h4 {
-	font-size: em(21px);
-	margin-bottom: rhythm(.5, 21px); }
-	
-h5,
-.h5 {
-	font-size: em(18px);
-	margin-bottom: rhythm(.5, 18px); }
-	
-h6,
-.h6 {
-	font-size: em($base-font-size);
-	margin-bottom: rhythm(.5, $base-font-size); }
+	#{$selector} {
+		@for $text-increment from 1 through length($keys) {
+			$property: nth($keys, $text-increment);
+			$value: nth($values, $text-increment);
+			#{$property}: #{$value}; } } }
 	
 // General
 // ---------------------------

@@ -8,10 +8,10 @@
 // ---------------------------
 $text-color-helpers: (
 	white: $white,
-	error: $red,
-	success: $green,
-	warning: $orange,
-	info: $cyan
+	red: $red,
+	green: $green,
+	orange: $orange,
+	blue: $cyan
 );
 
 @each $name, $color in $text-color-helpers {

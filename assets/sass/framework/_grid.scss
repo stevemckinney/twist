@@ -3,7 +3,6 @@
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
 $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
-$default-grid-no-mediaqueries: $default-no-query-selector !default; // can be false
 
 //	<div class="grid grid-with-gutter">
 //		<div class="grid-cell grid-4">
@@ -12,16 +11,9 @@ $default-grid-no-mediaqueries: $default-no-query-selector !default; // can be fa
 //		</div>
 //	</div>
 
-// Simple grid using
-// display: inline-block
+// Grid container
 // ---------------------------
-@mixin grid(
-	$grid-columns							: $default-grid-columns,
-	$grid-gutter							: $default-grid-gutter,
-	$grid-map									: $default-grid-map) {
-	
-	// Grid container
-	// ---------------------------
+@mixin grid-container($grid-gutter: $default-grid-gutter) {
 	.grid {
 		display: block;
 		padding: 0;
@@ -36,10 +28,11 @@ $default-grid-no-mediaqueries: $default-no-query-selector !default; // can be fa
 		text-align: center; }
 	
 	.grid-right {
-		text-align: right; }
-	
-	// Grid cells
-	// ---------------------------
+		text-align: right; } }
+
+// Grid cell
+// ---------------------------
+@mixin grid-cell($grid-gutter: $default-grid-gutter) {
 	.grid-cell {
 		display: inline-block;
 		font-size: 1rem;
@@ -50,8 +43,15 @@ $default-grid-no-mediaqueries: $default-no-query-selector !default; // can be fa
 		width: 100%; }
 
 	.grid-with-gutter > .grid-cell {
-		padding: 0 $grid-gutter; }
-	
+		padding: 0 $grid-gutter; } }
+
+
+// Grid widths
+// ---------------------------
+@mixin grid-width(
+	$grid-columns	: $default-grid-columns,
+	$grid-map			: $default-grid-map
+) {
 	$column-increment: 1;
 	
 	@each $breakpoint, $width in $grid-map {
@@ -62,3 +62,16 @@ $default-grid-no-mediaqueries: $default-no-query-selector !default; // can be fa
 				#{$class}-#{$column-increment} {
 					$w: (100% / $grid-columns) * $column-increment;
 					width: $w; } } } } }
+		
+// Simple grid using
+// display: inline-block
+// ---------------------------
+@mixin grid(
+	$grid-columns	: $default-grid-columns,
+	$grid-gutter	: $default-grid-gutter,
+	$grid-map			: $default-grid-map
+) {
+	
+	@include grid-container($grid-gutter);
+	@include grid-cell($grid-gutter);
+	@include grid-width($grid-columns, $grid-map); }

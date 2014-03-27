@@ -1,6 +1,13 @@
 // Default variables override in site/_base.scss
 // ---------------------------
 
+// Color
+// ---------------------------
+$primary: #4c4d4c !default;
+$secondary: #6cd0d9 !default;
+$tertiary: #f2f0f0 !default;
+$neutral: #f24969 !default;
+
 // Colours (see: site/base for main site palette)
 // --------------------------
 $black: #000 !default;
@@ -80,10 +87,9 @@ $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
-$default-shading: true !default;
+$default-shading: false !default;
 $default-display: inline-block !default;
-$default-dry: false !default;
-$default-state: disabled !default;
+$default-state: normal !default;
 
 // Default form placeholder
 $default-placeholder-color: $default-color !default;
@@ -129,25 +135,8 @@ $e-max: 	max-width $e - $breakpoint-subtract !default;
 $ef-max: 	max-width $ef - $breakpoint-subtract !default;
 $f-max: 	max-width $f - $breakpoint-subtract !default;
 
+// resolution
 $retina: min-resolution 1.5dppx !default;
-
-// Breakpoint variables
-// ---------------------------
-$default-breakpoint-orientation: false !default;
-$default-min-resolution: min-resolution 144dpi !default;
-
-$breakpoint-subtract: .01em !default;
-
-$default-hide-small-breakpoint: $b !default;
-$default-hide-medium-min-breakpoint: $b !default;
-$default-hide-medium-max-breakpoint: $c !default;
-$default-hide-large-breakpoint: $d !default;
-
-$default-breakpoint-type: min !default;
-$default-breakpoint-retina: false !default;
-$default-breakpoint-width: false !default;
-$default-breakpoint-min-resolution: min-resolution 1.5dppx !default;
-$default-breakpoint-pixel-ratio: 1.5 !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
@@ -158,6 +147,19 @@ $normal-size: 100% !default;
 $small-size: 87.5% !default;
 $xsmall-size: 75% !default;
 $xxsmall-size: 62.5% !default;
+
+// z-index
+// ---------------------------
+$z-index-0: 0 !default;
+$z-index-1: 1 !default;
+$z-index-2: 2 !default;
+$z-index-3: 3 !default;
+$z-index-4: 4 !default;
+$z-index-5: 5 !default;
+$z-index-10: 10 !default;
+$z-index-100: 100 !default;
+$z-index-200: 200 !default;
+$z-index-300: 300 !default;
 
 // Misc
 // ---------------------------

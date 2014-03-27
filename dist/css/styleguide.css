@@ -4,14 +4,11 @@ html {
   font-family: Verlag A, Verlag B, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 12, ../../assets/sass/framework/_normalize.scss */
-body {
-  margin: 0;
-}
-
-/* line 15, ../../assets/sass/framework/_normalize.scss */
+/* line 14, ../../assets/sass/framework/_normalize.scss */
 article,
 aside,
 details,
@@ -27,7 +24,7 @@ summary {
   display: block;
 }
 
-/* line 29, ../../assets/sass/framework/_normalize.scss */
+/* line 28, ../../assets/sass/framework/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -36,60 +33,83 @@ video {
   vertical-align: baseline;
 }
 
-/* line 36, ../../assets/sass/framework/_normalize.scss */
+/* line 35, ../../assets/sass/framework/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 40, ../../assets/sass/framework/_normalize.scss */
+/* line 39, ../../assets/sass/framework/_normalize.scss */
 [hidden],
 template {
   display: none;
 }
 
-/* line 46, ../../assets/sass/framework/_normalize.scss */
+/* line 45, ../../assets/sass/framework/_normalize.scss */
+td,
+th,
+dl,
+ul,
+ol,
+menu,
+legend,
+input[type="radio"],
+input[type="checkbox"] {
+  padding: 0;
+}
+
+/* line 57, ../../assets/sass/framework/_normalize.scss */
+dl,
+dd,
+ol,
+ul,
+menu,
+body {
+  margin: 0;
+}
+
+/* line 69, ../../assets/sass/framework/_normalize.scss */
 a {
   background: transparent;
 }
-/* line 49, ../../assets/sass/framework/_normalize.scss */
+/* line 72, ../../assets/sass/framework/_normalize.scss */
 a:active, a:hover {
   outline: 0;
 }
 
-/* line 53, ../../assets/sass/framework/_normalize.scss */
+/* line 76, ../../assets/sass/framework/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 56, ../../assets/sass/framework/_normalize.scss */
+/* line 79, ../../assets/sass/framework/_normalize.scss */
 b,
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* line 60, ../../assets/sass/framework/_normalize.scss */
+/* line 83, ../../assets/sass/framework/_normalize.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 63, ../../assets/sass/framework/_normalize.scss */
+/* line 86, ../../assets/sass/framework/_normalize.scss */
 mark {
   background: #fefeca;
   color: inherit;
 }
 
-/* line 67, ../../assets/sass/framework/_normalize.scss */
+/* line 90, ../../assets/sass/framework/_normalize.scss */
 kbd {
   background: white;
 }
 
-/* line 70, ../../assets/sass/framework/_normalize.scss */
+/* line 93, ../../assets/sass/framework/_normalize.scss */
 small {
   font-size: 87.5%;
 }
 
-/* line 73, ../../assets/sass/framework/_normalize.scss */
+/* line 96, ../../assets/sass/framework/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -98,17 +118,17 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 80, ../../assets/sass/framework/_normalize.scss */
+/* line 103, ../../assets/sass/framework/_normalize.scss */
 sup {
   top: -.5em;
 }
 
-/* line 83, ../../assets/sass/framework/_normalize.scss */
+/* line 106, ../../assets/sass/framework/_normalize.scss */
 sub {
   bottom: -.25em;
 }
 
-/* line 86, ../../assets/sass/framework/_normalize.scss */
+/* line 109, ../../assets/sass/framework/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -122,16 +142,16 @@ pre {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 91, ../../assets/sass/framework/_normalize.scss */
+/* line 114, ../../assets/sass/framework/_normalize.scss */
 code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Inconsolata, Menlo, Monaco, "Courier New", monospace;
   font-size: 1em;
 }
 
-/* line 98, ../../assets/sass/framework/_normalize.scss */
+/* line 121, ../../assets/sass/framework/_normalize.scss */
 img,
 iframe,
 object {
@@ -139,17 +159,17 @@ object {
   max-width: 100%;
 }
 
-/* line 104, ../../assets/sass/framework/_normalize.scss */
+/* line 127, ../../assets/sass/framework/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 107, ../../assets/sass/framework/_normalize.scss */
+/* line 130, ../../assets/sass/framework/_normalize.scss */
 hr {
   height: 0;
 }
 
-/* line 112, ../../assets/sass/framework/_normalize.scss */
+/* line 135, ../../assets/sass/framework/_normalize.scss */
 button,
 input,
 optgroup,
@@ -160,19 +180,19 @@ textarea {
   margin: 0;
 }
 
-/* line 121, ../../assets/sass/framework/_normalize.scss */
+/* line 144, ../../assets/sass/framework/_normalize.scss */
 button {
   border: none;
   overflow: visible;
 }
 
-/* line 125, ../../assets/sass/framework/_normalize.scss */
+/* line 148, ../../assets/sass/framework/_normalize.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 129, ../../assets/sass/framework/_normalize.scss */
+/* line 152, ../../assets/sass/framework/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -181,75 +201,50 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 136, ../../assets/sass/framework/_normalize.scss */
+/* line 159, ../../assets/sass/framework/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 140, ../../assets/sass/framework/_normalize.scss */
+/* line 163, ../../assets/sass/framework/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 
-/* line 145, ../../assets/sass/framework/_normalize.scss */
+/* line 168, ../../assets/sass/framework/_normalize.scss */
 input {
   line-height: normal;
 }
 
-/* line 148, ../../assets/sass/framework/_normalize.scss */
+/* line 171, ../../assets/sass/framework/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 152, ../../assets/sass/framework/_normalize.scss */
+/* line 175, ../../assets/sass/framework/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 156, ../../assets/sass/framework/_normalize.scss */
+/* line 179, ../../assets/sass/framework/_normalize.scss */
 fieldset,
 legend {
   border: none;
 }
 
-/* line 160, ../../assets/sass/framework/_normalize.scss */
+/* line 183, ../../assets/sass/framework/_normalize.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 163, ../../assets/sass/framework/_normalize.scss */
+/* line 186, ../../assets/sass/framework/_normalize.scss */
 optgroup {
   font-weight: bold;
-}
-
-/* line 168, ../../assets/sass/framework/_normalize.scss */
-input[type="checkbox"],
-input[type="radio"],
-fieldset,
-legend,
-td,
-th,
-dl,
-ul,
-ol,
-menu {
-  padding: 0;
-}
-
-/* line 180, ../../assets/sass/framework/_normalize.scss */
-dl,
-dd,
-ol,
-ul,
-menu,
-fieldset,
-figure {
-  margin: 0;
 }
 
 /* line 191, ../../assets/sass/framework/_normalize.scss */
@@ -326,10 +321,9 @@ table {
   font-size: 62.5%;
 }
 
-/* line 31, ../../assets/sass/styleguide.scss */
+/* line 32, ../../assets/sass/styleguide.scss */
 .sg-header {
   background: #fcfcfc;
-  box-shadow: 0 1px 1px rgba(197, 188, 188, 0.4), 0 1px #dcd6d6;
   flex-direction: row;
 }
 
@@ -359,20 +353,23 @@ table {
 
 /* line 54, ../../assets/sass/styleguide.scss */
 .sg-logo {
-  color: #c5bcbc;
+  color: #f25049;
   margin: 0;
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: -4px;
 }
 
 /* Navigation
 ---------------------------------------------------------------------------- */
-/* line 62, ../../assets/sass/styleguide.scss */
+/* line 65, ../../assets/sass/styleguide.scss */
 .js .sg-submit-btn {
   display: none;
 }
 
 /* Headings
 ---------------------------------------------------------------------------- */
-/* line 67, ../../assets/sass/styleguide.scss */
+/* line 70, ../../assets/sass/styleguide.scss */
 .sg-h1,
 .sg-h2,
 .sg-h3 {
@@ -386,22 +383,34 @@ table {
   margin-top: 0;
 }
 
-/* line 79, ../../assets/sass/styleguide.scss */
+/* line 82, ../../assets/sass/styleguide.scss */
 .sg-h1 {
   font-size: 2.25em;
   font-weight: bold;
 }
 
-/* line 83, ../../assets/sass/styleguide.scss */
+/* line 86, ../../assets/sass/styleguide.scss */
 .sg-h2 {
-  border-bottom-width: 2px;
-  font-size: 1.5em;
-  text-transform: capitalize;
+  border-radius: 3px 3px 0 0;
+  border-bottom-width: 0;
+  font-size: .75em;
+  margin: -2em;
+  margin-bottom: 2em;
+  padding: 2em;
+  background: #4c4d4c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* line 98, ../../assets/sass/styleguide.scss */
+.sg-h2 a {
+  color: #fff;
+  display: block;
 }
 
 /* Buttons
 ---------------------------------------------------------------------------- */
-/* line 91, ../../assets/sass/styleguide.scss */
+/* line 103, ../../assets/sass/styleguide.scss */
 .sg-btn {
   float: left;
   padding: .5em .9em;
@@ -413,12 +422,12 @@ table {
   -webkit-backface-visibility: hidden;
   overflow: hidden;
 }
-/* line 102, ../../assets/sass/styleguide.scss */
+/* line 114, ../../assets/sass/styleguide.scss */
 .sg-btn, .sg-btn:after {
   transition: .35s;
   border-radius: 3px;
 }
-/* line 107, ../../assets/sass/styleguide.scss */
+/* line 119, ../../assets/sass/styleguide.scss */
 .sg-btn:after {
   content: "";
   position: absolute;
@@ -433,12 +442,12 @@ table {
   -webkit-transform: rotateX(180deg);
   transform: rotateX(180deg);
 }
-/* line 118, ../../assets/sass/styleguide.scss */
+/* line 130, ../../assets/sass/styleguide.scss */
 .sg-btn:hover, .sg-btn:focus {
   box-shadow: inset 0 0 0 1px #3d3e3d;
   color: white;
 }
-/* line 123, ../../assets/sass/styleguide.scss */
+/* line 135, ../../assets/sass/styleguide.scss */
 .sg-btn:hover:after, .sg-btn:focus:after {
   -moz-transform: rotateX(0);
   -ms-transform: rotateX(0);
@@ -448,12 +457,12 @@ table {
   width: 100%;
 }
 
-/* line 128, ../../assets/sass/styleguide.scss */
+/* line 140, ../../assets/sass/styleguide.scss */
 .sg-btn--top {
   float: right;
 }
 
-/* line 131, ../../assets/sass/styleguide.scss */
+/* line 143, ../../assets/sass/styleguide.scss */
 .sg-btn--select {
   border-radius: 0 0.3em;
   position: absolute;
@@ -461,7 +470,7 @@ table {
   top: 14px;
 }
 
-/* line 137, ../../assets/sass/styleguide.scss */
+/* line 149, ../../assets/sass/styleguide.scss */
 .sg-btn--select.is-active:hover:after {
   background: #111;
   background: rgba(0, 0, 0, 0.8);
@@ -478,7 +487,7 @@ table {
   z-index: 98;
 }
 
-/* line 153, ../../assets/sass/styleguide.scss */
+/* line 165, ../../assets/sass/styleguide.scss */
 .sg-btn--select.is-active:hover:before {
   border: solid;
   border-color: #111 transparent;
@@ -492,21 +501,21 @@ table {
 }
 
 /* Hide specific buttons for use with JS */
-/* line 166, ../../assets/sass/styleguide.scss */
+/* line 178, ../../assets/sass/styleguide.scss */
 .sg-btn--source,
 .sg-btn--select {
   display: none;
 }
 
 /* Show specific buttons if JS enabled */
-/* line 172, ../../assets/sass/styleguide.scss */
+/* line 184, ../../assets/sass/styleguide.scss */
 .js .sg-btn--source,
 .js .sg-btn--select {
   display: block;
 }
 
 /* Hide specific buttons conditionally */
-/* line 178, ../../assets/sass/styleguide.scss */
+/* line 190, ../../assets/sass/styleguide.scss */
 .operamini .sg-btn--source,
 .legacy .sg-btn--source {
   display: none;
@@ -514,12 +523,15 @@ table {
 
 /* Sections
 ---------------------------------------------------------------------------- */
-/* line 186, ../../assets/sass/styleguide.scss */
+/* line 198, ../../assets/sass/styleguide.scss */
 .sg-section {
+  background: white;
+  padding: 1.5em;
   margin-bottom: 3rem;
+  border-radius: 3px;
 }
 
-/* line 189, ../../assets/sass/styleguide.scss */
+/* line 204, ../../assets/sass/styleguide.scss */
 .sg-anchor {
   display: block;
   color: #6f716f;
@@ -527,14 +539,14 @@ table {
 
 /* Colors
 ---------------------------------------------------------------------------- */
-/* line 196, ../../assets/sass/styleguide.scss */
+/* line 211, ../../assets/sass/styleguide.scss */
 .sg-colors {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-/* line 201, ../../assets/sass/styleguide.scss */
+/* line 216, ../../assets/sass/styleguide.scss */
 .sg-color {
   flex: 0 0 12.5%;
   padding: 3em;
@@ -544,14 +556,14 @@ table {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 209, ../../assets/sass/styleguide.scss */
+/* line 224, ../../assets/sass/styleguide.scss */
 .sg-color-swatch {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-/* line 214, ../../assets/sass/styleguide.scss */
+/* line 229, ../../assets/sass/styleguide.scss */
 .sg-color-swatch span {
   position: absolute;
   top: 6px;
@@ -569,56 +581,56 @@ table {
   width: auto;
 }
 
-/* line 230, ../../assets/sass/styleguide.scss */
+/* line 245, ../../assets/sass/styleguide.scss */
 .sg-color-swatch:hover span {
   opacity: 1;
 }
 
-/* line 233, ../../assets/sass/styleguide.scss */
+/* line 248, ../../assets/sass/styleguide.scss */
 .sg-color--a {
   background: #4c4d4c;
 }
 
-/* line 234, ../../assets/sass/styleguide.scss */
+/* line 249, ../../assets/sass/styleguide.scss */
 .sg-color--b {
-  background: #6cd0d9;
+  background: #61bd89;
 }
 
-/* line 235, ../../assets/sass/styleguide.scss */
+/* line 250, ../../assets/sass/styleguide.scss */
 .sg-color--c {
   background: #f2f0f0;
 }
 
-/* line 236, ../../assets/sass/styleguide.scss */
+/* line 251, ../../assets/sass/styleguide.scss */
 .sg-color--d {
-  background: #f24969;
+  background: #f25049;
 }
 
-/* line 237, ../../assets/sass/styleguide.scss */
+/* line 252, ../../assets/sass/styleguide.scss */
 .sg-color--e {
   background: #478afa;
 }
 
-/* line 238, ../../assets/sass/styleguide.scss */
+/* line 253, ../../assets/sass/styleguide.scss */
 .sg-color--f {
   background: #7d7e81;
 }
 
 /* Fonts
 ---------------------------------------------------------------------------- */
-/* line 242, ../../assets/sass/styleguide.scss */
+/* line 257, ../../assets/sass/styleguide.scss */
 .sg-font {
   font-size: 1.5em;
 }
 
-/* line 245, ../../assets/sass/styleguide.scss */
+/* line 260, ../../assets/sass/styleguide.scss */
 .sg-font-secondary {
   font-family: Sentinel A, Sentinel B, serif;
 }
 
 /* Markup
 ---------------------------------------------------------------------------- */
-/* line 252, ../../assets/sass/styleguide.scss */
+/* line 267, ../../assets/sass/styleguide.scss */
 .sg-markup-controls {
   display: flex;
   padding-top: 1.5em;
@@ -628,12 +640,12 @@ table {
   align-self: flex-end;
 }
 
-/* line 260, ../../assets/sass/styleguide.scss */
+/* line 275, ../../assets/sass/styleguide.scss */
 .sg-source {
   position: relative;
 }
 
-/* line 263, ../../assets/sass/styleguide.scss */
+/* line 278, ../../assets/sass/styleguide.scss */
 .sg-source pre {
   background: #333;
   border-radius: .5em;
@@ -645,18 +657,18 @@ table {
   tab-size: 2;
 }
 
-/* line 273, ../../assets/sass/styleguide.scss */
+/* line 288, ../../assets/sass/styleguide.scss */
 .sg-source pre code {
   background: transparent;
 }
 
-/* line 276, ../../assets/sass/styleguide.scss */
+/* line 291, ../../assets/sass/styleguide.scss */
 .js .sg-source {
   max-height: 0;
   overflow: hidden;
 }
 
-/* line 281, ../../assets/sass/styleguide.scss */
+/* line 296, ../../assets/sass/styleguide.scss */
 .js .sg-source.is-active,
 .operamini .sg-source,
 .legacy .sg-source {
@@ -666,41 +678,41 @@ table {
 /* -------------------------------------------------------------------------
  Prettyprint
 ---------------------------------------------------------------------------- */
-/* line 291, ../../assets/sass/styleguide.scss */
+/* line 306, ../../assets/sass/styleguide.scss */
 .pln {
   color: #fff;
 }
 
 /* plain text */
 @media screen {
-  /* line 294, ../../assets/sass/styleguide.scss */
+  /* line 309, ../../assets/sass/styleguide.scss */
   .str,
   .string {
     color: #E6DB74;
   }
 
   /* string content */
-  /* line 297, ../../assets/sass/styleguide.scss */
+  /* line 312, ../../assets/sass/styleguide.scss */
   .kwd,
   .keyword {
     color: #66D9EF;
   }
 
   /* a keyword */
-  /* line 300, ../../assets/sass/styleguide.scss */
+  /* line 315, ../../assets/sass/styleguide.scss */
   .com,
   .comment {
     color: #75715E;
   }
 
   /* a comment */
-  /* line 303, ../../assets/sass/styleguide.scss */
+  /* line 318, ../../assets/sass/styleguide.scss */
   .typ {
     color: #A6E22E;
   }
 
   /* a type name */
-  /* line 305, ../../assets/sass/styleguide.scss */
+  /* line 320, ../../assets/sass/styleguide.scss */
   .lit,
   .number {
     color: #AE81FF;
@@ -709,19 +721,19 @@ table {
   /* a literal value */
   /* punctuation, lisp open bracket, lisp close bracket */
   /* .pun, .opn, .clo { color: #660 } */
-  /* line 311, ../../assets/sass/styleguide.scss */
+  /* line 326, ../../assets/sass/styleguide.scss */
   .tag {
     color: #F92672;
   }
 
   /* a markup tag name */
-  /* line 313, ../../assets/sass/styleguide.scss */
+  /* line 328, ../../assets/sass/styleguide.scss */
   .atn {
     color: #A6E22E;
   }
 
   /* a markup attribute name */
-  /* line 315, ../../assets/sass/styleguide.scss */
+  /* line 330, ../../assets/sass/styleguide.scss */
   .atv {
     color: #E6DB74;
   }
@@ -729,7 +741,7 @@ table {
   /* a markup attribute value */
   /*.dec, .var { color: #606 }*/
   /* a declaration; a variable name */
-  /* line 319, ../../assets/sass/styleguide.scss */
+  /* line 334, ../../assets/sass/styleguide.scss */
   .fun {
     color: #FF0000;
   }
@@ -738,59 +750,59 @@ table {
 }
 /* Use higher contrast and text-weight for printable form. */
 @media print, projection {
-  /* line 324, ../../assets/sass/styleguide.scss */
+  /* line 339, ../../assets/sass/styleguide.scss */
   .str {
     color: #060;
   }
 
-  /* line 326, ../../assets/sass/styleguide.scss */
+  /* line 341, ../../assets/sass/styleguide.scss */
   .kwd {
     color: #006;
     font-weight: bold;
   }
 
-  /* line 328, ../../assets/sass/styleguide.scss */
+  /* line 343, ../../assets/sass/styleguide.scss */
   .com {
     color: #600;
     font-style: italic;
   }
 
-  /* line 330, ../../assets/sass/styleguide.scss */
+  /* line 345, ../../assets/sass/styleguide.scss */
   .typ {
     color: #404;
     font-weight: bold;
   }
 
-  /* line 332, ../../assets/sass/styleguide.scss */
+  /* line 347, ../../assets/sass/styleguide.scss */
   .lit {
     color: #044;
   }
 
-  /* line 334, ../../assets/sass/styleguide.scss */
+  /* line 349, ../../assets/sass/styleguide.scss */
   .pun,
   .opn,
   .clo {
     color: #440;
   }
 
-  /* line 339, ../../assets/sass/styleguide.scss */
+  /* line 354, ../../assets/sass/styleguide.scss */
   .tag {
     color: #006;
     font-weight: bold;
   }
 
-  /* line 341, ../../assets/sass/styleguide.scss */
+  /* line 356, ../../assets/sass/styleguide.scss */
   .atn {
     color: #404;
   }
 
-  /* line 343, ../../assets/sass/styleguide.scss */
+  /* line 358, ../../assets/sass/styleguide.scss */
   .atv {
     color: #060;
   }
 }
 /* Specify class=linenums on a pre to get line numbering */
-/* line 347, ../../assets/sass/styleguide.scss */
+/* line 362, ../../assets/sass/styleguide.scss */
 ol.linenums {
   border-left: 1px solid #444;
   margin: 0 0 0 3.3em;
@@ -798,7 +810,7 @@ ol.linenums {
   padding: 0;
 }
 
-/* line 353, ../../assets/sass/styleguide.scss */
+/* line 368, ../../assets/sass/styleguide.scss */
 ol.linenums li {
   color: #bebec5;
   line-height: 1.5;
