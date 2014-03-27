@@ -7,6 +7,9 @@
 	$state									: $default-form-state,
 	$shading								: $default-form-shading
 ) {
+	$color: if(length($color) > 1, if($state == focus, nth($color, 2), nth($color, 1)), $color);
+	$background-color: if(length($background-color) > 1, if($state == focus, nth($background-color, 2), nth($background-color, 1)), $background-color);
+	
 	$attribute-states: (disabled: disabled, readonly: readonly);
 	$shaded-states: (normal: normal, focus: focus, error: error, success: success);
 	$background-color: if(map-get($attribute-states, $state), scale-lightness($color, 80%), $background-color);

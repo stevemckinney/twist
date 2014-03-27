@@ -9,9 +9,8 @@
 
 @mixin form(
 	$type							: $default-form-type,
-	$color						: $default-form-color,
-	$focus-color			: $default-form-focus-color,
-	$background-color	: $default-form-background-color,
+	$color						: $default-form-color $default-form-focus-color,
+	$background-color	: $default-form-background-color $default-form-focus-background-color,
 	$shading					: $default-form-shading,
 	$base 						: $default-form-base
 ) {
@@ -24,7 +23,7 @@
 		@else {
 			@extend %form-base-with-mixin; }
 		
-		@include form-text($color, $focus-color, $background-color, $shading); }
+		@include form-text($color, $background-color, $shading); }
 	
 	// Select
 	// ---------------------------
@@ -34,19 +33,19 @@
 		@else {
 			@extend %form-base-with-mixin; }
 			
-		@include form-select($color, $focus-color, $background-color, $shading); }
+		@include form-select($color, $background-color, $shading); }
 	
 	// Checkbox
 	// ---------------------------
 	@else if $type == checkbox {
-		@include form-checkbox($color, $focus-color, $background-color, $shading);
+		@include form-checkbox($color, $background-color, $shading);
 		@extend %form-boolean-base;
 		@extend %form-checkbox-radius; }
 	
 	// Radio
 	// ---------------------------
 	@else if $type == radio {
-		@include form-radio($color, $focus-color, $background-color, $shading);
+		@include form-radio($color, $background-color, $shading);
 		@extend %form-boolean-base;
 		@extend %form-radio-radius; }
 		

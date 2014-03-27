@@ -3,34 +3,31 @@
 // Text
 // ---------------------------
 @mixin form-text(
-	$color						: $default-form-color,
-	$focus-color			: $default-form-focus-color,
-	$background-color	: $default-form-background-color,
-	$shading					: $default-form-shading
+	$color									: $default-form-color $default-form-focus-color,
+	$background-color				: $default-form-background-color $default-form-focus-background-color,
+	$shading								: $default-form-shading
 ) {
-	@include form-shading(text, $color, $background-color, normal, $shading);
+	@include form-shading(text, nth($color, 1), nth($background-color, 1), normal, $shading);
 
 	&:focus {
-		@include form-shading(text, $focus-color, $background-color, focus, $shading); } }
+		@include form-shading(text, nth($color, 2), nth($background-color, 2), focus, $shading); } }
 
 // Select
 // ---------------------------
 @mixin form-select(
-	$color						: $default-form-color,
-	$focus-color			: $default-form-focus-color,
+	$color						: $default-form-color $default-form-focus-color,
 	$background-color	: $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
-	@include form-shading(select, $color, $background-color, normal, $shading);
+	@include form-shading(select, nth($color, 1), nth($background-color, 1), normal, $shading);
 
 	&:focus {
-		@include form-shading(select, $focus-color, $background-color, focus, $shading); } }
+		@include form-shading(select, nth($color, 2), nth($background-color, 2), focus, $shading); } }
 
 // Checkbox
 // ---------------------------
 @mixin form-checkbox(
 	$color						: $default-form-color,
-	$focus-color			: $default-form-focus-color,
 	$background-color	: $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
@@ -40,7 +37,6 @@
 // ---------------------------
 @mixin form-radio(
 	$color						: $default-form-color,
-	$focus-color			: $default-form-focus-color,
 	$background-color	: $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
