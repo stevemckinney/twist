@@ -72,17 +72,14 @@ module.exports = function(grunt) {
 
 		concat: {
 			dist: {
-				src: ['<%= path.js %>/enquire.js',
+				src: ['<%= path.js %>/modernizr.js',
+							'<%= path.js %>/enquire.js',
 							'<%= path.js %>/lettering.js',
 							'<%= path.js %>/fittext.js',
 							'<%= path.js %>/fitvids.js',
 							'<%= path.js %>/prism.js',
 							'<%= path.js %>/global.js'],
 				dest: '<%= path.dist %>/js/<%= pkg.name %>.js'
-			},
-			modernizr: {
-				src: '<%= path.js %>/modernizr.js',
-				dest: '<%= path.dist %>/js/modernizr.js'
 			}
 		},
 

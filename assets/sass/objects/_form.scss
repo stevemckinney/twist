@@ -1,55 +1,39 @@
+// Class prefixes
+// ---------------------------
+$field-prefix: field-;
+$input-prefix: input-;
+
 // Forms
 // ---------------------------
 .form {
 	@extend %clear; }
 
-.form-flex {
-	.field {
-		@include display-flex;
-		@include justify-content(flex-start);
-		@include flex-flow(row wrap);
-		@include align-items(center); }
-	
-	.field-label {
-		@include flex(1);
-		padding-right: em($line); }
-	
-	.input-text,
-	.input-select {
-		@include flex(2); } }
-
 // Label
 // ---------------------------
-.field-label {
+.#{$field-prefix}label {
 	display: block;
 	font-weight: 700;
 	line-height: 2.25; }
 
 // Legend
 // ---------------------------
-.field-legend {
-	@extend .h3; }
+.#{$field-prefix}legend {
+	@extend .h3 !optional; }
 
 // Fieldset
 // ---------------------------
-.field {}
-
-.field-group {
-	display: table;
+.field,
+fieldset {
+	margin: 0;
+	padding: 0; }
 	
-	.button-submit,
-	.field-label,
-	.input-text {
-		display: table-cell;
-		vertical-align: middle; } }
-	
-.field-checkbox {
+.#{$field-prefix}checkbox {
 	display: block; }
 	
-.field-radio {
+.#{$field-prefix}radio {
 	@extend .field-checkbox; }
 
-.field-search {
+.#{$field-prefix}search {
 	@include form-search($has-label: true);
 	text-align: right; }
 
@@ -57,15 +41,29 @@
 	clear: both;
 	width: 100%; }
 
+// Grouped fields
+// ---------------------------
+.#{$field-prefix}group {
+	display: table;
+	
+	.#{$field-prefix}label {
+		padding: 0 em($base-px); }
+	
+	.button-submit,
+	.#{$field-prefix}label,
+	.#{$input-prefix}text {
+		display: table-cell;
+		vertical-align: middle; } }
+		
 // Input
 // ---------------------------
-	.input-text,
-	.input-select {
+	.#{$input-prefix}text,
+	.#{$input-prefix}select {
 		width: 100%; }
 	
 	// Text
 	// ---------------------------
-	.input-text {
+	.#{$input-prefix}text {
 		@extend %form-base-with-mixin;
 		@include form;
 		
@@ -74,20 +72,20 @@
 	
 	// Select
 	// ---------------------------
-	.input-select {
+	.#{$input-prefix}select {
 		@extend %form-base-with-mixin;
 		@include form(select); }
 	
 	// Check/radio
 	// ---------------------------
-	.input-checkbox {
+	.#{$input-prefix}checkbox {
 		@include form(checkbox);
 		@include wh(em($base-font-size));
 		position: relative;
 		top: em($base-font-size / 6);
 		margin: $default-form-boolean-margin; }
 	
-	.input-radio {
+	.#{$input-prefix}radio {
 		@include form(radio);
 		@include wh($default-form-radio-width, $default-form-radio-height);
 		position: relative;
@@ -101,18 +99,8 @@
 	
 // States
 // ---------------------------
-.is-valid {
-	@include form-shading(text, $green, $state: normal);
-	
-	&:focus { @include form-shading(text, $green, $state: focus); } }
+.#{$input-prefix}text[disabled] {
+	@include form-shading(text, scale-lightness($default-form-color, 20%), $state: disabled); }
 
-.is-error {
-	@include form-shading(text, $red, $state: normal);
-	
-	&:focus { @include form-shading(text, $red, $state: focus); }  }
-
-.input-text[disabled] {
-	@include form-shading($state: disabled); }
-
-.input-select[disabled] {
-	@include form-shading(select, $state: disabled); }
+.#{$input-prefix}select[disabled] {
+	@include form-shading(select, scale-lightness($default-form-color, 20%), $state: disabled); }

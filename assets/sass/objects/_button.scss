@@ -1,19 +1,15 @@
 // Buttons
 // ---------------------------
-$colors: $default-color $light-grey $alt $info $danger $success $yellow $warning $white #7375a5 #f00 !default;
-//$colors: #ff5820 #ffc041 #ffef40 #a1ea3b #3beacd #41c0ff #3d85eb #e157e1 #2f2f2f #7d7e81 #e3e6ea #fff;
-$i: 1;
-
 .button {
 	@extend %element-base-with-mixin; }
 
 $buttons: (
 	default: $default-color adjust-color($default-color, $blue: 60),
 	primary: $primary,
-	secondary: $secondary adjust-hue($secondary, 20deg),
+	secondary: $secondary adjust-hue(scale-lightness($secondary, -10%), 20deg),
 	tertiary: $tertiary,
 	alternate: $alt,
-	neutral: $neutral adjust-hue($neutral, -20deg),
+	neutral: adjust-hue($neutral, 10deg) $neutral,
 	red: $red,
 	yellow: $yellow,
 	green: $green,

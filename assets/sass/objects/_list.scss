@@ -2,13 +2,13 @@
 // ---------------------------
 ul,
 ol {
-	@extend %margin-bottom;
+	margin: 0 0 em($base-px) em(21px, $base-font-size);
 	
 	ul,
-	ol {
-		margin-left: em($line); } }
+	ol { 
+		margin: 0 0 0 em(21px, $base-font-size); } }
 
-ul li {
+ul li { 
 	list-style: square; }
 
 // Lists
@@ -28,6 +28,8 @@ ul li {
 		@extend %margin-bottom-large; } }
 
 .list-custom-bullet {
+	margin-left: 0;
+	
 	li {
 		list-style: none;
 		
@@ -40,8 +42,7 @@ ul li {
 // ---------------------------
 dl {
 	@extend %clear;
-	@extend %margin-bottom;
-	font-size: 0; }
+	@extend %margin-bottom; }
 
 dt {
 	float: left;
@@ -53,7 +54,3 @@ dd {
 	float: right;
 	width: 66.666666%;
 	padding-left: cp(24px, $site-width); }
-
-dt,
-dd {
-	@include rem(font-size, $base-font-size); }

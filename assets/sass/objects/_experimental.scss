@@ -1,0 +1,77 @@
+// Experimental
+// ---------------------------
+// An easy way to disable misc stuff
+// that I'm trialling, building up to begin with
+// to be able to quickly get rid of bugs as well
+@mixin type-setup($map) {
+	$text-increment: 1;
+	
+	@each $selector, $properties in $text-elements {
+		$selector: unquote($selector);
+		$keys: map-keys($properties);
+		$values: map-values($properties);
+		
+		#{$selector} {
+			@for $text-increment from 1 through length($keys) {
+				$property: nth($keys, $text-increment);
+				$value: nth($values, $text-increment);
+				#{$property}: #{$value}; } } } }
+
+@mixin flex-grid() {
+	.fc,
+	.flex-container {
+		@include display-flex; }
+	
+	.fc-items-center {
+		@include align-items(center);
+	}
+}
+
+@if $_experimental-css {
+	
+[class*="input-"] {
+	&::-webkit-calendar-picker-indicator {
+		color: transparent;
+		outline: 1px solid red;
+
+		&:before {
+			content: "";
+			display: block;
+			background: inline-image("dropdown.svg") no-repeat center center;
+			width: em(12px);
+			height: em(6px); } } }
+
+
+.form-flex {
+	.field {
+		@include display-flex;
+		@include justify-content(flex-start);
+		@include flex-flow(row wrap);
+		@include align-items(center); }
+	
+	.field-label {
+		@include flex(1);
+		padding-right: em($line); }
+	
+	.input-text,
+	.input-select {
+		@include flex(2); } }
+		
+summary::-webkit-details-marker {
+  display: none }
+
+summary:after {
+  background: inline-image("dropdown.svg") no-repeat center center;
+  float: left; 
+  height: 20px;
+  width: 20px;
+  content: " ";
+  position: relative;
+  @include transform(rotate(-90deg));
+}
+
+details[open] summary:after {
+	@include transform(rotate(0deg));
+}
+
+}

@@ -1,0 +1,41 @@
+// Clearfix
+// ---------------------------
+.clearfix {
+	@extend %clear; }
+
+// Floating
+// ---------------------------
+.pull-left {
+	@extend %left; }
+
+.pull-right {
+	@extend %right; }
+
+// Inline block layout
+// ---------------------------
+.align-top {
+	@extend %vertical-align-top; }
+
+.align-middle {
+	@extend %vertical-align-middle; }
+
+.align-bottom {
+	@extend %vertical-align-bottom; }
+
+// Visibility
+// ---------------------------
+.hidden {
+	@extend %hide; }
+
+.screenreaders,
+.screen-reader-text,
+.visuallyhidden {
+	@extend %screenreaders; }
+
+// Margins
+// ---------------------------
+.margin-bottom {
+	@extend %margin-bottom; } // $base-px
+	
+.margin-bottom-large {
+	@extend %margin-bottom-large; } // $base-px*2

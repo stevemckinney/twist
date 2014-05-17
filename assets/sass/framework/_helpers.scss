@@ -1,5 +1,5 @@
 //	Your traditional helper classes through
-//	mixins and extends
+//	mixins, extends and reusable classes
 // 	-----------------------------------------
 
 // General extends
@@ -22,13 +22,21 @@
 %right {
 	float: right; }
 	
+// Override compass mixin to exclude has-layout (browser support doesn't exclude this yet)
+// ---------------------------
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both; } }
+    
 %grid,
 %clear {
 	@include pie-clearfix; }
 
-// Hiding
+// Visibility
 // ---------------------------
-.hidden {
+%hide {
 	display: none; }
 	
 %screenreaders {
@@ -56,8 +64,11 @@
 // ---------------------------
 %centre {
 	margin: auto; }
-	
-%no-mp {
+
+%no-margin-bottom {
+	margin-bottom: 0; }
+
+%no-margin-padding {
 	margin: 0;
 	padding: 0; }
 

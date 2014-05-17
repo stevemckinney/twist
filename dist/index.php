@@ -109,16 +109,17 @@
       <div class="sg-markup-controls"><a class="sg-btn--top" href="#top">Back to Top</a></div>
     </div><!--/.sg-font-stacks-->
   </div><!--/.sg-info-->    
-
+	
+	<div class="sg-pattern-styles">
+    <h1 class="sg-h1">Pattern Styles <small>Design and mark-up patterns unique to your site.</small></h1>
+    <?php showMarkup('patterns'); ?>
+  </div><!--/.sg-pattern-styles-->
+	
   <div class="sg-base-styles">    
     <h1 class="sg-h1">Base Styles</h1>
     <?php showMarkup('base'); ?>
   </div><!--/.sg-base-styles-->
-
-  <div class="sg-pattern-styles">
-    <h1 class="sg-h1">Pattern Styles<small> - Design and mark-up patterns unique to your site.</small></h1>
-    <?php showMarkup('patterns'); ?>
-    </div><!--/.sg-pattern-styles-->
-  </div><!--/.sg-body-->
+  
+</div><!--/.sg-body-->
   
 <?php include 'styleguide/_includes/footer.php'; ?>

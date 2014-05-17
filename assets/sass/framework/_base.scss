@@ -1,7 +1,7 @@
 // Default variables override in site/_base.scss
 // ---------------------------
 
-// Color
+// Site colours
 // ---------------------------
 $primary: #4c4d4c !default;
 $secondary: #6cd0d9 !default;
@@ -87,7 +87,7 @@ $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
-$default-shading: false !default;
+$default-shading: true !default;
 $default-display: inline-block !default;
 $default-state: normal !default;
 
@@ -164,3 +164,4 @@ $z-index-300: 300 !default;
 // Misc
 // ---------------------------
 $debug-mode: false !default;
+$_experimental-css: true;

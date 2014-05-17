@@ -3,11 +3,20 @@
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
 $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
+$default-grid-font-size-small: .75rem !default;
+$default-grid-font-size-normal: 1rem !default;
 
-//	<div class="grid grid-with-gutter">
-//		<div class="grid-cell grid-4">
-//		</div>
-//		<div class="grid-cell grid-2">
+// Must be wrapped in a container with padding.
+// Will cause a scrollbar if it's as wide as the viewport.
+// ---------------------------
+// General usage
+// ---------------------------
+// 	<div class="container">
+//		<div class="grid grid-with-gutter">
+//			<div class="grid-cell grid-4">
+//			</div>
+//			<div class="grid-cell grid-2">
+//			</div>
 //		</div>
 //	</div>
 
@@ -32,15 +41,25 @@ $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 
 // Grid cell
 // ---------------------------
-@mixin grid-cell($grid-gutter: $default-grid-gutter) {
+@mixin grid-cell-font-size($grid-map: $default-grid-map) {
+	font-size: $default-grid-font-size-small;
+	
+	@include breakpoint(map-get($grid-map, medium)) {
+		font-size: $default-grid-font-size-normal; } }
+		
+@mixin grid-cell(
+	$grid-gutter: $default-grid-gutter,
+	$grid-map: $default-grid-map
+) {
 	.grid-cell {
 		display: inline-block;
-		font-size: 1rem;
 		margin: 0;
 		padding: 0;
 		text-align: left;
 		vertical-align: top;
-		width: 100%; }
+		width: 100%;
+		
+		@include grid-cell-font-size($grid-map); }
 
 	.grid-with-gutter > .grid-cell {
 		padding: 0 $grid-gutter; } }
@@ -73,5 +92,5 @@ $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 ) {
 	
 	@include grid-container($grid-gutter);
-	@include grid-cell($grid-gutter);
+	@include grid-cell($grid-gutter, $grid-map);
 	@include grid-width($grid-columns, $grid-map); }

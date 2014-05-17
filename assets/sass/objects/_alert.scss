@@ -1,31 +1,62 @@
 // Alert
 // ---------------------------
 .alert {
+	@include element($tertiary, $hover: false);
 	position: relative;
 	margin: 0;
-	padding: element-size(2, true); }
+	border-radius: 0 $radius $radius 0;
+	margin-left: em(48px);
+	margin-bottom: em($line);
+	
+	&,
+	&:before {
+		padding: element-size(2, true); }
+	
+	&:after,
+	&:before {
+		content: "";
+		position: absolute; }
+	
+	&:before {
+		border-radius: $radius 0 0 $radius;
+		display: inline-block;
+		color: $white;
+		text-align: center;
+		margin-right: element-size-single(2);
+		top: 0;
+		bottom: 0;
+		left: em(-47px);
+		width: em($line*2); }
+	
+	&:after {
+		@include wh(em(16px));
+		top: em(22px);
+		left: em(-31px);
+		z-index: $z-index-1;
+		background-image: image-url("icons.svg"); } }
 
 $alerts: (
-	default: $default-color,
-	green: $green,
-	blue: $blue,
-	red: $red,
-	yellow: $yellow
+	default: (color: $default-color, icon: "-32px -32px"),
+	success: (color: $green, icon: "-32px 0"),
+	info: (color: $blue, icon: "-32px -32px"),
+	error: (color: $red, icon: "0 0"),
+	warning: (color: $yellow, icon: "-96px 0")
 );
 
 %alert-heading {
 	font: 700 em(18px) $sans;
 	margin: 0; }
 
-@each $alert, $color in $alerts {
-	.alert-#{$alert} {
-		color: scale-lightness($color, -20%);
-		background: scale-lightness($color, 85%);
-		box-shadow: inset 2px 0 $color; }
+@each $alert, $details in $alerts {
+	$alert: unquote($alert);
+	$color: map-get(map-get($alerts, $alert), color);
+	$icon: map-get(map-get($alerts, $alert), icon);
 	
-	.alert-#{$alert}-heading {
-		@extend %alert-heading;
-		color: $color; } }
+	.alert-#{$alert}:after {
+		background-position: unquote($icon); }
+	
+	.alert-#{$alert}:before {
+		@include element($color, $hover: false); } }
 
 .alert-body {
 	margin: 0;

@@ -1,5 +1,0 @@
-site_name: "twist"
-markdown: rdiscount
-rdiscount: 
-extensions: [smart]
-permalinks: :title

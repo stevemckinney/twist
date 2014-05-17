@@ -53,6 +53,8 @@ $nt.on('click touchstart', function(e) {
 	$b.toggleClass('overflow-hidden');
 });
 
+// Allow passwords to be shown for confirmation
+// ---------------------------
 function show_password(checkbox, password) {
 	checkbox = typeof checkbox !== 'undefined' ? checkbox : '#checkbox-password';
 	password = typeof password !== 'undefined' ? password : '.input-password';

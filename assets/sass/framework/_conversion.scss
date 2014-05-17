@@ -128,3 +128,9 @@ $yiq-debug: false !default;
 		$equal == false, 
 		($size * $ratio) + em (($size * $multiplier) * $ratio) + em, 
 		($size * $ratio) + em); }
+
+@function element-size-single(
+	$size				: $default-size,
+	$ratio			: $default-ratio
+) {
+	@return ($size * $ratio) + em; }
