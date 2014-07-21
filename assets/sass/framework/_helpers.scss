@@ -40,14 +40,14 @@
 	display: none; }
 	
 %screenreaders {
-	border: 0;
+	border: 0 !important;
 	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px; }
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	width: 1px !important;
+	padding: 0 !important; }
 
 // Resets
 // ---------------------------
@@ -102,29 +102,6 @@
 %base-font-size {
 	font-size: em($base-font-size, $base-font-size); }
 
-// Sizes
-// ---------------------------
-.xxlarge {
-	font-size: $xxlarge-size; }
-	
-.xlarge {
-	font-size: $xlarge-size; }
-	
-.large {
-	font-size: $large-size; }
-
-.normal {
-	font-size: $normal-size; }
-	
-.small {
-	font-size: $small-size; }
-	
-.xsmall {
-	font-size: $xsmall-size; }
-	
-.xxsmall {
-	font-size: $xxsmall-size; }
-
 // Mixins
 // ---------------------------
 
@@ -162,42 +139,3 @@
 	
 	@if $padding {
 		padding: $padding; } }
-
-// Layout
-// ---------------------------
-%two-columns {
-	@include column-count(2);
-	@include column-gap(em($line*2));
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	break-inside: avoid; }
-
-// Inline block
-// ---------------------------
-%inline-block {
-	display: inline-block; }
-	
-%vertical-align-top {
-	@extend %inline-block;
-	vertical-align: top; }
-
-%vertical-align-middle {
-	@extend %inline-block;
-	vertical-align: middle; }
-
-%vertical-align-bottom {
-	@extend %inline-block;
-	vertical-align: bottom; }
-
-// Entry widths
-// ---------------------------
-%entry-half {
-	@extend %vertical-align-bottom;
-	width: 50%; }
-
-// Module last margin removal
-// ---------------------------
-%module > *:last-child,
-%module > *:last-child > *:last-child,
-%module > *:last-child > *:last-child > *:last-child {
-  margin: 0; }

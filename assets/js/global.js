@@ -53,16 +53,7 @@ $nt.on('click touchstart', function(e) {
 	$b.toggleClass('overflow-hidden');
 });
 
-// Allow passwords to be shown for confirmation
+// Add close buttons to notices
 // ---------------------------
-function show_password(checkbox, password) {
-	checkbox = typeof checkbox !== 'undefined' ? checkbox : '#checkbox-password';
-	password = typeof password !== 'undefined' ? password : '.input-password';
-	
-	$(checkbox).change(function() {
-		console.log(password);
-		if ($(password).attr('type') == 'text') $(password).attr('type', 'password')
-		else $(password).attr('type', 'text')
-	});
-}
-show_password();
+var notice = new Notice();
+notice.close();

@@ -6,7 +6,7 @@
 @mixin type-setup($map) {
 	$text-increment: 1;
 	
-	@each $selector, $properties in $text-elements {
+	@each $selector, $properties in $map {
 		$selector: unquote($selector);
 		$keys: map-keys($properties);
 		$values: map-values($properties);
@@ -17,15 +17,36 @@
 				$value: nth($values, $text-increment);
 				#{$property}: #{$value}; } } } }
 
-@mixin flex-grid() {
-	.fc,
-	.flex-container {
-		@include display-flex; }
-	
-	.fc-items-center {
+$default-flex-grid-namespace: flex !default;
+$default-flex-grid-colums: 12 !default;
+$default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
+
+@mixin flex-grid(
+	$grid-columns: $default-flex-grid-colums,
+	$grid-map: $default-flex-grid-map
+) {
+	.#{$default-flex-grid-namespace}-container {
+		@include display-flex;
+		@include justify-content(space-between);
+		@include align-content(stretch);
 		@include align-items(center);
 	}
+	
+	$column-increment: 1;
+	
+	@each $breakpoint, $width in $grid-map {
+		$class: if($breakpoint == large, ".#{$default-flex-grid-namespace}-grid", ".#{$default-flex-grid-namespace}-grid-#{$breakpoint}");
+	
+		@include breakpoint($width) {
+			@for $column-increment from 1 through $grid-columns {
+				#{$class}-#{$column-increment} {
+					$w: (100% / $grid-columns) * $column-increment;
+					outline: 1px solid red;
+					min-height: 40px;
+					@include flex-basis($w); } } } }
 }
+
+@include flex-grid;
 
 @if $_experimental-css {
 	

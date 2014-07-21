@@ -26,6 +26,9 @@
 				"framework/tooltip",
 				"framework/misc",
 				"framework/debug";
+
+// Experimental mixins
+@import "objects/experimental";
 				
 // Site base
 // ---------------------------
@@ -39,7 +42,7 @@
 // Site objects
 // ---------------------------
 @import "objects/button",
-				"objects/alert",
+				"objects/notice",
 				"objects/form",
 				"objects/state",
 				"objects/header",
@@ -53,5 +56,4 @@
 				"objects/text",
 				"objects/list",
 				"objects/figure",
-				"objects/blockquote",
-				"objects/experimental";
+				"objects/blockquote";

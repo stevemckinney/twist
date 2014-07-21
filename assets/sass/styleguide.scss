@@ -28,20 +28,29 @@
 
 // Structure
 // ---------------------------
-.sg-header {
-  background: scale-lightness($tertiary, 80%);
-  flex-direction: row; }
-
 .sg-info, .sg-base-styles {
   padding-bottom: 1.5rem;
   width: 100%; }
-  
+
 .sg-container {
-  padding: 1.5rem calc(50% - 320px);
+	padding: em($line); }
+  
+.sg-container > div,
+.sg-header {
 	display: flex;
 	justify-content: space-between;
 	align-content: stretch;
-	align-items: center; }
+	align-items: center;
+	flex-flow: row wrap;
+	max-width: 720px;
+	margin: auto; }
+
+.sg-section {
+	align-self: stretch;
+	flex-basis: 100%; }
+
+.sg-header {
+  background: scale-lightness($tertiary, 80%); }
 
 .sg-body {
 	flex-direction: column; }
@@ -80,27 +89,30 @@
   margin-top: 0; }
 
 .sg-h1 {    
-  font-size: 2.25em;
+  font-size: 24px;
   font-weight: bold; }
 
 .sg-h2 {
 	border-radius: $radius $radius 0 0;
   border-bottom-width: 0;
   font-size: .75em;
+  line-height: 1;
   margin: em(-$line, 12px);
   margin-bottom: em($line, 12px);
-  padding: em($line, 12px);
-  background: $primary;
+  background: linear-gradient($primary, scale-lightness($primary, -5%));
   font-weight: font-weight(bold);
   text-transform: uppercase;
   letter-spacing: .4em;
-  
+	padding: 0;
+
   box-shadow:
-	  inset 0 0 0 1px scale-lightness($primary, -20%),
-	  inset 0 0 0 2px scale-lightness($primary, 10%),
-		0 1px 2px rgba($primary, .2);
+	  inset 0 0 0 1px scale-lightness($primary, -30%),
+	  inset 0 2px scale-lightness($primary, 10%);
   
-  a { color: #fff; display: block; } }
+  a { 
+  	padding: em($line, 12px);
+  	color: #fff;
+  	pointer-events: none; } }
 
 
 /* Buttons

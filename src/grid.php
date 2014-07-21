@@ -2,6 +2,12 @@
 	include 'setup.php';
 	include 'styleguide/_includes/header.php'; ?>
 
+<div class="flex-container">
+	<div class="flex-grid-6">Contents</div>
+	<div class="flex-grid-6">Contents</div>
+</div>
+
+<!--
 <style>
 	.grid { box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); border-radius: 4px; }
 	.content { padding: .75em; box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); border-radius: 4px; }
@@ -47,5 +53,6 @@
 		<div class="grid-cell"><div class="content">grid</div></div>
 	</div>
 </div>
+-->
   
 <?php include 'styleguide/_includes/footer.php'; ?>

@@ -78,6 +78,8 @@ module.exports = function(grunt) {
 							'<%= path.js %>/fittext.js',
 							'<%= path.js %>/fitvids.js',
 							'<%= path.js %>/prism.js',
+							'<%= path.js %>/password.js',
+							'<%= path.js %>/notice.js',
 							'<%= path.js %>/global.js'],
 				dest: '<%= path.dist %>/js/<%= pkg.name %>.js'
 			}

@@ -2017,6 +2017,82 @@ function getLanguage(tag) {
 }
 
 })();;
+function Password(toggle, password) {
+	this.toggle = (toggle === true) ? selector : $('.button-password');
+	this.password = (password === true) ? selector : $('.input-password');
+	this.wrap;
+	this.button;
+	this.change;
+}
+
+Password.prototype.wrap = function() {
+	this.password.wrap('<div class="field-group"></div>');
+	
+	return this;
+}
+
+Password.prototype.change = function(toggle, password) {
+	var password = this.password,
+			toggle = this.toggle;
+	
+	$('.field-password').on('click', this.toggle, function(e) {
+		if (password.attr('type') === 'text') {	
+			password.attr('type', 'password');
+		}
+		else {
+			password.attr('type', 'text');
+			this.toggle.toggleClass('button-password-hide').text('hide');
+		}
+	});
+	
+	return this;
+}
+
+Password.prototype.button = function() {
+	var button = $('<button type="button" role="button" aria-label="Show Password" class="button button-group button-password button-password-show">Show</button>');
+	$('.field-group').append(button);
+	
+	return this;
+}
+
+var password = new Password();
+password.wrap();
+password.button();
+password.change();
+// Notice constructor
+function Notice(status, selector) {
+	this.selector = (selector === true) ? selector : 'notice';
+	this.status = (status === true) ? selector : 'info';
+	this.notice;
+	this.close;
+}
+
+// Generate the notice
+Notice.prototype.generate = function(text) {
+  text = typeof text !== 'undefined' ? text : 'Added todo list item.';
+  
+	var markup = '<div class="' + this.selector + ' ' + this.selector + '-' + this.status + '">' + '<p class="' + this.selector + '-body ' + this.selector + '-' + this.status + '-body">' + text + '</p>' + '</div>';
+	this.notice = $('body').prepend(markup);
+	
+	return this;
+};
+
+// Append a close button
+Notice.prototype.close = function() {
+	this.close = $('.' + this.selector)
+		.append('<button class="' + this.selector + '-close">&#x2421;</button>')
+		.on('touchstart click', function() {
+			$(this).addClass('notice-hidden');
+		});
+		
+	return this;
+};
+
+// Remove the notice after closing
+Notice.prototype.remove = function() {
+	this.delay(200).remove();
+	return this;
+};
 var $n = $('.navigation'),
 		$nt = $('.navigation-toggle'),
 		$container = $('.site'),
@@ -2072,16 +2148,7 @@ $nt.on('click touchstart', function(e) {
 	$b.toggleClass('overflow-hidden');
 });
 
-// Allow passwords to be shown for confirmation
+// Add close buttons to notices
 // ---------------------------
-function show_password(checkbox, password) {
-	checkbox = typeof checkbox !== 'undefined' ? checkbox : '#checkbox-password';
-	password = typeof password !== 'undefined' ? password : '.input-password';
-	
-	$(checkbox).change(function() {
-		console.log(password);
-		if ($(password).attr('type') == 'text') $(password).attr('type', 'password')
-		else $(password).attr('type', 'text')
-	});
-}
-show_password();
+var notice = new Notice();
+notice.close();

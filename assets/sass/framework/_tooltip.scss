@@ -23,13 +23,13 @@ $default-tooltip-triangle-size: 6px !default;
 // Tooltip
 // ---------------------------
 @mixin tooltip(
-	$position: $default-tooltip-position,
-	$color: $default-tooltip-color,
-	$text-color: $default-tooltip-text-color,
+	$position			: $default-tooltip-position,
+	$color				: $default-tooltip-color,
+	$text-color		: $default-tooltip-text-color,
 	$triangle-size: $default-tooltip-triangle-size,
-	$radius: $default-tooltip-radius,
-	$size: $default-tooltip-size,
-	$context: $default-tooltip-context,
+	$radius				: $default-tooltip-radius,
+	$size					: $default-tooltip-size,
+	$context			: $default-tooltip-context,
 	$data-selector: $default-tooltip-data-selector
 ) {
 
@@ -59,8 +59,8 @@ $default-tooltip-triangle-size: 6px !default;
 // Triangle
 // ---------------------------
 @mixin tooltip-triangle(
-	$position: $default-tooltip-position,
-	$color: $default-tooltip-color,
+	$position			: $default-tooltip-position,
+	$color				: $default-tooltip-color,
 	$triangle-size: $default-tooltip-triangle-size
 ) {
 	    
@@ -87,9 +87,9 @@ $default-tooltip-triangle-size: 6px !default;
 // Position
 // ---------------------------
 @mixin tooltip-position(
-	$position: $default-tooltip-position,
+	$position			: $default-tooltip-position,
 	$triangle-size: $default-tooltip-triangle-size,
-	$context: $default-tooltip-context
+	$context			: $default-tooltip-context
 ) {
 	
 	$triangle-size: em($triangle-size, $context);
@@ -155,8 +155,8 @@ $default-tooltip-triangle-size: 6px !default;
 // Shading
 // ---------------------------
 @mixin tooltip-shading(
-	$color: $default-tooltip-color,
-	$text-color: $default-tooltip-text-color
+	$color			: $default-tooltip-color,
+	$text-color	: $default-tooltip-text-color
 ) {
 	background: $color;
   color: $text-color; }

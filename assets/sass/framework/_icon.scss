@@ -14,7 +14,7 @@ $default-icon-position: false !default;
 // Shared
 // ---------------------------
 %icon-shared {
-	@extend %inline-block; }
+	display: inline-block; }
 	
 // Add an icon to an element
 // ---------------------------

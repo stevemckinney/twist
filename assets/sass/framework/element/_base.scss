@@ -27,6 +27,8 @@
 // ---------------------------
 %element-base {
 	@include user-select(none);
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	border: none;
 	background-clip: padding-box;
 	position: relative;

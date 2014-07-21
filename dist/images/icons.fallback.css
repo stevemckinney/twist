@@ -6,6 +6,8 @@
 
 .icon-icons { background-image: url(png/icons.png); background-repeat: no-repeat; }
 
+.icon-icons_dark { background-image: url(png/icons_dark.png); background-repeat: no-repeat; }
+
 .icon-mask { background-image: url(png/mask.png); background-repeat: no-repeat; }
 
 .icon-search { background-image: url(png/search.png); background-repeat: no-repeat; }

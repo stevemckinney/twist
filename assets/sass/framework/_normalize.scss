@@ -149,7 +149,6 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button;
 	cursor: pointer; }
 
 button[disabled],
@@ -189,7 +188,9 @@ table {
 // ---------------------------
 :focus {
 	outline: none; }
-	
+
+// Has to be separated as browsers will invalidate the whole rule
+// if they do not understand it
 ::-moz-selection {
 	background: $default-selection-background;
 	color: $default-selection-color; 

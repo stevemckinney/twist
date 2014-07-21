@@ -3,11 +3,18 @@
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
+
+// Case
+// ---------------------------
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
 	
 // Colour
 // ---------------------------
 $text-color-helpers: (
 	white: $white,
+	primary: $primary,
+	secondary: $secondary,
 	red: $red,
 	green: $green,
 	orange: $orange,

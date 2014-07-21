@@ -42,15 +42,15 @@
 					inset 0 0 0 1px $color,
 					if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 20%)),
 					if($state == focus, 0 0 6px -2px $color, compact(false)); }
-				
-			@if $state == disabled {
+			
+			@if $state == (disabled or readonly) and $shading == false {
 				box-shadow: inset 0 0 0 1px scale-lightness($color, 10%); }
 			
-			@if map-get($attribute-states, $state) or $shading == false {
-				background: $background-color; }
+			@else if $shading == false {
+				box-shadow: inset 0 1px scale-lightness($color, -10%), inset 0 0 0 1px $color; }
 			
-			@if $shading == false {
-				box-shadow: inset 0 1px scale-lightness($color, -10%), inset 0 0 0 1px $color; } }
+			@if map-get($attribute-states, $state) or $shading == false {
+				background: $background-color; } }
 		
 		// Select
 		// ---------------------------

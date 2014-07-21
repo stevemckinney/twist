@@ -1,70 +1,48 @@
-/* line 107, ../../assets/sass/framework/_helpers.scss */
-.xxlarge {
-  font-size: 225%;
-}
-
-/* line 110, ../../assets/sass/framework/_helpers.scss */
-.xlarge {
-  font-size: 150%;
-}
-
-/* line 113, ../../assets/sass/framework/_helpers.scss */
-.large {
-  font-size: 131.25%;
-}
-
-/* line 116, ../../assets/sass/framework/_helpers.scss */
-.normal {
-  font-size: 100%;
-}
-
-/* line 119, ../../assets/sass/framework/_helpers.scss */
-.small {
-  font-size: 87.5%;
-}
-
-/* line 122, ../../assets/sass/framework/_helpers.scss */
-.xsmall {
-  font-size: 75%;
-}
-
-/* line 125, ../../assets/sass/framework/_helpers.scss */
-.xxsmall {
-  font-size: 62.5%;
-}
-
 /* line 31, ../../assets/sass/styleguide.scss */
-.sg-header {
-  background: #fcfcfc;
-  flex-direction: row;
-}
-
-/* line 35, ../../assets/sass/styleguide.scss */
 .sg-info, .sg-base-styles {
   padding-bottom: 1.5rem;
   width: 100%;
 }
 
-/* line 39, ../../assets/sass/styleguide.scss */
+/* line 35, ../../assets/sass/styleguide.scss */
 .sg-container {
-  padding: 1.5rem calc(50% - 320px);
+  padding: 1.5em;
+}
+
+/* line 38, ../../assets/sass/styleguide.scss */
+.sg-container > div,
+.sg-header {
   display: flex;
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
+  flex-flow: row wrap;
+  max-width: 720px;
+  margin: auto;
 }
 
-/* line 46, ../../assets/sass/styleguide.scss */
+/* line 48, ../../assets/sass/styleguide.scss */
+.sg-section {
+  align-self: stretch;
+  flex-basis: 100%;
+}
+
+/* line 52, ../../assets/sass/styleguide.scss */
+.sg-header {
+  background: #fcfcfc;
+}
+
+/* line 55, ../../assets/sass/styleguide.scss */
 .sg-body {
   flex-direction: column;
 }
 
-/* line 49, ../../assets/sass/styleguide.scss */
+/* line 58, ../../assets/sass/styleguide.scss */
 .sg-animated {
   transition: all .6s ease;
 }
 
-/* line 54, ../../assets/sass/styleguide.scss */
+/* line 63, ../../assets/sass/styleguide.scss */
 .sg-logo {
   color: #f25049;
   margin: 0;
@@ -75,14 +53,14 @@
 
 /* Navigation
 ---------------------------------------------------------------------------- */
-/* line 65, ../../assets/sass/styleguide.scss */
+/* line 74, ../../assets/sass/styleguide.scss */
 .js .sg-submit-btn {
   display: none;
 }
 
 /* Headings
 ---------------------------------------------------------------------------- */
-/* line 70, ../../assets/sass/styleguide.scss */
+/* line 79, ../../assets/sass/styleguide.scss */
 .sg-h1,
 .sg-h2,
 .sg-h3 {
@@ -96,35 +74,37 @@
   margin-top: 0;
 }
 
-/* line 82, ../../assets/sass/styleguide.scss */
+/* line 91, ../../assets/sass/styleguide.scss */
 .sg-h1 {
-  font-size: 2.25em;
+  font-size: 24px;
   font-weight: bold;
 }
 
-/* line 86, ../../assets/sass/styleguide.scss */
+/* line 95, ../../assets/sass/styleguide.scss */
 .sg-h2 {
   border-radius: 3px 3px 0 0;
   border-bottom-width: 0;
   font-size: .75em;
+  line-height: 1;
   margin: -2em;
   margin-bottom: 2em;
-  padding: 2em;
-  background: #4c4d4c;
+  background: linear-gradient(#4c4d4c, #484948);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .4em;
-  box-shadow: inset 0 0 0 1px #3d3e3d, inset 0 0 0 2px #5e5f5e, 0 1px 2px rgba(76, 77, 76, 0.2);
+  padding: 0;
+  box-shadow: inset 0 0 0 1px #353635, inset 0 2px #5e5f5e;
 }
-/* line 103, ../../assets/sass/styleguide.scss */
+/* line 112, ../../assets/sass/styleguide.scss */
 .sg-h2 a {
+  padding: 2em;
   color: #fff;
-  display: block;
+  pointer-events: none;
 }
 
 /* Buttons
 ---------------------------------------------------------------------------- */
-/* line 108, ../../assets/sass/styleguide.scss */
+/* line 120, ../../assets/sass/styleguide.scss */
 .sg-btn {
   float: left;
   padding: .5em .9em;
@@ -136,12 +116,12 @@
   -webkit-backface-visibility: hidden;
   overflow: hidden;
 }
-/* line 119, ../../assets/sass/styleguide.scss */
+/* line 131, ../../assets/sass/styleguide.scss */
 .sg-btn, .sg-btn:after {
   transition: .35s;
   border-radius: 3px;
 }
-/* line 124, ../../assets/sass/styleguide.scss */
+/* line 136, ../../assets/sass/styleguide.scss */
 .sg-btn:after {
   content: "";
   position: absolute;
@@ -156,12 +136,12 @@
   -webkit-transform: rotateX(180deg);
   transform: rotateX(180deg);
 }
-/* line 135, ../../assets/sass/styleguide.scss */
+/* line 147, ../../assets/sass/styleguide.scss */
 .sg-btn:hover, .sg-btn:focus {
   box-shadow: inset 0 0 0 1px #3d3e3d;
   color: white;
 }
-/* line 140, ../../assets/sass/styleguide.scss */
+/* line 152, ../../assets/sass/styleguide.scss */
 .sg-btn:hover:after, .sg-btn:focus:after {
   -moz-transform: rotateX(0);
   -ms-transform: rotateX(0);
@@ -171,12 +151,12 @@
   width: 100%;
 }
 
-/* line 145, ../../assets/sass/styleguide.scss */
+/* line 157, ../../assets/sass/styleguide.scss */
 .sg-btn--top {
   float: right;
 }
 
-/* line 148, ../../assets/sass/styleguide.scss */
+/* line 160, ../../assets/sass/styleguide.scss */
 .sg-btn--select {
   border-radius: 0 0.3em;
   position: absolute;
@@ -184,7 +164,7 @@
   top: 14px;
 }
 
-/* line 154, ../../assets/sass/styleguide.scss */
+/* line 166, ../../assets/sass/styleguide.scss */
 .sg-btn--select.is-active:hover:after {
   background: #111;
   background: rgba(0, 0, 0, 0.8);
@@ -201,7 +181,7 @@
   z-index: 98;
 }
 
-/* line 170, ../../assets/sass/styleguide.scss */
+/* line 182, ../../assets/sass/styleguide.scss */
 .sg-btn--select.is-active:hover:before {
   border: solid;
   border-color: #111 transparent;
@@ -215,21 +195,21 @@
 }
 
 /* Hide specific buttons for use with JS */
-/* line 183, ../../assets/sass/styleguide.scss */
+/* line 195, ../../assets/sass/styleguide.scss */
 .sg-btn--source,
 .sg-btn--select {
   display: none;
 }
 
 /* Show specific buttons if JS enabled */
-/* line 189, ../../assets/sass/styleguide.scss */
+/* line 201, ../../assets/sass/styleguide.scss */
 .js .sg-btn--source,
 .js .sg-btn--select {
   display: block;
 }
 
 /* Hide specific buttons conditionally */
-/* line 195, ../../assets/sass/styleguide.scss */
+/* line 207, ../../assets/sass/styleguide.scss */
 .operamini .sg-btn--source,
 .legacy .sg-btn--source {
   display: none;
@@ -237,7 +217,7 @@
 
 /* Sections
 ---------------------------------------------------------------------------- */
-/* line 203, ../../assets/sass/styleguide.scss */
+/* line 215, ../../assets/sass/styleguide.scss */
 .sg-section {
   background: white;
   padding: 1.5em;
@@ -245,7 +225,7 @@
   border-radius: 3px;
 }
 
-/* line 209, ../../assets/sass/styleguide.scss */
+/* line 221, ../../assets/sass/styleguide.scss */
 .sg-anchor {
   display: block;
   color: #6f716f;
@@ -253,14 +233,14 @@
 
 /* Colors
 ---------------------------------------------------------------------------- */
-/* line 216, ../../assets/sass/styleguide.scss */
+/* line 228, ../../assets/sass/styleguide.scss */
 .sg-colors {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-/* line 221, ../../assets/sass/styleguide.scss */
+/* line 233, ../../assets/sass/styleguide.scss */
 .sg-color {
   flex: 0 0 12.5%;
   padding: 3em;
@@ -270,14 +250,14 @@
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 229, ../../assets/sass/styleguide.scss */
+/* line 241, ../../assets/sass/styleguide.scss */
 .sg-color-swatch {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-/* line 234, ../../assets/sass/styleguide.scss */
+/* line 246, ../../assets/sass/styleguide.scss */
 .sg-color-swatch span {
   position: absolute;
   top: 6px;
@@ -295,56 +275,56 @@
   width: auto;
 }
 
-/* line 250, ../../assets/sass/styleguide.scss */
+/* line 262, ../../assets/sass/styleguide.scss */
 .sg-color-swatch:hover span {
   opacity: 1;
 }
 
-/* line 253, ../../assets/sass/styleguide.scss */
+/* line 265, ../../assets/sass/styleguide.scss */
 .sg-color--a {
   background: #4c4d4c;
 }
 
-/* line 254, ../../assets/sass/styleguide.scss */
+/* line 266, ../../assets/sass/styleguide.scss */
 .sg-color--b {
   background: #61bd89;
 }
 
-/* line 255, ../../assets/sass/styleguide.scss */
+/* line 267, ../../assets/sass/styleguide.scss */
 .sg-color--c {
   background: #f2f0f0;
 }
 
-/* line 256, ../../assets/sass/styleguide.scss */
+/* line 268, ../../assets/sass/styleguide.scss */
 .sg-color--d {
   background: #f25049;
 }
 
-/* line 257, ../../assets/sass/styleguide.scss */
+/* line 269, ../../assets/sass/styleguide.scss */
 .sg-color--e {
   background: #478afa;
 }
 
-/* line 258, ../../assets/sass/styleguide.scss */
+/* line 270, ../../assets/sass/styleguide.scss */
 .sg-color--f {
   background: #7d7e81;
 }
 
 /* Fonts
 ---------------------------------------------------------------------------- */
-/* line 262, ../../assets/sass/styleguide.scss */
+/* line 274, ../../assets/sass/styleguide.scss */
 .sg-font {
   font-size: 1.5em;
 }
 
-/* line 265, ../../assets/sass/styleguide.scss */
+/* line 277, ../../assets/sass/styleguide.scss */
 .sg-font-secondary {
   font-family: Sentinel A, Sentinel B, serif;
 }
 
 /* Markup
 ---------------------------------------------------------------------------- */
-/* line 272, ../../assets/sass/styleguide.scss */
+/* line 284, ../../assets/sass/styleguide.scss */
 .sg-markup-controls {
   display: flex;
   padding-top: 1.5em;
@@ -354,12 +334,12 @@
   align-self: flex-end;
 }
 
-/* line 280, ../../assets/sass/styleguide.scss */
+/* line 292, ../../assets/sass/styleguide.scss */
 .sg-source {
   position: relative;
 }
 
-/* line 283, ../../assets/sass/styleguide.scss */
+/* line 295, ../../assets/sass/styleguide.scss */
 .sg-source pre {
   background: #333;
   border-radius: .5em;
@@ -371,18 +351,18 @@
   tab-size: 2;
 }
 
-/* line 293, ../../assets/sass/styleguide.scss */
+/* line 305, ../../assets/sass/styleguide.scss */
 .sg-source pre code {
   background: transparent;
 }
 
-/* line 296, ../../assets/sass/styleguide.scss */
+/* line 308, ../../assets/sass/styleguide.scss */
 .js .sg-source {
   max-height: 0;
   overflow: hidden;
 }
 
-/* line 301, ../../assets/sass/styleguide.scss */
+/* line 313, ../../assets/sass/styleguide.scss */
 .js .sg-source.is-active,
 .operamini .sg-source,
 .legacy .sg-source {
@@ -392,41 +372,41 @@
 /* -------------------------------------------------------------------------
  Prettyprint
 ---------------------------------------------------------------------------- */
-/* line 311, ../../assets/sass/styleguide.scss */
+/* line 323, ../../assets/sass/styleguide.scss */
 .pln {
   color: #fff;
 }
 
 /* plain text */
 @media screen {
-  /* line 314, ../../assets/sass/styleguide.scss */
+  /* line 326, ../../assets/sass/styleguide.scss */
   .str,
   .string {
     color: #E6DB74;
   }
 
   /* string content */
-  /* line 317, ../../assets/sass/styleguide.scss */
+  /* line 329, ../../assets/sass/styleguide.scss */
   .kwd,
   .keyword {
     color: #66D9EF;
   }
 
   /* a keyword */
-  /* line 320, ../../assets/sass/styleguide.scss */
+  /* line 332, ../../assets/sass/styleguide.scss */
   .com,
   .comment {
     color: #75715E;
   }
 
   /* a comment */
-  /* line 323, ../../assets/sass/styleguide.scss */
+  /* line 335, ../../assets/sass/styleguide.scss */
   .typ {
     color: #A6E22E;
   }
 
   /* a type name */
-  /* line 325, ../../assets/sass/styleguide.scss */
+  /* line 337, ../../assets/sass/styleguide.scss */
   .lit,
   .number {
     color: #AE81FF;
@@ -435,19 +415,19 @@
   /* a literal value */
   /* punctuation, lisp open bracket, lisp close bracket */
   /* .pun, .opn, .clo { color: #660 } */
-  /* line 331, ../../assets/sass/styleguide.scss */
+  /* line 343, ../../assets/sass/styleguide.scss */
   .tag {
     color: #F92672;
   }
 
   /* a markup tag name */
-  /* line 333, ../../assets/sass/styleguide.scss */
+  /* line 345, ../../assets/sass/styleguide.scss */
   .atn {
     color: #A6E22E;
   }
 
   /* a markup attribute name */
-  /* line 335, ../../assets/sass/styleguide.scss */
+  /* line 347, ../../assets/sass/styleguide.scss */
   .atv {
     color: #E6DB74;
   }
@@ -455,7 +435,7 @@
   /* a markup attribute value */
   /*.dec, .var { color: #606 }*/
   /* a declaration; a variable name */
-  /* line 339, ../../assets/sass/styleguide.scss */
+  /* line 351, ../../assets/sass/styleguide.scss */
   .fun {
     color: #FF0000;
   }
@@ -464,59 +444,59 @@
 }
 /* Use higher contrast and text-weight for printable form. */
 @media print, projection {
-  /* line 344, ../../assets/sass/styleguide.scss */
+  /* line 356, ../../assets/sass/styleguide.scss */
   .str {
     color: #060;
   }
 
-  /* line 346, ../../assets/sass/styleguide.scss */
+  /* line 358, ../../assets/sass/styleguide.scss */
   .kwd {
     color: #006;
     font-weight: bold;
   }
 
-  /* line 348, ../../assets/sass/styleguide.scss */
+  /* line 360, ../../assets/sass/styleguide.scss */
   .com {
     color: #600;
     font-style: italic;
   }
 
-  /* line 350, ../../assets/sass/styleguide.scss */
+  /* line 362, ../../assets/sass/styleguide.scss */
   .typ {
     color: #404;
     font-weight: bold;
   }
 
-  /* line 352, ../../assets/sass/styleguide.scss */
+  /* line 364, ../../assets/sass/styleguide.scss */
   .lit {
     color: #044;
   }
 
-  /* line 354, ../../assets/sass/styleguide.scss */
+  /* line 366, ../../assets/sass/styleguide.scss */
   .pun,
   .opn,
   .clo {
     color: #440;
   }
 
-  /* line 359, ../../assets/sass/styleguide.scss */
+  /* line 371, ../../assets/sass/styleguide.scss */
   .tag {
     color: #006;
     font-weight: bold;
   }
 
-  /* line 361, ../../assets/sass/styleguide.scss */
+  /* line 373, ../../assets/sass/styleguide.scss */
   .atn {
     color: #404;
   }
 
-  /* line 363, ../../assets/sass/styleguide.scss */
+  /* line 375, ../../assets/sass/styleguide.scss */
   .atv {
     color: #060;
   }
 }
 /* Specify class=linenums on a pre to get line numbering */
-/* line 367, ../../assets/sass/styleguide.scss */
+/* line 379, ../../assets/sass/styleguide.scss */
 ol.linenums {
   border-left: 1px solid #444;
   margin: 0 0 0 3.3em;
@@ -524,7 +504,7 @@ ol.linenums {
   padding: 0;
 }
 
-/* line 373, ../../assets/sass/styleguide.scss */
+/* line 385, ../../assets/sass/styleguide.scss */
 ol.linenums li {
   color: #bebec5;
   line-height: 1.5;
