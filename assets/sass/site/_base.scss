@@ -10,7 +10,7 @@ $primary-d2: scale-lightness($primary-d1, -20%);
 $primary-l1: scale-lightness($primary, 10%);
 $primary-l2: scale-lightness($primary, 20%);
 
-$secondary: #61bd89 !global;
+$secondary: $green /* #61bd89 */ !global;
 $secondary-d1: scale-lightness($secondary, -10%);
 $secondary-d2: scale-lightness($secondary, -20%);
 $secondary-l1: scale-lightness($secondary, 10%);

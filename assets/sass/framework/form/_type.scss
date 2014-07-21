@@ -7,10 +7,10 @@
 	$background-color				: $default-form-background-color $default-form-focus-background-color,
 	$shading								: $default-form-shading
 ) {
-	@include form-shading(text, nth($color, 1), nth($background-color, 1), normal, $shading);
+	@include form-shading(text, $color, $background-color, normal, $shading);
 
 	&:focus {
-		@include form-shading(text, nth($color, 2), nth($background-color, 2), focus, $shading); } }
+		@include form-shading(text, $color, $background-color, focus, $shading); } }
 
 // Select
 // ---------------------------

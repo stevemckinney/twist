@@ -6,15 +6,10 @@
 $buttons: (
 	default: $default-color,
 	primary: $primary,
-	secondary: $secondary adjust-hue(scale-lightness($secondary, -10%), 20deg),
+	secondary: $secondary adjust-hue(scale-lightness($secondary, -7%), 15deg),
 	tertiary: $tertiary,
 	alternate: $alt,
-	neutral: adjust-hue($neutral, 10deg) $neutral,
-	red: $red,
-	yellow: $yellow,
-	green: $green,
-	blue: $blue,
-	light-blue: $info
+	neutral: adjust-hue($neutral, 8deg) $neutral
 );
 
 @each $button, $color in $buttons {
@@ -73,10 +68,6 @@ $buttons: (
 // ---------------------------
 .group {
 	@include group(".button-group"); }
-
-.button-group {
-	@extend .button;
-	@extend .button-default; }
 
 // Disabled
 // ---------------------------

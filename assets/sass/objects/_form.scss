@@ -1,7 +1,5 @@
-// Class prefixes
+// Variables
 // ---------------------------
-$field-prefix: field-;
-$input-prefix: input-;
 $forms-use-flex: true;
 
 // Forms
@@ -48,7 +46,7 @@ $forms-use-flex: true;
 
 // Label
 // ---------------------------
-.#{$field-prefix}label {
+.field-label {
 	display: block;
 	font-weight: 700;
 	line-height: 2.25; }
@@ -59,23 +57,22 @@ $forms-use-flex: true;
 
 // Legend
 // ---------------------------
-.#{$field-prefix}legend {
+.field-legend {
 	@extend .h3 !optional; }
 
 // Fieldset
 // ---------------------------
-.field,
-fieldset {
+.field {
 	margin: 0;
 	padding: 0; }
 	
-.#{$field-prefix}checkbox {
+.field-checkbox {
 	display: block; }
 	
-.#{$field-prefix}radio {
+.field-radio {
 	@extend .field-checkbox; }
 
-.#{$field-prefix}search {
+.field-search {
 	@include form-search($has-label: true);
 	text-align: right; }
 
@@ -85,43 +82,50 @@ fieldset {
 
 // Grouped fields
 // ---------------------------
-.#{$field-prefix}group {
+.field-group {
 	@include display-flex;
 	
-	.#{$field-prefix}label {
+	.field-label {
 		padding: 0 em($base-px); } }
 		
 // Input
 // ---------------------------
-	.#{$input-prefix}text,
-	.#{$input-prefix}select {
+	.input-text,
+	.input-select {
 		width: 100%; }
 	
 	// Text
 	// ---------------------------
-	.#{$input-prefix}text {
+	.input-text:not([readonly]):not([disabled]) {
 		@extend %form-base-with-mixin;
-		@include form;
-		
-		&[readonly] {
-			@include form-shading($state: readonly); } }
+		@include form; }
+	
+	.input-text[readonly] {
+		@extend %form-base-with-mixin;
+		@include form-shading($state: readonly); }
+	
+	.input-text[disabled] {
+		@extend %form-base-with-mixin;
+		@include form-shading($color: scale-lightness($default-form-background-color, -20%), $background-color: scale-lightness($default-form-background-color, -10%), $state: readonly);
+		cursor: not-allowed;
+		color: scale-lightness($default-form-color, -30%); }
 	
 	// Select
 	// ---------------------------
-	.#{$input-prefix}select {
+	.input-select {
 		@extend %form-base-with-mixin;
 		@include form(select); }
 	
 	// Check/radio
 	// ---------------------------
-	.#{$input-prefix}checkbox {
+	.input-checkbox {
 		@include form(checkbox);
 		@include wh(em($base-font-size));
 		position: relative;
 		top: em($base-font-size / 6);
 		margin: $default-form-boolean-margin; }
 	
-	.#{$input-prefix}radio {
+	.input-radio {
 		@include form(radio);
 		@include wh($default-form-radio-width, $default-form-radio-height);
 		position: relative;

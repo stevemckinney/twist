@@ -1,12 +1,14 @@
 // Notice
 // ---------------------------
 .notice {
-	box-shadow: 0 1px 1px $tertiary-d1;
+	box-shadow: 0 1px 2px -1px $tertiary-d1, 0 1px scale-lightness($tertiary-d1, -20%);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 	position: relative;
-	margin: 0;
 	border-radius: $radius;
 	padding: element-size(2, true);
 	background: $white;
+	
+	margin: 0 0 em($line);
 	
 	&:before {
 		content: "";
@@ -20,39 +22,8 @@
 		text-align: center;
 		width: em(6px); } }
 
-$notices: (
-	default: (color: $default-color, icon: "-24px -24px"),
-	success: (color: $green, icon: "-24px 0"),
-	info: (color: $blue, icon: "-24px -24px"),
-	error: (color: $red, icon: "0 0"),
-	warning: (color: $yellow, icon: "-72px 0")
-);
-
-%notice-heading {
-	font: 700 em(18px) $sans;
-	margin: 0; }
-
-@each $notice, $details in $notices {
-	$notice: unquote($notice);
-	$color: map-get(map-get($notices, $notice), color);
-	$icon: map-get(map-get($notices, $notice), icon);
-	
-	.notice-#{$notice}-body:before {
-		background-position: unquote($icon); }
-	
-	.notice-#{$notice}:before {
-		background: $color; } }
-
-.notice-body {
-	margin: 0;
-	color: $primary;
-	font-weight: 400;
-	
-	&:before {
-		display: inline-block;
-		margin: em(-6px) em($base-px) 0 em(3px);
-		background-image: image-url("icons_dark.svg"); } }
-
+// Close
+// ---------------------------
 .notice-close {
 	position: absolute;
 	padding: element-size(2, true);
@@ -94,3 +65,34 @@ $notices: (
 	height: 0;
 	overflow: hidden;
 	opacity: 0; }
+
+// Notice style
+// ---------------------------
+$notices: (
+	default: (color: $default-color, icon: "-24px -24px"),
+	success: (color: $green, icon: "-24px 0"),
+	info: (color: $blue, icon: "-24px -24px"),
+	error: (color: $red, icon: "0 0"),
+	warning: (color: $yellow, icon: "-72px 0")
+);
+
+@each $notice, $details in $notices {
+	$notice: unquote($notice);
+	$color: map-get(map-get($notices, $notice), color);
+	$icon: map-get(map-get($notices, $notice), icon);
+	
+	.notice-#{$notice}-body:before {
+		background-position: unquote($icon); }
+	
+	.notice-#{$notice}:before {
+		background: $color; } }
+
+.notice-body {
+	margin: 0;
+	color: $primary;
+	font-weight: 400;
+	
+	&:before {
+		display: inline-block;
+		margin: em(-6px) em($base-px) 0 em(3px);
+		background-image: image-url("icons_dark.svg"); } }
