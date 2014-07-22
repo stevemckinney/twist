@@ -1,42 +1,30 @@
 // Notice
 // ---------------------------
 .notice {
-	box-shadow: 0 1px 2px -1px $tertiary-d1, 0 1px scale-lightness($tertiary-d1, -20%);
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 	position: relative;
 	border-radius: $radius;
-	padding: element-size(2, true);
+	padding: em($line) em($base-px);
+	box-shadow: 0 1px scale-lightness($tertiary-d1, -5%), 0 1px 1px $tertiary-d1;
 	background: $white;
 	
-	margin: 0 0 em($line);
-	
-	&:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		border-radius: $radius 0 0 $radius;
-		display: inline-block;
-		color: $white;
-		text-align: center;
-		width: em(6px); } }
+	margin: 0 0 em($line); }
 
 // Close
 // ---------------------------
 .notice-close {
 	position: absolute;
-	padding: element-size(2, true);
+  padding: em($line) em($base-px);
 	top: 1px;
-	right: 0;
+	right: em($base-px);
 	line-height: normal;
 	text-indent: -999em;
 	background: none;
 	transition: .2s;
+	opacity: .5;
 	
 	&:hover,
 	&:focus {
-		opacity: .5; }
+		opacity: 1; }
 	
 	&:before {
 		@include experimental-value(top, calc(50% - 6px));
@@ -82,10 +70,7 @@ $notices: (
 	$icon: map-get(map-get($notices, $notice), icon);
 	
 	.notice-#{$notice}-body:before {
-		background-position: unquote($icon); }
-	
-	.notice-#{$notice}:before {
-		background: $color; } }
+		background-position: unquote($icon); } }
 
 .notice-body {
 	margin: 0;
@@ -95,4 +80,4 @@ $notices: (
 	&:before {
 		display: inline-block;
 		margin: em(-6px) em($base-px) 0 em(3px);
-		background-image: image-url("icons_dark.svg"); } }
+		background-image: image-url("icons_mixed.svg"); } }

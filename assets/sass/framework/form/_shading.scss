@@ -10,8 +10,6 @@
 	$attribute-states: (disabled: disabled, readonly: readonly);
 	$shaded-states: (normal: normal, focus: focus, error: error, success: success);
 	
-	@debug $color;
-	
 	@if length($color) > 1 and $state == focus {
 		$color: nth($color, 2); }
 	@else if length($color) > 1 {
