@@ -16,7 +16,7 @@ body {
 // Site
 // ---------------------------
 .site {
-	@include transition(transform .5s);
+	transition: transform .5s;
 		
 	// Make sure the this is a layer above .navigation
 	position: relative;
@@ -28,10 +28,5 @@ body {
 		background: $tertiary; } }
 
 .site-active {
-	@include transform(translate3d(-16em, 0, 0));
-	@include transition(transform .5s); }
-
-// Clearfix
-// ---------------------------
-.clearfix {
-	@extend %clear; }
+	transform: translate3d(-16em, 0, 0);
+	transition: transform .5s; }
