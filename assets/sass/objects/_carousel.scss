@@ -39,7 +39,7 @@
 
 .carousel-item-prev,
 .carousel-item-next {
-	@include transform(scale(.8));
+	transform: scale(.8);
   width: 33.333333%;
   display: block;
   position: absolute;
