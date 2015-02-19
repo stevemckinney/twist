@@ -9,17 +9,17 @@ $forms-use-flex: true;
 	@extend %clear;
 	
 	@if $forms-use-flex {
-		@include display-flex;
-		@include flex-flow(row wrap); } }
+		display: flex;
+		flex-flow: row wrap; } }
 
 @if $forms-use-flex {
 	.field {
 		@include breakpoint($c) {
-			@include flex-basis(100%); } }
+			flex-basis: 100%; } }
 	
 	.field-half {
 		@include breakpoint($c) {
-			@include flex-basis(50%); } } }
+			flex-basis: 50%; } } }
 @else {
 	.field-half {
 		@include breakpoint($c) {
@@ -83,7 +83,7 @@ $forms-use-flex: true;
 // Grouped fields
 // ---------------------------
 .field-group {
-	@include display-flex;
+	display: flex;
 	
 	.field-label {
 		padding: 0 em($base-px); } }

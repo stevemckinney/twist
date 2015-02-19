@@ -37,13 +37,13 @@
 .navigation-large {}
 
 .navigation-inactive {
-	@include transition(transform .5s, opacity .5s);
-	@include transform(scale(.95) translate3d(0, em($line), 0));
+	transition: transform .5s, opacity .5s;
+	transform: scale(.95) translate3d(0, em($line), 0);
 	opacity: .6; }
 	
 .navigation-active {
-	@include transition(transform .5s, opacity .5s);
-	@include transform(scale(1) translate3d(0, 0, 0));
+	transition: transform .5s, opacity .5s;
+	transform: scale(1) translate3d(0, 0, 0);
 	opacity: 1; }
 
 // Items
