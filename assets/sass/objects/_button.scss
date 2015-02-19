@@ -39,8 +39,8 @@ $buttons: (
 		bottom: 0;
 		width: 100%;
 		background: transparent;
-		@include transform(rotateX(90deg));
-		@include perspective(800px);
+		transform: rotateX(90deg);
+		perspective: 800px;
 		-webkit-transform-style: preserve-3d; }
 	
 	&:hover,
@@ -49,7 +49,7 @@ $buttons: (
 		color: $white;
 		
 		&:after {
-			@include transform(rotateX(0));
+			transform: rotateX(0);
 			background: $red;
 			width: 100%; } } }
 
