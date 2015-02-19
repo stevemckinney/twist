@@ -1,0 +1,35 @@
+// Media blocks
+// ---------------------------
+.media {
+	@extend .clearfix;
+	display: block; }
+	
+.media-image {
+	float: left;
+	margin-right: em($line); }
+
+.media-image img,
+.media-image-reverse img {
+	display: block; }
+
+.media-body {
+	overflow: hidden;
+	
+	&,
+	& > :last-child {
+		margin-bottom: 0; }
+
+
+// Reverse location
+// ---------------------------
+.media-image-reverse {
+	float: right;
+	margin-left: em($line); }
+
+// Islet adjustments
+// ---------------------------
+.islet .media-image {
+	margin-right: em($base-px); }
+	
+.islet .media-image-reverse { 
+	margin-left: em($base-px); }
