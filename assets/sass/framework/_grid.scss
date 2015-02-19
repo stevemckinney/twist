@@ -2,8 +2,9 @@
 // ---------------------------
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
+
+// Add additional sizes if necessary, highly likely.
 $default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
-$default-grid-font-size-small: .75rem !default;
 $default-grid-font-size-normal: 1rem !default;
 
 // Must be wrapped in a container with padding.
@@ -42,10 +43,7 @@ $default-grid-font-size-normal: 1rem !default;
 // Grid cell
 // ---------------------------
 @mixin grid-cell-font-size($grid-map: $default-grid-map) {
-	font-size: $default-grid-font-size-small;
-	
-	@include breakpoint(map-get($grid-map, medium)) {
-		font-size: $default-grid-font-size-normal; } }
+	font-size: $default-grid-font-size-normal; }
 		
 @mixin grid-cell(
 	$grid-gutter: $default-grid-gutter,
@@ -66,7 +64,7 @@ $default-grid-font-size-normal: 1rem !default;
 
 
 // Grid widths
-// ---------------------------
+// ---------------------------					
 @mixin grid-width(
 	$grid-columns	: $default-grid-columns,
 	$grid-map			: $default-grid-map
@@ -74,7 +72,7 @@ $default-grid-font-size-normal: 1rem !default;
 	$column-increment: 1;
 	
 	@each $breakpoint, $width in $grid-map {
-		$class: if($breakpoint == large, ".grid", ".grid-#{$breakpoint}");
+		$class: .grid-#{$breakpoint};
 	
 		@include breakpoint($width) {
 			@for $column-increment from 1 through $grid-columns {
