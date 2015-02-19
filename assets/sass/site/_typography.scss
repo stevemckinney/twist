@@ -7,17 +7,30 @@
 	line-height: 1;
 	margin-top: 0;
 	font-weight: 700; }
-
-$text-elements: (
-	"h1, .h1": ( font-size: em(36px), margin-bottom: em($line, 36px) ),
-	"h2, .h2": ( font-size: em(30px), margin-bottom: em($line, 30px) ),
-	"h3, .h3": ( font-size: em(24px), margin-bottom: em($line, 24px) ),
-	"h4, .h4": ( font-size: em(21px), margin-bottom: em($base-px, 21px) ),
-	"h5, .h5": ( font-size: em(18px), margin-bottom: em($base-px, 18px) ),
-	"h6, .h6": ( font-size: em(16px), margin-bottom: em($base-px, 16px) )
-);
-
-@if mixin-exists(type-setup) { @include type-setup($text-elements); }
+	
+.h1 { 
+	font-size: em($h1-size);
+	margin-bottom: em($line, $h1-size); }
+	
+.h2 {
+	font-size: em($h2-size);
+	margin-bottom: em($line, $h2-size); }
+	
+.h3 {
+	font-size: em($h3-size);
+	margin-bottom: em($line, $h3-size); }
+	
+.h4 { 
+	font-size: em($h4-size);
+	margin-bottom: em($base-px, $h4-size); }
+	
+.h5 {
+	font-size: em($h5-size);
+	margin-bottom: em($base-px, $h5-size); }
+	
+.h6 {
+	font-size: em($h6-size);
+	margin-bottom: em($base-px, $h6-size); }
 	
 // General
 // ---------------------------
@@ -31,14 +44,20 @@ p {
 	@extend %margin-bottom; }
 
 a {
-	@include transition(.2s);
+  transition: .2s;
 	text-decoration: none;
 	color: $secondary;
 	
-	&:not(.button) {
-		&:hover,
-		&:focus {
-			opacity: .8; } } }
+	&:hover:not(.logo, .button),
+	&:focus:not(.logo, .button) {
+		opacity: .8; }
+		
+	// Normalize
+	background: transparent; // newer IE versions need this
+	
+	&:active,
+	&:hover {
+		outline: 0; } } }
 
 .field {
 	font-size: 1rem; }
