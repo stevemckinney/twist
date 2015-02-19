@@ -1,7 +1,20 @@
+// Disable specific
+// ---------------------------
+// It's nice to keep the output of your CSS clean, some of these helpers
+// will be overly helpful for you
+$disable-output: false;
+
+// @if $disable-output {
+//   ... }
+// ---------------------------
+
 // Clearfix
 // ---------------------------
-.clearfix {
-	@extend %clear; }
+$default-enable-clearfix: false !default;
+
+@if $default-enable-clearfix {
+  .clearfix {
+  	@extend %clear; } }
 
 // Floating
 // ---------------------------
@@ -52,12 +65,18 @@ $default-enable-visibility: true !default;
 
 @if $default-enable-inline-block-layout {
 	.hidden {
-		@extend %hide; }
+		display: none; }
 	
-	.screenreaders,
 	.screen-reader-text,
 	.visuallyhidden {
-		@extend %screenreaders; } }
+		border: 0 !important;
+		clip: rect(0 0 0 0);
+		height: 1px !important;
+		margin: -1px !important;
+		overflow: hidden !important;
+		position: absolute !important;
+		width: 1px !important;
+		padding: 0 !important; } }
 
 // Sizes
 // ---------------------------
@@ -90,46 +109,120 @@ $default-enable-sizes: true !default;
 $default-enable-padding: true !default;
 
 @if $default-enable-padding {
-	.flat-top {
-		padding-top: 0; }
-	
-	.flat-bottom {
-		padding-bottom: 0; }
+  // All
+  .soft-all {
+    padding: rem($line); }
+  
+  .soft-all-large {
+    padding: rem($line*2); }
+  
+  .soft-all-small {
+    padding: rem($base-px); }
+  
+  .flat-all {
+		padding: 0; }
+  
+  // Top
+  .soft-top {
+		padding-top: rem($line); }
 		
-	.pad-top {
-		padding-top: em($base-px); }
-	
-	.pad-bottom {
-		padding-bottom: em($base-px); } }
+	.soft-top-large {
+		padding-top: rem($line*2); }
+		
+  .flat-top {
+		padding-top: 0; }
+  
+  // Bottom
+	.soft-bottom {
+		padding-bottom: rem($line); }
+		
+	.soft-bottom-large {
+		padding-bottom: rem($line*2); }
+  
+  .flat-bottom {
+		padding-bottom: 0; }
+  
+  // Right
+  .soft-right {
+    margin-right: rem($base-px); }
+  
+  .soft-right-small {
+    margin-right: rem($base-px/2); }
+  
+  .soft-right-large {
+    margin-right: rem($line); }
+  
+  // Left
+  .soft-left {
+    margin-left: rem($base-px); }
+  
+  .soft-left-small {
+    margin-left: rem($base-px/2); }
+  
+  .soft-left-large {
+    margin-left: rem($line); } }
 	
 // Margin
 // ---------------------------
 $default-enable-margin: true !default;
 
 @if $default-enable-margin {
-	.push-bottom {
-		@extend %margin-bottom; } // $base-px
+  // Top
+  .push-top {
+		margin-top: rem($line); }
 		
-	.push-bottom-large {
-		@extend %margin-bottom-large; } // $base-px*2
-	
-	.flush-top {
+	.push-top-large {
+		margin-top: rem($line*2); }
+		
+  .flush-top {
 		margin-top: 0; }
-			
-	.flush-bottom {
-		margin-bottom: 0; } }
+  
+  // Bottom
+	.push-bottom {
+		margin-bottom: rem($line); }
+				
+	.push-bottom-large {
+		margin-bottom: rem($line*2); }
+  
+  .flush-bottom {
+		margin-bottom: 0; }
+  
+  // Right
+  .push-right {
+    margin-right: rem($base-px); }
+  
+  .push-right-small {
+    margin-right: rem($base-px/2); }
+  
+  .push-right-large {
+    margin-right: rem($line); }
+  
+  // Left
+  .push-left {
+    margin-left: rem($base-px); }
+  
+  .push-left-small {
+    margin-left: rem($base-px/2); }
+  
+  .push-left-large {
+    margin-left: rem($line); } }
 
 // Radius
 // ---------------------------
 $default-enable-radius: false !default;
 
-@if $default-enable-margin {
-	.circular {
+@if $default-enable-radius {
+	.circular,
+	[class*="-circular"] {
 		border-radius: 100%; }
 	
-	.radius {
-		border-radius: $radius; }
-	
+	.radius,
+	[class*="-radius"] {
+		border-radius: $radius; } }
+
+$default-enable-radius-specific: false !default;
+
+@if $default-enable-radius-specific {
 	$radii: top-left, top-right, bottom-left, bottom-right;
 	
 	@each $radius in $radii {	
