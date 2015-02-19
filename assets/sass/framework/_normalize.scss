@@ -1,12 +1,20 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-// Modified for framework
-// Some additions and differnces
+// Modified for framework with some additions and differnces
 // inputs + button generally get changed through mixins and have normalization
+// some properties will be in other files that are normalized
 // Ability to override colours and anticipate that base font size may change for some
 html {
+  box-sizing: border-box;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%; }
-	
+
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// ---------------------------
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
 article,
 aside,
 details,
@@ -41,34 +49,20 @@ template {
 td,
 th,
 dl,
-ul,
-ol,
 menu,
 legend,
-// fieldset,
 input[type="radio"],
 input[type="checkbox"] {
 	padding: 0; }
 
 dl,
 dd,
-//ol,
-//ul,
 menu,
-// figure,
-// fieldset,
 body {
 	margin: 0; }
 
 // Text
 // ---------------------------
-a {
-	background: transparent;
-	
-	&:active,
-	&:hover {
-		outline: 0; } }
-
 abbr[title] {
 	border-bottom: 1px dotted; }
 
@@ -114,14 +108,14 @@ samp {
 	font-family: $monospace;
 	font-size: em($base-font-size); }
 
+img {
+  border: 0; }
+
 img,
 iframe,
-object {
-	border: 0; 
+object,
+picture {
 	max-width: 100%; }
-	
-svg:not(:root) {
-	overflow: hidden; }
 
 hr {
 	height: 0; }
@@ -189,8 +183,8 @@ table {
 :focus {
 	outline: none; }
 
-// Has to be separated as browsers will invalidate the whole rule
-// if they do not understand it
+// Has to be separated as browsers will invalidate
+// the whole rule if they do not understand it
 ::-moz-selection {
 	background: $default-selection-background;
 	color: $default-selection-color; 
@@ -200,8 +194,3 @@ table {
 	background: $default-selection-background;
 	color: $default-selection-color;
 	text-shadow: none; }
-
-*,
-*:before,
-*:after {
-	@include box-sizing(border-box); }
