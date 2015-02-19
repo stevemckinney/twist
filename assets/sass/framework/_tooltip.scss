@@ -110,7 +110,7 @@ $default-tooltip-triangle-size: 6px !default;
 				top: 112.5%; } }
 	    
 	  &:after {
-			@include transform(translateX(-50%));
+			transform: translateX(-50%);
 	    left: 50%; }
 	    
 		&:before {
@@ -141,7 +141,7 @@ $default-tooltip-triangle-size: 6px !default;
 				right: 125%; } }
 	    
 	  &:after {
-			@include transform(translateY(-50%)); }
+			transform: translateY(-50%); }
 	    
 		&:before {
 			margin-top: -$triangle-size + $default-tooltip-triangle-pixel-offset-top;
