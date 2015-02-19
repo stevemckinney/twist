@@ -8,24 +8,31 @@ ol {
 	ol { 
 		margin: 0 0 0 em(21px, $base-font-size); } }
 
-ul li { 
+ul { 
 	list-style: square; }
 
 // Lists
 // ---------------------------
 .list-default {
+  margin-left: 0;
 	padding-left: 0;
-	
-	li {
-		list-style: none; } }
+	list-style: none; }
 
 .list-spacing {
 	li {
-		@extend %margin-bottom; } }
+		margin: 0 0 rem($base-px);
+
+		@include for-legacy-browser("ie", "5.5", "8", 5) {
+			.no-rem & {
+				margin: 0 0 $base-px; } } } }
 
 .list-spacing-large {
 	li {
-		@extend %margin-bottom-large; } }
+		margin: 0 0 rem($line);
+
+		@include for-legacy-browser("ie", "5.5", "8", 5) {
+			.no-rem & {
+				margin: 0 0 $line; } } } }
 
 .list-custom-bullet {
 	margin-left: 0;
