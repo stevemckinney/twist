@@ -1,5 +1,10 @@
 // Section
 // ---------------------------
-.section { @extend %margin-bottom; }
+.section {
+	margin: 0 0 rem($line);
+
+	@include for-legacy-browser("ie", "5.5", "8", 5) {
+		.no-rem & {
+			margin: 0 0 $line; } } }
 
 .section-title {}
