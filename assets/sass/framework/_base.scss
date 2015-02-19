@@ -123,7 +123,7 @@ $f: 	1440px !default;
 
 // max-width
 $aa-max:	max-width $aa - $breakpoint-subtract !default;
-$a-max:		max-width $b - $breakpoint-subtract !default;
+$a-max:		max-width $a - $breakpoint-subtract !default;
 $ab-max: 	max-width $ab - $breakpoint-subtract !default; 
 $b-max: 	max-width $b - $breakpoint-subtract !default;
 $bc-max: 	max-width $bc - $breakpoint-subtract !default;
@@ -137,6 +137,15 @@ $f-max: 	max-width $f - $breakpoint-subtract !default;
 
 // resolution
 $retina: min-resolution 1.5dppx !default;
+
+// Font sizes
+// ---------------------------
+$h1-size: 36px !default;
+$h2-size: 30px !default;
+$h3-size: 24px !default;
+$h4-size: 21px !default;
+$h5-size: 18px !default;
+$h6-size: 16px !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------
