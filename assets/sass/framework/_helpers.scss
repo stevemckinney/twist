@@ -1,27 +1,6 @@
-//	Your traditional helper classes through
-//	mixins, extends and reusable classes
-// 	-----------------------------------------
-
-// General extends
+// Various helper mixins & functions
 // ---------------------------
-%transition {
-	@include transition(
-		color $default-transition-duration,
-		background-color $default-transition-duration,
-		border-color $default-transition-duration); }
 
-%rounded {
-	border-radius: $radius; }
-
-%shadow {
-	box-shadow: 0 1px 3px rgba($black, $default-dark-shadow); }
-
-%left {
-	float: left; }
-
-%right {
-	float: right; }
-	
 // Override compass mixin to exclude has-layout (browser support doesn't exclude this yet)
 // ---------------------------
 @mixin pie-clearfix {
@@ -34,73 +13,10 @@
 %clear {
 	@include pie-clearfix; }
 
-// Visibility
-// ---------------------------
-%hide {
-	display: none; }
-	
-%screenreaders {
-	border: 0 !important;
-	clip: rect(0 0 0 0);
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	position: absolute !important;
-	width: 1px !important;
-	padding: 0 !important; }
-
 // Resets
 // ---------------------------
-%no-outline {
-	outline: none; }
-	
 %input-reset {
 	@include appearance(none); }
-	
-%no-list-style {
-	list-style: none; }
-
-// Margins and paddings
-// ---------------------------
-%centre {
-	margin: auto; }
-
-%no-margin-bottom {
-	margin-bottom: 0; }
-
-%no-margin-padding {
-	margin: 0;
-	padding: 0; }
-
-%margin-bottom {
-	margin: 0 0 rem($base-px);
-
-	@include for-legacy-browser("ie", "5.5", "8") {
-		.no-rem & {
-			margin: 0 0 $base-px; } } }
-	
-%margin-bottom-large {
-	margin: 0 0 rem($line);
-
-	@include for-legacy-browser("ie", "5.5", "8") {
-		.no-rem & {
-			margin: 0 0 $line; } } }
-
-// Colour use
-// ---------------------------
-%primary {
-	color: $primary; }
-	
-%secondary {
-	color: $secondary; }
-	
-%tertiary {
-	color: $tertiary; }
-
-// Font size
-// ---------------------------
-%base-font-size {
-	font-size: em($base-font-size, $base-font-size); }
 
 // Mixins
 // ---------------------------
