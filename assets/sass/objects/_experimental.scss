@@ -26,7 +26,7 @@ $default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 	$grid-map: $default-flex-grid-map
 ) {
 	.#{$default-flex-grid-namespace}-container {
-		@include display-flex;
+		display: flex;
 		@include justify-content(space-between);
 		@include align-content(stretch);
 		@include align-items(center);
@@ -43,7 +43,7 @@ $default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 					$w: (100% / $grid-columns) * $column-increment;
 					outline: 1px solid red;
 					min-height: 40px;
-					@include flex-basis($w); } } } }
+					flex-basis: $w; } } } }
 }
 
 @include flex-grid;
@@ -65,9 +65,9 @@ $default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 
 .form-flex {
 	.field {
-		@include display-flex;
+		display: flex;
 		@include justify-content(flex-start);
-		@include flex-flow(row wrap);
+		flex-flow: row wrap;
 		@include align-items(center); }
 	
 	.field-label {
@@ -88,11 +88,11 @@ summary:after {
   width: 20px;
   content: " ";
   position: relative;
-  @include transform(rotate(-90deg));
+  transform: rotate(-90deg);
 }
 
 details[open] summary:after {
-	@include transform(rotate(0deg));
+	transform: rotate(0deg);
 }
 
 }
