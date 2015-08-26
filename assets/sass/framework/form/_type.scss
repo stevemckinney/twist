@@ -56,7 +56,7 @@
 	
 	@if $has-label {
 		label {
-			@extend %screenreaders; } }
+			@extend .visuallyhidden; } }
 	
 	#{$selector} {
 		@include hide-text(left);

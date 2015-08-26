@@ -61,7 +61,7 @@
 	// Background
 	// ---------------------------
 	@if $color-1 and $color-2 {
-		@include background(linear-gradient($color-1, $color-2)); }
+		background-image: linear-gradient($color-1, $color-2); }
 		
 	@else {
 		background: $color-1; }

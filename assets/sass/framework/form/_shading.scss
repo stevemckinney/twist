@@ -38,11 +38,7 @@
 			
 			@if map-get($shaded-states, $state) and $shading {
 				
-				@include background(
-					linear-gradient(
-						bottom,
-						$background-color 0%,
-						$background-shading-color 100%));
+				background-image: linear-gradient(bottom, $background-color 0%, $background-shading-color 100%);
 						
 				box-shadow:
 					inset 0 1px scale-lightness($color, -10%),
@@ -74,17 +70,17 @@
 						inset 0 0 0 1px $color,
 						inset 0 1px 0 rgba($white, .4);
 					
-					@include background(
+          background-image:
 						linear-gradient(
 							rgba($background-color, .025) 0%,
-							rgba($background-shading-color, .15) 60%), $default-form-select-image, $background-color); }
+							rgba($background-shading-color, .15) 60%), $default-form-select-image, $background-color; }
 						
 				@if $state == normal {
-					@include background(
-						$default-form-select-image,
+					background:
+					  $default-form-select-image,
 						linear-gradient(
 							$background-color 0%,
-							$background-shading-color 100%)); } }
+							$background-shading-color 100%); } }
 							
 			@else {
 				box-shadow: inset 0 0 0 1px $color;
@@ -100,10 +96,10 @@
 		// Checkbox/radio
 		// ---------------------------
 		@if ($type == checkbox or $type == radio) and $state == normal and $shading {		
-			@include background(
+			background:
 				linear-gradient(
 					$background-color 0%,
-					$background-shading-color 60%)); }
+					$background-shading-color 60%); }
 		
 		@if ($type == checkbox or $type == radio) and $state == normal and $shading == false{
 			background-color: $background-color; }
@@ -116,11 +112,11 @@
 				if($shading, inset 0 2px 1px $white, compact(false));
 	
 			&:checked {
-				@include background(
+				background:
 					radial-gradient(
 						scale-lightness($background-shading-color, -20%) $default-form-radio-radial-gradient-color-stop,
 						$background-color $default-form-radio-radial-gradient-color-stop),
-					if($shading, linear-gradient($background-color 0%, $background-shading-color 60%), $background-color), compact(false)); } }
+					if($shading, linear-gradient($background-color 0%, $background-shading-color 60%), $background-color); } }
 	
 		// Checkbox
 		// ---------------------------			
@@ -131,9 +127,10 @@
 			
 			&:checked {
 				@if $shading {	
-					@include background(
-						$default-form-checkbox-image,
-						linear-gradient(rgba($background-color, .025) 0%, rgba($background-shading-color, .15) 60%), $background-color); }
+					background: 
+					  $default-form-checkbox-image,
+					  linear-gradient(rgba($background-color, .025) 0%, rgba($background-shading-color, .15) 60%),
+					  $background-color; }
 				@else {
 					background: $default-form-checkbox-image $background-color; } 
 				background-size: $default-form-checkbox-background-size; } }

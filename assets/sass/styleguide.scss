@@ -1,10 +1,10 @@
 // Framework required
 // ---------------------------
-@import "compass",
-				"compass/css3",
-				"compass/css3/user-interface",
-				"compass/layout/stretching",
-				"compass/css3/hyphenation",
+@import "compass/support",
+        "compass/utilities/color",
+        "compass/typography/text",
+        "compass/css3/appearance",
+        "compass/css3/user-interface",
 				"breakpoint",
 				"ceaser-easing",
 				"framework/base", // lots of default variables
@@ -14,7 +14,7 @@
 // ---------------------------
 @import "framework/maps",
 				"framework/conversion",
-				"framework/media",
+				"framework/normalize",
 				"framework/grid",
 				"framework/helpers",
 				"framework/group",
@@ -23,8 +23,7 @@
 				"framework/form",
 				"framework/table",
 				"framework/tooltip",
-				"framework/misc",
-				"framework/debug";
+				"framework/misc";
 
 // Structure
 // ---------------------------
@@ -142,7 +141,7 @@
 		bottom: 0;
 		width: 100%;
 		background: transparent;
-		@include transform(rotateX(180deg)); }
+		transform: rotateX(180deg); }
 	
 	&:hover,
 	&:focus {
@@ -150,7 +149,7 @@
 		color: $white;
 		
 		&:after {
-			@include transform(rotateX(0));
+			transform: rotateX(0);
 			background: $primary;
 			width: 100%; } } }
 

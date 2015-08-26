@@ -41,7 +41,7 @@ body {
 		font-size: 100%; } }
 
 p {
-	@extend %margin-bottom; }
+	margin-bottom: em($base-px); }
 
 a {
   transition: .2s;
@@ -57,7 +57,7 @@ a {
 	
 	&:active,
 	&:hover {
-		outline: 0; } } }
+		outline: 0; } }
 
 .field {
 	font-size: 1rem; }

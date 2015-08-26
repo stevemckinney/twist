@@ -1,7 +1,6 @@
 // Media blocks
 // ---------------------------
 .media {
-	@extend .clearfix;
 	display: block; }
 	
 .media-image {
@@ -17,7 +16,7 @@
 	
 	&,
 	& > :last-child {
-		margin-bottom: 0; }
+		margin-bottom: 0; } }
 
 
 // Reverse location
