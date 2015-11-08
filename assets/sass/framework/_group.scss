@@ -6,24 +6,14 @@ $default-group-radius: $radius !default;
 
 // Group
 // ---------------------------
+// Ideal for selecting groups of buttons and adding radius to the necessary ones
 @mixin group(
-	$children					: $default-group-children,
-	$negative-spacing	: $default-group-negative-spacing,
-	$radius						: $default-group-radius
+	$children: $default-group-children,
+	$radius  : $default-group-radius
 ) {
-	
-	@if $negative-spacing {
-		letter-spacing: em($negative-spacing); }
-	
+  
+  // Select all child elements and apply border-radius to first and last
 	#{unquote($children)} {
-		border-radius: 0;
-		
-		@if $negative-spacing {
-			letter-spacing: 0; }
-		
-		+ & {
-			margin-left: -1px; }
-
 		@if $radius {
 			&:first-child {
 				border-radius: $radius 0 0 $radius; }
