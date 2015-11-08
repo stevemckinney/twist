@@ -63,7 +63,7 @@ $helper-vertical-align-prefix: vertical-align;
 // ---------------------------
 $default-enable-visibility: true !default;
 
-@if $default-enable-inline-block-layout {
+@if $default-enable-visibility {
 	.hidden {
 		display: none; }
 	
@@ -106,107 +106,73 @@ $default-enable-sizes: true !default;
 
 // Padding
 // ---------------------------
-$default-enable-padding: true !default;
+$default-enable-padding: false !default;
+
+$default-soft-map:
+  top,
+  right,
+  bottom,
+  left !default;
 
 @if $default-enable-padding {
-  // All
-  .soft-all {
-    padding: rem($line); }
   
-  .soft-all-large {
-    padding: rem($line*2); }
+  @each $padding in $default-soft-map {
   
-  .soft-all-small {
-    padding: rem($base-px); }
-  
-  .flat-all {
-		padding: 0; }
-  
-  // Top
-  .soft-top {
-		padding-top: rem($line); }
-		
-	.soft-top-large {
-		padding-top: rem($line*2); }
-		
-  .flat-top {
-		padding-top: 0; }
-  
-  // Bottom
-	.soft-bottom {
-		padding-bottom: rem($line); }
-		
-	.soft-bottom-large {
-		padding-bottom: rem($line*2); }
-  
-  .flat-bottom {
-		padding-bottom: 0; }
-  
-  // Right
-  .soft-right {
-    margin-right: rem($base-px); }
-  
-  .soft-right-small {
-    margin-right: rem($base-px/2); }
-  
-  .soft-right-large {
-    margin-right: rem($line); }
-  
-  // Left
-  .soft-left {
-    margin-left: rem($base-px); }
-  
-  .soft-left-small {
-    margin-left: rem($base-px/2); }
-  
-  .soft-left-large {
-    margin-left: rem($line); } }
+    .soft-#{$padding} {
+      padding-#{$padding}: $baseline; } 
+    
+    .soft-double-#{$padding} {
+      padding-#{$padding}: double($baseline); }
+    
+    .soft-half-#{$padding} {
+      padding-#{$padding}: half($baseline); } } }
 	
 // Margin
 // ---------------------------
 $default-enable-margin: true !default;
 
-@if $default-enable-margin {
-  // Top
-  .push-top {
-		margin-top: rem($line); }
-		
-	.push-top-large {
-		margin-top: rem($line*2); }
-		
-  .flush-top {
-		margin-top: 0; }
-  
-  // Bottom
-	.push-bottom {
-		margin-bottom: rem($line); }
-				
-	.push-bottom-large {
-		margin-bottom: rem($line*2); }
-  
-  .flush-bottom {
-		margin-bottom: 0; }
-  
-  // Right
-  .push-right {
-    margin-right: rem($base-px); }
-  
-  .push-right-small {
-    margin-right: rem($base-px/2); }
-  
-  .push-right-large {
-    margin-right: rem($line); }
-  
-  // Left
-  .push-left {
-    margin-left: rem($base-px); }
-  
-  .push-left-small {
-    margin-left: rem($base-px/2); }
-  
-  .push-left-large {
-    margin-left: rem($line); } }
+$default-push-map:
+  top,
+  right,
+  bottom,
+  left !default;
 
+@if $default-enable-margin {
+  
+  @each $margin in $default-push-map {
+  
+    .push-#{$margin} {
+      margin-#{$margin}: $baseline; } 
+    
+    .push-double-#{$margin} {
+      margin-#{$margin}: double($baseline); }
+    
+    .push-half-#{$margin} {
+      margin-#{$margin}: half($baseline); } } }
+
+// Undo
+// ---------------------------
+$default-enable-undo: false !default;
+
+@if $default-enable-undo {
+  .undo-padding {
+		padding: 0; }
+		
+  .undo-padding-top {
+		padding-top: 0; }
+
+  .undo-padding-bottom {
+		padding-bottom: 0; }
+		
+  .undo-margin {
+		margin: 0; }
+		
+  .undo-margin-top {
+		margin-top: 0; }
+
+  .undo-margin-bottom {
+		margin-bottom: 0; } }
+  
 // Radius
 // ---------------------------
 $default-enable-radius: false !default;
