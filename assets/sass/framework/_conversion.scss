@@ -1,5 +1,21 @@
-// Conversion mixins
+// Conversion mixins/functions
 // ---------------------------
+
+// Quadruple
+@function quadruple($number) {
+  @return $number * 4; }
+  
+// Double
+@function double($number) {
+  @return $number * 2; }
+
+// Half
+@function half($number) {
+  @return $number / 2; }
+  
+// Quarter
+@function half($number) {
+  @return $number / 4; }
 
 // target / context = result
 // long length version
