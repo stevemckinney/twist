@@ -40,6 +40,7 @@ $default-icon-position: false !default;
 		
 		@if $position {
 			position: absolute;
+			
 			@if $position == right {
 				right: 0; }
 			@else if $position == left {
