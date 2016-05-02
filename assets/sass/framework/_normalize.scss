@@ -26,7 +26,9 @@ hgroup,
 main,
 nav,
 section,
-summary {
+summary,
+svg,
+img {
 	display: block; }
 
 audio,
@@ -97,7 +99,6 @@ sub {
 	bottom: -.25em; }
 
 pre {
-	@include force-wrap;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch; }
 
