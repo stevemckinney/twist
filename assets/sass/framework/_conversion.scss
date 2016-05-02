@@ -4,6 +4,9 @@
 // Quadruple
 @function quadruple($number) {
   @return $number * 4; }
+
+@function triple($number) {
+  @return $number * 3; }
   
 // Double
 @function double($number) {
@@ -14,7 +17,7 @@
   @return $number / 2; }
   
 // Quarter
-@function half($number) {
+@function quarter($number) {
   @return $number / 4; }
 
 // target / context = result
@@ -131,22 +134,3 @@ $yiq-debug: false !default;
 // Returns true if the color greater than 50% saturation
 @function is-saturated($color) {
 	@return (saturation($color) > 50%); }
-
-// Create proportionally sized elements
-// ---------------------------
-@function element-size(
-	$size				: $default-size,
-	$equal			: $default-equal,
-	$ratio			: $default-ratio,
-	$multiplier	: $default-multiplier
-) {
-	@return if(
-		$equal == false, 
-		($size * $ratio) + em (($size * $multiplier) * $ratio) + em, 
-		($size * $ratio) + em); }
-
-@function element-size-single(
-	$size				: $default-size,
-	$ratio			: $default-ratio
-) {
-	@return ($size * $ratio) + em; }
