@@ -4,7 +4,7 @@
 	position: relative;
 	border-radius: $radius;
 	padding: em($line) em($base-px);
-	box-shadow: 0 1px scale-lightness($tertiary-d1, -5%), 0 1px 1px $tertiary-d1;
+	box-shadow: 0 1px rgba($neutral, .15), 0 1px 1px rgba($neutral, .2);
 	background: $white;
 	
 	margin: 0 0 em($line); }
@@ -74,7 +74,7 @@ $notices: (
 
 .notice-body {
 	margin: 0;
-	color: $primary;
+	color: $neutral;
 	font-weight: 400;
 	
 	&:before {

@@ -3,10 +3,10 @@
 
 // Site colours
 // ---------------------------
-$primary: #4c4d4c !default;
-$secondary: #6cd0d9 !default;
-$tertiary: #f2f0f0 !default;
-$neutral: #f24969 !default;
+$primary: #e16161 !global;
+$secondary: #87d4be !global;
+$tertiary: #ffd7a6 !global;
+$neutral: #1a626e !global;
 
 // Colours (see: site/base for main site palette)
 // --------------------------
@@ -61,7 +61,7 @@ $base-line-height-unitless: 1.5 !default;
 
 // Defaults
 // ---------------------------
-$radius: 3px !default;
+$radius: 4px !default;
 $default-transition-duration: .2s !default;
 $transition-duration: $default-transition-duration !default;
 
@@ -72,7 +72,7 @@ $default-negative-spacing: -5px !default;
 
 // Default sizing for elements
 $default-size: 1 !default; // for element mixin
-$default-form-size: $default-size !default;
+$default-form-size: $base-px $line !default;
 $default-ratio: .555 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
@@ -94,6 +94,7 @@ $default-state: normal !default;
 
 // Default form placeholder
 $default-placeholder-color: $default-color !default;
+$default-placeholder-font-style: italic !default;
 
 // Default opacity for dark and light values
 $default-dark-shadow: .2 !default;
@@ -104,7 +105,7 @@ $default-context: $base-font-size !default;
 
 // Breakpoints
 // ---------------------------
-$breakpoint-to-ems: true;
+@include breakpoint-set('to ems', $base-font-size);
 $breakpoint-subtract: 1px !default;
 $default-no-query-selector: "no-mediaqueries" !default;
 
@@ -141,12 +142,13 @@ $retina: min-resolution 1.5dppx !default;
 
 // Font sizes
 // ---------------------------
-$h1-size: 36px !default;
-$h2-size: 30px !default;
-$h3-size: 24px !default;
-$h4-size: 21px !default;
-$h5-size: 18px !default;
-$h6-size: 16px !default;
+$text-xxlarge: 30px !default;
+$text-xlarge: 24px !default;
+$text-large: 21px !default;
+$text-medium: 18px !default;
+$text-small: 16px !default;
+$text-xsmall: 14px !default;
+$text-xxsmall: 14px !default;
 
 // Sizing increments, set in _helpers.scss
 // ---------------------------

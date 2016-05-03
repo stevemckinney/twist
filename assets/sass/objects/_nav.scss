@@ -50,22 +50,22 @@
 // ---------------------------
 .navigation-item {
 	@extend %vertical-align-top;
-	@include transition(background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration);
+	transition: background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration;
 	
-	color: scale-lightness($tertiary-d1, -20%);
+	color: scale-lightness($tertiary, -20%);
 	
 	@include breakpoint($c-max) {
 		display: block;
 		padding: em($line);
-		box-shadow: 0 1px 0 $tertiary-d1;
+		box-shadow: 0 1px 0 $tertiary;
 		
 		&:hover,
 		&:focus {
 			color: $secondary;
-			background: $tertiary-d1;
+			background: $tertiary;
 			box-shadow: 
-				0 -1px 0 scale-lightness($tertiary-d1, -10%),
-				0 1px 0 scale-lightness($tertiary-d1, -10%); } } }
+				0 -1px 0 scale-lightness($tertiary, -10%),
+				0 1px 0 scale-lightness($tertiary, -10%); } } }
 
 // Toggle
 // ---------------------------
