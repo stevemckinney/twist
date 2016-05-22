@@ -40,7 +40,7 @@ $default-text-elements: (
 	year: year,
 	datetime: datetime,
 	datetime-local: datetime-local
-);
+) !default;
 
 // Defaults for form search
 // ---------------------------
@@ -52,11 +52,11 @@ $default-form-search-has-label: false !default;
 // Defaults for checkbox/radio
 // ---------------------------
 $default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;
-$default-form-radio-size: em(16px) !default;
+$default-form-radio-size: 16px !default;
 $default-form-radio-width: $default-form-radio-size !default;
 $default-form-radio-height: $default-form-radio-size !default;
 $default-form-radio-radial-gradient-color-stop: 4px !default;
-$default-form-checkbox-background-size: em(12px) !default;
+$default-form-checkbox-background-size: 12px !default;
 
 // Default select images (change colour in svg file)
 // ---------------------------
