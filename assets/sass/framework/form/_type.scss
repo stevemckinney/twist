@@ -3,26 +3,26 @@
 // Text
 // ---------------------------
 @mixin form-text(
-	$color									: $default-form-color $default-form-focus-color,
-	$background-color				: $default-form-background-color $default-form-focus-background-color,
-	$shading								: $default-form-shading
+	$color						: $default-form-color,
+	$background-color	: $default-form-background-color,
+	$shading					: $default-form-shading
 ) {
-	@include form-shading(text, $color, $background-color, normal, $shading);
+	@include form-shading-text($color, $background-color, normal, $shading);
 
 	&:focus {
-		@include form-shading(text, $color, $background-color, focus, $shading); } }
+		@include form-shading-text($color, $background-color, focus, $shading); } }
 
 // Select
 // ---------------------------
 @mixin form-select(
-	$color						: $default-form-color $default-form-focus-color,
+	$color						: $default-form-color,
 	$background-color	: $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
-	@include form-shading(select, nth($color, 1), nth($background-color, 1), normal, $shading);
+	@include form-shading-select($color, $background-color, normal, $shading);
 
 	&:focus {
-		@include form-shading(select, nth($color, 2), nth($background-color, 2), focus, $shading); } }
+		@include form-shading-select($color, $background-color, focus, $shading); } }
 
 // Checkbox
 // ---------------------------
@@ -31,25 +31,25 @@
 	$background-color	: $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
-	@include form-shading(checkbox, $color, $background-color, normal, $shading); }
+	@include form-shading-checkbox($color, $background-color, $shading); }
 
 // Radio
 // ---------------------------
 @mixin form-radio(
-	$color						: $default-form-color,
-	$background-color	: $default-form-background-color,
+	$color					  : $default-form-color,
+	$background-color : $default-form-background-color,
 	$shading					: $default-form-shading
 ) {	
-	@include form-shading(radio, $color, $background-color, normal, $shading); }
+	@include form-shading-radio($color, $background-color, $shading); }
 
 // Search
 // ---------------------------
 @mixin form-search(
-	$selector	: $default-form-search-selector,
-	$position	: $default-form-search-position,
-	$size			: $default-form-search-size,
-	$icon 		: $default-form-search-image,
-	$has-label: $default-form-search-has-label
+	$selector	 : $default-form-search-selector,
+	$position	 : $default-form-search-position,
+	$size      : $default-form-search-size,
+	$icon 		 : $default-form-search-image,
+	$has-label : $default-form-search-has-label
 ) {
 	position: relative;
 	
