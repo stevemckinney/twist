@@ -167,7 +167,7 @@ $default-tooltip-triangle-size: 6px !default;
 	$radius: $default-tooltip-radius,
 	$size: $default-tooltip-size
 ) {
-	padding: element-size($size);
+	padding: $size;
 	white-space: nowrap;
 	display: inline-block;
 	pointer-events: none;
@@ -177,11 +177,11 @@ $default-tooltip-triangle-size: 6px !default;
 		border-radius: $radius; } }
 
 %tooltip-shared {
-	@include transition(.2s .4s);
+	transition: .2s .4s;
 	-webkit-backface-visibility: hidden;
 	position: absolute;
 	opacity: 0; }
 
 %tooltip-shared-hover {
-	@include transition(.2s .2s ease-in);
+	transition: .2s .2s ease-in;
   opacity: 1; }
