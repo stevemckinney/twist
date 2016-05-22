@@ -65,7 +65,7 @@ $default-table-breakpoint: $b !default;
 						color: invert($main-color); } } } } }
 	
 	@if $responsive {
-		@include breakpoint($default-table-breakpoint, max) {
+		@include breakpoint($default-table-breakpoint) {
 			thead {
 				float: left;
 				background: $main-color;
@@ -123,7 +123,7 @@ $default-table-styled-size: $default-size !default;
 	
 	td,
 	th {
-		padding: element-size($size); }
+		padding: $size; }
 	
 	td {
 		border-bottom: 1px solid $border-color; }
