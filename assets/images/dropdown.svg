@@ -3,8 +3,11 @@
     <style>
       .a {
         fill: #666;
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
     </style>
   </defs>
-  <path class="a" d="M11.46,6.31A0.5,0.5,0,0,0,11,6H5a0.5,0.5,0,0,0-.35.85l3,3a0.5,0.5,0,0,0,.71,0l3-3A0.5,0.5,0,0,0,11.46,6.31Z"/>
+  <polygon class="a" points="4 6 12 6 8 10 4 6"/>
 </svg>

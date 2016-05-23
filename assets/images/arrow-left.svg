@@ -2,9 +2,14 @@
   <defs>
     <style>
       .a {
-        fill: #666;
+        fill: none;
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
       }
     </style>
   </defs>
-  <path class="a" d="M15,7H3.41L5.71,4.71A1,1,0,0,0,4.29,3.29l-4,4a1,1,0,0,0,0,1.41l4,4a1,1,0,0,0,1.41-1.41L3.41,9H15A1,1,0,0,0,15,7Z"/>
+  <line class="a" x1="15" y1="8" x2="3" y2="8"/>
+  <polyline class="a" points="5 4 1 8 5 12"/>
 </svg>
