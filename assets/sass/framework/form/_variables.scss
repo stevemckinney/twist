@@ -9,21 +9,16 @@ $default-form-type: text !default;
 
 // Default styling
 // ---------------------------
-$default-form-base: false !default;
+$default-form-color: scale-lightness($white, -20%) !default;
+$default-form-text-color: #666 !default;
 $default-form-focus-color: $alt !default;
-$default-form-background-focus-color: scale-lightness($white, -20%) !default;
-$default-form-background-color: scale-lightness($white, -5%) !default;
+$default-form-background-color: $white !default;
 $default-form-focus-background-color: $white !default;
 $default-form-radius: $radius !default;
 $default-form-checkbox-radius: $radius !default;
 $default-form-radio-radius: 30em !default;
 $default-form-line-height: normal !default;
 $default-form-shading: true !default;
-
-// Default style
-// ---------------------------
-$default-form-color: $default-color !default;
-$default-form-text-color: $neutral !default;
 
 // Text elements map
 $default-text-elements: (
@@ -41,13 +36,6 @@ $default-text-elements: (
 	datetime: datetime,
 	datetime-local: datetime-local
 ) !default;
-
-// Defaults for form search
-// ---------------------------
-$default-form-search-position: right !default;
-$default-form-search-selector: unquote(".button-search") !default;
-$default-form-search-size: $default-size !default;
-$default-form-search-has-label: false !default;
 
 // Defaults for checkbox/radio
 // ---------------------------
