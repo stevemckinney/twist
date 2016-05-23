@@ -11,16 +11,23 @@
   $background-color : $default-form-background-color,
   $state            : $default-form-state,
   $shading          : $default-form-shading
-) {
-  @if length($background-color) > 1 {
-    background-image: linear-gradient(to top, nth($background-color, 1) 0%, nth($background-color, 2) 100%); }
-  @else if length($background-color) > 1 {
-    background-color: $background-color; }
-  
+) {  
+  // If 2 colours are passed make a gradient, otherwise a solid colour
+  $background: 
+    if( length($background-color) > 1, 
+      linear-gradient(to top, nth($background-color, 1) 0%, nth($background-color, 2) 100%),
+      $background-color
+  );
+  background: $background;
+
   box-shadow:
-    inset 0 1px scale-lightness($color, -10%),
+    inset 0 1px scale-lightness($color, -20%),
     inset 0 0 0 1px $color,
+    
+    // Use the regular colour, but desaturate the colour on focus
     if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 20%)),
+    
+    // Make it clearer that the field is focused
     if($state == focus, 0 0 6px -2px $color, compact(false)); }
 
 // Shading for select
@@ -31,12 +38,12 @@
   $background-color : $default-form-background-color,
   $state            : $default-form-state,
   $shading          : $default-form-shading
-) {
-  @if length($background-color) > 1 {
-    background-image: linear-gradient(to bottom, nth($background-color, 1) 0%, nth($background-color, 2) 100%); }
-  @else if length($background-color) > 1 {
-    background-color: $background-color; }
-    
+) {  
+  // If 2 colours are passed make a gradient, otherwise a solid colour
+  $background: 
+    if(length($background-color) > 1, compact($default-form-select-image, linear-gradient(to bottom, nth($background-color, 1) 0%, nth($background-color, 2))), $default-form-select-image $background-color );
+  background: $background;
+  
   @if $shading {        
     @if $state != disabled {
       box-shadow:
@@ -48,11 +55,7 @@
       box-shadow:
         0 0 9px -3px rgba($color, .6),
         inset 0 0 0 1px $color,
-        inset 0 1px 0 rgba($white, .4); } }
-          
-  @else {
-    box-shadow: inset 0 0 0 1px $color;
-    background: $default-form-select-image $background-color; } }
+        inset 0 1px 0 rgba($white, .4); } } }
 
 // Shading for radio
 // Called in _type.scss
@@ -62,12 +65,12 @@
   $background-color : $default-form-background-color,
   $shading          : $default-form-shading
 ) {
-  @if length($background-color) > 1 {
-    $background-gradient: linear-gradient(to top, nth($background-color, 1) 0%, nth($background-color, 2) 60%);
-    background: $background-gradient; }
-  @else if length($background-color) > 1 {
-    background-color: $background-color; }
-      
+  // If 2 colours are passed make a gradient, otherwise a solid colour
+  $background: 
+    if(length($background-color) > 1, linear-gradient(nth($background-color, 1) 0%,
+      nth($background-color, 2) 60%), $background-color );
+  background: $background;
+  
   box-shadow: 
     inset 0 0 0 1px $color,
     if($shading, inset 0 2px 1px $white, compact(false));
@@ -78,7 +81,7 @@
     @if length($background-color) > 1 {
       background: $default-form-checkbox-image $background-gradient; }
     @else {
-      background: $default-form-checkbox-image $background-color; } } }
+      background: $default-form-checkbox-image $background; } } }
 
 // Shading for radio
 // Called in _type.scss
@@ -88,10 +91,11 @@
   $background-color : $default-form-background-color,
   $shading          : $default-form-shading
 ) {
-  @if length($background-color) > 1 {
-    background-image: linear-gradient(to top, nth($background-color, 1) 0%, nth($background-color, 2) 60%); }
-  @else if length($background-color) > 1 {
-    background-color: $background-color; }
+  // If 2 colours are passed make a gradient, otherwise a solid colour
+  $background: 
+    if(length($background-color) > 1, linear-gradient(nth($background-color, 1) 0%,
+      nth($background-color, 2) 60%), $background-color );
+  background: $background;
 
   box-shadow: 
     inset 0 0 0 1px $color,
@@ -99,7 +103,6 @@
 
   &:checked {
     background:
-      radial-gradient(
-        scale-lightness($background-color, -20%) $default-form-radio-radial-gradient-color-stop,
+      radial-gradient(scale-lightness($background-color, -20%) $default-form-radio-radial-gradient-color-stop,
         $background-color $default-form-radio-radial-gradient-color-stop),
-      if($shading, linear-gradient(nth($background-color, 1) 0%, nth($background-color, 2) 60%), $background-color); } }
+      $background; } }
