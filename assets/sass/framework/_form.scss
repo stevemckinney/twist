@@ -28,9 +28,7 @@
 	// Checkbox
 	// ---------------------------
 	@else if $type == checkbox {
-		@include form-checkbox($color, $background-color, $shading);
-		@extend %form-boolean-base;
-		@extend %form-checkbox-radius; }
+		@include form-checkbox($color, $background-color, $shading); }
 	
 	// Radio
 	// ---------------------------
