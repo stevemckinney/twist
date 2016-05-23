@@ -10,19 +10,20 @@
 @mixin form(
   $type             : $default-form-type,
   $color            : $default-form-color,
+  $focus-color      : $default-form-focus-color,
   $background-color	: $default-form-background-color,
   $shading          : $default-form-shading
 ) {
-	
+
 	// Text
 	// ---------------------------
 	@if map-get($default-text-elements, $type) {		
-		@include form-text($color, $background-color, $shading); }
+		@include form-text($color, $focus-color, $background-color, $shading); }
 	
 	// Select
 	// ---------------------------
 	@else if $type == select {
-		@include form-select($color, $background-color, $shading); }
+		@include form-select($color, $focus-color, $background-color, $shading); }
 	
 	// Checkbox
 	// ---------------------------
