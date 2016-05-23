@@ -40,7 +40,8 @@
   $background-color : $default-form-background-color,
   $shading          : $default-form-shading
 ) { 
-  @include form-shading-checkbox($color, $background-color, $shading); }
+  @include form-shading-checkbox($color, $background-color, $shading);
+  border-radius: $default-form-checkbox-radius; }
 
 // Radio
 // Called in _form.scss
@@ -50,4 +51,5 @@
   $background-color : $default-form-background-color,
   $shading          : $default-form-shading
 ) { 
-  @include form-shading-radio($color, $background-color, $shading); }
+  @include form-shading-radio($color, $background-color, $shading);
+  border-radius: $default-form-radio-radius; }

@@ -35,9 +35,7 @@
 	// Radio
 	// ---------------------------
 	@else if $type == radio {
-		@include form-radio($color, $background-color, $shading);
-		@extend %form-boolean-base;
-		@extend %form-radio-radius; }
+		@include form-radio($color, $background-color, $shading); }
 		
 	// Submit
 	// ---------------------------
