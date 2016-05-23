@@ -100,6 +100,10 @@
 	
 	// Check/radio
 	// ---------------------------
+	.input-checkbox,
+	.input-radio {
+    @include form-boolean-base; }
+	
 	.input-checkbox {
 		@include form(checkbox);
 		width: em($base-font-size);
