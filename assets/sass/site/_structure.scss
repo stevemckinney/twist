@@ -1,11 +1,8 @@
 // Site structure
 // ---------------------------
 body {
-	background: $tertiary;
-	color: $primary;
-	
-	@include breakpoint($c-max) {
-		background: $tertiary; } }
+	background: $white;
+	color: $primary; }
 
 // Site
 // ---------------------------
@@ -19,7 +16,7 @@ body {
 	
 	// Needs a background to cancel out the .navigation
 	@include breakpoint($c-max) {
-		background: $tertiary; } }
+		background: $white; } }
 
 .site-active {
 	transform: translate3d(-16em, 0, 0);
