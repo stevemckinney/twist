@@ -9,11 +9,11 @@ $default-form-type: text !default;
 
 // Default styling
 // ---------------------------
-$default-form-color: scale-lightness($white, -20%) !default;
+$default-form-color: #c7d8d7 !default;
 $default-form-text-color: #666 !default;
 $default-form-checked-color: #6ad4b6 !default;
 $default-form-focus-color: $alt !default;
-$default-form-background-color: $white !default;
+$default-form-background-color: scale-lightness($white, -2.5%) $white !default;
 $default-form-focus-background-color: $white !default;
 $default-form-radius: $radius !default;
 $default-form-checkbox-radius: $radius !default;
