@@ -21,10 +21,6 @@ module.exports = function(grunt) {
 				files: ['<%= path.sass %>/*.scss', '<%= path.sass %>/**/*.scss'],
 				tasks: 'compass:dev'
 			},
-			grunticon: {
-				files: ['**/*.{svg}', '<%= path.dist %>'],
-				tasks: 'grunticon'
-			},
 			js: {
 				files: ['<%= path.js %>/**/*.js'],
 				tasks: 'concat'
@@ -33,7 +29,7 @@ module.exports = function(grunt) {
 				files: ['**/*.{png,jpg,gif}', '<%= path.dist %>'],
 				tasks: 'imagemin'
 			},
-			styleguide: {
+			files: {
 				files: ['src/**/*.{php,js,png,html,css}', '<%= path.dist %>'],
 				tasks: 'copy:styleguide'
 			}
@@ -73,11 +69,9 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: ['<%= path.js %>/modernizr.js',
+      				'<%= path.js %>/data-href.js',
 							'<%= path.js %>/enquire.js',
-							'<%= path.js %>/lettering.js',
-							'<%= path.js %>/fittext.js',
 							'<%= path.js %>/fitvids.js',
-							'<%= path.js %>/prism.js',
 							'<%= path.js %>/password.js',
 							'<%= path.js %>/notice.js',
 							'<%= path.js %>/global.js'],
@@ -110,7 +104,7 @@ module.exports = function(grunt) {
 			 images: {
 				 files: [{
 					 expand: true,
-					 cwd: 'src/',
+					 cwd: 'assets/',
 					 src: ['**/*.{png,jpg,gif}'],
 					 dest: '<%= path.dist %>/'
 				 }]
@@ -164,6 +158,17 @@ module.exports = function(grunt) {
 					dest: '<%= path.dist %>/'
 				}]
 			}
+		},
+		
+		autoprefixer: {
+		  options: {
+        browsers: ['last 2 version']
+      },
+			single_file: {
+				flatten : true,
+				src: 'dist/css/master.css',
+				dest: 'dist/css/master.css'
+			}
 		}
 
 	});
@@ -180,13 +185,18 @@ module.exports = function(grunt) {
 		'imagemin',
 		'compass:dev'
 	]);
+	grunt.registerTask('css', [
+		'compass:live',
+		'autoprefixer'
+	]);
 	grunt.registerTask('build', [
 		'concat',
 		'uglify',
 		'grunticon',
 		'svgmin',
 		'imagemin',
-		'compass:live'
+		'compass:live',
+		'autoprefixer'
 	]);
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);

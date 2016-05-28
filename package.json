@@ -7,23 +7,24 @@
     "url": "git@github.com:stevemckinney/twist.git"
   },
   "devDependencies": {
+    "autoprefixer": "^2.1.1",
     "grunt": "~0.4.1",
+    "grunt-breakshots": "~0.2.0",
     "grunt-contrib-compass": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.3",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-grunticon": "~0.6.0",
-    "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-htmlmin": "~0.1.3",
-    "matchdep": "~0.1.2",
-    "grunt-jekyll": "~0.3.8",
-    "grunt-contrib-connect": "~0.5.0",
-    "grunt-breakshots": "~0.2.0",
     "grunt-contrib-imagemin": "~0.4.0",
-    "grunt-svgmin": "~0.3.0",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-grunticon": "~0.6.0",
+    "grunt-jekyll": "~0.3.8",
     "grunt-styleguide": "~0.2.14",
+    "grunt-svgmin": "~0.3.0",
+    "grunt-svgstore": "0.0.2",
     "grunt-sync": "0.0.5",
-    "grunt-svgstore": "0.0.2"
+    "matchdep": "~0.1.2"
   }
 }

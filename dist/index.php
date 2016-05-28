@@ -91,6 +91,26 @@
       <p>Comments and documentation about your style guide. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis enim labore facilis consequuntur! Veritatis neque est suscipit tenetur temporibus enim consequatur deserunt perferendis. Neque nemo iusto minima deserunt amet.</p>
     </div><!--/.sg-about-->
     
+    <div class="sg-section" style="background-color:#f7fbfb">
+      <div class="field field-text">
+    		<label class="field-label">Text input</label>
+    		<input type="text" class="input input-text">
+    	</div>
+    	<div class="field field-select">
+    		<label class="field-label">Select field</label>
+    		<select class="input input-select">
+    			<option>Option 01</option>
+    			<option>Option 02</option>
+    		</select>
+    	</div>
+    	<div class="field field-radio">
+    		<label class="field-label"><input type="radio" name="rad" class="input-radio"> Radio input</label>
+    	</div>
+    	<div class="field field-checkbox">
+    		<label class="field-label"><input type="checkbox" class="input-checkbox"> Checkbox input</label>
+    	</div>
+    </div>
+    
     <div class="sg-colors sg-section">
       <h2 class="sg-h2"><a id="sg-colors" class="sg-anchor">Colors</a></h2>
         <div class="sg-color sg-color--a"><span class="sg-color-swatch"><span class="sg-animated"><?php echo '$primary: ' . $primary; ?></span></span></div>

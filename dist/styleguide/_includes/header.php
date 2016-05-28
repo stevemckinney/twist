@@ -5,20 +5,16 @@
 	<meta charset="utf-8">
 	<!-- In loving memory of Albert Phillips -->
 	<title><?php echo $site_name; ?></title>
-	<meta name="description" content="framework, sass">
-	<meta name="keywords" content="A SASS/Compass framework">
+	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Mobile -->
 	<?php include 'mobile.php'; ?>
 	
 	<!-- CSS -->
-	<link href="//cloud.typography.com/7828432/695482/css/fonts.css" rel="stylesheet">
+<!-- 	<link href="//cloud.typography.com/7828432/695482/css/fonts.css" rel="stylesheet"> -->
 	<link href="http://twist.dev/css/master.css" rel="stylesheet">
 	<link href="http://twist.dev/css/styleguide.css" rel="stylesheet">
-	
-	<!-- JavaScript -->
-	<script src="http://twist.dev/js/modernizr.js"></script>
 
 	<!-- Other -->
 	<?php include 'other.php'; ?>
