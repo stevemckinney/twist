@@ -9,27 +9,17 @@
 // ---------------------------
 $sans: Verlag A, Verlag B, sans-serif !global;
 $serif: Sentinel A, Sentinel B, serif !global;
-$monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !default;
-$icons: "SSStandard" !default;
-$heading: $serif !default;
-$body: $sans !default;
-$form: $sans !default;
-$element: $sans !default;
+$monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !global;
+$icons: "SSStandard" !global;
+$heading: $serif !global;
+$body: $sans !global;
+$form: $sans !global;
+$element: $sans !global;
 
 // Defaults
 // ---------------------------
 $default-transition-duration: .2s;
 $site-width: 800px;
-
-// Browser support and prefixing
-// ---------------------------
-@if $debug-mode { $debug-browser-support: true; }
-$browser-minimum-versions: ("chrome": null, "firefox": null, "ie": "8", "safari": "6");
-$supported-browsers: reject(browsers(), opera-mini, opera);
-
-$box-shadow-support-threshold: 0;
-$gradient-support-threshold: 6.51;
-//$svg-gradient-shim-threshold: 10.0;
 
 // Breakpoints
 // ---------------------------

@@ -3,10 +3,10 @@
 
 // Site colours
 // ---------------------------
-$primary: #e16161 !global;
-$secondary: #87d4be !global;
-$tertiary: #ffd7a6 !global;
-$neutral: #1a626e !global;
+$primary: #4c4d4c !default;
+$secondary: #6cd0d9 !default;
+$tertiary: #f2f0f0 !default;
+$neutral: #f24969 !default;
 
 // Colours (see: site/base for main site palette)
 // --------------------------
@@ -53,6 +53,17 @@ $base-px: 12px !default;
 $line: $base-px*2 !default;
 $baseline: 24px !default;
 
+// Fonts
+// ---------------------------
+$sans: Helvetica, sans-serif !default;
+$serif: Georgia, serif !default;
+$monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !default;
+$icons: "SSStandard" !default;
+$heading: $serif !default;
+$body: $sans !default;
+$form: $sans !default;
+$element: $sans !default;
+
 // Font sizes
 // ---------------------------
 $base-font-size: 16px !default;
@@ -71,8 +82,8 @@ $transition-duration: $default-transition-duration !default;
 $default-negative-spacing: -5px !default;
 
 // Default sizing for elements
-$default-size: 1 !default; // for element mixin
-$default-form-size: $base-px !default;
+$default-size: 14px $line !default; // for element mixin
+$default-form-size: 14px $line !default;
 $default-ratio: .555 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;
@@ -110,7 +121,7 @@ $breakpoint-subtract: 1px !default;
 $default-no-query-selector: "no-mediaqueries" !default;
 
 // min-width
-$aa:	280px !default;
+$aa:	360px !default;
 $a:		480px !default;
 $ab: 	540px !default;
 $b: 	600px !default;
