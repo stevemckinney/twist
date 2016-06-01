@@ -28,19 +28,18 @@
   
   @if $shading {
     box-shadow:
-      inset 0 1px scale-lightness($color, -10%),
+      inset 0 1px scale-lightness($color, -20%),
       inset 0 0 0 1px $color,
       
       // Use the regular colour, but desaturate the colour on focus
-      if($state != focus, inset 0 1px 2px $color, inset 0 1px 2px desaturate($color, 20%)),
+      if($state != focus, inset 0 2px 4px -1px $color, inset 0 2px 4px -1px rgba(desaturate($color, 20%), .6)),
       
       // Make it clearer that the field is focused
       if($state == focus, 0 0 6px -2px $color, compact(false)),
-      
       0 1px 1px rgba($white, .2); }
   @else {
     box-shadow:
-      inset 0 1px scale-lightness($color, -20%),
+      inset 0 1px scale-lightness($color, -10%),
       inset 0 0 0 1px $color; } }
 
 // Shading for select
@@ -71,9 +70,12 @@
   
   @if $shading {        
     box-shadow:
-      inset 0 -1px scale-lightness($color, -20%),
-      inset 0 -1px 2px $color,
-      inset 0 1px rgba($white, .2),
+      inset 0 -1px scale-lightness($color, -15%),
+      
+      // Use the regular colour, but desaturate the colour on focus
+      if($state != focus, inset 0 -2px 4px -1px $color, inset 0 -2px 4px -1px rgba(desaturate($color, 20%), .6)),
+      
+      inset 0 2px rgba($white, .2),
       inset 0 0 0 1px $color,
       if($state == focus, 0 0 6px -2px $color, compact(false)); }
   @else {
@@ -103,7 +105,7 @@
   background: $background;
   
   box-shadow: 
-    inset 0 1px scale-lightness($color, -20%),
+    inset 0 1px scale-lightness($color, -15%),
     inset 0 0 0 1px $color,
     if($shading, inset 0 2px 1px $white, compact(false));
   
@@ -136,7 +138,7 @@
   background: $background;
   
   box-shadow:
-    inset 0 1px scale-lightness($color, -20%),
+    inset 0 1px scale-lightness($color, -15%),
     inset 0 0 0 1px $color,
     if($shading, 0 1px 1px $white, compact(false));
 
