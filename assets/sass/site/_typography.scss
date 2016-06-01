@@ -114,3 +114,8 @@ pre code {
 kbd {
   background: #444;
   color: $white; }
+
+kbd,
+pre,
+samp {
+	font-size: em($base-font-size); }
