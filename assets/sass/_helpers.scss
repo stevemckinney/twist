@@ -31,6 +31,7 @@ $default-padding-map:
   bottom,
   left !default;
 $default-enable-undo-padding: true !default;
+$default-enable-isles: false !default;
 @import "helpers/padding";
 
 // Font size
