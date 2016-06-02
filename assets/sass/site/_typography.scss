@@ -11,45 +11,6 @@
   @include breakpoint($c) {
     font-weight: font-weight(semibold); } }
   
-.h1 { 
-  font-size: em($text-medium);
-  
-  @include breakpoint($b) {
-    font-size: em($text-xxlarge);
-    font-weight: font-weight(semibold); } }
-  
-.h2 {
-  font-size: em($text-small);
-  margin-bottom: half($base-px);
-  
-  @include breakpoint($b) {
-    font-size: em($text-xlarge);
-    margin-bottom: $base-px; } }
-  
-.h3 {
-  font-size: em($text-small);
-  
-  @include breakpoint($b) {
-    font-size: em($text-large); } }
-  
-.h4 { 
-  font-size: em($text-small);
-  
-  @include breakpoint($b) {
-    font-size: em($text-medium); } }
-  
-.h5 {
-  font-size: em($text-xsmall);
-  
-  @include breakpoint($b) {
-    font-size: em($text-small); } }
-  
-.h6 {
-  font-size: em($text-xxsmall);
-  
-  @include breakpoint($b) {
-    font-size: em($text-xsmall); } }
-  
 // General
 // ---------------------------
 body {

@@ -1,9 +1,8 @@
 // Font sizes
 // ---------------------------
-
-// ${size}-size defined in framework/base as percentage values
-// Great for sizing em based elements
 @if $default-enable-font-size {
+  // ${size}-size defined in framework/base as percentage values
+  // Great for sizing em based elements
 	.xxlarge {
 		font-size: $xxlarge-size; }
 		
@@ -23,4 +22,31 @@
 		font-size: $xsmall-size; }
 		
 	.xxsmall {
-		font-size: $xxsmall-size; } }
+		font-size: $xxsmall-size; }
+
+  // pixel based font sizes
+  .headline { font-size: $text-xxxlarge; }
+  .t1 { font-size: $text-xxlarge; }
+  .t2 { font-size: $text-xlarge; }
+  .t3 { font-size: $text-large; }
+  .t4 { font-size: $text-medium; }
+  .t5 { font-size: $text-small; }
+  .t6 { font-size: $text-xsmall; }
+  
+  @include breakpoint($b) {
+    .headline-b { font-size: $text-xxxlarge; }
+    .t1-b { font-size: $text-xxlarge; }
+    .t2-b { font-size: $text-xlarge; }
+    .t3-b { font-size: $text-large; }
+    .t4-b { font-size: $text-medium; }
+    .t5-b { font-size: $text-small; }
+    .t6-b { font-size: $text-xsmall; } }
+  
+  @include breakpoint($d) {
+    .headline-d { font-size: $text-xxxlarge; }
+    .t1-d { font-size: $text-xxlarge; }
+    .t2-d { font-size: $text-xlarge; }
+    .t3-d { font-size: $text-large; }
+    .t4-d { font-size: $text-medium; }
+    .t5-d { font-size: $text-small; }
+    .t6-d { font-size: $text-xsmall; } } }
