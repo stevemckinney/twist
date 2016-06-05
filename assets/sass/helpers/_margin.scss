@@ -1,47 +1,79 @@
 // Margin
 // ---------------------------
 @if $default-enable-margin {
-  @each $margin in $default-margin-map {
-    .push-#{$margin} {
+  @each $abbr, $margin in $default-margin-map {
+    .m#{$abbr}-quarter {
+      margin-#{$margin}: quarter($baseline); }
+      
+    .m#{$abbr}-half {
+      margin-#{$margin}: half($baseline); }
+      
+    .m#{$abbr} {
       margin-#{$margin}: $baseline; } 
     
-    .push-double-#{$margin} {
+    .m#{$abbr}-double {
       margin-#{$margin}: double($baseline); }
-    
-    .push-half-#{$margin} {
-      margin-#{$margin}: half($baseline); }
 
-    @if $default-enable-margin-responsive {   
+    @if $default-enable-margin-responsive {
       // $b margins
       @include breakpoint($b) {
-        .push-#{$margin}-b {
+        .m-quarter-#{$margin}-b {
+          margin-#{$margin}: quarter($baseline); }
+          
+        .m-half-#{$margin}-b {
+          margin-#{$margin}: half($baseline); }
+          
+        .m-#{$margin}-b {
           margin-#{$margin}: $baseline; } 
         
-        .push-double-#{$margin}-b {
-          margin-#{$margin}: double($baseline); }
-        
-        .push-half-#{$margin}-b {
-          margin-#{$margin}: half($baseline); } }
+        .m#{$abbr}-double-b {
+          margin-#{$margin}: double($baseline); } }
       
       // $d margins
       @include breakpoint($d) {
-        .push-#{$margin}-d {
+        .m#{$abbr}-quarter-d {
+          margin-#{$margin}: quarter($baseline); }
+          
+        .m#{$abbr}-half-d {
+          margin-#{$margin}: half($baseline); }
+          
+        .m#{$abbr}-d {
           margin-#{$margin}: $baseline; } 
         
-        .push-double-#{$margin}-d {
-          margin-#{$margin}: double($baseline); }
-        
-        .push-half-#{$margin}-d {
-          margin-#{$margin}: half($baseline); } } } } }
+        .m#{$abbr}-double-d {
+          margin-#{$margin}: double($baseline); } } } } }
 
 // Undo
 // ---------------------------
 @if $default-enable-undo-margin {		
-  .undo-margin {
+  .m-undo {
 		margin: 0; }
 		
-  .undo-margin-top {
+  .mt-undo {
 		margin-top: 0; }
 
-  .undo-margin-bottom {
-		margin-bottom: 0; } }
+  .mb-undo {
+		margin-bottom: 0; }
+
+  @if $default-enable-margin-responsive {
+    // $b margins
+    @include breakpoint($b) {
+      .m-undo-b {
+    		margin: 0; }
+    		
+      .mt-undo-b {
+    		margin-top: 0; }
+    
+      .mb-undo-b {
+    		margin-bottom: 0; } }
+    		
+    // $d margins
+    @include breakpoint($d) {
+      .m-undo-d {
+    		margin: 0; }
+    		
+      .mt-undo-d {
+    		margin-top: 0; }
+    
+      .mb-undo-d {
+    		margin-bottom: 0; } } } }
