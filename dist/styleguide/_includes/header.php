@@ -13,7 +13,7 @@
 	
 	<!-- CSS -->
 <!-- 	<link href="//cloud.typography.com/7828432/695482/css/fonts.css" rel="stylesheet"> -->
-	<link href="http://twist.dev/css/master.css" rel="stylesheet">
+	<link href="http://twist.dev/css/global.css" rel="stylesheet">
 	<link href="http://twist.dev/css/styleguide.css" rel="stylesheet">
 
 	<!-- Other -->

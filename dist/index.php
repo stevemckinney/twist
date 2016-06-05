@@ -89,14 +89,11 @@
     <div class="sg-about sg-section">
       <h2 class="sg-h2"><a id="sg-about" class="sg-anchor">About</a></h2>
       <p>Comments and documentation about your style guide. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis enim labore facilis consequuntur! Veritatis neque est suscipit tenetur temporibus enim consequatur deserunt perferendis. Neque nemo iusto minima deserunt amet.</p>
-    </div><!--/.sg-about-->
-    
-    <div class="sg-section" style="background-color:#f7fbfb">
       <div class="field field-text">
     		<label class="field-label">Text input</label>
     		<input type="text" class="input input-text">
     	</div>
-    	<div class="field field-select">
+      <div class="field field-select">
     		<label class="field-label">Select field</label>
     		<select class="input input-select">
     			<option>Option 01</option>
@@ -109,7 +106,7 @@
     	<div class="field field-checkbox">
     		<label class="field-label"><input type="checkbox" class="input-checkbox"> Checkbox input</label>
     	</div>
-    </div>
+    </div><!--/.sg-about-->
     
     <div class="sg-colors sg-section">
       <h2 class="sg-h2"><a id="sg-colors" class="sg-anchor">Colors</a></h2>

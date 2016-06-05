@@ -1,0 +1,102 @@
+/*
+Error: Undefined variable: "$text-xxxlarge".
+        on line 28 of /Users/Steve/Dropbox/Sites/framework/assets/sass/helpers/_font-size.scss
+        from line 40 of /Users/Steve/Dropbox/Sites/framework/assets/sass/_helpers.scss
+        from line 17 of /Users/Steve/Dropbox/Sites/framework/assets/sass/global.scss
+
+23: // Objects
+24: // ---------------------------
+25: @import "objects";
+
+Backtrace:
+/Users/Steve/Dropbox/Sites/framework/assets/sass/helpers/_font-size.scss:28
+/Users/Steve/Dropbox/Sites/framework/assets/sass/_helpers.scss:40
+/Users/Steve/Dropbox/Sites/framework/assets/sass/global.scss:17
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:299:in `block (2 levels) in visit_if'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:299:in `map'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:299:in `block in visit_if'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:298:in `visit_if'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `map'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `map'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/tree/root_node.rb:20:in `render'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/engine.rb:278:in `render'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:471:in `on_file_changed'
+/Users/Steve/.rvm/gems/ruby-2.1.1/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:282:in `call'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:282:in `_process_changes'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:229:in `loop'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:229:in `_wait_for_changes'
+/Users/Steve/.rvm/gems/ruby-2.1.1@global/gems/listen-2.8.4/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$text-xxxlarge\".\A         on line 28 of /Users/Steve/Dropbox/Sites/framework/assets/sass/helpers/_font-size.scss\A         from line 40 of /Users/Steve/Dropbox/Sites/framework/assets/sass/_helpers.scss\A         from line 17 of /Users/Steve/Dropbox/Sites/framework/assets/sass/global.scss\A \A 23: // Objects\A 24: // ---------------------------\A 25: @import \"objects\";"; }
