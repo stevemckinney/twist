@@ -17,7 +17,7 @@ var reload = browserSync.reload;
 
 var src = {
   scss: 'src/assets/sass/**/*.scss',
-  css: 'dist/assets/css',
+  css: 'dist/css',
   html: 'src/styleguide/**/*',
   js: 'assets/js/**/*.js',
   images: 'assets/images/**/*'
