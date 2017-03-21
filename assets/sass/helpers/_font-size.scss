@@ -1,7 +1,7 @@
 // Font sizes
 // ---------------------------
 @if $default-enable-font-size {
-  // ${size}-size defined in framework/base as percentage values
+  // ${size}-size defined in variables/base as percentage values
   // Great for sizing em based elements
 	.xxlarge {
 		font-size: $xxlarge-size; }

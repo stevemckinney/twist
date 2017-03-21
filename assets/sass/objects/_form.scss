@@ -124,3 +124,16 @@
 	// ---------------------------
 	.button-submit {
 		@include element($red, $hover: true); }
+
+// Remove spacing from browser datepicker
+// ---------------------------
+// You may run into issues with this, so may need removing
+// but this was added as spacing will be off as a result
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-clear-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none; }
+  
+input[type=date]::-webkit-datetime-edit-fields-wrapper {
+  padding: 0; }

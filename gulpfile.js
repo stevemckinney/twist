@@ -14,11 +14,13 @@ var cache = require('gulp-cache');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+var glob = require('glob');
+var gulpicon = require('gulpicon/tasks/gulpicon');
 
 var src = {
-  scss: 'src/assets/sass/**/*.scss',
+  scss: 'assets/sass/**/*.scss',
   css: 'dist/css',
-  html: 'src/styleguide/**/*',
+  html: 'styleguide/**/*',
   js: 'assets/js/**/*.js',
   images: 'assets/images/**/*'
 };
@@ -60,6 +62,35 @@ gulp.task('images', function() {
   return gulp.src(src.images)
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/images'));
+});
+
+// SVG — gulpicon
+// Use glob to get file paths
+var files = glob.sync('assets/images/*.svg');
+
+// Set up the config object
+config = {};
+
+// Change the location
+config.dest = 'dist/images';
+
+// Enable inlining of SVG
+config.enhanceSVG = true;
+
+// Setup the 'gulpicon' task
+gulp.task('gulpicon', gulpicon(files, config));
+  
+// JavaScript
+gulp.task('js', function() {
+  return gulp.src(src.js)
+    .pipe(order([
+      'assets/js/global.js'
+    ], { base: './' }))
+    .pipe(concat('gunnercooke.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(reload({ stream: true }));
 });
 
 // JavaScript

@@ -1,6 +1,6 @@
 // Border radius
 // ---------------------------
-// $radius defined in framework/base
+// $radius defined in variables/base
 @if $default-enable-border-radius {
 	.circular {
 		border-radius: 100%; }
