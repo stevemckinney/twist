@@ -14,6 +14,7 @@ include
 include/*
 pages
 pages/*
+dist/
 
 # npm
 npm-debug.log
