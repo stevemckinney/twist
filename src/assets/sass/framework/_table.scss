@@ -103,7 +103,7 @@ $default-table-breakpoint: $b !default;
 
 // Table styled
 // ---------------------------
-$default-table-styled-color: $default-color !default;
+$default-table-styled-color: map-get($default, color) !default;
 $default-table-styled-border-color: rgba($default-table-styled-color, .05) !default;
 $default-table-styled-row-color: $default-table-styled-border-color !default;
 $default-table-styled-width: 100% !default;

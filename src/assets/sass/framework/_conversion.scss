@@ -32,12 +32,12 @@
 
 // px to em
 // ---------------------------
-@function em($target-px, $context: $default-context) {
+@function em($target-px, $context: map-get($default, context)) {
 	@return ($target-px / $context) * 1em; }
 
 // px to rem
 // ---------------------------
-@function rem($target-px, $context: $default-context) {
+@function rem($target-px, $context: map-get($default, context)) {
 	@return ($target-px / $context) * 1rem; }
 
 // rem conversion

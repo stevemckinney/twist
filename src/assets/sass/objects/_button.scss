@@ -4,7 +4,7 @@
 	@extend %element-base-with-mixin; }
 
 $buttons: (
-	default: $default-color,
+	default: map-get($default, color),
 	primary: $primary,
 	secondary: $secondary adjust-hue(scale-lightness($secondary, -7%), 15deg),
 	tertiary: $tertiary,

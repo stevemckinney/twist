@@ -1,0 +1,33 @@
+// Font size helpers
+// ---------------------------
+$headline: 48px !default;
+$f1: 36px !default;
+$f2: 30px !default;
+$f3: 24px !default;
+$f4: 21px !default;
+$f5: 18px !default;
+$f6: 16px !default;
+
+// Margin helpers
+// ---------------------------
+$m0: 0 !default;
+$m1: map-get($default, spacing) !default;
+$m2: map-get($default, spacing) * 1.5 !default;
+$m3: map-get($default, spacing) * 2 !default;
+$m4: map-get($default, spacing) * 3 !default;
+$m5: map-get($default, spacing) * 4 !default;
+$m6: map-get($default, spacing) * 5 !default;
+$m7: map-get($default, spacing) * 6 !default;
+$m8: map-get($default, spacing) * 7 !default;
+
+// Padding helpers
+// ---------------------------
+$p0: 0 !default;
+$p1: map-get($default, spacing) !default;
+$p2: map-get($default, spacing) * 1.5 !default;
+$p3: map-get($default, spacing) * 2 !default;
+$p4: map-get($default, spacing) * 3 !default;
+$p5: map-get($default, spacing) * 4 !default;
+$p6: map-get($default, spacing) * 5 !default;
+$p7: map-get($default, spacing) * 6 !default;
+$p8: map-get($default, spacing) * 7 !default;

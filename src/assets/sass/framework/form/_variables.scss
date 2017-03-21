@@ -4,7 +4,7 @@ $default-form-label-position: top !default;
 $default-form-label-margin: 0 0 em($base-px/2) !default;
 $default-form-label-breakpoint: $b !default;
 $default-form-label-input-width: 66.66667% !default;
-$default-form-state: $default-state !default;
+$default-form-state: map-get($default, state) !default;
 $default-form-type: text !default;
 
 // Default styling
