@@ -3,7 +3,7 @@
 $default-gradient-background-main-color: $tertiary !default;
 $default-gradient-background-content-height: 600px !default;
 $default-gradient-background-shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6) !default;
-$default-gradient-background-context: $default-context !default;
+$default-gradient-background-context: map-get($default, context) !default;
 
 // Faded backgrounds with a shadow
 // ---------------------------
@@ -46,7 +46,7 @@ $default-gradient-background-context: $default-context !default;
 $default-triangle-position: bottom !default;
 $default-triangle-size: 6px !default;
 $default-triangle-color: $primary !default;
-$default-triangle-context: $default-context !default;
+$default-triangle-context: map-get($default, context) !default;
 
 // Triangle
 // ---------------------------

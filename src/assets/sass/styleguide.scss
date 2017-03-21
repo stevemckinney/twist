@@ -265,7 +265,7 @@
 .sg-color--c { background: $tertiary; }
 .sg-color--d { background: $neutral; }
 .sg-color--e { background: $alt; }
-.sg-color--f { background: $default-color; }
+.sg-color--f { background: map-get($default, color); }
 
 /* Fonts
 ---------------------------------------------------------------------------- */

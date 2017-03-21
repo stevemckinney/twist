@@ -6,17 +6,24 @@
 @import "compass/css3/appearance";
 @import "compass/css3/user-interface";
 @import "breakpoint";
-				
+
+// Variables
+// Don’t edit variables override in site/base
+// ---------------------------
+@import "variables";
+
 // Framework
-// Don't edit these files, copy mixins and override.
+// Don't edit these files, copy mixins and override in site/mixins.
 // ---------------------------
 @import "framework";
 
 // Helpers
+// tachyons.io style helper classes
 // ---------------------------
 @import "helpers";
 
 // Site base
+// Modifications to variables, site specific stuff
 // ---------------------------
 @import "site";
 

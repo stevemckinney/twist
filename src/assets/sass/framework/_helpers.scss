@@ -40,7 +40,7 @@
 @mixin set-height(
 	$set-height	: $default-set-height,
 	$padding		: $default-set-height-padding,
-	$context		: $default-context
+	$context		: map-get($default, context)
 ) {
 
 	$set-height: if($set-height == true, em($default-set-height), em($set-height, $context));

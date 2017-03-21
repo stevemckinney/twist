@@ -57,7 +57,7 @@
 // Notice style
 // ---------------------------
 $notices: (
-	default: (color: $default-color, icon: "-24px -24px"),
+	default: (color: map-get($default, color), icon: "-24px -24px"),
 	success: (color: $green, icon: "-24px 0"),
 	info: (color: $blue, icon: "-24px -24px"),
 	error: (color: $red, icon: "0 0"),

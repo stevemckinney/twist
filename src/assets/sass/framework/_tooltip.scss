@@ -4,7 +4,7 @@ $default-tooltip-position: top !default;
 $default-tooltip-data-selector: data-title !default;
 $default-tooltip-radius: $radius !default;
 $default-tooltip-size: $default-size !default;
-$default-tooltip-context: $default-context !default;
+$default-tooltip-context: map-get($default, context) !default;
 $default-tooltip-transition-delay: .01s !default;
 
 // Sometimes you get a 1px space, not ideal.
@@ -16,7 +16,7 @@ $default-tooltip-triangle-pixel-offset-bottom: $default-tooltip-triangle-pixel-o
 $default-tooltip-triangle-pixel-offset-left: $default-tooltip-triangle-pixel-offset !default;
 
 // Shading
-$default-tooltip-color: $default-color !default;
+$default-tooltip-color: map-get($default, color) !default;
 $default-tooltip-text-color: $white !default;
 $default-tooltip-triangle-size: 6px !default;
 

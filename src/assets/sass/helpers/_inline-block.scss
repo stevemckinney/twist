@@ -1,26 +1,26 @@
 // Inline block
 // ---------------------------
 @if $default-enable-inline-block-layout {
-	%inline-block {
+	.dib {
 		display: inline-block; }
+  
+  .dib-b {
+    @include breakpoint($b) {
+      display: inline-block; } }
+  
+  .dib-c {
+    @include breakpoint($c) {
+      display: inline-block; } }
+  
+  .dib-d {
+    @include breakpoint($d) {
+      display: inline-block; } }
 		
-	%vertical-align-top {
-		@extend %inline-block;
+	.vat {
 		vertical-align: top; }
 	
-	%vertical-align-middle {
-		@extend %inline-block;
+	.vam {
 		vertical-align: middle; }
 	
-	%vertical-align-bottom {
-		@extend %inline-block;
-		vertical-align: bottom; }
-	
-	.#{$helper-vertical-align-prefix}-top {
-		@extend %vertical-align-top; }
-	
-	.#{$helper-vertical-align-prefix}-middle {
-		@extend %vertical-align-middle; }
-	
-	.#{$helper-vertical-align-prefix}-bottom {
-		@extend %vertical-align-bottom; } }
+	.vab {
+		vertical-align: bottom; } }

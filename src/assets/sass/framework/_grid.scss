@@ -1,6 +1,7 @@
 // Variables
 // ---------------------------
-$default-grid-namespace: ".grid" !default;
+$default-grid-namespace: "grid" !default;
+$default-grid-column-namespace: "width" !default;
 $default-grid-columns: 12 !default;
 $default-grid-gutter: 12px !default;
 
@@ -26,20 +27,20 @@ $default-grid-font-size-normal: 1rem !default;
 // Grid container
 // ---------------------------
 @mixin grid-container($grid-gutter: $default-grid-gutter) {
-	#{unquote($default-grid-namespace)} {
+	#{"." + unquote($default-grid-namespace)} {
 		display: block;
 		padding: 0;
 		margin: 0;
 		text-align: left;
 		font-size: 0; }
 	
-	#{unquote($default-grid-namespace)}-with-gutter {
+	#{"." + unquote($default-grid-namespace)}-with-gutter {
 		margin: 0 #{-$grid-gutter}; }
 	
-	#{unquote($default-grid-namespace)}-center {
+	#{"." + unquote($default-grid-namespace)}-center {
 		text-align: center; }
 	
-	#{unquote($default-grid-namespace)}-right {
+	#{"." + unquote($default-grid-namespace)}-right {
 		text-align: right; } }
 
 // Grid cell
@@ -51,7 +52,7 @@ $default-grid-font-size-normal: 1rem !default;
 	$grid-gutter: $default-grid-gutter,
 	$grid-map: $default-grid-map
 ) {
-	#{unquote($default-grid-namespace)}-cell {
+	.#{unquote($default-grid-namespace)}-cell {
 		display: inline-block;
 		margin: 0;
 		padding: 0;
@@ -61,7 +62,7 @@ $default-grid-font-size-normal: 1rem !default;
 		
 		@include grid-cell-font-size($grid-map); }
 
-	#{unquote($default-grid-namespace)}-with-gutter > #{unquote($default-grid-namespace)}-cell {
+	#{"." + unquote($default-grid-namespace)}-with-gutter > .#{unquote($default-grid-namespace)}-cell {
 		padding: 0 $grid-gutter; } }
 
 
@@ -74,7 +75,7 @@ $default-grid-font-size-normal: 1rem !default;
 	$column-increment: 1;
 	
 	@for $column-increment from 1 through $grid-columns {
-		#{unquote($default-grid-namespace)}-#{$column-increment} {
+		#{"." + unquote($default-grid-column-namespace)}-#{$column-increment} {
 			$w: (100% / $grid-columns) * $column-increment;
 			width: $w; } } }
 					
@@ -85,7 +86,7 @@ $default-grid-font-size-normal: 1rem !default;
 	$column-increment: 1;
 	
 	@each $breakpoint, $width in $grid-map {
-		$class: #{unquote($default-grid-namespace)}-#{$breakpoint};
+		$class: #{"." + unquote($default-grid-column-namespace)}-#{$breakpoint};
 	
 		@include breakpoint($width) {
 			@for $column-increment from 1 through $grid-columns {
