@@ -1,29 +1,6 @@
 // Font sizes
 // ---------------------------
-@if $default-enable-font-size {
-  // ${size}-size defined in variables/base as percentage values
-  // Great for sizing em based elements
-	.xxlarge {
-		font-size: $xxlarge-size; }
-		
-	.xlarge {
-		font-size: $xlarge-size; }
-		
-	.large {
-		font-size: $large-size; }
-	
-	.normal {
-		font-size: $normal-size; }
-		
-	.small {
-		font-size: $small-size; }
-		
-	.xsmall {
-		font-size: $xsmall-size; }
-		
-	.xxsmall {
-		font-size: $xxsmall-size; }
-
+@if $default-enable-font-size {  
   // Pixel based font sizes
   .headline { font-size: $headline; }
   .f1 { font-size: $f1; }

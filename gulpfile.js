@@ -25,6 +25,9 @@ var src = {
   images: 'assets/images/**/*'
 };
 
+// Use glob to get file paths
+var svg = glob.sync('assets/images/*.svg');
+
 // browser-sync watched files
 // automatically reloads the page when files changed
 var browserSyncWatchFiles = [
@@ -64,10 +67,13 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
-// SVG — gulpicon
-// Use glob to get file paths
-var files = glob.sync('assets/images/*.svg');
+gulp.task('svg', function() {
+  return gulp.src(svg)
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'));
+});
 
+// SVG — gulpicon
 // Set up the config object
 config = {};
 
@@ -78,7 +84,7 @@ config.dest = 'dist/images';
 config.enhanceSVG = true;
 
 // Setup the 'gulpicon' task
-gulp.task('gulpicon', gulpicon(files, config));
+gulp.task('gulpicon', gulpicon(svg, config));
   
 // JavaScript
 gulp.task('js', function() {

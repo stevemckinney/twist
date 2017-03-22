@@ -49,7 +49,6 @@
 // Items
 // ---------------------------
 .navigation-item {
-	@extend %vertical-align-top;
 	transition: background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration;
 	
 	color: scale-lightness($tertiary, -20%);
