@@ -1,29 +1,29 @@
 // Font sizes
 // ---------------------------
-@if $default-enable-font-size {  
-  // Pixel based font sizes
-  .headline { font-size: $headline; }
-  .f1 { font-size: $f1; }
-  .f2 { font-size: $f2; }
-  .f3 { font-size: $f3; }
-  .f4 { font-size: $f4; }
-  .f5 { font-size: $f5; }
-  .f6 { font-size: $f6; }
-  
-  @include breakpoint($b) {
-    .headline-b { font-size: $headline; }
-    .f1-b { font-size: $f1; }
-    .f2-b { font-size: $f2; }
-    .f3-b { font-size: $f3; }
-    .f4-b { font-size: $f4; }
-    .f5-b { font-size: $f5; }
-    .f6-b { font-size: $f6; } }
-  
-  @include breakpoint($d) {
-    .headline-d { font-size: $headline; }
-    .f1-d { font-size: $f1; }
-    .f2-d { font-size: $f2; }
-    .f3-d { font-size: $f3; }
-    .f4-d { font-size: $f4; }
-    .f5-d { font-size: $f5; }
-    .f6-d { font-size: $f6; } } }
+.headline { font-size: $headline; }
+.f1 { font-size: $f1; }
+.f2 { font-size: $f2; }
+.f3 { font-size: $f3; }
+.f4 { font-size: $f4; }
+.f5 { font-size: $f5; }
+.f6 { font-size: $f6; }
+
+// Loop through the breakpoint map, assign each breakpoint to the relevant variable
+// eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
+// $default-breakpoint-map can be found in variables/breakpoints
+@each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+	@include breakpoint($breakpoint-width) {
+    .headline-#{$breakpoint-name} { font-size: $headline; }
+    .f1-#{$breakpoint-name} { font-size: $f1; }
+    .f2-#{$breakpoint-name} { font-size: $f2; }
+    .f3-#{$breakpoint-name} { font-size: $f3; }
+    .f4-#{$breakpoint-name} { font-size: $f4; }
+    .f5-#{$breakpoint-name} { font-size: $f5; }
+    .f6-#{$breakpoint-name} { font-size: $f6; } } }
+
+// Font size locks
+// ---------------------------
+// No breakpoints required as it sizes with the window size,
+// these are probably preferable to use, over the font sizes above.
+// calc($min-font-size + ($max-font-size - $min-font-size) * (100vw - $min-screen-size) / ($max-screen-size - $min-screen-size) )
+.fl1 { font-size: font-size-lock($f3, $f1, $a, $f); }
