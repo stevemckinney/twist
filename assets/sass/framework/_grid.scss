@@ -7,7 +7,7 @@ $default-grid-gutter: 12px !default;
 
 // Add additional sizes if necessary, highly recommended you change this to be
 // tailored to your breakpoints, that match the design.
-$default-grid-map: ( small: $a, medium: $b, large: $c ) !default;
+$default-grid-map: $default-breakpoint-map !default;
 $default-grid-font-size-normal: 1rem !default;
 
 // Must be wrapped in a container with padding.
@@ -54,11 +54,6 @@ $default-grid-font-size-normal: 1rem !default;
 ) {
 	.#{unquote($default-grid-namespace)}-cell {
 		display: inline-block;
-		margin: 0;
-		padding: 0;
-		text-align: left;
-		vertical-align: top;
-		width: 100%;
 		
 		@include grid-cell-font-size($grid-map); }
 
@@ -68,7 +63,7 @@ $default-grid-font-size-normal: 1rem !default;
 
 // Grid widths
 // ---------------------------					
-@mixin grid-width-default(
+@mixin grid-width(
 	$grid-columns	: $default-grid-columns,
 	$grid-map			: $default-grid-map
 ) {
@@ -79,7 +74,7 @@ $default-grid-font-size-normal: 1rem !default;
 			$w: (100% / $grid-columns) * $column-increment;
 			width: $w; } } }
 					
-@mixin grid-width(
+@mixin grid-width-responsive(
 	$grid-columns	: $default-grid-columns,
 	$grid-map			: $default-grid-map
 ) {
@@ -87,7 +82,7 @@ $default-grid-font-size-normal: 1rem !default;
 	
 	@each $breakpoint, $width in $grid-map {
 		$class: #{"." + unquote($default-grid-column-namespace)}-#{$breakpoint};
-	
+    
 		@include breakpoint($width) {
 			@for $column-increment from 1 through $grid-columns {
 				#{$class}-#{$column-increment} {
@@ -102,7 +97,14 @@ $default-grid-font-size-normal: 1rem !default;
 	$grid-gutter	: $default-grid-gutter,
 	$grid-map			: $default-grid-map
 ) {
+  // Container styles
 	@include grid-container($grid-gutter);
+	
+	// Basic cell styles
 	@include grid-cell($grid-gutter, $grid-map);
-	@include grid-width-default($grid-columns, $grid-map);
-	@include grid-width($grid-columns, $grid-map); }
+	
+	// Regular widths
+	@include grid-width($grid-columns, $grid-map);
+	
+	// Make responsive widths
+	@include grid-width-responsive($grid-columns, $grid-map); }
