@@ -1,0 +1,31 @@
+// Colour
+// ---------------------------
+$color-helpers: (
+	"white": $white,
+	primary: $primary,
+	secondary: $secondary,
+	tertiary: $tertiary,
+	"red": $red,
+	"green": $green,
+	"orange": $orange,
+	"blue": $cyan
+) !default;
+
+// Text
+// ---------------------------
+@each $name, $color in $color-helpers {
+  
+  @debug $name;
+  
+  // Text colours, eg: .text-primary
+	.#{$name} { color: $color; }
+  	.#{$name}-hover:hover { color: $color; }
+	
+	// Background colours eg: .bg-primary
+	.bg-#{$name} { background-color: $color; }
+  	.bg-#{$name}-hover:hover { background-color: $color; } }
+	
+// SVG
+// ---------------------------
+.fill-currentcolor { fill: currentcolor; }
+.stroke-currentcolor { stroke: currentcolor; }
