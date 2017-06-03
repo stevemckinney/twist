@@ -30,69 +30,46 @@
       padding-#{$padding}: $p7; }
     
     .p#{$abbr}8 {
-      padding-#{$padding}: $p8; } } }
+      padding-#{$padding}: $p8; }
     
-// $b padding
-@if $default-enable-padding {
-  @each $abbr, $padding in $default-padding-map {
-    @include breakpoint($b) {
-      .p#{$abbr}0-b {
-        padding-#{$padding}: 0; }
+    .p#{$abbr}9 {
+        padding-#{$padding}: $p9; } }
+  
+  // Loop through the breakpoint map, assign each breakpoint to the relevant variable
+  // eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
+  // $default-breakpoint-map can be found in variables/breakpoints
+  @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+  	@include breakpoint($breakpoint-width) {
+      @each $abbr, $padding in $default-padding-map {
+        .p#{$abbr}0 {
+          padding-#{$padding}: $p0; }
+          
+        .p#{$abbr}1 {
+          padding-#{$padding}: $p1; }
+          
+        .p#{$abbr}2 {
+          padding-#{$padding}: $p2; }
+          
+        .p#{$abbr}3 {
+          padding-#{$padding}: $p3; } 
         
-      .p#{$abbr}1-b {
-        padding-#{$padding}: $p1; }
+        .p#{$abbr}4 {
+          padding-#{$padding}: $p4; }
         
-      .p#{$abbr}2-b {
-        padding-#{$padding}: $p2; }
+        .p#{$abbr}5 {
+          padding-#{$padding}: $p5; }
         
-      .p#{$abbr}3-b {
-        padding-#{$padding}: $p3; } 
-      
-      .p#{$abbr}4-b {
-        padding-#{$padding}: $p4; }
-      
-      .p#{$abbr}5-b {
-        padding-#{$padding}: $p5; }
-      
-      .p#{$abbr}6-b {
-        padding-#{$padding}: $p6; }
-
-      .p#{$abbr}7-b {
-        padding-#{$padding}: $p7; }
-      
-      .p#{$abbr}8-b {
-        padding-#{$padding}: $p8; } } } }
-
-// $d padding
-@if $default-enable-padding {
-  @each $abbr, $padding in $default-padding-map {
-    @include breakpoint($d) {          
-      .p#{$abbr}0-d {
-        padding-#{$padding}: 0; }
+        .p#{$abbr}6 {
+          padding-#{$padding}: $p6; }
         
-      .p#{$abbr}1-d {
-        padding-#{$padding}: $p1; }
+        .p#{$abbr}7 {
+          padding-#{$padding}: $p7; }
         
-      .p#{$abbr}2-d {
-        padding-#{$padding}: $p2; }
+        .p#{$abbr}8 {
+          padding-#{$padding}: $p8; }
         
-      .p#{$abbr}3-d {
-        padding-#{$padding}: $p3; } 
-      
-      .p#{$abbr}4-d {
-        padding-#{$padding}: $p4; }
-      
-      .p#{$abbr}5-d {
-        padding-#{$padding}: $p5; }
-      
-      .p#{$abbr}6-d {
-        padding-#{$padding}: $p6; }
-        
-      .p#{$abbr}7-d {
-        padding-#{$padding}: $p7; }
-      
-      .p#{$abbr}8-d {
-        padding-#{$padding}: $p8; } } } }
+        .p#{$abbr}9 {
+            padding-#{$padding}: $p9; } } } } }
 
 // Island padding helpers
 // ---------------------------
@@ -104,7 +81,8 @@ $isles: (
   continent: $p5,
   planet: $p6,
   galaxy: $p7,
-  universe: $p8 );
+  universe: $p8,
+  cosmos: $p9 );
 
 @if $default-enable-isles {
   @each $name, $padding in $isles {
@@ -119,26 +97,18 @@ $isles: (
       padding-right: $padding;
       padding-left: $padding; }
     
-    @include breakpoint($b) {
+  // Loop through the breakpoint map, assign each breakpoint to the relevant variable
+  // eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
+  // $default-breakpoint-map can be found in variables/breakpoints
+  @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+  	@include breakpoint($breakpoint-width) {
       .#{$name}-b {
     		padding: $padding; }
       
-      .#{$name}-b-v {
+      .#{$name}-v-b {
         padding-top: $padding;
         padding-bottom: $padding; }
       
-      .#{$name}-b-h {
+      .#{$name}-h-b {
         padding-right: $padding;
-        padding-left: $padding; } }
-    
-    @include breakpoint($d) {
-      .#{$name}-d {
-    		padding: $padding; }
-      
-      .#{$name}-d-v {
-        padding-top: $padding;
-        padding-bottom: $padding; }
-      
-      .#{$name}-d-h {
-        padding-right: $padding;
-        padding-left: $padding; } } } }
+        padding-left: $padding; } } } } }

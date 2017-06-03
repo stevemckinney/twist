@@ -1,0 +1,25 @@
+// Align
+// ---------------------------
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+// Case
+// ---------------------------
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+
+// Style
+// ---------------------------
+.text-italic { font-style: italic; }
+
+// General elements
+// ---------------------------
+address { font-style: normal; }
+	
+// Various
+// ---------------------------
+.caption {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .125em; }

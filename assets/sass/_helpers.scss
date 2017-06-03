@@ -6,7 +6,7 @@
 
 // Border radius
 // ---------------------------
-$default-enable-border-radius: false !default;
+$default-enable-border-radius: true !default;
 $default-enable-border-radius-specific: false !default;
 @import "helpers/border-radius";
 
@@ -46,25 +46,26 @@ $default-enable-font-size: true !default;
 
 // Visibility
 // ---------------------------
-$default-enable-visibility: true !default;
-
 @import "helpers/visibility";
 
 // Float
 // ---------------------------
 $default-enable-clearfix: false !default;
 $default-enable-float: false !default;
-
 @import "helpers/float";
 
-// Inline block
+// Display (block, inline-block)
 // ---------------------------
-$default-enable-inline-block-layout: true !default;
-
-@import "helpers/inline-block";
+@import "helpers/display";
 
 // Flexbox
 // ---------------------------
-$default-enable-flexbox: true !default;
-
 @import "helpers/flexbox";
+
+// Text
+// ---------------------------
+@import "helpers/text";
+
+// Colour
+// ---------------------------
+@import "helpers/colour";

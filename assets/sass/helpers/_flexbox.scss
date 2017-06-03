@@ -1,127 +1,83 @@
 // Essentially taken from tachyons.io
 // ---------------------------
-@if $default-enable-flexbox {
-  .flex { display: flex; }
-  .inline-flex { display: inline-flex; }
-  
-  /* 1. Fix for Chrome 44 bug.
-   * https://code.google.com/p/chromium/issues/detail?id=506893 */
-  .flex-auto {
-    flex: 1 1 auto;
-    min-width: 0; /* 1 */
-    min-height: 0; /* 1 */ }
-  
-  .flex-none { flex: none; }
-  
-  .flex-column { flex-direction: column; }
-  .flex-row { flex-direction: row; }
-  .flex-wrap { flex-wrap: wrap; }
-  
-  .items-start { align-items: flex-start; }
-  .items-end { align-items: flex-end; }
-  .items-center { align-items: center; }
-  .items-baseline { align-items: baseline; }
-  .items-stretch { align-items: stretch; }
-  
-  .self-start { align-self: flex-start; }
-  .self-end { align-self: flex-end; }
-  .self-center { align-self: center; }
-  .self-baseline { align-self: baseline; }
-  .self-stretch { align-self: stretch; }
-  
-  .start { justify-content: flex-start; }
-  .end { justify-content: flex-end; }
-  .center { justify-content: center; }
-  .between { justify-content: space-between; }
-  .around { justify-content: space-around; }
-  
-  .content-start { align-content: flex-start; }
-  .content-end { align-content: flex-end; }
-  .content-center { align-content: center; }
-  .content-between { align-content: space-between; }
-  .content-around { align-content: space-around; }
-  .content-stretch { align-content: stretch; }
-  
-  @include breakpoint($b) {
-    .flex-b { display: flex; }
-    .inline-flex-b { display: inline-flex; }
-    
-    .flex-auto-b {
-      flex: 1 1 auto;
-      min-width: 0; /* 1 */
-      min-height: 0; /* 1 */
-    }
-    
-    .flex-none-b { flex: none; }
-    
-    .flex-column-b { flex-direction: column; }
-    .flex-row-m { flex-direction: row; }
-    .flex-wrap-b { flex-wrap: wrap; }
-    
-    .items-start-b { align-items: flex-start; }
-    .items-end-b { align-items: flex-end; }
-    .items-center-b { align-items: center; }
-    .items-baseline-b { align-items: baseline; }
-    .items-stretch-b { align-items: stretch; }
-  
-    .self-start-b { align-self: flex-start; }
-    .self-end-b { align-self: flex-end; }
-    .self-center-b { align-self: center; }
-    .self-baseline-b { align-self: baseline; }
-    .self-stretch-b { align-self: stretch; }
-  
-    .start-b { justify-content: flex-start; }
-    .end-b { justify-content: flex-end; }
-    .center-b { justify-content: center; }
-    .between-b { justify-content: space-between; }
-    .around-b { justify-content: space-around; }
-  
-    .content-start-b { align-content: flex-start; }
-    .content-end-b { align-content: flex-end; }
-    .content-center-b { align-content: center; }
-    .content-between-b { align-content: space-between; }
-    .content-around-b { align-content: space-around; }
-    .content-stretch-b { align-content: stretch; } }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
 
-  .flex-c {
-    @include breakpoint($c) { 
-      display: flex; } }
-  
-  @include breakpoint($d) {
-    .flex-d { display: flex; }
-    .inline-flex-d { display: inline-flex; }
+/* 1. Fix for Chrome 44 bug.
+ * https://code.google.com/p/chromium/issues/detail?id=506893 */
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0; /* 1 */
+  min-height: 0; /* 1 */ }
+
+.flex-none { flex: none; }
+
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+.items-stretch { align-items: stretch; }
+
+.self-start { align-self: flex-start; }
+.self-end { align-self: flex-end; }
+.self-center { align-self: center; }
+.self-baseline { align-self: baseline; }
+.self-stretch { align-self: stretch; }
+
+.start { justify-content: flex-start; }
+.end { justify-content: flex-end; }
+.center { justify-content: center; }
+.between { justify-content: space-between; }
+.around { justify-content: space-around; }
+
+.content-start { align-content: flex-start; }
+.content-end { align-content: flex-end; }
+.content-center { align-content: center; }
+.content-between { align-content: space-between; }
+.content-around { align-content: space-around; }
+.content-stretch { align-content: stretch; }
+
+@each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+	@include breakpoint($breakpoint-width) {
+    .flex-#{$breakpoint-name} { display: flex; }
+    .inline-flex-#{$breakpoint-name} { display: inline-flex; }
     
-    .flex-auto-d {
+    .flex-auto-#{$breakpoint-name} {
       flex: 1 1 auto;
       min-width: 0; /* 1 */
       min-height: 0; /* 1 */ }
     
-    .flex-none-d { flex: none; }
-    .flex-column-d { flex-direction: column; }
-    .flex-row-d { flex-direction: row; }
-    .flex-wrap-d { flex-wrap: wrap; }
+    .flex-none-#{$breakpoint-name} { flex: none; }
     
-    .items-start-d { align-items: flex-start; }
-    .items-end-d { align-items: flex-end; }
-    .items-center-d { align-items: center; }
-    .items-baseline-d { align-items: baseline; }
-    .items-stretch-d { align-items: stretch; }
+    .flex-column-#{$breakpoint-name} { flex-direction: column; }
+    .flex-row-#{$breakpoint-name} { flex-direction: row; }
+    .flex-wrap-#{$breakpoint-name} { flex-wrap: wrap; }
+    
+    .items-start-#{$breakpoint-name} { align-items: flex-start; }
+    .items-end-#{$breakpoint-name} { align-items: flex-end; }
+    .items-center-#{$breakpoint-name} { align-items: center; }
+    .items-baseline-#{$breakpoint-name} { align-items: baseline; }
+    .items-stretch-#{$breakpoint-name} { align-items: stretch; }
   
-    .self-start-d { align-self: flex-start; }
-    .self-end-d { align-self: flex-end; }
-    .self-center-d { align-self: center; }
-    .self-baseline-d { align-self: baseline; }
-    .self-stretch-d { align-self: stretch; }
+    .self-start-#{$breakpoint-name} { align-self: flex-start; }
+    .self-end-#{$breakpoint-name} { align-self: flex-end; }
+    .self-center-#{$breakpoint-name} { align-self: center; }
+    .self-baseline-#{$breakpoint-name} { align-self: baseline; }
+    .self-stretch-#{$breakpoint-name} { align-self: stretch; }
   
-    .start-d { justify-content: flex-start; }
-    .end-d { justify-content: flex-end; }
-    .center-d { justify-content: center; }
-    .between-d { justify-content: space-between; }
-    .around-d { justify-content: space-around; }
+    .start-#{$breakpoint-name} { justify-content: flex-start; }
+    .end-#{$breakpoint-name} { justify-content: flex-end; }
+    .center-#{$breakpoint-name} { justify-content: center; }
+    .between-#{$breakpoint-name} { justify-content: space-between; }
+    .around-#{$breakpoint-name} { justify-content: space-around; }
   
-    .content-start-d { align-content: flex-start; }
-    .content-end-d { align-content: flex-end; }
-    .content-center-d { align-content: center; }
-    .content-between-d { align-content: space-between; }
-    .content-around-d { align-content: space-around; }
-    .content-stretch-d { align-content: stretch; } } }
+    .content-start-#{$breakpoint-name} { align-content: flex-start; }
+    .content-end-#{$breakpoint-name} { align-content: flex-end; }
+    .content-center-#{$breakpoint-name} { align-content: center; }
+    .content-between-#{$breakpoint-name} { align-content: space-between; }
+    .content-around-#{$breakpoint-name} { align-content: space-around; }
+    .content-stretch-#{$breakpoint-name} { align-content: stretch; } } }
