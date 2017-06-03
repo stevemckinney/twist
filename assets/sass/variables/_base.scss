@@ -58,6 +58,7 @@ $heading: $serif !default;
 $body: $sans !default;
 $form: $sans !default;
 $element: $sans !default;
+$ui: map-get($default, sans) !default;
 
 // Font sizes
 // ---------------------------
@@ -71,7 +72,7 @@ $radius: map-get($default, radius) !default;
 
 // Default sizing for elements
 $default-size: 14px $line !default; // for element mixin
-$default-form-size: 14px $line !default;
+$default-form-size: false !default;
 $default-ratio: .555 !default; // for element mixin, .375 32px, .5 = 36px, .7 42px
 $default-set-height: 36px !default;
 $default-set-height-padding: $base-px !default;

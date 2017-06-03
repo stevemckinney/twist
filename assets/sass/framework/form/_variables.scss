@@ -15,7 +15,7 @@ $default-form-checked-color: #6ad4b6 !default;
 $default-form-focus-color: $alt !default;
 $default-form-background-color: scale-lightness($white, -2.5%) $white !default;
 $default-form-focus-background-color: $white !default;
-$default-form-radius: $radius !default;
+$default-form-radius: false !default;
 $default-form-checkbox-radius: $radius !default;
 $default-form-radio-radius: 30em !default;
 $default-form-line-height: normal !default;
