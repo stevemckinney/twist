@@ -7,14 +7,25 @@
 
 // Fonts
 // ---------------------------
-$sans: Verlag A, Verlag B, sans-serif !global;
+$system: -apple-system, 
+         BlinkMacSystemFont, 
+         "Segoe UI", 
+         Roboto, 
+         Helvetica,
+         Arial,
+         sans-serif,
+         "Apple Color Emoji",
+         "Segoe UI Emoji",
+         "Segoe UI Symbol" !global;
+$sans: $system !global;
 $serif: Sentinel A, Sentinel B, serif !global;
 $monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !global;
 $icons: "SSStandard" !global;
-$heading: $serif !global;
+$heading: $sans !global;
 $body: $sans !global;
 $form: $sans !global;
 $element: $sans !global;
+$ui: $sans !global;
 
 // Defaults
 // ---------------------------
@@ -24,3 +35,8 @@ $site-width: 800px;
 // Breakpoints
 // ---------------------------
 @include breakpoint-set('base font size', $base-font-size);
+
+// Additional helpers
+// ---------------------------
+$f7: 14px;
+$f8: 12px;
