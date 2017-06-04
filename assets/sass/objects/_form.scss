@@ -1,5 +1,12 @@
 // Forms
 // ---------------------------
+// See: objects/ui for .input base styling
+// ---------------------------
+// <form class="form">
+//   <div class="field field-{type}">
+//     <input type="{type}" class="input input-{type}">
+//   </div>
+// </form>
 .form {
 	display: flex;
 	flex-flow: row wrap; }
@@ -43,21 +50,6 @@
 .field-last .input-text {
   border-radius: 0 $radius $radius 0; }
 
-.field-whole {
-	flex-basis: 100%; }
-	
-.field-half {
-	@include breakpoint($c) {
-		flex-basis: 50%; } }
-	
-.field-first {
-	@include breakpoint($c) {
-		padding-right: em($base-px); } }
-
-.field-last {
-	@include breakpoint($c) {
-		padding-left: em($base-px); } }
-
 // Field specifics
 // ---------------------------
 .field-checkbox {
@@ -85,8 +77,7 @@
 // Input
 // ---------------------------
 .input {
-  @include form-base;
-  width: 100%; }
+  @include form-base; }
 	
 	// Text
 	// ---------------------------
