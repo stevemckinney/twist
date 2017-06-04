@@ -1,0 +1,75 @@
+// nav
+// ---------------------------
+/**
+ *	Use pattern
+ **
+ 
+  <nav class="nav nav-small nav-inactive">
+		<a href="#" class="nav-item nav-toggle">␡</a>
+		...
+	</nav>
+	
+	<div class="site">
+	
+		<header class="header">
+			...
+      <a href="#" class="nav-toggle">toggle</a>
+		</header>
+		...
+		
+	</div>
+ */
+
+.nav {}
+	
+.nav-small {
+	position: absolute;
+	z-index: $z-index-1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	// Adjustable styles
+	background: scale-lightness($tertiary, -5%);
+	text-align: right; }
+
+.nav-large {}
+
+.nav-inactive {
+	transition: transform .5s, opacity .5s;
+	transform: scale(.95) translate3d(0, em($line), 0);
+	opacity: .6; }
+	
+.nav-active {
+	transition: transform .5s, opacity .5s;
+	transform: scale(1) translate3d(0, 0, 0);
+	opacity: 1; }
+
+// Items
+// ---------------------------
+.nav-item {
+	transition: background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration;
+	
+	color: scale-lightness($tertiary, -20%);
+	
+	@include breakpoint($c-max) {
+		display: block;
+		padding: em($line);
+		box-shadow: 0 1px 0 $tertiary;
+		
+		&:hover,
+		&:focus {
+			color: $secondary;
+			background: $tertiary;
+			box-shadow: 
+				0 -1px 0 scale-lightness($tertiary, -10%),
+				0 1px 0 scale-lightness($tertiary, -10%); } } }
+
+// Toggle
+// ---------------------------
+.nav-toggle {
+	font-family: $icons;
+	
+	@include breakpoint($c) {
+		display: none; } }
