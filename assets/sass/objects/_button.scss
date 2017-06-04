@@ -1,7 +1,7 @@
 // Buttons
 // ---------------------------
 .button {
-	@include element-base($radius: false, $font-size: false, $size: false); }
+	@include ui-base; }
 
 $buttons: (
 	primary: $primary,
