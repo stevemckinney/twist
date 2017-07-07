@@ -4,6 +4,10 @@
   .m0 {
     margin: $m0; }
   
+  .m-center {
+    margin-left: auto;
+    margin-right: auto; }
+  
   // So we have access to all without being in a breakpoint
   @each $abbr, $margin in $default-margin-map {
     .m#{$abbr}0 {
@@ -40,34 +44,41 @@
   // eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
   // $default-breakpoint-map can be found in variables/breakpoints
   @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+    .m0 {
+      margin: $m0; }
+    
+    .m-center {
+      margin-left: auto;
+      margin-right: auto; }
+    
   	@include breakpoint($breakpoint-width) {
       @each $abbr, $margin in $default-margin-map {
-        .m#{$abbr}0 {
+        .m#{$abbr}0-#{$breakpoint-name} {
           margin-#{$margin}: $m0; }
           
-        .m#{$abbr}1 {
+        .m#{$abbr}1-#{$breakpoint-name} {
           margin-#{$margin}: $m1; }
           
-        .m#{$abbr}2 {
+        .m#{$abbr}2-#{$breakpoint-name} {
           margin-#{$margin}: $m2; }
           
-        .m#{$abbr}3 {
+        .m#{$abbr}3-#{$breakpoint-name} {
           margin-#{$margin}: $m3; } 
         
-        .m#{$abbr}4 {
+        .m#{$abbr}4-#{$breakpoint-name} {
           margin-#{$margin}: $m4; }
         
-        .m#{$abbr}5 {
+        .m#{$abbr}5-#{$breakpoint-name} {
           margin-#{$margin}: $m5; }
         
-        .m#{$abbr}6 {
+        .m#{$abbr}6-#{$breakpoint-name} {
           margin-#{$margin}: $m6; }
         
-        .m#{$abbr}7 {
+        .m#{$abbr}7-#{$breakpoint-name} {
           margin-#{$margin}: $m7; }
           
-        .m#{$abbr}8 {
+        .m#{$abbr}8-#{$breakpoint-name} {
           margin-#{$margin}: $m8; }
         
-        .m#{$abbr}9 {
+        .m#{$abbr}9-#{$breakpoint-name} {
           margin-#{$margin}: $m9; } } } } }

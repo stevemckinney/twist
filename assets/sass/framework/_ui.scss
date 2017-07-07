@@ -12,23 +12,30 @@
 // ---------------------------
 
 // [1]: Removes tricky to get rid of default browser styling
-// [2]: Normalise the line height, particularly for older firefox. Normal is the equivalent to 1.2
+// [2]: Normalise the line height, particularly for older firefox. Defaults to 'normal' this is the equivalent to 1.2
 // [3]: We don't want sizing to be affected by a border, so box-shadow is applied for styling
-// [4]: Background bleed issue
+// [4]: Applying styles to links will ensure text-decoration is always removed
+// [5]: 9/10 times this is the best display
 @mixin ui-base($options: $default-ui-base) { 
   // Normalise
   -webkit-appearance: none; // [1]
 	-moz-appearance: none; // [1]
   appearance: none; // [1]
-  line-height: normal; // [2]
+  line-height: map-get($options, line-height); // [2]
   border: none; // [3]
-  background-clip: padding-box; // [4]
+  text-decoration: none; // [4]
+  display: inline-block; // [5]
   
   // Stylistic normalisation
   outline: none;
 	max-width: 100%;
   position: relative;
-  font-size: map-get($options, font-size);
-  font-family: map-get($options, font-family);
-  padding: map-get($options, padding);
-  line-height: map-get($options, line-height); }
+  
+  @if map-get($options, font-size) != false {
+    font-size: map-get($options, font-size); }
+    
+  @if map-get($options, font-family) != false {  
+    font-family: map-get($options, font-family); }
+  
+  @if map-get($options, padding) != false {  
+    padding: map-get($options, padding); } }

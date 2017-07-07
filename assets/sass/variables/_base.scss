@@ -1,12 +1,13 @@
 // Default variables override in site/_base.scss
 // ---------------------------
 $default: (
-  sans: "Helvetica, sans-serif",
-  serif: "Georgia, serif",
+  sans: sans-serif,
+  serif: serif,
   color: #7d7e81,
   baseline: 24px,
   spacing: 8px,
   context: 16px,
+  base-font-size: 16px,
   radius: 4px,
   display: inline-block,
   state: normal,
@@ -15,10 +16,10 @@ $default: (
 
 // Site colours
 // ---------------------------
-$primary: #4c4d4c !default;
-$secondary: #6cd0d9 !default;
-$tertiary: #f2f0f0 !default;
-$neutral: #f24969 !default;
+$primary: #FF7E6D !default;
+$secondary: #27CBA4 !default;
+$tertiary: #FFDB6D !default;
+$neutral: #553143 !default;
 
 // Colours (see: site/base for main site palette)
 // --------------------------
@@ -50,19 +51,10 @@ $baseline: map-get($default, baseline) !default;
 
 // Fonts
 // ---------------------------
-$sans: Helvetica, sans-serif !default;
-$serif: Georgia, serif !default;
-$monospace: Inconsolata, Menlo, Monaco, "Courier New", monospace !default;
-$icons: "SSStandard" !default;
-$heading: $serif !default;
-$body: $sans !default;
-$form: $sans !default;
-$element: $sans !default;
-$ui: map-get($default, sans) !default;
 
 // Font sizes
 // ---------------------------
-$base-font-size: 16px !default;
+$base-font-size: map-get($default, base-font-size) !default;
 $base-line-height: $baseline !default; // must be px if using compass vertical rhythm
 $base-line-height-unitless: 1.5 !default;
 
@@ -88,7 +80,7 @@ $default-framework-line-height: normal !default;
 
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
-$default-shading: true !default;
+$default-shading: false !default;
 
 // Default form placeholder
 $default-placeholder-color: map-get($default, color) !default;

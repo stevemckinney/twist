@@ -5,18 +5,13 @@ $color-helpers: (
 	primary: $primary,
 	secondary: $secondary,
 	tertiary: $tertiary,
-	"red": $red,
-	"green": $green,
-	"orange": $orange,
-	"blue": $cyan
+	neutral: $neutral
 ) !default;
 
 // Text
 // ---------------------------
 @each $name, $color in $color-helpers {
-  
-  @debug $name;
-  
+
   // Text colours, eg: .text-primary
 	.#{$name} { color: $color; }
   	.#{$name}-hover:hover { color: $color; }

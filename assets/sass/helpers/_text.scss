@@ -23,3 +23,9 @@ address { font-style: normal; }
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: .125em; }
+
+// Measure
+// ---------------------------
+.measure { max-width: $measure; }
+.measure-narrow { max-width: $measure-narrow; }
+.measure-wide { max-width: $measure-wide; }

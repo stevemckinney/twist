@@ -35,3 +35,9 @@ $p6: map-get($default, spacing) * 6 !default;
 $p7: map-get($default, spacing) * 7 !default;
 $p8: map-get($default, spacing) * 8 !default;
 $p9: map-get($default, spacing) * 9 !default;
+
+// Measure
+// ---------------------------
+$measure: 30em;
+$measure-narrow: 24em;
+$measure-wide: 44em;

@@ -77,7 +77,8 @@
 // Input
 // ---------------------------
 .input {
-  @include ui-base; }
+  @include ui-base;
+  color: $primary; }
 	
 	// Text
 	// ---------------------------

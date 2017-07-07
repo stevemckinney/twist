@@ -29,6 +29,20 @@ $ui: $sans !global;
 
 // Defaults
 // ---------------------------
+$default: (
+  sans: $ui,
+  serif: $serif,
+  color: #7d7e81,
+  baseline: 24px,
+  spacing: 8px,
+  context: 16px,
+  base-font-size: 16px,
+  radius: 4px,
+  display: inline-block,
+  state: normal,
+  transition-duration: .2s
+);
+
 $default-transition-duration: .2s;
 $site-width: 800px;
 

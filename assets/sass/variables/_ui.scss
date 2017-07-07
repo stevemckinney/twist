@@ -1,8 +1,8 @@
 // UI related variables
 // ---------------------------
 $default-ui-base: (
-  font-size: $f6,
-  font-family: $ui,
-  padding: $p2,
+  font-size: map-get($default, base-font-size),
+  font-family: map-get($default, sans),
+  padding: 12px 16px,
   line-height: normal
 ) !default;

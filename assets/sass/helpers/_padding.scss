@@ -41,34 +41,34 @@
   @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
   	@include breakpoint($breakpoint-width) {
       @each $abbr, $padding in $default-padding-map {
-        .p#{$abbr}0 {
+        .p#{$abbr}0-#{$breakpoint-name} {
           padding-#{$padding}: $p0; }
           
-        .p#{$abbr}1 {
+        .p#{$abbr}1-#{$breakpoint-name} {
           padding-#{$padding}: $p1; }
           
-        .p#{$abbr}2 {
+        .p#{$abbr}2-#{$breakpoint-name} {
           padding-#{$padding}: $p2; }
           
-        .p#{$abbr}3 {
+        .p#{$abbr}3-#{$breakpoint-name} {
           padding-#{$padding}: $p3; } 
         
-        .p#{$abbr}4 {
+        .p#{$abbr}4-#{$breakpoint-name} {
           padding-#{$padding}: $p4; }
         
-        .p#{$abbr}5 {
+        .p#{$abbr}5-#{$breakpoint-name} {
           padding-#{$padding}: $p5; }
         
-        .p#{$abbr}6 {
+        .p#{$abbr}6-#{$breakpoint-name} {
           padding-#{$padding}: $p6; }
         
-        .p#{$abbr}7 {
+        .p#{$abbr}7-#{$breakpoint-name} {
           padding-#{$padding}: $p7; }
         
-        .p#{$abbr}8 {
+        .p#{$abbr}8-#{$breakpoint-name} {
           padding-#{$padding}: $p8; }
         
-        .p#{$abbr}9 {
+        .p#{$abbr}9-#{$breakpoint-name} {
             padding-#{$padding}: $p9; } } } } }
 
 // Island padding helpers
@@ -102,13 +102,13 @@ $isles: (
   // $default-breakpoint-map can be found in variables/breakpoints
   @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
   	@include breakpoint($breakpoint-width) {
-      .#{$name}-b {
+      .#{$name}-#{$breakpoint-name} {
     		padding: $padding; }
       
-      .#{$name}-v-b {
+      .#{$name}-v-#{$breakpoint-name} {
         padding-top: $padding;
         padding-bottom: $padding; }
       
-      .#{$name}-h-b {
+      .#{$name}-h-#{$breakpoint-name} {
         padding-right: $padding;
         padding-left: $padding; } } } } }
