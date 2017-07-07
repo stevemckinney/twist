@@ -40,22 +40,3 @@
 	
 	@if $radius {
 		border-radius: $radius; } }
-
-// The most consistent stuff for each button
-// ---------------------------
-%element-base {
-	@include user-select(none);
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	border: none;
-	background-clip: padding-box;
-	position: relative;
-	font-family: $element;
-	line-height: $default-element-line-height;
-	font-weight: $default-element-font-weight; }
-
-// Most buttons tend to be pretty consistent per site.
-// Extending this makes sure you do not repeat any code
-// ---------------------------
-%element-base-with-mixin {
-	@include element-base; }

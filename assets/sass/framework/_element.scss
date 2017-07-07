@@ -2,8 +2,7 @@
 // ---------------------------
 @import "element/color_adjust",
 				"element/variables",
-				"element/shading",
-				"element/base";
+				"element/shading";
 
 // Element — A base, mixin and options
 // Style notices/alerts, buttons, etc 
@@ -12,23 +11,47 @@
 	$color			: $default-element-color,
 	$text-shadow: $default-element-text-shadow,
 	$dark-bg		: $default-element-dark-bg,
-	$shading		: $default-element-shading,
 	$hover			: $default-element-hover,
 	$base 			: $default-element-base
 ) {
-	@include element-shading($color, normal, $text-shadow, $shading, $dark-bg);
+	@include element-shading($color, normal, $text-shadow, $dark-bg);
 	
 	@if $base {
 		// For buttons that require a lot of changes override the base
-		// Otherwise set a base class eg: .button { @extend %element-base-with-mixin; }
-		@include element-base($base...); }
+		@include ui-base($base); }
 	
 	// You may need to disable hover states	
 	@if $hover {
 		&:hover,
 		&:focus {
-			@include element-shading($color, hover, $text-shadow, $shading, $dark-bg); }
-				
+			@include element-shading($color, hover, $text-shadow, $dark-bg); }
+
 		&:active {
 			z-index: 2; // makes button above others in a group
-			@include element-shading($color, active, $text-shadow, $shading, $dark-bg); } } }
+			@include element-shading($color, active, $text-shadow, $dark-bg); } } }
+
+/*
+@mixin element(
+	$color			: $default-element-color,
+	$hover			: $default-element-hover,
+	$dark-bg    : $default-element-dark-bg,
+	$base 			: $default-element-base
+) {
+  @if $base {
+		// For buttons that require a lot of changes override the base
+		@include ui-base($base); }
+
+	@include element-shading($color, normal, $dark-bg);
+
+	// You may need to disable hover states	
+	@if $hover {
+		&:hover,
+		&:focus,
+		&.is-hover {
+			@include element-shading($color, hover, $dark-bg); }
+
+		&:active,
+		&.is-active {
+			z-index: 2; // makes button above others in a group
+			@include element-shading($color, active, $dark-bg); } } }
+*/

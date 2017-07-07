@@ -1,9 +1,9 @@
 // Default
 // ---------------------------
 $default-element-color: map-get($default, color) !default;
-$default-element-dark-bg: $default-dark-bg !default;
+$default-element-dark-bg: true !default;
 $default-element-radius: false !default;
-$default-element-shading: $default-shading !default;
+$default-element-shading: true !default;
 $default-element-size: $default-size !default;
 $default-element-hover: true !default;
 $default-element-state: map-get($default, state) !default;
@@ -11,13 +11,16 @@ $default-element-base: false !default;
 
 // Default styling
 // ---------------------------
-$default-element-text-shadow: false !default;
+$default-element-text-shadow: true !default;
 $default-element-font-weight: 700 !default;
 $default-element-line-height: $default-framework-line-height !default;
 $default-element-font-size: false !default;
 $default-element-display: map-get($default, display) !default;
-$default-element-yiq-threshold: 200 !default;
-$default-element-yiq-multiplier: 1.25 !default;
 $default-element-border: true !default;
 $default-element-highlight: true !default;
 $default-element-inner-shadow: true !default;
+
+// The YIQ lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 & 255.
+// http://timhettler.github.io/sass-yiq/sassdoc/
+$default-element-yiq-threshold: 175 !default;
+$default-element-yiq-text-threshold: 128 !default;
