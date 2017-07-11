@@ -4,6 +4,20 @@
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 
+// Loop through the breakpoint map, assign each breakpoint to the relevant variable
+// eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
+// $default-breakpoint-map can be found in variables/breakpoints
+@each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {  
+	@include breakpoint($breakpoint-width) {
+    .text-right-#{$breakpoint-name} {
+      text-align: right; }
+    
+    .text-center-#{$breakpoint-name} {
+      text-align: center; }
+    
+    .text-left-#{$breakpoint-name} {
+      text-align: left; } } }
+
 // Case
 // ---------------------------
 .text-lowercase { text-transform: lowercase; }
