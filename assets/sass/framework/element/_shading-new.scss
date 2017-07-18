@@ -3,6 +3,7 @@
 @import "variables";
 $default-element-text-color-light: $white !default;
 $default-element-text-color-dark: $neutral !default;
+$shading-debug: false !default;
 
 // Some variables are controlled outside of here that affect the style
 // this is to keep parameters simplicty as well as being realistic with
@@ -61,27 +62,26 @@ $default-element-text-color-dark: $neutral !default;
 	$border-color: scale-color($color-1, $lightness: -20%);
 	$border-dark-color: rgba(scale-color($border-color, $lightness:-20%), .6);
 
-  &:before {
-  	content: '';
-  	display: block;
-  	font-size: 10px;
-  	text-transform: uppercase; }
-  
-  &:after {
-    content: '';
-  	display: block;
-  	font-size: 10px;
-  	text-transform: uppercase; }
-  
-//  &:before { content: '$saturated: #{$saturated} $light: #{$light} $yiq-is-light: #{$yiq-is-light} $dark: #{$dark}'; }
-//  &:before { content: '$saturated: #{$saturated} $light: #{$light} $yiq-is-light: #{$yiq-is-light} $dark: #{$dark}'; }
+  @if $shading-debug { 
+    &:before {
+    	content: '';
+    	display: block;
+    	font-size: 10px;
+    	text-transform: uppercase; }
+    
+    &:after {
+      content: '';
+    	display: block;
+    	font-size: 10px;
+    	text-transform: uppercase; } }
 	
 	$type-1: if ( ( $light == false and $dark == false and $saturated == true ) or ( $yiq-is-light and $light == false ), true, false );
 	
 	// if not $light but $yiq-is-light
   @if $yiq-is-light and $light {
-    &:before { content: '$type-1'; }
-    order: -10000;
+    @if $shading-debug {
+      &:before { content: '$type-1'; }
+      order: -10000; }
 
   	// Light colors
   	// ---------------------------
@@ -94,8 +94,9 @@ $default-element-text-color-dark: $neutral !default;
   	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6); }
   	
   @else if $yiq-is-light and $saturated {
-    &:before { content: '$type-2'; }
-    order: -1000;
+    @if $shading-debug {
+      &:before { content: '$type-2'; }
+      order: -1000; }
 
   	// Light colors
   	// ---------------------------
@@ -108,8 +109,9 @@ $default-element-text-color-dark: $neutral !default;
   	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6); }
   	
   @else if $yiq-is-light {
-    &:before { content: '$type-3'; }
-    order: -100;
+    @if $shading-debug {
+      &:before { content: '$type-3'; }
+      order: -100; }
 
   	// Light colors
   	// ---------------------------
@@ -123,8 +125,9 @@ $default-element-text-color-dark: $neutral !default;
   	
 	// else if $dark
 	@else if $dark {
-  	&:before { content: 'dark'; }
-  	order: -10;
+  	@if $shading-debug {
+    	&:before { content: 'dark'; }
+    	order: -10; }
   	
   	// Dark colors
   	// ---------------------------
@@ -145,7 +148,7 @@ $default-element-text-color-dark: $neutral !default;
     	
   // else
   @else {
-    &:before { content: 'else'; }
+    @if $shading-debug { &:before { content: 'else'; } }
     order: -1; }
 	
 	// State
