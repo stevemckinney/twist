@@ -184,7 +184,7 @@ $default-element-text-color-dark: $neutral !default;
   		box-shadow: $shadow-normal; }
 		
 		@else {
-  		box-shadow: $shadow-active; }
+  		box-shadow: $shadow-active; } }
 			
   @else if $border and $shading == false {
     @if $state != active {
@@ -198,4 +198,4 @@ $default-element-text-color-dark: $neutral !default;
   			inset 0 if($border, 2px, 1px) 2px $border-color; } }
 			
 	@else {
-		box-shadow: inset 0 1px 2px $dark-color; } } }
+		box-shadow: inset 0 1px 2px $dark-color; } }

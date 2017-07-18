@@ -32,11 +32,7 @@ ul {
 // Definition
 // ---------------------------
 dl {
-	margin: 0 0 rem($base-px);
-
-	@include for-legacy-browser("ie", "5.5", "8", 5) {
-		.no-rem & {
-			margin: 0 0 $base-px; } } }
+	margin: 0 0 rem($base-px); }
 
 dt {
 	float: left;

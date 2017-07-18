@@ -33,30 +33,30 @@
 	// Light colors
 	// ---------------------------
 	$light-color: 
-		if($yiq-is-light, scale-lightness($color-1, 40%), 
-			if(lightness($color-1) > 80%, scale-lightness($color-1, 30%), scale-lightness($color-1, 20%)));
-	$highlight-color: scale-lightness(rgba($light-color, .4), 20%);
+		if($yiq-is-light, scale-color($color-1, $lightness: 40%), 
+			if(lightness($color-1) > 80%, scale-color($color-1, $lightness: 30%), scale-color($color-1, $lightness: 20%)));
+	$highlight-color: rgba(scale-color($light-color, $lightness: 20%), .4);
 	
 	// Dark colors
 	// ---------------------------
 	$dark-color: scale-color($color-1, $lightness: -10%);
 	$border-color: if($yiq-is-light, scale-color($color-1, $lightness: -10%), scale-color($color-1, $lightness: -30%));
-	$border-dark-color: scale-lightness(rgba($border-color, .4), -25%);
+	$border-dark-color: rgba(scale-color($border-color, $lightness: -25%), .4);
 	
 	// Dark background adjustments
 	// ---------------------------
 	@if $dark-bg {
-		$border-color: scale-lightness($dark-color, -80%);
-		$border-dark-color: scale-lightness($border-color, -10%);
+		$border-color: scale-color($dark-color, $lightness: -80%);
+		$border-dark-color: scale-color($border-color, $lightness: -10%);
 		
 		@if $color-2 {
-			$color-2: scale-lightness($color-2, -5%); } }
+			$color-2: scale-color($color-2, $lightness: -5%); } }
 	
 	// State
 	// ---------------------------
 	// Only on normal or disabled so we don't repeat the color
 	@if $state == (normal or disabled) {
-		color: if($state == disabled, scale-lightness($color-1, -30%), yiq-contrast-color($color-1, scale-lightness($color-1, -40%), $white, $yiq-threshold)); }
+		color: if($state == disabled, scale-color($color-1, $lightness: -30%), yiq-contrast-color($color-1, scale-color($color-1, $lightness: -40%), $white, $yiq-threshold)); }
 	
 	// Background
 	// ---------------------------

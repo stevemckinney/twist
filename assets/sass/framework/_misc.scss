@@ -2,7 +2,7 @@
 // ---------------------------
 $default-gradient-background-main-color: $tertiary !default;
 $default-gradient-background-content-height: 600px !default;
-$default-gradient-background-shadow: 0 0 3px rgba(scale-lightness($tertiary, -40%), .6) !default;
+$default-gradient-background-shadow: 0 0 3px rgba(scale-color($tertiary, $lightness: -40%), .6) !default;
 $default-gradient-background-context: map-get($default, context) !default;
 
 // Faded backgrounds with a shadow
@@ -14,7 +14,7 @@ $default-gradient-background-context: map-get($default, context) !default;
 	$context				: $default-gradient-background-context) {
 	
 	@if $main-color {
-		@include background(linear-gradient(top, rgba($main-color, 1) 20%, rgba($main-color, 0) 100%)); }
+		background-image: linear-gradient(top, rgba($main-color, 1) 20%, rgba($main-color, 0) 100%); }
 	
 	background-size: 100% em($content-height, $context);
 	background-repeat: no-repeat;
@@ -25,14 +25,17 @@ $default-gradient-background-context: map-get($default, context) !default;
 		content: "";
 		position: absolute;
 		display: block; }
+		
 	&:before {
 		z-index: -1;
 		left: -3px;
 		right: -3px;
 		top: 0;
 		height: em($content-height, $context);
+		
 		@if $main-color {
-			@include background(linear-gradient(top, rgba($main-color, 0) 0%, rgba($main-color, 1) 100%)); } }
+			background-image: linear-gradient(top, rgba($main-color, 0) 0%, rgba($main-color, 1) 100%); } }
+			
 	&:after {
 		z-index:-2;
 		top: 0;

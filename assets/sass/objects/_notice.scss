@@ -27,8 +27,8 @@
 		opacity: 1; }
 	
 	&:before {
-		@include experimental-value(top, calc(50% - 6px));
-		@include experimental-value(right, calc(50% - 6px));
+    top: calc(50% - 6px);
+    right: calc(50% - 6px);
 		position: absolute;
 		background: image-url("icons_dark.svg") 0 0 no-repeat;
 		

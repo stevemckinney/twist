@@ -1,6 +1,6 @@
 // Default table vars
 // ---------------------------
-$default-table-main-color: scale-lightness($tertiary, -5%) !default;
+$default-table-main-color: scale-color($tertiary, $lightness: -5%) !default;
 $default-table-hover: true !default;
 $default-table-width: 100% !default;
 $default-table-margin: 0 0 em($line) !default;
@@ -37,7 +37,7 @@ $default-table-breakpoint: $b !default;
 			@include breakpoint($c, max) {
 				display: block;
 				position: relative;
-				border: 1px solid scale-lightness($main-color, -10%); } } }
+				border: 1px solid scale-color($main-color, $lightness: -10%); } } }
 	
 	th,
 	td {

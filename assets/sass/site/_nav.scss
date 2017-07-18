@@ -31,7 +31,7 @@
 	left: 0;
 	
 	// Adjustable styles
-	background: scale-lightness($tertiary, -5%);
+	background: scale-color($tertiary, $lightness: -5%);
 	text-align: right; }
 
 .nav-large {}
@@ -51,7 +51,7 @@
 .nav-item {
 	transition: background $default-transition-duration, color $default-transition-duration, box-shadow $default-transition-duration;
 	
-	color: scale-lightness($tertiary, -20%);
+	color: scale-color($tertiary, $lightness: -20%);
 	
 	@include breakpoint($c-max) {
 		display: block;
@@ -63,8 +63,8 @@
 			color: $secondary;
 			background: $tertiary;
 			box-shadow: 
-				0 -1px 0 scale-lightness($tertiary, -10%),
-				0 1px 0 scale-lightness($tertiary, -10%); } } }
+				0 -1px 0 scale-color($tertiary, $lightness: -10%),
+				0 1px 0 scale-color($tertiary, $lightness: -10%); } } }
 
 // Toggle
 // ---------------------------
