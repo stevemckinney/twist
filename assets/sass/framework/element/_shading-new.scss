@@ -148,8 +148,9 @@ $shading-debug: false !default;
     	
   // else
   @else {
-    @if $shading-debug { &:before { content: 'else'; } }
-    order: -1; }
+    @if $shading-debug { 
+      &:before { content: 'else'; }
+      order: -1; } }
 	
 	// State
 	// ---------------------------
