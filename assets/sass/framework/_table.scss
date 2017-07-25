@@ -5,7 +5,7 @@ $default-table-hover: true !default;
 $default-table-width: 100% !default;
 $default-table-margin: 0 0 em($line) !default;
 $default-table-striped: true !default;
-$default-table-font-family: $sans !default;
+$default-table-font-family: map-get($default, sans) !default;
 $default-table-responsive: true !default;
 $default-table-border-width: 1px !default;
 $default-table-th-border-width: 2px !default;

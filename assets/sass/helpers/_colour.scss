@@ -1,17 +1,6 @@
 // Colour
 // ---------------------------
-$color-helpers: (
-	"white": $white,
-	primary: $primary,
-	secondary: $secondary,
-	tertiary: $tertiary,
-	neutral: $neutral
-) !default;
-
-// Text
-// ---------------------------
 @each $name, $color in $color-helpers {
-
   // Text colours, eg: .text-primary
 	.#{$name} { color: $color; }
   	.#{$name}-hover:hover { color: $color; }

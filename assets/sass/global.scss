@@ -1,12 +1,5 @@
 // Gems
 // ---------------------------
-/*
-@import "compass/support";
-@import "compass/utilities/color";
-@import "compass/typography/text";
-@import "compass/css3/appearance";
-@import "compass/css3/user-interface";
-*/
 @import "framework/compass";
 @import "breakpoint";
 
@@ -14,6 +7,7 @@
 // Don’t edit variables override in site/base
 // ---------------------------
 @import "variables";
+@import "site/base";
 
 // Framework
 // Don't edit these files, copy mixins and override in site/mixins.
@@ -25,11 +19,11 @@
 // ---------------------------
 @import "helpers";
 
+// Objects
+// ---------------------------
+@import "objects";
+
 // Site base
 // Modifications to variables, site specific stuff
 // ---------------------------
 @import "site";
-
-// Objects
-// ---------------------------
-@import "objects";

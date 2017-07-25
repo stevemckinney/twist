@@ -1,10 +1,6 @@
 // Variables
 // ---------------------------
 @import "variables/base";
-
-// To ensure all variables override correctly this needs to be here
-@import "site/base";
-
 @import "variables/normalize";
 @import "variables/helpers";
 @import "variables/breakpoints";
