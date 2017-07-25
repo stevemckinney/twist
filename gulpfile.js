@@ -3,9 +3,9 @@ var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var order = require('gulp-order');
 var rename = require('gulp-rename');
-var compass = require('gulp-compass');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var importer = require('node-sass-globbing');
 var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
@@ -43,9 +43,19 @@ var browserSyncOptions = {
   injectChanges: true
 };
 
+var sass_config = {
+  importer: importer,
+  includePaths: [
+    './node_modules/breakpoint-sass/stylesheets/'
+  ]
+};
+
 // CSS
-gulp.task('sass', function() {
-  return sass(src.scss, { compass: true })
+gulp.task('sass', function () {
+  gulp.src(src.scss)
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass(sass_config).on('error', sass.logError))
     .pipe(gulp.dest(src.css))
     .pipe(browserSync.reload({
       stream: true
@@ -85,19 +95,6 @@ config.enhanceSVG = true;
 
 // Setup the 'gulpicon' task
 gulp.task('gulpicon', gulpicon(svg, config));
-  
-// JavaScript
-gulp.task('js', function() {
-  return gulp.src(src.js)
-    .pipe(order([
-      'assets/js/global.js'
-    ], { base: './' }))
-    .pipe(concat('gunnercooke.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
-    .pipe(reload({ stream: true }));
-});
 
 // JavaScript
 gulp.task('js', function() {
