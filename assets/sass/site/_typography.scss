@@ -39,6 +39,7 @@ a:not(.button) {
     
   // Normalize
   background: transparent; // newer IE versions need this
+  -webkit-text-decoration-skip: objects;
   
   &:active,
   &:hover {
