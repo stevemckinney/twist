@@ -3,7 +3,7 @@
 $default-grid-namespace: "grid" !default;
 $default-grid-column-namespace: "width" !default;
 $default-grid-columns: 12 !default;
-$default-grid-gutter: 12px !default;
+$default-grid-gutter: map-get($default, spacing) * 2 !default;
 
 // Add additional sizes if necessary, highly recommended you change this to be
 // tailored to your breakpoints, that match the design.
@@ -17,9 +17,9 @@ $default-grid-font-size-normal: 1rem !default;
 // ---------------------------
 // 	<div class="container">
 //		<div class="grid grid-with-gutter">
-//			<div class="grid-cell grid-4">
+//			<div class="grid-cell width-4">
 //			</div>
-//			<div class="grid-cell grid-2">
+//			<div class="grid-cell width-2">
 //			</div>
 //		</div>
 //	</div>
