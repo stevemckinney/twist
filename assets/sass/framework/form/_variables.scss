@@ -19,7 +19,8 @@ $default-form-radius: false !default;
 $default-form-checkbox-radius: $radius !default;
 $default-form-radio-radius: 30em !default;
 $default-form-line-height: normal !default;
-$default-form-shading: true !default;
+$default-form-shading: $default-shading !default;
+$default-form-border: $default-border !default;
 
 // Text elements map
 $default-text-elements: (
