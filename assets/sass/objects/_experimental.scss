@@ -17,37 +17,6 @@
 				$value: nth($values, $text-increment);
 				#{$property}: #{$value}; } } } }
 
-$default-flex-grid-namespace: flex !default;
-$default-flex-grid-colums: 12 !default;
-$default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
-
-@mixin flex-grid(
-	$grid-columns: $default-flex-grid-colums,
-	$grid-map: $default-flex-grid-map
-) {
-	.#{$default-flex-grid-namespace}-container {
-		display: flex;
-		@include justify-content(space-between);
-		@include align-content(stretch);
-		@include align-items(center);
-	}
-	
-	$column-increment: 1;
-	
-	@each $breakpoint, $width in $grid-map {
-		$class: if($breakpoint == large, ".#{$default-flex-grid-namespace}-grid", ".#{$default-flex-grid-namespace}-grid-#{$breakpoint}");
-	
-		@include breakpoint($width) {
-			@for $column-increment from 1 through $grid-columns {
-				#{$class}-#{$column-increment} {
-					$w: (100% / $grid-columns) * $column-increment;
-					outline: 1px solid red;
-					min-height: 40px;
-					flex-basis: $w; } } } }
-}
-
-@include flex-grid;
-
 @if $_experimental-css {
 	
 [class*="input-"] {
@@ -62,22 +31,6 @@ $default-flex-grid-map: ( small: $a, medium: $b, large: $c ) !default;
 			width: em(12px);
 			height: em(6px); } } }
 
-
-.form-flex {
-	.field {
-		display: flex;
-		@include justify-content(flex-start);
-		flex-flow: row wrap;
-		@include align-items(center); }
-	
-	.field-label {
-		@include flex(1);
-		padding-right: em($line); }
-	
-	.input-text,
-	.input-select {
-		@include flex(2); } }
-		
 summary::-webkit-details-marker {
   display: none }
 
