@@ -32,7 +32,7 @@ $default-grid-font-size-normal: 1rem !default;
 		font-size: 0; }
 	
 	#{"." + unquote($default-grid-namespace)}-with-gutter {
-		margin: 0 #{-$grid-gutter}; } }
+		margin: 0 -#{$grid-gutter/2}; } }
 
 // Grid cell
 // ---------------------------
