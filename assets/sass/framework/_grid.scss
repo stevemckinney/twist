@@ -49,7 +49,7 @@ $default-grid-font-size-normal: 1rem !default;
 		@include grid-cell-font-size($grid-map); }
 
 	#{"." + unquote($default-grid-namespace)}-with-gutter > .#{unquote($default-grid-namespace)}-cell {
-		padding: 0 $grid-gutter; } }
+		padding: 0 #{$grid-gutter/2}; } }
 
 
 // Grid widths
