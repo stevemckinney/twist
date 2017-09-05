@@ -3,7 +3,7 @@
  * this file aims to help get over it.
  */
 @function image-url($file) {
-  @return "../dist/#{$file}"; }
+  @return #{url(unquote("../images/#{$file}"))}; }
 
 // User interface
 // ---------------------------
@@ -28,3 +28,8 @@
       $list: append($list, $var, $sep); } }
 
   @return $list; }
+
+// Headings (not as good, but does what I need)
+// ---------------------------
+@function headings() {
+  @return "#{h1, h2, h3, h4, h5, h6}"; }
