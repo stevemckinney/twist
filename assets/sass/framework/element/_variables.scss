@@ -3,7 +3,7 @@
 $default-element-color: map-get($default, color) !default;
 $default-element-dark-bg: true !default;
 $default-element-radius: false !default;
-$default-element-shading: true !default;
+$default-element-shading: $default-shading !default;
 $default-element-size: $default-size !default;
 $default-element-hover: true !default;
 $default-element-state: map-get($default, state) !default;
@@ -16,7 +16,7 @@ $default-element-font-weight: 700 !default;
 $default-element-line-height: $default-framework-line-height !default;
 $default-element-font-size: false !default;
 $default-element-display: map-get($default, display) !default;
-$default-element-border: true !default;
+$default-element-border: false !default;
 $default-element-highlight: true !default;
 $default-element-inner-shadow: true !default;
 

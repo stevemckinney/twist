@@ -9,9 +9,9 @@ $shading-debug: false !default;
 // this is to keep parameters simplicty as well as being realistic with
 // consistency. eg: all buttons will be shaded or have a border.
 @mixin element-shading(
-	$color   : $default-element-color,
-	$state   : $default-element-state,
-	$dark-bg : $default-element-dark-bg
+  $color   : $default-element-color,
+  $state   : $default-element-state,
+  $dark-bg : $default-element-dark-bg
 ) {
   // Style defaults controlled in framework/element/variables
   // ---------------------------
@@ -21,185 +21,96 @@ $shading-debug: false !default;
   $highlight: $default-element-highlight;
   $text-light: $default-element-text-color-light;
   $text-dark: $default-element-text-color-dark;
-  
-	// Colors
-	// ---------------------------
-	// Ability to pass in two colours to create a gradient
-	$color-1: nth($color, 1);
-	$color-2: if(length($color) > 1, nth($color, 2), null);
-	
-	@if $state == hover and $color-1 {
-	  $color-1: scale-color($color-1, $lightness: 10%); }
-  
+
+  // Colors
+  // ---------------------------
+  // Ability to pass in two colours to create a gradient
+  $color-1: nth($color, 1);
+  $color-2: if(length($color) > 1, nth($color, 2), null);
+
+  @if $state == hover and $color-1 {
+    $color-1: scale-color($color-1, $lightness: 10%); }
+
   @if $state == hover and $color-2 {
-	  $color-2: scale-color($color-2, $lightness: 10%); }
-	
+    $color-2: scale-color($color-2, $lightness: 10%); }
+
   // YIQ
-	// ---------------------------
+  // ---------------------------
   // YIQ applies colours more fitting to the way the eye perceives the brightness.
   // eg: Applying a white highlight on certain colours is more visible than others.
   // it’s important that the colour is applied so it’s much more intentional.
   // Using lightness($color) can be helpful in combination too.
-	$yiq-threshold: $default-element-yiq-threshold;
-	$yiq-text-threshold: $default-element-yiq-text-threshold;
-	$yiq-is-light: yiq-is-light($color-1, $yiq-threshold);
-	
-	// However we don’t need YIQ for colours like #f00 we know these are really
-	// bright/vibrant colours essentially colours in the top right area of the 
-	// colour picker. These colours are highly saturated and if their lightness is
-	// outside of the range, they tend to be more pastel like, or much darker.
-	$saturated: if(saturation($color-1) > 95%, true, false);
-	$light: if(lightness($color-1) > 90%, true, false);
-	$dark: if(lightness($color-1) < 30%, true, false);
-		
-	// Light colors
-	// ---------------------------
-	$light-color: scale-color($color-1, $lightness: 20%);
-	$highlight-color: rgba(scale-color($light-color, $lightness: 15%), .6);
-	
-	// Dark colors
-	// ---------------------------
-	$border-color: scale-color($color-1, $lightness: -20%);
-	$border-dark-color: rgba(scale-color($border-color, $lightness:-20%), .6);
+  $yiq-threshold: $default-element-yiq-threshold;
+  $yiq-text-threshold: $default-element-yiq-text-threshold;
+  $yiq-is-light: yiq-is-light($color-1, $yiq-threshold);
 
-  @if $shading-debug { 
-    &:before {
-    	content: '';
-    	display: block;
-    	font-size: 10px;
-    	text-transform: uppercase; }
-    
-    &:after {
-      content: '';
-    	display: block;
-    	font-size: 10px;
-    	text-transform: uppercase; } }
-	
-	$type-1: if ( ( $light == false and $dark == false and $saturated == true ) or ( $yiq-is-light and $light == false ), true, false );
-	
-	// if not $light but $yiq-is-light
-  @if $yiq-is-light and $light {
-    @if $shading-debug {
-      &:before { content: '$type-1'; }
-      order: -10000; }
+  // However we don’t need YIQ for colours like #f00 we know these are really
+  // bright/vibrant colours essentially colours in the top right area of the
+  // colour picker. These colours are highly saturated and if their lightness is
+  // outside of the range, they tend to be more pastel like, or much darker.
+  $saturated: if(saturation($color-1) > 95%, true, false);
+  $light: if(lightness($color-1) > 90%, true, false);
+  $dark: if(lightness($color-1) < 30%, true, false);
 
-  	// Light colors
-  	// ---------------------------
-  	$light-color: scale-color($color-1, $lightness: 20%);
-  	$highlight-color: rgba(scale-color($light-color, $lightness: 15%), .6);
-  	
-  	// Dark colors
-  	// ---------------------------
-  	$border-color: scale-color($color-1, $lightness: -20%);
-  	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6); }
-  	
-  @else if $yiq-is-light and $saturated {
-    @if $shading-debug {
-      &:before { content: '$type-2'; }
-      order: -1000; }
+  // Light colors
+  // ---------------------------
+  $light-color: element-color-adjust($color-1, lighten);
+  $highlight-color: element-color-adjust($light-color, lighten);
 
-  	// Light colors
-  	// ---------------------------
-  	$light-color: scale-color($color-1, $lightness: 20%);
-  	$highlight-color: rgba(scale-color($light-color, $lightness: 15%), .6);
-  	
-  	// Dark colors
-  	// ---------------------------
-  	$border-color: scale-color($color-1, $lightness: -20%);
-  	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6); }
-  	
-  @else if $yiq-is-light {
-    @if $shading-debug {
-      &:before { content: '$type-3'; }
-      order: -100; }
+  // Dark colors
+  // ---------------------------
+  $border-color: element-color-adjust($color-1, darken);
+  $border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6);
 
-  	// Light colors
-  	// ---------------------------
-  	$light-color: scale-color($color-1, $lightness: 20%);
-  	$highlight-color: rgba(scale-color($light-color, $lightness: 15%), .6);
-  	
-  	// Dark colors
-  	// ---------------------------
-  	$border-color: scale-color($color-1, $lightness: -20%);
-  	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6); }
-  	
-	// else if $dark
-	@else if $dark {
-  	@if $shading-debug {
-    	&:before { content: 'dark'; }
-    	order: -10; }
-  	
-  	// Dark colors
-  	// ---------------------------
-  	$border-color: scale-color($color-1, $lightness: -60%);
-  	$border-dark-color: rgba(scale-color($border-color, $lightness: -20%), .6);
-  	
-  	@if $saturated {
-    	// Light colors
-    	// ---------------------------
-    	$light-color: scale-color($color-1, $lightness: 5%);
-    	$highlight-color: rgba(scale-color($light-color, $lightness: 10%, $saturation: -20%), .6); }
-    	
-    @else {
-    	// Light colors
-    	// ---------------------------
-    	$light-color: scale-color($color-1, $lightness: 5%);
-    	$highlight-color: rgba(scale-color($light-color, $lightness: 10%, $saturation: -20%), .6); } }
-    	
-  // else
-  @else {
-    @if $shading-debug { 
-      &:before { content: 'else'; }
-      order: -1; } }
-	
-	// State
-	// ---------------------------
-	@if $state == disabled {
-		color: scale-color($color-1, -40%); }
-		
+  // State
+  // ---------------------------
+  @if $state == disabled {
+    color: scale-color($color-1, -40%); }
+
   @else if $state == normal {
     color: yiq-contrast-color($color-1, scale-color($color-1, $lightness: -65%), scale-color($color-1, $lightness: 90%), $yiq-text-threshold); }
-	
-	// Background
-	// ---------------------------
-	@if $color-1 and $color-2 {
-		background-image: linear-gradient($color-1, $color-2); }
-		
-	@else {
-		background-color: $color-1; }
-	
-	// Shading styles
-	// ---------------------------	
-	@if $shading {
-  	// Used for every state except active
-  	// Applies border and bevels 
-		$shadow-normal:
+
+  // Background
+  // ---------------------------
+  @if $color-1 and $color-2 {
+    background-image: linear-gradient($color-1, $color-2); }
+
+  @else {
+    background-color: $color-1; }
+
+  // Shading styles
+  // ---------------------------
+  @if $shading {
+    // Used for every state except active
+    // Applies border and bevels
+    $shadow-normal:
       inset 0 -1px 1px $border-dark-color,
-		  inset 0 0 0 1px $border-color,
-		  inset 0 2px $highlight-color;
-		
-		// Inset shadow to look depressed
-		$shadow-active:
-		  inset 0 1px $border-dark-color,
-		  inset 0 2px 3px rgba($border-color, .6),
-		  inset 0 0 0 1px $border-color;
-		
-		@if $state != active {
-  		box-shadow: $shadow-normal; }
-		
-		@else {
-  		box-shadow: $shadow-active; } }
-			
+      inset 0 0 0 1px $border-color,
+      inset 0 2px $highlight-color;
+
+    // Inset shadow to look depressed
+    $shadow-active:
+      inset 0 1px $border-dark-color,
+      inset 0 2px 3px rgba($border-color, .6),
+      inset 0 0 0 1px $border-color;
+
+    @if $state != active {
+      box-shadow: $shadow-normal; }
+
+    @else {
+      box-shadow: $shadow-active; } }
+
   @else if $border and $shading == false {
     @if $state != active {
       box-shadow:
-  		  inset 0 -1px $border-dark-color,
-  		  inset 0 0 0 1px $border-color; }
+        inset 0 -1px $border-dark-color,
+        inset 0 0 0 1px $border-color; }
     @else {
       box-shadow:
-  		  inset 0 1px $border-dark-color,
-  		  inset 0 0 0 1px $border-color,
-  			inset 0 if($border, 2px, 1px) 2px $border-color; } }
-			
-	@else {
-		box-shadow: inset 0 1px 2px $dark-color; } }
+        inset 0 1px $border-dark-color,
+        inset 0 0 0 1px $border-color,
+        inset 0 if($border, 2px, 1px) 2px $border-color; } }
+
+  @else {
+     @if $state == active {
+       box-shadow: inset 0 1px 3px $border-color; } } }

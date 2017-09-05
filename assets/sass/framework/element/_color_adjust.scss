@@ -87,3 +87,76 @@
 		
 		@else {
 			@return if($positive, scale-color($color, $lightness: 5%), scale-color($color, $lightness: -5%)); } } }
+
+// Color adjust
+// ---------------------------
+@function element-color-adjust($color, $adjust: darken) {
+	$colors: $color;
+
+  // if $color is red
+    // if red is saturated
+      // if red is light
+
+	@each $color in $colors {
+		// red
+		@if hue($color) >= 0 and hue($color) < 19 or
+				hue($color) > 330 and hue($color) <= 360 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 20%),
+			    scale-color($color, $lightness: -15%, $saturation: -20%)); }
+		
+		// orange
+		@else if hue($color) > 20 and hue($color) < 49 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 25%),
+			    scale-color($color, $lightness: -10%, $saturation: -15%)); }
+		
+		// yellow
+		@else if hue($color) > 50 and hue($color) < 79 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 40%),
+			    scale-color($color, $lightness: -10%)); }
+		
+		// green
+		@else if hue($color) > 80 and hue($color) < 169 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 20%),
+			    scale-color($color, $lightness: -12.5%)); }
+		
+		// blue/cyan
+		@else if hue($color) > 170 and hue($color) < 229 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 20%),
+			    scale-color($color, $lightness: -15%)); }
+		
+		// purple
+		@else if hue($color) > 230 and hue($color) < 289 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 15%),
+			    scale-color($color, $lightness: -15%)); }
+		
+		// magenta
+		@else if hue($color) > 290 and hue($color) < 329 and
+				saturation($color) > 20 {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 15%),
+			    scale-color($color, $lightness: -15%)); }
+		
+		@else {
+			@return 
+			  if($adjust == lighten,
+			    scale-color($color, $lightness: 10%, $saturation: -10%),
+			    scale-color($color, $lightness: -25%)); } } }
