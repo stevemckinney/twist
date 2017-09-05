@@ -18,6 +18,7 @@ html {
 article,
 aside,
 details,
+menu,
 figcaption,
 figure,
 footer,
@@ -37,6 +38,9 @@ progress,
 video {
 	display: inline-block;
 	vertical-align: baseline; }
+
+summary {
+  display: list-item; }
 
 audio:not([controls]) {
 	display: none;
