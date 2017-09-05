@@ -81,6 +81,7 @@ $default-framework-line-height: normal !default;
 // Defaults for element/form paramaters and others
 $default-dark-bg: false !default;
 $default-shading: false !default;
+$default-border: false !default;
 
 // Default form placeholder
 $default-placeholder-color: map-get($default, color) !default;
