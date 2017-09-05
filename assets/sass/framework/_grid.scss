@@ -29,19 +29,10 @@ $default-grid-font-size-normal: 1rem !default;
 @mixin grid-container($grid-gutter: $default-grid-gutter) {
 	#{"." + unquote($default-grid-namespace)} {
 		display: block;
-		padding: 0;
-		margin: 0;
-		text-align: left;
 		font-size: 0; }
 	
 	#{"." + unquote($default-grid-namespace)}-with-gutter {
-		margin: 0 #{-$grid-gutter}; }
-	
-	#{"." + unquote($default-grid-namespace)}-center {
-		text-align: center; }
-	
-	#{"." + unquote($default-grid-namespace)}-right {
-		text-align: right; } }
+		margin: 0 #{-$grid-gutter}; } }
 
 // Grid cell
 // ---------------------------
