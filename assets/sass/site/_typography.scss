@@ -7,27 +7,26 @@
   line-height: 1.25;
   margin-top: 0;
   font-weight: font-weight(bold);
-  
+
   @include breakpoint($c) {
     font-weight: font-weight(semibold); } }
-  
+
 // General
 // ---------------------------
 body {
   color: $neutral;
-  font: 400 100%/1.5 $body; }
+  font: 400 100%/1.5 $body;
+
+  @include breakpoint($c) {
+    font-size: $base-font-size; } }
 
 p {
-  font-size: 14px;
   margin: 0 0 $base-px;
-  
-  @include breakpoint($c) {
-    font-size: $base-font-size; }
-  
+
   @supports (-webkit-hyphens: auto) {
     text-align: justify;
     -webkit-hyphens: auto; }
-  
+
   @supports (hyphens: auto) {
     text-align: justify;
     hyphens: auto; } }
@@ -36,11 +35,11 @@ a:not(.button) {
   transition: .2s;
   text-decoration: none;
   color: inherit;
-    
+
   // Normalize
   background: transparent; // newer IE versions need this
   -webkit-text-decoration-skip: objects;
-  
+
   &:active,
   &:hover {
     outline: 0; } }
