@@ -10,6 +10,31 @@
 <body class="universe">
 	<h1>Hello</h1>
 	
+  <form action="." method="post" class="hform">
+    <legend>Comment form</legend>
+    
+    <div class="field field-text">
+      <label class="label">Name</label>
+      <input type="text" name="name" id="name" class="input input-text">
+    </div>
+        
+    <div class="field field-textarea">
+      <label class="label">Email</label>
+      <input type="email" name="email" id="email" placeholder="steve@iamsteve.me" class="input input-text">
+    </div>
+
+    <div class="field field-textarea">
+      <label class="label">Textarea</label>
+      <textarea name="comment" rows="8" cols="40" class="input input-text"></textarea>
+    </div>
+    <div class="form-actions">
+      <input type="submit" name="submit" value="Save" class="button button-primary">
+      <div class="field field-checkbox">
+        <label class="label label-checkbox"><input type="checkbox" name="remember" value="" id="remember"> Remember</label>
+      </div>
+    </div>
+  </form>
+	
 	<div class="mt9 pt9"></div>
 	<div class="mb9 flex flex-wrap flex-row">
     <button class="button button button-primary radius">Button button</button>

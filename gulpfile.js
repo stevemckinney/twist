@@ -1,23 +1,23 @@
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var plumber = require('gulp-plumber');
-var order = require('gulp-order');
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var importer = require('node-sass-globbing');
-var sourcemaps = require('gulp-sourcemaps');
-var cssnano = require('gulp-cssnano');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
-var concat = require('gulp-concat');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-var glob = require('glob');
-var gulpicon = require('gulpicon/tasks/gulpicon');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const plumber = require('gulp-plumber');
+const order = require('gulp-order');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const importer = require('node-sass-globbing');
+const sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('gulp-cssnano');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
+const concat = require('gulp-concat');
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
+const glob = require('glob');
+const gulpicon = require('gulpicon/tasks/gulpicon');
 
-var src = {
+const src = {
   scss: 'assets/sass/**/*.scss',
   css: 'dist/css',
   html: 'styleguide/**/*',
@@ -26,11 +26,11 @@ var src = {
 };
 
 // Use glob to get file paths
-var svg = glob.sync('assets/images/*.svg');
+const svg = glob.sync('assets/images/*.svg');
 
 // browser-sync watched files
 // automatically reloads the page when files changed
-var browserSyncWatchFiles = [
+const browserSyncWatchFiles = [
   src.css,
   src.js,
   src.html
@@ -38,20 +38,22 @@ var browserSyncWatchFiles = [
 
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
-var browserSyncOptions = {
+const browserSyncOptions = {
   proxy: 'twist.dev',
-  injectChanges: true
+  injectChanges: true,
+  open: false
 };
 
-var sass_config = {
-  importer: importer,
+
+// CSS
+const sass_config = {
+  importer,
   includePaths: [
     './node_modules/breakpoint-sass/stylesheets/'
   ]
 };
 
-// CSS
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   gulp.src(src.scss)
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -62,8 +64,16 @@ gulp.task('sass', function () {
     }));
 });
 
-gulp.task('autoprefixer', function() {
-  gulp.src(src.css + '/master.css')
+gulp.task('cssnano', () => {
+  return gulp.src(src.css)
+    .pipe(sourcemaps.init())
+    .pipe(cssnano())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(src.css));
+});
+
+gulp.task('autoprefixer', () => {
+  gulp.src(src.css + '/global.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -71,13 +81,13 @@ gulp.task('autoprefixer', function() {
 });
 
 // Images
-gulp.task('images', function() {
+gulp.task('images', () => {
   return gulp.src(src.images)
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('svg', function() {
+gulp.task('svg', () => {
   return gulp.src(svg)
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'));
@@ -96,39 +106,26 @@ config.enhanceSVG = true;
 // Setup the 'gulpicon' task
 gulp.task('gulpicon', gulpicon(svg, config));
 
-// JavaScript
-gulp.task('js', function() {
-  return gulp.src(src.js)
-    .pipe(order([
-      'assets/js/modernizr.js',
-      'assets/js/fitvids.js',
-      'assets/js/flickity.js',
-      'assets/js/headroom.js',
-      'assets/js/prism.js',
-      'assets/js/global.js'
-    ], { base: './' }))
-    .pipe(concat('twist.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
-    .pipe(reload({ stream: true }));
-});
-
 // Watch files
-gulp.task('watch', function () {
-  gulp.watch('dist/css/master.css', ['autoprefixer']);
+gulp.task('watch', () =>  {
+  gulp.watch(src.css, ['autoprefixer']);
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
   browserSync.init(browserSyncWatchFiles, browserSyncOptions);
 });
 
 // Serve, Sass and live reloading
-gulp.task('serve', ['browser-sync', 'watch'], function() {
-  gulp.watch(src.scss, ['sass']);
+gulp.task('serve', ['browser-sync', 'watch'], () => {
+  gulp.watch(src.scss, ['sass']).on('change', reload);
+  gulp.watch('dist/js/**/*').on('change', reload);
   gulp.watch(src.html).on('change', reload);
 });
 
-
 gulp.task('default', ['serve']);
-gulp.task('build', ['js', 'images', 'autoprefixer']);
+gulp.task('build', [
+  'images',
+  'sass',
+  'autoprefixer',
+  'cssnano'
+]);
