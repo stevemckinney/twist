@@ -9,15 +9,25 @@
 </head>
 <body class="universe">
 	<h1>Hello</h1>
-	
+
+	<div class="lazyload-area">
+    <h2>Lazy loading</h2>
+    <div class="loading">
+      <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="lazyload">
+    </div>
+    <noscript>
+      <img src="https://unsplash.it/600/480" class="img-noscript">
+    </noscript>
+	</div>
+
   <form action="." method="post" class="hform">
     <legend>Comment form</legend>
-    
+
     <div class="field field-text">
       <label class="label">Name</label>
       <input type="text" name="name" id="name" class="input input-text">
     </div>
-        
+
     <div class="field field-textarea">
       <label class="label">Email</label>
       <input type="email" name="email" id="email" placeholder="steve@iamsteve.me" class="input input-text">
@@ -34,7 +44,7 @@
       </div>
     </div>
   </form>
-	
+
 	<div class="mt9 pt9"></div>
 	<div class="mb9 flex flex-wrap flex-row">
     <button class="button button button-primary radius">Button button</button>
@@ -63,41 +73,42 @@
     <button class="button button-k radius">Button button</button>
     <button class="button button-neutral radius">Button button</button>
 	</div>
-	
+
 	<div class="mb1 spit radius bg-neutral tertiary f6">
     mb1 spit radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb2 isle radius bg-neutral tertiary f5">
     mb2 isle radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb3 island radius bg-neutral tertiary f4">
     mb3 island radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb4 country radius bg-neutral tertiary f3">
     mb4 country radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb5 continent radius bg-neutral tertiary f2">
     mb5 continent radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb6 planet radius bg-neutral tertiary f1">
     mb6 planet radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb7 galaxy radius bg-neutral tertiary headline">
     mb7 galaxy radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb8 universe radius bg-neutral tertiary f7">
     mb8 universe radius bg-neutral tertiary
   </div>
-  
+
   <div class="mb9 cosmos radius bg-neutral tertiary f8">
     mb9 cosmos radius bg-neutral tertiary
   </div>
+  <script src="dist/js/global.js"></script>
 </body>
 </html>
