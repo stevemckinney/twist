@@ -15,3 +15,31 @@
 	padding: 0 !important;
 	top: 0 !important;
 	left: 0 !important; }
+
+// Loading
+// ---------------------------
+@keyframes loading {
+  0% {
+    background-position: -1200px 0; }
+
+  100% {
+    background-position: 1200px 0; } }
+
+.loading {
+  position: relative;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: loading;
+  background: $primary;
+  background: linear-gradient(to right, lighten($primary, 2.5%) 8%, $primary 18%, lighten($primary, 2.5%) 33%);
+  background-size: 1200px 104px; }
+
+.lazyload,
+.lazyloading {
+	opacity: 0; }
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1); }
