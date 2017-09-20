@@ -16,7 +16,7 @@
 // [3]: We don't want sizing to be affected by a border, so box-shadow is applied for styling
 // [4]: Applying styles to links will ensure text-decoration is always removed
 // [5]: 9/10 times this is the best display
-@mixin ui-base($options: $default-ui-base) { 
+@mixin ui-base($options: $default-ui-base) {
   // Normalise
   -webkit-appearance: none; // [1]
 	-moz-appearance: none; // [1]
@@ -25,17 +25,22 @@
   border: none; // [3]
   text-decoration: none; // [4]
   display: inline-block; // [5]
-  
+
   // Stylistic normalisation
   outline: none;
 	max-width: 100%;
   position: relative;
-  
+
   @if map-get($options, font-size) != false {
     font-size: map-get($options, font-size); }
-    
-  @if map-get($options, font-family) != false {  
+
+  @if map-get($options, font-family) != false {
     font-family: map-get($options, font-family); }
-  
-  @if map-get($options, padding) != false {  
+
+  @if map-get($options, padding) != false {
     padding: map-get($options, padding); } }
+
+@mixin ui-base-simple {
+	-webkit-appearance: none; // only using webkit as firefox doesn't customise well
+	border: none;
+	@content; }

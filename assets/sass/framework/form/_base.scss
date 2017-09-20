@@ -4,7 +4,7 @@
 	$type: $default-form-type,
 	$radius: $default-form-radius,
 	$size: $default-form-size) {
-	
+
 	@include appearance(none);
 	border: none;
 	font-family: $form;
@@ -12,10 +12,10 @@
 	max-width: 100%;
 	color: $default-form-text-color;
 	line-height: $default-form-line-height;
-	
-	@if $radius { 
+
+	@if $radius {
 		border-radius: $radius; }
-		
+
 	@if $size {
 		padding: $size; } }
 
@@ -26,7 +26,7 @@
 	-webkit-appearance: none; // only using webkit as firefox doesn't customise well
 	border: none;
 	@content; }
-	
+
 // Full width form elements
 // ---------------------------
 %form-block {

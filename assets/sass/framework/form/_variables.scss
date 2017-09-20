@@ -24,7 +24,7 @@ $default-form-border: $default-border !default;
 
 // Text elements map
 $default-text-elements: (
-	text: text, 
+	text: text,
 	textarea: textarea,
 	password: password,
 	search: search,
@@ -45,6 +45,9 @@ $default-form-boolean-margin: 0 em($base-px/2) 0 0 !default;
 $default-form-radio-size: 16px !default;
 $default-form-radio-width: $default-form-radio-size !default;
 $default-form-radio-height: $default-form-radio-size !default;
+$default-form-checkbox-size: 16px !default;
+$default-form-checkbox-width: $default-form-radio-size !default;
+$default-form-checkbox-height: $default-form-radio-size !default;
 $default-form-radio-radial-gradient-color-stop: 4px !default;
 $default-form-checkbox-background-size: 12px !default;
 

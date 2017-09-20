@@ -15,7 +15,7 @@
   @include breakpoint($b) {
     align-content: center;
     align-items: center; }
-    
+
   @include breakpoint($b-max) {
     width: 100%; } }
 
@@ -46,76 +46,46 @@
 // ---------------------------
 .field-first .input-text {
   border-radius: $radius 0 0 $radius; }
-	
+
 .field-last .input-text {
   border-radius: 0 $radius $radius 0; }
 
-// Field specifics
-// ---------------------------
-.field-checkbox {
-	display: block; }
-	
-.field-radio {
-	@extend .field-checkbox; }
-
-.field-search {
-  @include breakpoint($b-max) {
-    padding: 0 $line; } }
-
-.form-actions {
-	clear: both;
-	width: 100%; }
-
-// Grouped fields
-// ---------------------------
-.field-group {
-	display: flex;
-	
-	.field-label {
-		padding: 0 em($base-px); } }
-		
 // Input
 // ---------------------------
 .input {
   @include ui-base;
   color: $primary; }
-	
-	// Text
-	// ---------------------------
-	.input-text {
-		@include form; }
-	
-	// Select
-	// ---------------------------
-	.input-select {
-		@include form(select); }
-	
-	// Check/radio
-	// ---------------------------
-	.input-checkbox,
-	.input-radio {
-    @include form-boolean-base; }
-	
-	.input-checkbox {
-		@include form(checkbox);
-		width: em($base-font-size);
-		height: em($base-font-size); 
-		position: relative;
-		top: em($base-font-size / 6);
-		margin: $default-form-boolean-margin; }
-	
-	.input-radio {
-		@include form(radio);
-		position: relative;
-		width: $default-form-radio-width;
-		height: $default-form-radio-height;
-		top: em(2px);
-		margin: $default-form-boolean-margin; }
-		
-	// Submit
-	// ---------------------------
-	.button-submit {
-		@include element($red, $hover: true); }
+
+// Text
+// ---------------------------
+.input-text {
+	@include form; }
+
+// Select
+// ---------------------------
+.input-select {
+	@include form(select); }
+
+// Check/radio
+// ---------------------------
+.input-checkbox,
+.input-radio {
+  @include ui-base-simple; }
+
+.input-checkbox {
+	@include form(checkbox);
+	width: $default-form-checkbox-width;
+	height: $default-form-checkbox-width; }
+
+.input-radio {
+	@include form(radio);
+	width: $default-form-radio-width;
+	height: $default-form-radio-height; }
+
+// Submit
+// ---------------------------
+.button-submit {
+	@include element($primary, $hover: true); }
 
 // Remove spacing from browser datepicker
 // ---------------------------
@@ -126,6 +96,6 @@ input[type=date]::-webkit-clear-button,
 input[type=date]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
   display: none; }
-  
+
 input[type=date]::-webkit-datetime-edit-fields-wrapper {
   padding: 0; }
