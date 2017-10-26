@@ -2,7 +2,7 @@ import 'lazysizes';
 
 const Site = (function Site() {
   // Lazyloading images
-  const images = function () {
+  const images = function images() {
     // Listen for the lazyloaded event
     document.addEventListener('lazyloaded', (e) => {
       const parent = e.target.parentNode;
@@ -23,4 +23,6 @@ const Site = (function Site() {
       images();
     }
   }
-});
+}());
+
+Site.init();
