@@ -11,6 +11,7 @@ $default-enable-padding: true !default;
 $default-enable-padding-responsive: true !default;
 $default-enable-undo-padding: true !default;
 $default-enable-isles: true !default;
+$default-enable-aspect-ratio: true !default;
 
 // Font size helpers
 // ---------------------------
@@ -40,7 +41,7 @@ $default-margin-map: (
   t: top,
   r: right,
   b: bottom,
-  l: left 
+  l: left
 ) !default;
 $default-enable-undo-margin: true !default;
 
@@ -61,7 +62,7 @@ $default-padding-map: (
   t: top,
   r: right,
   b: bottom,
-  l: left 
+  l: left
 ) !default;
 
 $p0: 0 !default;

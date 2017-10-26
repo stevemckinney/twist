@@ -1,6 +1,6 @@
 // Helpers
 // Everything has enabling variables and some variables are defined in
-// framework/base to be overridden and used elsewhere 
+// framework/base to be overridden and used elsewhere
 // ---------------------------
 @import "variables/helpers";
 
@@ -43,3 +43,7 @@
 // Colour
 // ---------------------------
 @import "helpers/colour";
+
+// Aspect Ratio
+// ---------------------------
+@import "helpers/aspect-ratio";
