@@ -32,8 +32,8 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: loading;
-  background: $primary;
-  background: linear-gradient(to right, lighten($primary, 2.5%) 8%, $primary 18%, lighten($primary, 2.5%) 33%);
+  background: $light-grey;
+  background: linear-gradient(to right, lighten($light-grey, 2.5%) 8%, $light-grey 18%, lighten($light-grey, 2.5%) 33%);
   background-size: 1200px 104px; }
 
 .lazyload,
