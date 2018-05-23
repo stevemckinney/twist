@@ -5,6 +5,9 @@
 @function image-url($file) {
   @return #{url(unquote("../images/#{$file}"))}; }
 
+@function font-url($file) {
+  @return #{url(unquote("../fonts/#{$file}"))}; }
+
 // User interface
 // ---------------------------
 @mixin user-select($select) {

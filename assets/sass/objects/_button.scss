@@ -3,29 +3,7 @@
 $buttons: (
 	primary: $primary,
 	secondary: $secondary,
-	tertiary: $tertiary,
-	neutral: yellow,
-	one: #f00,
-	two: #007171,
-	three: #0ff,
-	four: lime,
-	five: #7FBAAA,
-	six: #00833E,
-	seven: #FFE5AE,
-	eight: #D6BAD2,
-	nine: #F8B47D,
-	ten: #F1958B,
-	a: #303841,
-	b: #F6C90E,
-  c: #C50000,
-  d: #6D42C7,
-  e: #F2FFDF,
-  f: #F1F2EB,
-  g: #FFFCEA,
-  h: $white,
-  i: #EBF7FD,
-  j: #3A4750,
-  k: #0092CA,
+	tertiary: $tertiary
 );
 
 // body { background-color: #3A4750 }
@@ -36,7 +14,7 @@ $buttons: (
 	@include user-select(none);
 	font-weight: font-weight(bold);
 	flex: 1 1 20%;
-	
+
 	margin: 12px; }
 
 // Output the variations
@@ -47,11 +25,11 @@ $buttons: (
 .button-link {
 	background: none;
 	color: $primary;
-	
+
 	&:hover,
 	&:focus {
 		@include element-shading($primary, $state: hover); }
-	
+
 	&:active {
 		@include element-shading($primary, $state: active); } }
 

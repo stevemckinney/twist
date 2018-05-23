@@ -73,7 +73,7 @@ $default-equal: false !default;
 // How many times larger should the padding-left/right be than padding-top/bottom
 $default-multiplier: 1.5 !default;
 
-// Normal is a good choice, as firefox doesn't 
+// Normal is a good choice, as firefox doesn't
 // allow line-height change on inputs this allows
 // for consistency in everything
 $default-framework-line-height: normal !default;

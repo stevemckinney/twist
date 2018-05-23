@@ -75,7 +75,7 @@ abbr[title] {
 b,
 strong {
 	font-weight: font-weight(bold); }
-	
+
 dfn {
 	font-style: italic; }
 
@@ -129,7 +129,7 @@ textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0; }
-	
+
 button {
 	border: none;
 	overflow: visible; }
@@ -164,7 +164,7 @@ input[type="search"]::-webkit-search-decoration {
 fieldset,
 legend {
 	border: none; }
-	
+
 textarea {
 	overflow: auto; }
 
@@ -186,9 +186,9 @@ table {
 // the whole rule if they do not understand it
 ::-moz-selection {
 	background: $default-selection-background;
-	color: $default-selection-color; 
+	color: $default-selection-color;
 	text-shadow: none; }
-	
+
 ::selection {
 	background: $default-selection-background;
 	color: $default-selection-color;
