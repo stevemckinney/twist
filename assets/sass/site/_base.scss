@@ -4,6 +4,9 @@
 
 // Color
 // ---------------------------
+$primary: #154f91;
+$secondary: #333f48;
+$tertiary: #d9d9d6;
 
 // Fonts
 // ---------------------------
@@ -32,7 +35,7 @@ $ui: $sans !global;
 $default: (
   sans: $ui,
   serif: $serif,
-  color: #7d7e81,
+  color: $secondary,
   baseline: 24px,
   spacing: 8px,
   context: 16px,
@@ -44,7 +47,7 @@ $default: (
 );
 
 $default-transition-duration: .2s;
-$site-width: 800px;
+$site-width: 1004px;
 $default-form-background-color: #f3f3f3;
 
 // Breakpoints

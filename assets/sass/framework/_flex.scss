@@ -2,7 +2,7 @@
 // ---------------------------
 $default-flex-namespace: "flex" !default;
 $default-flex-column-namespace: "flex" !default;
-$default-flex-columns: 12 !default;
+$default-flex-columns: 8 !default;
 $default-flex-gutter: map-get($default, spacing) * 2 !default;
 
 // Add additional sizes if necessary, highly recommended you change this to be

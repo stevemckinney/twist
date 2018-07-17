@@ -7,7 +7,7 @@
 
 @function triple($number) {
   @return $number * 3; }
-  
+
 // Double
 @function double($number) {
   @return $number * 2; }
@@ -15,7 +15,7 @@
 // Half
 @function half($number) {
   @return $number / 2; }
-  
+
 // Quarter
 @function quarter($number) {
   @return $number / 4; }
@@ -25,7 +25,7 @@
 // ---------------------------
 @function calc-percent($target, $container: $default-container) {
 	@return ($target / $container) * 100%; }
-	
+
 // shortcut
 @function cp($target, $container: $default-container) {
 	@return calc-percent($target, $container); }
@@ -126,7 +126,7 @@ $yiq-debug: false !default;
 // Picks the color with the highest contrast
 @function if-bright($color, $light: true, $dark: false) {
 	@return if(is-bright($color), $light, $dark); }
-	
+
 // Picks the color with the highest contrast
 @function text-contrast($bg, $dark-text: #666, $light-text: rgba($text-color, .9)) {
 	@return if-bright($bg, $dark-text, $light-text); }
@@ -143,6 +143,13 @@ $yiq-debug: false !default;
     @return $number / ($number * 0 + 1); }
 
   @return $number; }
-
-@function font-size-lock($min-font-size, $max-font-size, $min-screen-width, $max-screen-width) {
-  @return calc(#{$min-font-size} + ( ( #{strip-unit($max-font-size)} - #{strip-unit($min-font-size)} ) * (100vw - #{$min-screen-width}) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)}))); }
+//calc($min-font-size + ( ( $max-font-size - $min-font-size ) * ( 100vw - $min-screen-width ) / ($max-screen-width - $min-screen-width) ))
+@function font-size-lock(
+  $min-font-size,
+  $max-font-size,
+  $min-screen-width,
+  $max-screen-width
+) {
+  @return calc(
+    #{$min-font-size} + ( ( #{strip-unit($max-font-size)} - #{strip-unit($min-font-size)} ) * ( 100vw - #{$min-screen-width} ) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)}))
+    ); }
