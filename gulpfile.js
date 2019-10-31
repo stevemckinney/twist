@@ -1,131 +1,254 @@
-const gulp = require('gulp');
-const watch = require('gulp-watch');
-const plumber = require('gulp-plumber');
-const order = require('gulp-order');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const importer = require('node-sass-globbing');
+/**
+ * Paths
+ */
+const path = {
+  src: 'assets/',
+  dist: 'dist/',
+  css: {
+    src: 'assets/sass/**/*.{scss,sass}',
+    dist: 'dist/css/'
+  },
+  js: {
+    src: 'assets/js/**/*.js',
+    dist: 'dist/js/'
+  },
+  html: {
+    src: 'system/user/templates/**/*.html'
+  },
+  image: {
+    src: 'assets/images/*.png',
+    dist: 'dist/images/'
+  },
+  svg: {
+    src: 'assets/images/*.svg',
+    dist: 'dist/images/'
+  },
+  fonts: {
+    src: './assets/fonts/**/*.{ttf,woff,woff2,eot,svg}',
+    dist: 'dist/fonts/'
+  },
+  node_modules: './node_modules'
+}
+
+/**
+ * Gulp Packages
+ */
+const {gulp, src, dest, watch, series, parallel} = require('gulp');
+const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
-const cssnano = require('gulp-cssnano');
-const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
-const concat = require('gulp-concat');
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
-const glob = require('glob');
-const gulpicon = require('gulpicon/tasks/gulpicon');
-
-const src = {
-  scss: 'assets/sass/**/*.scss',
-  css: 'dist/css',
-  html: 'styleguide/**/*',
-  js: 'assets/js/**/*.js',
-  images: 'assets/images/**/*'
-};
-
-// Use glob to get file paths
-const svg = glob.sync('assets/images/*.svg');
-
-// browser-sync watched files
-// automatically reloads the page when files changed
-const browserSyncWatchFiles = [
-  src.css,
-  src.js,
-  src.html
-];
-
-// browser-sync options
-// see: https://www.browsersync.io/docs/options/
-const browserSyncOptions = {
-  proxy: 'twist.dev',
-  injectChanges: true,
-  open: false
-};
-
 
 // CSS
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const critical = require('critical');
+// const importer = require('node-sass-globbing');
+
+// Images
+const imagemin = require('gulp-imagemin');
+const svgmin = require('gulp-svgmin');
+
+// BrowserSync
+const browserSync = require('browser-sync').create();
+
+/**
+ * Start *fresh*
+ */
+const fresh = (done) => {
+  del([path.output]);
+
+  done();
+}
+
+/**
+ * Browsersync
+ * see: https://www.browsersync.io/docs/options/
+ **/
+const browserSyncOptions = {
+  proxy: 'http://iamsteve.dev',
+  injectChanges: true
+}
+
+// Reload
+const reloader = (done) => {
+  browserSync.reload();
+
+  done();
+}
+
+// Serve
+const serve = (done) => {
+  // Watch everything in src, run default & refresh the browser
+  browserSync.init([path.src, path.html.src], browserSyncOptions);
+
+  done();
+}
+
+/**
+ * CSS
+ */
+sass.compiler = require('node-sass');
+
 const sass_config = {
-  importer,
+  outputStyle: 'compressed',
+  sourceComments: false,
   includePaths: [
     './node_modules/breakpoint-sass/stylesheets/'
   ]
-};
+}
 
-gulp.task('sass', () => {
-  gulp.src(src.scss)
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(sass(sass_config).on('error', sass.logError))
-    .pipe(gulp.dest(src.css))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-});
+const css = (done) => {
+	return src(path.css.src)
+	  .pipe(sourcemaps.init())
+		.pipe(sass(sass_config).on('error', sass.logError))
+		.pipe(browserSync.reload({ stream: true }))
+		.pipe(cssnano())
+		.pipe(sourcemaps.write('./'))
+		.pipe(dest(path.css.dist))
 
-gulp.task('cssnano', () => {
-  return gulp.src(src.css)
-    .pipe(sourcemaps.init())
-    .pipe(cssnano())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(src.css));
-});
+	done();
+}
 
-gulp.task('autoprefixer', () => {
-  gulp.src(src.css + '/global.css')
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }));
-});
+const prefix = (done) => {
+	src(path.css.dist)
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: true,
+			remove: true
+		}))
+		.pipe(dest(path.css.dist))
 
-// Images
-gulp.task('images', () => {
-  return gulp.src(src.images)
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images'));
-});
+	done();
+}
 
-gulp.task('svg', () => {
-  return gulp.src(svg)
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/images'));
-});
+// Critical CSS
+const criticalCSS = (done) => {
+  critical.generate({
+    base: './',
+    src: 'http://iamsteve.dev',
+    css: [`${path.css.dist}/global.css`],
+    dimensions: [{
+      width: 414,
+      height: 738
+    }, {
+      width: 768,
+      height: 1024
+    }, {
+      width: 1680,
+      height: 1200
+    }],
+    dest: './system/user/templates/default_site/_partials/critical.html',
+    inline: false,
+    minify: true,
+    extract: false,
+    include: [
+      '.headline-b',
+      '.primary .fill-s1',
+      '.primary',
+      '.hiding'
+    ],
+    ignore: [
+      '@font-face',
+      '.dashes'
+    ]
+  });
 
-// SVG — gulpicon
-// Set up the config object
-config = {};
+  done();
+}
 
-// Change the location
-config.dest = 'dist/images';
+// Fonts
+const fonts = (done) => {
+  src(path.fonts.src)
+  .pipe(dest(path.fonts.dist));
 
-// Enable inlining of SVG
-config.enhanceSVG = true;
+	done();
+}
 
-// Setup the 'gulpicon' task
-gulp.task('gulpicon', gulpicon(svg, config));
+/**
+ * Images
+ */
+// @todo: tasks do not work due to some error
+const images = (done) => {
+  src(path.image.src)
+    .pipe(cache(
+      imagemin(
+        [
+          imagemin.optipng({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true,
+            mergePaths: false
+          })
+        ],
+        {
+          verbose: true
+        }
+      )
+    ))
+    .pipe(dest(path.image.dist));
 
-// Watch files
-gulp.task('watch', () =>  {
-  gulp.watch(src.css, ['autoprefixer']);
-});
+  done();
+}
 
-gulp.task('browser-sync', () => {
-  browserSync.init(browserSyncWatchFiles, browserSyncOptions);
-});
+const svg = (done) => {
+  src(path.svg.src)
+    .pipe(cache(
+      imagemin(
+        [
+          imagemin.svgo({
+            plugins: [
+              { removeViewBox: false },
+              { cleanupIDs: false },
+              { mergePaths: false }
+            ]
+          })
+        ],
+        {
+          verbose: true
+        }
+      )
+    ))
+    .pipe(dest(path.svg.dist));
 
-// Serve, Sass and live reloading
-gulp.task('serve', ['browser-sync', 'watch'], () => {
-  gulp.watch(src.scss, ['sass']).on('change', reload);
-  gulp.watch('dist/js/**/*').on('change', reload);
-  gulp.watch(src.html).on('change', reload);
-});
+  done();
+}
 
-gulp.task('default', ['serve']);
-gulp.task('build', [
-  'images',
-  'sass',
-  'autoprefixer',
-  'cssnano'
-]);
+/**
+ * Watch
+ */
+const watching = (done) => {
+  watch(path.src, series(exports.default, reloader));
+
+  done();
+}
+
+/**
+ * Single tasks
+ */
+exports.css = css;
+exports.criticalCSS = criticalCSS;
+exports.images = images;
+exports.svg = svg;
+exports.serve = serve;
+exports.fonts = fonts;
+
+/**
+ * Multiple tasks
+ */
+exports.default = series(
+	parallel(
+		css,
+		fonts,
+		svg,
+		images
+	)
+);
+
+exports.build = series(exports.default, exports.criticalCSS);
+
+exports.watch = series(
+  exports.default,
+	watching,
+	serve
+);

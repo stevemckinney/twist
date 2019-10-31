@@ -1,9 +1,9 @@
 // Framework required
 // ---------------------------
-@import "breakpoint",
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint",
 				"variables", // lots of default variables
 				"site/base"; // override defaults here, fonts and colour also
-				
+
 // Framework components, don't edit
 // ---------------------------
 @import "framework/maps",
@@ -26,7 +26,7 @@
 
 .sg-container {
 	padding: em($line); }
-  
+
 .sg-container > div,
 .sg-header {
 	display: flex;
@@ -80,7 +80,7 @@
   padding-bottom: .375em;
   margin-top: 0; }
 
-.sg-h1 {    
+.sg-h1 {
   font-size: 24px;
   font-weight: bold; }
 
@@ -100,8 +100,8 @@
   box-shadow:
 	  inset 0 0 0 1px scale-color($primary, $lightness: -30%),
 	  inset 0 2px scale-color($primary, $lightness: 10%);
-  
-  a { 
+
+  a {
   	padding: em($line, 12px);
   	color: #fff;
   	pointer-events: none; } }
@@ -119,12 +119,12 @@
 	position: relative;
 	-webkit-backface-visibility: hidden;
 	overflow: hidden;
-	
+
 	&,
 	&:after {
 		transition: .35s;
 		border-radius: $radius; }
-	
+
 	&:after {
 		content: "";
 		position: absolute;
@@ -135,12 +135,12 @@
 		width: 100%;
 		background: transparent;
 		transform: rotateX(180deg); }
-	
+
 	&:hover,
 	&:focus {
 		box-shadow: inset 0 0 0 1px scale-color($primary, $lightness: -20%);
 		color: $white;
-		
+
 		&:after {
 			transform: rotateX(0);
 			background: $primary;
@@ -220,7 +220,7 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between; }
-	
+
 .sg-color {
 	flex: 0 0 12.5%;
 	padding: em($line*2);
@@ -304,7 +304,7 @@
 .js .sg-source.is-active,
 .operamini .sg-source,
 .legacy .sg-source {
-  max-height: 2400px; 
+  max-height: 2400px;
 }
 
 
@@ -316,29 +316,29 @@
 @media screen {
   .str,
   .string {color: #E6DB74;} /* string content */
-  
+
   .kwd,
   .keyword {color: #66D9EF;} /* a keyword */
-  
+
   .com,
   .comment {color: #75715E;} /* a comment */
-  
+
   .typ {color: #A6E22E;} /* a type name */
-  
+
   .lit,
   .number {color: #AE81FF;} /* a literal value */
-  
+
   /* punctuation, lisp open bracket, lisp close bracket */
   /* .pun, .opn, .clo { color: #660 } */
-  
+
   .tag {color: #F92672;} /* a markup tag name */
-  
+
   .atn {color: #A6E22E;} /* a markup attribute name */
-  
+
   .atv {color: #E6DB74;} /* a markup attribute value */
-  
+
   /*.dec, .var { color: #606 }*/ /* a declaration; a variable name */
-  
+
   .fun {color: #FF0000;} /* a function name */
 }
 
@@ -347,22 +347,22 @@
   .str {color: #060}
 
   .kwd {color: #006; font-weight: bold }
-  
+
   .com {color: #600; font-style: italic }
-  
+
   .typ {color: #404; font-weight: bold }
-  
+
   .lit {color: #044}
-  
-  .pun, 
-  .opn, 
-  
+
+  .pun,
+  .opn,
+
   .clo {color: #440}
-  
+
   .tag {color: #006; font-weight: bold }
-  
+
   .atn {color: #404}
-  
+
   .atv {color: #060}
 }
 

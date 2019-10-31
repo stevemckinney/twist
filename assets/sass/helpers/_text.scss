@@ -1,45 +1,46 @@
 // Align
 // ---------------------------
-.text-right { text-align: right; }
-.text-center { text-align: center; }
-.text-left { text-align: left; }
+@if $default-enable-text-alignment {
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .text-left { text-align: left; } }
 
 // Loop through the breakpoint map, assign each breakpoint to the relevant variable
 // eg: $breakpoint-name = 'b' and $breakpoint-width = 480px
 // $default-breakpoint-map can be found in variables/breakpoints
-@each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {  
-	@include breakpoint($breakpoint-width) {
-    .text-right-#{$breakpoint-name} {
-      text-align: right; }
-    
-    .text-center-#{$breakpoint-name} {
-      text-align: center; }
-    
-    .text-left-#{$breakpoint-name} {
-      text-align: left; } } }
+@if $default-enable-text-alignment-responsive {
+  @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+  	@include breakpoint($breakpoint-width) {
+      .text-right-#{$breakpoint-name} {
+        text-align: right; }
 
-// Case
-// ---------------------------
-.text-lowercase { text-transform: lowercase; }
-.text-uppercase { text-transform: uppercase; }
+      .text-center-#{$breakpoint-name} {
+        text-align: center; }
 
-// Style
-// ---------------------------
-.text-italic { font-style: italic; }
+      .text-left-#{$breakpoint-name} {
+        text-align: left; } } } }
 
-// General elements
-// ---------------------------
-address { font-style: normal; }
-	
+@if $default-enable-text-style {
+  // Case
+  // ---------------------------
+  .text-lowercase { text-transform: lowercase; }
+  .text-uppercase { text-transform: uppercase; }
+
+  // Style
+  // ---------------------------
+  .text-italic { font-style: italic; } }
+
 // Various
 // ---------------------------
-.caption {
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: .125em; }
+@if $default-enable-text-various {
+  .caption {
+  	font-weight: 700;
+  	text-transform: uppercase;
+  	letter-spacing: .125em; } }
 
 // Measure
 // ---------------------------
-.measure { max-width: $measure; }
-.measure-narrow { max-width: $measure-narrow; }
-.measure-wide { max-width: $measure-wide; }
+@if $default-enable-text-measure {
+  .measure { max-width: $measure; }
+  .measure-narrow { max-width: $measure-narrow; }
+  .measure-wide { max-width: $measure-wide; } }

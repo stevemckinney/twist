@@ -1,12 +1,43 @@
 // Transition
 // ---------------------------
-.t {
-  transition-duration: .2s; }
+@if $default-enable-transition {
+  .t {
+    transition-duration: .2s; }
 
-// Cubic beziers
-// ---------------------------
-.t-ease-out-cubic {
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  // Cubic bezier
+  // ---------------------------
+  @if $default-enable-transition-cubic-bezier {
+    .t-ease-out-cubic {
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-.t-ease-out-expo {
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+    .t-ease-out-expo {
+      transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); } }
+
+  // Loading
+  // ---------------------------
+  @if $default-enable-transition-loading {
+    @keyframes loading {
+      0% {
+        background-position: -1200px 0; }
+
+      100% {
+        background-position: 1200px 0; } }
+
+    .loading {
+      position: relative;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-name: loading;
+      background: $light-grey;
+      background: linear-gradient(to right, lighten($light-grey, 2.5%) 8%, $light-grey 18%, lighten($light-grey, 2.5%) 33%);
+      background-size: 1200px 104px; }
+
+    .lazyload,
+    .lazyloading {
+    	opacity: 0; }
+
+    .lazyloaded {
+    	opacity: 1;
+    	transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1); } } }

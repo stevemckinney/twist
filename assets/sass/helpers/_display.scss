@@ -1,18 +1,19 @@
 // Display & alignment
 // ---------------------------
-.db { display: block; }
-.dib { display: inline-block; }
-.vat { vertical-align: top; }
-.vam { vertical-align: middle; }
-.vab { vertical-align: bottom; }
+@if $default-enable-display {
+  .db { display: block; }
+  .dib { display: inline-block; }
+  .vat { vertical-align: top; }
+  .vam { vertical-align: middle; }
+  .vab { vertical-align: bottom; } }
 
 // Responsive
 // ---------------------------
-
-@each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
-  @include breakpoint($breakpoint-width) {
-    .db-#{$breakpoint-name} { display: block; }
-    .dib-#{$breakpoint-name} { display: inline-block; }
-    .vat-#{$breakpoint-name} { vertical-align: top; }
-    .vam-#{$breakpoint-name} { vertical-align: middle; }
-    .vab-#{$breakpoint-name} { vertical-align: bottom; } } }
+@if $default-enable-display-responsive {
+  @each $breakpoint-name, $breakpoint-width in $default-breakpoint-map {
+    @include breakpoint($breakpoint-width) {
+      .db-#{$breakpoint-name} { display: block; }
+      .dib-#{$breakpoint-name} { display: inline-block; }
+      .vat-#{$breakpoint-name} { vertical-align: top; }
+      .vam-#{$breakpoint-name} { vertical-align: middle; }
+      .vab-#{$breakpoint-name} { vertical-align: bottom; } } } }

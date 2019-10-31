@@ -1,14 +1,15 @@
 // Colour
 // ---------------------------
 @each $name, $color in $color-helpers {
+
   // Text colours, eg: .text-primary
 	.#{$name} { color: $color; }
   	.#{$name}-hover:hover { color: $color; }
-	
+
 	// Background colours eg: .bg-primary
 	.bg-#{$name} { background-color: $color; }
   	.bg-#{$name}-hover:hover { background-color: $color; } }
-	
+
 // SVG
 // ---------------------------
 .fill-currentcolor { fill: currentcolor; }

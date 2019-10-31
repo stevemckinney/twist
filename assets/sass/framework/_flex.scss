@@ -9,6 +9,12 @@ $default-flex-gutter: map-get($default, spacing) * 2 !default;
 // tailored to your breakpoints, that match the design.
 $default-flex-map: $default-breakpoint-map !default;
 
+// Flex container
+// ---------------------------
+#{"." + unquote($default-flex-namespace)}-with-gutter {
+  margin-left: -#{$default-flex-gutter / 2};
+  margin-right: -#{$default-flex-gutter / 2}; }
+
 // Flex widths
 // ---------------------------
 @mixin flex-width(
@@ -20,10 +26,11 @@ $default-flex-map: $default-breakpoint-map !default;
 	@for $column-increment from 1 through $flex-columns {
 		#{"." + unquote($default-flex-column-namespace)}-#{$column-increment} {
 			$w: (100% / $flex-columns) * $column-increment;
-			width: $w;
+			flex-basis: $w;
 
 			#{"." + unquote($default-flex-namespace)}-with-gutter & {
-  			width: calc(#{$w} - #{$default-flex-gutter}); } } } }
+  			padding-left: #{$default-flex-gutter / 2};
+  			padding-right: #{$default-flex-gutter / 2}; } } } }
 
 @mixin flex-width-responsive(
 	$flex-columns	: $default-flex-columns,

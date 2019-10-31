@@ -1,7 +1,7 @@
 // Gems
 // ---------------------------
 @import "framework/compass";
-@import "breakpoint";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 @import "variables";
 
@@ -9,6 +9,10 @@
 // Don't edit these files, copy mixins and override in site/mixins.
 // ---------------------------
 @import "framework";
+
+// Custom properties (css vars)
+// ---------------------------
+@import "custom";
 
 // Helpers
 // tachyons.io style helper classes

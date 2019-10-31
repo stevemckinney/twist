@@ -12,6 +12,17 @@ $default-enable-padding-responsive: true !default;
 $default-enable-undo-padding: true !default;
 $default-enable-isles: true !default;
 $default-enable-aspect-ratio: true !default;
+$default-enable-visibility: true !default;
+$default-enable-transition: true !default;
+$default-enable-transition-cubic-bezier: $default-enable-transition !default;
+$default-enable-transition-loading: $default-enable-transition !default;
+$default-enable-display: true !default;
+$default-enable-display-responsive: false !default;
+$default-enable-text-alignment: true !default;
+$default-enable-text-alignment-reponsive: true !default;
+$default-enable-text-style: true !default;
+$default-enable-text-various: true !default;
+$default-enable-text-measure: true !default;
 
 // Font size helpers
 // ---------------------------

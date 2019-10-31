@@ -1,3 +1,4 @@
+import Headroom from 'headroom.js';
 import 'lazysizes';
 
 const Site = (function Site() {
@@ -15,6 +16,39 @@ const Site = (function Site() {
         parent.classList.add('image-loaded');
       }
     });
+  }
+
+  // Apply headroom to the header
+  const header = () => {
+    const el = document.querySelector('.header');
+    const options = {
+      tolerance: {
+        up: 12,
+        down: 12
+      },
+      classes: {
+        initial: 'header',
+        pinned: 'header-pinned',
+        unpinned: 'header-unpinned',
+        top: 'header-top',
+        notTop: 'header-not-top',
+        bottom: 'header-bottom',
+        notBottom: 'header-not-bottom'
+      },
+      onUnpin: function onUnpin() {
+        if (isSearchVisible()) {
+          this.elem.classList.remove(this.classes.unpinned);
+          this.elem.classList.add(this.classes.pinned);
+        }
+        else {
+          this.elem.classList.add(this.classes.unpinned);
+          this.elem.classList.remove(this.classes.pinned);
+        }
+      }
+    };
+    const h = new Headroom(el, options);
+
+    h.init();
   }
 
   return {

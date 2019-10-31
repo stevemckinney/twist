@@ -1,0 +1,28 @@
+// Site colours (see: site/base to override)
+// ---------------------------
+$primary: #FF7E6D !default;
+$secondary: #27CBA4 !default;
+$tertiary: #FFDB6D !default;
+$neutral: #553143 !default;
+
+// General colour
+// --------------------------
+$black: #000 !default;
+$white: #fff !default;
+$red: #cf4647 !default;
+$blue: #478afa !default;
+$cyan: #40bfbb !default;
+$green: #6db228 !default;
+$orange: adjust-hue(#478afa, -195deg) !default;
+$yellow: #fdd24c;
+$purple: #7375a5 !default;
+$light-grey: #e3e6ea !default;
+
+// State
+// ---------------------------
+$alt: $blue !default;
+$danger: $red !default;
+$error: $red !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$success: $green !default;

@@ -2,8 +2,8 @@
 // ---------------------------
 @if $default-enable-aspect-ratio {
   .aspect-ratio {
-    height: 0;
-    position: relative; }
+    position: relative;
+    height: 0; }
 
   .aspect-ratio-16x9 {
     padding-bottom: 56.25%; }
