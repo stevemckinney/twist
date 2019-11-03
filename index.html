@@ -7,14 +7,14 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="dist/css/global.css">
 </head>
-<body class="universe">
-  <header class="header bg-neutral island">
+<body class="layout">
+  <header class="header island">
     <h1 class="f4-l primary m0">twist</h1>
   </header>
 
-  <div class="flex flex-with-gutter between">
+  <div class="content">
     <div class="flex flex-3">
-      <div class="bg-white bg-primary-hover t t-ease-out-cubic radius">
+      <div class="bg-white bg-tertiary-hover t t-ease-out-cubic radius">
         <div class="aspect-ratio aspect-ratio-4x3 loading radius-top-left radius-top-right">
           <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="aspect-ratio-object lazyload radius-top-left radius-top-right">
         </div>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="flex flex-3">
-      <div class="bg-white bg-primary-hover t t-ease-out-cubic radius">
+      <div class="bg-white bg-tertiary-hover t t-ease-out-cubic radius">
         <div class="aspect-ratio aspect-ratio-4x3 loading radius-top-left radius-top-right">
           <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="aspect-ratio-object radius-top-left radius-top-right lazyload">
         </div>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="flex flex-3">
-      <div class="bg-white bg-primary-hover t t-ease-out-cubic radius">
+      <div class="bg-white bg-tertiary-hover t t-ease-out-cubic radius">
         <div class="aspect-ratio aspect-ratio-4x3 loading radius-top-left radius-top-right">
           <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="aspect-ratio-object radius-top-left radius-top-right lazyload">
         </div>
@@ -47,106 +47,107 @@
         </div>
       </div>
     </div>
-  </div>
 
-	<div class="lazyload-area">
-    <h2>Lazy loading</h2>
-    <div class="aspect-ratio aspect-ratio-16x9 loading">
-      <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="aspect-ratio-object lazyload">
-    </div>
-    <noscript>
-      <img src="https://unsplash.it/600/480" class="img-noscript">
-    </noscript>
-	</div>
-
-  <form action="." method="post" class="form">
-    <legend>Comment form</legend>
-
-    <div class="field field-text">
-      <label class="label">Name</label>
-      <input type="text" name="name" id="name" class="input input-text">
-    </div>
-
-    <div class="field field-textarea">
-      <label class="label">Email</label>
-      <input type="email" name="email" id="email" placeholder="steve@iamsteve.me" class="input input-text">
-    </div>
-
-    <div class="field field-textarea">
-      <label class="label">Textarea</label>
-      <textarea name="comment" rows="8" cols="40" class="input input-text"></textarea>
-    </div>
-    <div class="form-actions">
-      <input type="submit" name="submit" value="Save" class="button button-primary">
-      <div class="field field-checkbox">
-        <label class="label label-checkbox"><input type="checkbox" name="remember" value="" id="remember"> Remember</label>
+  	<div class="lazyload-area">
+      <h2>Lazy loading</h2>
+      <div class="aspect-ratio aspect-ratio-16x9 loading">
+        <img data-src="https://unsplash.it/600/480" data-srcset="https://unsplash.it/600/480 1x, https://unsplash.it/1200/960 2x" class="aspect-ratio-object lazyload">
       </div>
+      <noscript>
+        <img src="https://unsplash.it/600/480" class="img-noscript">
+      </noscript>
+  	</div>
+
+    <form action="." method="post" class="form">
+      <legend>Comment form</legend>
+
+      <div class="field field-text">
+        <label class="label">Name</label>
+        <input type="text" name="name" id="name" class="input input-text">
+      </div>
+
+      <div class="field field-textarea">
+        <label class="label">Email</label>
+        <input type="email" name="email" id="email" placeholder="steve@iamsteve.me" class="input input-text">
+      </div>
+
+      <div class="field field-textarea">
+        <label class="label">Textarea</label>
+        <textarea name="comment" rows="8" cols="40" class="input input-text"></textarea>
+      </div>
+      <div class="form-actions">
+        <input type="submit" name="submit" value="Save" class="button button-primary">
+        <div class="field field-checkbox">
+          <label class="label label-checkbox"><input type="checkbox" name="remember" value="" id="remember"> Remember</label>
+        </div>
+      </div>
+    </form>
+
+  	<div class="mt9 pt9"></div>
+  	<div class="mb9 flex flex-wrap flex-row">
+      <button class="button button button-primary radius">Button button</button>
+      <button class="button button-secondary radius">Button button</button>
+      <button class="button button-tertiary radius">Button button</button>
+      <button class="button button-one radius">Button button</button>
+      <button class="button button-two radius">Button button</button>
+      <button class="button button-three radius">Button button</button>
+      <button class="button button-four radius">Button button</button>
+      <button class="button button-five radius">Button button</button>
+      <button class="button button-six radius">Button button</button>
+      <button class="button button-seven radius">Button button</button>
+      <button class="button button-eight radius">Button button</button>
+      <button class="button button-nine radius">Button button</button>
+      <button class="button button-ten radius">Button button</button>
+      <button class="button button-a radius">Button button</button>
+      <button class="button button-b radius">Button button</button>
+      <button class="button button-c radius">Button button</button>
+      <button class="button button-d radius">Button button</button>
+      <button class="button button-e radius">Button button</button>
+      <button class="button button-f radius">Button button</button>
+      <button class="button button-g radius">Button button</button>
+      <button class="button button-h radius">Button button</button>
+      <button class="button button-i radius">Button button</button>
+      <button class="button button-j radius">Button button</button>
+      <button class="button button-k radius">Button button</button>
+      <button class="button button-neutral radius">Button button</button>
+  	</div>
+
+  	<div class="mb1 spit radius bg-neutral tertiary f6">
+      mb1 spit radius bg-neutral tertiary
     </div>
-  </form>
 
-	<div class="mt9 pt9"></div>
-	<div class="mb9 flex flex-wrap flex-row">
-    <button class="button button button-primary radius">Button button</button>
-    <button class="button button-secondary radius">Button button</button>
-    <button class="button button-tertiary radius">Button button</button>
-    <button class="button button-one radius">Button button</button>
-    <button class="button button-two radius">Button button</button>
-    <button class="button button-three radius">Button button</button>
-    <button class="button button-four radius">Button button</button>
-    <button class="button button-five radius">Button button</button>
-    <button class="button button-six radius">Button button</button>
-    <button class="button button-seven radius">Button button</button>
-    <button class="button button-eight radius">Button button</button>
-    <button class="button button-nine radius">Button button</button>
-    <button class="button button-ten radius">Button button</button>
-    <button class="button button-a radius">Button button</button>
-    <button class="button button-b radius">Button button</button>
-    <button class="button button-c radius">Button button</button>
-    <button class="button button-d radius">Button button</button>
-    <button class="button button-e radius">Button button</button>
-    <button class="button button-f radius">Button button</button>
-    <button class="button button-g radius">Button button</button>
-    <button class="button button-h radius">Button button</button>
-    <button class="button button-i radius">Button button</button>
-    <button class="button button-j radius">Button button</button>
-    <button class="button button-k radius">Button button</button>
-    <button class="button button-neutral radius">Button button</button>
-	</div>
+    <div class="mb2 isle radius bg-neutral tertiary f5">
+      mb2 isle radius bg-neutral tertiary
+    </div>
 
-	<div class="mb1 spit radius bg-neutral tertiary f6">
-    mb1 spit radius bg-neutral tertiary
-  </div>
+    <div class="mb3 island radius bg-neutral tertiary f4">
+      mb3 island radius bg-neutral tertiary
+    </div>
 
-  <div class="mb2 isle radius bg-neutral tertiary f5">
-    mb2 isle radius bg-neutral tertiary
-  </div>
+    <div class="mb4 country radius bg-neutral tertiary f3">
+      mb4 country radius bg-neutral tertiary
+    </div>
 
-  <div class="mb3 island radius bg-neutral tertiary f4">
-    mb3 island radius bg-neutral tertiary
-  </div>
+    <div class="mb5 continent radius bg-neutral tertiary f2">
+      mb5 continent radius bg-neutral tertiary
+    </div>
 
-  <div class="mb4 country radius bg-neutral tertiary f3">
-    mb4 country radius bg-neutral tertiary
-  </div>
+    <div class="mb6 planet radius bg-neutral tertiary f1">
+      mb6 planet radius bg-neutral tertiary
+    </div>
 
-  <div class="mb5 continent radius bg-neutral tertiary f2">
-    mb5 continent radius bg-neutral tertiary
-  </div>
+    <div class="mb7 galaxy radius bg-neutral tertiary headline">
+      mb7 galaxy radius bg-neutral tertiary
+    </div>
 
-  <div class="mb6 planet radius bg-neutral tertiary f1">
-    mb6 planet radius bg-neutral tertiary
-  </div>
+    <div class="mb8 universe radius bg-neutral tertiary f7">
+      mb8 universe radius bg-neutral tertiary
+    </div>
 
-  <div class="mb7 galaxy radius bg-neutral tertiary headline">
-    mb7 galaxy radius bg-neutral tertiary
-  </div>
+    <div class="mb9 cosmos radius bg-neutral tertiary f8">
+      mb9 cosmos radius bg-neutral tertiary
+    </div>
 
-  <div class="mb8 universe radius bg-neutral tertiary f7">
-    mb8 universe radius bg-neutral tertiary
-  </div>
-
-  <div class="mb9 cosmos radius bg-neutral tertiary f8">
-    mb9 cosmos radius bg-neutral tertiary
   </div>
   <script src="dist/js/global.js"></script>
 </body>
