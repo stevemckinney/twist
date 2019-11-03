@@ -143,6 +143,7 @@ $yiq-debug: false !default;
     @return $number / ($number * 0 + 1); }
 
   @return $number; }
+
 //calc($min-font-size + ( ( $max-font-size - $min-font-size ) * ( 100vw - $min-screen-width ) / ($max-screen-width - $min-screen-width) ))
 @function font-size-lock(
   $min-font-size,
@@ -152,4 +153,14 @@ $yiq-debug: false !default;
 ) {
   @return calc(
     #{$min-font-size} + ( ( #{strip-unit($max-font-size)} - #{strip-unit($min-font-size)} ) * ( 100vw - #{$min-screen-width} ) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)}))
+    ); }
+
+@function lock(
+  $min-size,
+  $max-size,
+  $min-screen-width,
+  $max-screen-width
+) {
+  @return calc(
+    #{$min-size} + ( ( #{strip-unit($max-size)} - #{strip-unit($min-size)} ) * ( 100vw - #{$min-screen-width} ) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)}))
     ); }
