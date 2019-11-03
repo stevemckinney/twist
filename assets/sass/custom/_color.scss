@@ -1,28 +1,29 @@
 // Imports into :root in ./_custom.scss
 // ---------------------------
 
-// Site
---primary: #{$primary};
---secondary: #{$secondary};
---tertiary: #{$tertiary};
---neutral: #{$neutral};
+:root {
+  // Site
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --tertiary: #{$tertiary};
+  --neutral: #{$neutral};
 
-// General colour
---black: #{$black};
---white: #{$black};
---red: #{$red};
---blue: #{$blue};
---cyan: #{$cyan};
---green: #{$green};
---orange: #{$orange};
---yellow: #{$yellow};
---purple: #{$purple};
---light-grey: #{$light-grey};
+  // General colour
+  --black: #{$black};
+  --white: #{$black};
+  --red: #{$red};
+  --blue: #{$blue};
+  --cyan: #{$cyan};
+  --green: #{$green};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --purple: #{$purple};
+  --light-grey: #{$light-grey};
 
-// State
---alt: #{$alt};
---danger: #{$danger};
---error: #{$error};
---info: #{$info};
---warning: #{$warning};
---success: #{$success};
+  // State
+  --alt: #{$alt};
+  --danger: #{$danger};
+  --error: #{$error};
+  --info: #{$info};
+  --warning: #{$warning};
+  --success: #{$success}; }
