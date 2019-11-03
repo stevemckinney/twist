@@ -68,6 +68,9 @@
   },
   "author": "Steve McKinney",
   "license": "ISC",
+  "meta": {
+    "url": "twist.dev"
+  },
   "bugs": {
     "url": "https://github.com/stevemckinney/twist/issues"
   },

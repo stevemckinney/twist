@@ -1,4 +1,19 @@
 /**
+ * Settings
+ */
+const settings = {
+	fresh: false,
+	js: true,
+	css: true,
+	prefix: false,
+	images: true,
+	svg: true,
+	fonts: false,
+	critical: false,
+	serve: true
+};
+
+/**
  * Paths
  */
 const path = {
@@ -37,13 +52,13 @@ const {gulp, src, dest, watch, series, parallel} = require('gulp');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
 const cache = require('gulp-cache');
+const package = require('./package.json');
 
 // CSS
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const critical = require('critical');
-// const importer = require('node-sass-globbing');
 
 // Images
 const imagemin = require('gulp-imagemin');
@@ -53,9 +68,12 @@ const svgmin = require('gulp-svgmin');
 const browserSync = require('browser-sync').create();
 
 /**
- * Start *fresh*
+ * Delete everything and start *fresh*
  */
 const fresh = (done) => {
+
+  if (!settings.fresh) return done();
+
   del([path.output]);
 
   done();
@@ -66,7 +84,7 @@ const fresh = (done) => {
  * see: https://www.browsersync.io/docs/options/
  **/
 const browserSyncOptions = {
-  proxy: 'http://iamsteve.dev',
+  proxy: package.meta.url,
   injectChanges: true
 }
 
@@ -79,6 +97,9 @@ const reloader = (done) => {
 
 // Serve
 const serve = (done) => {
+
+  if (!settings.serve) return done();
+
   // Watch everything in src, run default & refresh the browser
   browserSync.init([path.src, path.html.src], browserSyncOptions);
 
@@ -99,6 +120,9 @@ const sass_config = {
 }
 
 const css = (done) => {
+
+  if (!settings.css) return done();
+
 	return src(path.css.src)
 	  .pipe(sourcemaps.init())
 		.pipe(sass(sass_config).on('error', sass.logError))
@@ -111,6 +135,9 @@ const css = (done) => {
 }
 
 const prefix = (done) => {
+
+  if (!settings.prefix) return done();
+
 	src(path.css.dist)
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions'],
@@ -124,9 +151,12 @@ const prefix = (done) => {
 
 // Critical CSS
 const criticalCSS = (done) => {
+
+	if (!settings.critical) return done();
+
   critical.generate({
     base: './',
-    src: 'http://iamsteve.dev',
+    src: package.meta.url,
     css: [`${path.css.dist}/global.css`],
     dimensions: [{
       width: 414,
@@ -138,7 +168,7 @@ const criticalCSS = (done) => {
       width: 1680,
       height: 1200
     }],
-    dest: './system/user/templates/default_site/_partials/critical.html',
+    dest: path.html.src,
     inline: false,
     minify: true,
     extract: false,
@@ -159,8 +189,10 @@ const criticalCSS = (done) => {
 
 // Fonts
 const fonts = (done) => {
-  src(path.fonts.src)
-  .pipe(dest(path.fonts.dist));
+
+  if (!settings.fonts) return done();
+
+  src(path.fonts.src).pipe(dest(path.fonts.dist));
 
 	done();
 }
@@ -170,6 +202,9 @@ const fonts = (done) => {
  */
 // @todo: tasks do not work due to some error
 const images = (done) => {
+
+  if (!settings.images) return done();
+
   src(path.image.src)
     .pipe(cache(
       imagemin(
@@ -192,6 +227,9 @@ const images = (done) => {
 }
 
 const svg = (done) => {
+
+  if (!settings.svg) return done();
+
   src(path.svg.src)
     .pipe(cache(
       imagemin(
@@ -232,6 +270,7 @@ exports.images = images;
 exports.svg = svg;
 exports.serve = serve;
 exports.fonts = fonts;
+exports.fresh = fresh;
 
 /**
  * Multiple tasks
@@ -239,13 +278,14 @@ exports.fonts = fonts;
 exports.default = series(
 	parallel(
 		css,
+		prefix,
 		fonts,
 		svg,
 		images
 	)
 );
 
-exports.build = series(exports.default, exports.criticalCSS);
+exports.build = series(fresh, exports.default, exports.criticalCSS);
 
 exports.watch = series(
   exports.default,
