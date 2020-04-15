@@ -42,7 +42,7 @@
     "gulp": "^4.0.2",
     "gulp-cache": "^0.2.10",
     "gulp-concat": "^2.6.1",
-    "gulp-copy": "^1.1.0",
+    "gulp-copy": "^4.0.1",
     "gulp-cssnano": "^1.1.0",
     "gulp-order": "^1.2.0",
     "gulp-postcss": "^7.0.1",
